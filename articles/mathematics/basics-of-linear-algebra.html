@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Nodar Okroshiashvili" />
+
+        <meta name="twitter:creator" content="@N_Okroshiashvil">
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="Linear Algebra, Mathematics, Mathematics, " />
+
+<meta property="og:title" content="Basics of Linear Algebra "/>
+<meta property="og:url" content="/articles/mathematics/basics-of-linear-algebra.html" />
+<meta property="og:description" content="This is the second post in blog series about linear algebra. Introduction Basics of linear algebra Intermediate linear algebra Advances in linear algebra Fisrt post is here In this post I will introduce you to the basics of linear algebra, which in turn includes the following: One Variable Equation Two Variable Equation The Systems of Equations Vector Vectors and Vector Notation" />
+<meta property="og:site_name" content="Data Science Fabric" />
+<meta property="og:article:author" content="Nodar Okroshiashvili" />
+<meta property="og:article:published_time" content="2019-03-02T12:14:00+04:00" />
+<meta name="twitter:title" content="Basics of Linear Algebra ">
+<meta name="twitter:description" content="This is the second post in blog series about linear algebra. Introduction Basics of linear algebra Intermediate linear algebra Advances in linear algebra Fisrt post is here In this post I will introduce you to the basics of linear algebra, which in turn includes the following: One Variable Equation Two Variable Equation The Systems of Equations Vector Vectors and Vector Notation">
+
+        <title>Basics of Linear Algebra  · Data Science Fabric
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/admonition.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
+        <link rel="shortcut icon" href="/theme/images/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/theme/images/apple-touch-icon.png"  type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="/theme/images/apple-touch-icon-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="/theme/images/apple-touch-icon-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="/theme/images/apple-touch-icon-76x76.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="/theme/images/apple-touch-icon-114x114.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="/theme/images/apple-touch-icon-120x120.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="/theme/images/apple-touch-icon-144x144.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+
+
+
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="/"><span class=site-name>Data Science Fabric</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href="">Home</a></li>
+                            <li ><a href="/pages/Contact.html">Contact</a></li>
+                            <li ><a href="/pages/About.html">About Me</a></li>
+                            <li ><a href="/categories">Categories</a></li>
+                            <li ><a href="/tags">Tags</a></li>
+                            <li ><a href="/archives">Archives</a></li>
+                            <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="/articles/mathematics/basics-of-linear-algebra.html"> Basics of Linear Algebra  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            
+            
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is the second post in blog series about linear algebra.</p>
+<ol>
+<li>Introduction</li>
+<li><strong>Basics of linear algebra</strong></li>
+<li>Intermediate linear algebra</li>
+<li>Advances in linear algebra</li>
+</ol>
+<p>Fisrt post is <a href="აქ ჩასვი ლინკი მერე">here</a></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this post I will introduce you to the basics of linear algebra, which in turn includes the following:</p>
+<ul>
+<li><a href="#One_Variable_Equation">One Variable Equation</a></li>
+<li><a href="#Two_Variable_Equation">Two Variable Equation</a></li>
+<li><a href="#The_Systems_Of_Equations">The Systems of Equations</a></li>
+<li><a href="#Vector">Vector</a><ul>
+<li><a href="#Vectors_And_Vector_Notation">Vectors and Vector Notation</a></li>
+<li><a href="#Dimensions_Of_Vector">Dimensions of Vector</a></li>
+<li><a href="#Operations_On_Vectors">Operations on Vectors</a></li>
+<li><a href="#Vector_Length">Vector Length</a></li>
+<li><a href="#Unit_Vector">Unit Vector</a></li>
+<li><a href="#Scalar_Product_Of_Two_Vectors">Scalar Product of Two Vectors</a></li>
+<li><a href="#Numerical_Representation">Numerical Representation</a></li>
+</ul>
+</li>
+<li><a href="#Matrix">Matrix</a><ul>
+<li><a href="#Matrices_And_Matrix_Notation">Matrices and Matrix Notation</a></li>
+<li><a href="#Dimension_Of_Matrix">Dimension of Matrix</a></li>
+<li><a href="#Matrix_Operations">Matrix Operations</a></li>
+<li><a href="#Matrix_Transpose">Matrix Transpose</a></li>
+<li><a href="#Identity_Matrix">Identity Matrix</a></li>
+<li><a href="#Numerical_Representation_Matrix">Numerical Representation</a></li>
+</ul>
+</li>
+<li><a href="#Conclusion">Conclusion</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="One-Variable-Equation">One Variable Equation<a class="anchor-link" href="#One-Variable-Equation">¶</a></h2><p><a id="One_Variable_Equation"></a></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Generally, equations state that two things are equal. They contain one or more variables and solving them means to find the value of those variable to make equality true. This value is known as a solution.</p>
+<p>Consider the following equation:</p>
+\begin{align*}
+2x + 5 = 15
+\end{align*}<p>In this case, our variable is $x$ and the solution is $10$.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">15</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Two-Variable-Equation">Two Variable Equation<a class="anchor-link" href="#Two-Variable-Equation">¶</a></h2><p><a id="Two_Variable_Equation"></a></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Equations with two variables are known as linear equations.</p>
+<p>Consider the following equation:</p>
+\begin{align*}
+2y + 3 = 2x - 1
+\end{align*}<p>This equation includes two different variables, $x$, and $y$. These variables depend on one another. The value of $x$ is determined in part by the value of $y$ and vice-versa. So we can't solve this equation as in the case of one variable equation. However, we can express $y$ in terms of $x$ and obtain a result that describes a relative relationship between the variables.</p>
+<p>For example, let's solve this equation for $y$. First, rearrage equation in a way to have following:</p>
+\begin{align*}2y = 2x - 4
+\Rightarrow \\
+\Rightarrow
+y = x - 2
+\end{align*}<p><em>Note that this is not linear function, this is an <a href="https://math.stackexchange.com/questions/275310/what-is-the-difference-between-linear-and-affine-function">affine function</a></em>.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Below we will see the solution of the above equation for various values of $y$. It's also good practice to plot the graph to visualize the solutions.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Create a dataframe with a column x, containing values from -10 to 10</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'x'</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">)})</span>
+
+<span class="c1"># Add column y, by applying the solved equation to x</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'y'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'x'</span><span class="p">]</span> <span class="o">-</span> <span class="mi">2</span>
+
+<span class="c1"># Display the dataframe</span>
+<span class="c1">#df</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Above table shows valid solutions for values of $x$ in range $(-10, 10)$. Besides numerical solution, let see the graphical solution.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">'w'</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'k'</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'x'</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">'y'</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'y'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The solution of the above equation lies on the blue line, for any value pairs $(x,y)~\in~\mathbb{R}$</p>
+<p>When we use a linear equation to plot a line, we can easily see where the line intersects the X and Y axes of the plot. These points are known as <em>intercepts</em>. The <em>x-intercept</em> is where the line intersects the X (horizontal) axis, and the <em>y-intercept</em> is where the line intersects the Y (horizontal) axis.</p>
+<p>The x-intercept is the point where the line crosses the $X$ axis, and at this point, the value for $y$ is always 0. Similarly, the y-intercept is where the line crosses the $Y$ axis, at which $x$ value is 0. So to find the intercepts, we need to solve the equation for $x$ when $y$ is 0 and for $y$ when $x$ is 0.</p>
+<p>For the x-intercept, we have:</p>
+\begin{align*}
+y = x - 2 = 0
+\Rightarrow
+x = 2
+\end{align*}<p>For y-intercept, we have:</p>
+\begin{align*}
+y = x - 2
+\Rightarrow
+y = 0 - 2
+\Rightarrow
+y = -2
+\end{align*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">'w'</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'k'</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'x'</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">'y'</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'y'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">'x-intercept'</span><span class="p">,(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">'y-intercept'</span><span class="p">,(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It is natural to ask, what if we move one unit along the $x$ axis, how the value for the $y$ change? The answer to this question is the notion of <em>slope</em>. Slope is defined as</p>
+\begin{align*}
+m = \frac{y_{2} - y_{1}}{x_{2} - x_{1}}
+\end{align*}<p>This means that for any given two ordered pairs of $x$ and $y$, how a change in $x$ affect $y$.
+For example:</p>
+<ul>
+<li>(5, 3)</li>
+<li>(6, 4)</li>
+</ul>
+<p>So, according to our formula, slope equal to:</p>
+\begin{align*}
+m = \frac{4 - 3}{6 - 5} = 1
+\end{align*}<p>So what does that actually mean? Well, if we start from any point on the blue line and move one unit to the right (along with the $X$ axis), we'll need to move 1 unit up (along with the $Y$ axis) to get back to the blue line.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="The-Systems-of-Equations">The Systems of Equations<a class="anchor-link" href="#The-Systems-of-Equations">¶</a></h2><p><a id="The_Systems_Of_Equations"></a></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To have the system of equations means that we have two or more linear equations together and we have to solve them simultaneously to make the equality true. There are three possible solutions of the linear system. One solution, No solution or system is inconsistent and infinitely many solutions. Generally, the linear system can have two or more variables and two or more equations. There, I will consider two variable and two-equation system with three solutions, in order to depict the intuition. It's up to you to delve deeper.</p>
+<ul>
+<li>The system with one solution, meaning two lines intersect</li>
+</ul>
+\begin{align*}
+2x-y = 2 \\ 
+x+y = -2
+\end{align*}<p>If we divide these equations we'll get $x=-2$ and $y=0$. This is the solution. Now let see it graphically.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+
+<span class="n">df_1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'x'</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">)})</span>
+
+<span class="c1"># Add column y, by applying the solved equation to x</span>
+<span class="n">df_1</span><span class="p">[</span><span class="s1">'y'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">df_1</span><span class="p">[</span><span class="s1">'x'</span><span class="p">]</span> <span class="o">-</span> <span class="mi">2</span>
+
+
+
+<span class="n">df_2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'x'</span><span class="p">:</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">)})</span>
+
+<span class="n">df_2</span><span class="p">[</span><span class="s1">'y'</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">df_2</span><span class="p">[</span><span class="s1">'x'</span><span class="p">]</span> <span class="o">-</span> <span class="mi">2</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">'w'</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'k'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_1</span><span class="p">[</span><span class="s1">'x'</span><span class="p">],</span> <span class="n">df_1</span><span class="p">[</span><span class="s1">'y'</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_2</span><span class="p">[</span><span class="s1">'x'</span><span class="p">],</span> <span class="n">df_2</span><span class="p">[</span><span class="s1">'y'</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'y'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">'2x - y = 2'</span><span class="p">,</span> <span class="p">(</span><span class="mf">7.5</span><span class="p">,</span><span class="mi">18</span><span class="p">),</span><span class="n">weight</span> <span class="o">=</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">'x + y = -2'</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="n">weight</span> <span class="o">=</span> <span class="s1">'bold'</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">'Solution (x = -2;y = 0)'</span><span class="p">,(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">))</span> <span class="c1"># I put coordinates(0,-3) intentionally to make annotation look clear</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>The system with no solution or inconsistent system, meaning two lines are parallel</li>
+</ul>
+\begin{align*}
+3x+2y = 3 \\ 
+3x+2y = -4
+\end{align*}<p>The system is inconsistent. There is no solution.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Dataframe for first equation</span>
+<span class="n">df_1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'x'</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">)})</span>
+<span class="n">df_1</span><span class="p">[</span><span class="s1">'y'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">df_1</span><span class="p">[</span><span class="s1">'x'</span><span class="p">]</span> <span class="o">+</span> <span class="mi">3</span><span class="o">/</span><span class="mi">2</span>
+
+
+<span class="c1"># Dataframe for second equation</span>
+<span class="n">df_2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'x'</span><span class="p">:</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">)})</span>
+<span class="n">df_2</span><span class="p">[</span><span class="s1">'y'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">df_2</span><span class="p">[</span><span class="s1">'x'</span><span class="p">]</span> <span class="o">-</span> <span class="mi">2</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">'w'</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'k'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_1</span><span class="p">[</span><span class="s1">'x'</span><span class="p">],</span> <span class="n">df_1</span><span class="p">[</span><span class="s1">'y'</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_2</span><span class="p">[</span><span class="s1">'x'</span><span class="p">],</span> <span class="n">df_2</span><span class="p">[</span><span class="s1">'y'</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'y'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">'3x + 2y = 3'</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="n">weight</span> <span class="o">=</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">'3x + 2y = -4'</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mf">7.5</span><span class="p">),</span><span class="n">weight</span> <span class="o">=</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>The system with infinitely many solutions, meaning two lines coincide</li>
+</ul>
+\begin{align*}
+x-y = -3 \\ 
+2x-2y = -6
+\end{align*}<p>The system has infinitely many solutions, as one of them is a linear combination of another. In this case, the second equation is scaled by 2 version of the first equation.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Dataframe for first equation</span>
+<span class="n">df_1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'x'</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">)})</span>
+<span class="n">df_1</span><span class="p">[</span><span class="s1">'y'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_1</span><span class="p">[</span><span class="s1">'x'</span><span class="p">]</span> <span class="o">-</span> <span class="mi">3</span>
+
+
+<span class="c1"># Dataframe for second equation</span>
+<span class="n">df_2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'x'</span><span class="p">:</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)})</span>
+<span class="n">df_2</span><span class="p">[</span><span class="s1">'y'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_2</span><span class="p">[</span><span class="s1">'x'</span><span class="p">]</span> <span class="o">-</span> <span class="mi">3</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">'w'</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'k'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_1</span><span class="p">[</span><span class="s1">'x'</span><span class="p">],</span> <span class="n">df_1</span><span class="p">[</span><span class="s1">'y'</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_2</span><span class="p">[</span><span class="s1">'x'</span><span class="p">],</span> <span class="n">df_2</span><span class="p">[</span><span class="s1">'y'</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'y'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">'2x - 2y = -6'</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span><span class="n">weight</span> <span class="o">=</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">'x - y = -3'</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">),</span><span class="n">weight</span> <span class="o">=</span> <span class="s1">'bold'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Vectors">Vectors<a class="anchor-link" href="#Vectors">¶</a></h2><p><a id="Vector"></a></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Vectors-and-Vector-Notation">Vectors and Vector Notation<a class="anchor-link" href="#Vectors-and-Vector-Notation">¶</a></h3><p><a id="Vectors_And_Vector_Notation"></a></p>
+<hr>
+<p>In plain English, the vector is a directed arrow. Mathematically, the vector is an object that has magnitude and direction. Magnitude is the length of the vector and direction is from its tail to its end. In other words, imagine vector as the line which connects two points in the Cartesian Coordinate System. A vector of length $n$ is a sequence or array of $n$ numbers, which we can write as:</p>
+\begin{align*}
+\vec{X} = (x_1, x_2, x_3...x_n)
+\end{align*}<p>or</p>
+\begin{align*}
+\vec{X} = [x_1, x_2, x_3, ... x_n]
+\end{align*}<p>Horizontally represented vector is a row vector, while vertically represented vector is a column vector. Let see how they look graphically.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="c1"># Set the axes through the origin</span>
+<span class="k">for</span> <span class="n">spine</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'left'</span><span class="p">,</span> <span class="s1">'bottom'</span><span class="p">]:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="n">spine</span><span class="p">]</span><span class="o">.</span><span class="n">set_position</span><span class="p">(</span><span class="s1">'zero'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">spine</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'right'</span><span class="p">,</span> <span class="s1">'top'</span><span class="p">]:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="n">spine</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">'none'</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="n">vecs</span> <span class="o">=</span> <span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>   <span class="c1"># These are vectors</span>
+
+<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">vecs</span><span class="p">:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">''</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="n">v</span><span class="p">,</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+                <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">,</span>
+                <span class="n">shrink</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+                <span class="n">width</span><span class="o">=</span><span class="mf">0.5</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">1.1</span> <span class="o">*</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mf">1.1</span> <span class="o">*</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Dimensions-of-Vector">Dimensions of Vector<a class="anchor-link" href="#Dimensions-of-Vector">¶</a></h3><p><a id="Dimensions_Of_Vector"></a></p>
+<hr>
+<p>The dimension of vector is the number of elements in it. For example, the above vector is row vector with dimension $1\times n$, but if we take it as a column vector its dimension will be $n\times 1$.</p>
+\begin{align*}
+\vec{X} = [x_1,x_2,...x_n]_{1\times~n}
+\end{align*}<p>and</p>
+\begin{align*}
+\vec{X} =
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_n
+\end{bmatrix}_{n\times1}
+\end{align*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Operations-on-Vectors">Operations on Vectors<a class="anchor-link" href="#Operations-on-Vectors">¶</a></h3><p><a id="Operations_On_Vectors"></a></p>
+<hr>
+<p>The most common operations on vectors are vector addition/subtraction and scalar multiplication.</p>
+<p>If we have two vectors, $\vec{X}$ and $\vec{Y}$, we can add them up in the following way:</p>
+\begin{align*}
+\vec{X} + \vec{Y} =
+\begin{bmatrix}
+    x_1 \\
+    x_2 \\
+    \vdots \\
+    x_n
+\end{bmatrix}_{n\times1} +
+\begin{bmatrix}
+     y_1 \\
+     y_2 \\
+    \vdots \\
+     y_n
+\end{bmatrix}_{n\times1} =
+\begin{bmatrix}
+    x_1 + y_1 \\
+    x_2 + y_2 \\
+    \vdots \\
+    x_n + y_n
+\end{bmatrix}_{n\times1}
+\end{align*}<p>Multiplying vector by a scalar $\alpha$, gives</p>
+\begin{align*}
+\alpha \vec{X} = 
+\begin{bmatrix}
+\alpha x_1 \\
+\alpha x_2 \\
+\vdots \\
+\alpha x_n
+\end{bmatrix}_{n\times1}
+\end{align*}<p>For example:</p>
+\begin{align*}
+\vec{X} + \vec{Y} =
+\begin{bmatrix}
+    1 \\
+    2 \\
+    \vdots \\
+    100
+\end{bmatrix} +
+\begin{bmatrix}
+     3 \\
+     4 \\
+    \vdots \\
+     400
+\end{bmatrix} =
+\begin{bmatrix}
+    1 + 3 \\
+    2 + 4 \\
+    \vdots \\
+    100 + 400
+\end{bmatrix}
+\end{align*}<p>For scalar multiplication, if we have vector $X$ and scalar $\alpha = 5$ then alpha times $X$ is:</p>
+\begin{align*}
+5 * \vec{X} = 
+\begin{bmatrix}
+5 * 1 \\
+5 * 2 \\
+\vdots \\
+5 * 100
+\end{bmatrix}
+\end{align*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Vector-Length">Vector Length<a class="anchor-link" href="#Vector-Length">¶</a></h3><p><a id="Vector_Length"></a></p>
+<hr>
+<p>The vector length or magnitude is calculated by the following formula:</p>
+\begin{align*}
+\|\vec{X}\| = \sqrt{x_1^2 + x_2^2 + x_3^2 + ... + x_n^2} = \sqrt{\sum_{i=1}^n x_i^2}
+\end{align*}<p>We can link notion of vector length to the Euclidean distance. If our vector $\vec{X}$ has tail at origin, $\vec{0} = [0_1, 0_2, 0_3, ... , 0_n]$ and point at $\vec{X} = [x_1,x_2,...x_n]$, then Euclidean distance between tail and point is the length of $\vec{X}$ by the formula:</p>
+\begin{align*}
+d(\vec{0},\vec{X}) = \sqrt{(0_1 - x_1)^2 + (0_2 - x_2)^2 + ... + (0_n - x_n)^2} = \sqrt{\sum_{i=1}^n (0_i - x_i)^2}
+\end{align*}<p>For example, we have vector $X$</p>
+\begin{align*}
+\vec{X} = 
+\begin{bmatrix}
+1 \\
+2 \\
+3
+\end{bmatrix}
+\end{align*}<p>then its length is</p>
+\begin{align*}
+\|\vec{X}\| = \sqrt{1^2 + 2^2 + 3^2} = \sqrt{14}
+\end{align*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Unit-Vector">Unit Vector<a class="anchor-link" href="#Unit-Vector">¶</a></h3><p><a id="Unit_Vector"></a></p>
+<hr>
+<p>What if the length of a vector equal to 1? This kind of vector is known as unit vector and it plays a very important role in different calculations and formulae. We'll see it in later posts, but here unit vector is defined as</p>
+\begin{align*}
+\hat{X} = \frac{X}{\|X\|}
+\end{align*}<p>where $\hat{X}$ is a unit vector, the numerator is vector $\vec{X}$ and denominator is the norm of vector $\vec{X}$.</p>
+<p>We can use vector $X$ from above example. We already calculated it length which is $\|\vec{X}\| = \sqrt{14}$. So, we can construct unit vector $\hat{X}$ in the following way:</p>
+\begin{align*}
+\hat{X} = \frac{X}{\|X\|} =
+\frac{1}{\sqrt{14}}; \frac{2}{\sqrt{14}}; \frac{3}{\sqrt{14}}
+\Rightarrow
+[0.26726124; \ 0.53452248; \ 0.80178373]
+\end{align*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Scalar-Product-of-Two-Vectors">Scalar Product of Two Vectors<a class="anchor-link" href="#Scalar-Product-of-Two-Vectors">¶</a></h3><p><a id="Scalar_Product_Of_Two_Vectors"></a></p>
+<hr>
+<p>Multiplication of two vectors is known as dot product, scalar product, or inner product and is defined by:</p>
+\begin{align*}
+\langle\, \vec{X},\vec{Y}\rangle~=~\vec{X}\cdot\vec{Y}~=~x_1\times y_1 + x_2\times y_2 + ... + x_n\times y_n~=~\sum_{i=1}^n x_i\cdot y_i
+\end{align*}<p><em>The inner product is defined only when the dimensions of two vectors coincide.</em></p>
+<p>Another formula of inner product is:</p>
+\begin{align*}
+\vec{X}\cdot\vec{Y}~=~\|\vec{X}\|\cdot\|\vec{Y}\|\cdot\cos{\theta}
+\end{align*}<p>where $\cos{\theta}$ is an angle between the vectors $\vec{X}$ and $\vec{Y}$.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Numerical-Representation">Numerical Representation<a class="anchor-link" href="#Numerical-Representation">¶</a></h3><p><a id="Numerical_Representation"></a></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># It's more convenient to represent the vector as a Numpy ndarray, rather than Python tuple.</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'X is:'</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'The dimension of X is:'</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Add two vectors</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="n">Y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># I use two dimensional vectors to show graphically the vector addition</span>
+
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">w</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">v</span><span class="o">+</span><span class="n">w</span><span class="p">])</span>
+
+<span class="n">origin</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'equal'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ticklabel_format</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">'sci'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">'both'</span><span class="p">,</span> <span class="n">scilimits</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="o">*</span><span class="n">origin</span><span class="p">,</span> <span class="n">V</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">V</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">'r'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'g'</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Red is vector $\vec{V}$, blue is $\vec{W}$ and green is the sum of these two vectors</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Scalar-Multiplication">Scalar Multiplication<a class="anchor-link" href="#Scalar-Multiplication">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Vector-Length">Vector Length<a class="anchor-link" href="#Vector-Length">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+
+
+<span class="c1"># In numpy, there are two ways to compute vector length</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">X</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span> <span class="c1"># More verbose method</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Unit-Vector">Unit Vector<a class="anchor-link" href="#Unit-Vector">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="n">X</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Vector n is'</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># If we take length of vector n, we'll get 1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'The length of vector n is:'</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Scalar-Product">Scalar Product<a class="anchor-link" href="#Scalar-Product">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># It's more convenient to represent the vector as a Numpy ndarray, rather than Python tuple.</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># Numpy have two possible ways to compute vector inner product</span>
+
+<span class="n">scalar_prod</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">X</span> <span class="o">*</span> <span class="n">Y</span><span class="p">)</span>
+
+<span class="n">dot_prod</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Scalar Product is:'</span><span class="p">,</span> <span class="n">dot_prod</span><span class="p">)</span>
+
+
+
+<span class="c1"># Compute angle between vector X and vector Y</span>
+<span class="n">cosine_theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">Y</span><span class="p">))</span>
+
+<span class="c1"># Angle theta </span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="n">cosine_theta</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Cosine theta is:'</span><span class="p">,</span><span class="n">cosine_theta</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Angle theta is:'</span><span class="p">,</span><span class="n">theta</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Matrix">Matrix<a class="anchor-link" href="#Matrix">¶</a></h2><p><a id="Matrix"></a></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Matrices-and-Matrix-Notation">Matrices and Matrix Notation<a class="anchor-link" href="#Matrices-and-Matrix-Notation">¶</a></h3><p><a id="Matrices_And_Matrix_Notation"></a></p>
+<hr>
+<p>Matrix is a rectangular array of numbers and/or expressions that are arranged into rows and columns. These rows and columns can be considered as row and column vectors. So, the matrix is the rectangular array which contains either row or column vectors. Generally, capital letters are used to denote matrix and lower case letters to denote each element of that matrix and I will follow this convention. A matrix arranges numbers into rows and columns, like this:</p>
+\begin{align*}A =
+\begin{bmatrix}
+a_{1,1} & a_{1,2}\\
+a_{2,1} & a_{2,2}
+\end{bmatrix}_{2\times2}
+\end{align*}<p>Here, matrix $A$ has four elements, denoted by lower letter $a$, where subscripts denote row and column number. For example, $a_{2,1}$ denotes element at the cross of the second row and first column.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Dimension-of-Matrices">Dimension of Matrices<a class="anchor-link" href="#Dimension-of-Matrices">¶</a></h3><p><a id="Dimension_Of_Matrix"></a></p>
+<hr>
+<p>If a matrix $A$ has $n$ rows and $m$ columns, we call $A$ an $n\times m$ matrix and it is read as <strong>"n by m matrix"</strong>. A typical $n\times m$ matrix $A$ can be written as:</p>
+\begin{align*} A =
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1m} \\
+a_{21} & a_{22} & \cdots & a_{2m} \\
+\vdots & \vdots &  & \vdots \\
+a_{n1} & a_{n2} & \cdots & a_{nm}
+\end{bmatrix}_{n \times m}
+\end{align*}<p>When $n=m$ we have square matrix.</p>
+<p>To link this matrix to the vector we can rewrite it by the following way:</p>
+\begin{align*} A =
+\begin{bmatrix}
+[a_{11} & a_{12} & \cdots & a_{1m}] \\
+[a_{21} & a_{22} & \cdots & a_{2m}] \\
+[\vdots & \vdots &  & \vdots] \\
+[a_{n1} & a_{n2} & \cdots & a_{nm}]
+\end{bmatrix}_{n \times m}
+\end{align*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Matrix-Operations">Matrix Operations<a class="anchor-link" href="#Matrix-Operations">¶</a></h3><p><a id="Matrix_Operations"></a></p>
+<hr>
+<p>We add two matrices elementwise. To exist this addition we require that the dimensions of the two matrices coincide. If we have two matrices, $A$ and $B$, addition is defined by:</p>
+\begin{align*}
+A + B =
+\begin{bmatrix}
+a_{11} & \cdots & a_{1m} \\
+\vdots & \vdots & \vdots \\
+a_{n1} & \cdots & a_{nm} \\
+\end{bmatrix} +
+\begin{bmatrix}
+b_{11} & \cdots & b_{1m} \\
+\vdots & \vdots & \vdots \\
+b_{n1} & \cdots & b_{nm} \\
+\end{bmatrix} =
+\begin{bmatrix}
+a_{11} + b_{11} &  \cdots & a_{1m} + b_{1m} \\
+\vdots & \vdots & \vdots \\
+a_{n1} + b_{n1} &  \cdots & a_{nm} + b_{nm} \\
+\end{bmatrix}
+\end{align*}<p>Matrix subtraction is defined in the same fashion as the addition.</p>
+<p>The nagative of a matrix, is just a matrix with the sign of each element reversed:</p>
+\begin{align*} A =
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1m} \\
+a_{21} & a_{22} & \cdots & a_{2m} \\
+\vdots & \vdots &  & \vdots \\
+a_{n1} & a_{n2} & \cdots & a_{nm}
+\end{bmatrix}
+\end{align*}\begin{align*} -A =
+\begin{bmatrix}
+-a_{11} & -a_{12} & \cdots & -a_{1m} \\
+-a_{21} & -a_{22} & \cdots & -a_{2m} \\
+\vdots & \vdots &  & \vdots \\
+-a_{n1} & -a_{n2} & \cdots & -a_{nm}
+\end{bmatrix}
+\end{align*}<p>Multiplying matrices is a little more complex than the operations we've seen so far. There are two cases to consider. One is <em>scalar multiplication</em> (multiplying a matrix by a single number), and second is <em>matrix multiplication</em> (multiplying a matrix by another matrix).</p>
+<p>If we have some scalar or number $\gamma$ and matrix $A$, scalar multiplication is:</p>
+\begin{align*}
+\gamma A =
+\gamma
+\begin{bmatrix}
+a_{11} &  \cdots & a_{1m} \\
+\vdots & \vdots  & \vdots \\
+a_{n1} &  \cdots & a_{nm} \\
+\end{bmatrix} =
+\
+\begin{bmatrix}
+\gamma a_{11} & \cdots & \gamma a_{1m} \\
+\vdots & \vdots & \vdots \\
+\gamma a_{n1} & \cdots & \gamma a_{nm} \\
+\end{bmatrix}
+\end{align*}<p>To multiply two matrices, we take <strong>inner product of $i$-th row of the matrix $A$ and $j$-th columns of matrix $B$</strong>. If we have two matrices $A$ is $n \times k$ and $B$ is $j \times m$, then to multiply $A$ and $B$, we require $k=j$, and resulting matrix $AB$ is $n \times m$.</p>
+\begin{align*}
+A \cdot B =
+\begin{bmatrix}
+a_{11} & \cdots & a_{1k} \\
+\vdots & \vdots & \vdots \\
+a_{n1} & \cdots & a_{nk} \\
+\end{bmatrix}_{n\times k}
+\cdot
+\begin{bmatrix}
+b_{11} & \cdots & b_{1m} \\
+\vdots & \vdots & \vdots \\
+b_{j1} & \cdots & b_{jm} \\
+\end{bmatrix}_{j \times m} =
+\
+\begin{bmatrix}
+(a_{11} \times b_{11} & +~\cdots~+ & a_{1k} \times b_{j1}),~\cdots~,(a_{11} \times b_{1m} & +~\cdots~+ & a_{1k} \times b_{jm}) \\
+\vdots & \vdots & \vdots \\
+(a_{n1} \times b_{11} & +~\cdots~+ & a_{nk} \times b_{j1}),~\cdots~,(a_{n1} \times b_{1m} & +~\cdots~+ & a_{nk} \times b_{jm})\\
+\end{bmatrix}_{n \times m}
+\end{align*}<p>If you did not catch the idea of matrix multiplication don't worry. In numerical representation section I will provide simpler example and some extra source to take a look.</p>
+<blockquote><p><strong>Note</strong> that, in matrix multiplication, $A \cdot B$ is <strong>not</strong> same as $B \cdot A$.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Matrix-Transpose">Matrix Transpose<a class="anchor-link" href="#Matrix-Transpose">¶</a></h3><p><a id="Matrix_Transpose"></a></p>
+<hr>
+<p>In the above example, we saw that the matrix is the collection of vectors. We also know that vectors can be horizontal as well as vertical, or row and column vectors. Now, what if we change in any matrix row vectors into column vectors? This operation is known as transposition. The idea of this operation is to change matrix rows into matrix columns or vice versa, and is denoted by the superscript $T$.</p>
+\begin{align*} A =
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1m} \\
+a_{21} & a_{22} & \cdots & a_{2m} \\
+\vdots & \vdots &  & \vdots \\
+a_{n1} & a_{n2} & \cdots & a_{nm}
+\end{bmatrix}_{n \times m}
+\end{align*}<p>Then</p>
+\begin{align*} A^{T} =
+\begin{bmatrix}
+a_{11} & a_{21} & \cdots & a_{n1} \\
+a_{12} & a_{22} & \cdots & a_{n2} \\
+\vdots & \vdots &  & \vdots \\
+a_{1m} & a_{2m} & \cdots & a_{nm}
+\end{bmatrix}_{m \times n}
+\end{align*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Identity-Matrix">Identity Matrix<a class="anchor-link" href="#Identity-Matrix">¶</a></h3><p><a id="Identity_Matrix"></a></p>
+<hr>
+<p>There are several different types of matrices. In this post, we will introduce only <strong>identity matix</strong>. Future post will introduce other types of matrices. An identity matrix (usually indicated by a capital $I$) is the equivalent in matrix terms of the number 1. It always has the same number of rows as columns, and it has the value <strong>1</strong> in the diagonal element positions I<sub>1,1</sub>, I<sub>2,2</sub>, etc; and 0 in all other element positions. Here's an example of a $3 \times 3$ identity matrix:</p>
+\begin{align*} I =
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}_{3 \times 3}
+\end{align*}<p>Multiplying any matrix by an identity matrix is the same as multiplying a number by 1; the result is the same as the original value:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Numerical-Representation">Numerical Representation<a class="anchor-link" href="#Numerical-Representation">¶</a></h3><p><a id="Numerical_Representation_Matrix"></a></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Dimension-of-a-Matrix">Dimension of a Matrix<a class="anchor-link" href="#Dimension-of-a-Matrix">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># 3x3 matrix in Numpy</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]])</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Matrix A is'</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Dimensions of A is:'</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Matrix-Addition-and-Subtraction">Matrix Addition and Subtraction<a class="anchor-link" href="#Matrix-Addition-and-Subtraction">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
+
+<span class="n">A</span> <span class="o">+</span> <span class="n">B</span>
+<span class="n">A</span> <span class="o">-</span> <span class="n">B</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Matrix A is:'</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Matrix B is:'</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'The sum of them is:'</span><span class="p">,</span> <span class="n">A</span><span class="o">+</span><span class="n">B</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'The difference of them is:'</span><span class="p">,</span> <span class="n">A</span><span class="o">-</span><span class="n">B</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Nergative-Matrix">Nergative Matrix<a class="anchor-link" href="#Nergative-Matrix">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">]])</span>
+<span class="o">-</span><span class="n">C</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Matrix C is:'</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'The negative of C is:'</span><span class="p">,</span> <span class="o">-</span><span class="n">C</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Matrix---Scalar-Multiplication">Matrix - Scalar Multiplication<a class="anchor-link" href="#Matrix---Scalar-Multiplication">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]])</span>
+<span class="n">scalar</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">scalar</span> <span class="o">*</span> <span class="n">A</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Matrix A is:'</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Scalar is:'</span><span class="p">,</span> <span class="n">scalar</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Matrix multiplied by the scalar is:'</span><span class="p">,</span> <span class="n">scalar</span> <span class="o">*</span> <span class="n">A</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As I mentioned earlier, matrix multiplication seems to be tricky at a first glance.</p>
+<p>Let's look at an example:</p>
+\begin{align*}
+\begin{bmatrix}
+1 & 2 & 3 \\ 4 & 5 & 6
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+9 & 8 \\ 7 & 6 \\ 5 & 4
+\end{bmatrix}
+\end{align*}<p>Note that the first matrix is $2\times 3$, and the second matrix is $3\times 2$. The important thing here is that the first matrix has two rows, and the second matrix has two columns. To perform the multiplication, we first take the dot product of the first <strong><em>row</em></strong> of the first matrix (1,2,3) and the first <strong><em>column</em></strong> of the second matrix (9,7,5):</p>
+\begin{align*}
+(1,2,3)
+\cdot
+(9,7,5) =
+(1 \times 9) + (2 \times 7) + (3 \times 5) = 38
+\end{align*}<p>In our resulting matrix (which will always have the same number of <strong><em>rows</em></strong> as the first matrix, and the same number of <strong><em>columns</em></strong> as the second matrix), we can enter this into the first row and first column element:</p>
+\begin{align*}
+\begin{bmatrix}
+38 & ?\\? & ?
+\end{bmatrix}
+\end{align*}<p>Now we can take the dot product of the first row of the first matrix and the second column of the second matrix:</p>
+\begin{align*}
+(1,2,3) \cdot (8,6,4) = (1 \times 8) + (2 \times 6) + (3 \times 4) = 32
+\end{align*}<p>Let's add that to our resulting matrix in the first row and second column element:</p>
+\begin{align*}
+\begin{bmatrix}
+38 & 32\\? & ?
+\end{bmatrix}
+\end{align*}<p>Now we can repeat this process for the second row of the first matrix and the first column of the second matrix:</p>
+\begin{align*}
+(4,5,6) \cdot (9,7,5) = (4 \times 9) + (5 \times 7) + (6 \times 5) = 101
+\end{align*}<p>Which fills in the next element in the result:</p>
+\begin{align*}
+\begin{bmatrix}
+38 & 32\\101 & ?
+\end{bmatrix}
+\end{align*}<p>Finally, we get the dot product for the second row of the first matrix and the second column of the second matrix:</p>
+\begin{align*}
+(4,5,6) \cdot (8,6,4) = (4 \times 8) + (5 \times 6) + (6 \times 4) = 86
+\end{align*}<p>Giving us:</p>
+\begin{align*}
+\begin{bmatrix}
+38 & 32\\101 & 86
+\end{bmatrix}
+\end{align*}<hr>
+<p>If this is not enough to catch the idea, take a look this <a href="https://www.mathsisfun.com/algebra/matrix-multiplying.html">explanation</a></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Matrix---Matrix-Multiplication">Matrix - Matrix Multiplication<a class="anchor-link" href="#Matrix---Matrix-Multiplication">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># In Numpy matrix multiplication can be done with no effort</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'A * B is:'</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'B * A is:'</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="n">A</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Matrix-Transpose">Matrix Transpose<a class="anchor-link" href="#Matrix-Transpose">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]])</span>
+
+<span class="n">A</span><span class="o">.</span><span class="n">T</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Matix A is:'</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Transpose of A is:'</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Matrix---Identity-Matrix-Multiplication">Matrix - Identity Matrix Multiplication<a class="anchor-link" href="#Matrix---Identity-Matrix-Multiplication">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># We have two ways to define identity matrix in Numpy.</span>
+<span class="c1"># First is to define by hand, like above examples, and second is to use Numpy's buildin function</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">I_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">],[</span><span class="mf">0.</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span><span class="mf">0.</span><span class="p">],[</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">1.</span><span class="p">]])</span>
+
+<span class="n">I_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">I_1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">I_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Matrix identity multiplication</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]])</span>
+
+<span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'A = '</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">'A * I = '</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">I</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">¶</a></h2><p><a id="Conclusion"></a></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this post, I tried to cover the basics of linear algebra. I depicted some theory with examples solved by hand as well as with Numpy. I do hope, this blog will help you to grab the necessary knowledge in linear algebra basics and further gives you the direction where to dig deeper. I did not provide here further resources due to not to confuse the reader and give freedom to look for some other materials. The following blog will contain full fledge of resources.</p>
+<p>The post may seem to be extensive. If you feel that I sacrifice some important notions in order for the post to be short or there is(are) inconsistencies, please make a pull request <a href="https://github.com/Okroshiashvili/Jupyter-Notebooks">here</a>.</p>
+<p>If some part of the blog is someway unclear to you, please comment below.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="References">References<a class="anchor-link" href="#References">¶</a></h2><h4 id="Vector">Vector<a class="anchor-link" href="#Vector">¶</a></h4><ul>
+<li><p><a href="https://www.youtube.com/watch?v=lXNXrLcoerU">Gilbert Strang, Lec21 MIT - Eigenvalues and eigenvectors</a></p>
+</li>
+<li><p><a href="https://www.youtube.com/watch?v=lXNXrLcoerU">Gilbert Strang, Lec 21 MIT, Spring 2005</a></p>
+</li>
+</ul>
+<h4 id="Matrix">Matrix<a class="anchor-link" href="#Matrix">¶</a></h4><ul>
+<li><a href="http://setosa.io/ev/eigenvectors-and-eigenvalues/">Victor Powell and Lewis Lehe - Interactive representation of eigenvectors</a></li>
+</ul>
+<h4 id="Matrix-Decomposition">Matrix Decomposition<a class="anchor-link" href="#Matrix-Decomposition">¶</a></h4><ul>
+<li><a href="https://rosettacode.org/wiki/Cholesky_decomposition">Cholesky Decomposition</a></li>
+</ul>
+<h4 id="Eigenvectors">Eigenvectors<a class="anchor-link" href="#Eigenvectors">¶</a></h4><ul>
+<li><a href="http://setosa.io/ev/eigenvectors-and-eigenvalues/">Victor Powell and Lewis Lehe - Interactive representation of eigenvectors</a></li>
+</ul>
+<h4 id="Linear-transformations">Linear transformations<a class="anchor-link" href="#Linear-transformations">¶</a></h4><ul>
+<li><p><a href="http://ia802205.us.archive.org/18/items/MIT18.06S05_MP4/30.mp4">Gilbert Strang - Linear transformation</a></p>
+</li>
+<li><p><a href="https://www.youtube.com/watch?v=wXCRcnbCsJA">Linear transformation - demo video</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+
+            <div>
+</div>
+
+            <section>
+    <p id="post-share-links">
+    Like this post? Share on:
+    <a href="https://twitter.com/intent/tweet?text=Basics%20of%20Linear%20Algebra&url=/articles/mathematics/basics-of-linear-algebra.html&via=N_Okroshiashvil&hashtags=linear-algebra,mathematics" target="_blank" title="Share on Twitter">Twitter</a>
+    ❄
+    <a href="https://www.facebook.com/sharer/sharer.php?u=/articles/mathematics/basics-of-linear-algebra.html" target="_blank" title="Share on Facebook">Facebook</a>
+    ❄
+    <a href="https://plus.google.com/share?url=/articles/mathematics/basics-of-linear-algebra.html" target="_blank" title="Share on Google Plus">Google+</a>
+    ❄
+    <a href="mailto:?subject=Basics%20of%20Linear%20Algebra&amp;body=/articles/mathematics/basics-of-linear-algebra.html" target="_blank" title="Share via Email">Email</a>
+    </p>
+</section>
+
+            
+            <hr/>
+<section>
+    <h2>Keep Reading</h2>
+<ul class="related-posts-list">
+<li><a href="/articles/mathematics/introduction.html" title="Introduction">Introduction</a></li>
+<li><a href="/articles/mathematics/intermediates-of-linear-algebra.html" title="Intermediates of Linear Algebra">Intermediates of Linear Algebra</a></li>
+<li><a href="/articles/mathematics/advances-of-linear-algebra.html" title="Advances of Linear Algebra">Advances of Linear Algebra</a></li>
+</ul>
+<hr />
+</section>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="/articles/mathematics/introduction.html" title="Previous: Introduction">Introduction</a></li>
+                <li class="next-article"><a href="/articles/mathematics/intermediates-of-linear-algebra.html" title="Next: Intermediates of Linear Algebra">Intermediates of Linear Algebra</a> »</li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2019-03-02T12:14:00+04:00">Mar 2, 2019</time>
+            <h4>Category</h4>
+            <a class="category-link" href="/categories.html#mathematics-ref">Mathematics</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="/tags#linear-algebra-ref">Linear Algebra
+                    <span>4</span>
+</a></li>
+                <li><a href="/tags#mathematics-ref">Mathematics
+</a></li>
+            </ul>
+<h4>Stay in Touch</h4>
+    <a href="https://www.linkedin.com/in/nodar-okroshiashvili-a86571131/" title="My linkedin-square Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-linkedin-square sidebar-social-links"></i></a>
+    <a href="https://github.com/Okroshiashvili" title="My Github Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-github sidebar-social-links"></i></a>
+    <a href="https://twitter.com/N_Okroshiashvil" title="My Twitter Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-twitter sidebar-social-links"></i></a>
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="https://github.com/Pelican-Elegant/elegant/" title="Theme Elegant Home Page">Elegant</a></li>
+    </ul>
+</div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : MIT -->
+</html>

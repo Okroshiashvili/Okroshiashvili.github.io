@@ -1,0 +1,2251 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Nodar Okroshiashvili" />
+
+        <meta name="twitter:creator" content="@N_Okroshiashvil">
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="Linear Algebra, Mathematics, Mathematics, " />
+
+<meta property="og:title" content="Advances of Linear Algebra "/>
+<meta property="og:url" content="/articles/mathematics/advances-of-linear-algebra.html" />
+<meta property="og:description" content="This is the fourth and last post in blog series about linear algebra. Introduction Basics of linear algebra Intermediate linear algebra Advances in linear algebra Fisrt, second and third posts are here, here and here In this post I will introduce you to the advances of linear algebra, which in turn includes the following: Vector Basis Vectors Matrix Gaussian Elimination of a Matrix" />
+<meta property="og:site_name" content="Data Science Fabric" />
+<meta property="og:article:author" content="Nodar Okroshiashvili" />
+<meta property="og:article:published_time" content="2019-03-04T12:14:00+04:00" />
+<meta name="twitter:title" content="Advances of Linear Algebra ">
+<meta name="twitter:description" content="This is the fourth and last post in blog series about linear algebra. Introduction Basics of linear algebra Intermediate linear algebra Advances in linear algebra Fisrt, second and third posts are here, here and here In this post I will introduce you to the advances of linear algebra, which in turn includes the following: Vector Basis Vectors Matrix Gaussian Elimination of a Matrix">
+
+        <title>Advances of Linear Algebra  · Data Science Fabric
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/admonition.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
+        <link rel="shortcut icon" href="/theme/images/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/theme/images/apple-touch-icon.png"  type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="/theme/images/apple-touch-icon-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="/theme/images/apple-touch-icon-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="/theme/images/apple-touch-icon-76x76.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="/theme/images/apple-touch-icon-114x114.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="/theme/images/apple-touch-icon-120x120.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="/theme/images/apple-touch-icon-144x144.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+
+
+
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="/"><span class=site-name>Data Science Fabric</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href="">Home</a></li>
+                            <li ><a href="/pages/Contact.html">Contact</a></li>
+                            <li ><a href="/pages/About.html">About Me</a></li>
+                            <li ><a href="/categories">Categories</a></li>
+                            <li ><a href="/tags">Tags</a></li>
+                            <li ><a href="/archives">Archives</a></li>
+                            <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="/articles/mathematics/advances-of-linear-algebra.html"> Advances of Linear Algebra  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            
+            
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is the fourth and last post in blog series about linear algebra.</p>
+<ol>
+<li>Introduction</li>
+<li>Basics of linear algebra</li>
+<li>Intermediate linear algebra</li>
+<li><strong>Advances in linear algebra</strong></li>
+</ol>
+<p>Fisrt, second and third posts are <a href="აქ ჩასვი პირველის ლინკი">here</a>, <a href="აქ ჩასვი მეორეს ლინკი">here</a> and <a href="აქ ჩასვი მესამეს ლინკი">here</a></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this post I will introduce you to the advances of linear algebra, which in turn includes the following:</p>
+<ul>
+<li><a href="#Vector">Vector</a><ul>
+<li><a href="#Basis_Vectors">Basis Vectors</a></li>
+</ul>
+</li>
+<li><a href="#Matrix">Matrix</a><ul>
+<li><a href="#Gaussian_Elimination_of_a_Matrix">Gaussian Elimination of a Matrix</a></li>
+<li><a href="#Gauss_Jordan_Elimination_of_a_Matrix">Gauss-Jordan Elimination of a Matrix</a></li>
+<li><a href="#The_Inverse_of_a_Matrix_Using_Gauss_Jordan_Elimination">The Inverse of a Matrix Using Gauss-Jordan Elimination</a></li>
+<li><a href="#Image_of_a_Matrix">Image of a Matrix</a></li>
+<li><a href="#Kernel_of_a_Matrix">Kernel of a Matrix</a></li>
+<li><a href="#Rank_of_a_Matrix">Rank of a Matrix</a></li>
+<li><a href="#Find_the_Basis_of_a_Matrix">Find the Basis of a Matrix</a></li>
+<li><a href="#Transformations">Transformations</a></li>
+<li><a href="#Eigenvalues">Eigenvalues</a></li>
+<li><a href="#Eigenvectors">Eigenvectors</a></li>
+<li><a href="#Spectrum_and_Spectral_Radius">Spectrum and Spectral Radius</a></li>
+<li><a href="#Numerical_Representation_Matrix">Numerical Representation</a></li>
+</ul>
+</li>
+<li><a href="#Matrix_Decompositions">Matrix Decompositions</a><ul>
+<li><a href="#Cholesky_Decomposition">Cholesky Decomposition</a></li>
+<li><a href="#QR_Decomposition">QR Decomposition</a></li>
+<li><a href="#Eigendecomposition">Eigendecomposition</a></li>
+<li><a href="#Singular_Value_Decomposition">Singular Value Decomposition</a></li>
+<li><a href="#Inverse_of_a_Square_Full_Rank_Matrix">Inverse of a Square Full Rank Matrix</a></li>
+<li><a href="#Numerical_Representation_Decompositions">Numerical Representation</a></li>
+</ul>
+</li>
+<li><a href="#Conclusion">Conclusion</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Vector">Vector<a class="anchor-link" href="#Vector">¶</a></h2><p><a id="Vector"></a></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Basis-Vectors">Basis Vectors<a class="anchor-link" href="#Basis-Vectors">¶</a></h3><p><a id="Basis_Vectors"></a></p>
+<hr>
+<p>In the <a href="აქ ბასიკის ლინკი">basics</a>, we saw what is a unit vector. To refresh, the unit vector is the vector with length 1 and the formula is</p>
+\begin{align*}
+\hat{X} = \frac{X}{\|X\|}
+\end{align*}<p>For farther explanation, unit vectors can be used to represent the axes of a <a href="https://en.wikipedia.org/wiki/Cartesian_coordinate_system">Cartesian coordinate system</a>. For example in a three-dimensional Cartesian coordinate system such vectors are:</p>
+\begin{align*} \hat{i} =
+\begin{bmatrix}
+1 \\
+0 \\
+0
+\end{bmatrix}
+\quad
+\hat{j} =
+\begin{bmatrix}
+0 \\
+1 \\
+0
+\end{bmatrix}
+\quad
+\hat{k} =
+\begin{bmatrix}
+0 \\
+0 \\
+1
+\end{bmatrix}
+\end{align*}<p>which represents, $x$, $y$, and $z$ axes, respectively.</p>
+<p>For two dimensional space we have</p>
+\begin{align*} \hat{i} =
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
+\quad
+\hat{j} =
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+\end{align*}<p>Let deal with two-dimensional space to catch the idea of basis easily and then generalize this idea for higher dimensions. Imagine, we have vector space or collection of vectors $\vec{V}$ over the Cartesian coordinate system. This space includes all two-dimensional vectors, or in other words, vectors with only two elements, $x$, and $y$.</p>
+<blockquote><p>A <strong>basis</strong>, call it $B$, of vector space $V$ over the Cartesian coordinate system is a linearly independent subset of $V$ that spans whole vector space $V$. To be precise, basis $B$ to be the basis it must satisfie two conditions:</p>
+</blockquote>
+<ul>
+<li><p>Linearly independence property - states that all vectors in $B$ are linearly independent</p>
+</li>
+<li><p>The spanning property - states that $B$ spans whole $V$</p>
+</li>
+</ul>
+<p>We can combine these two conditions in one sentence. $B$ is the basis if its all elements are linearly independent and every element of $V$ is a linear combination of elements of $B$.</p>
+<p>From these conditions, we can conclude that unit vectors $\hat{i}$ and $\hat{j}$ are the basis of $\mathbb{R^2}$. This kind of bases are also called <strong>standard basis</strong> or <strong>natural basis</strong>. The standard basis are denoted by $e_{1}$, $e_{2}$, $e_{3}$ and so on. I will be consistent and use the later notation for standard basis and $\hat{i}$, $\hat{j}$ and $\hat{k}$ for unit vectors.</p>
+<p>These standard basis vectors are the basis in the sense that any other vector in $V$ can be expressed uniquely as a linear combination of these unit vectors. For example, every vector $v$ in two-dimensional space can be written as</p>
+\begin{align*}
+x\ e_{1} + y\ e_{2}
+\end{align*}<p>where $e_{1}$ and $e_{2}$ are unit vectors and $x$ and $y$ are scalar components or elements of the vector $v$.</p>
+<p>Now, to generalize the idea for higher dimensions we just have to apply the same logic as above, for $\mathbb{R^3}$ and more. In $\mathbb{R^3}$ we have standard basis vectors $e_{1}$, $e_{2}$, $e_{3}$, and generally for $\mathbb{R^n}$ we have standard basis vector space</p>
+\begin{align*}
+E = 
+\begin{bmatrix}
+e_{1} \\
+e_{2} \\
+\cdots \\
+e_{n}
+\end{bmatrix}
+\end{align*}<p>To generalize the definition of basis further let consider the following:</p>
+<p><strong>If elements $\{v_{1}, v_{2},\cdots,v_{n}\}$ of $V$ generate $V$ and in addition they are linearly independent, then $\{v_{1}, v_{2},\cdots,v_{n}\}$ is called a basis of $V$. We shall say that the elements $v_{1}, v_{2},\cdots,v_{n}$ constitute or form a basis of V.</strong> Vector space $V$ can have several basis.</p>
+<p>At this stage, the notion of basis seems very abstract even for me, and believe me it was totally unclear for me until I solved some examples by hand. I'll show you how to compute basis after explaining row-echelon and reduced row-echelon forms and you'll understand it. However, it's not enough only to know how to row-reduce the given matrix. It's necessary to know which basis you want. Either column space or row space basis or the basis for nullspace. These notions are explained below and after that, we can find the basis for each of them.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Matrix">Matrix<a class="anchor-link" href="#Matrix">¶</a></h2><p><a id="Matrix"></a></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Gaussian-Elimination-of-a-Matrix">Gaussian Elimination of a Matrix<a class="anchor-link" href="#Gaussian-Elimination-of-a-Matrix">¶</a></h3><p><a id="Gaussian_Elimination_of_a_Matrix"></a></p>
+<hr>
+<p>In linear algebra, Gaussian Elimination is the method to solve the system of linear equations. This method is the sequence of operations performed on the coefficient matrix of the system. Except for solving the linear systems, the method can be used to find the rank of a matrix, the determinant as well as the inverse of a square invertible matrix.</p>
+<p>And what is the sequence of operations?</p>
+<p>Under this notion, elementary row operations are meant. We've covered it in the previous post but for the refresher, ERO's are:</p>
+<ul>
+<li><p>Interchange rows</p>
+</li>
+<li><p>Multiplay each element in a row by a non-zero number</p>
+</li>
+<li><p>Multiply a row by a non-zero number and add the result to another row</p>
+</li>
+</ul>
+<p>Performing Gaussian elimination results in the matrix in <strong>Row Echelon Form</strong> (ref). The matrix is said to be in row echelon form if it satisfies the following conditions:</p>
+<ul>
+<li><p>The first non-zero element in each row, called the leading entry, is a 1</p>
+</li>
+<li><p>Each leading entry is in a column, which is the right side of the leading entry in the previous row</p>
+</li>
+<li><p>Below the leading entry in a column, all other entries are zero</p>
+</li>
+</ul>
+<p>To catch the idea of this process, let consider the example. Actually, we have no matrix (not necessarily true), we have the system of linear equations in the following form:</p>
+\begin{align*}
+\begin{cases}
+x + 2y - z = 5\\
+3x + y - 2z = 9\\
+-x + 4y + 2z = 0
+\end{cases}
+\end{align*}<p>Based on these equations we can form the following matrix</p>
+\begin{align*}
+\begin{bmatrix}
+1 & 2 & -1 \\
+3 & 1 & -2 \\
+-1 & 4 & 2
+\end{bmatrix}
+\end{align*}<p>This matrix is called <strong>coefficient matrix</strong> as it contains the coefficients of the linear equations. Having the coefficient matrix, we can rewrite our system in the following form:</p>
+\begin{align*}
+Ax = b
+\end{align*}<p>Where $A$ is the coefficient matrix, $x$ is the vector of the unknowns, and $b$ is the vector of the right-hand side components</p>
+<p>To solve this simultaneous system, the coefficients matrix is not enough. We need something more, on which we can perform ELO's. This matrix is:</p>
+\begin{align*}
+\begin{bmatrix}\begin{array}{@{}ccc|c@{}}
+1 & 2 & -1 & 5 \\
+3 & 1 & -2 & 9 \\
+-1 & 4 & 2 & 0
+\end{array}
+\end{bmatrix} = [A | b]
+\end{align*}<p>which is called <strong>augmented matrix</strong>, which in turn gives us the possibility to perform ELO's, in other words, we do Gaussian elimination and the resulted matrix will be in row echelon form. Using back substitution on the resulted matrix gives the solution to our system of equations.</p>
+<p>Let do it by hand. We have the initial system</p>
+\begin{align*}
+\begin{bmatrix}\begin{array}{@{}ccc|c@{}}
+1 & 2 & -1 & 5 \\
+3 & 1 & -2 & 9 \\
+-1 & 4 & 2 & 0
+\end{array}
+\end{bmatrix}
+\equiv
+\begin{cases}
+x + 2y - z = 5 \\
+3x + y - 2z = 9 \\
+-x + 4y + 2z = 0
+\end{cases}
+\end{align*}<p>Then, using ERO's</p>
+<ol>
+<li><p>$R3 \rightarrow R3 + R1$
+\begin{align*}
+\begin{bmatrix}\begin{array}{@{}ccc|c@{}}
+1 & 2 & -1 & 5 \\
+3 & 1 & -2 & 9 \\
+0 & 6 & 1 & 5
+\end{array}
+\end{bmatrix}
+\equiv
+\begin{cases}
+x + 2y - z = 5 \\
+3x + y - 2z = 9 \\
+6y + z = 5
+\end{cases}
+\end{align*}</p>
+</li>
+<li><p>$R2 \rightarrow R2 - 3R1$
+\begin{align*}
+\begin{bmatrix}\begin{array}{@{}ccc|c@{}}
+1 & 2 & -1 & 5 \\
+0 & -5 & 1 & -6 \\
+0 & 6 & 1 & 5
+\end{array}
+\end{bmatrix}
+\equiv
+\begin{cases}
+x + 2y - z = 5 \\
+-5y + z = -6 \\
+6y + z = 5
+\end{cases}
+\end{align*}</p>
+</li>
+<li><p>$R2 \rightarrow R2 + R3$
+\begin{align*}
+\begin{bmatrix}\begin{array}{@{}ccc|c@{}}
+1 & 2 & -1 & 5 \\
+0 & 1 & 2 & -1 \\
+0 & 6 & 1 & 5
+\end{array}
+\end{bmatrix}
+\equiv
+\begin{cases}
+x + 2y - z = 5 \\
+y + 2z = -1 \\
+6y + z = 5
+\end{cases}
+\end{align*}</p>
+</li>
+<li><p>$R3 \rightarrow R3 - 6R2$
+\begin{align*}
+\begin{bmatrix}\begin{array}{@{}ccc|c@{}}
+1 & 2 & -1 & 5 \\
+0 & 1 & 2 & -1 \\
+0 & 0 & -11 & 11
+\end{array}
+\end{bmatrix}
+\equiv
+\begin{cases}
+x + 2y - z = 5 \\
+y + 2z = -1 \\
+-11z = 11
+\end{cases}
+\end{align*}</p>
+</li>
+<li><p>$R3 \rightarrow R3 \cdot -\frac{1}{11}$
+\begin{align*}
+\begin{bmatrix}\begin{array}{@{}ccc|c@{}}
+1 & 2 & -1 & 5 \\
+0 & 1 & 2 & -1 \\
+0 & 0 & 1 & -1
+\end{array}
+\end{bmatrix}
+\equiv
+\begin{cases}
+x + 2y - z = 5 \quad (A)\\
+y + 2z = -1 \quad (B)\\
+z = -1 \quad (C)
+\end{cases}
+\end{align*}</p>
+</li>
+<li><p>Backsubstitution
+\begin{align*}
+\begin{cases}
+(C) \quad z = -1 \\
+(B) \quad y = -1 - 2z \quad \Rightarrow \quad y = -1 - 2(-1) = 1 \\
+(A) \quad x = 5 - 2y + z \quad \Rightarrow \quad x = 5 - 2(1) + (-1) = 2
+\end{cases}
+\end{align*}</p>
+</li>
+<li><p>Solution
+\begin{align*}
+x = 2 \\
+y = 1 \\
+x = -1
+\end{align*}</p>
+</li>
+</ol>
+<p>This is the solution of the initial system, as well as the last system and every intermediate system. The matrix obtained in step 5 above is in Row-Echelon form as it satisfied above-mentioned conditions.</p>
+<p>Note that, starting with a particular matrix, a different sequence of ERO's can lead to different row echelon form</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Gauss-Jordan-Elimination-of-a-Matrix">Gauss-Jordan Elimination of a Matrix<a class="anchor-link" href="#Gauss-Jordan-Elimination-of-a-Matrix">¶</a></h3><p><a id="Gauss_Jordan_Elimination_of_a_Matrix"></a></p>
+<hr>
+<p>Gaussian elimination performs row operations to produce zeros below the main diagonal of the coefficient matrix to reduce it to row echelon form. Once it's done we perform back substitution to find the solution. However, we can continue performing ERO's to reduce coefficient matrix farther, to produce <strong>Reduced Row Echelon Form</strong> (rref). The matrix is in reduced row echelon form if it satisfies the following conditions:</p>
+<ul>
+<li><p>It is in row echelon form</p>
+</li>
+<li><p>The leading entry in each row is the only non-zero entry in its column</p>
+</li>
+</ul>
+<p>Gauss-Jordan elimination starts when Gauss elimination left off. Loosely speaking, Gaussian elimination works from the top down and when it stops, we start Gauss-Jordan elimination from the bottom up. The Reduced Row Echelon Form matrix is the result of Gauss-Jordan Elimination process.</p>
+<p>We can continue our example from step 5 and see what is Gauss-Jordan elimination. At step 5 we had</p>
+<ol>
+<li>$R3 \rightarrow R3 \cdot -\frac{1}{11}$
+\begin{align*}
+\begin{bmatrix}\begin{array}{@{}ccc|c@{}}
+1 & 2 & -1 & 5 \\
+0 & 1 & 2 & -1 \\
+0 & 0 & 1 & -1
+\end{array}
+\end{bmatrix}
+\equiv
+\begin{cases}
+x + 2y - z = 5 \\
+y + 2z = -1 \\
+z = -1
+\end{cases}
+\end{align*}</li>
+</ol>
+<p>Now, from bottom to up we perform the following ERO's</p>
+<ol>
+<li><p>$R2 \rightarrow R2 - 2R3$
+\begin{align*}
+\begin{bmatrix}\begin{array}{@{}ccc|c@{}}
+1 & 2 & -1 & 5 \\
+0 & 1 & 0 & 1 \\
+0 & 0 & 1 & -1
+\end{array}
+\end{bmatrix}
+\equiv
+\begin{cases}
+x + 2y - z = 5 \\
+y  = 1 \\
+z = -1
+\end{cases}
+\end{align*}</p>
+</li>
+<li><p>$R1 \rightarrow R1 + R3$
+\begin{align*}
+\begin{bmatrix}\begin{array}{@{}ccc|c@{}}
+1 & 2 & 0 & 4 \\
+0 & 1 & 0 & 1 \\
+0 & 0 & 1 & -1
+\end{array}
+\end{bmatrix}
+\equiv
+\begin{cases}
+x + 2y = 4 \\
+y  = 1 \\
+z = -1
+\end{cases}
+\end{align*}</p>
+</li>
+<li><p>$R1 \rightarrow R1 - 2R2$
+\begin{align*}
+\begin{bmatrix}\begin{array}{@{}ccc|c@{}}
+1 & 0 & 0 & 2 \\
+0 & 1 & 0 & 1 \\
+0 & 0 & 1 & -1
+\end{array}
+\end{bmatrix}
+\equiv
+\begin{cases}
+x = 2 \\
+y = 1 \\
+z = -1
+\end{cases}
+\end{align*}</p>
+</li>
+</ol>
+<p>The solution is</p>
+\begin{align*}
+x = 2 \\
+y = 1 \\
+x = -1
+\end{align*}<p>and this is the same as the solution of the Gauss elimination. The matrix in step 8 is the Reduced Row Echelon Form of our initial coefficient matrix $A$.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-Inverse-of-a-Matrix-Using-Gauss-Jordan-Elimination">The Inverse of a Matrix Using Gauss-Jordan Elimination<a class="anchor-link" href="#The-Inverse-of-a-Matrix-Using-Gauss-Jordan-Elimination">¶</a></h3><p><a id="The_Inverse_of_a_Matrix_Using_Gauss_Jordan_Elimination"></a></p>
+<hr>
+<p>Suppose, we have given the matrix and want to find its inverse but do not want to use the technique mentioned in the intermediate post. We can use Gauss-Jordan elimination with little modification to find the inverse of a matrix. To be consistent, I use the above coefficient matrix but not the right-hand side of the system. So, our matrix is</p>
+\begin{align*} A =
+\begin{bmatrix}
+1 & 2 & -1 \\
+3 & 1 & -2 \\
+-1 & 4 & 2
+\end{bmatrix}
+\end{align*}<p>To find the inverse of $A$, we need to augment $A$ by the identity matrix $I$ which has the same dimensions as $A$. It is a must the identity to have the same dimensions. After augmentation we have</p>
+\begin{align*} [A | I] =
+\begin{bmatrix}
+\begin{array}{@{}ccc|ccc@{}} 
+1 & 2 & -1 & 1 & 0 & 0 \\
+3 & 1 & -2 & 0 & 1 & 0 \\
+-1 & 4 & 2 & 0 & 0 & 1
+\end{array}
+\end{bmatrix}
+\end{align*}<p>We have to perform elementary row operations in the same way as we did in the above example. Particularly,</p>
+<ol>
+<li><p>$R3 \rightarrow R3 + R1$
+\begin{align*}
+\begin{bmatrix}\begin{array}{@{}ccc|ccc@{}}
+1 & 2 & -1 & 1 & 0 & 0\\
+3 & 1 & -2 & 0 & 1 & 0\\
+0 & 6 & 1 & 1 & 0 & 1
+\end{array}
+\end{bmatrix}
+\end{align*}</p>
+</li>
+<li><p>$R2 \rightarrow R2 - 3R1$
+\begin{align*}
+\begin{bmatrix}\begin{array}{@{}ccc|ccc@{}}
+1 & 2 & -1 & 1 & 0 & 0\\
+0 & -5 & 1 & -3 & 1 & -3\\
+0 & 6 & 1 & 1 & 0 & 1
+\end{array}
+\end{bmatrix}
+\end{align*}</p>
+</li>
+<li><p>$R2 \rightarrow R2 + R3$
+\begin{align*}
+\begin{bmatrix}\begin{array}{@{}ccc|ccc@{}}
+1 & 2 & -1 & 1 & 0 & 0\\
+0 & 1 & 2 & -2 & 1 & -2\\
+0 & 6 & 1 & 1 & 0 & 1
+\end{array}
+\end{bmatrix}
+\end{align*}</p>
+</li>
+<li><p>$R3 \rightarrow R3 - 6R2$
+\begin{align*}
+\begin{bmatrix}\begin{array}{@{}ccc|ccc@{}}
+1 & 2 & -1 & 1 & 0 & 0\\
+0 & 1 & 2 & -2 & 1 & -2\\
+0 & 0 & -11 & 13 & -6 & 13
+\end{array}
+\end{bmatrix}
+\end{align*}</p>
+</li>
+<li><p>$R3 \rightarrow R3 \cdot -\frac{1}{11}$
+\begin{align*}
+\begin{bmatrix}\begin{array}{@{}ccc|ccc@{}}
+1 & 2 & -1 & 1 & 0 & 0\\
+0 & 1 & 2 & -2 & 1 & -2\\
+0 & 0 & 1 & -\frac{13}{11} & \frac{6}{11} & -\frac{13}{11}
+\end{array}
+\end{bmatrix}
+\end{align*}</p>
+</li>
+<li><p>$R2 \rightarrow R2 - 2R3$
+\begin{align*}
+\begin{bmatrix}\begin{array}{@{}ccc|ccc@{}}
+1 & 2 & -1 & 1 & 0 & 0\\
+0 & 1 & 0 & \frac{4}{11} & -\frac{9}{100} & \frac{4}{11}\\
+0 & 0 & 1 & -\frac{13}{11} & \frac{6}{11} & -\frac{13}{11}
+\end{array}
+\end{bmatrix}
+\end{align*}</p>
+</li>
+<li><p>$R1 \rightarrow R1 + R3$
+\begin{align*}
+\begin{bmatrix}\begin{array}{@{}ccc|ccc@{}}
+1 & 2 & 0 & -\frac{2}{11} & \frac{6}{11} & -\frac{13}{11}\\
+0 & 1 & 0 & \frac{4}{11} & -\frac{9}{100} & \frac{4}{11}\\
+0 & 0 & 1 & -\frac{13}{11} & \frac{6}{11} & -\frac{13}{11}
+\end{array}
+\end{bmatrix}
+\end{align*}</p>
+</li>
+<li><p>$R1 \rightarrow R1 - 2R2$
+\begin{align*}
+\begin{bmatrix}\begin{array}{@{}ccc|ccc@{}}
+1 & 0 & 0 & -\frac{10}{11} & \frac{18}{25} & -\frac{21}{11}\\
+0 & 1 & 0 & \frac{4}{11} & -\frac{9}{100} & \frac{4}{11}\\
+0 & 0 & 1 & -\frac{13}{11} & \frac{6}{11} & -\frac{13}{11}
+\end{array}
+\end{bmatrix}
+\end{align*}</p>
+</li>
+</ol>
+<p>Our inverse of $A$ is</p>
+\begin{align*}A^{-1} =
+\begin{bmatrix}
+-\frac{10}{11} & \frac{18}{25} & -\frac{21}{11}\\
+\frac{4}{11} & -\frac{9}{100} & \frac{4}{11}\\
+-\frac{13}{11} & \frac{6}{11} & -\frac{13}{11}
+\end{bmatrix}
+\end{align*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Image-of-a-Matrix">Image of a Matrix<a class="anchor-link" href="#Image-of-a-Matrix">¶</a></h3><p><a id="Image_of_a_Matrix"></a></p>
+<hr>
+<p>Let $A$ be $m\times n$ matrix. Space spanned by its column vectors are called range, image, or column space of a matrix $A$. The row space is defined similarly. I only consider column space as all the logic is the same for row space.</p>
+<p>The precise definition is the following:</p>
+<p>Let $A$ be an $m\times n$ matrix, with column vectors $v_{1}, v_{2}, \cdots, v_{n}$. A linear combination of these vectors is any vector of the following form: $c_{1}v_{1} + c_{2}v_{2} + \cdots + c_{n}v_{n}$, where $c_{1}, c_{2}, \cdots , c_{n}$ are scalars. The set of all possible linear combinations of $v_{1}, v_{2}, \cdots , v_{n}$ is called the column space of $A$.</p>
+<p>For example:</p>
+\begin{align*}A =
+\begin{bmatrix}
+1 & 0\\
+0 & 1\\
+2 & 0
+\end{bmatrix}
+\end{align*}<p>Column vectors are:</p>
+\begin{align*}v_{1} =
+\begin{bmatrix}
+1\\
+0\\
+2
+\end{bmatrix}
+\quad
+v_{2}
+\begin{bmatrix}
+0\\
+1\\
+0
+\end{bmatrix}
+\end{align*}<p>A linear combination of $v_{1}$ and $v_{2}$ is any vector of the form</p>
+\begin{align*}c_{1}
+\begin{bmatrix}
+1\\
+0\\
+2
+\end{bmatrix} + c_{2}
+\begin{bmatrix}
+0\\
+1\\
+0
+\end{bmatrix} = 
+\begin{bmatrix}
+c_{1}\\
+c_{2}\\
+2c_{1}
+\end{bmatrix}
+\end{align*}<p>The set of all such vectors is the column space of $A$.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Kernel-of-a-Matrix">Kernel of a Matrix<a class="anchor-link" href="#Kernel-of-a-Matrix">¶</a></h3><p><a id="Kernel_of_a_Matrix"></a></p>
+<hr>
+<p>In linear algebra, the kernel or a.k.a null space is the solution of the following homogeneous system:</p>
+<p>$A\cdot X = 0$</p>
+<p>where $A$ is a $m\times n$ matrix and $X$ is a $m\times 1$ vector and is denoted by $Ker(A)$.</p>
+<p>For more clarity, let consider the numerical example. Lat our matrix $A$ be the following:</p>
+\begin{align*}A =
+\begin{bmatrix}
+2 & 7 & 1 & 3 \\
+-4 & -2 & 2 & -2 \\
+-1 & 7 & 3 & 2 \\
+-2 & 2 & 2 & 0 \\
+\end{bmatrix}
+\end{align*}<p>and our $X$ is</p>
+\begin{align*}X =
+\begin{bmatrix}
+x_{1} \\
+x_{2} \\
+x_{3} \\
+x_{4} \\
+\end{bmatrix}
+\end{align*}<p>We have to form the following system:</p>
+\begin{align*}A\cdot X =
+\begin{bmatrix}
+2 & 7 & 1 & 3 \\
+-4 & -2 & 2 & -2 \\
+-1 & 7 & 3 & 2 \\
+-2 & 2 & 2 & 0 \\
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+x_{1} \\
+x_{2} \\
+x_{3} \\
+x_{4} \\
+\end{bmatrix} = 
+\begin{bmatrix}
+0 \\
+0 \\
+0 \\
+0 \\
+\end{bmatrix}
+\end{align*}<p>After that, we have to put this system into row-echelon or reduced row-echelon form. Let skip detailed calculation and present only results, which is the last matrix.</p>
+\begin{align*}A =
+\begin{bmatrix}
+2 & 7 & 1 & 3\\
+-4 & -2 & 2 & -2\\
+-1 & 7 & 3 & 2\\
+-2 & 2 & 2 & 0
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+-1 & 7 & 3 & 2\\
+-4 & -2 & 2 & -2\\
+2 & 7 & 1 & 3\\
+-2 & 2 & 2 & 0
+\end{bmatrix} 
+\rightarrow
+\begin{bmatrix}
+-1 & 7 & 3 & 2\\
+0 & -30 & -10 & -10\\
+0 & 21 & 7 & 7\\
+0 & -12 & -4 & -4
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+-1 & 7 & 3 & 2\\
+0 & 3 & 1 & 1\\
+0 & 3 & 1 & 1\\
+0 & 3 & 1 & 1
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+-1 & 7 & 3 & 2\\
+0 & 3 & 1 & 1\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0
+\end{bmatrix}
+\end{align*}<p>Now, to find the kernel of the original matrix $A$, we have to solve the following system of equations:</p>
+\begin{align*}
+\begin{cases}
+x_{1} - 7x_{2} - 3x_{3} - 2x_{4} = 0 \\
+        3x_{2} + x_{3} + x_{4} = 0
+\end{cases}
+\rightarrow
+\begin{cases}
+x_{1} = \frac{2}{3}x_{3} - \frac{1}{3}x_{4}\\
+x_{2} = -\frac{1}{3}x_{3} - \frac{1}{3}x_{4}
+\end{cases}
+\end{align*}<p>From this solution we conclude that the kernel of $A$ is</p>
+\begin{align*}Ker(A) = 
+\begin{bmatrix}
+x_{1} = \frac{2}{3}x_{3} - \frac{1}{3}x_{4} \\
+x_{2} = -\frac{1}{3}x_{3} - \frac{1}{3}x_{4} \\
+x_{3} \\
+x_{4}
+\end{bmatrix}
+\end{align*}<p>Where, $x_{3}$ and $x_{4}$ are free variables and can be any number in $R$</p>
+<p>Note, that both original matrix $A$ and its row-echelon for has the same kernel. This means that row reduction preserves the kernel or null space.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Rank-of-a-Matrix">Rank of a Matrix<a class="anchor-link" href="#Rank-of-a-Matrix">¶</a></h3><p><a id="Rank_of_a_Matrix"></a></p>
+<hr>
+<p>In the intermediate tutorial, you saw how to calculate the determinant of a matrix and also saw that any non zero determinant of sub-matrix of the original matrix shows its nondegenerateness. In other words, nonzero determinant gives us information about the rank of the matrix. Also, I said that there was not only one way to find the rank of a matrix. After reviewing Gauss and Gauss-Jordan Elimination and Row-Echelon and Reduced Row-Echelon forms you know that indeed there are other ways to find the determinant of a matrix as well as the rank of the matrix. To keep <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a>, here I only consider a numerical example. The code is provided in the intermediate tutorial.</p>
+<p>Suppose we have matrix $A$ in the following form:</p>
+\begin{align*}A =
+\begin{bmatrix}
+3 & 2 & -1\\
+2 & -3 & -5\\
+-1 & -4 &- 3
+\end{bmatrix}
+\end{align*}<p>Perform Elementary Row Operations we get reduced-echelon form:</p>
+\begin{align*}A = 
+\begin{bmatrix}
+3 & 2 & -1\\
+2 & -3 & -5\\
+-1 & -4 & -3
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+1 & 4 & 3\\
+3 & 2 & -1\\
+2 & -3 & -5
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+1 & 4 & 3\\
+0 & -10 & -10\\
+0 & -11 & -11
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+1 & 4 & 3\\
+0 & 1 & 1\\
+0 & -11 & -11
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+1 & 4 & 3\\
+0 & 1 & 1\\
+0 & 0 & 0
+\end{bmatrix}
+\end{align*}<p>From the last matrix we see that the nonzero determinant only exists in $2\times2$ sub-matrices, hence rank of the matrix $A$ is 2.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Find-the-Basis-of-a-Matrix">Find the Basis of a Matrix<a class="anchor-link" href="#Find-the-Basis-of-a-Matrix">¶</a></h3><p><a id="Find_the_Basis_of_a_Matrix"></a></p>
+<hr>
+<p>Now we are able to find the basis for column space and row space as well as the basis for the kernel. The columns of a matrix $A$ span the column space but they may not form a basis if the column vectors are linearly dependent. If this is the case, only some subset of these vectors forms the basis. To find the basis for column space we reduce matrix $A$ to reduced row-echelon form.</p>
+<p>For example:</p>
+\begin{align*}A =
+\begin{bmatrix}
+2 & 7 & 1 & 3 \\
+-4 & -2 & 2 & -2 \\
+-1 & 7 & 3 & 2 \\
+-2 & 2 & 2 & 0 \\
+\end{bmatrix}
+\end{align*}<p>Row reduced form of $A$ is:</p>
+\begin{align*}B =
+\begin{bmatrix}
+-1 & 7 & 3 & 2\\
+0 & 3 & 1 & 1\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0
+\end{bmatrix}
+\end{align*}<p>We see that only column 1 and column 2 are linearly independent in reduced form and hence column 1 and column 2 of the original matrix $A$ form the basis, which is:</p>
+\begin{align*}
+\begin{bmatrix}
+2 \\-4\\-1\\-2
+\end{bmatrix}
+\quad
+\text{and}
+\quad
+\begin{bmatrix}
+7\\-2 \\ 7 \\ 2
+\end{bmatrix}
+\end{align*}<p>To find the basis for row space, let consider different matrix and again let it be $A$.</p>
+\begin{align*}A =
+\begin{bmatrix}
+1 & 3 & 2 \\
+2 & 7 & 4 \\
+1 & 5 & 2
+\end{bmatrix}
+\end{align*}<p>To reduce $A$ to reduced row-echelon form we have:</p>
+\begin{align*}B =
+\begin{bmatrix}
+1 & 0 & 2 \\
+0 & 1 & 0 \\
+0 & 0 & 0
+\end{bmatrix}
+\end{align*}<p>As in column space case, we see that linearly independent, nonzero row vectors are</p>
+\begin{align*}
+\begin{bmatrix}
+1 \\0\\2
+\end{bmatrix}
+\quad
+\text{and}
+\quad
+\begin{bmatrix}
+0\\1 \\ 0
+\end{bmatrix}
+\end{align*}<p>To find the basis for kernel let consider our old example. In this case our matrix is:</p>
+\begin{align*}A =
+\begin{bmatrix}
+2 & 7 & 1 & 3 \\
+-4 & -2 & 2 & -2 \\
+-1 & 7 & 3 & 2 \\
+-2 & 2 & 2 & 0 \\
+\end{bmatrix}
+\end{align*}<p>And its row reduced form is</p>
+\begin{align*}B =
+\begin{bmatrix}
+-1 & 7 & 3 & 2\\
+0 & 3 & 1 & 1\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0
+\end{bmatrix}
+\end{align*}<p>We solved this and got the following result:</p>
+\begin{align*}Ker(A) = 
+\begin{bmatrix}
+x_{1} = \frac{2}{3}x_{3} - \frac{1}{3}x_{4} \\
+x_{2} = -\frac{1}{3}x_{3} - \frac{1}{3}x_{4} \\
+x_{3} \\
+x_{4}
+\end{bmatrix}
+\end{align*}<p>Now to have basis for null space just plug values for $x_{3} = 1$ and $x_{4} = 0$, resulted vector is</p>
+\begin{align*} 
+\begin{bmatrix}
+\frac{2}{3} \\
+-\frac{1}{3} \\
+1 \\
+0
+\end{bmatrix}
+\end{align*}<p>The resulted vector is one set of the basis for kernel space. The values for $x_{3}$ and $x_{4}$ are up to you as they are free variables.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Transformations">Transformations<a class="anchor-link" href="#Transformations">¶</a></h3><p><a id="Transformations"></a></p>
+<hr>
+<p>Matrices and vectors are used together to manipulate spatial dimensions. This has a lot of applications, including the mathematical generation of 3D computer graphics, geometric modeling, and the training and optimization of machine learning algorithms. Here, I present some types of transformation. However, the list will not be exhaustive. Firstly, define linear transformation:</p>
+<blockquote><p>Linear transformation or linear map, is a mapping (function) between two vector spaces that preserves addition and scalar multiplication operations</p>
+</blockquote>
+<h4 id="Linear-Transformation">Linear Transformation<a class="anchor-link" href="#Linear-Transformation">¶</a></h4><p>You can manipulate a vector by multiplying it with a matrix. The matrix acts like a function that operates on an input vector to produce a vector output. Specifically, matrix multiplications of vectors are <em>linear transformations</em> that transform the input vector into the output vector.</p>
+<p>For example, consider a matrix $A$ and vector $v$</p>
+\begin{align*}A =
+\begin{bmatrix}
+2 & 3 \\
+5 & 2
+\end{bmatrix}
+\quad
+\vec{v} =
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix}
+\end{align*}<p>Define transformation $T$ to be:</p>
+\begin{align*}
+T(\vec{v}) = A \vec{v}
+\end{align*}<p>This transformation is simply dot or inner product and give the following result:</p>
+\begin{align*}
+T(\vec{v}) = A \vec{v} =
+\begin{bmatrix}
+8 \\
+9
+\end{bmatrix}
+\end{align*}<p>In this case, both the input and output vector has 2 components. In other words, the transformation takes a 2-dimensional vector and produces a new 2-dimensional vector. Formally we can write this in the following way:</p>
+\begin{align*}
+T: \rm I\!R^{2} \to \rm I\!R^{2}
+\end{align*}<p>The transformation does not necessarily have to be $n \times n$. The dimension of the output vector and the input vector may differ. Rewrite our matrix $A$ and vector $v$.</p>
+\begin{align*}A =
+\begin{bmatrix}
+2 & 3 \\
+5 & 2 \\
+1 & 1
+\end{bmatrix}
+\quad
+\vec{v} =
+\begin{bmatrix}
+1 \\
+2
+\end{bmatrix}
+\end{align*}<p>Apply above transformation gives,</p>
+\begin{align*}
+T(\vec{v}) = A \vec{v} =
+\begin{bmatrix}
+8 \\
+9 \\
+3
+\end{bmatrix}
+\end{align*}<p>Now, our transformation transforms a vector from 2-dimensional space into 3-dimensional space. We can rite this transformation as</p>
+\begin{align*}
+T: \rm I\!R^{2} \to \rm I\!R^{3}
+\end{align*}<h4 id="Transformations-of-Magnitude-and-Aplitude">Transformations of Magnitude and Aplitude<a class="anchor-link" href="#Transformations-of-Magnitude-and-Aplitude">¶</a></h4><p>When we multiply a vector by a matrix we transform it in at least one of the following two ways</p>
+<ul>
+<li><p>Scale the length (Magnitude)</p>
+</li>
+<li><p>Change the direction (Aplitude)</p>
+</li>
+</ul>
+<p><em>Change in length (Magnitude), but not change in direction (Amplitude)</em></p>
+\begin{align*}A =
+\begin{bmatrix}
+2 & 0 \\
+0 & 2
+\end{bmatrix}
+\quad
+\vec{v} =
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
+\end{align*}<p>transformation gives,</p>
+\begin{align*}
+T(\vec{v}) = A \vec{v} =
+\begin{bmatrix}
+2 \\
+0
+\end{bmatrix}
+\end{align*}<p>In this case, the resulted vector changed in length but not changed in direction. See code and visualization in Numerical Representation part.</p>
+<p><em>Change in direction (Amplitude), but not change in length (Magnitude)</em></p>
+\begin{align*}A =
+\begin{bmatrix}
+0 & -1 \\
+1 & 0
+\end{bmatrix}
+\quad
+\vec{v} =
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
+\end{align*}<p>transformation gives,</p>
+\begin{align*}
+T(\vec{v}) = A \vec{v} =
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+\end{align*}<p>This time, resulted vector changed in direction but has the same length.</p>
+<p><em>Change in direction (Amplitude) and in length (Magnitude)</em></p>
+\begin{align*}A =
+\begin{bmatrix}
+2 & 1 \\
+1 & 2
+\end{bmatrix}
+\quad
+\vec{v} =
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
+\end{align*}<p>transformation gives,</p>
+\begin{align*}
+T(\vec{v}) = A \vec{v} =
+\begin{bmatrix}
+2 \\
+1
+\end{bmatrix}
+\end{align*}<p>This time the resulted vector changed in the direction as well as the length.</p>
+<h4 id="Affine-Transformation">Affine Transformation<a class="anchor-link" href="#Affine-Transformation">¶</a></h4><p>An Affine transformation multiplies a vector by a matrix and adds an offset vector, sometimes referred to as <em>bias</em>.</p>
+\begin{align*}
+T(\vec{v}) = A\vec{v} + \vec{b}
+\end{align*}<p>Consider following example</p>
+\begin{align*}T(\vec{v}) = A\vec{v} + \vec{b} = 
+\begin{bmatrix}
+5 & 2\\
+3 & 1
+\end{bmatrix} \cdot
+\begin{bmatrix}
+1\\
+1
+\end{bmatrix} + 
+\begin{bmatrix}
+-2\\
+-6
+\end{bmatrix} = 
+\begin{bmatrix}
+5\\
+-2
+\end{bmatrix}
+\end{align*}<p>This kind of transformation is actually the basic block of linear regression, which is a core foundation for machine learning. However, these concepts are out of the scope of this tutorial. Python code is below for this transformation.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Eigenvalues">Eigenvalues<a class="anchor-link" href="#Eigenvalues">¶</a></h3><p><a id="Eigenvalues"></a></p>
+<hr>
+<p>Let consider matrix $A$</p>
+\begin{align*}A =
+\begin{bmatrix}
+2 & 0 & 0 \\
+0 & 3 & 4 \\
+0 & 4 & 9
+\end{bmatrix}
+\end{align*}<p>Now, let multiply this matrix with vector
+\begin{align*}
+\vec{v} =
+\begin{bmatrix}
+1 \\
+0 \\
+0
+\end{bmatrix}
+\end{align*}</p>
+<p>We have the following:</p>
+\begin{align*}A \cdot v =
+\begin{bmatrix}
+2 & 0 & 0 \\
+0 & 3 & 4 \\
+0 & 4 & 9
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+1 \\
+0 \\
+0
+\end{bmatrix} =
+\begin{bmatrix}
+2 \\
+0 \\
+0
+\end{bmatrix} =
+2 \cdot v
+\end{align*}<p>That's the beautiful relationship yes? To prove this is not the only one vector, which can do this try this vector $\vec{v} = [0\quad 1\quad 2]$ instead of old $v$. You should get $11\cdot \vec{v}$</p>
+<p>This beautiful relationship comes from the notion of eigenvalues and eigenvectors. In this case $2$ and $11$ are eigenvalues of the matrix $A$.</p>
+<p>Let formalize the notion of eigenvalue and eigenvector:</p>
+<blockquote><p>Let $A$ be an $n\times n$ <strong>square</strong> matrix. If $\lambda$ is a scalar and $v$ is non-zero vector in $\mathbb{R^n}$ such that $$Av = \lambda v$$ then we say that $\lambda$ is an <em>eigenvalue</em> and $v$ is <em>eigenvector</em></p>
+</blockquote>
+<p>I believe you are interested in how to find eigenvalues. Consider again our matrix $A$ and follow steps to find eigenvalues. Given that our matrix $A$ is a square matrix, the condition that characterizes an eigenvalue $\lambda$ is the existence of a nonzero vector $v$ such that $Av = \lambda v$. We can rewrite this equation in the following way:</p>
+\begin{align*}
+Av = \lambda v
+\\
+Av - \lambda v = 0
+\\
+Av - \lambda I v = 0
+\\
+(A - \lambda I)v = 0
+\end{align*}<p>The final form of this equation makes it clear that $v$ is the solution of a square, homogeneous system. To have the nonzero solution(we required it in above definition), then the determinant of the <strong>coefficient matrix</strong> - $(A - \lambda I)$ must be zero. This is achieved when the columns of the coefficient matrix are linearly dependent. In other words, to find eigenvalues we have to choose $\lambda$ such that to solve the following equation:</p>
+\begin{align*}
+det(A - \lambda I) = 0
+\end{align*}<p>This equation is called <strong>characteristic equation</strong></p>
+<p>For more clarity, let solve it with a particular example. We have square matrix $A$ and follow the above equation gives us:</p>
+\begin{align*}det(A - \lambda I) = det\Bigg(
+\begin{bmatrix}
+2 & 0 & 0 \\
+0 & 3 & 4 \\
+0 & 4 & 9
+\end{bmatrix} -
+\lambda \cdot
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\Bigg) =
+det\Bigg(
+\begin{bmatrix}
+2 - \lambda & 0 & 0 \\
+0 & 3 - \lambda & 4 \\
+0 & 4 & 9 - \lambda
+\end{bmatrix}
+\Bigg)
+\Rightarrow
+\\
+\\
+\Rightarrow
+(2 - \lambda)[(3 - \lambda)(9 - \lambda) - 16] =
+-\lambda^3 + 14\lambda^2 - 35\lambda + 22
+\end{align*}<p>The equation $-\lambda^3 + 14\lambda^2 - 35\lambda + 22$ is called  <strong>characteristic polynomial</strong> of the matrix $A$ and will be of degree $n$ if $A$ is $n\times n$</p>
+<p>The zeros or roots of this characteristic polynomial are the eigenvalues of the original matrix $A$. In this case the roots are $2$, $1$, and $11$. Surprise! Our matrix $A$ have three eigenvalues and two of them are already known for us from above example.</p>
+<p>Eigenvalues of a square matrix $A$ have some nice features:</p>
+<ul>
+<li><p>The determinant of $A$ eqauls to the product of the eigenvalues</p>
+</li>
+<li><p>The trace of $A$ (The sum of the elements on the principal diagonal) equal the sum of the eigenvalues</p>
+</li>
+<li><p>If $A$ is symmetric matrix, then all of its eigenvalues are real</p>
+</li>
+<li><p>If $A$ is invertible (The determiannt of $A$ is not zero) and $\lambda_{1}, \cdots, \lambda_{n}$ are its eigenvalues, then the eigenvalues of $A^{-1}$ are $1 / \lambda_{1}, \cdots, 1 / \lambda_{n}$</p>
+</li>
+</ul>
+<p>From first feature we have that the matrix is invertible if and only if all its eigenvalues are nonzero.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Eigenvectors">Eigenvectors<a class="anchor-link" href="#Eigenvectors">¶</a></h3><p><a id="Eigenvectors"></a></p>
+<hr>
+<p>It's time to calculate eigenvectors, but let firstly define what is eigenvector and how it relates to the eigenvalue.</p>
+<blockquote><p>Any nonzero vector $v$ which satisfies characteristic equation is said to be an eigenvector of $A$ corresponding to $\lambda$</p>
+</blockquote>
+<p>Continue above example and see what are eigenvectors corresponding to eigenvalues $\lambda = 2$, $\lambda = 1$, and $\lambda = 11$, repectively.</p>
+<p>Eigenvector for $\lambda = 1$</p>
+\begin{align*}(A - 1I)\cdot
+\begin{bmatrix}
+v_{1} \\
+v_{2} \\
+v_{3}
+\end{bmatrix} =\Bigg(
+\begin{bmatrix}
+2 & 0 & 0 \\
+0 & 3 & 4 \\
+0 & 4 & 9
+\end{bmatrix} -
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}\Bigg)\cdot
+\begin{bmatrix}
+v_{1} \\
+v_{2} \\
+v_{3}
+\end{bmatrix} =
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 2 & 4 \\
+0 & 4 & 8
+\end{bmatrix}\cdot
+\begin{bmatrix}
+v_{1} \\
+v_{2} \\
+v_{3}
+\end{bmatrix}=
+\begin{bmatrix}
+0 \\
+0 \\
+0
+\end{bmatrix}
+\end{align*}<p>Rewrite this as a system of equations, we'll get</p>
+\begin{align*}
+\begin{cases}
+v_{1} = 0\\
+2v_{2} + 4v_{3} = 0\\
+4v_{2} + 8v{3} = 0
+\end{cases}\rightarrow
+\begin{cases}
+v_{1} = 0 \\
+v_{2} = -2v_{3}\\
+v_{3} = 1
+\end{cases}
+\rightarrow
+\begin{cases}
+v_{1} = 0 \\
+v_{2} = -2\\
+v_{3} = 1
+\end{cases}
+\end{align*}<p>So, our eigenvector correcponding to eigenvalue $\lambda = 1$ is</p>
+\begin{align*} v_{\lambda = 1} =
+\begin{bmatrix}
+0 \\
+-2 \\
+1
+\end{bmatrix}
+\end{align*}<p>Finding eigenvectors for $\lambda = 2$ and $\lambda = 11$ is up to you.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Spectrum-and-Spectral-Radius">Spectrum and Spectral Radius<a class="anchor-link" href="#Spectrum-and-Spectral-Radius">¶</a></h3><p><a id="Spectrum_and_Spectral_Radius"></a></p>
+<hr>
+<p>The <strong>Spectral Radius</strong> of a sqaure matrix $A$ is the largest absolute values of its eigenvalues and is denoted by $\rho(A)$. More formally,</p>
+<blockquote><p>Spectral radius of a $n \times n$ matrix $A$ is:
+\begin{equation}
+\rho(A) = max
+\Big\{
+\mid \lambda
+\mid \ :
+\lambda \ is \ an \ eigenvalue \ of \ A
+\Big\}
+\end{equation}
+Stated otherwise, we have
+\begin{equation}
+\rho(A) = max
+\Big\{
+\mid \lambda_{1}
+\mid,
+\cdots,
+\mid \lambda_{n}
+\mid
+\Big\}
+\end{equation}</p>
+</blockquote>
+<p>It's noteworthy that the set of all eigenvalues
+\begin{align*}
+\Big\{ \lambda : \lambda \in \lambda(A)
+\Big\}
+\end{align*}
+is called the <strong>Spectrum</strong></p>
+<p>From above example we had three eivenvalues, $\lambda = 2$, $\lambda = 1$ and $\lambda = 11$ which are spectrum of $A$ and spectral radius for our matrix $A$ is $\lambda = 11$</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Numerical-Representation">Numerical Representation<a class="anchor-link" href="#Numerical-Representation">¶</a></h3><p><a id="Numerical_Representation_Matrix"></a></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Kernel-or-Null-Space-of-a-Matrix">Kernel or Null Space of a Matrix<a class="anchor-link" href="#Kernel-or-Null-Space-of-a-Matrix">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="k">import</span> <span class="n">null_space</span>
+
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+
+
+<span class="n">kernel_A</span> <span class="o">=</span> <span class="n">null_space</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Normilized Kernel"</span><span class="p">,</span> <span class="n">kernel_A</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span> <span class="c1"># This matrix is normilized, meaning that it has unit length</span>
+
+
+<span class="c1"># To find unnormilized kernel we have to do the following:</span>
+
+
+<span class="c1"># Import sympy</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="k">import</span> <span class="n">Matrix</span>
+
+
+<span class="n">B</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
+
+<span class="n">B</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+
+<span class="n">kernel_B</span> <span class="o">=</span> <span class="n">B</span><span class="o">.</span><span class="n">nullspace</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Unnormiled Kernel"</span><span class="p">,</span> <span class="n">kernel_B</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+
+
+<span class="c1"># In unnormilized case, we clearly see that sympy automaticaly choose values for our free variables. </span>
+<span class="c1"># In first case x_3 = 1; x_4 = 0 and in the second case x_3 = 0; x_4 = 1</span>
+<span class="c1"># Resulted vector(s) are basis for the null space for our matrix A</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Linear-Transformations">Linear Transformations<a class="anchor-link" href="#Linear-Transformations">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">A</span><span class="nd">@v</span> <span class="c1"># dot product</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">"Resulted vector is: t ="</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+
+<span class="c1"># Plot v and t</span>
+<span class="n">vecs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">t</span><span class="p">,</span><span class="n">v</span><span class="p">])</span>
+<span class="n">origin</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'equal'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="o">*</span><span class="n">origin</span><span class="p">,</span> <span class="n">vecs</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">vecs</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">'blue'</span><span class="p">,</span> <span class="s1">'green'</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="c1"># Original vector v is green and transformed vector t is blue.</span>
+<span class="c1"># Vector t has same direction as v but greater magnitude</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">A</span><span class="nd">@v</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">"Resulted vector is: t ="</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+
+<span class="c1"># Plot v and t</span>
+<span class="n">vecs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">v</span><span class="p">,</span><span class="n">t</span><span class="p">])</span>
+<span class="n">origin</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'equal'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="o">*</span><span class="n">origin</span><span class="p">,</span> <span class="n">vecs</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">vecs</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">'green'</span><span class="p">,</span> <span class="s1">'blue'</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="c1"># Resulted vector change the direction but has the same length</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">A</span><span class="nd">@v</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">"Resulted vector is: t ="</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+
+<span class="c1"># Plot v and t</span>
+<span class="n">vecs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">v</span><span class="p">,</span><span class="n">t</span><span class="p">])</span>
+<span class="n">origin</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'equal'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="o">*</span><span class="n">origin</span><span class="p">,</span> <span class="n">vecs</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">vecs</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">'green'</span><span class="p">,</span> <span class="s1">'blue'</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="c1"># Resulted vector changed the direction, as well as the length</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">6</span><span class="p">])</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">A</span><span class="nd">@v</span> <span class="o">+</span> <span class="n">b</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">"Resulted vector is: t ="</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span>
+
+<span class="c1"># Plot v and t</span>
+<span class="n">vecs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">v</span><span class="p">,</span><span class="n">t</span><span class="p">])</span>
+<span class="n">origin</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'equal'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="o">*</span><span class="n">origin</span><span class="p">,</span> <span class="n">vecs</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">vecs</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">'green'</span><span class="p">,</span> <span class="s1">'blue'</span><span class="p">],</span> <span class="n">scale</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># The resulted vector t is blue</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Eigenvalues-and-Eigenvectors">Eigenvalues and Eigenvectors<a class="anchor-link" href="#Eigenvalues-and-Eigenvectors">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">]])</span>
+
+
+<span class="n">eigenvalues</span><span class="p">,</span> <span class="n">eigenvectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Eigenvalues are: "</span><span class="p">,</span> <span class="n">eigenvalues</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Eigenvectors are: "</span><span class="p">,</span> <span class="n">eigenvectors</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+
+
+<span class="c1"># Note that this eigenvectors seems different from my calculation. However they are not different.</span>
+<span class="c1"># They are normiled to have unit length</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Matrix-Decompositions">Matrix Decompositions<a class="anchor-link" href="#Matrix-Decompositions">¶</a></h2><p><a id="Matrix_Decompositions"></a></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In linear algebra, matrix decomposition or matrix factorization is a factorization of a matrix into a product of matrices. Factorizing a matrix means that we want to find a product of matrices that is equal to the initial matrix. These techniques have a wide variety of uses and consequently, there exist several types of decompositions. Below, I will consider some of them, mostly applicable to machine learning or deep learning.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Cholesky-Decomposition">Cholesky Decomposition<a class="anchor-link" href="#Cholesky-Decomposition">¶</a></h3><p><a id="Cholesky_Decomposition"></a></p>
+<hr>
+<p>The Cholesky Decomposition is the factorization of a given <strong>symmetric</strong> square matrix $A$ into the product of a lower triangular matrix, denoted by $L$ and its transpose $L^{T}$. This decomposition is named after French artillery officer <a href="https://en.wikipedia.org/wiki/Andr%C3%A9-Louis_Cholesky">Andre-Louis Cholesky</a>. The formula is:</p>
+\begin{align*}A =
+LL^{T}
+\end{align*}<p>For rough sense, let $A$ be</p>
+\begin{align*}A =
+\begin{bmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{bmatrix}
+\end{align*}<p>Then we can represent $A$ as</p>
+\begin{align*}A = LL^{T} =
+\begin{bmatrix}
+l_{11} & 0 & 0 \\
+l_{21} & l_{22} & 0 \\
+l_{31} & l_{32} & l_{33}
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+l_{11} & l_{12} & l_{13} \\
+0 & l_{22} & l_{23} \\
+0 & 0 & a_{33}
+\end{bmatrix} =
+\begin{bmatrix}
+l_{11}^{2} & l_{21}l_{11} & l_{31}l_{11} \\
+l_{21}l_{11} & l_{21}^{2} + l_{22}^{2} & l_{31}l_{21} + l_{32}l_{22} \\
+l_{31}l_{11} & l_{31}l_{21} + l_{32}l_{22} & l_{31}^{2} + l_{32}^{2} + l_{33}^2
+\end{bmatrix}
+\end{align*}<p>The diagonal elements of matrix $L$ can be calculated by the following formulas:</p>
+\begin{align*}
+l_{11} = \sqrt{a_{11}}
+\quad \quad
+l_{22} = \sqrt{a_{22} - l_{21}^{2}}
+\quad \quad
+l_{33} = \sqrt{a_{33} - (l_{31}^{2} + l_{32}{2})}
+\end{align*}<p>And in general, for diagonal elements of the matrix $L$ we have:</p>
+\begin{align*}l_{kk} =
+\sqrt{a_{kk} - \sum_{j = 1}^{k - 1}l_{kj}^{2}}
+\end{align*}<p>For the elements below the main diagonal, $l_{ik}$ where $i > k$, the formulas are</p>
+\begin{align*}
+l_{21} = \frac{1}{l_{11}}a_{21}
+\quad \quad
+l_{31} = \frac{1}{l_{11}}a_{31}
+\quad \quad
+l_{32} = \frac{1}{l_{22}}(a_{32} - l_{31}l_{21})
+\end{align*}<p>And the general formula is</p>
+\begin{align*}l_{ik} =
+\frac{1}{l_{kk}}\Big(a_{ik} - \sum_{j = 1}^{k - 1}l_{ij}l_{kj}\Big)
+\end{align*}<p>Messy formulas! Consider a numerical example to see what happen under the hood. We have a matrix $A$</p>
+\begin{align*}A =
+\begin{bmatrix}
+25 & 15 & -5 \\
+15 & 18 & 0 \\
+-5 & 0 & 11
+\end{bmatrix}
+\end{align*}<p>According to the above formulas, let find a lower triangular matrix $L$. We have</p>
+\begin{align*}
+l_{11} = \sqrt{a_{11}} = \sqrt{25} = 5
+\quad \quad
+l_{22} = \sqrt{a_{22} - l_{21}^{2}} = \sqrt{18 - 3^{2}} = 3
+\quad \quad
+l_{33} = \sqrt{a_{33} - (l_{31}^{2} + l_{32}^{2})} = \sqrt{11 - ((-1)^{2} + 1^{2})} = 3
+\end{align*}<p>Seems, we have missing non-diagonal elements, which are</p>
+\begin{align*}
+l_{21} = \frac{1}{l_{11}}a_{21} = \frac{1}{5}15 = 3
+\quad \quad
+l_{31} = \frac{1}{l_{11}}a_{31} = \frac{1}{5}(-5) = -1
+\quad \quad
+l_{32} = \frac{1}{l_{22}}(a_{32} - l_{31}l_{21}) = \frac{1}{3}(0 - (-1)\cdot 3) = 1
+\end{align*}<p>So, our matrix $L$ is</p>
+\begin{align*}L =
+\begin{bmatrix}
+5 & 0 & 0 \\
+3 & 3 & 0 \\
+-1 & 1 & 3
+\end{bmatrix}
+\quad \quad
+L^{T} =
+\begin{bmatrix}
+5 & 3 & -1 \\
+0 & 3 & 1 \\
+0 & 0 & 3
+\end{bmatrix}
+\end{align*}<p>Multiplication of this matrices is up to you.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="QR-Decomposition">QR Decomposition<a class="anchor-link" href="#QR-Decomposition">¶</a></h3><p><a id="QR_Decomposition"></a></p>
+<hr>
+<p>QR decomposition is another type of matrix factorization, where a given $m \times n$ matrix $A$ is decomposed into two matrices, $Q$ which is orthogonal matrix, which in turn means that $QQ^{T} = Q^{T}Q = I$ and the inverse of $Q$ equal to its transpose, $Q^{T} = Q^{-1}$, and $R$ which is upper triangular matrix. Hence, the formula is given by</p>
+\begin{align*}A = 
+QR
+\end{align*}<p>As $Q$ is an orthogonal matrix, there are three methods to find $Q$, one is <a href="https://en.wikipedia.org/wiki/Gram%E2%80%93Schmidt_process">Gramm-Schmidt Process</a>, second is <a href="https://en.wikipedia.org/wiki/Householder_transformation">Householder Transformation</a>, and third is <a href="https://en.wikipedia.org/wiki/Givens_rotation">Givens Rotation</a>. These methods are out of the scope of this blog post series and hence I'm going to explain all of them in separate blog posts. Consequently, there is no calculation besides python code in numerical representation section.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Eigendecomposition">Eigendecomposition<a class="anchor-link" href="#Eigendecomposition">¶</a></h3><p><a id="Eigendecomposition"></a></p>
+<hr>
+<p>Here is the question. What's the usage of eigenvalues and eigenvectors? Besides other usages, they help us to perform matrix decomposition and this decomposition is called eigendecomposition or spectral decomposition. In the case of the eigendecomposition, we decompose the initial matrix into the product of its eigenvectors and eigenvalues by the following formula:</p>
+\begin{align*}
+A = Q \Lambda Q^{-1}
+\end{align*}<p>$A$ is $n\times n$ square matrix, $Q$ is the matrix whose columns are the eigenvectors, which in turn are linearly independent and $\Lambda$ is diagonal matrix of eigenvalues of $A$ and these eigenvalues are not necessarily distinct.</p>
+<p>To see the detailed steps of this decomposition, consider the abovementioned example of the matrix $A$ for which we already found eigenvalues and eigenvectors.</p>
+\begin{align*}A =
+\begin{bmatrix}
+2 & 0 & 0 \\
+0 & 3 & 4 \\
+0 & 4 & 9
+\end{bmatrix}
+\quad
+Q =
+\begin{bmatrix}
+0 & 1 & 0 \\
+-2 & 0 & 1 \\
+1 & 0 & 2
+\end{bmatrix}
+\quad
+\Lambda = 
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 2 & 0 \\
+0 & 0 & 11
+\end{bmatrix}
+\quad
+Q^{-1} =
+\begin{bmatrix}
+0 & -0.4 & 0.2 \\
+1 & 0 & 0 \\
+0 & 0.2 & 0.4
+\end{bmatrix}
+\end{align*}<p>We have all the matrices and now take matrix multiplication according to the above formula. Particularly, multiply $Q$ by $\Lambda$ and by $Q^{-1}$. We have to get original matrix $A$</p>
+<p>Furthermore, if matrix $A$ is a real symmetric matrix, then eigendecomposition can be performed by the following formula:</p>
+\begin{align*}
+A = Q \Lambda Q^{T}
+\end{align*}<p>The only difference between this formula and above formula is that the matrix $A$ is $n\times n$ real symmetric square matrix and instead of taking the inverse of eigenvector matrix we take the transpose of it. Moreover, for a real symmetric matrix, eigenvectors corresponding to different eigenvalues are orthogonal. Consider the following example:</p>
+\begin{align*}A =
+\begin{bmatrix}
+6 & 2 \\
+2 & 3
+\end{bmatrix}
+\end{align*}<p>The matrix is symmetric because of the original matrix equal to its transpose, $A = A^{T}$</p>
+<p>Its eigenvalues are $\lambda_{1} = 7$ and $\lambda_{2} = 2$ and corresponding eigenvectors are</p>
+\begin{align*}v_{\lambda_{1}} =
+\begin{bmatrix}
+0.89442719 \\
+0.4472136
+\end{bmatrix}
+\quad
+v_{\lambda_{2}} =
+\begin{bmatrix}
+-0.4472136 \\
+0.89442719
+\end{bmatrix}
+\end{align*}<p>And in this set up, matrices $Q$, $\Lambda$ and $Q^{T}$ are the following:</p>
+\begin{align*}Q =
+\begin{bmatrix}
+0.89442719 & -0.4472136 \\
+0.4472136 & 0.89442719 \\
+\end{bmatrix}
+\quad
+\Lambda = 
+\begin{bmatrix}
+7 & 0 \\
+0 & 2 \\
+\end{bmatrix}
+\quad
+Q^{T} =
+\begin{bmatrix}
+0.89442719 & 0.4472136 \\
+-0.4472136 & 0.89442719 \\
+\end{bmatrix}
+\end{align*}<p>Taking matrix product gives initial matrix $A$.</p>
+<p>To verify all of this calculation see Python code below.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Eigendecomposition cannot be used for nonsquare matrices. Below, we will see the Singular Value Decomposition (SVD) which is another way of decomposing matrices. The advantage of the SVD is that you can use it also with non-square matrices.</strong></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Singular-Value-Decomposition">Singular Value Decomposition<a class="anchor-link" href="#Singular-Value-Decomposition">¶</a></h3><p><a id="Singular_Value_Decomposition"></a></p>
+<hr>
+<p>Singular Value Decomposition (SVD) is another way of matrix factorization. It is the generalization of the eigendecomposition. In this context, generalization means that eigendecomposition is applicable only for square $n \times n$ matrices, while Singular Value Decomposition (SVD) is applicable for any $m \times n$ matrices.</p>
+<p>SVD for a $m \times n$ matrix $A$ is computed by the following formula:</p>
+\begin{align*}
+A = U \ D \ V^{T}
+\end{align*}<p>Where, $U$'s columns are <em>left singular vectors</em> of $A$, $V$'s columns are <em>right singular vectors</em> of $A$ and $D$  is a diagonal matrix, not necessarily square matrix, containing <strong>singular values</strong> of $A$ on main diagonal. Singular values of $m \times n$ matrix $A$ are the <strong>square roots of the eigenvalues</strong> of $A^{T}A$, which is a square matrix. If our initial matrix $A$ is square or $n \times n$ then singular values <strong>coincide</strong> eigenvalues. Moreover, all of these defines the path towards eigendecomposition. Let see how this path is defined.</p>
+<p>Matrices, $U$, $D$, and $V$ can be found by transforming $A$ into a square matrix and computing eigenvalues and eigenvectors of this transformed matrix. This transformation is done by multiplying $A$ by its transpose $A^{T}$. After that, matrices $U$, $D$ and $V$ are the following:</p>
+<ul>
+<li><p>$U$ corresponds to the eigenvectors of $AA^{T}$</p>
+</li>
+<li><p>$V$ corresponds to eigenvectors of $A^{T}A$</p>
+</li>
+<li><p>$D$ corresponds to eigenvalues, either $AA^{T}$ or $A^{T}A$, which are the same</p>
+</li>
+</ul>
+<p>Theory almost always seems confusing. Consider a numerical example and Python code below for clarification.</p>
+<p>Let our initial matrix $A$ be:</p>
+\begin{align*}A =
+\begin{bmatrix}
+0 & 1 & 0 \\
+\sqrt{2} & 2 & 0 \\
+0 & 1 & 1
+\end{bmatrix}
+\end{align*}<p>Here, to use SVD first we need to find $AA^{T}$ and $A^{T}A$.</p>
+\begin{align*}AA^{T} =
+\begin{bmatrix}
+2 & 2 & 2 \\
+2 & 6 & 2 \\
+2 & 2 & 2
+\end{bmatrix}
+\quad
+A^{T}A =
+\begin{bmatrix}
+2 & 2\sqrt{2} & 0 \\
+2\sqrt{2} & 6 & 2 \\
+0 & 2 & 2
+\end{bmatrix}
+\end{align*}<p>In the next step, we have to find eigenvalues and eigenvectors for $AA^{T}$ and $A^{T}A$. The characteristic polynomial is</p>
+\begin{align*}
+-\lambda^{3} + 10\lambda^2 - 16\lambda
+\end{align*}<p>with roots equal to $\lambda_{1} = 8$, $\lambda_{2} = 2$, and $\lambda_{3} = 0$. Note that these eigenvalues are the same for the $A^{T}A$. We need singular values which are square root from eigenvalues. Let denote them by $\sigma$ such as $\sigma_{1} = \sqrt{8} = 2\sqrt{2}$, $\sigma_{2} = \sqrt{2}$ and $\sigma_{3} = \sqrt{0} = 0$. We now can construct diagonal matrix of singular values:</p>
+\begin{align*}D =
+\begin{bmatrix}
+2\sqrt{2} & 0 & 0 \\
+0 & \sqrt{2} & 0 \\
+0 & 0 & 0
+\end{bmatrix}
+\end{align*}<p>Now we have to find matrices $U$ and $V$. We have everything what we need. First find eigenvectors of $AA^{T}$ for $\lambda_{1} = 8$, $\lambda_{2} = 2$, and $\lambda_{3} = 0$, which are the following:</p>
+\begin{align*}U_{1} =
+\begin{bmatrix}
+\frac{1}{\sqrt{6}}\\
+\frac{2}{\sqrt{6}} \\
+\frac{1}{\sqrt{6}}
+\end{bmatrix}
+\quad
+U_{2} =
+\begin{bmatrix}
+-\frac{1}{\sqrt{3}}\\
+\frac{1}{\sqrt{3}} \\
+-\frac{1}{\sqrt{3}}
+\end{bmatrix}
+\quad
+U_{3} =
+\begin{bmatrix}
+\frac{1}{\sqrt{2}}\\
+0 \\
+-\frac{1}{\sqrt{2}}
+\end{bmatrix}
+\end{align*}<p>Note that eigenvectors are normilized.</p>
+<p>As we have eigenvectors, our $U$ matrix is:</p>
+\begin{align*}U =
+\begin{bmatrix}
+\frac{1}{\sqrt{6}} & -\frac{1}{\sqrt{3}} & \frac{1}{\sqrt{2}}\\
+\frac{2}{\sqrt{6}} & \frac{1}{\sqrt{3}} & 0 \\
+\frac{1}{\sqrt{6}} & -\frac{1}{\sqrt{3}} & -\frac{1}{\sqrt{2}}
+\end{bmatrix}
+\end{align*}<p>In the same fashin, we can find matrix $V$, which is:</p>
+\begin{align*}V =
+\begin{bmatrix}
+\frac{1}{\sqrt{6}} & \frac{1}{\sqrt{3}} & \frac{1}{\sqrt{2}}\\
+\frac{3}{\sqrt{12}} & 0 & -\frac{1}{2} \\
+\frac{1}{\sqrt{12}} & -\frac{2}{\sqrt{6}} & \frac{1}{2}
+\end{bmatrix}
+\end{align*}<p>According to the formula we have</p>
+\begin{align*}
+A = U \ D \ V^{T} =
+\begin{bmatrix}
+\frac{1}{\sqrt{6}} & -\frac{1}{\sqrt{3}} & \frac{1}{\sqrt{2}}\\
+\frac{2}{\sqrt{6}} & \frac{1}{\sqrt{3}} & 0 \\
+\frac{1}{\sqrt{6}} & -\frac{1}{\sqrt{3}} & -\frac{1}{\sqrt{2}}
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+2\sqrt{2} & 0 & 0 \\
+0 & \sqrt{2} & 0 \\
+0 & 0 & 0
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+\frac{1}{\sqrt{6}} & \frac{1}{\sqrt{3}} & \frac{1}{\sqrt{2}}\\
+\frac{3}{\sqrt{12}} & 0 & -\frac{1}{2} \\
+\frac{1}{\sqrt{12}} & -\frac{2}{\sqrt{6}} & \frac{1}{2}
+\end{bmatrix}
+^{T} = A
+\end{align*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Inverse-of-a-Square-Full-Rank-Matrix">Inverse of a Square Full Rank Matrix<a class="anchor-link" href="#Inverse-of-a-Square-Full-Rank-Matrix">¶</a></h3><p><a id="Inverse_of_a_Square_Full_Rank_Matrix"></a></p>
+<hr>
+<p>Here, I want to present one more way to find the inverse of a matrix and show you one more usage of eigendecomposition. Let's get started. If a matrix $A$ can be eigendecomposed and it has no any eigenvalue equal to zero, then this matrix has the inverse and this inverse is given by:</p>
+\begin{align*}A^{-1} =
+Q \Lambda^{-1} Q^{-1}
+\end{align*}<p>Matrices, $Q$, and $\Lambda$ are already known for us. Consider an example:</p>
+\begin{align*}A =
+\begin{bmatrix}
+1 & 2 \\
+4 & 3
+\end{bmatrix}
+\end{align*}<p>Its eigenvalues are $\lambda_{1} = -1$ and $\lambda_{2} = 5$ and eigenvectors are:</p>
+\begin{align*}v_{\lambda_{1}} =
+\begin{bmatrix}
+-0.70710678 \\
+0.70710678
+\end{bmatrix}
+\quad
+v_{\lambda_{2}} =
+\begin{bmatrix}
+0.4472136 \\
+-0.89442719
+\end{bmatrix}
+\end{align*}<p>Let calculate the onverse of $A$</p>
+\begin{align*}A^{-1} = Q \Lambda^{-1} Q^{-1} =
+\begin{bmatrix}
+-0.70710678 & -0.4472136 \\
+0.70710678 & -0.89442719
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+-1 & -0 \\
+0 & 0.2
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+-0.94280904 & 0.47140452 \\
+-0.74535599 & -0.74535599
+\end{bmatrix} =
+\begin{bmatrix}
+-0.6 & 0.4 \\
+0.8 & -0.2
+\end{bmatrix}
+\end{align*}
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Numerical-Representation">Numerical Representation<a class="anchor-link" href="#Numerical-Representation">¶</a></h3><p><a id="Numerical_Representation_Decompositions"></a></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Cholesky-Decomposition">Cholesky Decomposition<a class="anchor-link" href="#Cholesky-Decomposition">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">25</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+              <span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">]])</span>
+
+
+<span class="c1"># Cholesky decomposition, find lower triangular matrix L</span>
+<span class="n">L</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">cholesky</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="c1"># Take transpose</span>
+<span class="n">L_T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+
+
+<span class="c1"># Check if it's correct</span>
+<span class="n">A</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">L_T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="QR-Decomposition">QR Decomposition<a class="anchor-link" href="#QR-Decomposition">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">12</span><span class="p">,</span><span class="o">-</span><span class="mi">51</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">167</span><span class="p">,</span><span class="o">-</span><span class="mi">68</span><span class="p">],</span>
+              <span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="o">-</span><span class="mi">41</span><span class="p">]])</span>
+
+
+<span class="c1"># QR decomposition</span>
+<span class="n">Q</span><span class="p">,</span> <span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">qr</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Q ="</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"R ="</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"A = QR"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="n">R</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Eigendecomposition">Eigendecomposition<a class="anchor-link" href="#Eigendecomposition">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+<span class="c1"># Eigendecomposition for nonsymmetric matrix</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">]])</span>
+
+
+<span class="n">eigenvalues1</span><span class="p">,</span> <span class="n">eigenvectors1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+
+<span class="c1"># Form diagonal matrix from eigenvalues</span>
+<span class="n">L1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">eigenvalues1</span><span class="p">)</span>
+
+
+<span class="c1"># Seperate eigenvector matrix and take its inverse</span>
+<span class="n">Q1</span> <span class="o">=</span> <span class="n">eigenvectors1</span>
+<span class="n">inv_Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">Q1</span><span class="p">)</span>
+
+
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Q1</span><span class="p">,</span><span class="n">L1</span><span class="p">),</span><span class="n">inv_Q</span><span class="p">)</span>
+
+
+<span class="c1"># Check if B equal to A</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Decomposed matrix B:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+
+
+<span class="c1"># Numpy produces normilized eigenvectors and don't be confused with my calculations above</span>
+
+
+
+
+<span class="c1"># Eigendecomposition for symmetric matrix</span>
+
+<span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
+
+<span class="n">eigenvalues2</span><span class="p">,</span> <span class="n">eigenvectors2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+
+<span class="c1"># Eigenvalues</span>
+<span class="n">L2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">eigenvalues2</span><span class="p">)</span>
+
+<span class="c1"># Eigenvectors</span>
+<span class="n">Q2</span> <span class="o">=</span> <span class="n">eigenvectors2</span>
+<span class="n">Q2_T</span> <span class="o">=</span> <span class="n">Q2</span><span class="o">.</span><span class="n">T</span>
+
+
+<span class="n">D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Q2</span><span class="p">,</span><span class="n">L2</span><span class="p">),</span><span class="n">Q2</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+
+
+<span class="c1"># Check if D equal to C</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Decomposed matrix D:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Singular-Value-Decomposition">Singular Value Decomposition<a class="anchor-link" href="#Singular-Value-Decomposition">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">suppress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Suppres scientific notation</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+              <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+
+
+<span class="n">U</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"U ="</span><span class="p">,</span> <span class="n">U</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"D ="</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"V ="</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
+
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">D</span><span class="p">),</span> <span class="n">V</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"B ="</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Inverse-of-a-Square-Full-Rank-Matrix">Inverse of a Square Full Rank Matrix<a class="anchor-link" href="#Inverse-of-a-Square-Full-Rank-Matrix">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
+
+
+<span class="c1"># Eigenvalues and Eigenvectors</span>
+<span class="n">L</span><span class="p">,</span> <span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="c1"># Diagonal eigenvalues</span>
+<span class="n">L</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+<span class="c1"># Inverse</span>
+<span class="n">inv_L</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+
+<span class="c1"># Inverse of igenvector matrix</span>
+<span class="n">inv_Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span>
+
+
+<span class="c1"># Calculate the inverse of A</span>
+<span class="n">inv_A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">inv_L</span><span class="p">,</span><span class="n">inv_Q</span><span class="p">))</span>
+
+<span class="c1"># Print the inverse</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The inverse of A is"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">inv_A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">¶</a></h2><p><a id="Conclusion"></a></p>
+<hr>
+<p>gdefgsdgsgds</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="References">References<a class="anchor-link" href="#References">¶</a></h2><h4 id="Vector">Vector<a class="anchor-link" href="#Vector">¶</a></h4><ul>
+<li><p><a href="https://www.youtube.com/watch?v=lXNXrLcoerU">Gilbert Strang, Lec21 MIT - Eigenvalues and eigenvectors</a></p>
+</li>
+<li><p><a href="https://www.youtube.com/watch?v=lXNXrLcoerU">Gilbert Strang, Lec 21 MIT, Spring 2005</a></p>
+</li>
+</ul>
+<h4 id="Matrix">Matrix<a class="anchor-link" href="#Matrix">¶</a></h4><ul>
+<li><a href="http://setosa.io/ev/eigenvectors-and-eigenvalues/">Victor Powell and Lewis Lehe - Interactive representation of eigenvectors</a></li>
+</ul>
+<h4 id="Matrix-Decomposition">Matrix Decomposition<a class="anchor-link" href="#Matrix-Decomposition">¶</a></h4><ul>
+<li><a href="https://rosettacode.org/wiki/Cholesky_decomposition">Cholesky Decomposition</a></li>
+</ul>
+<h4 id="Eigenvectors">Eigenvectors<a class="anchor-link" href="#Eigenvectors">¶</a></h4><ul>
+<li><a href="http://setosa.io/ev/eigenvectors-and-eigenvalues/">Victor Powell and Lewis Lehe - Interactive representation of eigenvectors</a></li>
+</ul>
+<h4 id="Linear-transformations">Linear transformations<a class="anchor-link" href="#Linear-transformations">¶</a></h4><ul>
+<li><p><a href="http://ia802205.us.archive.org/18/items/MIT18.06S05_MP4/30.mp4">Gilbert Strang - Linear transformation</a></p>
+</li>
+<li><p><a href="https://www.youtube.com/watch?v=wXCRcnbCsJA">Linear transformation - demo video</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+
+            <div>
+</div>
+
+            <section>
+    <p id="post-share-links">
+    Like this post? Share on:
+    <a href="https://twitter.com/intent/tweet?text=Advances%20of%20Linear%20Algebra&url=/articles/mathematics/advances-of-linear-algebra.html&via=N_Okroshiashvil&hashtags=linear-algebra,mathematics" target="_blank" title="Share on Twitter">Twitter</a>
+    ❄
+    <a href="https://www.facebook.com/sharer/sharer.php?u=/articles/mathematics/advances-of-linear-algebra.html" target="_blank" title="Share on Facebook">Facebook</a>
+    ❄
+    <a href="https://plus.google.com/share?url=/articles/mathematics/advances-of-linear-algebra.html" target="_blank" title="Share on Google Plus">Google+</a>
+    ❄
+    <a href="mailto:?subject=Advances%20of%20Linear%20Algebra&amp;body=/articles/mathematics/advances-of-linear-algebra.html" target="_blank" title="Share via Email">Email</a>
+    </p>
+</section>
+
+            
+            <hr/>
+<section>
+    <h2>Keep Reading</h2>
+<ul class="related-posts-list">
+<li><a href="/articles/mathematics/introduction.html" title="Introduction">Introduction</a></li>
+<li><a href="/articles/mathematics/basics-of-linear-algebra.html" title="Basics of Linear Algebra">Basics of Linear Algebra</a></li>
+<li><a href="/articles/mathematics/intermediates-of-linear-algebra.html" title="Intermediates of Linear Algebra">Intermediates of Linear Algebra</a></li>
+</ul>
+<hr />
+</section>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="/articles/mathematics/intermediates-of-linear-algebra.html" title="Previous: Intermediates of Linear Algebra">Intermediates of Linear Algebra</a></li>
+                <li class="next-article"><a href="/articles/python/python-test.html" title="Next: Python - Test">Python - Test</a> »</li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2019-03-04T12:14:00+04:00">Mar 4, 2019</time>
+            <h4>Category</h4>
+            <a class="category-link" href="/categories.html#mathematics-ref">Mathematics</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="/tags#linear-algebra-ref">Linear Algebra
+                    <span>4</span>
+</a></li>
+                <li><a href="/tags#mathematics-ref">Mathematics
+</a></li>
+            </ul>
+<h4>Stay in Touch</h4>
+    <a href="https://www.linkedin.com/in/nodar-okroshiashvili-a86571131/" title="My linkedin-square Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-linkedin-square sidebar-social-links"></i></a>
+    <a href="https://github.com/Okroshiashvili" title="My Github Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-github sidebar-social-links"></i></a>
+    <a href="https://twitter.com/N_Okroshiashvil" title="My Twitter Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-twitter sidebar-social-links"></i></a>
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="https://github.com/Pelican-Elegant/elegant/" title="Theme Elegant Home Page">Elegant</a></li>
+    </ul>
+</div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : MIT -->
+</html>
