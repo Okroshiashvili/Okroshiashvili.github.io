@@ -1,146 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Data Science Fabric</title><link href="https://dsfabric.org/" rel="alternate"></link><link href="https://dsfabric.org/feeds/all.atom.xml" rel="self"></link><id>https://dsfabric.org/</id><updated>2019-08-29T02:14:00+04:00</updated><subtitle>Torture the data, and it will confess to anything. Ronald Coase</subtitle><entry><title>StackEdit</title><link href="https://dsfabric.org/articles/general/stackedit.html" rel="alternate"></link><published>2019-08-29T02:14:00+04:00</published><updated>2019-08-29T02:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-08-29:/articles/general/stackedit.html</id><summary type="html">&lt;blockquote&gt;
-&lt;p&gt;Written with &lt;a href="https://stackedit.io/"&gt;StackEdit&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id="churn-rate-modeling"&gt;Churn Rate Modeling&lt;a class="headerlink" href="#churn-rate-modeling" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
-&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_excel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;nodo.xlsx&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;preprocessing&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;blockquote&gt;
-&lt;p&gt;This is my new definition of data science&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img alt="Hello World 1" src="https://dsfabric.org/images/Figure_1.png" title="Hello World 2"&gt;&lt;/p&gt;
-&lt;h4 id="this-is-the-simplest-project-description-file-for-my-project-which-will-be-reedited-to-access-the-changes"&gt;This is the simplest project description file for my project, which will be reedited to access the changes&lt;a class="headerlink" href="#this-is-the-simplest-project-description-file-for-my-project-which-will-be-reedited-to-access-the-changes" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;To do this project as …&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
-&lt;p&gt;Written with &lt;a href="https://stackedit.io/"&gt;StackEdit&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id="churn-rate-modeling"&gt;Churn Rate Modeling&lt;a class="headerlink" href="#churn-rate-modeling" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
-&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_excel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;nodo.xlsx&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;preprocessing&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;blockquote&gt;
-&lt;p&gt;This is my new definition of data science&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img alt="Hello World 1" src="https://dsfabric.org/images/Figure_1.png" title="Hello World 2"&gt;&lt;/p&gt;
-&lt;h4 id="this-is-the-simplest-project-description-file-for-my-project-which-will-be-reedited-to-access-the-changes"&gt;This is the simplest project description file for my project, which will be reedited to access the changes&lt;a class="headerlink" href="#this-is-the-simplest-project-description-file-for-my-project-which-will-be-reedited-to-access-the-changes" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;To do this project as I want I need to plan it carefully.&lt;/p&gt;
-&lt;h2 id="project-steps"&gt;Project steps&lt;a class="headerlink" href="#project-steps" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Business Understanding&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Data Understanding&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Data Acquisition&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Modeling&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Evaluation&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Deployment&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Result Presentation&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id="description-of-each-step"&gt;Description of each step&lt;a class="headerlink" href="#description-of-each-step" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h4 id="business-understanding"&gt;Business Understanding&lt;a class="headerlink" href="#business-understanding" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;h4 id="data-understanding"&gt;Data Understanding&lt;a class="headerlink" href="#data-understanding" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;h4 id="data-acquisition"&gt;Data Acquisition&lt;a class="headerlink" href="#data-acquisition" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;h4 id="modeling"&gt;Modeling&lt;a class="headerlink" href="#modeling" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;h4 id="evaluation"&gt;Evaluation&lt;a class="headerlink" href="#evaluation" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;h4 id="deployment"&gt;Deployment&lt;a class="headerlink" href="#deployment" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;h4 id="result-presentation"&gt;Result Presentation&lt;a class="headerlink" href="#result-presentation" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;h2 id="smartypants"&gt;SmartyPants&lt;a class="headerlink" href="#smartypants" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;SmartyPants converts ASCII punctuation characters into "smart" typographic punctuation HTML entities. For example:&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;ASCII&lt;/th&gt;
-&lt;th&gt;HTML&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Single backticks&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;'Isn't this fun?'&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;'Isn't this fun?'&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Quotes&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;"Isn't this fun?"&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;"Isn't this fun?"&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Dashes&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;-- is en-dash, --- is em-dash&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;-- is en-dash, --- is em-dash&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id="katex"&gt;KaTeX&lt;a class="headerlink" href="#katex" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;You can render LaTeX mathematical expressions using &lt;a href="https://khan.github.io/KaTeX/"&gt;KaTeX&lt;/a&gt;:&lt;/p&gt;
-&lt;p&gt;The &lt;em&gt;Gamma function&lt;/em&gt; satisfying &lt;span class="math"&gt;\(\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N\)&lt;/span&gt; is via the Euler integral&lt;/p&gt;
-&lt;div class="math"&gt;$$
-\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.
-$$&lt;/div&gt;
-&lt;p&gt;
-&lt;!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzOTUyNjYyOSw3MzA5OTgxMTZdfQ==
---&gt;&lt;/p&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</content><category term="General"></category><category term="General"></category></entry><entry><title>Data Science - Test</title><link href="https://dsfabric.org/articles/data-science/data-science-test.html" rel="alternate"></link><published>2019-03-10T12:14:00+04:00</published><updated>2019-03-10T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-10:/articles/data-science/data-science-test.html</id><summary type="html">&lt;blockquote&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Data Science Fabric</title><link href="https://dsfabric.org/" rel="alternate"></link><link href="https://dsfabric.org/feeds/all.atom.xml" rel="self"></link><id>https://dsfabric.org/</id><updated>2019-03-10T12:14:00+04:00</updated><subtitle>Torture the data, and it will confess to anything. Ronald Coase</subtitle><entry><title>Data Science - Test</title><link href="https://dsfabric.org/articles/data-science/data-science-test.html" rel="alternate"></link><published>2019-03-10T12:14:00+04:00</published><updated>2019-03-10T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-10:/articles/data-science/data-science-test.html</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;Written with &lt;a href="https://stackedit.io/"&gt;StackEdit&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;To do this project as I want I need to plan it carefully.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
@@ -5454,4 +5313,157 @@ A = (0,1)
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="Linear Algebra"></category><category term="Mathematics"></category></entry></feed>
+</content><category term="Linear Algebra"></category><category term="Mathematics"></category></entry><entry><title>ds - 1 - test</title><link href="https://dsfabric.org/articles/data-science/ds-1-test.html" rel="alternate"></link><published>2019-02-08T12:14:00+04:00</published><updated>2019-02-08T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-02-08:/articles/data-science/ds-1-test.html</id><summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Written with &lt;a href="https://stackedit.io/"&gt;StackEdit&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;file for testing.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;Written with &lt;a href="https://stackedit.io/"&gt;StackEdit&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;file for testing.&lt;/p&gt;</content><category term="Data Science"></category><category term="Data Science"></category></entry><entry><title>Economics - Test - Test II</title><link href="https://dsfabric.org/articles/economics/economics-test-test-ii.html" rel="alternate"></link><published>2019-01-09T12:14:00+04:00</published><updated>2019-01-09T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-01-09:/articles/economics/economics-test-test-ii.html</id><summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Written with &lt;a href="https://stackedit.io/"&gt;StackEdit&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;To do this project as I want I need to plan it carefully.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;Written with &lt;a href="https://stackedit.io/"&gt;StackEdit&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;To do this project as I want I need to plan it carefully.&lt;/p&gt;</content><category term="Economics"></category><category term="Economics"></category></entry><entry><title>StackEdit</title><link href="https://dsfabric.org/articles/general/stackedit.html" rel="alternate"></link><published>1997-08-29T02:14:00+05:00</published><updated>1997-08-29T02:14:00+05:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,1997-08-29:/articles/general/stackedit.html</id><summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Written with &lt;a href="https://stackedit.io/"&gt;StackEdit&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id="churn-rate-modeling"&gt;Churn Rate Modeling&lt;a class="headerlink" href="#churn-rate-modeling" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_excel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;nodo.xlsx&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;preprocessing&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;This is my new definition of data science&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img alt="Hello World 1" src="https://dsfabric.org/images/Figure_1.png" title="Hello World 2"&gt;&lt;/p&gt;
+&lt;h4 id="this-is-the-simplest-project-description-file-for-my-project-which-will-be-reedited-to-access-the-changes"&gt;This is the simplest project description file for my project, which will be reedited to access the changes&lt;a class="headerlink" href="#this-is-the-simplest-project-description-file-for-my-project-which-will-be-reedited-to-access-the-changes" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;To do this project as …&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;Written with &lt;a href="https://stackedit.io/"&gt;StackEdit&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id="churn-rate-modeling"&gt;Churn Rate Modeling&lt;a class="headerlink" href="#churn-rate-modeling" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+&lt;span class="n"&gt;df&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_excel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;nodo.xlsx&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;preprocessing&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;blockquote&gt;
+&lt;p&gt;This is my new definition of data science&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img alt="Hello World 1" src="https://dsfabric.org/images/Figure_1.png" title="Hello World 2"&gt;&lt;/p&gt;
+&lt;h4 id="this-is-the-simplest-project-description-file-for-my-project-which-will-be-reedited-to-access-the-changes"&gt;This is the simplest project description file for my project, which will be reedited to access the changes&lt;a class="headerlink" href="#this-is-the-simplest-project-description-file-for-my-project-which-will-be-reedited-to-access-the-changes" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;To do this project as I want I need to plan it carefully.&lt;/p&gt;
+&lt;h2 id="project-steps"&gt;Project steps&lt;a class="headerlink" href="#project-steps" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Business Understanding&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Data Understanding&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Data Acquisition&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Modeling&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Evaluation&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Deployment&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Result Presentation&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="description-of-each-step"&gt;Description of each step&lt;a class="headerlink" href="#description-of-each-step" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h4 id="business-understanding"&gt;Business Understanding&lt;a class="headerlink" href="#business-understanding" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id="data-understanding"&gt;Data Understanding&lt;a class="headerlink" href="#data-understanding" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id="data-acquisition"&gt;Data Acquisition&lt;a class="headerlink" href="#data-acquisition" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id="modeling"&gt;Modeling&lt;a class="headerlink" href="#modeling" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id="evaluation"&gt;Evaluation&lt;a class="headerlink" href="#evaluation" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id="deployment"&gt;Deployment&lt;a class="headerlink" href="#deployment" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id="result-presentation"&gt;Result Presentation&lt;a class="headerlink" href="#result-presentation" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h2 id="smartypants"&gt;SmartyPants&lt;a class="headerlink" href="#smartypants" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;SmartyPants converts ASCII punctuation characters into "smart" typographic punctuation HTML entities. For example:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;ASCII&lt;/th&gt;
+&lt;th&gt;HTML&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Single backticks&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;'Isn't this fun?'&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;'Isn't this fun?'&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Quotes&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;"Isn't this fun?"&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;"Isn't this fun?"&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Dashes&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-- is en-dash, --- is em-dash&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;-- is en-dash, --- is em-dash&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="katex"&gt;KaTeX&lt;a class="headerlink" href="#katex" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;You can render LaTeX mathematical expressions using &lt;a href="https://khan.github.io/KaTeX/"&gt;KaTeX&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;Gamma function&lt;/em&gt; satisfying &lt;span class="math"&gt;\(\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N\)&lt;/span&gt; is via the Euler integral&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.
+$$&lt;/div&gt;
+&lt;p&gt;
+&lt;!--stackedit_data:
+eyJoaXN0b3J5IjpbLTEzOTUyNjYyOSw3MzA5OTgxMTZdfQ==
+--&gt;&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="General"></category><category term="General"></category></entry></feed>
