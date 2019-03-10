@@ -4,169 +4,176 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>https://dsfabric.org/</loc>
-<lastmod>2019-03-10T17:28:37-00:00</lastmod>
+<loc>/</loc>
+<lastmod>2019-03-10T18:49:46-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/archives.html</loc>
-<lastmod>2019-03-10T17:28:37-00:00</lastmod>
+<loc>/archives.html</loc>
+<lastmod>2019-03-10T18:49:46-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/tags.html</loc>
-<lastmod>2019-03-10T17:28:37-00:00</lastmod>
+<loc>/tags.html</loc>
+<lastmod>2019-03-10T18:49:46-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/categories.html</loc>
-<lastmod>2019-03-10T17:28:37-00:00</lastmod>
+<loc>/categories.html</loc>
+<lastmod>2019-03-10T18:49:46-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/search.html</loc>
-<lastmod>2019-03-10T17:28:37-00:00</lastmod>
+<loc>/search.html</loc>
+<lastmod>2019-03-10T18:49:46-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/articles/general/stackedit.html</loc>
-<lastmod>2019-08-29T02:14:00+04:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://dsfabric.org/articles/data-science/data-science-test.html</loc>
+<loc>/articles/data-science/data-science-test.html</loc>
 <lastmod>2019-03-10T12:14:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/articles/economics/economics-test.html</loc>
+<loc>/articles/economics/economics-test.html</loc>
 <lastmod>2019-03-09T12:14:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/articles/python/python-test.html</loc>
+<loc>/articles/python/python-test.html</loc>
 <lastmod>2019-03-08T12:14:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/articles/mathematics/advances-of-linear-algebra.html</loc>
+<loc>/articles/mathematics/advances-of-linear-algebra.html</loc>
 <lastmod>2019-03-04T12:14:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/articles/mathematics/intermediates-of-linear-algebra.html</loc>
+<loc>/articles/mathematics/intermediates-of-linear-algebra.html</loc>
 <lastmod>2019-03-03T12:14:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/articles/mathematics/basics-of-linear-algebra.html</loc>
+<loc>/articles/mathematics/basics-of-linear-algebra.html</loc>
 <lastmod>2019-03-02T12:14:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/articles/mathematics/introduction.html</loc>
+<loc>/articles/mathematics/introduction.html</loc>
 <lastmod>2019-03-01T12:14:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/category/data-science.html</loc>
+<loc>/articles/data-science/ds-1-test.html</loc>
+<lastmod>2019-02-08T12:14:00+04:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/articles/general/stackedit.html</loc>
+<lastmod>1997-08-29T02:14:00+05:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/category/data-science.html</loc>
 <lastmod>2019-03-10T12:14:00+02:59</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/category/economics.html</loc>
+<loc>/category/economics.html</loc>
 <lastmod>2019-03-09T12:14:00+02:59</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/category/general.html</loc>
-<lastmod>2019-08-29T02:14:00+02:59</lastmod>
+<loc>/category/general.html</loc>
+<lastmod>1997-08-29T02:14:00+02:59</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/category/mathematics.html</loc>
+<loc>/category/mathematics.html</loc>
 <lastmod>2019-03-04T12:14:00+02:59</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/category/python.html</loc>
+<loc>/category/python.html</loc>
 <lastmod>2019-03-08T12:14:00+02:59</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/tag/general.html</loc>
-<lastmod>2019-08-29T02:14:00+02:59</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://dsfabric.org/tag/data-science.html</loc>
+<loc>/tag/data-science.html</loc>
 <lastmod>2019-03-10T12:14:00+02:59</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/tag/economics.html</loc>
+<loc>/tag/economics.html</loc>
 <lastmod>2019-03-09T12:14:00+02:59</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/tag/python.html</loc>
+<loc>/tag/python.html</loc>
 <lastmod>2019-03-08T12:14:00+02:59</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/tag/linear-algebra.html</loc>
+<loc>/tag/linear-algebra.html</loc>
 <lastmod>2019-03-04T12:14:00+02:59</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/author/nodar-okroshiashvili.html</loc>
-<lastmod>2019-08-29T02:14:00+02:59</lastmod>
+<loc>/tag/general.html</loc>
+<lastmod>1997-08-29T02:14:00+02:59</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/author/nodar-okroshiashvili.html</loc>
+<lastmod>2019-03-10T12:14:00+02:59</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
