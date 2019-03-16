@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Nodar Okroshiashvili" />
 
-        <meta name="description" content="This is the third post in blog series about linear algebra. Introduction Basics of linear algebra Intermediate linear algebra Advances in linear algebra Fisrt and second posts are here and here In this post I will introduce you to the intermediates of linear algebra, which in turn includes the following: Vector Cross Product Span Linear Independence and Dependence Numerical Representation Matrix Types of Matrices
+        <meta name="description" content="This is the third post in blog series about linear algebra. Introduction Basics of linear algebra Intermediate linear algebra Advances in linear algebra First and second posts are here and here In this post I will introduce you to the intermediates of linear algebra, which in turn includes the following: Vector Cross Product Span Linear Independence and Dependence Numerical Representation Matrix Types of Matrices
 " />
         <meta name="twitter:creator" content="@N_Okroshiashvil">
         <meta property="og:type" content="article" />
@@ -16,12 +16,12 @@
 
 <meta property="og:title" content="Intermediates of Linear Algebra "/>
 <meta property="og:url" content="https://dsfabric.org/articles/mathematics/intermediates-of-linear-algebra.html" />
-<meta property="og:description" content="This is the third post in blog series about linear algebra. Introduction Basics of linear algebra Intermediate linear algebra Advances in linear algebra Fisrt and second posts are here and here In this post I will introduce you to the intermediates of linear algebra, which in turn includes the following: Vector Cross Product Span Linear Independence and Dependence Numerical Representation Matrix Types of Matrices" />
+<meta property="og:description" content="This is the third post in blog series about linear algebra. Introduction Basics of linear algebra Intermediate linear algebra Advances in linear algebra First and second posts are here and here In this post I will introduce you to the intermediates of linear algebra, which in turn includes the following: Vector Cross Product Span Linear Independence and Dependence Numerical Representation Matrix Types of Matrices" />
 <meta property="og:site_name" content="Data Science Fabric" />
 <meta property="og:article:author" content="Nodar Okroshiashvili" />
 <meta property="og:article:published_time" content="2019-03-03T12:14:00+04:00" />
 <meta name="twitter:title" content="Intermediates of Linear Algebra ">
-<meta name="twitter:description" content="This is the third post in blog series about linear algebra. Introduction Basics of linear algebra Intermediate linear algebra Advances in linear algebra Fisrt and second posts are here and here In this post I will introduce you to the intermediates of linear algebra, which in turn includes the following: Vector Cross Product Span Linear Independence and Dependence Numerical Representation Matrix Types of Matrices">
+<meta name="twitter:description" content="This is the third post in blog series about linear algebra. Introduction Basics of linear algebra Intermediate linear algebra Advances in linear algebra First and second posts are here and here In this post I will introduce you to the intermediates of linear algebra, which in turn includes the following: Vector Cross Product Span Linear Independence and Dependence Numerical Representation Matrix Types of Matrices">
 
         <title>Intermediates of Linear Algebra  · Data Science Fabric
 </title>
@@ -43,6 +43,14 @@
         <link rel="apple-touch-icon" sizes="144x144" href="https://dsfabric.org/theme/images/apple-touch-icon-144x144.png" type="image/png" />
         <link rel="apple-touch-icon" sizes="152x152" href="https://dsfabric.org/theme/images/apple-touch-icon-152x152.png" type="image/png" />
         <link href="https://dsfabric.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Data Science Fabric - Full Atom Feed" />
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-136307659-1', 'auto');
+    ga('send', 'pageview');
+</script>
 
 
 
@@ -96,7 +104,7 @@
 <li><strong>Intermediate linear algebra</strong></li>
 <li>Advances in linear algebra</li>
 </ol>
-<p>Fisrt and second posts are <a href="აქ ჩასვი პირველის ლინკი">here</a> and <a href="აქ ჩასვი მეორეს ლინკი">here</a></p>
+<p>First and second posts are <a href="https://dsfabric.org/articles/mathematics/introduction.html">here</a> and <a href="https://dsfabric.org/articles/mathematics/basics-of-linear-algebra.html">here</a></p>
 </div>
 </div>
 </div>
@@ -131,6 +139,7 @@
 </ul>
 </li>
 <li><a href="#Conclusion">Conclusion</a></li>
+<li><a href="#References">References</a></li>
 </ul>
 </div>
 </div>
@@ -152,16 +161,16 @@
 <p>If we have two vectors $A$ and $B$ in such a way:</p>
 \begin{align*}A =
 \begin{bmatrix}
-    a_{11} \\
-    a_{12} \\
-    a_{13}
+    a_{1} \\
+    a_{2} \\
+    a_{3}
 \end{bmatrix}
 \
 B =
 \begin{bmatrix}
-    b_{11} \\
-    b_{12} \\
-    b_{13}
+    b_{1} \\
+    b_{2} \\
+    b_{3}
 \end{bmatrix}
 \end{align*}<p>The algebraic formula is:</p>
 \begin{align*}
@@ -174,7 +183,7 @@ B =
 \end{align*}<p>At first glance, the formula is not easy to remember. Let try another formula which uses some advanced components.</p>
 \begin{align*}
 \vec{A} \times \vec{B} = \left| {\begin{array}{*{20}{c}}{\vec{i}}&{\vec{j}}&{\vec{k}}\\{{a_1}}&{{a_2}}&{{a_3}}\\{{b_1}}&{{b_2}}&{{b_3}}\end{array}} \right|
-\end{align*}<p>where $\vec{i}$, $\vec{j}$ and $\vec{k}$ are bases vectors and is explained <a href="ადვანსის ლინკი აქ">here</a>.</p>
+\end{align*}<p>where $\vec{i}$, $\vec{j}$ and $\vec{k}$ are bases vectors and is explained <a href="https://dsfabric.org/articles/mathematics/advances-of-linear-algebra.html">here</a>.</p>
 <p>To find the cross product we have to find the determinant of above matrix in the following way:</p>
 \begin{align*}
 \vec{A} \times \vec{B} = \left| {\begin{array}{*{20}{c}}{{a_2}}&{{a_3}}\\{{b_2}}&{{b_3}}\end{array}} \right|\vec{i} - \left| {\begin{array}{*{20}{c}}{{a_1}}&{{a_3}}\\{{b_1}}&{{b_3}}\end{array}} \right|\vec{j} + \left| {\begin{array}{*{20}{c}}{{a_1}}&{{a_2}}\\{{b_1}}&{{b_2}}\end{array}} \right|\vec{k}
@@ -530,7 +539,8 @@ c_{1} ([1, 2]) + c_{2} ([2, 4]) = [0, 0]
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Types-of-Matrices">Types of Matrices<a class="anchor-link" href="#Types-of-Matrices">¶</a></h3><p><a id="Types_of_Matrices"></a></p>
 <hr>
-<p>During years of linear algebra evolution, there appeared different types of matrices. Some of them were fundamentals, some of them appeared lately. In this part, I will introduce some basic types of matrices and give you reference to find some other useful ones. Previously, I talked about the identity matrix, which operates as number 1 in matrix multiplication and is denoted by capital letter $I$. The <strong>square</strong> matrix is a matrix with the same number of rows and columns.</p>
+<p>During years of linear algebra evolution, there appeared different types of matrices. Some of them were fundamentals, some of them appeared lately. In this part, I will introduce some basic types of matrices and give you reference to find some other useful ones. Previously, I talked about the identity matrix, which operates as number 1 in matrix multiplication and is denoted by capital letter $I$.</p>
+<p>A <strong>square</strong> matrix is a matrix with the same number of rows and columns.</p>
 \begin{align*}A =
 \begin{bmatrix}
     a_{11} & a_{12} & a_{13} \\
@@ -1131,8 +1141,11 @@ A \div B
 <h3 id="Solving-System-of-Equations-with-Matrices">Solving System of Equations with Matrices<a class="anchor-link" href="#Solving-System-of-Equations-with-Matrices">¶</a></h3><p><a id="Solving_System_of_Equations_with_Matrices"></a></p>
 <hr>
 <p>In the previous blog, I talked about the system of linear equations and we solved this system graphically and algebraically. One of the great things about matrices, is that they can help us solve systems of equations. For example, consider the following system of equations:</p>
-\begin{align*}2x + 4y = 18 
-\end{align*}\begin{align*}6x + 2y = 34
+\begin{align*}
+\begin{cases}
+2x + 4y = 18 \\
+6x + 2y = 34
+\end{cases}
 \end{align*}<p>We can write this in matrix form, like this:</p>
 \begin{align*}
 \begin{bmatrix}
@@ -1200,7 +1213,7 @@ B =
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Elementary-Row-Operations">Elementary Row Operations<a class="anchor-link" href="#Elementary-Row-Operations">¶</a></h3><p><a id="Elementary_Row_Operations"></a></p>
 <hr>
-<p>Elementary row operations (ERO) play an important role in many matrix algebra applications, such as finding the inverse of a matrix and solving simultaneous linear equations. These topics are covered <a href="ადვანსის ლინკი აქ">here</a>. An ERO transforms a given matrix $A$ into a new matrix $A^{'}$ via one of the following operations:</p>
+<p>Elementary row operations (ERO) play an important role in many matrix algebra applications, such as finding the inverse of a matrix and solving simultaneous linear equations. These topics are covered <a href="https://dsfabric.org/articles/mathematics/advances-of-linear-algebra.html">here</a>. An ERO transforms a given matrix $A$ into a new matrix $A^{'}$ via one of the following operations:</p>
 <ol>
 <li>Interchange two rows (or columns)</li>
 <li>Multiply each element in a row (or column) by a non-zero number</li>
@@ -1256,7 +1269,7 @@ $$
 Rank(A) \leq min(m, n)
 $$<p>This means that if a matrix has, for example, 3 rows and 5 columns, its rank cannot be more than 3. The rank of a matrix would be zero if and only if the matrix had no elements. If a matrix had even one element, its minimum rank would be one. When all of the vectors in a matrix are linearly independent, the matrix is said to be <strong>full rank</strong>.</p>
 <p>To calculate the rank of a matrix, we have to compute the determinant. It turns out that the rank of a matrix $A$, denoted by $Rank(A)$ is the size of the largest non-zero $m \times m$ submatrix with non-zero determinant. To simplify further, if the determinant of $4 \times 4$ matrix $A$ is zero and any $3 \times3$ submatrix of original matrix $A$ has non-zero determinant then the rank of the original matrix $A$ is $3$. So we can say that rank shows the <a href="https://en.wikipedia.org/wiki/Degenerate_bilinear_form">"nondegenerateness"</a> of the matrix $A$.</p>
-<p>Actually, there is no only one way to compute the rank. I provided one more way in the advanced tutorial <a href="აქ ედვანსის ლინკი">here</a></p>
+<p>Actually, there is no only one way to compute the rank. I provided one more way in the advanced tutorial <a href="https://dsfabric.org/articles/mathematics/advances-of-linear-algebra.html">here</a></p>
 </div>
 </div>
 </div>
@@ -1731,25 +1744,19 @@ The general formula for entrywise matrix norm is:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="References">References<a class="anchor-link" href="#References">¶</a></h2><h4 id="Vector">Vector<a class="anchor-link" href="#Vector">¶</a></h4><ul>
-<li><p><a href="https://www.youtube.com/watch?v=lXNXrLcoerU">Gilbert Strang, Lec21 MIT - Eigenvalues and eigenvectors</a></p>
+<h3 id="References">References<a class="anchor-link" href="#References">¶</a></h3><p><a id="References"></a></p>
+<h4 id="Vector">Vector<a class="anchor-link" href="#Vector">¶</a></h4><ul>
+<li><p><a href="http://linear.axler.net/">Linear Algebra Done Right</a></p>
 </li>
-<li><p><a href="https://www.youtube.com/watch?v=lXNXrLcoerU">Gilbert Strang, Lec 21 MIT, Spring 2005</a></p>
+<li><p><a href="https://en.wikipedia.org/wiki/List_of_linear_algebra_topics">Linear Algebra Topics</a></p>
 </li>
 </ul>
 <h4 id="Matrix">Matrix<a class="anchor-link" href="#Matrix">¶</a></h4><ul>
-<li><a href="http://setosa.io/ev/eigenvectors-and-eigenvalues/">Victor Powell and Lewis Lehe - Interactive representation of eigenvectors</a></li>
-</ul>
-<h4 id="Matrix-Decomposition">Matrix Decomposition<a class="anchor-link" href="#Matrix-Decomposition">¶</a></h4><ul>
-<li><a href="https://rosettacode.org/wiki/Cholesky_decomposition">Cholesky Decomposition</a></li>
-</ul>
-<h4 id="Eigenvectors">Eigenvectors<a class="anchor-link" href="#Eigenvectors">¶</a></h4><ul>
-<li><a href="http://setosa.io/ev/eigenvectors-and-eigenvalues/">Victor Powell and Lewis Lehe - Interactive representation of eigenvectors</a></li>
-</ul>
-<h4 id="Linear-transformations">Linear transformations<a class="anchor-link" href="#Linear-transformations">¶</a></h4><ul>
-<li><p><a href="http://ia802205.us.archive.org/18/items/MIT18.06S05_MP4/30.mp4">Gilbert Strang - Linear transformation</a></p>
+<li><p><a href="http://math.mit.edu/~gs/linearalgebra/">Introduction To Linear Algebra</a></p>
 </li>
-<li><p><a href="https://www.youtube.com/watch?v=wXCRcnbCsJA">Linear transformation - demo video</a></p>
+<li><p><a href="https://en.wikipedia.org/wiki/List_of_linear_algebra_topics">Linear Algebra Topics</a></p>
+</li>
+<li><p><a href="https://www.khanacademy.org/math/linear-algebra">Khan Academy - Linear Algebra</a></p>
 </li>
 </ul>
 </div>
@@ -1801,12 +1808,47 @@ The general formula for entrywise matrix norm is:</p>
     </p>
 </section>
 
-            
+            <section>
+<p id="comment-message">So what do you think? Did I miss something? Is any part unclear? Leave your comments below. </p>
+<div class="accordion" id="accordion2">
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
+                href="https://dsfabric.org/articles/mathematics/intermediates-of-linear-algebra.html#disqus_thread",
+                id="disqus-accordion-toggle">
+                Comments
+            </a>
+        </div>
+        <div id="disqus_thread" class="accordion-body collapse">
+            <div class="accordion-inner">
+                <div class="comments">
+                    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'dsfabric';
+        var disqus_identifier = 'https://dsfabric.org/articles/mathematics/intermediates-of-linear-algebra.html';
+    var disqus_url = 'https://dsfabric.org/articles/mathematics/intermediates-of-linear-algebra.html';
+
+    (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+     })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
             <hr/>
 <section>
     <h2>Keep Reading</h2>
 <ul class="related-posts-list">
-<li><a href="https://dsfabric.org/articles/mathematics/introduction.html" title="Introduction">Introduction</a></li>
+<li><a href="https://dsfabric.org/articles/mathematics/introduction-to-linear-algebra.html" title="Introduction to Linear Algebra">Introduction to Linear Algebra</a></li>
 <li><a href="https://dsfabric.org/articles/mathematics/basics-of-linear-algebra.html" title="Basics of Linear Algebra">Basics of Linear Algebra</a></li>
 <li><a href="https://dsfabric.org/articles/mathematics/advances-of-linear-algebra.html" title="Advances of Linear Algebra">Advances of Linear Algebra</a></li>
 </ul>
@@ -1868,7 +1910,45 @@ The general formula for entrywise matrix norm is:</p>
             }
         </script>
 
-    
+            <script type="text/javascript">
+var disqus_shortname = 'dsfabric';
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+<script  language="javascript" type="text/javascript">
+function uncollapse() {
+    if (window.location.hash.match(/^#comment-\d+$/)) {
+        $('#disqus_thread').collapse('show');
+    }
+}
+</script>
+<script type="text/javascript" language="JavaScript">
+uncollapse();
+window.onhashchange=function(){
+    if (window.location.hash.match(/^#comment-\d+$/))
+        window.location.reload(true);
+}
+</script>
+<script>
+$('#disqus_thread').on('shown', function () {
+    var link = document.getElementById('disqus-accordion-toggle');
+    var old_innerHTML = link.innerHTML;
+    $(link).fadeOut(500, function() {
+        $(this).text('Click here to hide comments').fadeIn(500);
+    });
+    $('#disqus_thread').on('hidden', function () {
+        $(link).fadeOut(500, function() {
+            $(this).text(old_innerHTML).fadeIn(500);
+        });
+    })
+})
+</script>
+
+
     </body>
     <!-- Theme: Elegant built for Pelican
     License : MIT -->

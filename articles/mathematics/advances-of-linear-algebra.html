@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Nodar Okroshiashvili" />
 
-        <meta name="description" content="This is the fourth and last post in blog series about linear algebra. Introduction Basics of linear algebra Intermediate linear algebra Advances in linear algebra Fisrt, second and third posts are here, here and here In this post I will introduce you to the advances of linear algebra, which in turn includes the following: Vector Basis Vectors Matrix Gaussian Elimination of a Matrix
+        <meta name="description" content="This is the fourth and last post in blog series about linear algebra. Introduction Basics of linear algebra Intermediate linear algebra Advances in linear algebra First, second and third posts are here, here and here In this post I will introduce you to the advances of linear algebra, which in turn includes the following: Vector Basis Vectors Matrix Gaussian Elimination of a Matrix
 " />
         <meta name="twitter:creator" content="@N_Okroshiashvil">
         <meta property="og:type" content="article" />
@@ -16,12 +16,12 @@
 
 <meta property="og:title" content="Advances of Linear Algebra "/>
 <meta property="og:url" content="https://dsfabric.org/articles/mathematics/advances-of-linear-algebra.html" />
-<meta property="og:description" content="This is the fourth and last post in blog series about linear algebra. Introduction Basics of linear algebra Intermediate linear algebra Advances in linear algebra Fisrt, second and third posts are here, here and here In this post I will introduce you to the advances of linear algebra, which in turn includes the following: Vector Basis Vectors Matrix Gaussian Elimination of a Matrix" />
+<meta property="og:description" content="This is the fourth and last post in blog series about linear algebra. Introduction Basics of linear algebra Intermediate linear algebra Advances in linear algebra First, second and third posts are here, here and here In this post I will introduce you to the advances of linear algebra, which in turn includes the following: Vector Basis Vectors Matrix Gaussian Elimination of a Matrix" />
 <meta property="og:site_name" content="Data Science Fabric" />
 <meta property="og:article:author" content="Nodar Okroshiashvili" />
 <meta property="og:article:published_time" content="2019-03-04T12:14:00+04:00" />
 <meta name="twitter:title" content="Advances of Linear Algebra ">
-<meta name="twitter:description" content="This is the fourth and last post in blog series about linear algebra. Introduction Basics of linear algebra Intermediate linear algebra Advances in linear algebra Fisrt, second and third posts are here, here and here In this post I will introduce you to the advances of linear algebra, which in turn includes the following: Vector Basis Vectors Matrix Gaussian Elimination of a Matrix">
+<meta name="twitter:description" content="This is the fourth and last post in blog series about linear algebra. Introduction Basics of linear algebra Intermediate linear algebra Advances in linear algebra First, second and third posts are here, here and here In this post I will introduce you to the advances of linear algebra, which in turn includes the following: Vector Basis Vectors Matrix Gaussian Elimination of a Matrix">
 
         <title>Advances of Linear Algebra  · Data Science Fabric
 </title>
@@ -43,6 +43,14 @@
         <link rel="apple-touch-icon" sizes="144x144" href="https://dsfabric.org/theme/images/apple-touch-icon-144x144.png" type="image/png" />
         <link rel="apple-touch-icon" sizes="152x152" href="https://dsfabric.org/theme/images/apple-touch-icon-152x152.png" type="image/png" />
         <link href="https://dsfabric.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Data Science Fabric - Full Atom Feed" />
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-136307659-1', 'auto');
+    ga('send', 'pageview');
+</script>
 
 
 
@@ -96,7 +104,7 @@
 <li>Intermediate linear algebra</li>
 <li><strong>Advances in linear algebra</strong></li>
 </ol>
-<p>Fisrt, second and third posts are <a href="აქ ჩასვი პირველის ლინკი">here</a>, <a href="აქ ჩასვი მეორეს ლინკი">here</a> and <a href="აქ ჩასვი მესამეს ლინკი">here</a></p>
+<p>First, second and third posts are <a href="https://dsfabric.org/articles/mathematics/introduction.html">here</a>, <a href="https://dsfabric.org/articles/mathematics/basics-of-linear-algebra.html">here</a> and <a href="https://dsfabric.org/articles/mathematics/intermediates-of-linear-algebra.html">here</a></p>
 </div>
 </div>
 </div>
@@ -134,6 +142,7 @@
 </ul>
 </li>
 <li><a href="#Conclusion">Conclusion</a></li>
+<li><a href="#References">References</a></li>
 </ul>
 </div>
 </div>
@@ -150,7 +159,7 @@
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Basis-Vectors">Basis Vectors<a class="anchor-link" href="#Basis-Vectors">¶</a></h3><p><a id="Basis_Vectors"></a></p>
 <hr>
-<p>In the <a href="აქ ბასიკის ლინკი">basics</a>, we saw what is a unit vector. To refresh, the unit vector is the vector with length 1 and the formula is</p>
+<p>In the <a href="https://dsfabric.org/articles/mathematics/basics-of-linear-algebra.html">basics</a>, we saw what is a unit vector. To refresh, the unit vector is the vector with length 1 and the formula is</p>
 \begin{align*}
 \hat{X} = \frac{X}{\|X\|}
 \end{align*}<p>For farther explanation, unit vectors can be used to represent the axes of a <a href="https://en.wikipedia.org/wiki/Cartesian_coordinate_system">Cartesian coordinate system</a>. For example in a three-dimensional Cartesian coordinate system such vectors are:</p>
@@ -390,7 +399,7 @@ x = -1
 </li>
 </ol>
 <p>This is the solution of the initial system, as well as the last system and every intermediate system. The matrix obtained in step 5 above is in Row-Echelon form as it satisfied above-mentioned conditions.</p>
-<p>Note that, starting with a particular matrix, a different sequence of ERO's can lead to different row echelon form</p>
+<p><strong>Note that, starting with a particular matrix, a different sequence of ERO's can lead to different row echelon form</strong></p>
 </div>
 </div>
 </div>
@@ -623,7 +632,7 @@ x = -1
 2
 \end{bmatrix}
 \quad
-v_{2}
+v_{2} =
 \begin{bmatrix}
 0\\
 1\\
@@ -2091,45 +2100,30 @@ v_{\lambda_{2}} =
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">¶</a></h2><p><a id="Conclusion"></a></p>
 <hr>
-<p>gdefgsdgsgds</p>
+<p>In conclusion, my aim was to make linear algebra tutorials which are in absence, while learning machine learning or deep learning. Particularly, existing materials either are pure mathematics books which cover lots of unnecessary(actually they are necessary) things or machine learning books which assume that you already have some linear algebra knowledge. The series starts from very basic and at the end explains some advanced topics. I can say that I tried my best to filter the materials and only explained the most relevant linear algebra topic for machine learning and deep learning.</p>
+<p>Based on my experience, these tutorials are not enough to master the concepts and all intuitions but the journey should be continuous. Meaning, that you have to practice more and more.</p>
+<p>Now, I realize that, for aspiring data scientists, besides my hard work, some topic may not be still clear. For that don't hesitate and comment below.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="References">References<a class="anchor-link" href="#References">¶</a></h2><h4 id="Vector">Vector<a class="anchor-link" href="#Vector">¶</a></h4><ul>
-<li><p><a href="https://www.youtube.com/watch?v=lXNXrLcoerU">Gilbert Strang, Lec21 MIT - Eigenvalues and eigenvectors</a></p>
-</li>
-<li><p><a href="https://www.youtube.com/watch?v=lXNXrLcoerU">Gilbert Strang, Lec 21 MIT, Spring 2005</a></p>
-</li>
+<h3 id="References">References<a class="anchor-link" href="#References">¶</a></h3><p><a id="References"></a></p>
+<h4 id="Vector">Vector<a class="anchor-link" href="#Vector">¶</a></h4><ul>
+<li><a href="http://linear.axler.net/">Linear Algebra Done Right</a></li>
 </ul>
 <h4 id="Matrix">Matrix<a class="anchor-link" href="#Matrix">¶</a></h4><ul>
-<li><a href="http://setosa.io/ev/eigenvectors-and-eigenvalues/">Victor Powell and Lewis Lehe - Interactive representation of eigenvectors</a></li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_linear_algebra_topics">Linear Algebra Topics</a></li>
 </ul>
 <h4 id="Matrix-Decomposition">Matrix Decomposition<a class="anchor-link" href="#Matrix-Decomposition">¶</a></h4><ul>
-<li><a href="https://rosettacode.org/wiki/Cholesky_decomposition">Cholesky Decomposition</a></li>
-</ul>
-<h4 id="Eigenvectors">Eigenvectors<a class="anchor-link" href="#Eigenvectors">¶</a></h4><ul>
-<li><a href="http://setosa.io/ev/eigenvectors-and-eigenvalues/">Victor Powell and Lewis Lehe - Interactive representation of eigenvectors</a></li>
-</ul>
-<h4 id="Linear-transformations">Linear transformations<a class="anchor-link" href="#Linear-transformations">¶</a></h4><ul>
-<li><p><a href="http://ia802205.us.archive.org/18/items/MIT18.06S05_MP4/30.mp4">Gilbert Strang - Linear transformation</a></p>
+<li><p><a href="https://rosettacode.org/wiki/Cholesky_decomposition">Cholesky Decomposition</a></p>
 </li>
-<li><p><a href="https://www.youtube.com/watch?v=wXCRcnbCsJA">Linear transformation - demo video</a></p>
+<li><p><a href="https://en.wikipedia.org/wiki/Matrix_decomposition">Matrix Decomposition</a></p>
+</li>
+<li><p><a href="http://math.mit.edu/~gs/linearalgebra/">Introduction To Linear Algebra</a></p>
 </li>
 </ul>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -2179,12 +2173,47 @@ v_{\lambda_{2}} =
     </p>
 </section>
 
-            
+            <section>
+<p id="comment-message">So what do you think? Did I miss something? Is any part unclear? Leave your comments below. </p>
+<div class="accordion" id="accordion2">
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
+                href="https://dsfabric.org/articles/mathematics/advances-of-linear-algebra.html#disqus_thread",
+                id="disqus-accordion-toggle">
+                Comments
+            </a>
+        </div>
+        <div id="disqus_thread" class="accordion-body collapse">
+            <div class="accordion-inner">
+                <div class="comments">
+                    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'dsfabric';
+        var disqus_identifier = 'https://dsfabric.org/articles/mathematics/advances-of-linear-algebra.html';
+    var disqus_url = 'https://dsfabric.org/articles/mathematics/advances-of-linear-algebra.html';
+
+    (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+     })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
             <hr/>
 <section>
     <h2>Keep Reading</h2>
 <ul class="related-posts-list">
-<li><a href="https://dsfabric.org/articles/mathematics/introduction.html" title="Introduction">Introduction</a></li>
+<li><a href="https://dsfabric.org/articles/mathematics/introduction-to-linear-algebra.html" title="Introduction to Linear Algebra">Introduction to Linear Algebra</a></li>
 <li><a href="https://dsfabric.org/articles/mathematics/basics-of-linear-algebra.html" title="Basics of Linear Algebra">Basics of Linear Algebra</a></li>
 <li><a href="https://dsfabric.org/articles/mathematics/intermediates-of-linear-algebra.html" title="Intermediates of Linear Algebra">Intermediates of Linear Algebra</a></li>
 </ul>
@@ -2246,7 +2275,45 @@ v_{\lambda_{2}} =
             }
         </script>
 
-    
+            <script type="text/javascript">
+var disqus_shortname = 'dsfabric';
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+<script  language="javascript" type="text/javascript">
+function uncollapse() {
+    if (window.location.hash.match(/^#comment-\d+$/)) {
+        $('#disqus_thread').collapse('show');
+    }
+}
+</script>
+<script type="text/javascript" language="JavaScript">
+uncollapse();
+window.onhashchange=function(){
+    if (window.location.hash.match(/^#comment-\d+$/))
+        window.location.reload(true);
+}
+</script>
+<script>
+$('#disqus_thread').on('shown', function () {
+    var link = document.getElementById('disqus-accordion-toggle');
+    var old_innerHTML = link.innerHTML;
+    $(link).fadeOut(500, function() {
+        $(this).text('Click here to hide comments').fadeIn(500);
+    });
+    $('#disqus_thread').on('hidden', function () {
+        $(link).fadeOut(500, function() {
+            $(this).text(old_innerHTML).fadeIn(500);
+        });
+    })
+})
+</script>
+
+
     </body>
     <!-- Theme: Elegant built for Pelican
     License : MIT -->
