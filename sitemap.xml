@@ -5,35 +5,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://dsfabric.org/</loc>
-<lastmod>2019-03-25T20:39:09-00:00</lastmod>
+<lastmod>2019-03-29T20:48:40-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://dsfabric.org/archives.html</loc>
-<lastmod>2019-03-25T20:39:09-00:00</lastmod>
+<lastmod>2019-03-29T20:48:40-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://dsfabric.org/tags.html</loc>
-<lastmod>2019-03-25T20:39:09-00:00</lastmod>
+<lastmod>2019-03-29T20:48:40-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://dsfabric.org/categories.html</loc>
-<lastmod>2019-03-25T20:39:09-00:00</lastmod>
+<lastmod>2019-03-29T20:48:40-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://dsfabric.org/search.html</loc>
-<lastmod>2019-03-25T20:39:09-00:00</lastmod>
+<lastmod>2019-03-29T20:48:40-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -60,28 +60,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://dsfabric.org/articles/mathematics/advances-of-linear-algebra.html</loc>
+<loc>https://dsfabric.org/articles/mathematics/advances-of-linear-algebra-with-python.html</loc>
 <lastmod>2019-03-04T12:14:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/articles/mathematics/intermediates-of-linear-algebra.html</loc>
+<loc>https://dsfabric.org/articles/mathematics/intermediates-of-linear-algebra-with-python.html</loc>
 <lastmod>2019-03-03T12:14:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/articles/mathematics/basics-of-linear-algebra.html</loc>
+<loc>https://dsfabric.org/articles/mathematics/basics-of-linear-algebra-with-python.html</loc>
 <lastmod>2019-03-02T12:14:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/articles/mathematics/introduction-to-linear-algebra.html</loc>
+<loc>https://dsfabric.org/articles/mathematics/introduction-to-linear-algebra-with-python.html</loc>
 <lastmod>2019-03-01T12:14:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
@@ -173,6 +173,20 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://dsfabric.org/tag/linear-algebra.html</loc>
+<lastmod>2019-03-04T12:14:00+02:59</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://dsfabric.org/tag/numpy.html</loc>
+<lastmod>2019-03-04T12:14:00+02:59</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://dsfabric.org/tag/scipy.html</loc>
 <lastmod>2019-03-04T12:14:00+02:59</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>

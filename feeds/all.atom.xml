@@ -432,7 +432,7 @@
 &lt;p&gt;To do this project as I want I need to plan it carefully.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
 &lt;p&gt;Written with &lt;a href="https://stackedit.io/"&gt;StackEdit&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;To do this project as I want I need to plan it carefully.&lt;/p&gt;</content><category term="Python"></category><category term="Python"></category></entry><entry><title>Advances of Linear Algebra</title><link href="https://dsfabric.org/articles/mathematics/advances-of-linear-algebra.html" rel="alternate"></link><published>2019-03-04T12:14:00+04:00</published><updated>2019-03-04T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-04:/articles/mathematics/advances-of-linear-algebra.html</id><summary type="html">
+&lt;p&gt;To do this project as I want I need to plan it carefully.&lt;/p&gt;</content><category term="Python"></category><category term="Python"></category></entry><entry><title>Advances of Linear Algebra with Python</title><link href="https://dsfabric.org/articles/mathematics/advances-of-linear-algebra-with-python.html" rel="alternate"></link><published>2019-03-04T12:14:00+04:00</published><updated>2019-03-04T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-04:/articles/mathematics/advances-of-linear-algebra-with-python.html</id><summary type="html">
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -2520,7 +2520,7 @@ v_{\lambda_{2}} =
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="Linear Algebra"></category><category term="Mathematics"></category></entry><entry><title>Intermediates of Linear Algebra</title><link href="https://dsfabric.org/articles/mathematics/intermediates-of-linear-algebra.html" rel="alternate"></link><published>2019-03-03T12:14:00+04:00</published><updated>2019-03-03T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-03:/articles/mathematics/intermediates-of-linear-algebra.html</id><summary type="html">
+</content><category term="Linear Algebra"></category><category term="Python"></category><category term="Numpy"></category><category term="Scipy"></category><category term="Mathematics"></category></entry><entry><title>Intermediates of Linear Algebra with Python</title><link href="https://dsfabric.org/articles/mathematics/intermediates-of-linear-algebra-with-python.html" rel="alternate"></link><published>2019-03-03T12:14:00+04:00</published><updated>2019-03-03T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-03:/articles/mathematics/intermediates-of-linear-algebra-with-python.html</id><summary type="html">
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -4246,7 +4246,7 @@ The general formula for entrywise matrix norm is:&lt;/p&gt;
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="Linear Algebra"></category><category term="Mathematics"></category></entry><entry><title>Basics of Linear Algebra</title><link href="https://dsfabric.org/articles/mathematics/basics-of-linear-algebra.html" rel="alternate"></link><published>2019-03-02T12:14:00+04:00</published><updated>2019-03-02T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-02:/articles/mathematics/basics-of-linear-algebra.html</id><summary type="html">
+</content><category term="Linear Algebra"></category><category term="Python"></category><category term="Numpy"></category><category term="Scipy"></category><category term="Mathematics"></category></entry><entry><title>Basics of Linear Algebra with Python</title><link href="https://dsfabric.org/articles/mathematics/basics-of-linear-algebra-with-python.html" rel="alternate"></link><published>2019-03-02T12:14:00+04:00</published><updated>2019-03-02T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-02:/articles/mathematics/basics-of-linear-algebra-with-python.html</id><summary type="html">
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -5579,7 +5579,7 @@ a_{1m} &amp; a_{2m} &amp; \cdots &amp; a_{nm}
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="Linear Algebra"></category><category term="Mathematics"></category></entry><entry><title>Introduction to Linear Algebra</title><link href="https://dsfabric.org/articles/mathematics/introduction-to-linear-algebra.html" rel="alternate"></link><published>2019-03-01T12:14:00+04:00</published><updated>2019-03-01T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-01:/articles/mathematics/introduction-to-linear-algebra.html</id><summary type="html">
+</content><category term="Linear Algebra"></category><category term="Python"></category><category term="Numpy"></category><category term="Scipy"></category><category term="Mathematics"></category></entry><entry><title>Introduction to Linear Algebra with Python</title><link href="https://dsfabric.org/articles/mathematics/introduction-to-linear-algebra-with-python.html" rel="alternate"></link><published>2019-03-01T12:14:00+04:00</published><updated>2019-03-01T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-01:/articles/mathematics/introduction-to-linear-algebra-with-python.html</id><summary type="html">
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -5720,7 +5720,7 @@ A = (0,1)
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="Linear Algebra"></category><category term="Mathematics"></category></entry><entry><title>Economics - Test - Test II</title><link href="https://dsfabric.org/articles/economics/economics-test-test-ii.html" rel="alternate"></link><published>2019-01-09T12:14:00+04:00</published><updated>2019-01-09T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-01-09:/articles/economics/economics-test-test-ii.html</id><summary type="html">&lt;blockquote&gt;
+</content><category term="Linear Algebra"></category><category term="Python"></category><category term="Numpy"></category><category term="Scipy"></category><category term="Mathematics"></category></entry><entry><title>Economics - Test - Test II</title><link href="https://dsfabric.org/articles/economics/economics-test-test-ii.html" rel="alternate"></link><published>2019-01-09T12:14:00+04:00</published><updated>2019-01-09T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-01-09:/articles/economics/economics-test-test-ii.html</id><summary type="html">&lt;blockquote&gt;
 &lt;p&gt;Written with &lt;a href="https://stackedit.io/"&gt;StackEdit&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;To do this project as I want I need to plan it carefully.&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
