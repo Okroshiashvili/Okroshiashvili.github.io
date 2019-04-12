@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Nodar Okroshiashvili" />
 
-        <meta name="description" content="This is the fourth and last post in blog series about linear algebra. Introduction Basics of linear algebra Intermediate linear algebra Advances in linear algebra First, second and third posts are here, here and here In this post I will introduce you to the advances of linear algebra, which in turn includes the following: Vector Basis Vectors Matrix Gaussian Elimination of a Matrix
+        <meta name="description" content="This is the first part of the fourth and last post in blog series about linear algebra. Introduction Basics of linear algebra Intermediate linear algebra Advances in linear algebra: Part I and Part II In this post I will introduce you to the advances of linear algebra, which in turn includes the following: Vector Basis Vectors Matrix Gaussian Elimination of a Matrix
 " />
         <meta name="twitter:creator" content="@N_Okroshiashvil">
         <meta property="og:type" content="article" />
@@ -14,16 +14,16 @@
 
 <meta name="keywords" content="Linear Algebra, Python, Numpy, Scipy, Mathematics, Mathematics, " />
 
-<meta property="og:title" content="Advances of Linear Algebra with Python "/>
-<meta property="og:url" content="https://dsfabric.org/articles/mathematics/advances-of-linear-algebra-with-python.html" />
-<meta property="og:description" content="This is the fourth and last post in blog series about linear algebra. Introduction Basics of linear algebra Intermediate linear algebra Advances in linear algebra First, second and third posts are here, here and here In this post I will introduce you to the advances of linear algebra, which in turn includes the following: Vector Basis Vectors Matrix Gaussian Elimination of a Matrix" />
+<meta property="og:title" content="Advances of Linear Algebra with Python - Part I "/>
+<meta property="og:url" content="https://dsfabric.org/articles/mathematics/advances-of-linear-algebra-with-python-part-i.html" />
+<meta property="og:description" content="This is the first part of the fourth and last post in blog series about linear algebra. Introduction Basics of linear algebra Intermediate linear algebra Advances in linear algebra: Part I and Part II In this post I will introduce you to the advances of linear algebra, which in turn includes the following: Vector Basis Vectors Matrix Gaussian Elimination of a Matrix" />
 <meta property="og:site_name" content="Data Science Fabric" />
 <meta property="og:article:author" content="Nodar Okroshiashvili" />
 <meta property="og:article:published_time" content="2019-03-04T12:14:00+04:00" />
-<meta name="twitter:title" content="Advances of Linear Algebra with Python ">
-<meta name="twitter:description" content="This is the fourth and last post in blog series about linear algebra. Introduction Basics of linear algebra Intermediate linear algebra Advances in linear algebra First, second and third posts are here, here and here In this post I will introduce you to the advances of linear algebra, which in turn includes the following: Vector Basis Vectors Matrix Gaussian Elimination of a Matrix">
+<meta name="twitter:title" content="Advances of Linear Algebra with Python - Part I ">
+<meta name="twitter:description" content="This is the first part of the fourth and last post in blog series about linear algebra. Introduction Basics of linear algebra Intermediate linear algebra Advances in linear algebra: Part I and Part II In this post I will introduce you to the advances of linear algebra, which in turn includes the following: Vector Basis Vectors Matrix Gaussian Elimination of a Matrix">
 
-        <title>Advances of Linear Algebra with Python  · Data Science Fabric
+        <title>Advances of Linear Algebra with Python - Part I  · Data Science Fabric
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
@@ -85,7 +85,7 @@
 <article itemscope>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h1><a href="https://dsfabric.org/articles/mathematics/advances-of-linear-algebra-with-python.html"> Advances of Linear Algebra with Python  </a></h1>
+    <h1><a href="https://dsfabric.org/articles/mathematics/advances-of-linear-algebra-with-python-part-i.html"> Advances of Linear Algebra with Python - Part I  </a></h1>
     </header>
 </div>
 
@@ -97,14 +97,13 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is the fourth and last post in blog series about linear algebra.</p>
+<p>This is the first part of the fourth and last post in blog series about linear algebra.</p>
 <ol>
 <li>Introduction</li>
 <li>Basics of linear algebra</li>
 <li>Intermediate linear algebra</li>
-<li><strong>Advances in linear algebra</strong></li>
+<li><strong>Advances in linear algebra</strong>: <strong>Part I</strong> and Part II</li>
 </ol>
-<p>First, second and third posts are <a href="https://dsfabric.org/articles/mathematics/introduction-to-linear-algebra-with-python.html">here</a>, <a href="https://dsfabric.org/articles/mathematics/basics-of-linear-algebra-with-python.html">here</a> and <a href="https://dsfabric.org/articles/mathematics/intermediates-of-linear-algebra-with-python.html">here</a></p>
 </div>
 </div>
 </div>
@@ -132,17 +131,6 @@
 <li><a href="#Numerical_Representation_Matrix">Numerical Representation</a></li>
 </ul>
 </li>
-<li><a href="#Matrix_Decompositions">Matrix Decompositions</a><ul>
-<li><a href="#Cholesky_Decomposition">Cholesky Decomposition</a></li>
-<li><a href="#QR_Decomposition">QR Decomposition</a></li>
-<li><a href="#Eigendecomposition">Eigendecomposition</a></li>
-<li><a href="#Singular_Value_Decomposition">Singular Value Decomposition</a></li>
-<li><a href="#Inverse_of_a_Square_Full_Rank_Matrix">Inverse of a Square Full Rank Matrix</a></li>
-<li><a href="#Numerical_Representation_Decompositions">Numerical Representation</a></li>
-</ul>
-</li>
-<li><a href="#Conclusion">Conclusion</a></li>
-<li><a href="#References">References</a></li>
 </ul>
 </div>
 </div>
@@ -1286,7 +1274,7 @@ is called the <strong>Spectrum</strong></p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [1]:</div>
+<div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1361,7 +1349,7 @@ Unnormiled Kernel
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [2]:</div>
+<div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1413,7 +1401,7 @@ Unnormiled Kernel
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [3]:</div>
+<div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1463,7 +1451,7 @@ Unnormiled Kernel
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [4]:</div>
+<div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1512,7 +1500,7 @@ Unnormiled Kernel
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [5]:</div>
+<div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1570,7 +1558,7 @@ Unnormiled Kernel
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [6]:</div>
+<div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1590,7 +1578,7 @@ Unnormiled Kernel
 
 
 <span class="c1"># Note that this eigenvectors seems different from my calculation. However they are not different.</span>
-<span class="c1"># They are normiled to have unit length</span>
+<span class="c1"># They are normalized to have unit length</span>
 </pre></div>
 </div>
 </div>
@@ -1615,718 +1603,26 @@ Eigenvectors are:
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Matrix-Decompositions">Matrix Decompositions<a class="anchor-link" href="#Matrix-Decompositions">¶</a></h2><p><a id="Matrix_Decompositions"></a></p>
+<h3 id="Conclusion-for-part-I">Conclusion for part I<a class="anchor-link" href="#Conclusion-for-part-I">¶</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In linear algebra, matrix decomposition or matrix factorization is a factorization of a matrix into a product of matrices. Factorizing a matrix means that we want to find a product of matrices that is equal to the initial matrix. These techniques have a wide variety of uses and consequently, there exist several types of decompositions. Below, I will consider some of them, mostly applicable to machine learning or deep learning.</p>
+<p>In conclusion, part one is relatively heavy but as it contains lots of calculations. That's why we use computers to solve this kind of problems. Despite Numpy's build in functions there is big avenue to write algorithm to compute eigenvalues for instance. That would be very helpful for practicing linear algebra and python simultaneously.</p>
+<p>The second part is devoted solely for matrix decompositions.</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Cholesky-Decomposition">Cholesky Decomposition<a class="anchor-link" href="#Cholesky-Decomposition">¶</a></h3><p><a id="Cholesky_Decomposition"></a></p>
-<hr>
-<p>The Cholesky Decomposition is the factorization of a given <strong>symmetric</strong> square matrix $A$ into the product of a lower triangular matrix, denoted by $L$ and its transpose $L^{T}$. This decomposition is named after French artillery officer <a href="https://en.wikipedia.org/wiki/Andr%C3%A9-Louis_Cholesky">Andre-Louis Cholesky</a>. The formula is:</p>
-\begin{align*}A =
-LL^{T}
-\end{align*}<p>For rough sense, let $A$ be</p>
-\begin{align*}A =
-\begin{bmatrix}
-a_{11} & a_{12} & a_{13} \\
-a_{21} & a_{22} & a_{23} \\
-a_{31} & a_{32} & a_{33}
-\end{bmatrix}
-\end{align*}<p>Then we can represent $A$ as</p>
-\begin{align*}A = LL^{T} =
-\begin{bmatrix}
-l_{11} & 0 & 0 \\
-l_{21} & l_{22} & 0 \\
-l_{31} & l_{32} & l_{33}
-\end{bmatrix}
-\cdot
-\begin{bmatrix}
-l_{11} & l_{12} & l_{13} \\
-0 & l_{22} & l_{23} \\
-0 & 0 & a_{33}
-\end{bmatrix} =
-\begin{bmatrix}
-l_{11}^{2} & l_{21}l_{11} & l_{31}l_{11} \\
-l_{21}l_{11} & l_{21}^{2} + l_{22}^{2} & l_{31}l_{21} + l_{32}l_{22} \\
-l_{31}l_{11} & l_{31}l_{21} + l_{32}l_{22} & l_{31}^{2} + l_{32}^{2} + l_{33}^2
-\end{bmatrix}
-\end{align*}<p>The diagonal elements of matrix $L$ can be calculated by the following formulas:</p>
-\begin{align*}
-l_{11} = \sqrt{a_{11}}
-\quad \quad
-l_{22} = \sqrt{a_{22} - l_{21}^{2}}
-\quad \quad
-l_{33} = \sqrt{a_{33} - (l_{31}^{2} + l_{32}{2})}
-\end{align*}<p>And in general, for diagonal elements of the matrix $L$ we have:</p>
-\begin{align*}l_{kk} =
-\sqrt{a_{kk} - \sum_{j = 1}^{k - 1}l_{kj}^{2}}
-\end{align*}<p>For the elements below the main diagonal, $l_{ik}$ where $i > k$, the formulas are</p>
-\begin{align*}
-l_{21} = \frac{1}{l_{11}}a_{21}
-\quad \quad
-l_{31} = \frac{1}{l_{11}}a_{31}
-\quad \quad
-l_{32} = \frac{1}{l_{22}}(a_{32} - l_{31}l_{21})
-\end{align*}<p>And the general formula is</p>
-\begin{align*}l_{ik} =
-\frac{1}{l_{kk}}\Big(a_{ik} - \sum_{j = 1}^{k - 1}l_{ij}l_{kj}\Big)
-\end{align*}<p>Messy formulas! Consider a numerical example to see what happen under the hood. We have a matrix $A$</p>
-\begin{align*}A =
-\begin{bmatrix}
-25 & 15 & -5 \\
-15 & 18 & 0 \\
--5 & 0 & 11
-\end{bmatrix}
-\end{align*}<p>According to the above formulas, let find a lower triangular matrix $L$. We have</p>
-\begin{align*}
-l_{11} = \sqrt{a_{11}} = \sqrt{25} = 5
-\quad \quad
-l_{22} = \sqrt{a_{22} - l_{21}^{2}} = \sqrt{18 - 3^{2}} = 3
-\quad \quad
-l_{33} = \sqrt{a_{33} - (l_{31}^{2} + l_{32}^{2})} = \sqrt{11 - ((-1)^{2} + 1^{2})} = 3
-\end{align*}<p>Seems, we have missing non-diagonal elements, which are</p>
-\begin{align*}
-l_{21} = \frac{1}{l_{11}}a_{21} = \frac{1}{5}15 = 3
-\quad \quad
-l_{31} = \frac{1}{l_{11}}a_{31} = \frac{1}{5}(-5) = -1
-\quad \quad
-l_{32} = \frac{1}{l_{22}}(a_{32} - l_{31}l_{21}) = \frac{1}{3}(0 - (-1)\cdot 3) = 1
-\end{align*}<p>So, our matrix $L$ is</p>
-\begin{align*}L =
-\begin{bmatrix}
-5 & 0 & 0 \\
-3 & 3 & 0 \\
--1 & 1 & 3
-\end{bmatrix}
-\quad \quad
-L^{T} =
-\begin{bmatrix}
-5 & 3 & -1 \\
-0 & 3 & 1 \\
-0 & 0 & 3
-\end{bmatrix}
-\end{align*}<p>Multiplication of this matrices is up to you.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="QR-Decomposition">QR Decomposition<a class="anchor-link" href="#QR-Decomposition">¶</a></h3><p><a id="QR_Decomposition"></a></p>
-<hr>
-<p>QR decomposition is another type of matrix factorization, where a given $m \times n$ matrix $A$ is decomposed into two matrices, $Q$ which is orthogonal matrix, which in turn means that $QQ^{T} = Q^{T}Q = I$ and the inverse of $Q$ equal to its transpose, $Q^{T} = Q^{-1}$, and $R$ which is upper triangular matrix. Hence, the formula is given by</p>
-\begin{align*}A = 
-QR
-\end{align*}<p>As $Q$ is an orthogonal matrix, there are three methods to find $Q$, one is <a href="https://en.wikipedia.org/wiki/Gram%E2%80%93Schmidt_process">Gramm-Schmidt Process</a>, second is <a href="https://en.wikipedia.org/wiki/Householder_transformation">Householder Transformation</a>, and third is <a href="https://en.wikipedia.org/wiki/Givens_rotation">Givens Rotation</a>. These methods are out of the scope of this blog post series and hence I'm going to explain all of them in separate blog posts. Consequently, there is no calculation besides python code in numerical representation section.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Eigendecomposition">Eigendecomposition<a class="anchor-link" href="#Eigendecomposition">¶</a></h3><p><a id="Eigendecomposition"></a></p>
-<hr>
-<p>Here is the question. What's the usage of eigenvalues and eigenvectors? Besides other usages, they help us to perform matrix decomposition and this decomposition is called eigendecomposition or spectral decomposition. In the case of the eigendecomposition, we decompose the initial matrix into the product of its eigenvectors and eigenvalues by the following formula:</p>
-\begin{align*}
-A = Q \Lambda Q^{-1}
-\end{align*}<p>$A$ is $n\times n$ square matrix, $Q$ is the matrix whose columns are the eigenvectors, which in turn are linearly independent and $\Lambda$ is diagonal matrix of eigenvalues of $A$ and these eigenvalues are not necessarily distinct.</p>
-<p>To see the detailed steps of this decomposition, consider the abovementioned example of the matrix $A$ for which we already found eigenvalues and eigenvectors.</p>
-\begin{align*}A =
-\begin{bmatrix}
-2 & 0 & 0 \\
-0 & 3 & 4 \\
-0 & 4 & 9
-\end{bmatrix}
-\quad
-Q =
-\begin{bmatrix}
-0 & 1 & 0 \\
--2 & 0 & 1 \\
-1 & 0 & 2
-\end{bmatrix}
-\quad
-\Lambda = 
-\begin{bmatrix}
-1 & 0 & 0 \\
-0 & 2 & 0 \\
-0 & 0 & 11
-\end{bmatrix}
-\quad
-Q^{-1} =
-\begin{bmatrix}
-0 & -0.4 & 0.2 \\
-1 & 0 & 0 \\
-0 & 0.2 & 0.4
-\end{bmatrix}
-\end{align*}<p>We have all the matrices and now take matrix multiplication according to the above formula. Particularly, multiply $Q$ by $\Lambda$ and by $Q^{-1}$. We have to get original matrix $A$</p>
-<p>Furthermore, if matrix $A$ is a real symmetric matrix, then eigendecomposition can be performed by the following formula:</p>
-\begin{align*}
-A = Q \Lambda Q^{T}
-\end{align*}<p>The only difference between this formula and above formula is that the matrix $A$ is $n\times n$ real symmetric square matrix and instead of taking the inverse of eigenvector matrix we take the transpose of it. Moreover, for a real symmetric matrix, eigenvectors corresponding to different eigenvalues are orthogonal. Consider the following example:</p>
-\begin{align*}A =
-\begin{bmatrix}
-6 & 2 \\
-2 & 3
-\end{bmatrix}
-\end{align*}<p>The matrix is symmetric because of the original matrix equal to its transpose, $A = A^{T}$</p>
-<p>Its eigenvalues are $\lambda_{1} = 7$ and $\lambda_{2} = 2$ and corresponding eigenvectors are</p>
-\begin{align*}v_{\lambda_{1}} =
-\begin{bmatrix}
-0.89442719 \\
-0.4472136
-\end{bmatrix}
-\quad
-v_{\lambda_{2}} =
-\begin{bmatrix}
--0.4472136 \\
-0.89442719
-\end{bmatrix}
-\end{align*}<p>And in this set up, matrices $Q$, $\Lambda$ and $Q^{T}$ are the following:</p>
-\begin{align*}Q =
-\begin{bmatrix}
-0.89442719 & -0.4472136 \\
-0.4472136 & 0.89442719 \\
-\end{bmatrix}
-\quad
-\Lambda = 
-\begin{bmatrix}
-7 & 0 \\
-0 & 2 \\
-\end{bmatrix}
-\quad
-Q^{T} =
-\begin{bmatrix}
-0.89442719 & 0.4472136 \\
--0.4472136 & 0.89442719 \\
-\end{bmatrix}
-\end{align*}<p>Taking matrix product gives initial matrix $A$.</p>
-<p>To verify all of this calculation see Python code below.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Eigendecomposition cannot be used for nonsquare matrices. Below, we will see the Singular Value Decomposition (SVD) which is another way of decomposing matrices. The advantage of the SVD is that you can use it also with non-square matrices.</strong></p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Singular-Value-Decomposition">Singular Value Decomposition<a class="anchor-link" href="#Singular-Value-Decomposition">¶</a></h3><p><a id="Singular_Value_Decomposition"></a></p>
-<hr>
-<p>Singular Value Decomposition (SVD) is another way of matrix factorization. It is the generalization of the eigendecomposition. In this context, generalization means that eigendecomposition is applicable only for square $n \times n$ matrices, while Singular Value Decomposition (SVD) is applicable for any $m \times n$ matrices.</p>
-<p>SVD for a $m \times n$ matrix $A$ is computed by the following formula:</p>
-\begin{align*}
-A = U \ D \ V^{T}
-\end{align*}<p>Where, $U$'s columns are <em>left singular vectors</em> of $A$, $V$'s columns are <em>right singular vectors</em> of $A$ and $D$  is a diagonal matrix, not necessarily square matrix, containing <strong>singular values</strong> of $A$ on main diagonal. Singular values of $m \times n$ matrix $A$ are the <strong>square roots of the eigenvalues</strong> of $A^{T}A$, which is a square matrix. If our initial matrix $A$ is square or $n \times n$ then singular values <strong>coincide</strong> eigenvalues. Moreover, all of these defines the path towards eigendecomposition. Let see how this path is defined.</p>
-<p>Matrices, $U$, $D$, and $V$ can be found by transforming $A$ into a square matrix and computing eigenvalues and eigenvectors of this transformed matrix. This transformation is done by multiplying $A$ by its transpose $A^{T}$. After that, matrices $U$, $D$ and $V$ are the following:</p>
-<ul>
-<li><p>$U$ corresponds to the eigenvectors of $AA^{T}$</p>
-</li>
-<li><p>$V$ corresponds to eigenvectors of $A^{T}A$</p>
-</li>
-<li><p>$D$ corresponds to eigenvalues, either $AA^{T}$ or $A^{T}A$, which are the same</p>
-</li>
-</ul>
-<p>Theory almost always seems confusing. Consider a numerical example and Python code below for clarification.</p>
-<p>Let our initial matrix $A$ be:</p>
-\begin{align*}A =
-\begin{bmatrix}
-0 & 1 & 0 \\
-\sqrt{2} & 2 & 0 \\
-0 & 1 & 1
-\end{bmatrix}
-\end{align*}<p>Here, to use SVD first we need to find $AA^{T}$ and $A^{T}A$.</p>
-\begin{align*}AA^{T} =
-\begin{bmatrix}
-2 & 2 & 2 \\
-2 & 6 & 2 \\
-2 & 2 & 2
-\end{bmatrix}
-\quad
-A^{T}A =
-\begin{bmatrix}
-2 & 2\sqrt{2} & 0 \\
-2\sqrt{2} & 6 & 2 \\
-0 & 2 & 2
-\end{bmatrix}
-\end{align*}<p>In the next step, we have to find eigenvalues and eigenvectors for $AA^{T}$ and $A^{T}A$. The characteristic polynomial is</p>
-\begin{align*}
--\lambda^{3} + 10\lambda^2 - 16\lambda
-\end{align*}<p>with roots equal to $\lambda_{1} = 8$, $\lambda_{2} = 2$, and $\lambda_{3} = 0$. Note that these eigenvalues are the same for the $A^{T}A$. We need singular values which are square root from eigenvalues. Let denote them by $\sigma$ such as $\sigma_{1} = \sqrt{8} = 2\sqrt{2}$, $\sigma_{2} = \sqrt{2}$ and $\sigma_{3} = \sqrt{0} = 0$. We now can construct diagonal matrix of singular values:</p>
-\begin{align*}D =
-\begin{bmatrix}
-2\sqrt{2} & 0 & 0 \\
-0 & \sqrt{2} & 0 \\
-0 & 0 & 0
-\end{bmatrix}
-\end{align*}<p>Now we have to find matrices $U$ and $V$. We have everything what we need. First find eigenvectors of $AA^{T}$ for $\lambda_{1} = 8$, $\lambda_{2} = 2$, and $\lambda_{3} = 0$, which are the following:</p>
-\begin{align*}U_{1} =
-\begin{bmatrix}
-\frac{1}{\sqrt{6}}\\
-\frac{2}{\sqrt{6}} \\
-\frac{1}{\sqrt{6}}
-\end{bmatrix}
-\quad
-U_{2} =
-\begin{bmatrix}
--\frac{1}{\sqrt{3}}\\
-\frac{1}{\sqrt{3}} \\
--\frac{1}{\sqrt{3}}
-\end{bmatrix}
-\quad
-U_{3} =
-\begin{bmatrix}
-\frac{1}{\sqrt{2}}\\
-0 \\
--\frac{1}{\sqrt{2}}
-\end{bmatrix}
-\end{align*}<p>Note that eigenvectors are normilized.</p>
-<p>As we have eigenvectors, our $U$ matrix is:</p>
-\begin{align*}U =
-\begin{bmatrix}
-\frac{1}{\sqrt{6}} & -\frac{1}{\sqrt{3}} & \frac{1}{\sqrt{2}}\\
-\frac{2}{\sqrt{6}} & \frac{1}{\sqrt{3}} & 0 \\
-\frac{1}{\sqrt{6}} & -\frac{1}{\sqrt{3}} & -\frac{1}{\sqrt{2}}
-\end{bmatrix}
-\end{align*}<p>In the same fashin, we can find matrix $V$, which is:</p>
-\begin{align*}V =
-\begin{bmatrix}
-\frac{1}{\sqrt{6}} & \frac{1}{\sqrt{3}} & \frac{1}{\sqrt{2}}\\
-\frac{3}{\sqrt{12}} & 0 & -\frac{1}{2} \\
-\frac{1}{\sqrt{12}} & -\frac{2}{\sqrt{6}} & \frac{1}{2}
-\end{bmatrix}
-\end{align*}<p>According to the formula we have</p>
-\begin{align*}
-A = U \ D \ V^{T} =
-\begin{bmatrix}
-\frac{1}{\sqrt{6}} & -\frac{1}{\sqrt{3}} & \frac{1}{\sqrt{2}}\\
-\frac{2}{\sqrt{6}} & \frac{1}{\sqrt{3}} & 0 \\
-\frac{1}{\sqrt{6}} & -\frac{1}{\sqrt{3}} & -\frac{1}{\sqrt{2}}
-\end{bmatrix}
-\cdot
-\begin{bmatrix}
-2\sqrt{2} & 0 & 0 \\
-0 & \sqrt{2} & 0 \\
-0 & 0 & 0
-\end{bmatrix}
-\cdot
-\begin{bmatrix}
-\frac{1}{\sqrt{6}} & \frac{1}{\sqrt{3}} & \frac{1}{\sqrt{2}}\\
-\frac{3}{\sqrt{12}} & 0 & -\frac{1}{2} \\
-\frac{1}{\sqrt{12}} & -\frac{2}{\sqrt{6}} & \frac{1}{2}
-\end{bmatrix}
-^{T} = A
-\end{align*}
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Inverse-of-a-Square-Full-Rank-Matrix">Inverse of a Square Full Rank Matrix<a class="anchor-link" href="#Inverse-of-a-Square-Full-Rank-Matrix">¶</a></h3><p><a id="Inverse_of_a_Square_Full_Rank_Matrix"></a></p>
-<hr>
-<p>Here, I want to present one more way to find the inverse of a matrix and show you one more usage of eigendecomposition. Let's get started. If a matrix $A$ can be eigendecomposed and it has no any eigenvalue equal to zero, then this matrix has the inverse and this inverse is given by:</p>
-\begin{align*}A^{-1} =
-Q \Lambda^{-1} Q^{-1}
-\end{align*}<p>Matrices, $Q$, and $\Lambda$ are already known for us. Consider an example:</p>
-\begin{align*}A =
-\begin{bmatrix}
-1 & 2 \\
-4 & 3
-\end{bmatrix}
-\end{align*}<p>Its eigenvalues are $\lambda_{1} = -1$ and $\lambda_{2} = 5$ and eigenvectors are:</p>
-\begin{align*}v_{\lambda_{1}} =
-\begin{bmatrix}
--0.70710678 \\
-0.70710678
-\end{bmatrix}
-\quad
-v_{\lambda_{2}} =
-\begin{bmatrix}
-0.4472136 \\
--0.89442719
-\end{bmatrix}
-\end{align*}<p>Let calculate the onverse of $A$</p>
-\begin{align*}A^{-1} = Q \Lambda^{-1} Q^{-1} =
-\begin{bmatrix}
--0.70710678 & -0.4472136 \\
-0.70710678 & -0.89442719
-\end{bmatrix}
-\cdot
-\begin{bmatrix}
--1 & -0 \\
-0 & 0.2
-\end{bmatrix}
-\cdot
-\begin{bmatrix}
--0.94280904 & 0.47140452 \\
--0.74535599 & -0.74535599
-\end{bmatrix} =
-\begin{bmatrix}
--0.6 & 0.4 \\
-0.8 & -0.2
-\end{bmatrix}
-\end{align*}
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Numerical-Representation">Numerical Representation<a class="anchor-link" href="#Numerical-Representation">¶</a></h3><p><a id="Numerical_Representation_Decompositions"></a></p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Cholesky-Decomposition">Cholesky Decomposition<a class="anchor-link" href="#Cholesky-Decomposition">¶</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [7]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">25</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">],</span>
-              <span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
-              <span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">]])</span>
-
-
-<span class="c1"># Cholesky decomposition, find lower triangular matrix L</span>
-<span class="n">L</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">cholesky</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-
-<span class="c1"># Take transpose</span>
-<span class="n">L_T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
-
-
-<span class="c1"># Check if it's correct</span>
-<span class="n">A</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">L_T</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt output_prompt">Out[7]:</div>
-<div class="output_text output_subarea output_execute_result">
-<pre>array([[ True,  True,  True],
-       [ True,  True,  True],
-       [ True,  True,  True]])</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="QR-Decomposition">QR Decomposition<a class="anchor-link" href="#QR-Decomposition">¶</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [8]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">12</span><span class="p">,</span><span class="o">-</span><span class="mi">51</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
-              <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">167</span><span class="p">,</span><span class="o">-</span><span class="mi">68</span><span class="p">],</span>
-              <span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="o">-</span><span class="mi">41</span><span class="p">]])</span>
-
-
-<span class="c1"># QR decomposition</span>
-<span class="n">Q</span><span class="p">,</span> <span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">qr</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Q ="</span><span class="p">,</span> <span class="n">Q</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"R ="</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"A = QR"</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="n">R</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Q =
-[[-0.85714286  0.39428571  0.33142857]
- [-0.42857143 -0.90285714 -0.03428571]
- [ 0.28571429 -0.17142857  0.94285714]]
-
-R =
-[[ -14.  -21.   14.]
- [   0. -175.   70.]
- [   0.    0.  -35.]]
-
-A = QR
-[[ 12. -51.   4.]
- [  6. 167. -68.]
- [ -4.  24. -41.]]
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Eigendecomposition">Eigendecomposition<a class="anchor-link" href="#Eigendecomposition">¶</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [9]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-
-<span class="c1"># Eigendecomposition for nonsymmetric matrix</span>
-
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
-              <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
-              <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">]])</span>
-
-
-<span class="n">eigenvalues1</span><span class="p">,</span> <span class="n">eigenvectors1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-
-
-<span class="c1"># Form diagonal matrix from eigenvalues</span>
-<span class="n">L1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">eigenvalues1</span><span class="p">)</span>
-
-
-<span class="c1"># Seperate eigenvector matrix and take its inverse</span>
-<span class="n">Q1</span> <span class="o">=</span> <span class="n">eigenvectors1</span>
-<span class="n">inv_Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">Q1</span><span class="p">)</span>
-
-
-<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Q1</span><span class="p">,</span><span class="n">L1</span><span class="p">),</span><span class="n">inv_Q</span><span class="p">)</span>
-
-
-<span class="c1"># Check if B equal to A</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Decomposed matrix B:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
-
-
-<span class="c1"># Numpy produces normilized eigenvectors and don't be confused with my calculations above</span>
-
-
-
-
-<span class="c1"># Eigendecomposition for symmetric matrix</span>
-
-<span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
-
-<span class="n">eigenvalues2</span><span class="p">,</span> <span class="n">eigenvectors2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
-
-<span class="c1"># Eigenvalues</span>
-<span class="n">L2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">eigenvalues2</span><span class="p">)</span>
-
-<span class="c1"># Eigenvectors</span>
-<span class="n">Q2</span> <span class="o">=</span> <span class="n">eigenvectors2</span>
-<span class="n">Q2_T</span> <span class="o">=</span> <span class="n">Q2</span><span class="o">.</span><span class="n">T</span>
-
-
-<span class="n">D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Q2</span><span class="p">,</span><span class="n">L2</span><span class="p">),</span><span class="n">Q2</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
-
-
-<span class="c1"># Check if D equal to C</span>
-<span class="nb">print</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Decomposed matrix D:"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Decomposed matrix B:
-[[2. 0. 0.]
- [0. 3. 4.]
- [0. 4. 9.]]
-
-Decomposed matrix D:
-[[6. 2.]
- [2. 3.]]
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Singular-Value-Decomposition">Singular Value Decomposition<a class="anchor-link" href="#Singular-Value-Decomposition">¶</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [10]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">suppress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Suppres scientific notation</span>
-
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
-              <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
-              <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
-
-
-<span class="n">U</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"U ="</span><span class="p">,</span> <span class="n">U</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"D ="</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"V ="</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
-
-<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">U</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">D</span><span class="p">),</span> <span class="n">V</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"B ="</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>U = [[-0.32099833  0.14524317 -0.93587632]
- [-0.87192053 -0.43111301  0.23215547]
- [-0.36974946  0.8905313   0.26502706]]
-
-D = [2.75398408 1.09310654 0.46977627]
-
-V = [[-0.44774472 -0.8840243  -0.13425984]
- [-0.55775521  0.15876626  0.81467932]
- [ 0.69888038 -0.43965249  0.56415592]]
-
-B = [[ 0.          1.         -0.        ]
- [ 1.41421356  2.          0.        ]
- [ 0.          1.          1.        ]]
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Inverse-of-a-Square-Full-Rank-Matrix">Inverse of a Square Full Rank Matrix<a class="anchor-link" href="#Inverse-of-a-Square-Full-Rank-Matrix">¶</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [11]:</div>
-<div class="inner_cell">
-<div class="input_area">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
-              <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
-
-
-<span class="c1"># Eigenvalues and Eigenvectors</span>
-<span class="n">L</span><span class="p">,</span> <span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-
-<span class="c1"># Diagonal eigenvalues</span>
-<span class="n">L</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
-<span class="c1"># Inverse</span>
-<span class="n">inv_L</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
-
-<span class="c1"># Inverse of igenvector matrix</span>
-<span class="n">inv_Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span>
-
-
-<span class="c1"># Calculate the inverse of A</span>
-<span class="n">inv_A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">inv_L</span><span class="p">,</span><span class="n">inv_Q</span><span class="p">))</span>
-
-<span class="c1"># Print the inverse</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"The inverse of A is"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">inv_A</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>The inverse of A is
-[[-0.6  0.4]
- [ 0.8 -0.2]]
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">¶</a></h2><p><a id="Conclusion"></a></p>
-<hr>
-<p>In conclusion, my aim was to make linear algebra tutorials which are in absence, while learning machine learning or deep learning. Particularly, existing materials either are pure mathematics books which cover lots of unnecessary(actually they are necessary) things or machine learning books which assume that you already have some linear algebra knowledge. The series starts from very basic and at the end explains some advanced topics. I can say that I tried my best to filter the materials and only explained the most relevant linear algebra topic for machine learning and deep learning.</p>
-<p>Based on my experience, these tutorials are not enough to master the concepts and all intuitions but the journey should be continuous. Meaning, that you have to practice more and more.</p>
-<p>Now, I realize that, for aspiring data scientists, besides my hard work, some topic may not be still clear. For that don't hesitate and comment below.</p>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="References">References<a class="anchor-link" href="#References">¶</a></h3><p><a id="References"></a></p>
-<h4 id="Vector">Vector<a class="anchor-link" href="#Vector">¶</a></h4><ul>
+<h3 id="References">References<a class="anchor-link" href="#References">¶</a></h3><h4 id="Vector">Vector<a class="anchor-link" href="#Vector">¶</a></h4><ul>
 <li><a href="http://linear.axler.net/">Linear Algebra Done Right</a></li>
 </ul>
 <h4 id="Matrix">Matrix<a class="anchor-link" href="#Matrix">¶</a></h4><ul>
 <li><a href="https://en.wikipedia.org/wiki/List_of_linear_algebra_topics">Linear Algebra Topics</a></li>
-</ul>
-<h4 id="Matrix-Decomposition">Matrix Decomposition<a class="anchor-link" href="#Matrix-Decomposition">¶</a></h4><ul>
-<li><p><a href="https://rosettacode.org/wiki/Cholesky_decomposition">Cholesky Decomposition</a></p>
-</li>
-<li><p><a href="https://en.wikipedia.org/wiki/Matrix_decomposition">Matrix Decomposition</a></p>
-</li>
-<li><p><a href="http://math.mit.edu/~gs/linearalgebra/">Introduction To Linear Algebra</a></p>
-</li>
 </ul>
 </div>
 </div>
@@ -2367,13 +1663,13 @@ B = [[ 0.          1.         -0.        ]
             <section>
     <p id="post-share-links">
     Like this post? Share on:
-    <a href="https://twitter.com/intent/tweet?text=Advances%20of%20Linear%20Algebra%20with%20Python&url=https%3A//dsfabric.org/articles/mathematics/advances-of-linear-algebra-with-python.html&via=N_Okroshiashvil&hashtags=linear-algebra,python,numpy,scipy,mathematics" target="_blank" title="Share on Twitter">Twitter</a>
+    <a href="https://twitter.com/intent/tweet?text=Advances%20of%20Linear%20Algebra%20with%20Python%20-%20Part%20I&url=https%3A//dsfabric.org/articles/mathematics/advances-of-linear-algebra-with-python-part-i.html&via=N_Okroshiashvil&hashtags=linear-algebra,python,numpy,scipy,mathematics" target="_blank" title="Share on Twitter">Twitter</a>
     ❄
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//dsfabric.org/articles/mathematics/advances-of-linear-algebra-with-python.html" target="_blank" title="Share on Facebook">Facebook</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//dsfabric.org/articles/mathematics/advances-of-linear-algebra-with-python-part-i.html" target="_blank" title="Share on Facebook">Facebook</a>
     ❄
-    <a href="https://plus.google.com/share?url=https%3A//dsfabric.org/articles/mathematics/advances-of-linear-algebra-with-python.html" target="_blank" title="Share on Google Plus">Google+</a>
+    <a href="https://plus.google.com/share?url=https%3A//dsfabric.org/articles/mathematics/advances-of-linear-algebra-with-python-part-i.html" target="_blank" title="Share on Google Plus">Google+</a>
     ❄
-    <a href="mailto:?subject=Advances%20of%20Linear%20Algebra%20with%20Python&amp;body=https%3A//dsfabric.org/articles/mathematics/advances-of-linear-algebra-with-python.html" target="_blank" title="Share via Email">Email</a>
+    <a href="mailto:?subject=Advances%20of%20Linear%20Algebra%20with%20Python%20-%20Part%20I&amp;body=https%3A//dsfabric.org/articles/mathematics/advances-of-linear-algebra-with-python-part-i.html" target="_blank" title="Share via Email">Email</a>
     </p>
 </section>
 
@@ -2383,7 +1679,7 @@ B = [[ 0.          1.         -0.        ]
     <div class="accordion-group">
         <div class="accordion-heading">
             <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
-                href="https://dsfabric.org/articles/mathematics/advances-of-linear-algebra-with-python.html#disqus_thread",
+                href="https://dsfabric.org/articles/mathematics/advances-of-linear-algebra-with-python-part-i.html#disqus_thread",
                 id="disqus-accordion-toggle">
                 Comments
             </a>
@@ -2394,8 +1690,8 @@ B = [[ 0.          1.         -0.        ]
                     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'dsfabric';
-        var disqus_identifier = 'https://dsfabric.org/articles/mathematics/advances-of-linear-algebra-with-python.html';
-    var disqus_url = 'https://dsfabric.org/articles/mathematics/advances-of-linear-algebra-with-python.html';
+        var disqus_identifier = 'https://dsfabric.org/articles/mathematics/advances-of-linear-algebra-with-python-part-i.html';
+    var disqus_url = 'https://dsfabric.org/articles/mathematics/advances-of-linear-algebra-with-python-part-i.html';
 
     (function() {
          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -2419,17 +1715,17 @@ B = [[ 0.          1.         -0.        ]
 <ul class="related-posts-list">
 <li><a href="https://dsfabric.org/articles/mathematics/introduction-to-linear-algebra-with-python.html" title="Introduction to Linear Algebra with Python">Introduction to Linear Algebra with Python</a></li>
 <li><a href="https://dsfabric.org/articles/mathematics/basics-of-linear-algebra-with-python.html" title="Basics of Linear Algebra with Python">Basics of Linear Algebra with Python</a></li>
-<li><a href="https://dsfabric.org/articles/mathematics/intermediates-of-linear-algebra-with-python.html" title="Intermediates of Linear Algebra with Python">Intermediates of Linear Algebra with Python</a></li>
-<li><a href="https://dsfabric.org/articles/python/python-test.html" title="Python - Test">Python - Test</a></li>
-<li><a href="https://dsfabric.org/articles/data-science/plotly-express.html" title="Plotly Express">Plotly Express</a></li>
+<li><a href="https://dsfabric.org/articles/mathematics/intermediates-of-linear-algebra-with-python-part-i.html" title="Intermediates of Linear Algebra with Python - Part I">Intermediates of Linear Algebra with Python - Part I</a></li>
+<li><a href="https://dsfabric.org/articles/mathematics/intermediates-of-linear-algebra-with-python-part-ii.html" title="Intermediates of Linear Algebra with Python - Part II">Intermediates of Linear Algebra with Python - Part II</a></li>
+<li><a href="https://dsfabric.org/articles/mathematics/advances-of-linear-algebra-with-python-part-ii.html" title="Advances of Linear Algebra with Python - Part II">Advances of Linear Algebra with Python - Part II</a></li>
 </ul>
 <hr />
 </section>
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://dsfabric.org/articles/mathematics/intermediates-of-linear-algebra-with-python.html" title="Previous: Intermediates of Linear Algebra with Python">Intermediates of Linear Algebra with Python</a></li>
-                <li class="next-article"><a href="https://dsfabric.org/articles/python/python-test.html" title="Next: Python - Test">Python - Test</a> »</li>
+                <li class="previous-article">« <a href="https://dsfabric.org/articles/mathematics/intermediates-of-linear-algebra-with-python-part-ii.html" title="Previous: Intermediates of Linear Algebra with Python - Part II">Intermediates of Linear Algebra with Python - Part II</a></li>
+                <li class="next-article"><a href="https://dsfabric.org/articles/mathematics/advances-of-linear-algebra-with-python-part-ii.html" title="Next: Advances of Linear Algebra with Python - Part II">Advances of Linear Algebra with Python - Part II</a> »</li>
             </ul>
             </nav>
             </aside>
@@ -2443,16 +1739,16 @@ B = [[ 0.          1.         -0.        ]
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="https://dsfabric.org/tags#linear-algebra-ref">Linear Algebra
-                    <span>4</span>
-</a></li>
-                <li><a href="https://dsfabric.org/tags#numpy-ref">Numpy
-                    <span>4</span>
-</a></li>
-                <li><a href="https://dsfabric.org/tags#python-ref">Python
                     <span>6</span>
 </a></li>
+                <li><a href="https://dsfabric.org/tags#numpy-ref">Numpy
+                    <span>6</span>
+</a></li>
+                <li><a href="https://dsfabric.org/tags#python-ref">Python
+                    <span>8</span>
+</a></li>
                 <li><a href="https://dsfabric.org/tags#scipy-ref">Scipy
-                    <span>4</span>
+                    <span>6</span>
 </a></li>
                 <li><a href="https://dsfabric.org/tags#mathematics-ref">Mathematics
 </a></li>
