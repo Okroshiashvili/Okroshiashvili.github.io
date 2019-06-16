@@ -68,13 +68,13 @@
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Let's start our modeling part with defining functions for demand and supply. Logically, demand and supply are generated from some very complicated function and its real anatomy is unknown, but as we are in &lt;em&gt;simple&lt;/em&gt; economy we can assume that they are linear functions of price:&lt;/p&gt;
 &lt;p&gt;A Liner demand curve:
-\begin{align} Q =
+\begin{align*} Q =
 a - b\cdot p
-\end{align}&lt;/p&gt;
+\end{align*}&lt;/p&gt;
 &lt;p&gt;A linear supply curve:
-\begin{align} Q =
+\begin{align*} Q =
 c + d\cdot p
-\end{align}&lt;/p&gt;
+\end{align*}&lt;/p&gt;
 &lt;p&gt;Here, $p$ is the price paid by the consumer and $Q$ is the quantity. $a$, $b$, $c$, and $d$ are demand and supply parameters.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -83,14 +83,14 @@ c + d\cdot p
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Let first solve this mathematically. We have the equation for quantity and the parameters $a$ and $b$ are predetermined, or we can choose their value. We know that in equilibrium, quantity demanded and quantity supplied are equal. So, by equating our equations and doing some simple algebra we'll get equilibrium price. Let denote this price by $P^{*}$&lt;/p&gt;
-\begin{align}
+\begin{align*}
 a - b\cdot p = c + d\cdot p \Rightarrow
 \\
 \\ \Rightarrow d\cdot p + b\cdot p = a - c
 \\
 \\ \Rightarrow P^{*} =
 \frac{a - c}{d + b}
-\end{align}&lt;p&gt;By having $P^{*}$ we have equilibrium price. Now, let me introduce some new notions, which are very natural in this market economy, such as, consumer surplus, producer surplus, and social surplus.&lt;/p&gt;
+\end{align*}&lt;p&gt;By having $P^{*}$ we have equilibrium price. Now, let me introduce some new notions, which are very natural in this market economy, such as, consumer surplus, producer surplus, and social surplus.&lt;/p&gt;
 &lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;Consumer surplus&lt;/strong&gt; is the gap between the price that consumers are willing to pay and equilibrium price.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Producer surplus&lt;/strong&gt; is the gap between the price for which producers are willing to sell a product and market equilibrium price.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Social surplus&lt;/strong&gt; is the sum of consumer and producer surplus.&lt;/p&gt;
@@ -103,20 +103,20 @@ a - b\cdot p = c + d\cdot p \Rightarrow
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;We have a linear demand curve, given by&lt;/p&gt;
-\begin{align} Q =
+\begin{align*} Q =
 a - b\cdot p
-\end{align}&lt;p&gt;Let change the notation a little bit and denote demand function in the following way:&lt;/p&gt;
-\begin{align} Q(p) =
+\end{align*}&lt;p&gt;Let change the notation a little bit and denote demand function in the following way:&lt;/p&gt;
+\begin{align*} Q(p) =
 a - b\cdot p
-\end{align}&lt;p&gt;To find the inverse of this function we have to solve the above function for $p$. Doing simple algebra, yields&lt;/p&gt;
-\begin{align} p = \frac{a - Q}{b}
-\end{align}&lt;p&gt;and this is the same to write&lt;/p&gt;
-\begin{align} p(Q) = 
+\end{align*}&lt;p&gt;To find the inverse of this function we have to solve the above function for $p$. Doing simple algebra, yields&lt;/p&gt;
+\begin{align*} p = \frac{a - Q}{b}
+\end{align*}&lt;p&gt;and this is the same to write&lt;/p&gt;
+\begin{align*} p(Q) = 
 \frac{a - Q}{b}
-\end{align}&lt;p&gt;Doing the same for supply, we easily find inverse supply function, given by&lt;/p&gt;
-\begin{align}p(Q) = 
+\end{align*}&lt;p&gt;Doing the same for supply, we easily find inverse supply function, given by&lt;/p&gt;
+\begin{align*}p(Q) = 
 \frac{Q - c}{d}
-\end{align}
+\end{align*}
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
