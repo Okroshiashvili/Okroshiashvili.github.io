@@ -93,8 +93,7 @@
         <div class="span8 offset2 article-content">
 
             
-            
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+            <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This is the fourth and last post in blog series about linear algebra.</p>
@@ -144,7 +143,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Cholesky-Decomposition">Cholesky Decomposition<a class="anchor-link" href="#Cholesky-Decomposition">¶</a></h3><p><a id="Cholesky_Decomposition"></a></p>
-<hr>
+<hr />
 <p>The Cholesky Decomposition is the factorization of a given <strong>symmetric</strong> square matrix $A$ into the product of a lower triangular matrix, denoted by $L$ and its transpose $L^{T}$. This decomposition is named after French artillery officer <a href="https://en.wikipedia.org/wiki/Andr%C3%A9-Louis_Cholesky">Andre-Louis Cholesky</a>. The formula is:</p>
 \begin{align*}A =
 LL^{T}
@@ -236,7 +235,7 @@ L^{T} =
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="QR-Decomposition">QR Decomposition<a class="anchor-link" href="#QR-Decomposition">¶</a></h3><p><a id="QR_Decomposition"></a></p>
-<hr>
+<hr />
 <p>QR decomposition is another type of matrix factorization, where a given $m \times n$ matrix $A$ is decomposed into two matrices, $Q$ which is orthogonal matrix, which in turn means that $QQ^{T} = Q^{T}Q = I$ and the inverse of $Q$ equal to its transpose, $Q^{T} = Q^{-1}$, and $R$ which is upper triangular matrix. Hence, the formula is given by</p>
 \begin{align*}A = 
 QR
@@ -248,7 +247,7 @@ QR
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Eigendecomposition">Eigendecomposition<a class="anchor-link" href="#Eigendecomposition">¶</a></h3><p><a id="Eigendecomposition"></a></p>
-<hr>
+<hr />
 <p>Here is the question. What's the usage of eigenvalues and eigenvectors? Besides other usages, they help us to perform matrix decomposition and this decomposition is called eigendecomposition or spectral decomposition. In the case of the eigendecomposition, we decompose the initial matrix into the product of its eigenvectors and eigenvalues by the following formula:</p>
 \begin{align*}
 A = Q \Lambda Q^{-1}
@@ -338,7 +337,7 @@ Q^{T} =
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Singular-Value-Decomposition">Singular Value Decomposition<a class="anchor-link" href="#Singular-Value-Decomposition">¶</a></h3><p><a id="Singular_Value_Decomposition"></a></p>
-<hr>
+<hr />
 <p>Singular Value Decomposition (SVD) is another way of matrix factorization. It is the generalization of the eigendecomposition. In this context, generalization means that eigendecomposition is applicable only for square $n \times n$ matrices, while Singular Value Decomposition (SVD) is applicable for any $m \times n$ matrices.</p>
 <p>SVD for a $m \times n$ matrix $A$ is computed by the following formula:</p>
 \begin{align*}
@@ -450,7 +449,7 @@ A = U \ D \ V^{T} =
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Inverse-of-a-Square-Full-Rank-Matrix">Inverse of a Square Full Rank Matrix<a class="anchor-link" href="#Inverse-of-a-Square-Full-Rank-Matrix">¶</a></h3><p><a id="Inverse_of_a_Square_Full_Rank_Matrix"></a></p>
-<hr>
+<hr />
 <p>Here, I want to present one more way to find the inverse of a matrix and show you one more usage of eigendecomposition. Let's get started. If a matrix $A$ can be eigendecomposed and it has no any eigenvalue equal to zero, then this matrix has the inverse and this inverse is given by:</p>
 \begin{align*}A^{-1} =
 Q \Lambda^{-1} Q^{-1}
@@ -817,7 +816,7 @@ B = [[ 0.          1.         -0.        ]
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">¶</a></h2><p><a id="Conclusion"></a></p>
-<hr>
+<hr />
 <p>In conclusion, my aim was to make linear algebra tutorials which are in absence, while learning machine learning or deep learning. Particularly, existing materials either are pure mathematics books which cover lots of unnecessary(actually they are necessary) things or machine learning books which assume that you already have some linear algebra knowledge. The series starts from very basic and at the end explains some advanced topics. I can say that I tried my best to filter the materials and only explained the most relevant linear algebra topics for machine learning and deep learning.</p>
 <p>Based on my experience, these tutorials are not enough to master the concepts and all intuitions but the journey should be continuous. Meaning, that you have to practice more and more.</p>
 <p>Now, I realize that, for aspiring data scientists, besides my hard work, some topic may not be still clear. For that don't hesitate and comment below.</p>

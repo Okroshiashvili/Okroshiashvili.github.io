@@ -93,8 +93,7 @@
         <div class="span8 offset2 article-content">
 
             
-            
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+            <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This is the second part of third post in blog series about linear algebra.</p>
@@ -146,7 +145,7 @@
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Types-of-Matrices">Types of Matrices<a class="anchor-link" href="#Types-of-Matrices">¶</a></h3><p><a id="Types_of_Matrices"></a></p>
-<hr>
+<hr />
 <p>During years of linear algebra evolution, there appeared different types of matrices. Some of them were fundamentals, some of them appeared lately. In this part, I will introduce some basic types of matrices and give you reference to find some other useful ones. Previously, I talked about the identity matrix, which operates as number 1 in matrix multiplication and is denoted by capital letter $I$.</p>
 <p>A <strong>square</strong> matrix is a matrix with the same number of rows and columns.</p>
 \begin{align*}A =
@@ -299,7 +298,7 @@ I
     0 & 0 & 0 \\
     0 & 0 & 0
 \end{bmatrix}
-\end{align*}<hr>
+\end{align*}<hr />
 <p>So, as I said there are much much more matrices, but I restricted here due to limited space. If you think you need more, definitely check this <a href="https://en.wikipedia.org/wiki/List_of_matrices">wikipedia page</a>.</p>
 </div>
 </div>
@@ -308,7 +307,7 @@ I
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Trace-of-a-Matrix">Trace of a Matrix<a class="anchor-link" href="#Trace-of-a-Matrix">¶</a></h3><p><a id="Trace_of_a_Matrix"></a></p>
-<hr>
+<hr />
 <p>The trace of $n\times n$ square matrix $A$ is the sum of all elements on the main diagonal. It is defined only for square matrices and the formula is:</p>
 \begin{align*}
 tr(A)=\sum_{i=1}^{n}a_{ii} = a_{11} + a_{22} + \cdots + a_{nn}
@@ -337,7 +336,7 @@ tr(A)=\sum_{i=1}^{3}a_{ii} = a_{11} + a_{22} + a_{33} = 1 + 5 + 9 = 15
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Determinant-of-a-Matrix">Determinant of a Matrix<a class="anchor-link" href="#Determinant-of-a-Matrix">¶</a></h3><p><a id="Determinant_of_a_Matrix"></a></p>
-<hr>
+<hr />
 <p>There is not plain English definition of determinant but I'll try to explain it by examples to catch the main idea behind of that special number. However, we can consider determinant as a function which as an input accepts $n \times n$ matrix and output real or a complex number, that is called determinant of input matrix and is denoted by $det(A)$ or $|A|$.</p>
 <p>For any $2 \times 2$ square matrix $A$ determinant is calculated by:</p>
 \begin{align*}A =
@@ -355,7 +354,7 @@ det(A) = ad - bc
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Minor-of-a-Matrix">Minor of a Matrix<a class="anchor-link" href="#Minor-of-a-Matrix">¶</a></h3><p><a id="Minor_of_a_Matrix"></a></p>
-<hr>
+<hr />
 <p>A minor of matrix $A$ is the determinant of some smaller square matrix. Precisely, the minor $M_{i,j}$ is the <strong>determinant</strong> of matrix $A$ with row $i$ and column $j$ omitted. Minor of matrix $A$ is denoted by $M_{ij}$, where $i$ and $j$ denotes element of $i$-th row and $j$-th column.
 Let have general matrix $A$:</p>
 \begin{align*}A =
@@ -490,7 +489,7 @@ a_{11}a_{22} - a_{12}a_{21}
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Cofactor-of-a-Matrix">Cofactor of a Matrix<a class="anchor-link" href="#Cofactor-of-a-Matrix">¶</a></h3><p><a id="Cofactor_of_a_Matrix"></a></p>
-<hr>
+<hr />
 <p>We left one more step to compute determinant of $3 \times 3$ matrix $A$. This step is cofactor of matrix $A$. The cofactor of matrix $A$ is the minor, multiplied by $(-1)^{i+j}$ and is denoted by $C_{ij}$</p>
 \begin{align*}C_{ij} =
 (-1)^{i+j} \cdot M_{ij}
@@ -522,7 +521,7 @@ a_{11}a_{22} - a_{12}a_{21}
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Determinant-of-a-Matrix---continuation">Determinant of a Matrix - continuation<a class="anchor-link" href="#Determinant-of-a-Matrix---continuation">¶</a></h3><p><a id="Determinant_of_a_Matrix_continuation"></a></p>
-<hr>
+<hr />
 <p>We are ready to compute the determinant of our $3 \times 3$ matrix $A$. We need to expand this matrix along one of the row or one of the column to compute the determinant. It's up to you which one you take, row or column. Let take the first column. Now, what does expansion means? We have to fix either $i$ if we choose a row, or $j$ if we choose column. At first glance it seems confusing but an example will make sense. This expansion is called <strong>Laplace Expansion</strong> and is used to compute the determinant of any $n \times n$ matrix.</p>
 \begin{align*}
 det(A) = \sum_{j\prime=1}^{n}a_{ij\prime}C_{ij\prime}
@@ -547,7 +546,7 @@ a_{11}C_{11} + a_{12}C_{12} + a_{13}C_{13}
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Matrix-Division">Matrix Division<a class="anchor-link" href="#Matrix-Division">¶</a></h3><p><a id="Matrix_Division"></a></p>
-<hr>
+<hr />
 <p>We can't actually divide matrix by a matrix; but when we want to divide matrices, we can take advantage of the fact that division by a given number is the same as multiplication by the reciprocal of that number.</p>
 <p>For matrix division, we use a related idea; we multiply matrix by the <em>inverse</em> of a matrix. If we have two matrices $A$ and $B$, we can do:</p>
 \begin{align*}
@@ -560,7 +559,7 @@ A \div B = A \cdot B^{-1}
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Inverse-of-a-Matrix">Inverse of a Matrix<a class="anchor-link" href="#Inverse-of-a-Matrix">¶</a></h3><p><a id="Inverse_of_a_Matrix"></a></p>
-<hr>
+<hr />
 <p>The matrix is said to be invertible if:</p>
 \begin{align*}
 A \cdot A^{-1} = I
@@ -702,7 +701,7 @@ det(A) = (4 \times 8) + (2 \times (-40)) + (2 \times 8) = -32
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Matrix-Division---continuation">Matrix Division - continuation<a class="anchor-link" href="#Matrix-Division---continuation">¶</a></h3><p><a id="Matrix_Division_continuation"></a></p>
-<hr>
+<hr />
 <p>As we already know how to compute the inverse of a matrix, the division is easy now. If we have two matrices:</p>
 \begin{align*}A =
 \begin{bmatrix}
@@ -747,7 +746,7 @@ A \div B
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solving-System-of-Equations-with-Matrices">Solving System of Equations with Matrices<a class="anchor-link" href="#Solving-System-of-Equations-with-Matrices">¶</a></h3><p><a id="Solving_System_of_Equations_with_Matrices"></a></p>
-<hr>
+<hr />
 <p>In the previous blog, I talked about the system of linear equations and we solved this system graphically and algebraically. One of the great things about matrices, is that they can help us solve systems of equations. For example, consider the following system of equations:</p>
 \begin{align*}
 \begin{cases}
@@ -820,7 +819,7 @@ B =
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Elementary-Row-Operations">Elementary Row Operations<a class="anchor-link" href="#Elementary-Row-Operations">¶</a></h3><p><a id="Elementary_Row_Operations"></a></p>
-<hr>
+<hr />
 <p>Elementary row operations (ERO) play an important role in many matrix algebra applications, such as finding the inverse of a matrix and solving simultaneous linear equations. These topics are covered in advance part of the series. An ERO transforms a given matrix $A$ into a new matrix $A^{'}$ via one of the following operations:</p>
 <ol>
 <li>Interchange two rows (or columns)</li>
@@ -864,7 +863,7 @@ B =
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Rank-of-a-Matrix">Rank of a Matrix<a class="anchor-link" href="#Rank-of-a-Matrix">¶</a></h3><p><a id="Rank_of_a_Matrix"></a></p>
-<hr>
+<hr />
 <p>The maximum number of linearly independent rows in a matrix $A$ is called the <strong>row rank</strong> of $A$ and the maximum number of linearly independent columns in $A$ is called the <strong>column rank</strong> of $A$. If $A$ is $n \times m$ matrix, that is if matrix $A$ has $m$ rows and $n$ columns then the following inequality holds:</p>
 $$
 \text{row rank of} \ A \leq m \\
@@ -885,7 +884,7 @@ $$<p>This means that if a matrix has, for example, 3 rows and 5 columns, its ran
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Power-of-a-Matrix">Power of a Matrix<a class="anchor-link" href="#Power-of-a-Matrix">¶</a></h3><p><a id="Power_of_a_Matrix"></a></p>
-<hr>
+<hr />
 <p>We can rise a square matrix $A$ in any nonnegative power just like any number. This is defined as the product of $A$ by itself $n$ times. If matrix $A$ has inverse, then $A^{-n} = (A^{-1})^{n}$ or take inverse of $A$ and multiply by itself $n$ times.</p>
 <p>For example, if</p>
 \begin{align*}A =
@@ -919,7 +918,7 @@ A A
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Norm-of-a-Matrix">Norm of a Matrix<a class="anchor-link" href="#Norm-of-a-Matrix">¶</a></h3><p><a id="Norm_of_a_Matrix"></a></p>
-<hr>
+<hr />
 <p>In the previous post I talked about vector norms but did not mentioned matrix norm. There are three types of matrix norms:</p>
 <ul>
 <li>Matrix norms induced by vector norms</li>
@@ -1480,7 +1479,7 @@ Frobenius Inner Product is: 21
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">¶</a></h2><p><a id="Conclusion"></a></p>
-<hr>
+<hr />
 </div>
 </div>
 </div>
