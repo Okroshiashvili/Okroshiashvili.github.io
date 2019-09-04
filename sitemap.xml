@@ -5,111 +5,111 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://dsfabric.org/</loc>
-<lastmod>2019-09-04T10:52:33-00:00</lastmod>
+<lastmod>2019-09-04T11:28:34-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://dsfabric.org/archives.html</loc>
-<lastmod>2019-09-04T10:52:33-00:00</lastmod>
+<lastmod>2019-09-04T11:28:34-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://dsfabric.org/tags.html</loc>
-<lastmod>2019-09-04T10:52:33-00:00</lastmod>
+<lastmod>2019-09-04T11:28:34-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://dsfabric.org/categories.html</loc>
-<lastmod>2019-09-04T10:52:33-00:00</lastmod>
+<lastmod>2019-09-04T11:28:34-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://dsfabric.org/search.html</loc>
-<lastmod>2019-09-04T10:52:33-00:00</lastmod>
+<lastmod>2019-09-04T11:28:34-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/articles/economics/modeling-single-good-market-in-python.html</loc>
+<loc>https://dsfabric.org/modeling-single-good-market-in-python</loc>
 <lastmod>2019-06-16T12:01:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/articles/mathematics/taylor-series-expansion-with-python.html</loc>
+<loc>https://dsfabric.org/taylor-series-expansion-with-python</loc>
 <lastmod>2019-05-09T14:14:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/articles/data-science/plotly-express.html</loc>
+<loc>https://dsfabric.org/plotly-express</loc>
 <lastmod>2019-03-22T12:14:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/articles/python/python-test.html</loc>
+<loc>https://dsfabric.org/python-test</loc>
 <lastmod>2019-03-08T12:14:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/articles/mathematics/advances-of-linear-algebra-with-python-part-ii.html</loc>
+<loc>https://dsfabric.org/advances-of-linear-algebra-with-python-part-ii</loc>
 <lastmod>2019-03-05T12:14:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/articles/mathematics/advances-of-linear-algebra-with-python-part-i.html</loc>
+<loc>https://dsfabric.org/advances-of-linear-algebra-with-python-part-i</loc>
 <lastmod>2019-03-04T12:14:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/articles/mathematics/intermediates-of-linear-algebra-with-python-part-ii.html</loc>
+<loc>https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-ii</loc>
 <lastmod>2019-03-03T12:14:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/articles/mathematics/intermediates-of-linear-algebra-with-python-part-i.html</loc>
+<loc>https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-i</loc>
 <lastmod>2019-03-02T15:14:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/articles/mathematics/basics-of-linear-algebra-with-python.html</loc>
+<loc>https://dsfabric.org/basics-of-linear-algebra-with-python</loc>
 <lastmod>2019-03-02T13:14:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/articles/mathematics/introduction-to-linear-algebra-with-python.html</loc>
+<loc>https://dsfabric.org/introduction-to-linear-algebra-with-python</loc>
 <lastmod>2019-03-01T12:14:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/articles/general/stackedit.html</loc>
+<loc>https://dsfabric.org/stackedit</loc>
 <lastmod>1997-08-29T02:14:00+05:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
