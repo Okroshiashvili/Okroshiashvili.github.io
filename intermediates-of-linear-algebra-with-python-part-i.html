@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Nodar Okroshiashvili" />
 
-        <meta name="description" content="This is the first part of the third post in blog series about linear algebra. Introduction Basics of linear algebra Intermediate linear algebra: Part I and Part II Advances in linear algebra In this post I will introduce you to the intermediates of linear algebra, which in turn includes the following: Vector Cross Product Span Linear Independence and Dependence
+        <meta name="description" content="This is the first part of the third post in blog series about linear algebra. Introduction Basics of linear algebra Intermediate linear algebra: Part I and Part II Advances in linear algebra In this post I will introduce you to the intermediates of linear algebra, which in turn includes the following: Vector Cross Product Span Linear Independence and Dependence
 " />
         <meta name="twitter:creator" content="@N_Okroshiashvil">
         <meta property="og:type" content="article" />
@@ -14,16 +14,16 @@
 
 <meta name="keywords" content="Linear Algebra, Python, Numpy, Scipy, Mathematics, Mathematics, " />
 
-<meta property="og:title" content="Intermediates of Linear Algebra with Python - Part I "/>
+<meta property="og:title" content="Intermediates of Linear Algebra with Python - Part I "/>
 <meta property="og:url" content="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-i" />
-<meta property="og:description" content="This is the first part of the third post in blog series about linear algebra. Introduction Basics of linear algebra Intermediate linear algebra: Part I and Part II Advances in linear algebra In this post I will introduce you to the intermediates of linear algebra, which in turn includes the following: Vector Cross Product Span Linear Independence and Dependence" />
+<meta property="og:description" content="This is the first part of the third post in blog series about linear algebra. Introduction Basics of linear algebra Intermediate linear algebra: Part I and Part II Advances in linear algebra In this post I will introduce you to the intermediates of linear algebra, which in turn includes the following: Vector Cross Product Span Linear Independence and Dependence" />
 <meta property="og:site_name" content="Data Science Fabric" />
 <meta property="og:article:author" content="Nodar Okroshiashvili" />
 <meta property="og:article:published_time" content="2019-03-02T15:14:00+04:00" />
-<meta name="twitter:title" content="Intermediates of Linear Algebra with Python - Part I ">
-<meta name="twitter:description" content="This is the first part of the third post in blog series about linear algebra. Introduction Basics of linear algebra Intermediate linear algebra: Part I and Part II Advances in linear algebra In this post I will introduce you to the intermediates of linear algebra, which in turn includes the following: Vector Cross Product Span Linear Independence and Dependence">
+<meta name="twitter:title" content="Intermediates of Linear Algebra with Python - Part I ">
+<meta name="twitter:description" content="This is the first part of the third post in blog series about linear algebra. Introduction Basics of linear algebra Intermediate linear algebra: Part I and Part II Advances in linear algebra In this post I will introduce you to the intermediates of linear algebra, which in turn includes the following: Vector Cross Product Span Linear Independence and Dependence">
 
-        <title>Intermediates of Linear Algebra with Python - Part I  · Data Science Fabric
+        <title>Intermediates of Linear Algebra with Python - Part I  · Data Science Fabric
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="https://dsfabric.org/theme/css/pygments.css" media="screen">
@@ -91,7 +91,7 @@
     <header class="page-header span10 offset2">
         <h1>
             <a href="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-i">
-                Intermediates of Linear Algebra with Python - Part I
+                Intermediates of Linear Algebra with Python - Part&nbsp;I
             </a>
         </h1>
     </header>
@@ -103,12 +103,12 @@
             <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is the first part of the third post in blog series about linear algebra.</p>
+<p>This is the first part of the third post in blog series about linear&nbsp;algebra.</p>
 <ol>
 <li>Introduction</li>
-<li>Basics of linear algebra</li>
-<li><strong>Intermediate linear algebra</strong>: <strong>Part I</strong> and Part II</li>
-<li>Advances in linear algebra</li>
+<li>Basics of linear&nbsp;algebra</li>
+<li><strong>Intermediate linear algebra</strong>: <strong>Part I</strong> and Part <span class="caps">II</span></li>
+<li>Advances in linear&nbsp;algebra</li>
 </ol>
 </div>
 </div>
@@ -116,13 +116,13 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In this post I will introduce you to the intermediates of linear algebra, which in turn includes the following:</p>
+<p>In this post I will introduce you to the intermediates of linear algebra, which in turn includes the&nbsp;following:</p>
 <ul>
 <li><a href="#Vector">Vector</a><ul>
-<li><a href="#Cross_Product">Cross Product</a></li>
+<li><a href="#Cross_Product">Cross&nbsp;Product</a></li>
 <li><a href="#Span">Span</a></li>
-<li><a href="#Linear_Independence_and_Dependence">Linear Independence and Dependence</a></li>
-<li><a href="#Numerical_Representation">Numerical Representation</a></li>
+<li><a href="#Linear_Independence_and_Dependence">Linear Independence and&nbsp;Dependence</a></li>
+<li><a href="#Numerical_Representation">Numerical&nbsp;Representation</a></li>
 </ul>
 </li>
 </ul>
@@ -141,85 +141,85 @@
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Cross-Product">Cross Product<a class="anchor-link" href="#Cross-Product">¶</a></h3><p><a id="Cross_Product"></a></p>
 <hr />
-<p>In the case of the dot product between two vectors, we saw that the result is a scalar. In the case of a cross product the result is a vector, so the cross product is also called the vector product. The resulted vector is a vector that is at right angles to both the other vectors in 3D Euclidean space. This means that the cross-product only really makes sense when working with vectors that contain three components.</p>
-<p>There are two formulas to calculate the cross product. One is algebraic and second is geometric. More precisely, the first formula catches the algebraic intuition of cross product and second catches the geometric intuition of the cross product.</p>
-<p>If we have two vectors $A$ and $B$ in such a way:</p>
+<p>In the case of the dot product between two vectors, we saw that the result is a scalar. In the case of a cross product the result is a vector, so the cross product is also called the vector product. The resulted vector is a vector that is at right angles to both the other vectors in 3D Euclidean space. This means that the cross-product only really makes sense when working with vectors that contain three&nbsp;components.</p>
+<p>There are two formulas to calculate the cross product. One is algebraic and second is geometric. More precisely, the first formula catches the algebraic intuition of cross product and second catches the geometric intuition of the cross&nbsp;product.</p>
+<p>If we have two vectors $A$ and $B$ in such a&nbsp;way:</p>
 \begin{align*}A =
 \begin{bmatrix}
-    a_{1} \\
-    a_{2} \\
+    a_{1} &#92;
+    a_{2} &#92;
     a_{3}
 \end{bmatrix}
 \
 B =
 \begin{bmatrix}
-    b_{1} \\
-    b_{2} \\
+    b_{1} &#92;
+    b_{2} &#92;
     b_{3}
 \end{bmatrix}
-\end{align*}<p>The algebraic formula is:</p>
+\end{align*}<p>The algebraic formula&nbsp;is:</p>
 \begin{align*}
 \vec{C} = \vec{A} \times \vec{B} = 
 \begin{bmatrix}
-(a_{2} \cdot b_{3}) - (a_{3} \cdot b_{2}) \\ 
-(a_{3} \cdot b_{1}) - (a_{1} \cdot b_{3}) \\ 
+(a_{2} \cdot b_{3}) - (a_{3} \cdot b_{2}) &#92; 
+(a_{3} \cdot b_{1}) - (a_{1} \cdot b_{3}) &#92; 
 (a_{1} \cdot b_{2}) - (a_{2} \cdot b_{1})
 \end{bmatrix}
-\end{align*}<p>At first glance, the formula is not easy to remember. Let try another formula which uses some advanced components.</p>
+\end{align*}<p>At first glance, the formula is not easy to remember. Let try another formula which uses some advanced&nbsp;components.</p>
 \begin{align*}
-\vec{A} \times \vec{B} = \left| {\begin{array}{*{20}{c}}{\vec{i}}&{\vec{j}}&{\vec{k}}\\{{a_1}}&{{a_2}}&{{a_3}}\\{{b_1}}&{{b_2}}&{{b_3}}\end{array}} \right|
-\end{align*}<p>where $\vec{i}$, $\vec{j}$ and $\vec{k}$ are bases vectors and is explained advance part.</p>
-<p>To find the cross product we have to find the determinant of above matrix in the following way:</p>
+\vec{A} \times \vec{B} = \left| {\begin{array}{*{20}{c}}{\vec{i}}&{\vec{j}}&{\vec{k}}&#92;{{a_1}}&{{a_2}}&{{a_3}}&#92;{{b_1}}&{{b_2}}&{{b_3}}\end{array}} \right|
+\end{align*}<p>where $\vec{i}$, $\vec{j}$ and $\vec{k}$ are bases vectors and is explained advance&nbsp;part.</p>
+<p>To find the cross product we have to find the determinant of above matrix in the following&nbsp;way:</p>
 \begin{align*}
-\vec{A} \times \vec{B} = \left| {\begin{array}{*{20}{c}}{{a_2}}&{{a_3}}\\{{b_2}}&{{b_3}}\end{array}} \right|\vec{i} - \left| {\begin{array}{*{20}{c}}{{a_1}}&{{a_3}}\\{{b_1}}&{{b_3}}\end{array}} \right|\vec{j} + \left| {\begin{array}{*{20}{c}}{{a_1}}&{{a_2}}\\{{b_1}}&{{b_2}}\end{array}} \right|\vec{k}
-\end{align*}<p>Suppose we have two vectors:</p>
+\vec{A} \times \vec{B} = \left| {\begin{array}{*{20}{c}}{{a_2}}&{{a_3}}&#92;{{b_2}}&{{b_3}}\end{array}} \right|\vec{i} - \left| {\begin{array}{*{20}{c}}{{a_1}}&{{a_3}}&#92;{{b_1}}&{{b_3}}\end{array}} \right|\vec{j} + \left| {\begin{array}{*{20}{c}}{{a_1}}&{{a_2}}&#92;{{b_1}}&{{b_2}}\end{array}} \right|\vec{k}
+\end{align*}<p>Suppose we have two&nbsp;vectors:</p>
 \begin{align*}A =
 \begin{bmatrix}
-    2 \\
-    3 \\
+    2 &#92;
+    3 &#92;
     1
 \end{bmatrix}
 \
 B =
 \begin{bmatrix}
-    1 \\
-    2 \\
+    1 &#92;
+    2 &#92;
     -2
 \end{bmatrix}
-\end{align*}<p>Then cross product is:</p>
+\end{align*}<p>Then cross product&nbsp;is:</p>
 \begin{align*}
 \vec{C} = \vec{A} \times \vec{B} =
 \begin{bmatrix}
-(3 \cdot -2) - (1 \cdot 2) \\
-(1 \cdot 1) - (2 \cdot -2) \\
+(3 \cdot -2) - (1 \cdot 2) &#92;
+(1 \cdot 1) - (2 \cdot -2) &#92;
 (2 \cdot 2) - (3 \cdot 1)
 \end{bmatrix} = 
 \begin{bmatrix}
--6 - 2 \\
-1 - -4 \\
+-6 - 2 &#92;
+1 - -4 &#92;
 4 - 3
 \end{bmatrix} =
 \begin{bmatrix}
--8 \\
-5 \\
+-8 &#92;
+5 &#92;
 1
 \end{bmatrix}
-\end{align*}<p>The geometric formula is:</p>
+\end{align*}<p>The geometric formula&nbsp;is:</p>
 \begin{align*}
 \vec{C} =
 \vec{A} \times \vec{B} =
 \|\vec{A}\|\cdot\|\vec{B}\|\cdot\sin{\theta} \cdot \hat{n}
-\end{align*}<p>where, $\theta$ is the angle between $\vec{A}$ and $\vec{B}$. Also, $\hat{n}$ is a unit vector perpendicular to both $\vec{A}$ and $\vec{B}$, such that $\vec{A}$, $\vec{B}$ and $\hat{n}$ form a <a href="https://en.wikipedia.org/wiki/Right-hand_rule">right-handed system</a></p>
-<p>There is also geometric application of the cross product. If we three vectors $\vec{a}$, $\vec{b}$ and $\vec{c}$ which forms the three dimensional figure such as:</p>
+\end{align*}<p>where, $\theta$ is the angle between $\vec{A}$ and $\vec{B}$. Also, $\hat{n}$ is a unit vector perpendicular to both $\vec{A}$ and $\vec{B}$, such that $\vec{A}$, $\vec{B}$ and $\hat{n}$ form a <a href="https://en.wikipedia.org/wiki/Right-hand_rule">right-handed&nbsp;system</a></p>
+<p>There is also geometric application of the cross product. If we three vectors $\vec{a}$, $\vec{b}$ and $\vec{c}$ which forms the three dimensional figure such&nbsp;as:</p>
 <p><img alt="Hello World 1" src="https://dsfabric.org/images/nodo.png" title="Hello World 2" /></p>
-<p>Then the area of the parallelogram ( two dimensional front of this object ) is given by:</p>
+<p>Then the area of the parallelogram ( two dimensional front of this object ) is given&nbsp;by:</p>
 \begin{align*}
 {\rm{Area}} = \left\| {\vec{a} \times \vec{b}} \right\|
-\end{align*}<p>This is the dot product of the result of cross product between vectors $\vec{a}$ and $\vec{b}$</p>
-<p>The volume of the parallelepiped ( the whole three dimensional object ) is given by:</p>
+\end{align*}<p>This is the dot product of the result of cross product between vectors $\vec{a}$ and&nbsp;$\vec{b}$</p>
+<p>The volume of the parallelepiped ( the whole three dimensional object ) is given&nbsp;by:</p>
 \begin{align*}
 {\rm{Volume}} = \left| {\vec{a} \centerdot \left( {\vec{b} \times \vec{c}} \right)} \right|
-\end{align*}<p>here, absolute value bars are necessary since the result could be negative and volume must be positive.</p>
+\end{align*}<p>here, absolute value bars are necessary since the result could be negative and volume must be&nbsp;positive.</p>
 </div>
 </div>
 </div>
@@ -228,34 +228,34 @@ B =
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Span">Span<a class="anchor-link" href="#Span">¶</a></h3><p><a id="Span"></a></p>
 <hr />
-<p>suppose we have set of vectors:</p>
+<p>suppose we have set of&nbsp;vectors:</p>
 \begin{align*}
-{\alpha _1},...,{\alpha _n} \in A\
-\end{align*}<p>then we can define the space $S$ spaned by:</p>
+{\alpha _1},&#8230;,{\alpha _n} \in A\
+\end{align*}<p>then we can define the space $S$ spaned&nbsp;by:</p>
 \begin{align*}
-{\alpha _1},...,{\alpha _n}
+{\alpha _1},&#8230;,{\alpha _n}
 \end{align*}<p>as</p>
 \begin{align*}
-S\left( {{\alpha _1},...,{\alpha _n}} \right) = \left\{ {\sum_{i = 1}^{n} {{c_i}{\alpha _i}\;|\;{c_i} \in \mathbb{R}} } \right\}
-\end{align*}<p>which is the set of all linear combinations of the vectors in this subspace. The set is a subspace of $A$:</p>
+S\left( {{\alpha _1},&#8230;,{\alpha _n}} \right) = \left\{ {\sum_{i = 1}^{n} {{c_i}{\alpha _i}\;|\;{c_i} \in \mathbb{R}} } \right\}
+\end{align*}<p>which is the set of all linear combinations of the vectors in this subspace. The set is a subspace of&nbsp;$A$:</p>
 \begin{align*}
-S\left( {{\alpha _1},...,{\alpha _n}} \right) \subset A
-\end{align*}<p>In other words, if we have set of vectors</p>
+S\left( {{\alpha _1},&#8230;,{\alpha _n}} \right) \subset A
+\end{align*}<p>In other words, if we have set of&nbsp;vectors</p>
 \begin{align*}
 A := \{a_1, \ldots, a_k\}
 \
 \text{in}
 \
 \mathbb R^n
-\end{align*}<p>it's natural to think about the new vectors we can create from these vectors by performing linear operations. New vectors created in this way are called linear combinations of $A$.
-Particularly, $X \in \mathbb{R}^n$ is a linear combination of $A$ if</p>
+\end{align*}<p>it&#8217;s natural to think about the new vectors we can create from these vectors by performing linear operations. New vectors created in this way are called linear combinations of $A$.
+Particularly, $X \in \mathbb{R}^n$ is a linear combination of $A$&nbsp;if</p>
 \begin{align*}
 X =
 \beta_1 a_1 + \cdots + \beta_k a_k
 \text{ for some scalars } \beta_1, \ldots, \beta_k
-\end{align*}<p>here, $\beta_1, \ldots, \beta_k$ are called coefficients of the linear combination.</p>
-<p>The set of linear combinations of $A$ is the span of $A$ and is written as $Span(A)$</p>
-<p>For example, if</p>
+\end{align*}<p>here, $\beta_1, \ldots, \beta_k$ are called coefficients of the linear&nbsp;combination.</p>
+<p>The set of linear combinations of $A$ is the span of $A$ and is written as&nbsp;$Span(A)$</p>
+<p>For example,&nbsp;if</p>
 \begin{align*}
 \vec{A} = \{e_1, e_2, e_3\}
 \
@@ -263,30 +263,30 @@ X =
 \
 e_1 :=
 \begin{bmatrix}
-     1 \\
-     0 \\
+     1 &#92;
+     0 &#92;
      0
 \end{bmatrix}
 , \
 e_2 :=
 \begin{bmatrix}
-     0 \\
-     1 \\
+     0 &#92;
+     1 &#92;
      0
 \end{bmatrix}
 , \
 e_3 :=
 \
 \begin{bmatrix}
-     0 \\
-     0 \\
+     0 &#92;
+     0 &#92;
      1
 \end{bmatrix}
-\end{align*}<p>then the span of $A$ is all of $\mathbb{R}^3$, because, for any $X=(x_1, x_2, x_3)\in \mathbb{R}^3$, we can write</p>
+\end{align*}<p>then the span of $A$ is all of $\mathbb{R}^3$, because, for any $X=(x_1, x_2, x_3)\in \mathbb{R}^3$, we can&nbsp;write</p>
 \begin{align*}
 X =
 x_1 e_1 + x_2 e_2 + x_3 e_3
-\end{align*}<p>This means that by using $A$ or vectors $e_1$, $e_2$ and $e_3$ we can generate any vector in $\mathbb{R}^3$ by performing linear operations.</p>
+\end{align*}<p>This means that by using $A$ or vectors $e_1$, $e_2$ and $e_3$ we can generate any vector in $\mathbb{R}^3$ by performing linear&nbsp;operations.</p>
 </div>
 </div>
 </div>
@@ -295,44 +295,44 @@ x_1 e_1 + x_2 e_2 + x_3 e_3
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Linear-Independence-and-Dependence">Linear Independence and Dependence<a class="anchor-link" href="#Linear-Independence-and-Dependence">¶</a></h3><p><a id="Linear_Independence_and_Dependence"></a></p>
 <hr />
-<p>Above, I mentioned a linear combination. In order to define linear dependence and independence let farther clarify what is a linear combination. If we have a set of vectors</p>
+<p>Above, I mentioned a linear combination. In order to define linear dependence and independence let farther clarify what is a linear combination. If we have a set of&nbsp;vectors</p>
 \begin{align*}
 \vec{A} = \{a_1, \ldots, a_k\}
-\end{align*}<p>which all have the same dimension, then</p>
-<blockquote><p>A <strong>linear combination</strong> of the vectors in $A$ is any vector of the form $c_{1} a_{1} + c_{2} a_{2} + \cdots + c_{k} a_{k}$, where $c_{1}, c_{2}, \ldots, c_{k}$ are arbitrary scalars</p>
+\end{align*}<p>which all have the same dimension,&nbsp;then</p>
+<blockquote><p>A <strong>linear combination</strong> of the vectors in $A$ is any vector of the form $c_{1} a_{1} + c_{2} a_{2} + \cdots + c_{k} a_{k}$, where $c_{1}, c_{2}, \ldots, c_{k}$ are arbitrary&nbsp;scalars</p>
 </blockquote>
-<p>For example, if $A = \{[1, 2], [2, 1]\}$, then</p>
+<p>For example, if $A = \{[1, 2], [2, 1]\}$,&nbsp;then</p>
 \begin{align*}
 2 a_{1} - a_{2} = 2 ([1, 2]) - [2, 1] = [0, 3]
-\end{align*}<p>is linear combination of the vectors in $A$.</p>
-<blockquote><p>A set $A$ of m-dimensional vectros is <strong>linearly independent</strong> if the only linear combination of vectors in $A$ that equals $0$ is the trivial linear combination</p>
+\end{align*}<p>is linear combination of the vectors in&nbsp;$A$.</p>
+<blockquote><p>A set $A$ of m-dimensional vectros is <strong>linearly independent</strong> if the only linear combination of vectors in $A$ that equals $0$ is the trivial linear&nbsp;combination</p>
 </blockquote>
-<p>This formal definition seems a little bit confusing. Let consider the example to catch the idea.</p>
-<p>The set of vectors</p>
+<p>This formal definition seems a little bit confusing. Let consider the example to catch the&nbsp;idea.</p>
+<p>The set of&nbsp;vectors</p>
 \begin{align*}
 A =
 \{[1, 0], [0, 1]\}
-\end{align*}<p>is linearly independent. Let prove this claim. We need to find constants $c_{1}$ and $c_{2}$ satisfying</p>
+\end{align*}<p>is linearly independent. Let prove this claim. We need to find constants $c_{1}$ and $c_{2}$&nbsp;satisfying</p>
 \begin{align*}
 c_{1} ([1, 0]) + c_{2} ([0, 1]) = [0, 0]
-\end{align*}<p>solvoing this system of equations gives that $[c_{1}, c_{2}] = [0, 0] \rightarrow c_{1} = c_{2} = 0$, in turn this implies that $A$ is linearly independent.</p>
-<p>The following statements are equivalent to a linear independence of $A$:</p>
+\end{align*}<p>solvoing this system of equations gives that $[c_{1}, c_{2}] = [0, 0] \rightarrow c_{1} = c_{2} = 0$, in turn this implies that $A$ is linearly&nbsp;independent.</p>
+<p>The following statements are equivalent to a linear independence of&nbsp;$A$:</p>
 <ul>
-<li>No vector in $A$ can be formed as a linear combination of the other vectors. This means that if we have three vectors in $A$, any of them cannot be expressed as the linear combination of the other two.</li>
+<li>No vector in $A$ can be formed as a linear combination of the other vectors. This means that if we have three vectors in $A$, any of them cannot be expressed as the linear combination of the other&nbsp;two.</li>
 </ul>
 <ul>
-<li>If $c_{1} a_{1} + c_{2} a_{2} + \cdots + c_{k} a_{k} = 0$, then $c_{1} = c_{2} = \cdots = c_{k} = 0$</li>
+<li>If $c_{1} a_{1} + c_{2} a_{2} + \cdots + c_{k} a_{k} = 0$, then $c_{1} = c_{2} = \cdots = c_{k} =&nbsp;0$</li>
 </ul>
-<blockquote><p>A set $A$ of m-dimensional vectors is <strong>linearly dependent</strong> if there is a nontrivial linear combination of the vectors in $A$ that adds up to $0$</p>
+<blockquote><p>A set $A$ of m-dimensional vectors is <strong>linearly dependent</strong> if there is a nontrivial linear combination of the vectors in $A$ that adds up to&nbsp;$0$</p>
 </blockquote>
-<p>The set of vectors</p>
+<p>The set of&nbsp;vectors</p>
 \begin{align*}
 A =
 \{[1, 2], [2, 4]\}
-\end{align*}<p>is linearly dependent set of vectors. Let see how.</p>
+\end{align*}<p>is linearly dependent set of vectors. Let see&nbsp;how.</p>
 \begin{align*}
 c_{1} ([1, 2]) + c_{2} ([2, 4]) = [0, 0]
-\end{align*}<p>There is a nontrivial linear combination with $c_{1} = 2$ and $c_{2} = 1$ that yields $0$. This implies $A$ is the linearly dependent set of vectors. It's easy in this case to spot linear dependence by first glance, as the second vector is 2 times the first vector, which indicates linear dependence.</p>
+\end{align*}<p>There is a nontrivial linear combination with $c_{1} = 2$ and $c_{2} = 1$ that yields $0$. This implies $A$ is the linearly dependent set of vectors. It&#8217;s easy in this case to spot linear dependence by first glance, as the second vector is 2 times the first vector, which indicates linear&nbsp;dependence.</p>
 </div>
 </div>
 </div>
@@ -390,8 +390,8 @@ Cross Product is:
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This figure below shows the span of $A = \{a_1, a_2\}$ in $\mathbb{R}^3$.</p>
-<p>The span is a 2 dimensional plane passing through these two points and the origin</p>
+<p>This figure below shows the span of $A = \{a_1, a_2\}$ in&nbsp;$\mathbb{R}^3$.</p>
+<p>The span is a 2 dimensional plane passing through these two points and the&nbsp;origin</p>
 </div>
 </div>
 </div>
@@ -523,7 +523,7 @@ Cross Product is:
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This says that the vectors at index 0 and 1 are linearly independent. Let consider a linearly dependent set of vectors to see the result of the above code clearly.</p>
+<p>This says that the vectors at index 0 and 1 are linearly independent. Let consider a linearly dependent set of vectors to see the result of the above code&nbsp;clearly.</p>
 </div>
 </div>
 </div>
@@ -556,7 +556,7 @@ Cross Product is:
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This says that vectors at index 0, 1, and 3 are linearly independent, while vector at index 2 is linearly dependent.</p>
+<p>This says that vectors at index 0, 1, and 3 are linearly independent, while vector at index 2 is linearly&nbsp;dependent.</p>
 </div>
 </div>
 </div>
@@ -582,8 +582,8 @@ Cross Product is:
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Here, I only covered half of the materials that I initially had intended to cover. I split those materials into two parts, mainly because to improve readability and maintain consistency.</p>
-<p>In the second part I review matrices and operations on matrices.</p>
+<p>Here, I only covered half of the materials that I initially had intended to cover. I split those materials into two parts, mainly because to improve readability and maintain&nbsp;consistency.</p>
+<p>In the second part I review matrices and operations on&nbsp;matrices.</p>
 </div>
 </div>
 </div>
@@ -591,9 +591,9 @@ Cross Product is:
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="References">References<a class="anchor-link" href="#References">¶</a></h3><h4 id="Vector">Vector<a class="anchor-link" href="#Vector">¶</a></h4><ul>
-<li><p><a href="http://linear.axler.net/">Linear Algebra Done Right</a></p>
+<li><p><a href="http://linear.axler.net/">Linear Algebra Done&nbsp;Right</a></p>
 </li>
-<li><p><a href="https://en.wikipedia.org/wiki/List_of_linear_algebra_topics">Linear Algebra Topics</a></p>
+<li><p><a href="https://en.wikipedia.org/wiki/List_of_linear_algebra_topics">Linear Algebra&nbsp;Topics</a></p>
 </li>
 </ul>
 </div>
@@ -633,11 +633,11 @@ Cross Product is:
 
                 <p id="post-share-links">
     Like this post? Share on:
-    <a href="https://twitter.com/intent/tweet?text=Intermediates%20of%20Linear%20Algebra%20with%20Python%20-%20Part%20I&url=https%3A//dsfabric.org/intermediates-of-linear-algebra-with-python-part-i&via=N_Okroshiashvil&hashtags=linear-algebra,python,numpy,scipy,mathematics" target="_blank" title="Share on Twitter">Twitter</a>
+    <a href="https://twitter.com/intent/tweet?text=Intermediates%20of%20Linear%20Algebra%20with%20Python%20-%20Part%C2%A0I&url=https%3A//dsfabric.org/intermediates-of-linear-algebra-with-python-part-i&via=N_Okroshiashvil&hashtags=linear-algebra,python,numpy,scipy,mathematics" target="_blank" title="Share on Twitter">Twitter</a>
     ❄
     <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//dsfabric.org/intermediates-of-linear-algebra-with-python-part-i" target="_blank" title="Share on Facebook">Facebook</a>
     ❄
-    <a href="mailto:?subject=Intermediates%20of%20Linear%20Algebra%20with%20Python%20-%20Part%20I&amp;body=https%3A//dsfabric.org/intermediates-of-linear-algebra-with-python-part-i" target="_blank" title="Share via Email">Email</a>
+    <a href="mailto:?subject=Intermediates%20of%20Linear%20Algebra%20with%20Python%20-%20Part%C2%A0I&amp;body=https%3A//dsfabric.org/intermediates-of-linear-algebra-with-python-part-i" target="_blank" title="Share via Email">Email</a>
     </p>
 
             
@@ -702,10 +702,10 @@ Cross Product is:
 <section>
     <h2>Keep Reading</h2>
 <ul class="related-posts-list">
-<li><a href="https://dsfabric.org/introduction-to-linear-algebra-with-python" title="Introduction to Linear Algebra with Python">Introduction to Linear Algebra with Python</a></li>
-<li><a href="https://dsfabric.org/basics-of-linear-algebra-with-python" title="Basics of Linear Algebra with Python">Basics of Linear Algebra with Python</a></li>
+<li><a href="https://dsfabric.org/introduction-to-linear-algebra-with-python" title="Introduction to Linear Algebra with Python">Introduction to Linear Algebra with Python</a></li>
+<li><a href="https://dsfabric.org/basics-of-linear-algebra-with-python" title="Basics of Linear Algebra with Python">Basics of Linear Algebra with Python</a></li>
 <li><a href="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-ii" title="Intermediates of Linear Algebra with Python - Part II">Intermediates of Linear Algebra with Python - Part II</a></li>
-<li><a href="https://dsfabric.org/advances-of-linear-algebra-with-python-part-i" title="Advances of Linear Algebra with Python - Part I">Advances of Linear Algebra with Python - Part I</a></li>
+<li><a href="https://dsfabric.org/advances-of-linear-algebra-with-python-part-i" title="Advances of Linear Algebra with Python - Part I">Advances of Linear Algebra with Python - Part I</a></li>
 <li><a href="https://dsfabric.org/advances-of-linear-algebra-with-python-part-ii" title="Advances of Linear Algebra with Python - Part II">Advances of Linear Algebra with Python - Part II</a></li>
 </ul>
 <hr />
@@ -713,7 +713,7 @@ Cross Product is:
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://dsfabric.org/basics-of-linear-algebra-with-python" title="Previous: Basics of Linear Algebra with Python">Basics of Linear Algebra with Python</a></li>
+                <li class="previous-article">« <a href="https://dsfabric.org/basics-of-linear-algebra-with-python" title="Previous: Basics of Linear Algebra with Python">Basics of Linear Algebra with Python</a></li>
                 <li class="next-article"><a href="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-ii" title="Next: Intermediates of Linear Algebra with Python - Part II">Intermediates of Linear Algebra with Python - Part II</a> »</li>
             </ul>
             </nav>
