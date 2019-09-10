@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Data Science Fabric</title><link href="https://dsfabric.org/" rel="alternate"></link><link href="https://dsfabric.org/feeds/all.atom.xml" rel="self"></link><id>https://dsfabric.org/</id><updated>2019-06-16T12:01:00+04:00</updated><subtitle>Torture the data, and it will confess to anything. Ronald Coase</subtitle><entry><title>Modeling single good market in Python</title><link href="https://dsfabric.org/modeling-single-good-market-in-python" rel="alternate"></link><published>2019-06-16T12:01:00+04:00</published><updated>2019-06-16T12:01:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-06-16:/modeling-single-good-market-in-python</id><summary type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Data Science Fabric</title><link href="https://dsfabric.org/" rel="alternate"></link><link href="https://dsfabric.org/feeds/all.atom.xml" rel="self"></link><id>https://dsfabric.org/</id><updated>2019-06-16T12:01:00+04:00</updated><subtitle>Torture the data, and it will confess to anything. Ronald Coase</subtitle><entry><title>Modeling single good market in Python</title><link href="https://dsfabric.org/modeling-single-good-market-in-python" rel="alternate"></link><published>2019-06-16T12:01:00+04:00</published><updated>2019-06-16T12:01:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-06-16:/modeling-single-good-market-in-python</id><summary type="html">
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;In this blog, I want to review simple one good market economy, where supply and demand are linear functions of price and agents of this economy are price takers. Those agents are divided into two categories: buyers and sellers. The price of a product is determined by the interaction of demand and supply or in other words buyers and sellers. Here, the buyer is associated with demand and seller is associated with supply. Henceforth, in this market, there are no frictions or market imperfections (more on this later) and market is competitive. So, this should be a very simple environment, where buyer demands product and seller sells this product at a given price. Before continue, it&amp;#8217;s worth to define some key terms and notions in our simple market&amp;nbsp;model.&lt;/p&gt;</summary><content type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;In this blog, I want to review simple one good market economy, where supply and demand are linear functions of price and agents of this economy are price takers. Those agents are divided into two categories: buyers and sellers. The price of a product is determined by the interaction of demand and supply or in other words buyers and sellers. Here, the buyer is associated with demand and seller is associated with supply. Henceforth, in this market, there are no frictions or market imperfections (more on this later) and market is competitive. So, this should be a very simple environment, where buyer demands product and seller sells this product at a given price. Before continue, it&amp;#8217;s worth to define some key terms and notions in our simple market&amp;nbsp;model.&lt;/p&gt;</summary><content type="html">
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;In this blog, I want to review simple one good market economy, where supply and demand are linear functions of price and agents of this economy are price takers. Those agents are divided into two categories: buyers and sellers. The price of a product is determined by the interaction of demand and supply or in other words buyers and sellers. Here, the buyer is associated with demand and seller is associated with supply. Henceforth, in this market, there are no frictions or market imperfections (more on this later) and market is competitive. So, this should be a very simple environment, where buyer demands product and seller sells this product at a given price. Before continue, it&amp;#8217;s worth to define some key terms and notions in our simple market&amp;nbsp;model.&lt;/p&gt;
@@ -446,10 +448,12 @@ Producer Surplus = 42.25
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="economics"></category><category term="single good market"></category><category term="supply"></category><category term="demand"></category><category term="consumer surplus"></category><category term="producer surplus"></category><category term="python"></category><category term="Economics"></category></entry><entry><title>Taylor Series Expansion with Python</title><link href="https://dsfabric.org/taylor-series-expansion-with-python" rel="alternate"></link><published>2019-05-09T14:14:00+04:00</published><updated>2019-05-09T14:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-05-09:/taylor-series-expansion-with-python</id><summary type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+</content><category term="economics"></category><category term="single good market"></category><category term="supply"></category><category term="demand"></category><category term="consumer surplus"></category><category term="producer surplus"></category><category term="python"></category><category term="Economics"></category></entry><entry><title>Taylor Series Expansion with Python</title><link href="https://dsfabric.org/taylor-series-expansion-with-python" rel="alternate"></link><published>2019-05-09T14:14:00+04:00</published><updated>2019-05-09T14:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-05-09:/taylor-series-expansion-with-python</id><summary type="html">
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;In this blog, I want to review famous Taylor Series Expansion and its special case Maclaurin Series Expansion. According to &lt;a href="https://en.wikipedia.org/wiki/Taylor_series"&gt;wikipedia&lt;/a&gt;, the aim of Taylor Series Expansion (&lt;span class="caps"&gt;TSE&lt;/span&gt;) is to represent a function as an infinite sum of terms that are derived from the values of that function&amp;#8217;s derivatives, which in turn are evaluated at some predefined single point. In other words, by using &lt;span class="caps"&gt;TSE&lt;/span&gt;, we try to represent some given function as an infinite sum of its derivatives and these derivates are evaluated at some single point which we can choose. Before diving into mechanics of &lt;span class="caps"&gt;TSE&lt;/span&gt; and its special case Maclaurin Series Expansion (&lt;span class="caps"&gt;MSE&lt;/span&gt;), it&amp;#8217;s worth to know some history behind these guys. Back in the 17th century the concept of expansion first was introduced by mathematician &lt;strong&gt;James&amp;nbsp;Gregory&lt;/strong&gt;</summary><content type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;In this blog, I want to review famous Taylor Series Expansion and its special case Maclaurin Series Expansion. According to &lt;a href="https://en.wikipedia.org/wiki/Taylor_series"&gt;wikipedia&lt;/a&gt;, the aim of Taylor Series Expansion (&lt;span class="caps"&gt;TSE&lt;/span&gt;) is to represent a function as an infinite sum of terms that are derived from the values of that function&amp;#8217;s derivatives, which in turn are evaluated at some predefined single point. In other words, by using &lt;span class="caps"&gt;TSE&lt;/span&gt;, we try to represent some given function as an infinite sum of its derivatives and these derivates are evaluated at some single point which we can choose. Before diving into mechanics of &lt;span class="caps"&gt;TSE&lt;/span&gt; and its special case Maclaurin Series Expansion (&lt;span class="caps"&gt;MSE&lt;/span&gt;), it&amp;#8217;s worth to know some history behind these guys. Back in the 17th century the concept of expansion first was introduced by mathematician &lt;strong&gt;James&amp;nbsp;Gregory&lt;/strong&gt;</summary><content type="html">
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;In this blog, I want to review famous Taylor Series Expansion and its special case Maclaurin Series Expansion. According to &lt;a href="https://en.wikipedia.org/wiki/Taylor_series"&gt;wikipedia&lt;/a&gt;, the aim of Taylor Series Expansion (&lt;span class="caps"&gt;TSE&lt;/span&gt;) is to represent a function as an infinite sum of terms that are derived from the values of that function&amp;#8217;s derivatives, which in turn are evaluated at some predefined single point. In other words, by using &lt;span class="caps"&gt;TSE&lt;/span&gt;, we try to represent some given function as an infinite sum of its derivatives and these derivates are evaluated at some single point which we can choose. Before diving into mechanics of &lt;span class="caps"&gt;TSE&lt;/span&gt; and its special case Maclaurin Series Expansion (&lt;span class="caps"&gt;MSE&lt;/span&gt;), it&amp;#8217;s worth to know some history behind these guys. Back in the 17th century the concept of expansion first was introduced by mathematician &lt;strong&gt;James Gregory&lt;/strong&gt;, but in 1715 the notion of function expansion was formally introduced by &lt;strong&gt;Brook Taylor&lt;/strong&gt;.&lt;/p&gt;
@@ -859,10 +863,12 @@ P_{n}(x) + R_{n}(x)
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="Taylor Series Expansion"></category><category term="Maclaurin Series Expansion"></category><category term="Python"></category><category term="Numpy"></category><category term="Scipy"></category><category term="Sympy"></category><category term="Mathematics"></category></entry><entry><title>Plotly Express</title><link href="https://dsfabric.org/plotly-express" rel="alternate"></link><published>2019-03-22T12:14:00+04:00</published><updated>2019-03-22T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-22:/plotly-express</id><summary type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+</content><category term="Taylor Series Expansion"></category><category term="Maclaurin Series Expansion"></category><category term="Python"></category><category term="Numpy"></category><category term="Scipy"></category><category term="Sympy"></category><category term="Mathematics"></category></entry><entry><title>Plotly Express</title><link href="https://dsfabric.org/plotly-express" rel="alternate"></link><published>2019-03-22T12:14:00+04:00</published><updated>2019-03-22T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-22:/plotly-express</id><summary type="html">
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;I fairly believe that, if someone is good at data visualization he/she at least has heard about Hans Rosling. One of the most influential data storyteller, and honestly because of the &lt;a href="https://www.ted.com/talks/hans_rosling_shows_the_best_stats_you_ve_ever_seen"&gt;talk&lt;/a&gt; he gave at &lt;span class="caps"&gt;TED&lt;/span&gt;, it influenced me too much that I decided to learn data visualization. Since then, I had some progress as well some stagnation but the most noteworthy thing here is that I got my hands dirty with great data visualization tools such as &lt;a href="https://matplotlib.org/"&gt;matplotlib&lt;/a&gt;</summary><content type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;I fairly believe that, if someone is good at data visualization he/she at least has heard about Hans Rosling. One of the most influential data storyteller, and honestly because of the &lt;a href="https://www.ted.com/talks/hans_rosling_shows_the_best_stats_you_ve_ever_seen"&gt;talk&lt;/a&gt; he gave at &lt;span class="caps"&gt;TED&lt;/span&gt;, it influenced me too much that I decided to learn data visualization. Since then, I had some progress as well some stagnation but the most noteworthy thing here is that I got my hands dirty with great data visualization tools such as &lt;a href="https://matplotlib.org/"&gt;matplotlib&lt;/a&gt;</summary><content type="html">
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;I fairly believe that, if someone is good at data visualization he/she at least has heard about Hans Rosling. One of the most influential data storyteller, and honestly because of the &lt;a href="https://www.ted.com/talks/hans_rosling_shows_the_best_stats_you_ve_ever_seen"&gt;talk&lt;/a&gt; he gave at &lt;span class="caps"&gt;TED&lt;/span&gt;, it influenced me too much that I decided to learn data visualization. Since then, I had some progress as well some stagnation but the most noteworthy thing here is that I got my hands dirty with great data visualization tools such as &lt;a href="https://matplotlib.org/"&gt;matplotlib&lt;/a&gt;, &lt;a href="https://seaborn.pydata.org/"&gt;seaborn&lt;/a&gt;, &lt;a href="https://bokeh.pydata.org/en/latest/"&gt;Bokeh&lt;/a&gt;, &lt;a href="https://altair-viz.github.io/"&gt;altair&lt;/a&gt;, and &lt;a href="https://plot.ly/python/"&gt;plotly&lt;/a&gt;.&lt;/p&gt;
@@ -1281,7 +1287,8 @@ P_{n}(x) + R_{n}(x)
 </content><category term="plotly"></category><category term="plotly express"></category><category term="python"></category><category term="data visualization"></category><category term="Data Science"></category></entry><entry><title>Python - Test</title><link href="https://dsfabric.org/python-test" rel="alternate"></link><published>2019-03-08T12:14:00+04:00</published><updated>2019-03-08T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-08:/python-test</id><content type="html">&lt;blockquote&gt;
 &lt;p&gt;Written with &lt;a href="https://stackedit.io/"&gt;StackEdit&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;To do this project as I want I need to plan it&amp;nbsp;carefully.&lt;/p&gt;</content><category term="Python"></category><category term="Python"></category></entry><entry><title>Advances of Linear Algebra with Python - Part II</title><link href="https://dsfabric.org/advances-of-linear-algebra-with-python-part-ii" rel="alternate"></link><published>2019-03-05T12:14:00+04:00</published><updated>2019-03-05T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-05:/advances-of-linear-algebra-with-python-part-ii</id><summary type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;To do this project as I want I need to plan it&amp;nbsp;carefully.&lt;/p&gt;</content><category term="Python"></category><category term="Python"></category></entry><entry><title>Advances of Linear Algebra with Python - Part II</title><link href="https://dsfabric.org/advances-of-linear-algebra-with-python-part-ii" rel="alternate"></link><published>2019-03-05T12:14:00+04:00</published><updated>2019-03-05T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-05:/advances-of-linear-algebra-with-python-part-ii</id><summary type="html">
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;This is the fourth and last post in blog series about linear&amp;nbsp;algebra.&lt;/p&gt;
@@ -1304,7 +1311,8 @@ P_{n}(x) + R_{n}(x)
 &lt;li&gt;&lt;a href="#QR_Decomposition"&gt;&lt;span class="caps"&gt;QR&lt;/span&gt;&amp;nbsp;Decomposition&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#Eigendecomposition"&gt;Eigendecomposition&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#Singular_Value_Decomposition"&gt;Singular Value&amp;nbsp;Decomposition&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Inverse_of_a_Square_Full_Rank_Matrix"&gt;Inverse of a Square Full Rank&amp;nbsp;Matrix&lt;/a&gt;</summary><content type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;li&gt;&lt;a href="#Inverse_of_a_Square_Full_Rank_Matrix"&gt;Inverse of a Square Full Rank&amp;nbsp;Matrix&lt;/a&gt;</summary><content type="html">
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;This is the fourth and last post in blog series about linear&amp;nbsp;algebra.&lt;/p&gt;
@@ -2078,7 +2086,8 @@ B = [[ 0.          1.         -0.        ]
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="Linear Algebra"></category><category term="Python"></category><category term="Numpy"></category><category term="Scipy"></category><category term="Mathematics"></category></entry><entry><title>Advances of Linear Algebra with Python - Part I</title><link href="https://dsfabric.org/advances-of-linear-algebra-with-python-part-i" rel="alternate"></link><published>2019-03-04T12:14:00+04:00</published><updated>2019-03-04T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-04:/advances-of-linear-algebra-with-python-part-i</id><summary type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+</content><category term="Linear Algebra"></category><category term="Python"></category><category term="Numpy"></category><category term="Scipy"></category><category term="Mathematics"></category></entry><entry><title>Advances of Linear Algebra with Python - Part I</title><link href="https://dsfabric.org/advances-of-linear-algebra-with-python-part-i" rel="alternate"></link><published>2019-03-04T12:14:00+04:00</published><updated>2019-03-04T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-04:/advances-of-linear-algebra-with-python-part-i</id><summary type="html">
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;This is the first part of the fourth and last post in blog series about linear&amp;nbsp;algebra.&lt;/p&gt;
@@ -2101,7 +2110,8 @@ B = [[ 0.          1.         -0.        ]
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="#Matrix"&gt;Matrix&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#Gaussian_Elimination_of_a_Matrix"&gt;Gaussian Elimination of a&amp;nbsp;Matrix&lt;/a&gt;</summary><content type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;li&gt;&lt;a href="#Gaussian_Elimination_of_a_Matrix"&gt;Gaussian Elimination of a&amp;nbsp;Matrix&lt;/a&gt;</summary><content type="html">
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;This is the first part of the fourth and last post in blog series about linear&amp;nbsp;algebra.&lt;/p&gt;
@@ -3642,7 +3652,8 @@ Eigenvectors are:
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="Linear Algebra"></category><category term="Python"></category><category term="Numpy"></category><category term="Scipy"></category><category term="Mathematics"></category></entry><entry><title>Intermediates of Linear Algebra with Python - Part II</title><link href="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-ii" rel="alternate"></link><published>2019-03-03T12:14:00+04:00</published><updated>2019-03-03T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-03:/intermediates-of-linear-algebra-with-python-part-ii</id><summary type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+</content><category term="Linear Algebra"></category><category term="Python"></category><category term="Numpy"></category><category term="Scipy"></category><category term="Mathematics"></category></entry><entry><title>Intermediates of Linear Algebra with Python - Part II</title><link href="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-ii" rel="alternate"></link><published>2019-03-03T12:14:00+04:00</published><updated>2019-03-03T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-03:/intermediates-of-linear-algebra-with-python-part-ii</id><summary type="html">
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;This is the second part of third post in blog series about linear&amp;nbsp;algebra.&lt;/p&gt;
@@ -3662,7 +3673,8 @@ Eigenvectors are:
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="#Matrix"&gt;Matrix&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#Types_of_Matrices"&gt;Types of&amp;nbsp;Matrices&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Trace_of_a_Matrix"&gt;Trace of a&amp;nbsp;Matrix&lt;/a&gt;</summary><content type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;li&gt;&lt;a href="#Trace_of_a_Matrix"&gt;Trace of a&amp;nbsp;Matrix&lt;/a&gt;</summary><content type="html">
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;This is the second part of third post in blog series about linear&amp;nbsp;algebra.&lt;/p&gt;
@@ -5103,7 +5115,8 @@ Frobenius Inner Product is: 21
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="Linear Algebra"></category><category term="Python"></category><category term="Numpy"></category><category term="Scipy"></category><category term="Mathematics"></category></entry><entry><title>Intermediates of Linear Algebra with Python - Part I</title><link href="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-i" rel="alternate"></link><published>2019-03-02T15:14:00+04:00</published><updated>2019-03-02T15:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-02:/intermediates-of-linear-algebra-with-python-part-i</id><summary type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+</content><category term="Linear Algebra"></category><category term="Python"></category><category term="Numpy"></category><category term="Scipy"></category><category term="Mathematics"></category></entry><entry><title>Intermediates of Linear Algebra with Python - Part I</title><link href="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-i" rel="alternate"></link><published>2019-03-02T15:14:00+04:00</published><updated>2019-03-02T15:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-02:/intermediates-of-linear-algebra-with-python-part-i</id><summary type="html">
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;This is the first part of the third post in blog series about linear&amp;nbsp;algebra.&lt;/p&gt;
@@ -5124,7 +5137,8 @@ Frobenius Inner Product is: 21
 &lt;li&gt;&lt;a href="#Vector"&gt;Vector&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#Cross_Product"&gt;Cross&amp;nbsp;Product&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#Span"&gt;Span&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Linear_Independence_and_Dependence"&gt;Linear Independence and&amp;nbsp;Dependence&lt;/a&gt;</summary><content type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;li&gt;&lt;a href="#Linear_Independence_and_Dependence"&gt;Linear Independence and&amp;nbsp;Dependence&lt;/a&gt;</summary><content type="html">
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;This is the first part of the third post in blog series about linear&amp;nbsp;algebra.&lt;/p&gt;
@@ -5652,7 +5666,8 @@ Cross Product is:
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="Linear Algebra"></category><category term="Python"></category><category term="Numpy"></category><category term="Scipy"></category><category term="Mathematics"></category></entry><entry><title>Basics of Linear Algebra with Python</title><link href="https://dsfabric.org/basics-of-linear-algebra-with-python" rel="alternate"></link><published>2019-03-02T13:14:00+04:00</published><updated>2019-03-02T13:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-02:/basics-of-linear-algebra-with-python</id><summary type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+</content><category term="Linear Algebra"></category><category term="Python"></category><category term="Numpy"></category><category term="Scipy"></category><category term="Mathematics"></category></entry><entry><title>Basics of Linear Algebra with Python</title><link href="https://dsfabric.org/basics-of-linear-algebra-with-python" rel="alternate"></link><published>2019-03-02T13:14:00+04:00</published><updated>2019-03-02T13:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-02:/basics-of-linear-algebra-with-python</id><summary type="html">
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;This is the second post in blog series about linear&amp;nbsp;algebra.&lt;/p&gt;
@@ -5670,7 +5685,8 @@ Cross Product is:
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;In this post I will introduce you to the basics of linear algebra, which in turn includes the&amp;nbsp;following:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="#One_Variable_Equation"&gt;One Variable&amp;nbsp;Equation&lt;/a&gt;</summary><content type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;li&gt;&lt;a href="#One_Variable_Equation"&gt;One Variable&amp;nbsp;Equation&lt;/a&gt;</summary><content type="html">
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;This is the second post in blog series about linear&amp;nbsp;algebra.&lt;/p&gt;
@@ -7302,7 +7318,8 @@ A * I =
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</content><category term="Linear Algebra"></category><category term="Python"></category><category term="Numpy"></category><category term="Scipy"></category><category term="Mathematics"></category></entry><entry><title>Introduction to Linear Algebra with Python</title><link href="https://dsfabric.org/introduction-to-linear-algebra-with-python" rel="alternate"></link><published>2019-03-01T12:14:00+04:00</published><updated>2019-03-01T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-01:/introduction-to-linear-algebra-with-python</id><summary type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+</content><category term="Linear Algebra"></category><category term="Python"></category><category term="Numpy"></category><category term="Scipy"></category><category term="Mathematics"></category></entry><entry><title>Introduction to Linear Algebra with Python</title><link href="https://dsfabric.org/introduction-to-linear-algebra-with-python" rel="alternate"></link><published>2019-03-01T12:14:00+04:00</published><updated>2019-03-01T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-01:/introduction-to-linear-algebra-with-python</id><summary type="html">
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;These are the series of linear algebra mainly based on &lt;em&gt;Numpy&lt;/em&gt; and &lt;em&gt;Scipy&lt;/em&gt;. The series will follow the&amp;nbsp;sequence:&lt;/p&gt;
@@ -7318,7 +7335,8 @@ A * I =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;strong&gt;In these series I will attempt to demystify linear algebra concepts to beginners and combine it with Python for practical&amp;nbsp;use.&lt;/strong&gt;</summary><content type="html">&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;p&gt;&lt;strong&gt;In these series I will attempt to demystify linear algebra concepts to beginners and combine it with Python for practical&amp;nbsp;use.&lt;/strong&gt;</summary><content type="html">
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;These are the series of linear algebra mainly based on &lt;em&gt;Numpy&lt;/em&gt; and &lt;em&gt;Scipy&lt;/em&gt;. The series will follow the&amp;nbsp;sequence:&lt;/p&gt;
@@ -7541,13 +7559,10 @@ eyJoaXN0b3J5IjpbLTEzOTUyNjYyOSw3MzA5OTgxMTZdfQ==
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
     mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var configscript = document.createElement('script');
-    configscript.type = 'text/x-mathjax-config';
-    configscript[(window.opera ? "innerHTML" : "text")] =
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
         "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
         "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
         "    displayAlign: '"+ align +"'," +
@@ -7561,8 +7576,6 @@ eyJoaXN0b3J5IjpbLTEzOTUyNjYyOSw3MzA5OTgxMTZdfQ==
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
-        "        availableFonts: ['STIX', 'TeX']," +
-        "        preferredFont: 'STIX'," +
         "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
         "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
         "    }, " +
@@ -7583,8 +7596,6 @@ eyJoaXN0b3J5IjpbLTEzOTUyNjYyOSw3MzA5OTgxMTZdfQ==
                 "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
             "});" +
         "}";
-
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;</content><category term="General"></category><category term="General"></category></entry></feed>
