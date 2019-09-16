@@ -1367,13 +1367,13 @@ P_{n}(x) + R_{n}(x)
 \begin{align*}A =
 &lt;span class="caps"&gt;LL&lt;/span&gt;^{T}
 \end{align*}&lt;p&gt;For rough sense, let $A$&amp;nbsp;be&lt;/p&gt;
-\begin{align}A =
+\begin{equation}A =
 \begin{bmatrix}
 a_{11} &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; a_{12} &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; a_{13} &amp;#92;
 a_{21} &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; a_{22} &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; a_{23} &amp;#92;
 a_{31} &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; a_{32} &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; a_{33}
 \end{bmatrix}
-\end{align}&lt;p&gt;Then we can represent $A$&amp;nbsp;as&lt;/p&gt;
+\end{equation}&lt;p&gt;Then we can represent $A$&amp;nbsp;as&lt;/p&gt;
 \begin{align*}A = &lt;span class="caps"&gt;LL&lt;/span&gt;^{T} =
 \begin{bmatrix}
 l_{11} &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; 0 &lt;span class="amp"&gt;&amp;amp;&lt;/span&gt; 0 &amp;#92;
