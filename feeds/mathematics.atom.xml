@@ -2844,13 +2844,13 @@ h6:hover .anchor-link {
 \begin{align*}A =
 LL^{T}
 \end{align*}&lt;p&gt;For rough sense, let $A$ be&lt;/p&gt;
-\begin{align}A =
+\begin{align*}A =
 \begin{bmatrix}
 a_{11} &amp;amp; a_{12} &amp;amp; a_{13} \\
 a_{21} &amp;amp; a_{22} &amp;amp; a_{23} \\
 a_{31} &amp;amp; a_{32} &amp;amp; a_{33}
 \end{bmatrix}
-\end{align}&lt;p&gt;Then we can represent $A$ as&lt;/p&gt;
+\end{align*}&lt;p&gt;Then we can represent $A$ as&lt;/p&gt;
 \begin{align*}A = LL^{T} =
 \begin{bmatrix}
 l_{11} &amp;amp; 0 &amp;amp; 0 \\
