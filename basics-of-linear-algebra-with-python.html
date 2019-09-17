@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Nodar Okroshiashvili" />
 
-        <meta name="description" content="This is a basics of Linear Algebra with Python
+        <meta name="description" content="This is a basics of Linear Algebra with Python
 " />
         <meta name="twitter:creator" content="@N_Okroshiashvil">
         <meta property="og:type" content="article" />
@@ -14,16 +14,16 @@
 
 <meta name="keywords" content="Linear Algebra, Python, Numpy, Scipy, Mathematics, Mathematics, " />
 
-<meta property="og:title" content="Basics of Linear Algebra with Python "/>
+<meta property="og:title" content="Basics of Linear Algebra with Python "/>
 <meta property="og:url" content="https://dsfabric.org/basics-of-linear-algebra-with-python" />
-<meta property="og:description" content="This is a basics of Linear Algebra with Python" />
+<meta property="og:description" content="This is a basics of Linear Algebra with Python" />
 <meta property="og:site_name" content="Data Science Fabric" />
 <meta property="og:article:author" content="Nodar Okroshiashvili" />
 <meta property="og:article:published_time" content="2019-03-02T13:14:00+04:00" />
-<meta name="twitter:title" content="Basics of Linear Algebra with Python ">
-<meta name="twitter:description" content="This is a basics of Linear Algebra with Python">
+<meta name="twitter:title" content="Basics of Linear Algebra with Python ">
+<meta name="twitter:description" content="This is a basics of Linear Algebra with Python">
 
-        <title>Basics of Linear Algebra with Python  · Data Science Fabric
+        <title>Basics of Linear Algebra with Python  · Data Science Fabric
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="https://dsfabric.org/theme/css/pygments.css" media="screen">
@@ -91,7 +91,7 @@
     <header class="page-header span10 offset2">
         <h1>
             <a href="https://dsfabric.org/basics-of-linear-algebra-with-python">
-                Basics of Linear Algebra with&nbsp;Python
+                Basics of Linear Algebra with Python
             </a>
         </h1>
     </header>
@@ -105,15 +105,15 @@
 * IPython notebook
 *
 */
-/* <span class="caps">CSS</span> font colors for translated <span class="caps">ANSI</span> escape sequences */
+/* CSS font colors for translated ANSI escape sequences */
 /* The color values are a mix of
    http://www.xcolors.net/dl/baskerville-ivorylight and
    http://www.xcolors.net/dl/euphrasia */
 .ansi-black-fg {
-  color: #<span class="caps">3E424D</span>;
+  color: #3E424D;
 }
 .ansi-black-bg {
-  background-color: #<span class="caps">3E424D</span>;
+  background-color: #3E424D;
 }
 .ansi-black-intense-fg {
   color: #282C36;
@@ -122,16 +122,16 @@
   background-color: #282C36;
 }
 .ansi-red-fg {
-  color: #<span class="caps">E75C58</span>;
+  color: #E75C58;
 }
 .ansi-red-bg {
-  background-color: #<span class="caps">E75C58</span>;
+  background-color: #E75C58;
 }
 .ansi-red-intense-fg {
-  color: #<span class="caps">B22B31</span>;
+  color: #B22B31;
 }
 .ansi-red-intense-bg {
-  background-color: #<span class="caps">B22B31</span>;
+  background-color: #B22B31;
 }
 .ansi-green-fg {
   color: #00A250;
@@ -146,34 +146,34 @@
   background-color: #007427;
 }
 .ansi-yellow-fg {
-  color: #<span class="caps">DDB62B</span>;
+  color: #DDB62B;
 }
 .ansi-yellow-bg {
-  background-color: #<span class="caps">DDB62B</span>;
+  background-color: #DDB62B;
 }
 .ansi-yellow-intense-fg {
-  color: #<span class="caps">B27D12</span>;
+  color: #B27D12;
 }
 .ansi-yellow-intense-bg {
-  background-color: #<span class="caps">B27D12</span>;
+  background-color: #B27D12;
 }
 .ansi-blue-fg {
-  color: #<span class="caps">208FFB</span>;
+  color: #208FFB;
 }
 .ansi-blue-bg {
-  background-color: #<span class="caps">208FFB</span>;
+  background-color: #208FFB;
 }
 .ansi-blue-intense-fg {
-  color: #<span class="caps">0065CA</span>;
+  color: #0065CA;
 }
 .ansi-blue-intense-bg {
-  background-color: #<span class="caps">0065CA</span>;
+  background-color: #0065CA;
 }
 .ansi-magenta-fg {
-  color: #<span class="caps">D160C4</span>;
+  color: #D160C4;
 }
 .ansi-magenta-bg {
-  background-color: #<span class="caps">D160C4</span>;
+  background-color: #D160C4;
 }
 .ansi-magenta-intense-fg {
   color: #A03196;
@@ -182,31 +182,31 @@
   background-color: #A03196;
 }
 .ansi-cyan-fg {
-  color: #<span class="caps">60C6C8</span>;
+  color: #60C6C8;
 }
 .ansi-cyan-bg {
-  background-color: #<span class="caps">60C6C8</span>;
+  background-color: #60C6C8;
 }
 .ansi-cyan-intense-fg {
-  color: #<span class="caps">258F8F</span>;
+  color: #258F8F;
 }
 .ansi-cyan-intense-bg {
-  background-color: #<span class="caps">258F8F</span>;
+  background-color: #258F8F;
 }
 .ansi-white-fg {
-  color: #<span class="caps">C5C1B4</span>;
+  color: #C5C1B4;
 }
 .ansi-white-bg {
-  background-color: #<span class="caps">C5C1B4</span>;
+  background-color: #C5C1B4;
 }
 .ansi-white-intense-fg {
-  color: #<span class="caps">A1A6B2</span>;
+  color: #A1A6B2;
 }
 .ansi-white-intense-bg {
-  background-color: #<span class="caps">A1A6B2</span>;
+  background-color: #A1A6B2;
 }
 .ansi-default-inverse-fg {
-  color: #<span class="caps">FFFFFF</span>;
+  color: #FFFFFF;
 }
 .ansi-default-inverse-bg {
   background-color: #000000;
@@ -315,12 +315,12 @@ div.cell:before {
   background: transparent;
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #<span class="caps">E3F2FD</span>;
+  border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
-  border-right-color: #<span class="caps">E3F2FD</span>;
+  border-right-color: #E3F2FD;
   border-right-width: 1px;
-  background: #<span class="caps">E3F2FD</span>;
+  background: #E3F2FD;
 }
 @media print {
   div.cell.jupyter-soft-selected {
@@ -340,7 +340,7 @@ div.cell.selected.jupyter-soft-selected:before {
   width: 5px;
   height: calc(100% +  2px);
   content: '';
-  background: #<span class="caps">42A5F5</span>;
+  background: #42A5F5;
 }
 @media print {
   div.cell.selected,
@@ -349,7 +349,7 @@ div.cell.selected.jupyter-soft-selected:before {
   }
 }
 .edit_mode div.cell.selected {
-  border-color: #<span class="caps">66BB6A</span>;
+  border-color: #66BB6A;
 }
 .edit_mode div.cell.selected:before {
   position: absolute;
@@ -359,7 +359,7 @@ div.cell.selected.jupyter-soft-selected:before {
   width: 5px;
   height: calc(100% +  2px);
   content: '';
-  background: #<span class="caps">66BB6A</span>;
+  background: #66BB6A;
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -512,7 +512,7 @@ div.input {
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_prompt {
-  color: #<span class="caps">303F9F</span>;
+  color: #303F9F;
   border-top: 1px solid transparent;
 }
 div.input_area > div.highlight {
@@ -553,7 +553,7 @@ div.input_area > div.highlight > pre {
   overflow-x: auto;
 }
 .CodeMirror-lines {
-  /* In <span class="caps">CM2</span>, this used to be 0.4em, but in <span class="caps">CM3</span> it went to 4px. We need the em value because */
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
   /* Note that this should set vertical padding only, since CodeMirror assumes
        that horizontal padding will be set on CodeMirror pre */
@@ -567,7 +567,7 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In <span class="caps">CM3</span> this went to 4px from 0 in <span class="caps">CM2</span>. This sets horizontal padding only,
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
     use .CodeMirror-lines for vertical */
   padding: 0 0.4em;
   border: 0;
@@ -605,7 +605,7 @@ Adapted from GitHub theme
   color: #333333;
 }
 .highlight-string {
-  color: #<span class="caps">BA2121</span>;
+  color: #BA2121;
 }
 .highlight-comment {
   color: #408080;
@@ -628,11 +628,11 @@ Adapted from GitHub theme
   color: #f00;
 }
 .highlight-operator {
-  color: #<span class="caps">AA22FF</span>;
+  color: #AA22FF;
   font-weight: bold;
 }
 .highlight-meta {
-  color: #<span class="caps">AA22FF</span>;
+  color: #AA22FF;
 }
 /* previously not defined, copying from default codemirror */
 .highlight-def {
@@ -680,7 +680,7 @@ Adapted from GitHub theme
   color: #000;
 }
 .cm-s-ipython span.cm-operator {
-  color: #<span class="caps">AA22FF</span>;
+  color: #AA22FF;
   font-weight: bold;
 }
 .cm-s-ipython span.cm-variable-2 {
@@ -694,13 +694,13 @@ Adapted from GitHub theme
   font-style: italic;
 }
 .cm-s-ipython span.cm-string {
-  color: #<span class="caps">BA2121</span>;
+  color: #BA2121;
 }
 .cm-s-ipython span.cm-string-2 {
   color: #f50;
 }
 .cm-s-ipython span.cm-meta {
-  color: #<span class="caps">AA22FF</span>;
+  color: #AA22FF;
 }
 .cm-s-ipython span.cm-qualifier {
   color: #555;
@@ -755,9 +755,9 @@ div.output_wrapper {
 }
 /* class for the output area when it should be height-limited */
 div.output_scroll {
-  /* ideally, this would be max-height, but <span class="caps">FF</span> barfs all over that */
+  /* ideally, this would be max-height, but FF barfs all over that */
   height: 24em;
-  /* <span class="caps">FF</span> needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
   width: 100%;
   overflow: auto;
   border-radius: 2px;
@@ -791,7 +791,7 @@ div.out_prompt_overlay {
   border-radius: 2px;
 }
 div.out_prompt_overlay:hover {
-  /* use inner shadow to get border that is computed the same on WebKit/<span class="caps">FF</span> */
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
   -webkit-box-shadow: inset 0 0 1px #000;
   box-shadow: inset 0 0 1px #000;
   background: rgba(240, 240, 240, 0.5);
@@ -1146,25 +1146,25 @@ h6:hover .anchor-link {
 <style type="text/css">.highlight .hll { background-color: #ffffcc }
 .highlight  { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
-.highlight .err { border: 1px solid #<span class="caps">FF0000</span> } /* Error */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
 .highlight .o { color: #666666 } /* Operator */
 .highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
 .highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #<span class="caps">BC7A00</span> } /* Comment.Preproc */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
 .highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
 .highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
 .highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
 .highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #<span class="caps">FF0000</span> } /* Generic.Error */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
 .highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .highlight .gi { color: #00A000 } /* Generic.Inserted */
 .highlight .go { color: #888888 } /* Generic.Output */
 .highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
 .highlight .gs { font-weight: bold } /* Generic.Strong */
 .highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight .gt { color: #<span class="caps">0044DD</span> } /* Generic.Traceback */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
 .highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
 .highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
 .highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
@@ -1172,41 +1172,41 @@ h6:hover .anchor-link {
 .highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
 .highlight .kt { color: #B00040 } /* Keyword.Type */
 .highlight .m { color: #666666 } /* Literal.Number */
-.highlight .s { color: #<span class="caps">BA2121</span> } /* Literal.String */
+.highlight .s { color: #BA2121 } /* Literal.String */
 .highlight .na { color: #7D9029 } /* Name.Attribute */
 .highlight .nb { color: #008000 } /* Name.Builtin */
-.highlight .nc { color: #<span class="caps">0000FF</span>; font-weight: bold } /* Name.Class */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
 .highlight .no { color: #880000 } /* Name.Constant */
-.highlight .nd { color: #<span class="caps">AA22FF</span> } /* Name.Decorator */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
 .highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #<span class="caps">D2413A</span>; font-weight: bold } /* Name.Exception */
-.highlight .nf { color: #<span class="caps">0000FF</span> } /* Name.Function */
-.highlight .nl { color: #<span class="caps">A0A000</span> } /* Name.Label */
-.highlight .nn { color: #<span class="caps">0000FF</span>; font-weight: bold } /* Name.Namespace */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
 .highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
 .highlight .nv { color: #19177C } /* Name.Variable */
-.highlight .ow { color: #<span class="caps">AA22FF</span>; font-weight: bold } /* Operator.Word */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
 .highlight .w { color: #bbbbbb } /* Text.Whitespace */
 .highlight .mb { color: #666666 } /* Literal.Number.Bin */
 .highlight .mf { color: #666666 } /* Literal.Number.Float */
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #<span class="caps">BA2121</span> } /* Literal.String.Affix */
-.highlight .sb { color: #<span class="caps">BA2121</span> } /* Literal.String.Backtick */
-.highlight .sc { color: #<span class="caps">BA2121</span> } /* Literal.String.Char */
-.highlight .dl { color: #<span class="caps">BA2121</span> } /* Literal.String.Delimiter */
-.highlight .sd { color: #<span class="caps">BA2121</span>; font-style: italic } /* Literal.String.Doc */
-.highlight .s2 { color: #<span class="caps">BA2121</span> } /* Literal.String.Double */
-.highlight .se { color: #<span class="caps">BB6622</span>; font-weight: bold } /* Literal.String.Escape */
-.highlight .sh { color: #<span class="caps">BA2121</span> } /* Literal.String.Heredoc */
-.highlight .si { color: #<span class="caps">BB6688</span>; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
 .highlight .sx { color: #008000 } /* Literal.String.Other */
-.highlight .sr { color: #<span class="caps">BB6688</span> } /* Literal.String.Regex */
-.highlight .s1 { color: #<span class="caps">BA2121</span> } /* Literal.String.Single */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #<span class="caps">0000FF</span> } /* Name.Function.Magic */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
@@ -1214,50 +1214,50 @@ h6:hover .anchor-link {
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
 <style type="text/css">
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #<span class="caps">3E424D</span>; }
-.ansi-black-bg { background-color: #<span class="caps">3E424D</span>; }
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
 .ansi-black-intense-fg { color: #282C36; }
 .ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #<span class="caps">E75C58</span>; }
-.ansi-red-bg { background-color: #<span class="caps">E75C58</span>; }
-.ansi-red-intense-fg { color: #<span class="caps">B22B31</span>; }
-.ansi-red-intense-bg { background-color: #<span class="caps">B22B31</span>; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
 .ansi-green-fg { color: #00A250; }
 .ansi-green-bg { background-color: #00A250; }
 .ansi-green-intense-fg { color: #007427; }
 .ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #<span class="caps">DDB62B</span>; }
-.ansi-yellow-bg { background-color: #<span class="caps">DDB62B</span>; }
-.ansi-yellow-intense-fg { color: #<span class="caps">B27D12</span>; }
-.ansi-yellow-intense-bg { background-color: #<span class="caps">B27D12</span>; }
-.ansi-blue-fg { color: #<span class="caps">208FFB</span>; }
-.ansi-blue-bg { background-color: #<span class="caps">208FFB</span>; }
-.ansi-blue-intense-fg { color: #<span class="caps">0065CA</span>; }
-.ansi-blue-intense-bg { background-color: #<span class="caps">0065CA</span>; }
-.ansi-magenta-fg { color: #<span class="caps">D160C4</span>; }
-.ansi-magenta-bg { background-color: #<span class="caps">D160C4</span>; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
 .ansi-magenta-intense-fg { color: #A03196; }
 .ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #<span class="caps">60C6C8</span>; }
-.ansi-cyan-bg { background-color: #<span class="caps">60C6C8</span>; }
-.ansi-cyan-intense-fg { color: #<span class="caps">258F8F</span>; }
-.ansi-cyan-intense-bg { background-color: #<span class="caps">258F8F</span>; }
-.ansi-white-fg { color: #<span class="caps">C5C1B4</span>; }
-.ansi-white-bg { background-color: #<span class="caps">C5C1B4</span>; }
-.ansi-white-intense-fg { color: #<span class="caps">A1A6B2</span>; }
-.ansi-white-intense-bg { background-color: #<span class="caps">A1A6B2</span>; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
 
 .ansi-bold { font-weight: bold; }
 </style>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is the second post in blog series about linear&nbsp;algebra.</p>
+<p>This is the second post in blog series about linear algebra.</p>
 <ol>
 <li>Introduction</li>
-<li><strong>Basics of linear&nbsp;algebra</strong></li>
-<li>Intermediate linear algebra: Part I and  Part <span class="caps">II</span></li>
-<li>Advances in linear algebra: Part I and Part <span class="caps">II</span></li>
+<li><strong>Basics of linear algebra</strong></li>
+<li>Intermediate linear algebra: Part I and  Part II</li>
+<li>Advances in linear algebra: Part I and Part II</li>
 </ol>
 
 </div>
@@ -1266,28 +1266,28 @@ h6:hover .anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In this post I will introduce you to the basics of linear algebra, which in turn includes the&nbsp;following:</p>
+<p>In this post I will introduce you to the basics of linear algebra, which in turn includes the following:</p>
 <ul>
-<li><a href="#One_Variable_Equation">One Variable&nbsp;Equation</a></li>
-<li><a href="#Two_Variable_Equation">Two Variable&nbsp;Equation</a></li>
-<li><a href="#The_Systems_Of_Equations">The Systems of&nbsp;Equations</a></li>
+<li><a href="#One_Variable_Equation">One Variable Equation</a></li>
+<li><a href="#Two_Variable_Equation">Two Variable Equation</a></li>
+<li><a href="#The_Systems_Of_Equations">The Systems of Equations</a></li>
 <li><a href="#Vector">Vector</a><ul>
-<li><a href="#Vectors_And_Vector_Notation">Vectors and Vector&nbsp;Notation</a></li>
-<li><a href="#Dimensions_Of_Vector">Dimensions of&nbsp;Vector</a></li>
-<li><a href="#Operations_On_Vectors">Operations on&nbsp;Vectors</a></li>
-<li><a href="#Vector_Length">Vector&nbsp;Length</a></li>
-<li><a href="#Unit_Vector">Unit&nbsp;Vector</a></li>
-<li><a href="#Scalar_Product_Of_Two_Vectors">Scalar Product of Two&nbsp;Vectors</a></li>
-<li><a href="#Numerical_Representation">Numerical&nbsp;Representation</a></li>
+<li><a href="#Vectors_And_Vector_Notation">Vectors and Vector Notation</a></li>
+<li><a href="#Dimensions_Of_Vector">Dimensions of Vector</a></li>
+<li><a href="#Operations_On_Vectors">Operations on Vectors</a></li>
+<li><a href="#Vector_Length">Vector Length</a></li>
+<li><a href="#Unit_Vector">Unit Vector</a></li>
+<li><a href="#Scalar_Product_Of_Two_Vectors">Scalar Product of Two Vectors</a></li>
+<li><a href="#Numerical_Representation">Numerical Representation</a></li>
 </ul>
 </li>
 <li><a href="#Matrix">Matrix</a><ul>
-<li><a href="#Matrices_And_Matrix_Notation">Matrices and Matrix&nbsp;Notation</a></li>
-<li><a href="#Dimension_Of_Matrix">Dimension of&nbsp;Matrix</a></li>
-<li><a href="#Matrix_Operations">Matrix&nbsp;Operations</a></li>
-<li><a href="#Matrix_Transpose">Matrix&nbsp;Transpose</a></li>
-<li><a href="#Identity_Matrix">Identity&nbsp;Matrix</a></li>
-<li><a href="#Numerical_Representation_Matrix">Numerical&nbsp;Representation</a></li>
+<li><a href="#Matrices_And_Matrix_Notation">Matrices and Matrix Notation</a></li>
+<li><a href="#Dimension_Of_Matrix">Dimension of Matrix</a></li>
+<li><a href="#Matrix_Operations">Matrix Operations</a></li>
+<li><a href="#Matrix_Transpose">Matrix Transpose</a></li>
+<li><a href="#Identity_Matrix">Identity Matrix</a></li>
+<li><a href="#Numerical_Representation_Matrix">Numerical Representation</a></li>
 </ul>
 </li>
 <li><a href="#Conclusion">Conclusion</a></li>
@@ -1308,11 +1308,11 @@ h6:hover .anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Generally, equations state that two things are equal. They contain one or more variables and solving them means to find the value of those variable to make equality true. This value is known as a&nbsp;solution.</p>
-<p>Consider the following&nbsp;equation:</p>
+<p>Generally, equations state that two things are equal. They contain one or more variables and solving them means to find the value of those variable to make equality true. This value is known as a solution.</p>
+<p>Consider the following equation:</p>
 \begin{align*}
 2x + 5 = 15
-\end{align*}<p>In this case, our variable is $x$ and the solution is&nbsp;$10$.</p>
+\end{align*}<p>In this case, our variable is $x$ and the solution is $10$.</p>
 
 </div>
 </div>
@@ -1362,14 +1362,14 @@ h6:hover .anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Equations with two variables are known as linear&nbsp;equations.</p>
-<p>Consider the following&nbsp;equation:</p>
+<p>Equations with two variables are known as linear equations.</p>
+<p>Consider the following equation:</p>
 \begin{align*}
 2y + 3 = 2x - 1
-\end{align*}<p>This equation includes two different variables, $x$, and $y$. These variables depend on one another. The value of $x$ is determined in part by the value of $y$ and vice-versa. So we can&#8217;t solve this equation as in the case of one variable equation. However, we can express $y$ in terms of $x$ and obtain a result that describes a relative relationship between the&nbsp;variables.</p>
-<p>For example, let&#8217;s solve this equation for $y$. First, rearrage equation in a way to have&nbsp;following:</p>
+\end{align*}<p>This equation includes two different variables, $x$, and $y$. These variables depend on one another. The value of $x$ is determined in part by the value of $y$ and vice-versa. So we can't solve this equation as in the case of one variable equation. However, we can express $y$ in terms of $x$ and obtain a result that describes a relative relationship between the variables.</p>
+<p>For example, let's solve this equation for $y$. First, rearrage equation in a way to have following:</p>
 \begin{align*}2y = 2x - 4
-\Rightarrow &#92;
+\Rightarrow \\
 \Rightarrow
 y = x - 2
 \end{align*}<p><em>Note that this is not linear function, this is an <a href="https://math.stackexchange.com/questions/275310/what-is-the-difference-between-linear-and-affine-function">affine function</a></em>.</p>
@@ -1380,7 +1380,7 @@ y = x - 2
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Below we will see the solution of the above equation for various values of $y$. It&#8217;s also good practice to plot the graph to visualize the&nbsp;solutions.</p>
+<p>Below we will see the solution of the above equation for various values of $y$. It's also good practice to plot the graph to visualize the solutions.</p>
 
 </div>
 </div>
@@ -1410,7 +1410,7 @@ y = x - 2
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Above table shows valid solutions for values of $x$ in range $(-10, 10)$. Besides numerical solution, let see the graphical&nbsp;solution.</p>
+<p>Above table shows valid solutions for values of $x$ in range $(-10, 10)$. Besides numerical solution, let see the graphical solution.</p>
 
 </div>
 </div>
@@ -1464,15 +1464,15 @@ y = x - 2
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The solution of the above equation lies on the blue line, for any value pairs&nbsp;$(x,y)~\in~\mathbb{R}$</p>
-<p>When we use a linear equation to plot a line, we can easily see where the line intersects the X and Y axes of the plot. These points are known as <em>intercepts</em>. The <em>x-intercept</em> is where the line intersects the X (horizontal) axis, and the <em>y-intercept</em> is where the line intersects the Y (horizontal)&nbsp;axis.</p>
-<p>The x-intercept is the point where the line crosses the $X$ axis, and at this point, the value for $y$ is always 0. Similarly, the y-intercept is where the line crosses the $Y$ axis, at which $x$ value is 0. So to find the intercepts, we need to solve the equation for $x$ when $y$ is 0 and for $y$ when $x$ is&nbsp;0.</p>
-<p>For the x-intercept, we&nbsp;have:</p>
+<p>The solution of the above equation lies on the blue line, for any value pairs $(x,y)~\in~\mathbb{R}$</p>
+<p>When we use a linear equation to plot a line, we can easily see where the line intersects the X and Y axes of the plot. These points are known as <em>intercepts</em>. The <em>x-intercept</em> is where the line intersects the X (horizontal) axis, and the <em>y-intercept</em> is where the line intersects the Y (horizontal) axis.</p>
+<p>The x-intercept is the point where the line crosses the $X$ axis, and at this point, the value for $y$ is always 0. Similarly, the y-intercept is where the line crosses the $Y$ axis, at which $x$ value is 0. So to find the intercepts, we need to solve the equation for $x$ when $y$ is 0 and for $y$ when $x$ is 0.</p>
+<p>For the x-intercept, we have:</p>
 \begin{align*}
 y = x - 2 = 0
 \Rightarrow
 x = 2
-\end{align*}<p>For y-intercept, we&nbsp;have:</p>
+\end{align*}<p>For y-intercept, we have:</p>
 \begin{align*}
 y = x - 2
 \Rightarrow
@@ -1534,19 +1534,19 @@ y = -2
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It is natural to ask, what if we move one unit along the $x$ axis, how the value for the $y$ change? The answer to this question is the notion of <em>slope</em>. Slope is defined&nbsp;as</p>
+<p>It is natural to ask, what if we move one unit along the $x$ axis, how the value for the $y$ change? The answer to this question is the notion of <em>slope</em>. Slope is defined as</p>
 \begin{align*}
 m = \frac{y_{2} - y_{1}}{x_{2} - x_{1}}
 \end{align*}<p>This means that for any given two ordered pairs of $x$ and $y$, how a change in $x$ affect $y$.
-For&nbsp;example:</p>
+For example:</p>
 <ul>
-<li>(5,&nbsp;3)</li>
-<li>(6,&nbsp;4)</li>
+<li>(5, 3)</li>
+<li>(6, 4)</li>
 </ul>
-<p>So, according to our formula, slope equal&nbsp;to:</p>
+<p>So, according to our formula, slope equal to:</p>
 \begin{align*}
 m = \frac{4 - 3}{6 - 5} = 1
-\end{align*}<p>So what does that actually mean? Well, if we start from any point on the blue line and move one unit to the right (along with the $X$ axis), we&#8217;ll need to move 1 unit up (along with the $Y$ axis) to get back to the blue&nbsp;line.</p>
+\end{align*}<p>So what does that actually mean? Well, if we start from any point on the blue line and move one unit to the right (along with the $X$ axis), we'll need to move 1 unit up (along with the $Y$ axis) to get back to the blue line.</p>
 
 </div>
 </div>
@@ -1562,16 +1562,16 @@ m = \frac{4 - 3}{6 - 5} = 1
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To have the system of equations means that we have two or more linear equations together and we have to solve them simultaneously to make the equality true. There are three possible solutions of the linear system. One solution, No solution or system is inconsistent and infinitely many solutions. Generally, the linear system can have two or more variables and two or more equations. There, I will consider two variable and two-equation system with three solutions, in order to depict the intuition. It&#8217;s up to you to delve&nbsp;deeper.</p>
+<p>To have the system of equations means that we have two or more linear equations together and we have to solve them simultaneously to make the equality true. There are three possible solutions of the linear system. One solution, No solution or system is inconsistent and infinitely many solutions. Generally, the linear system can have two or more variables and two or more equations. There, I will consider two variable and two-equation system with three solutions, in order to depict the intuition. It's up to you to delve deeper.</p>
 <ul>
-<li>The system with one solution, meaning two lines&nbsp;intersect</li>
+<li>The system with one solution, meaning two lines intersect</li>
 </ul>
 \begin{align*}
 \begin{cases}
-2x-y = 2 &#92; 
+2x-y = 2 \\ 
 x+y = -2
 \end{cases}
-\end{align*}<p>If we divide these equations we&#8217;ll get $x=-2$ and $y=0$. This is the solution. Now let see it&nbsp;graphically.</p>
+\end{align*}<p>If we divide these equations we'll get $x=-2$ and $y=0$. This is the solution. Now let see it graphically.</p>
 
 </div>
 </div>
@@ -1645,12 +1645,12 @@ x+y = -2
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>The system with no solution or inconsistent system, meaning two lines are&nbsp;parallel</li>
+<li>The system with no solution or inconsistent system, meaning two lines are parallel</li>
 </ul>
 \begin{align*}
-3x+2y = 3 &#92; 
+3x+2y = 3 \\ 
 3x+2y = -4
-\end{align*}<p>The system is inconsistent. There is no&nbsp;solution.</p>
+\end{align*}<p>The system is inconsistent. There is no solution.</p>
 
 </div>
 </div>
@@ -1719,12 +1719,12 @@ x+y = -2
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>The system with infinitely many solutions, meaning two lines&nbsp;coincide</li>
+<li>The system with infinitely many solutions, meaning two lines coincide</li>
 </ul>
 \begin{align*}
-x-y = -3 &#92; 
+x-y = -3 \\ 
 2x-2y = -6
-\end{align*}<p>The system has infinitely many solutions, as one of them is a linear combination of another. In this case, the second equation is scaled by 2 version of the first&nbsp;equation.</p>
+\end{align*}<p>The system has infinitely many solutions, as one of them is a linear combination of another. In this case, the second equation is scaled by 2 version of the first equation.</p>
 
 </div>
 </div>
@@ -1802,13 +1802,13 @@ x-y = -3 &#92;
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Vectors-and-Vector-Notation">Vectors and Vector Notation<a class="anchor-link" href="#Vectors-and-Vector-Notation">&#182;</a></h3><p><a id="Vectors_And_Vector_Notation"></a></p>
 <hr>
-<p>In plain English, the vector is a directed arrow. Mathematically, the vector is an object that has magnitude and direction. Magnitude is the length of the vector and direction is from its tail to its end. In other words, imagine vector as the line which connects two points in the Cartesian Coordinate System. A vector of length $n$ is a sequence or array of $n$ numbers, which we can write&nbsp;as:</p>
+<p>In plain English, the vector is a directed arrow. Mathematically, the vector is an object that has magnitude and direction. Magnitude is the length of the vector and direction is from its tail to its end. In other words, imagine vector as the line which connects two points in the Cartesian Coordinate System. A vector of length $n$ is a sequence or array of $n$ numbers, which we can write as:</p>
 \begin{align*}
-\vec{X} = (x_1, x_2, x_3&#8230;x_n)
+\vec{X} = (x_1, x_2, x_3...x_n)
 \end{align*}<p>or</p>
 \begin{align*}
-\vec{X} = [x_1, x_2, x_3, &#8230; x_n]
-\end{align*}<p>Horizontally represented vector is a row vector, while vertically represented vector is a column vector. Let see how they look&nbsp;graphically.</p>
+\vec{X} = [x_1, x_2, x_3, ... x_n]
+\end{align*}<p>Horizontally represented vector is a row vector, while vertically represented vector is a column vector. Let see how they look graphically.</p>
 
 </div>
 </div>
@@ -1877,16 +1877,16 @@ x-y = -3 &#92;
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Dimensions-of-Vector">Dimensions of Vector<a class="anchor-link" href="#Dimensions-of-Vector">&#182;</a></h3><p><a id="Dimensions_Of_Vector"></a></p>
 <hr>
-<p>The dimension of vector is the number of elements in it. For example, the above vector is row vector with dimension $1\times n$, but if we take it as a column vector its dimension will be $n\times&nbsp;1$.</p>
+<p>The dimension of vector is the number of elements in it. For example, the above vector is row vector with dimension $1\times n$, but if we take it as a column vector its dimension will be $n\times 1$.</p>
 \begin{align*}
-\vec{X} = [x_1,x_2,&#8230;x_n]_{1\times~n}
+\vec{X} = [x_1,x_2,...x_n]_{1\times~n}
 \end{align*}<p>and</p>
 \begin{align*}
 \vec{X} =
 \begin{bmatrix}
-x_1 &#92;
-x_2 &#92;
-\vdots &#92;
+x_1 \\
+x_2 \\
+\vdots \\
 x_n
 \end{bmatrix}_{n\times1}
 \end{align*}
@@ -1898,65 +1898,65 @@ x_n
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Operations-on-Vectors">Operations on Vectors<a class="anchor-link" href="#Operations-on-Vectors">&#182;</a></h3><p><a id="Operations_On_Vectors"></a></p>
 <hr>
-<p>The most common operations on vectors are vector addition/subtraction and scalar&nbsp;multiplication.</p>
-<p>If we have two vectors, $\vec{X}$ and $\vec{Y}$, we can add them up in the following&nbsp;way:</p>
+<p>The most common operations on vectors are vector addition/subtraction and scalar multiplication.</p>
+<p>If we have two vectors, $\vec{X}$ and $\vec{Y}$, we can add them up in the following way:</p>
 \begin{align*}
 \vec{X} + \vec{Y} =
 \begin{bmatrix}
-    x_1 &#92;
-    x_2 &#92;
-    \vdots &#92;
+    x_1 \\
+    x_2 \\
+    \vdots \\
     x_n
 \end{bmatrix}_{n\times1} +
 \begin{bmatrix}
-     y_1 &#92;
-     y_2 &#92;
-    \vdots &#92;
+     y_1 \\
+     y_2 \\
+    \vdots \\
      y_n
 \end{bmatrix}_{n\times1} =
 \begin{bmatrix}
-    x_1 + y_1 &#92;
-    x_2 + y_2 &#92;
-    \vdots &#92;
+    x_1 + y_1 \\
+    x_2 + y_2 \\
+    \vdots \\
     x_n + y_n
 \end{bmatrix}_{n\times1}
-\end{align*}<p>Multiplying vector by a scalar $\alpha$,&nbsp;gives</p>
+\end{align*}<p>Multiplying vector by a scalar $\alpha$, gives</p>
 \begin{align*}
 \alpha \vec{X} = 
 \begin{bmatrix}
-\alpha x_1 &#92;
-\alpha x_2 &#92;
-\vdots &#92;
+\alpha x_1 \\
+\alpha x_2 \\
+\vdots \\
 \alpha x_n
 \end{bmatrix}_{n\times1}
-\end{align*}<p>For&nbsp;example:</p>
+\end{align*}<p>For example:</p>
 \begin{align*}
 \vec{X} + \vec{Y} =
 \begin{bmatrix}
-    1 &#92;
-    2 &#92;
-    \vdots &#92;
+    1 \\
+    2 \\
+    \vdots \\
     100
 \end{bmatrix} +
 \begin{bmatrix}
-     3 &#92;
-     4 &#92;
-    \vdots &#92;
+     3 \\
+     4 \\
+    \vdots \\
      400
 \end{bmatrix} =
 \begin{bmatrix}
-    1 + 3 &#92;
-    2 + 4 &#92;
-    \vdots &#92;
+    1 + 3 \\
+    2 + 4 \\
+    \vdots \\
     100 + 400
 \end{bmatrix}
-\end{align*}<p>For scalar multiplication, if we have vector $X$ and scalar $\alpha = 5$ then alpha times $X$&nbsp;is:</p>
+\end{align*}<p>For scalar multiplication, if we have vector $X$ and scalar $\alpha = 5$ then alpha times $X$ is:</p>
 \begin{align*}
 5 * \vec{X} = 
 \begin{bmatrix}
-5 * 1 &#92;
-5 * 2 &#92;
-\vdots &#92;
+5 * 1 \\
+5 * 2 \\
+\vdots \\
 5 * 100
 \end{bmatrix}
 \end{align*}
@@ -1968,21 +1968,21 @@ x_n
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Vector-Length">Vector Length<a class="anchor-link" href="#Vector-Length">&#182;</a></h3><p><a id="Vector_Length"></a></p>
 <hr>
-<p>The vector length or magnitude is calculated by the following&nbsp;formula:</p>
+<p>The vector length or magnitude is calculated by the following formula:</p>
 \begin{align*}
-\|\vec{X}\| = \sqrt{x_1^2 + x_2^2 + x_3^2 + &#8230; + x_n^2} = \sqrt{\sum_{i=1}^n x_i^2}
-\end{align*}<p>We can link notion of vector length to the Euclidean distance. If our vector $\vec{X}$ has tail at origin, $\vec{0} = [0_1, 0_2, 0_3, &#8230; , 0_n]$ and point at $\vec{X} = [x_1,x_2,&#8230;x_n]$, then Euclidean distance between tail and point is the length of $\vec{X}$ by the&nbsp;formula:</p>
+\|\vec{X}\| = \sqrt{x_1^2 + x_2^2 + x_3^2 + ... + x_n^2} = \sqrt{\sum_{i=1}^n x_i^2}
+\end{align*}<p>We can link notion of vector length to the Euclidean distance. If our vector $\vec{X}$ has tail at origin, $\vec{0} = [0_1, 0_2, 0_3, ... , 0_n]$ and point at $\vec{X} = [x_1,x_2,...x_n]$, then Euclidean distance between tail and point is the length of $\vec{X}$ by the formula:</p>
 \begin{align*}
-d(\vec{0},\vec{X}) = \sqrt{(0_1 - x_1)^2 + (0_2 - x_2)^2 + &#8230; + (0_n - x_n)^2} = \sqrt{\sum_{i=1}^n (0_i - x_i)^2}
-\end{align*}<p>For example, we have vector&nbsp;$X$</p>
+d(\vec{0},\vec{X}) = \sqrt{(0_1 - x_1)^2 + (0_2 - x_2)^2 + ... + (0_n - x_n)^2} = \sqrt{\sum_{i=1}^n (0_i - x_i)^2}
+\end{align*}<p>For example, we have vector $X$</p>
 \begin{align*}
 \vec{X} = 
 \begin{bmatrix}
-1 &#92;
-2 &#92;
+1 \\
+2 \\
 3
 \end{bmatrix}
-\end{align*}<p>then its length&nbsp;is</p>
+\end{align*}<p>then its length is</p>
 \begin{align*}
 \|\vec{X}\| = \sqrt{1^2 + 2^2 + 3^2} = \sqrt{14}
 \end{align*}
@@ -1994,11 +1994,11 @@ d(\vec{0},\vec{X}) = \sqrt{(0_1 - x_1)^2 + (0_2 - x_2)^2 + &#8230; + (0_n - x_n)
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Unit-Vector">Unit Vector<a class="anchor-link" href="#Unit-Vector">&#182;</a></h3><p><a id="Unit_Vector"></a></p>
 <hr>
-<p>What if the length of a vector equal to 1? This kind of vector is known as unit vector and it plays a very important role in different calculations and formulae. We&#8217;ll see it in later posts, but here unit vector is defined&nbsp;as</p>
+<p>What if the length of a vector equal to 1? This kind of vector is known as unit vector and it plays a very important role in different calculations and formulae. We'll see it in later posts, but here unit vector is defined as</p>
 \begin{align*}
 \hat{X} = \frac{X}{\|X\|}
-\end{align*}<p>where $\hat{X}$ is a unit vector, the numerator is vector $\vec{X}$ and denominator is the norm of vector&nbsp;$\vec{X}$.</p>
-<p>We can use vector $X$ from above example. We already calculated it length which is $\|\vec{X}\| = \sqrt{14}$. So, we can construct unit vector $\hat{X}$ in the following&nbsp;way:</p>
+\end{align*}<p>where $\hat{X}$ is a unit vector, the numerator is vector $\vec{X}$ and denominator is the norm of vector $\vec{X}$.</p>
+<p>We can use vector $X$ from above example. We already calculated it length which is $\|\vec{X}\| = \sqrt{14}$. So, we can construct unit vector $\hat{X}$ in the following way:</p>
 \begin{align*}
 \hat{X} = \frac{X}{\|X\|} =
 \frac{1}{\sqrt{14}}; \frac{2}{\sqrt{14}}; \frac{3}{\sqrt{14}}
@@ -2013,14 +2013,14 @@ d(\vec{0},\vec{X}) = \sqrt{(0_1 - x_1)^2 + (0_2 - x_2)^2 + &#8230; + (0_n - x_n)
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Scalar-Product-of-Two-Vectors">Scalar Product of Two Vectors<a class="anchor-link" href="#Scalar-Product-of-Two-Vectors">&#182;</a></h3><p><a id="Scalar_Product_Of_Two_Vectors"></a></p>
 <hr>
-<p>Multiplication of two vectors is known as dot product, scalar product, or inner product and is defined&nbsp;by:</p>
+<p>Multiplication of two vectors is known as dot product, scalar product, or inner product and is defined by:</p>
 \begin{align*}
-\langle\, \vec{X},\vec{Y}\rangle~=~\vec{X}\cdot\vec{Y}~=~x_1\times y_1 + x_2\times y_2 + &#8230; + x_n\times y_n~=~\sum_{i=1}^n x_i\cdot y_i
-\end{align*}<p><em>The inner product is defined only when the dimensions of two vectors&nbsp;coincide.</em></p>
-<p>Another formula of inner product&nbsp;is:</p>
+\langle\, \vec{X},\vec{Y}\rangle~=~\vec{X}\cdot\vec{Y}~=~x_1\times y_1 + x_2\times y_2 + ... + x_n\times y_n~=~\sum_{i=1}^n x_i\cdot y_i
+\end{align*}<p><em>The inner product is defined only when the dimensions of two vectors coincide.</em></p>
+<p>Another formula of inner product is:</p>
 \begin{align*}
 \vec{X}\cdot\vec{Y}~=~\|\vec{X}\|\cdot\|\vec{Y}\|\cdot\cos{\theta}
-\end{align*}<p>where $\cos{\theta}$ is an angle between the vectors $\vec{X}$ and&nbsp;$\vec{Y}$.</p>
+\end{align*}<p>where $\cos{\theta}$ is an angle between the vectors $\vec{X}$ and $\vec{Y}$.</p>
 
 </div>
 </div>
@@ -2163,7 +2163,7 @@ The dimension of X is: (3,)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Red is vector $\vec{V}$, blue is $\vec{W}$ and green is the sum of these two&nbsp;vectors</p>
+<p>Red is vector $\vec{V}$, blue is $\vec{W}$ and green is the sum of these two vectors</p>
 
 </div>
 </div>
@@ -2414,13 +2414,13 @@ Angle theta is: 0.0
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Matrices-and-Matrix-Notation">Matrices and Matrix Notation<a class="anchor-link" href="#Matrices-and-Matrix-Notation">&#182;</a></h3><p><a id="Matrices_And_Matrix_Notation"></a></p>
 <hr>
-<p>Matrix is a rectangular array of numbers and/or expressions that are arranged into rows and columns. These rows and columns can be considered as row and column vectors. So, the matrix is the rectangular array which contains either row or column vectors. Generally, capital letters are used to denote matrix and lower case letters to denote each element of that matrix and I will follow this convention. A matrix arranges numbers into rows and columns, like&nbsp;this:</p>
+<p>Matrix is a rectangular array of numbers and/or expressions that are arranged into rows and columns. These rows and columns can be considered as row and column vectors. So, the matrix is the rectangular array which contains either row or column vectors. Generally, capital letters are used to denote matrix and lower case letters to denote each element of that matrix and I will follow this convention. A matrix arranges numbers into rows and columns, like this:</p>
 \begin{align*}A =
 \begin{bmatrix}
-a_{1,1} <span class="amp">&amp;</span> a_{1,2}&#92;
-a_{2,1} <span class="amp">&amp;</span> a_{2,2}
+a_{1,1} &amp; a_{1,2}\\
+a_{2,1} &amp; a_{2,2}
 \end{bmatrix}
-\end{align*}<p>Here, matrix $A$ has four elements, denoted by lower letter $a$, where subscripts denote row and column number. For example, $a_{2,1}$ denotes element at the cross of the second row and first&nbsp;column.</p>
+\end{align*}<p>Here, matrix $A$ has four elements, denoted by lower letter $a$, where subscripts denote row and column number. For example, $a_{2,1}$ denotes element at the cross of the second row and first column.</p>
 
 </div>
 </div>
@@ -2430,22 +2430,22 @@ a_{2,1} <span class="amp">&amp;</span> a_{2,2}
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Dimension-of-Matrices">Dimension of Matrices<a class="anchor-link" href="#Dimension-of-Matrices">&#182;</a></h3><p><a id="Dimension_Of_Matrix"></a></p>
 <hr>
-<p>If a matrix $A$ has $n$ rows and $m$ columns, we call $A$ an $n\times m$ matrix and it is read as <strong>&#8220;n by m matrix&#8221;</strong>. A typical $n\times m$ matrix $A$ can be written&nbsp;as:</p>
+<p>If a matrix $A$ has $n$ rows and $m$ columns, we call $A$ an $n\times m$ matrix and it is read as <strong>"n by m matrix"</strong>. A typical $n\times m$ matrix $A$ can be written as:</p>
 \begin{align*} A =
 \begin{bmatrix}
-a_{11} <span class="amp">&amp;</span> a_{12} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> a_{1m} &#92;
-a_{21} <span class="amp">&amp;</span> a_{22} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> a_{2m} &#92;
-\vdots <span class="amp">&amp;</span> \vdots <span class="amp">&amp;</span>  <span class="amp">&amp;</span> \vdots &#92;
-a_{n1} <span class="amp">&amp;</span> a_{n2} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> a_{nm}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1m} \\
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2m} \\
+\vdots &amp; \vdots &amp;  &amp; \vdots \\
+a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nm}
 \end{bmatrix}_{n \times m}
-\end{align*}<p>When $n=m$ we have square&nbsp;matrix.</p>
-<p>To link this matrix to the vector we can rewrite it by the following&nbsp;way:</p>
+\end{align*}<p>When $n=m$ we have square matrix.</p>
+<p>To link this matrix to the vector we can rewrite it by the following way:</p>
 \begin{align*} A =
 \begin{bmatrix}
-[a_{11} <span class="amp">&amp;</span> a_{12} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> a_{1m}] &#92;
-[a_{21} <span class="amp">&amp;</span> a_{22} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> a_{2m}] &#92;
-[\vdots <span class="amp">&amp;</span> \vdots <span class="amp">&amp;</span>  <span class="amp">&amp;</span> \vdots] &#92;
-[a_{n1} <span class="amp">&amp;</span> a_{n2} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> a_{nm}]
+[a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1m}] \\
+[a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2m}] \\
+[\vdots &amp; \vdots &amp;  &amp; \vdots] \\
+[a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nm}]
 \end{bmatrix}_{n \times m}
 \end{align*}
 </div>
@@ -2456,78 +2456,78 @@ a_{n1} <span class="amp">&amp;</span> a_{n2} <span class="amp">&amp;</span> \cdo
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Matrix-Operations">Matrix Operations<a class="anchor-link" href="#Matrix-Operations">&#182;</a></h3><p><a id="Matrix_Operations"></a></p>
 <hr>
-<p>We add two matrices elementwise. To exist this addition we require that the dimensions of the two matrices coincide. If we have two matrices, $A$ and $B$, addition is defined&nbsp;by:</p>
+<p>We add two matrices elementwise. To exist this addition we require that the dimensions of the two matrices coincide. If we have two matrices, $A$ and $B$, addition is defined by:</p>
 \begin{align*}
 A + B =
 \begin{bmatrix}
-a_{11} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> a_{1m} &#92;
-\vdots <span class="amp">&amp;</span> \vdots <span class="amp">&amp;</span> \vdots &#92;
-a_{n1} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> a_{nm} &#92;
+a_{11} &amp; \cdots &amp; a_{1m} \\
+\vdots &amp; \vdots &amp; \vdots \\
+a_{n1} &amp; \cdots &amp; a_{nm} \\
 \end{bmatrix} +
 \begin{bmatrix}
-b_{11} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> b_{1m} &#92;
-\vdots <span class="amp">&amp;</span> \vdots <span class="amp">&amp;</span> \vdots &#92;
-b_{n1} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> b_{nm} &#92;
+b_{11} &amp; \cdots &amp; b_{1m} \\
+\vdots &amp; \vdots &amp; \vdots \\
+b_{n1} &amp; \cdots &amp; b_{nm} \\
 \end{bmatrix} =
 \begin{bmatrix}
-a_{11} + b_{11} <span class="amp">&amp;</span>  \cdots <span class="amp">&amp;</span> a_{1m} + b_{1m} &#92;
-\vdots <span class="amp">&amp;</span> \vdots <span class="amp">&amp;</span> \vdots &#92;
-a_{n1} + b_{n1} <span class="amp">&amp;</span>  \cdots <span class="amp">&amp;</span> a_{nm} + b_{nm} &#92;
+a_{11} + b_{11} &amp;  \cdots &amp; a_{1m} + b_{1m} \\
+\vdots &amp; \vdots &amp; \vdots \\
+a_{n1} + b_{n1} &amp;  \cdots &amp; a_{nm} + b_{nm} \\
 \end{bmatrix}
-\end{align*}<p>Matrix subtraction is defined in the same fashion as the&nbsp;addition.</p>
-<p>The nagative of a matrix, is just a matrix with the sign of each element&nbsp;reversed:</p>
+\end{align*}<p>Matrix subtraction is defined in the same fashion as the addition.</p>
+<p>The nagative of a matrix, is just a matrix with the sign of each element reversed:</p>
 \begin{align*} A =
 \begin{bmatrix}
-a_{11} <span class="amp">&amp;</span> a_{12} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> a_{1m} &#92;
-a_{21} <span class="amp">&amp;</span> a_{22} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> a_{2m} &#92;
-\vdots <span class="amp">&amp;</span> \vdots <span class="amp">&amp;</span>  <span class="amp">&amp;</span> \vdots &#92;
-a_{n1} <span class="amp">&amp;</span> a_{n2} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> a_{nm}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1m} \\
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2m} \\
+\vdots &amp; \vdots &amp;  &amp; \vdots \\
+a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nm}
 \end{bmatrix}
 \end{align*}\begin{align*} -A =
 \begin{bmatrix}
--a_{11} <span class="amp">&amp;</span> -a_{12} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> -a_{1m} &#92;
--a_{21} <span class="amp">&amp;</span> -a_{22} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> -a_{2m} &#92;
-\vdots <span class="amp">&amp;</span> \vdots <span class="amp">&amp;</span>  <span class="amp">&amp;</span> \vdots &#92;
--a_{n1} <span class="amp">&amp;</span> -a_{n2} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> -a_{nm}
+-a_{11} &amp; -a_{12} &amp; \cdots &amp; -a_{1m} \\
+-a_{21} &amp; -a_{22} &amp; \cdots &amp; -a_{2m} \\
+\vdots &amp; \vdots &amp;  &amp; \vdots \\
+-a_{n1} &amp; -a_{n2} &amp; \cdots &amp; -a_{nm}
 \end{bmatrix}
-\end{align*}<p>Multiplying matrices is a little more complex than the operations we&#8217;ve seen so far. There are two cases to consider. One is <em>scalar multiplication</em> (multiplying a matrix by a single number), and second is <em>matrix multiplication</em> (multiplying a matrix by another&nbsp;matrix).</p>
-<p>If we have some scalar or number $\gamma$ and matrix $A$, scalar multiplication&nbsp;is:</p>
+\end{align*}<p>Multiplying matrices is a little more complex than the operations we've seen so far. There are two cases to consider. One is <em>scalar multiplication</em> (multiplying a matrix by a single number), and second is <em>matrix multiplication</em> (multiplying a matrix by another matrix).</p>
+<p>If we have some scalar or number $\gamma$ and matrix $A$, scalar multiplication is:</p>
 \begin{align*}
 \gamma A =
 \gamma
 \begin{bmatrix}
-a_{11} <span class="amp">&amp;</span>  \cdots <span class="amp">&amp;</span> a_{1m} &#92;
-\vdots <span class="amp">&amp;</span> \vdots  <span class="amp">&amp;</span> \vdots &#92;
-a_{n1} <span class="amp">&amp;</span>  \cdots <span class="amp">&amp;</span> a_{nm} &#92;
+a_{11} &amp;  \cdots &amp; a_{1m} \\
+\vdots &amp; \vdots  &amp; \vdots \\
+a_{n1} &amp;  \cdots &amp; a_{nm} \\
 \end{bmatrix} =
 \
 \begin{bmatrix}
-\gamma a_{11} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> \gamma a_{1m} &#92;
-\vdots <span class="amp">&amp;</span> \vdots <span class="amp">&amp;</span> \vdots &#92;
-\gamma a_{n1} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> \gamma a_{nm} &#92;
+\gamma a_{11} &amp; \cdots &amp; \gamma a_{1m} \\
+\vdots &amp; \vdots &amp; \vdots \\
+\gamma a_{n1} &amp; \cdots &amp; \gamma a_{nm} \\
 \end{bmatrix}
-\end{align*}<p>To multiply two matrices, we take <strong>inner product of $i$-th row of the matrix $A$ and $j$-th columns of matrix $B$</strong>. If we have two matrices $A$ is $n \times k$ and $B$ is $j \times m$, then to multiply $A$ and $B$, we require $k=j$, and resulting matrix $<span class="caps">AB</span>$ is $n \times&nbsp;m$.</p>
+\end{align*}<p>To multiply two matrices, we take <strong>inner product of $i$-th row of the matrix $A$ and $j$-th columns of matrix $B$</strong>. If we have two matrices $A$ is $n \times k$ and $B$ is $j \times m$, then to multiply $A$ and $B$, we require $k=j$, and resulting matrix $AB$ is $n \times m$.</p>
 \begin{align*}
 A \cdot B =
 \begin{bmatrix}
-a_{11} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> a_{1k} &#92;
-\vdots <span class="amp">&amp;</span> \vdots <span class="amp">&amp;</span> \vdots &#92;
-a_{n1} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> a_{nk} &#92;
+a_{11} &amp; \cdots &amp; a_{1k} \\
+\vdots &amp; \vdots &amp; \vdots \\
+a_{n1} &amp; \cdots &amp; a_{nk} \\
 \end{bmatrix}_{n\times k}
 \cdot
 \begin{bmatrix}
-b_{11} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> b_{1m} &#92;
-\vdots <span class="amp">&amp;</span> \vdots <span class="amp">&amp;</span> \vdots &#92;
-b_{j1} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> b_{jm} &#92;
+b_{11} &amp; \cdots &amp; b_{1m} \\
+\vdots &amp; \vdots &amp; \vdots \\
+b_{j1} &amp; \cdots &amp; b_{jm} \\
 \end{bmatrix}_{j \times m} =
 \
 \begin{bmatrix}
-(a_{11} \times b_{11} <span class="amp">&amp;</span> +~\cdots~+ <span class="amp">&amp;</span> a_{1k} \times b_{j1}),~\cdots~,(a_{11} \times b_{1m} <span class="amp">&amp;</span> +~\cdots~+ <span class="amp">&amp;</span> a_{1k} \times b_{jm}) &#92;
-\vdots <span class="amp">&amp;</span> \vdots <span class="amp">&amp;</span> \vdots &#92;
-(a_{n1} \times b_{11} <span class="amp">&amp;</span> +~\cdots~+ <span class="amp">&amp;</span> a_{nk} \times b_{j1}),~\cdots~,(a_{n1} \times b_{1m} <span class="amp">&amp;</span> +~\cdots~+ <span class="amp">&amp;</span> a_{nk} \times b_{jm})&#92;
+(a_{11} \times b_{11} &amp; +~\cdots~+ &amp; a_{1k} \times b_{j1}),~\cdots~,(a_{11} \times b_{1m} &amp; +~\cdots~+ &amp; a_{1k} \times b_{jm}) \\
+\vdots &amp; \vdots &amp; \vdots \\
+(a_{n1} \times b_{11} &amp; +~\cdots~+ &amp; a_{nk} \times b_{j1}),~\cdots~,(a_{n1} \times b_{1m} &amp; +~\cdots~+ &amp; a_{nk} \times b_{jm})\\
 \end{bmatrix}_{n \times m}
-\end{align*}<p>If you did not catch the idea of matrix multiplication don&#8217;t worry. In numerical representation section I will provide simpler example and some extra source to take a&nbsp;look.</p>
-<blockquote><p><strong>Note</strong> that, in matrix multiplication, $A \cdot B$ is <strong>not</strong> same as $B \cdot&nbsp;A$.</p>
+\end{align*}<p>If you did not catch the idea of matrix multiplication don't worry. In numerical representation section I will provide simpler example and some extra source to take a look.</p>
+<blockquote><p><strong>Note</strong> that, in matrix multiplication, $A \cdot B$ is <strong>not</strong> same as $B \cdot A$.</p>
 </blockquote>
 
 </div>
@@ -2538,21 +2538,21 @@ b_{j1} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> b_{j
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Matrix-Transpose">Matrix Transpose<a class="anchor-link" href="#Matrix-Transpose">&#182;</a></h3><p><a id="Matrix_Transpose"></a></p>
 <hr>
-<p>In the above example, we saw that the matrix is the collection of vectors. We also know that vectors can be horizontal as well as vertical, or row and column vectors. Now, what if we change in any matrix row vectors into column vectors? This operation is known as transposition. The idea of this operation is to change matrix rows into matrix columns or vice versa, and is denoted by the superscript&nbsp;$T$.</p>
+<p>In the above example, we saw that the matrix is the collection of vectors. We also know that vectors can be horizontal as well as vertical, or row and column vectors. Now, what if we change in any matrix row vectors into column vectors? This operation is known as transposition. The idea of this operation is to change matrix rows into matrix columns or vice versa, and is denoted by the superscript $T$.</p>
 \begin{align*} A =
 \begin{bmatrix}
-a_{11} <span class="amp">&amp;</span> a_{12} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> a_{1m} &#92;
-a_{21} <span class="amp">&amp;</span> a_{22} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> a_{2m} &#92;
-\vdots <span class="amp">&amp;</span> \vdots <span class="amp">&amp;</span>  <span class="amp">&amp;</span> \vdots &#92;
-a_{n1} <span class="amp">&amp;</span> a_{n2} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> a_{nm}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1m} \\
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2m} \\
+\vdots &amp; \vdots &amp;  &amp; \vdots \\
+a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nm}
 \end{bmatrix}_{n \times m}
 \end{align*}<p>Then</p>
 \begin{align*} A^{T} =
 \begin{bmatrix}
-a_{11} <span class="amp">&amp;</span> a_{21} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> a_{n1} &#92;
-a_{12} <span class="amp">&amp;</span> a_{22} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> a_{n2} &#92;
-\vdots <span class="amp">&amp;</span> \vdots <span class="amp">&amp;</span>  <span class="amp">&amp;</span> \vdots &#92;
-a_{1m} <span class="amp">&amp;</span> a_{2m} <span class="amp">&amp;</span> \cdots <span class="amp">&amp;</span> a_{nm}
+a_{11} &amp; a_{21} &amp; \cdots &amp; a_{n1} \\
+a_{12} &amp; a_{22} &amp; \cdots &amp; a_{n2} \\
+\vdots &amp; \vdots &amp;  &amp; \vdots \\
+a_{1m} &amp; a_{2m} &amp; \cdots &amp; a_{nm}
 \end{bmatrix}_{m \times n}
 \end{align*}
 </div>
@@ -2563,14 +2563,14 @@ a_{1m} <span class="amp">&amp;</span> a_{2m} <span class="amp">&amp;</span> \cdo
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Identity-Matrix">Identity Matrix<a class="anchor-link" href="#Identity-Matrix">&#182;</a></h3><p><a id="Identity_Matrix"></a></p>
 <hr>
-<p>There are several different types of matrices. In this post, we will introduce only <strong>identity matix</strong>. Future post will introduce other types of matrices. An identity matrix (usually indicated by a capital $I$) is the equivalent in matrix terms of the number 1. It always has the same number of rows as columns, and it has the value <strong>1</strong> in the diagonal element positions I<sub>1,1</sub>, I<sub>2,2</sub>, etc; and 0 in all other element positions. Here&#8217;s an example of a $3 \times 3$ identity&nbsp;matrix:</p>
+<p>There are several different types of matrices. In this post, we will introduce only <strong>identity matix</strong>. Future post will introduce other types of matrices. An identity matrix (usually indicated by a capital $I$) is the equivalent in matrix terms of the number 1. It always has the same number of rows as columns, and it has the value <strong>1</strong> in the diagonal element positions I<sub>1,1</sub>, I<sub>2,2</sub>, etc; and 0 in all other element positions. Here's an example of a $3 \times 3$ identity matrix:</p>
 \begin{align*} I =
 \begin{bmatrix}
-1 <span class="amp">&amp;</span> 0 <span class="amp">&amp;</span> 0 &#92;
-0 <span class="amp">&amp;</span> 1 <span class="amp">&amp;</span> 0 &#92;
-0 <span class="amp">&amp;</span> 0 <span class="amp">&amp;</span> 1
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1
 \end{bmatrix}_{3 \times 3}
-\end{align*}<p>Multiplying any matrix by an identity matrix is the same as multiplying a number by 1; the result is the same as the original&nbsp;value:</p>
+\end{align*}<p>Multiplying any matrix by an identity matrix is the same as multiplying a number by 1; the result is the same as the original value:</p>
 
 </div>
 </div>
@@ -2825,50 +2825,50 @@ Matrix multiplied by the scalar is:
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As I mentioned earlier, matrix multiplication seems to be tricky at a first&nbsp;glance.</p>
-<p>Let&#8217;s look at an&nbsp;example:</p>
+<p>As I mentioned earlier, matrix multiplication seems to be tricky at a first glance.</p>
+<p>Let's look at an example:</p>
 \begin{align*}
 \begin{bmatrix}
-1 <span class="amp">&amp;</span> 2 <span class="amp">&amp;</span> 3 &#92; 4 <span class="amp">&amp;</span> 5 <span class="amp">&amp;</span> 6
+1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6
 \end{bmatrix}
 \cdot
 \begin{bmatrix}
-9 <span class="amp">&amp;</span> 8 &#92; 7 <span class="amp">&amp;</span> 6 &#92; 5 <span class="amp">&amp;</span> 4
+9 &amp; 8 \\ 7 &amp; 6 \\ 5 &amp; 4
 \end{bmatrix}
-\end{align*}<p>Note that the first matrix is $2\times 3$, and the second matrix is $3\times 2$. The important thing here is that the first matrix has two rows, and the second matrix has two columns. To perform the multiplication, we first take the dot product of the first <strong><em>row</em></strong> of the first matrix (1,2,3) and the first <strong><em>column</em></strong> of the second matrix&nbsp;(9,7,5):</p>
+\end{align*}<p>Note that the first matrix is $2\times 3$, and the second matrix is $3\times 2$. The important thing here is that the first matrix has two rows, and the second matrix has two columns. To perform the multiplication, we first take the dot product of the first <strong><em>row</em></strong> of the first matrix (1,2,3) and the first <strong><em>column</em></strong> of the second matrix (9,7,5):</p>
 \begin{align*}
 (1,2,3)
 \cdot
 (9,7,5) =
 (1 \times 9) + (2 \times 7) + (3 \times 5) = 38
-\end{align*}<p>In our resulting matrix (which will always have the same number of <strong><em>rows</em></strong> as the first matrix, and the same number of <strong><em>columns</em></strong> as the second matrix), we can enter this into the first row and first column&nbsp;element:</p>
+\end{align*}<p>In our resulting matrix (which will always have the same number of <strong><em>rows</em></strong> as the first matrix, and the same number of <strong><em>columns</em></strong> as the second matrix), we can enter this into the first row and first column element:</p>
 \begin{align*}
 \begin{bmatrix}
-38 <span class="amp">&amp;</span> ?&#92;? <span class="amp">&amp;</span> ?
+38 &amp; ?\\? &amp; ?
 \end{bmatrix}
-\end{align*}<p>Now we can take the dot product of the first row of the first matrix and the second column of the second&nbsp;matrix:</p>
+\end{align*}<p>Now we can take the dot product of the first row of the first matrix and the second column of the second matrix:</p>
 \begin{align*}
 (1,2,3) \cdot (8,6,4) = (1 \times 8) + (2 \times 6) + (3 \times 4) = 32
-\end{align*}<p>Let&#8217;s add that to our resulting matrix in the first row and second column&nbsp;element:</p>
+\end{align*}<p>Let's add that to our resulting matrix in the first row and second column element:</p>
 \begin{align*}
 \begin{bmatrix}
-38 <span class="amp">&amp;</span> 32&#92;? <span class="amp">&amp;</span> ?
+38 &amp; 32\\? &amp; ?
 \end{bmatrix}
-\end{align*}<p>Now we can repeat this process for the second row of the first matrix and the first column of the second&nbsp;matrix:</p>
+\end{align*}<p>Now we can repeat this process for the second row of the first matrix and the first column of the second matrix:</p>
 \begin{align*}
 (4,5,6) \cdot (9,7,5) = (4 \times 9) + (5 \times 7) + (6 \times 5) = 101
-\end{align*}<p>Which fills in the next element in the&nbsp;result:</p>
+\end{align*}<p>Which fills in the next element in the result:</p>
 \begin{align*}
 \begin{bmatrix}
-38 <span class="amp">&amp;</span> 32&#92;101 <span class="amp">&amp;</span> ?
+38 &amp; 32\\101 &amp; ?
 \end{bmatrix}
-\end{align*}<p>Finally, we get the dot product for the second row of the first matrix and the second column of the second&nbsp;matrix:</p>
+\end{align*}<p>Finally, we get the dot product for the second row of the first matrix and the second column of the second matrix:</p>
 \begin{align*}
 (4,5,6) \cdot (8,6,4) = (4 \times 8) + (5 \times 6) + (6 \times 4) = 86
-\end{align*}<p>Giving&nbsp;us:</p>
+\end{align*}<p>Giving us:</p>
 \begin{align*}
 \begin{bmatrix}
-38 <span class="amp">&amp;</span> 32&#92;101 <span class="amp">&amp;</span> 86
+38 &amp; 32\\101 &amp; 86
 \end{bmatrix}
 \end{align*}<hr>
 <p>If this is not enough to catch the idea, take a look this <a href="https://www.mathsisfun.com/algebra/matrix-multiplying.html">explanation</a></p>
@@ -3100,8 +3100,8 @@ A * I =
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In this post, I tried to cover the basics of linear algebra. I depicted some theory with examples solved by hand as well as with Numpy. I do hope, this blog will help you to grab the necessary knowledge in linear algebra basics and further gives you the direction where to dig deeper. I did not provide here further resources due to not to confuse the reader and give freedom to look for some other&nbsp;materials.</p>
-<p>If some part of the blog is someway unclear to you, please comment&nbsp;below.</p>
+<p>In this post, I tried to cover the basics of linear algebra. I depicted some theory with examples solved by hand as well as with Numpy. I do hope, this blog will help you to grab the necessary knowledge in linear algebra basics and further gives you the direction where to dig deeper. I did not provide here further resources due to not to confuse the reader and give freedom to look for some other materials.</p>
+<p>If some part of the blog is someway unclear to you, please comment below.</p>
 
 </div>
 </div>
@@ -3156,11 +3156,11 @@ A * I =
 
                 <p id="post-share-links">
     Like this post? Share on:
-    <a href="https://twitter.com/intent/tweet?text=Basics%20of%20Linear%20Algebra%20with%C2%A0Python&url=https%3A//dsfabric.org/basics-of-linear-algebra-with-python&via=N_Okroshiashvil&hashtags=linear-algebra,python,numpy,scipy,mathematics" target="_blank" title="Share on Twitter">Twitter</a>
+    <a href="https://twitter.com/intent/tweet?text=Basics%20of%20Linear%20Algebra%20with%20Python&url=https%3A//dsfabric.org/basics-of-linear-algebra-with-python&via=N_Okroshiashvil&hashtags=linear-algebra,python,numpy,scipy,mathematics" target="_blank" title="Share on Twitter">Twitter</a>
     ❄
     <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//dsfabric.org/basics-of-linear-algebra-with-python" target="_blank" title="Share on Facebook">Facebook</a>
     ❄
-    <a href="mailto:?subject=Basics%20of%20Linear%20Algebra%20with%C2%A0Python&amp;body=https%3A//dsfabric.org/basics-of-linear-algebra-with-python" target="_blank" title="Share via Email">Email</a>
+    <a href="mailto:?subject=Basics%20of%20Linear%20Algebra%20with%20Python&amp;body=https%3A//dsfabric.org/basics-of-linear-algebra-with-python" target="_blank" title="Share via Email">Email</a>
     </p>
 
             
@@ -3225,10 +3225,10 @@ A * I =
 <section>
     <h2>Keep Reading</h2>
 <ul class="related-posts-list">
-<li><a href="https://dsfabric.org/introduction-to-linear-algebra-with-python" title="Introduction to Linear Algebra with Python">Introduction to Linear Algebra with Python</a></li>
-<li><a href="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-i" title="Intermediates of Linear Algebra with Python - Part I">Intermediates of Linear Algebra with Python - Part I</a></li>
+<li><a href="https://dsfabric.org/introduction-to-linear-algebra-with-python" title="Introduction to Linear Algebra with Python">Introduction to Linear Algebra with Python</a></li>
+<li><a href="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-i" title="Intermediates of Linear Algebra with Python - Part I">Intermediates of Linear Algebra with Python - Part I</a></li>
 <li><a href="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-ii" title="Intermediates of Linear Algebra with Python - Part II">Intermediates of Linear Algebra with Python - Part II</a></li>
-<li><a href="https://dsfabric.org/advances-of-linear-algebra-with-python-part-i" title="Advances of Linear Algebra with Python - Part I">Advances of Linear Algebra with Python - Part I</a></li>
+<li><a href="https://dsfabric.org/advances-of-linear-algebra-with-python-part-i" title="Advances of Linear Algebra with Python - Part I">Advances of Linear Algebra with Python - Part I</a></li>
 <li><a href="https://dsfabric.org/advances-of-linear-algebra-with-python-part-ii" title="Advances of Linear Algebra with Python - Part II">Advances of Linear Algebra with Python - Part II</a></li>
 </ul>
 <hr />
@@ -3236,8 +3236,8 @@ A * I =
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://dsfabric.org/introduction-to-linear-algebra-with-python" title="Previous: Introduction to Linear Algebra with Python">Introduction to Linear Algebra with Python</a></li>
-                <li class="next-article"><a href="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-i" title="Next: Intermediates of Linear Algebra with Python - Part I">Intermediates of Linear Algebra with Python - Part I</a> »</li>
+                <li class="previous-article">« <a href="https://dsfabric.org/introduction-to-linear-algebra-with-python" title="Previous: Introduction to Linear Algebra with Python">Introduction to Linear Algebra with Python</a></li>
+                <li class="next-article"><a href="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-i" title="Next: Intermediates of Linear Algebra with Python - Part I">Intermediates of Linear Algebra with Python - Part I</a> »</li>
             </ul>
             </nav>
             </aside>

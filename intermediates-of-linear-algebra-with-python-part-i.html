@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Nodar Okroshiashvili" />
 
-        <meta name="description" content="This is a intermediate part of Linear Algebra with Python
+        <meta name="description" content="This is a intermediate part of Linear Algebra with Python
 " />
         <meta name="twitter:creator" content="@N_Okroshiashvil">
         <meta property="og:type" content="article" />
@@ -14,16 +14,16 @@
 
 <meta name="keywords" content="Linear Algebra, Python, Numpy, Scipy, Mathematics, Mathematics, " />
 
-<meta property="og:title" content="Intermediates of Linear Algebra with Python - Part I "/>
+<meta property="og:title" content="Intermediates of Linear Algebra with Python - Part I "/>
 <meta property="og:url" content="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-i" />
-<meta property="og:description" content="This is a intermediate part of Linear Algebra with Python" />
+<meta property="og:description" content="This is a intermediate part of Linear Algebra with Python" />
 <meta property="og:site_name" content="Data Science Fabric" />
 <meta property="og:article:author" content="Nodar Okroshiashvili" />
 <meta property="og:article:published_time" content="2019-03-02T15:14:00+04:00" />
-<meta name="twitter:title" content="Intermediates of Linear Algebra with Python - Part I ">
-<meta name="twitter:description" content="This is a intermediate part of Linear Algebra with Python">
+<meta name="twitter:title" content="Intermediates of Linear Algebra with Python - Part I ">
+<meta name="twitter:description" content="This is a intermediate part of Linear Algebra with Python">
 
-        <title>Intermediates of Linear Algebra with Python - Part I  · Data Science Fabric
+        <title>Intermediates of Linear Algebra with Python - Part I  · Data Science Fabric
 </title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="https://dsfabric.org/theme/css/pygments.css" media="screen">
@@ -91,7 +91,7 @@
     <header class="page-header span10 offset2">
         <h1>
             <a href="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-i">
-                Intermediates of Linear Algebra with Python - Part&nbsp;I
+                Intermediates of Linear Algebra with Python - Part I
             </a>
         </h1>
     </header>
@@ -105,15 +105,15 @@
 * IPython notebook
 *
 */
-/* <span class="caps">CSS</span> font colors for translated <span class="caps">ANSI</span> escape sequences */
+/* CSS font colors for translated ANSI escape sequences */
 /* The color values are a mix of
    http://www.xcolors.net/dl/baskerville-ivorylight and
    http://www.xcolors.net/dl/euphrasia */
 .ansi-black-fg {
-  color: #<span class="caps">3E424D</span>;
+  color: #3E424D;
 }
 .ansi-black-bg {
-  background-color: #<span class="caps">3E424D</span>;
+  background-color: #3E424D;
 }
 .ansi-black-intense-fg {
   color: #282C36;
@@ -122,16 +122,16 @@
   background-color: #282C36;
 }
 .ansi-red-fg {
-  color: #<span class="caps">E75C58</span>;
+  color: #E75C58;
 }
 .ansi-red-bg {
-  background-color: #<span class="caps">E75C58</span>;
+  background-color: #E75C58;
 }
 .ansi-red-intense-fg {
-  color: #<span class="caps">B22B31</span>;
+  color: #B22B31;
 }
 .ansi-red-intense-bg {
-  background-color: #<span class="caps">B22B31</span>;
+  background-color: #B22B31;
 }
 .ansi-green-fg {
   color: #00A250;
@@ -146,34 +146,34 @@
   background-color: #007427;
 }
 .ansi-yellow-fg {
-  color: #<span class="caps">DDB62B</span>;
+  color: #DDB62B;
 }
 .ansi-yellow-bg {
-  background-color: #<span class="caps">DDB62B</span>;
+  background-color: #DDB62B;
 }
 .ansi-yellow-intense-fg {
-  color: #<span class="caps">B27D12</span>;
+  color: #B27D12;
 }
 .ansi-yellow-intense-bg {
-  background-color: #<span class="caps">B27D12</span>;
+  background-color: #B27D12;
 }
 .ansi-blue-fg {
-  color: #<span class="caps">208FFB</span>;
+  color: #208FFB;
 }
 .ansi-blue-bg {
-  background-color: #<span class="caps">208FFB</span>;
+  background-color: #208FFB;
 }
 .ansi-blue-intense-fg {
-  color: #<span class="caps">0065CA</span>;
+  color: #0065CA;
 }
 .ansi-blue-intense-bg {
-  background-color: #<span class="caps">0065CA</span>;
+  background-color: #0065CA;
 }
 .ansi-magenta-fg {
-  color: #<span class="caps">D160C4</span>;
+  color: #D160C4;
 }
 .ansi-magenta-bg {
-  background-color: #<span class="caps">D160C4</span>;
+  background-color: #D160C4;
 }
 .ansi-magenta-intense-fg {
   color: #A03196;
@@ -182,31 +182,31 @@
   background-color: #A03196;
 }
 .ansi-cyan-fg {
-  color: #<span class="caps">60C6C8</span>;
+  color: #60C6C8;
 }
 .ansi-cyan-bg {
-  background-color: #<span class="caps">60C6C8</span>;
+  background-color: #60C6C8;
 }
 .ansi-cyan-intense-fg {
-  color: #<span class="caps">258F8F</span>;
+  color: #258F8F;
 }
 .ansi-cyan-intense-bg {
-  background-color: #<span class="caps">258F8F</span>;
+  background-color: #258F8F;
 }
 .ansi-white-fg {
-  color: #<span class="caps">C5C1B4</span>;
+  color: #C5C1B4;
 }
 .ansi-white-bg {
-  background-color: #<span class="caps">C5C1B4</span>;
+  background-color: #C5C1B4;
 }
 .ansi-white-intense-fg {
-  color: #<span class="caps">A1A6B2</span>;
+  color: #A1A6B2;
 }
 .ansi-white-intense-bg {
-  background-color: #<span class="caps">A1A6B2</span>;
+  background-color: #A1A6B2;
 }
 .ansi-default-inverse-fg {
-  color: #<span class="caps">FFFFFF</span>;
+  color: #FFFFFF;
 }
 .ansi-default-inverse-bg {
   background-color: #000000;
@@ -315,12 +315,12 @@ div.cell:before {
   background: transparent;
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #<span class="caps">E3F2FD</span>;
+  border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
-  border-right-color: #<span class="caps">E3F2FD</span>;
+  border-right-color: #E3F2FD;
   border-right-width: 1px;
-  background: #<span class="caps">E3F2FD</span>;
+  background: #E3F2FD;
 }
 @media print {
   div.cell.jupyter-soft-selected {
@@ -340,7 +340,7 @@ div.cell.selected.jupyter-soft-selected:before {
   width: 5px;
   height: calc(100% +  2px);
   content: '';
-  background: #<span class="caps">42A5F5</span>;
+  background: #42A5F5;
 }
 @media print {
   div.cell.selected,
@@ -349,7 +349,7 @@ div.cell.selected.jupyter-soft-selected:before {
   }
 }
 .edit_mode div.cell.selected {
-  border-color: #<span class="caps">66BB6A</span>;
+  border-color: #66BB6A;
 }
 .edit_mode div.cell.selected:before {
   position: absolute;
@@ -359,7 +359,7 @@ div.cell.selected.jupyter-soft-selected:before {
   width: 5px;
   height: calc(100% +  2px);
   content: '';
-  background: #<span class="caps">66BB6A</span>;
+  background: #66BB6A;
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -512,7 +512,7 @@ div.input {
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_prompt {
-  color: #<span class="caps">303F9F</span>;
+  color: #303F9F;
   border-top: 1px solid transparent;
 }
 div.input_area > div.highlight {
@@ -553,7 +553,7 @@ div.input_area > div.highlight > pre {
   overflow-x: auto;
 }
 .CodeMirror-lines {
-  /* In <span class="caps">CM2</span>, this used to be 0.4em, but in <span class="caps">CM3</span> it went to 4px. We need the em value because */
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
   /* Note that this should set vertical padding only, since CodeMirror assumes
        that horizontal padding will be set on CodeMirror pre */
@@ -567,7 +567,7 @@ div.input_area > div.highlight > pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In <span class="caps">CM3</span> this went to 4px from 0 in <span class="caps">CM2</span>. This sets horizontal padding only,
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
     use .CodeMirror-lines for vertical */
   padding: 0 0.4em;
   border: 0;
@@ -605,7 +605,7 @@ Adapted from GitHub theme
   color: #333333;
 }
 .highlight-string {
-  color: #<span class="caps">BA2121</span>;
+  color: #BA2121;
 }
 .highlight-comment {
   color: #408080;
@@ -628,11 +628,11 @@ Adapted from GitHub theme
   color: #f00;
 }
 .highlight-operator {
-  color: #<span class="caps">AA22FF</span>;
+  color: #AA22FF;
   font-weight: bold;
 }
 .highlight-meta {
-  color: #<span class="caps">AA22FF</span>;
+  color: #AA22FF;
 }
 /* previously not defined, copying from default codemirror */
 .highlight-def {
@@ -680,7 +680,7 @@ Adapted from GitHub theme
   color: #000;
 }
 .cm-s-ipython span.cm-operator {
-  color: #<span class="caps">AA22FF</span>;
+  color: #AA22FF;
   font-weight: bold;
 }
 .cm-s-ipython span.cm-variable-2 {
@@ -694,13 +694,13 @@ Adapted from GitHub theme
   font-style: italic;
 }
 .cm-s-ipython span.cm-string {
-  color: #<span class="caps">BA2121</span>;
+  color: #BA2121;
 }
 .cm-s-ipython span.cm-string-2 {
   color: #f50;
 }
 .cm-s-ipython span.cm-meta {
-  color: #<span class="caps">AA22FF</span>;
+  color: #AA22FF;
 }
 .cm-s-ipython span.cm-qualifier {
   color: #555;
@@ -755,9 +755,9 @@ div.output_wrapper {
 }
 /* class for the output area when it should be height-limited */
 div.output_scroll {
-  /* ideally, this would be max-height, but <span class="caps">FF</span> barfs all over that */
+  /* ideally, this would be max-height, but FF barfs all over that */
   height: 24em;
-  /* <span class="caps">FF</span> needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
   width: 100%;
   overflow: auto;
   border-radius: 2px;
@@ -791,7 +791,7 @@ div.out_prompt_overlay {
   border-radius: 2px;
 }
 div.out_prompt_overlay:hover {
-  /* use inner shadow to get border that is computed the same on WebKit/<span class="caps">FF</span> */
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
   -webkit-box-shadow: inset 0 0 1px #000;
   box-shadow: inset 0 0 1px #000;
   background: rgba(240, 240, 240, 0.5);
@@ -1146,25 +1146,25 @@ h6:hover .anchor-link {
 <style type="text/css">.highlight .hll { background-color: #ffffcc }
 .highlight  { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
-.highlight .err { border: 1px solid #<span class="caps">FF0000</span> } /* Error */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
 .highlight .o { color: #666666 } /* Operator */
 .highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
 .highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #<span class="caps">BC7A00</span> } /* Comment.Preproc */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
 .highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
 .highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
 .highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
 .highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #<span class="caps">FF0000</span> } /* Generic.Error */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
 .highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .highlight .gi { color: #00A000 } /* Generic.Inserted */
 .highlight .go { color: #888888 } /* Generic.Output */
 .highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
 .highlight .gs { font-weight: bold } /* Generic.Strong */
 .highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight .gt { color: #<span class="caps">0044DD</span> } /* Generic.Traceback */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
 .highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
 .highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
 .highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
@@ -1172,41 +1172,41 @@ h6:hover .anchor-link {
 .highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
 .highlight .kt { color: #B00040 } /* Keyword.Type */
 .highlight .m { color: #666666 } /* Literal.Number */
-.highlight .s { color: #<span class="caps">BA2121</span> } /* Literal.String */
+.highlight .s { color: #BA2121 } /* Literal.String */
 .highlight .na { color: #7D9029 } /* Name.Attribute */
 .highlight .nb { color: #008000 } /* Name.Builtin */
-.highlight .nc { color: #<span class="caps">0000FF</span>; font-weight: bold } /* Name.Class */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
 .highlight .no { color: #880000 } /* Name.Constant */
-.highlight .nd { color: #<span class="caps">AA22FF</span> } /* Name.Decorator */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
 .highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #<span class="caps">D2413A</span>; font-weight: bold } /* Name.Exception */
-.highlight .nf { color: #<span class="caps">0000FF</span> } /* Name.Function */
-.highlight .nl { color: #<span class="caps">A0A000</span> } /* Name.Label */
-.highlight .nn { color: #<span class="caps">0000FF</span>; font-weight: bold } /* Name.Namespace */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
 .highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
 .highlight .nv { color: #19177C } /* Name.Variable */
-.highlight .ow { color: #<span class="caps">AA22FF</span>; font-weight: bold } /* Operator.Word */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
 .highlight .w { color: #bbbbbb } /* Text.Whitespace */
 .highlight .mb { color: #666666 } /* Literal.Number.Bin */
 .highlight .mf { color: #666666 } /* Literal.Number.Float */
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #<span class="caps">BA2121</span> } /* Literal.String.Affix */
-.highlight .sb { color: #<span class="caps">BA2121</span> } /* Literal.String.Backtick */
-.highlight .sc { color: #<span class="caps">BA2121</span> } /* Literal.String.Char */
-.highlight .dl { color: #<span class="caps">BA2121</span> } /* Literal.String.Delimiter */
-.highlight .sd { color: #<span class="caps">BA2121</span>; font-style: italic } /* Literal.String.Doc */
-.highlight .s2 { color: #<span class="caps">BA2121</span> } /* Literal.String.Double */
-.highlight .se { color: #<span class="caps">BB6622</span>; font-weight: bold } /* Literal.String.Escape */
-.highlight .sh { color: #<span class="caps">BA2121</span> } /* Literal.String.Heredoc */
-.highlight .si { color: #<span class="caps">BB6688</span>; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
 .highlight .sx { color: #008000 } /* Literal.String.Other */
-.highlight .sr { color: #<span class="caps">BB6688</span> } /* Literal.String.Regex */
-.highlight .s1 { color: #<span class="caps">BA2121</span> } /* Literal.String.Single */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #<span class="caps">0000FF</span> } /* Name.Function.Magic */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
@@ -1214,50 +1214,50 @@ h6:hover .anchor-link {
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
 <style type="text/css">
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #<span class="caps">3E424D</span>; }
-.ansi-black-bg { background-color: #<span class="caps">3E424D</span>; }
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
 .ansi-black-intense-fg { color: #282C36; }
 .ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #<span class="caps">E75C58</span>; }
-.ansi-red-bg { background-color: #<span class="caps">E75C58</span>; }
-.ansi-red-intense-fg { color: #<span class="caps">B22B31</span>; }
-.ansi-red-intense-bg { background-color: #<span class="caps">B22B31</span>; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
 .ansi-green-fg { color: #00A250; }
 .ansi-green-bg { background-color: #00A250; }
 .ansi-green-intense-fg { color: #007427; }
 .ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #<span class="caps">DDB62B</span>; }
-.ansi-yellow-bg { background-color: #<span class="caps">DDB62B</span>; }
-.ansi-yellow-intense-fg { color: #<span class="caps">B27D12</span>; }
-.ansi-yellow-intense-bg { background-color: #<span class="caps">B27D12</span>; }
-.ansi-blue-fg { color: #<span class="caps">208FFB</span>; }
-.ansi-blue-bg { background-color: #<span class="caps">208FFB</span>; }
-.ansi-blue-intense-fg { color: #<span class="caps">0065CA</span>; }
-.ansi-blue-intense-bg { background-color: #<span class="caps">0065CA</span>; }
-.ansi-magenta-fg { color: #<span class="caps">D160C4</span>; }
-.ansi-magenta-bg { background-color: #<span class="caps">D160C4</span>; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
 .ansi-magenta-intense-fg { color: #A03196; }
 .ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #<span class="caps">60C6C8</span>; }
-.ansi-cyan-bg { background-color: #<span class="caps">60C6C8</span>; }
-.ansi-cyan-intense-fg { color: #<span class="caps">258F8F</span>; }
-.ansi-cyan-intense-bg { background-color: #<span class="caps">258F8F</span>; }
-.ansi-white-fg { color: #<span class="caps">C5C1B4</span>; }
-.ansi-white-bg { background-color: #<span class="caps">C5C1B4</span>; }
-.ansi-white-intense-fg { color: #<span class="caps">A1A6B2</span>; }
-.ansi-white-intense-bg { background-color: #<span class="caps">A1A6B2</span>; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
 
 .ansi-bold { font-weight: bold; }
 </style>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is the first part of the third post in blog series about linear&nbsp;algebra.</p>
+<p>This is the first part of the third post in blog series about linear algebra.</p>
 <ol>
 <li>Introduction</li>
-<li>Basics of linear&nbsp;algebra</li>
-<li><strong>Intermediate linear algebra</strong>: <strong>Part I</strong> and Part <span class="caps">II</span></li>
-<li>Advances in linear&nbsp;algebra</li>
+<li>Basics of linear algebra</li>
+<li><strong>Intermediate linear algebra</strong>: <strong>Part I</strong> and Part II</li>
+<li>Advances in linear algebra</li>
 </ol>
 
 </div>
@@ -1266,13 +1266,13 @@ h6:hover .anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In this post I will introduce you to the intermediates of linear algebra, which in turn includes the&nbsp;following:</p>
+<p>In this post I will introduce you to the intermediates of linear algebra, which in turn includes the following:</p>
 <ul>
 <li><a href="#Vector">Vector</a><ul>
-<li><a href="#Cross_Product">Cross&nbsp;Product</a></li>
+<li><a href="#Cross_Product">Cross Product</a></li>
 <li><a href="#Span">Span</a></li>
-<li><a href="#Linear_Independence_and_Dependence">Linear Independence and&nbsp;Dependence</a></li>
-<li><a href="#Numerical_Representation">Numerical&nbsp;Representation</a></li>
+<li><a href="#Linear_Independence_and_Dependence">Linear Independence and Dependence</a></li>
+<li><a href="#Numerical_Representation">Numerical Representation</a></li>
 </ul>
 </li>
 </ul>
@@ -1293,85 +1293,85 @@ h6:hover .anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Cross-Product">Cross Product<a class="anchor-link" href="#Cross-Product">&#182;</a></h3><p><a id="Cross_Product"></a></p>
 <hr>
-<p>In the case of the dot product between two vectors, we saw that the result is a scalar. In the case of a cross product the result is a vector, so the cross product is also called the vector product. The resulted vector is a vector that is at right angles to both the other vectors in 3D Euclidean space. This means that the cross-product only really makes sense when working with vectors that contain three&nbsp;components.</p>
-<p>There are two formulas to calculate the cross product. One is algebraic and second is geometric. More precisely, the first formula catches the algebraic intuition of cross product and second catches the geometric intuition of the cross&nbsp;product.</p>
-<p>If we have two vectors $A$ and $B$ in such a&nbsp;way:</p>
+<p>In the case of the dot product between two vectors, we saw that the result is a scalar. In the case of a cross product the result is a vector, so the cross product is also called the vector product. The resulted vector is a vector that is at right angles to both the other vectors in 3D Euclidean space. This means that the cross-product only really makes sense when working with vectors that contain three components.</p>
+<p>There are two formulas to calculate the cross product. One is algebraic and second is geometric. More precisely, the first formula catches the algebraic intuition of cross product and second catches the geometric intuition of the cross product.</p>
+<p>If we have two vectors $A$ and $B$ in such a way:</p>
 \begin{align*}A =
 \begin{bmatrix}
-    a_{1} &#92;
-    a_{2} &#92;
+    a_{1} \\
+    a_{2} \\
     a_{3}
 \end{bmatrix}
 \
 B =
 \begin{bmatrix}
-    b_{1} &#92;
-    b_{2} &#92;
+    b_{1} \\
+    b_{2} \\
     b_{3}
 \end{bmatrix}
-\end{align*}<p>The algebraic formula&nbsp;is:</p>
+\end{align*}<p>The algebraic formula is:</p>
 \begin{align*}
 \vec{C} = \vec{A} \times \vec{B} = 
 \begin{bmatrix}
-(a_{2} \cdot b_{3}) - (a_{3} \cdot b_{2}) &#92; 
-(a_{3} \cdot b_{1}) - (a_{1} \cdot b_{3}) &#92; 
+(a_{2} \cdot b_{3}) - (a_{3} \cdot b_{2}) \\ 
+(a_{3} \cdot b_{1}) - (a_{1} \cdot b_{3}) \\ 
 (a_{1} \cdot b_{2}) - (a_{2} \cdot b_{1})
 \end{bmatrix}
-\end{align*}<p>At first glance, the formula is not easy to remember. Let try another formula which uses some advanced&nbsp;components.</p>
+\end{align*}<p>At first glance, the formula is not easy to remember. Let try another formula which uses some advanced components.</p>
 \begin{align*}
-\vec{A} \times \vec{B} = \left| {\begin{array}{*{20}{c}}{\vec{i}}&amp;{\vec{j}}&amp;{\vec{k}}&#92;{{a_1}}&amp;{{a_2}}&amp;{{a_3}}&#92;{{b_1}}&amp;{{b_2}}&amp;{{b_3}}\end{array}} \right|
-\end{align*}<p>where $\vec{i}$, $\vec{j}$ and $\vec{k}$ are bases vectors and is explained advance&nbsp;part.</p>
-<p>To find the cross product we have to find the determinant of above matrix in the following&nbsp;way:</p>
+\vec{A} \times \vec{B} = \left| {\begin{array}{*{20}{c}}{\vec{i}}&amp;{\vec{j}}&amp;{\vec{k}}\\{{a_1}}&amp;{{a_2}}&amp;{{a_3}}\\{{b_1}}&amp;{{b_2}}&amp;{{b_3}}\end{array}} \right|
+\end{align*}<p>where $\vec{i}$, $\vec{j}$ and $\vec{k}$ are bases vectors and is explained advance part.</p>
+<p>To find the cross product we have to find the determinant of above matrix in the following way:</p>
 \begin{align*}
-\vec{A} \times \vec{B} = \left| {\begin{array}{*{20}{c}}{{a_2}}&amp;{{a_3}}&#92;{{b_2}}&amp;{{b_3}}\end{array}} \right|\vec{i} - \left| {\begin{array}{*{20}{c}}{{a_1}}&amp;{{a_3}}&#92;{{b_1}}&amp;{{b_3}}\end{array}} \right|\vec{j} + \left| {\begin{array}{*{20}{c}}{{a_1}}&amp;{{a_2}}&#92;{{b_1}}&amp;{{b_2}}\end{array}} \right|\vec{k}
-\end{align*}<p>Suppose we have two&nbsp;vectors:</p>
+\vec{A} \times \vec{B} = \left| {\begin{array}{*{20}{c}}{{a_2}}&amp;{{a_3}}\\{{b_2}}&amp;{{b_3}}\end{array}} \right|\vec{i} - \left| {\begin{array}{*{20}{c}}{{a_1}}&amp;{{a_3}}\\{{b_1}}&amp;{{b_3}}\end{array}} \right|\vec{j} + \left| {\begin{array}{*{20}{c}}{{a_1}}&amp;{{a_2}}\\{{b_1}}&amp;{{b_2}}\end{array}} \right|\vec{k}
+\end{align*}<p>Suppose we have two vectors:</p>
 \begin{align*}A =
 \begin{bmatrix}
-    2 &#92;
-    3 &#92;
+    2 \\
+    3 \\
     1
 \end{bmatrix}
 \
 B =
 \begin{bmatrix}
-    1 &#92;
-    2 &#92;
+    1 \\
+    2 \\
     -2
 \end{bmatrix}
-\end{align*}<p>Then cross product&nbsp;is:</p>
+\end{align*}<p>Then cross product is:</p>
 \begin{align*}
 \vec{C} = \vec{A} \times \vec{B} =
 \begin{bmatrix}
-(3 \cdot -2) - (1 \cdot 2) &#92;
-(1 \cdot 1) - (2 \cdot -2) &#92;
+(3 \cdot -2) - (1 \cdot 2) \\
+(1 \cdot 1) - (2 \cdot -2) \\
 (2 \cdot 2) - (3 \cdot 1)
 \end{bmatrix} = 
 \begin{bmatrix}
--6 - 2 &#92;
-1 - -4 &#92;
+-6 - 2 \\
+1 - -4 \\
 4 - 3
 \end{bmatrix} =
 \begin{bmatrix}
--8 &#92;
-5 &#92;
+-8 \\
+5 \\
 1
 \end{bmatrix}
-\end{align*}<p>The geometric formula&nbsp;is:</p>
+\end{align*}<p>The geometric formula is:</p>
 \begin{align*}
 \vec{C} =
 \vec{A} \times \vec{B} =
 \|\vec{A}\|\cdot\|\vec{B}\|\cdot\sin{\theta} \cdot \hat{n}
-\end{align*}<p>where, $\theta$ is the angle between $\vec{A}$ and $\vec{B}$. Also, $\hat{n}$ is a unit vector perpendicular to both $\vec{A}$ and $\vec{B}$, such that $\vec{A}$, $\vec{B}$ and $\hat{n}$ form a <a href="https://en.wikipedia.org/wiki/Right-hand_rule">right-handed&nbsp;system</a></p>
-<p>There is also geometric application of the cross product. If we three vectors $\vec{a}$, $\vec{b}$ and $\vec{c}$ which forms the three dimensional figure such&nbsp;as:</p>
+\end{align*}<p>where, $\theta$ is the angle between $\vec{A}$ and $\vec{B}$. Also, $\hat{n}$ is a unit vector perpendicular to both $\vec{A}$ and $\vec{B}$, such that $\vec{A}$, $\vec{B}$ and $\hat{n}$ form a <a href="https://en.wikipedia.org/wiki/Right-hand_rule">right-handed system</a></p>
+<p>There is also geometric application of the cross product. If we three vectors $\vec{a}$, $\vec{b}$ and $\vec{c}$ which forms the three dimensional figure such as:</p>
 <p><img src="https://dsfabric.org/images/nodo.png" alt="Hello World 1" title="Hello World 2"></p>
-<p>Then the area of the parallelogram ( two dimensional front of this object ) is given&nbsp;by:</p>
+<p>Then the area of the parallelogram ( two dimensional front of this object ) is given by:</p>
 \begin{align*}
 {\rm{Area}} = \left\| {\vec{a} \times \vec{b}} \right\|
-\end{align*}<p>This is the dot product of the result of cross product between vectors $\vec{a}$ and&nbsp;$\vec{b}$</p>
-<p>The volume of the parallelepiped ( the whole three dimensional object ) is given&nbsp;by:</p>
+\end{align*}<p>This is the dot product of the result of cross product between vectors $\vec{a}$ and $\vec{b}$</p>
+<p>The volume of the parallelepiped ( the whole three dimensional object ) is given by:</p>
 \begin{align*}
 {\rm{Volume}} = \left| {\vec{a} \centerdot \left( {\vec{b} \times \vec{c}} \right)} \right|
-\end{align*}<p>here, absolute value bars are necessary since the result could be negative and volume must be&nbsp;positive.</p>
+\end{align*}<p>here, absolute value bars are necessary since the result could be negative and volume must be positive.</p>
 
 </div>
 </div>
@@ -1381,34 +1381,34 @@ B =
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Span">Span<a class="anchor-link" href="#Span">&#182;</a></h3><p><a id="Span"></a></p>
 <hr>
-<p>suppose we have set of&nbsp;vectors:</p>
+<p>suppose we have set of vectors:</p>
 \begin{align*}
-{\alpha _1},&#8230;,{\alpha _n} \in A\
-\end{align*}<p>then we can define the space $S$ spaned&nbsp;by:</p>
+{\alpha _1},...,{\alpha _n} \in A\
+\end{align*}<p>then we can define the space $S$ spaned by:</p>
 \begin{align*}
-{\alpha _1},&#8230;,{\alpha _n}
+{\alpha _1},...,{\alpha _n}
 \end{align*}<p>as</p>
 \begin{align*}
-S\left( {{\alpha _1},&#8230;,{\alpha _n}} \right) = \left\{ {\sum_{i = 1}^{n} {{c_i}{\alpha _i}\;|\;{c_i} \in \mathbb{R}} } \right\}
-\end{align*}<p>which is the set of all linear combinations of the vectors in this subspace. The set is a subspace of&nbsp;$A$:</p>
+S\left( {{\alpha _1},...,{\alpha _n}} \right) = \left\{ {\sum_{i = 1}^{n} {{c_i}{\alpha _i}\;|\;{c_i} \in \mathbb{R}} } \right\}
+\end{align*}<p>which is the set of all linear combinations of the vectors in this subspace. The set is a subspace of $A$:</p>
 \begin{align*}
-S\left( {{\alpha _1},&#8230;,{\alpha _n}} \right) \subset A
-\end{align*}<p>In other words, if we have set of&nbsp;vectors</p>
+S\left( {{\alpha _1},...,{\alpha _n}} \right) \subset A
+\end{align*}<p>In other words, if we have set of vectors</p>
 \begin{align*}
 A := \{a_1, \ldots, a_k\}
 \
 \text{in}
 \
 \mathbb R^n
-\end{align*}<p>it&#8217;s natural to think about the new vectors we can create from these vectors by performing linear operations. New vectors created in this way are called linear combinations of $A$.
-Particularly, $X \in \mathbb{R}^n$ is a linear combination of $A$&nbsp;if</p>
+\end{align*}<p>it's natural to think about the new vectors we can create from these vectors by performing linear operations. New vectors created in this way are called linear combinations of $A$.
+Particularly, $X \in \mathbb{R}^n$ is a linear combination of $A$ if</p>
 \begin{align*}
 X =
 \beta_1 a_1 + \cdots + \beta_k a_k
 \text{ for some scalars } \beta_1, \ldots, \beta_k
-\end{align*}<p>here, $\beta_1, \ldots, \beta_k$ are called coefficients of the linear&nbsp;combination.</p>
-<p>The set of linear combinations of $A$ is the span of $A$ and is written as&nbsp;$Span(A)$</p>
-<p>For example,&nbsp;if</p>
+\end{align*}<p>here, $\beta_1, \ldots, \beta_k$ are called coefficients of the linear combination.</p>
+<p>The set of linear combinations of $A$ is the span of $A$ and is written as $Span(A)$</p>
+<p>For example, if</p>
 \begin{align*}
 \vec{A} = \{e_1, e_2, e_3\}
 \
@@ -1416,30 +1416,30 @@ X =
 \
 e_1 :=
 \begin{bmatrix}
-     1 &#92;
-     0 &#92;
+     1 \\
+     0 \\
      0
 \end{bmatrix}
 , \
 e_2 :=
 \begin{bmatrix}
-     0 &#92;
-     1 &#92;
+     0 \\
+     1 \\
      0
 \end{bmatrix}
 , \
 e_3 :=
 \
 \begin{bmatrix}
-     0 &#92;
-     0 &#92;
+     0 \\
+     0 \\
      1
 \end{bmatrix}
-\end{align*}<p>then the span of $A$ is all of $\mathbb{R}^3$, because, for any $X=(x_1, x_2, x_3)\in \mathbb{R}^3$, we can&nbsp;write</p>
+\end{align*}<p>then the span of $A$ is all of $\mathbb{R}^3$, because, for any $X=(x_1, x_2, x_3)\in \mathbb{R}^3$, we can write</p>
 \begin{align*}
 X =
 x_1 e_1 + x_2 e_2 + x_3 e_3
-\end{align*}<p>This means that by using $A$ or vectors $e_1$, $e_2$ and $e_3$ we can generate any vector in $\mathbb{R}^3$ by performing linear&nbsp;operations.</p>
+\end{align*}<p>This means that by using $A$ or vectors $e_1$, $e_2$ and $e_3$ we can generate any vector in $\mathbb{R}^3$ by performing linear operations.</p>
 
 </div>
 </div>
@@ -1449,44 +1449,44 @@ x_1 e_1 + x_2 e_2 + x_3 e_3
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Linear-Independence-and-Dependence">Linear Independence and Dependence<a class="anchor-link" href="#Linear-Independence-and-Dependence">&#182;</a></h3><p><a id="Linear_Independence_and_Dependence"></a></p>
 <hr>
-<p>Above, I mentioned a linear combination. In order to define linear dependence and independence let farther clarify what is a linear combination. If we have a set of&nbsp;vectors</p>
+<p>Above, I mentioned a linear combination. In order to define linear dependence and independence let farther clarify what is a linear combination. If we have a set of vectors</p>
 \begin{align*}
 \vec{A} = \{a_1, \ldots, a_k\}
-\end{align*}<p>which all have the same dimension,&nbsp;then</p>
-<blockquote><p>A <strong>linear combination</strong> of the vectors in $A$ is any vector of the form $c_{1} a_{1} + c_{2} a_{2} + \cdots + c_{k} a_{k}$, where $c_{1}, c_{2}, \ldots, c_{k}$ are arbitrary&nbsp;scalars</p>
+\end{align*}<p>which all have the same dimension, then</p>
+<blockquote><p>A <strong>linear combination</strong> of the vectors in $A$ is any vector of the form $c_{1} a_{1} + c_{2} a_{2} + \cdots + c_{k} a_{k}$, where $c_{1}, c_{2}, \ldots, c_{k}$ are arbitrary scalars</p>
 </blockquote>
-<p>For example, if $A = \{[1, 2], [2, 1]\}$,&nbsp;then</p>
+<p>For example, if $A = \{[1, 2], [2, 1]\}$, then</p>
 \begin{align*}
 2 a_{1} - a_{2} = 2 ([1, 2]) - [2, 1] = [0, 3]
-\end{align*}<p>is linear combination of the vectors in&nbsp;$A$.</p>
-<blockquote><p>A set $A$ of m-dimensional vectros is <strong>linearly independent</strong> if the only linear combination of vectors in $A$ that equals $0$ is the trivial linear&nbsp;combination</p>
+\end{align*}<p>is linear combination of the vectors in $A$.</p>
+<blockquote><p>A set $A$ of m-dimensional vectros is <strong>linearly independent</strong> if the only linear combination of vectors in $A$ that equals $0$ is the trivial linear combination</p>
 </blockquote>
-<p>This formal definition seems a little bit confusing. Let consider the example to catch the&nbsp;idea.</p>
-<p>The set of&nbsp;vectors</p>
+<p>This formal definition seems a little bit confusing. Let consider the example to catch the idea.</p>
+<p>The set of vectors</p>
 \begin{align*}
 A =
 \{[1, 0], [0, 1]\}
-\end{align*}<p>is linearly independent. Let prove this claim. We need to find constants $c_{1}$ and $c_{2}$&nbsp;satisfying</p>
+\end{align*}<p>is linearly independent. Let prove this claim. We need to find constants $c_{1}$ and $c_{2}$ satisfying</p>
 \begin{align*}
 c_{1} ([1, 0]) + c_{2} ([0, 1]) = [0, 0]
-\end{align*}<p>solvoing this system of equations gives that $[c_{1}, c_{2}] = [0, 0] \rightarrow c_{1} = c_{2} = 0$, in turn this implies that $A$ is linearly&nbsp;independent.</p>
-<p>The following statements are equivalent to a linear independence of&nbsp;$A$:</p>
+\end{align*}<p>solvoing this system of equations gives that $[c_{1}, c_{2}] = [0, 0] \rightarrow c_{1} = c_{2} = 0$, in turn this implies that $A$ is linearly independent.</p>
+<p>The following statements are equivalent to a linear independence of $A$:</p>
 <ul>
-<li>No vector in $A$ can be formed as a linear combination of the other vectors. This means that if we have three vectors in $A$, any of them cannot be expressed as the linear combination of the other&nbsp;two.</li>
+<li>No vector in $A$ can be formed as a linear combination of the other vectors. This means that if we have three vectors in $A$, any of them cannot be expressed as the linear combination of the other two.</li>
 </ul>
 <ul>
-<li>If $c_{1} a_{1} + c_{2} a_{2} + \cdots + c_{k} a_{k} = 0$, then $c_{1} = c_{2} = \cdots = c_{k} =&nbsp;0$</li>
+<li>If $c_{1} a_{1} + c_{2} a_{2} + \cdots + c_{k} a_{k} = 0$, then $c_{1} = c_{2} = \cdots = c_{k} = 0$</li>
 </ul>
-<blockquote><p>A set $A$ of m-dimensional vectors is <strong>linearly dependent</strong> if there is a nontrivial linear combination of the vectors in $A$ that adds up to&nbsp;$0$</p>
+<blockquote><p>A set $A$ of m-dimensional vectors is <strong>linearly dependent</strong> if there is a nontrivial linear combination of the vectors in $A$ that adds up to $0$</p>
 </blockquote>
-<p>The set of&nbsp;vectors</p>
+<p>The set of vectors</p>
 \begin{align*}
 A =
 \{[1, 2], [2, 4]\}
-\end{align*}<p>is linearly dependent set of vectors. Let see&nbsp;how.</p>
+\end{align*}<p>is linearly dependent set of vectors. Let see how.</p>
 \begin{align*}
 c_{1} ([1, 2]) + c_{2} ([2, 4]) = [0, 0]
-\end{align*}<p>There is a nontrivial linear combination with $c_{1} = 2$ and $c_{2} = 1$ that yields $0$. This implies $A$ is the linearly dependent set of vectors. It&#8217;s easy in this case to spot linear dependence by first glance, as the second vector is 2 times the first vector, which indicates linear&nbsp;dependence.</p>
+\end{align*}<p>There is a nontrivial linear combination with $c_{1} = 2$ and $c_{2} = 1$ that yields $0$. This implies $A$ is the linearly dependent set of vectors. It's easy in this case to spot linear dependence by first glance, as the second vector is 2 times the first vector, which indicates linear dependence.</p>
 
 </div>
 </div>
@@ -1555,8 +1555,8 @@ Cross Product is:
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This figure below shows the span of $A = \{a_1, a_2\}$ in&nbsp;$\mathbb{R}^3$.</p>
-<p>The span is a 2 dimensional plane passing through these two points and the&nbsp;origin</p>
+<p>This figure below shows the span of $A = \{a_1, a_2\}$ in $\mathbb{R}^3$.</p>
+<p>The span is a 2 dimensional plane passing through these two points and the origin</p>
 
 </div>
 </div>
@@ -1711,7 +1711,7 @@ Cross Product is:
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This says that the vectors at index 0 and 1 are linearly independent. Let consider a linearly dependent set of vectors to see the result of the above code&nbsp;clearly.</p>
+<p>This says that the vectors at index 0 and 1 are linearly independent. Let consider a linearly dependent set of vectors to see the result of the above code clearly.</p>
 
 </div>
 </div>
@@ -1754,7 +1754,7 @@ Cross Product is:
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This says that vectors at index 0, 1, and 3 are linearly independent, while vector at index 2 is linearly&nbsp;dependent.</p>
+<p>This says that vectors at index 0, 1, and 3 are linearly independent, while vector at index 2 is linearly dependent.</p>
 
 </div>
 </div>
@@ -1783,8 +1783,8 @@ Cross Product is:
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Here, I only covered half of the materials that I initially had intended to cover. I split those materials into two parts, mainly because to improve readability and maintain&nbsp;consistency.</p>
-<p>In the second part I review matrices and operations on&nbsp;matrices.</p>
+<p>Here, I only covered half of the materials that I initially had intended to cover. I split those materials into two parts, mainly because to improve readability and maintain consistency.</p>
+<p>In the second part I review matrices and operations on matrices.</p>
 
 </div>
 </div>
@@ -1793,9 +1793,9 @@ Cross Product is:
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="References">References<a class="anchor-link" href="#References">&#182;</a></h3><h4 id="Vector">Vector<a class="anchor-link" href="#Vector">&#182;</a></h4><ul>
-<li><p><a href="http://linear.axler.net/">Linear Algebra Done&nbsp;Right</a></p>
+<li><p><a href="http://linear.axler.net/">Linear Algebra Done Right</a></p>
 </li>
-<li><p><a href="https://en.wikipedia.org/wiki/List_of_linear_algebra_topics">Linear Algebra&nbsp;Topics</a></p>
+<li><p><a href="https://en.wikipedia.org/wiki/List_of_linear_algebra_topics">Linear Algebra Topics</a></p>
 </li>
 </ul>
 
@@ -1838,11 +1838,11 @@ Cross Product is:
 
                 <p id="post-share-links">
     Like this post? Share on:
-    <a href="https://twitter.com/intent/tweet?text=Intermediates%20of%20Linear%20Algebra%20with%20Python%20-%20Part%C2%A0I&url=https%3A//dsfabric.org/intermediates-of-linear-algebra-with-python-part-i&via=N_Okroshiashvil&hashtags=linear-algebra,python,numpy,scipy,mathematics" target="_blank" title="Share on Twitter">Twitter</a>
+    <a href="https://twitter.com/intent/tweet?text=Intermediates%20of%20Linear%20Algebra%20with%20Python%20-%20Part%20I&url=https%3A//dsfabric.org/intermediates-of-linear-algebra-with-python-part-i&via=N_Okroshiashvil&hashtags=linear-algebra,python,numpy,scipy,mathematics" target="_blank" title="Share on Twitter">Twitter</a>
     ❄
     <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//dsfabric.org/intermediates-of-linear-algebra-with-python-part-i" target="_blank" title="Share on Facebook">Facebook</a>
     ❄
-    <a href="mailto:?subject=Intermediates%20of%20Linear%20Algebra%20with%20Python%20-%20Part%C2%A0I&amp;body=https%3A//dsfabric.org/intermediates-of-linear-algebra-with-python-part-i" target="_blank" title="Share via Email">Email</a>
+    <a href="mailto:?subject=Intermediates%20of%20Linear%20Algebra%20with%20Python%20-%20Part%20I&amp;body=https%3A//dsfabric.org/intermediates-of-linear-algebra-with-python-part-i" target="_blank" title="Share via Email">Email</a>
     </p>
 
             
@@ -1907,10 +1907,10 @@ Cross Product is:
 <section>
     <h2>Keep Reading</h2>
 <ul class="related-posts-list">
-<li><a href="https://dsfabric.org/introduction-to-linear-algebra-with-python" title="Introduction to Linear Algebra with Python">Introduction to Linear Algebra with Python</a></li>
-<li><a href="https://dsfabric.org/basics-of-linear-algebra-with-python" title="Basics of Linear Algebra with Python">Basics of Linear Algebra with Python</a></li>
+<li><a href="https://dsfabric.org/introduction-to-linear-algebra-with-python" title="Introduction to Linear Algebra with Python">Introduction to Linear Algebra with Python</a></li>
+<li><a href="https://dsfabric.org/basics-of-linear-algebra-with-python" title="Basics of Linear Algebra with Python">Basics of Linear Algebra with Python</a></li>
 <li><a href="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-ii" title="Intermediates of Linear Algebra with Python - Part II">Intermediates of Linear Algebra with Python - Part II</a></li>
-<li><a href="https://dsfabric.org/advances-of-linear-algebra-with-python-part-i" title="Advances of Linear Algebra with Python - Part I">Advances of Linear Algebra with Python - Part I</a></li>
+<li><a href="https://dsfabric.org/advances-of-linear-algebra-with-python-part-i" title="Advances of Linear Algebra with Python - Part I">Advances of Linear Algebra with Python - Part I</a></li>
 <li><a href="https://dsfabric.org/advances-of-linear-algebra-with-python-part-ii" title="Advances of Linear Algebra with Python - Part II">Advances of Linear Algebra with Python - Part II</a></li>
 </ul>
 <hr />
@@ -1918,7 +1918,7 @@ Cross Product is:
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://dsfabric.org/basics-of-linear-algebra-with-python" title="Previous: Basics of Linear Algebra with Python">Basics of Linear Algebra with Python</a></li>
+                <li class="previous-article">« <a href="https://dsfabric.org/basics-of-linear-algebra-with-python" title="Previous: Basics of Linear Algebra with Python">Basics of Linear Algebra with Python</a></li>
                 <li class="next-article"><a href="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-ii" title="Next: Intermediates of Linear Algebra with Python - Part II">Intermediates of Linear Algebra with Python - Part II</a> »</li>
             </ul>
             </nav>

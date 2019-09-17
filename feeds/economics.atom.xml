@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Data Science Fabric - Economics</title><link href="https://dsfabric.org/" rel="alternate"></link><link href="https://dsfabric.org/feeds/economics.atom.xml" rel="self"></link><id>https://dsfabric.org/</id><updated>2019-06-16T12:01:00+04:00</updated><subtitle>Torture the data, and it will confess to anything. Ronald Coase</subtitle><entry><title>Modeling single good market in Python</title><link href="https://dsfabric.org/modeling-single-good-market-in-python" rel="alternate"></link><published>2019-06-16T12:01:00+04:00</published><updated>2019-06-16T12:01:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-06-16:/modeling-single-good-market-in-python</id><summary type="html">&lt;p&gt;Single good market economy with&amp;nbsp;Python&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Data Science Fabric - Economics</title><link href="https://dsfabric.org/" rel="alternate"></link><link href="https://dsfabric.org/feeds/economics.atom.xml" rel="self"></link><id>https://dsfabric.org/</id><updated>2019-06-16T12:01:00+04:00</updated><subtitle>Torture the data, and it will confess to anything. Ronald Coase</subtitle><entry><title>Modeling single good market in Python</title><link href="https://dsfabric.org/modeling-single-good-market-in-python" rel="alternate"></link><published>2019-06-16T12:01:00+04:00</published><updated>2019-06-16T12:01:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-06-16:/modeling-single-good-market-in-python</id><summary type="html">&lt;p&gt;Single good market economy with Python&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
 */
-/* &lt;span class="caps"&gt;CSS&lt;/span&gt; font colors for translated &lt;span class="caps"&gt;ANSI&lt;/span&gt; escape sequences */
+/* CSS font colors for translated ANSI escape sequences */
 /* The color values are a mix of
    http://www.xcolors.net/dl/baskerville-ivorylight and
    http://www.xcolors.net/dl/euphrasia */
 .ansi-black-fg {
-  color: #&lt;span class="caps"&gt;3E424D&lt;/span&gt;;
+  color: #3E424D;
 }
 .ansi-black-bg {
-  background-color: #&lt;span class="caps"&gt;3E424D&lt;/span&gt;;
+  background-color: #3E424D;
 }
 .ansi-black-intense-fg {
   color: #282C36;
@@ -21,16 +21,16 @@
   background-color: #282C36;
 }
 .ansi-red-fg {
-  color: #&lt;span class="caps"&gt;E75C58&lt;/span&gt;;
+  color: #E75C58;
 }
 .ansi-red-bg {
-  background-color: #&lt;span class="caps"&gt;E75C58&lt;/span&gt;;
+  background-color: #E75C58;
 }
 .ansi-red-intense-fg {
-  color: #&lt;span class="caps"&gt;B22B31&lt;/span&gt;;
+  color: #B22B31;
 }
 .ansi-red-intense-bg {
-  background-color: #&lt;span class="caps"&gt;B22B31&lt;/span&gt;;
+  background-color: #B22B31;
 }
 .ansi-green-fg {
   color: #00A250;
@@ -45,34 +45,34 @@
   background-color: #007427;
 }
 .ansi-yellow-fg {
-  color: #&lt;span class="caps"&gt;DDB62B&lt;/span&gt;;
+  color: #DDB62B;
 }
 .ansi-yellow-bg {
-  background-color: #&lt;span class="caps"&gt;DDB62B&lt;/span&gt;;
+  background-color: #DDB62B;
 }
 .ansi-yellow-intense-fg {
-  color: #&lt;span class="caps"&gt;B27D12&lt;/span&gt;;
+  color: #B27D12;
 }
 .ansi-yellow-intense-bg {
-  background-color: #&lt;span class="caps"&gt;B27D12&lt;/span&gt;;
+  background-color: #B27D12;
 }
 .ansi-blue-fg {
-  color: #&lt;span class="caps"&gt;208FFB&lt;/span&gt;;
+  color: #208FFB;
 }
 .ansi-blue-bg {
-  background-color: #&lt;span class="caps"&gt;208FFB&lt;/span&gt;;
+  background-color: #208FFB;
 }
 .ansi-blue-intense-fg {
-  color: #&lt;span class="caps"&gt;0065CA&lt;/span&gt;;
+  color: #0065CA;
 }
 .ansi-blue-intense-bg {
-  background-color: #&lt;span class="caps"&gt;0065CA&lt;/span&gt;;
+  background-color: #0065CA;
 }
 .ansi-magenta-fg {
-  color: #&lt;span class="caps"&gt;D160C4&lt;/span&gt;;
+  color: #D160C4;
 }
 .ansi-magenta-bg {
-  background-color: #&lt;span class="caps"&gt;D160C4&lt;/span&gt;;
+  background-color: #D160C4;
 }
 .ansi-magenta-intense-fg {
   color: #A03196;
@@ -81,31 +81,31 @@
   background-color: #A03196;
 }
 .ansi-cyan-fg {
-  color: #&lt;span class="caps"&gt;60C6C8&lt;/span&gt;;
+  color: #60C6C8;
 }
 .ansi-cyan-bg {
-  background-color: #&lt;span class="caps"&gt;60C6C8&lt;/span&gt;;
+  background-color: #60C6C8;
 }
 .ansi-cyan-intense-fg {
-  color: #&lt;span class="caps"&gt;258F8F&lt;/span&gt;;
+  color: #258F8F;
 }
 .ansi-cyan-intense-bg {
-  background-color: #&lt;span class="caps"&gt;258F8F&lt;/span&gt;;
+  background-color: #258F8F;
 }
 .ansi-white-fg {
-  color: #&lt;span class="caps"&gt;C5C1B4&lt;/span&gt;;
+  color: #C5C1B4;
 }
 .ansi-white-bg {
-  background-color: #&lt;span class="caps"&gt;C5C1B4&lt;/span&gt;;
+  background-color: #C5C1B4;
 }
 .ansi-white-intense-fg {
-  color: #&lt;span class="caps"&gt;A1A6B2&lt;/span&gt;;
+  color: #A1A6B2;
 }
 .ansi-white-intense-bg {
-  background-color: #&lt;span class="caps"&gt;A1A6B2&lt;/span&gt;;
+  background-color: #A1A6B2;
 }
 .ansi-default-inverse-fg {
-  color: #&lt;span class="caps"&gt;FFFFFF&lt;/span&gt;;
+  color: #FFFFFF;
 }
 .ansi-default-inverse-bg {
   background-color: #000000;
@@ -214,12 +214,12 @@ div.cell:before {
   background: transparent;
 }
 div.cell.jupyter-soft-selected {
-  border-left-color: #&lt;span class="caps"&gt;E3F2FD&lt;/span&gt;;
+  border-left-color: #E3F2FD;
   border-left-width: 1px;
   padding-left: 5px;
-  border-right-color: #&lt;span class="caps"&gt;E3F2FD&lt;/span&gt;;
+  border-right-color: #E3F2FD;
   border-right-width: 1px;
-  background: #&lt;span class="caps"&gt;E3F2FD&lt;/span&gt;;
+  background: #E3F2FD;
 }
 @media print {
   div.cell.jupyter-soft-selected {
@@ -239,7 +239,7 @@ div.cell.selected.jupyter-soft-selected:before {
   width: 5px;
   height: calc(100% +  2px);
   content: '';
-  background: #&lt;span class="caps"&gt;42A5F5&lt;/span&gt;;
+  background: #42A5F5;
 }
 @media print {
   div.cell.selected,
@@ -248,7 +248,7 @@ div.cell.selected.jupyter-soft-selected:before {
   }
 }
 .edit_mode div.cell.selected {
-  border-color: #&lt;span class="caps"&gt;66BB6A&lt;/span&gt;;
+  border-color: #66BB6A;
 }
 .edit_mode div.cell.selected:before {
   position: absolute;
@@ -258,7 +258,7 @@ div.cell.selected.jupyter-soft-selected:before {
   width: 5px;
   height: calc(100% +  2px);
   content: '';
-  background: #&lt;span class="caps"&gt;66BB6A&lt;/span&gt;;
+  background: #66BB6A;
 }
 @media print {
   .edit_mode div.cell.selected {
@@ -411,7 +411,7 @@ div.input {
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_prompt {
-  color: #&lt;span class="caps"&gt;303F9F&lt;/span&gt;;
+  color: #303F9F;
   border-top: 1px solid transparent;
 }
 div.input_area &gt; div.highlight {
@@ -452,7 +452,7 @@ div.input_area &gt; div.highlight &gt; pre {
   overflow-x: auto;
 }
 .CodeMirror-lines {
-  /* In &lt;span class="caps"&gt;CM2&lt;/span&gt;, this used to be 0.4em, but in &lt;span class="caps"&gt;CM3&lt;/span&gt; it went to 4px. We need the em value because */
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
   /* we have set a different line-height and want this to scale with that. */
   /* Note that this should set vertical padding only, since CodeMirror assumes
        that horizontal padding will be set on CodeMirror pre */
@@ -466,7 +466,7 @@ div.input_area &gt; div.highlight &gt; pre {
   border-top-left-radius: 2px;
 }
 .CodeMirror pre {
-  /* In &lt;span class="caps"&gt;CM3&lt;/span&gt; this went to 4px from 0 in &lt;span class="caps"&gt;CM2&lt;/span&gt;. This sets horizontal padding only,
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
     use .CodeMirror-lines for vertical */
   padding: 0 0.4em;
   border: 0;
@@ -504,7 +504,7 @@ Adapted from GitHub theme
   color: #333333;
 }
 .highlight-string {
-  color: #&lt;span class="caps"&gt;BA2121&lt;/span&gt;;
+  color: #BA2121;
 }
 .highlight-comment {
   color: #408080;
@@ -527,11 +527,11 @@ Adapted from GitHub theme
   color: #f00;
 }
 .highlight-operator {
-  color: #&lt;span class="caps"&gt;AA22FF&lt;/span&gt;;
+  color: #AA22FF;
   font-weight: bold;
 }
 .highlight-meta {
-  color: #&lt;span class="caps"&gt;AA22FF&lt;/span&gt;;
+  color: #AA22FF;
 }
 /* previously not defined, copying from default codemirror */
 .highlight-def {
@@ -579,7 +579,7 @@ Adapted from GitHub theme
   color: #000;
 }
 .cm-s-ipython span.cm-operator {
-  color: #&lt;span class="caps"&gt;AA22FF&lt;/span&gt;;
+  color: #AA22FF;
   font-weight: bold;
 }
 .cm-s-ipython span.cm-variable-2 {
@@ -593,13 +593,13 @@ Adapted from GitHub theme
   font-style: italic;
 }
 .cm-s-ipython span.cm-string {
-  color: #&lt;span class="caps"&gt;BA2121&lt;/span&gt;;
+  color: #BA2121;
 }
 .cm-s-ipython span.cm-string-2 {
   color: #f50;
 }
 .cm-s-ipython span.cm-meta {
-  color: #&lt;span class="caps"&gt;AA22FF&lt;/span&gt;;
+  color: #AA22FF;
 }
 .cm-s-ipython span.cm-qualifier {
   color: #555;
@@ -654,9 +654,9 @@ div.output_wrapper {
 }
 /* class for the output area when it should be height-limited */
 div.output_scroll {
-  /* ideally, this would be max-height, but &lt;span class="caps"&gt;FF&lt;/span&gt; barfs all over that */
+  /* ideally, this would be max-height, but FF barfs all over that */
   height: 24em;
-  /* &lt;span class="caps"&gt;FF&lt;/span&gt; needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
   width: 100%;
   overflow: auto;
   border-radius: 2px;
@@ -690,7 +690,7 @@ div.out_prompt_overlay {
   border-radius: 2px;
 }
 div.out_prompt_overlay:hover {
-  /* use inner shadow to get border that is computed the same on WebKit/&lt;span class="caps"&gt;FF&lt;/span&gt; */
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
   -webkit-box-shadow: inset 0 0 1px #000;
   box-shadow: inset 0 0 1px #000;
   background: rgba(240, 240, 240, 0.5);
@@ -1045,25 +1045,25 @@ h6:hover .anchor-link {
 &lt;style type="text/css"&gt;.highlight .hll { background-color: #ffffcc }
 .highlight  { background: #f8f8f8; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
-.highlight .err { border: 1px solid #&lt;span class="caps"&gt;FF0000&lt;/span&gt; } /* Error */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
 .highlight .o { color: #666666 } /* Operator */
 .highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
 .highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #&lt;span class="caps"&gt;BC7A00&lt;/span&gt; } /* Comment.Preproc */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
 .highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
 .highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
 .highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
 .highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #&lt;span class="caps"&gt;FF0000&lt;/span&gt; } /* Generic.Error */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
 .highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
 .highlight .gi { color: #00A000 } /* Generic.Inserted */
 .highlight .go { color: #888888 } /* Generic.Output */
 .highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
 .highlight .gs { font-weight: bold } /* Generic.Strong */
 .highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight .gt { color: #&lt;span class="caps"&gt;0044DD&lt;/span&gt; } /* Generic.Traceback */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
 .highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
 .highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
 .highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
@@ -1071,41 +1071,41 @@ h6:hover .anchor-link {
 .highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
 .highlight .kt { color: #B00040 } /* Keyword.Type */
 .highlight .m { color: #666666 } /* Literal.Number */
-.highlight .s { color: #&lt;span class="caps"&gt;BA2121&lt;/span&gt; } /* Literal.String */
+.highlight .s { color: #BA2121 } /* Literal.String */
 .highlight .na { color: #7D9029 } /* Name.Attribute */
 .highlight .nb { color: #008000 } /* Name.Builtin */
-.highlight .nc { color: #&lt;span class="caps"&gt;0000FF&lt;/span&gt;; font-weight: bold } /* Name.Class */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
 .highlight .no { color: #880000 } /* Name.Constant */
-.highlight .nd { color: #&lt;span class="caps"&gt;AA22FF&lt;/span&gt; } /* Name.Decorator */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
 .highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #&lt;span class="caps"&gt;D2413A&lt;/span&gt;; font-weight: bold } /* Name.Exception */
-.highlight .nf { color: #&lt;span class="caps"&gt;0000FF&lt;/span&gt; } /* Name.Function */
-.highlight .nl { color: #&lt;span class="caps"&gt;A0A000&lt;/span&gt; } /* Name.Label */
-.highlight .nn { color: #&lt;span class="caps"&gt;0000FF&lt;/span&gt;; font-weight: bold } /* Name.Namespace */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
 .highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
 .highlight .nv { color: #19177C } /* Name.Variable */
-.highlight .ow { color: #&lt;span class="caps"&gt;AA22FF&lt;/span&gt;; font-weight: bold } /* Operator.Word */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
 .highlight .w { color: #bbbbbb } /* Text.Whitespace */
 .highlight .mb { color: #666666 } /* Literal.Number.Bin */
 .highlight .mf { color: #666666 } /* Literal.Number.Float */
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #&lt;span class="caps"&gt;BA2121&lt;/span&gt; } /* Literal.String.Affix */
-.highlight .sb { color: #&lt;span class="caps"&gt;BA2121&lt;/span&gt; } /* Literal.String.Backtick */
-.highlight .sc { color: #&lt;span class="caps"&gt;BA2121&lt;/span&gt; } /* Literal.String.Char */
-.highlight .dl { color: #&lt;span class="caps"&gt;BA2121&lt;/span&gt; } /* Literal.String.Delimiter */
-.highlight .sd { color: #&lt;span class="caps"&gt;BA2121&lt;/span&gt;; font-style: italic } /* Literal.String.Doc */
-.highlight .s2 { color: #&lt;span class="caps"&gt;BA2121&lt;/span&gt; } /* Literal.String.Double */
-.highlight .se { color: #&lt;span class="caps"&gt;BB6622&lt;/span&gt;; font-weight: bold } /* Literal.String.Escape */
-.highlight .sh { color: #&lt;span class="caps"&gt;BA2121&lt;/span&gt; } /* Literal.String.Heredoc */
-.highlight .si { color: #&lt;span class="caps"&gt;BB6688&lt;/span&gt;; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
 .highlight .sx { color: #008000 } /* Literal.String.Other */
-.highlight .sr { color: #&lt;span class="caps"&gt;BB6688&lt;/span&gt; } /* Literal.String.Regex */
-.highlight .s1 { color: #&lt;span class="caps"&gt;BA2121&lt;/span&gt; } /* Literal.String.Single */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #&lt;span class="caps"&gt;0000FF&lt;/span&gt; } /* Name.Function.Magic */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
@@ -1113,45 +1113,45 @@ h6:hover .anchor-link {
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
 &lt;style type="text/css"&gt;
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #&lt;span class="caps"&gt;3E424D&lt;/span&gt;; }
-.ansi-black-bg { background-color: #&lt;span class="caps"&gt;3E424D&lt;/span&gt;; }
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
 .ansi-black-intense-fg { color: #282C36; }
 .ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #&lt;span class="caps"&gt;E75C58&lt;/span&gt;; }
-.ansi-red-bg { background-color: #&lt;span class="caps"&gt;E75C58&lt;/span&gt;; }
-.ansi-red-intense-fg { color: #&lt;span class="caps"&gt;B22B31&lt;/span&gt;; }
-.ansi-red-intense-bg { background-color: #&lt;span class="caps"&gt;B22B31&lt;/span&gt;; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
 .ansi-green-fg { color: #00A250; }
 .ansi-green-bg { background-color: #00A250; }
 .ansi-green-intense-fg { color: #007427; }
 .ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #&lt;span class="caps"&gt;DDB62B&lt;/span&gt;; }
-.ansi-yellow-bg { background-color: #&lt;span class="caps"&gt;DDB62B&lt;/span&gt;; }
-.ansi-yellow-intense-fg { color: #&lt;span class="caps"&gt;B27D12&lt;/span&gt;; }
-.ansi-yellow-intense-bg { background-color: #&lt;span class="caps"&gt;B27D12&lt;/span&gt;; }
-.ansi-blue-fg { color: #&lt;span class="caps"&gt;208FFB&lt;/span&gt;; }
-.ansi-blue-bg { background-color: #&lt;span class="caps"&gt;208FFB&lt;/span&gt;; }
-.ansi-blue-intense-fg { color: #&lt;span class="caps"&gt;0065CA&lt;/span&gt;; }
-.ansi-blue-intense-bg { background-color: #&lt;span class="caps"&gt;0065CA&lt;/span&gt;; }
-.ansi-magenta-fg { color: #&lt;span class="caps"&gt;D160C4&lt;/span&gt;; }
-.ansi-magenta-bg { background-color: #&lt;span class="caps"&gt;D160C4&lt;/span&gt;; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
 .ansi-magenta-intense-fg { color: #A03196; }
 .ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #&lt;span class="caps"&gt;60C6C8&lt;/span&gt;; }
-.ansi-cyan-bg { background-color: #&lt;span class="caps"&gt;60C6C8&lt;/span&gt;; }
-.ansi-cyan-intense-fg { color: #&lt;span class="caps"&gt;258F8F&lt;/span&gt;; }
-.ansi-cyan-intense-bg { background-color: #&lt;span class="caps"&gt;258F8F&lt;/span&gt;; }
-.ansi-white-fg { color: #&lt;span class="caps"&gt;C5C1B4&lt;/span&gt;; }
-.ansi-white-bg { background-color: #&lt;span class="caps"&gt;C5C1B4&lt;/span&gt;; }
-.ansi-white-intense-fg { color: #&lt;span class="caps"&gt;A1A6B2&lt;/span&gt;; }
-.ansi-white-intense-bg { background-color: #&lt;span class="caps"&gt;A1A6B2&lt;/span&gt;; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
 
 .ansi-bold { font-weight: bold; }
 &lt;/style&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;In this blog, I want to review simple one good market economy, where supply and demand are linear functions of price and agents of this economy are price takers. Those agents are divided into two categories: buyers and sellers. The price of a product is determined by the interaction of demand and supply or in other words buyers and sellers. Here, the buyer is associated with demand and seller is associated with supply. Henceforth, in this market, there are no frictions or market imperfections (more on this later) and market is competitive. So, this should be a very simple environment, where buyer demands product and seller sells this product at a given price. Before continue, it&amp;#8217;s worth to define some key terms and notions in our simple market&amp;nbsp;model.&lt;/p&gt;
+&lt;p&gt;In this blog, I want to review simple one good market economy, where supply and demand are linear functions of price and agents of this economy are price takers. Those agents are divided into two categories: buyers and sellers. The price of a product is determined by the interaction of demand and supply or in other words buyers and sellers. Here, the buyer is associated with demand and seller is associated with supply. Henceforth, in this market, there are no frictions or market imperfections (more on this later) and market is competitive. So, this should be a very simple environment, where buyer demands product and seller sells this product at a given price. Before continue, it's worth to define some key terms and notions in our simple market model.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1166,14 +1166,14 @@ h6:hover .anchor-link {
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;First, let&amp;#8217;s start by defining what is economics. In simple words, economics is the social science which studies production, consumption, and distribution of goods and&amp;nbsp;services.&lt;/p&gt;
-&lt;p&gt;I used, three main terms above, which constitutes our simple economy: demand, supply, and&amp;nbsp;price.&lt;/p&gt;
-&lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;Demand&lt;/strong&gt; is all the quantities of good or service that buyers are willing and able to buy at all possible&amp;nbsp;prices.&lt;/p&gt;
+&lt;p&gt;First, let's start by defining what is economics. In simple words, economics is the social science which studies production, consumption, and distribution of goods and services.&lt;/p&gt;
+&lt;p&gt;I used, three main terms above, which constitutes our simple economy: demand, supply, and price.&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;Demand&lt;/strong&gt; is all the quantities of good or service that buyers are willing and able to buy at all possible prices.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Demand is based on needs and wants. From the consumer point of view, we all know the difference but from an economist&amp;#8217;s perspective, they are the same. Moreover, demand is based on the ability to pay, If the agent cannot afford to pay, they have no effective&amp;nbsp;demand.&lt;/p&gt;
-&lt;blockquote&gt;&lt;p&gt;The &lt;strong&gt;law of demand&lt;/strong&gt; states that a higher price leads to a lower quantity demanded and a lower price leads to a higher quantity&amp;nbsp;demanded&lt;/p&gt;
+&lt;p&gt;Demand is based on needs and wants. From the consumer point of view, we all know the difference but from an economist's perspective, they are the same. Moreover, demand is based on the ability to pay, If the agent cannot afford to pay, they have no effective demand.&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;The &lt;strong&gt;law of demand&lt;/strong&gt; states that a higher price leads to a lower quantity demanded and a lower price leads to a higher quantity demanded&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Make it simple, low of demand says that there is an inverse relationship between price and quantity demanded and this relationship determines downward sloping demand&amp;nbsp;curve.&lt;/p&gt;
+&lt;p&gt;Make it simple, low of demand says that there is an inverse relationship between price and quantity demanded and this relationship determines downward sloping demand curve.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1181,12 +1181,12 @@ h6:hover .anchor-link {
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;Supply&lt;/strong&gt; is all the possible quantities that sellers are willing and able to produce at all possible&amp;nbsp;prices.&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;Supply&lt;/strong&gt; is all the possible quantities that sellers are willing and able to produce at all possible prices.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;When an economist talks about to supply, they mean the amount of some good or service a producer is willing to supply at each price. Price is what the producer receives for selling one unit of good or&amp;nbsp;service.&lt;/p&gt;
-&lt;blockquote&gt;&lt;p&gt;The &lt;strong&gt;low of supply&lt;/strong&gt; states that a higher price leads to a higher quantity and lower price leads to lower quantity&amp;nbsp;supplied.&lt;/p&gt;
+&lt;p&gt;When an economist talks about to supply, they mean the amount of some good or service a producer is willing to supply at each price. Price is what the producer receives for selling one unit of good or service.&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;The &lt;strong&gt;low of supply&lt;/strong&gt; states that a higher price leads to a higher quantity and lower price leads to lower quantity supplied.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Low of supply says that there is positive relationship between price and quantity supplied, leading to an upward sloping supply&amp;nbsp;curve&lt;/p&gt;
+&lt;p&gt;Low of supply says that there is positive relationship between price and quantity supplied, leading to an upward sloping supply curve&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1194,12 +1194,12 @@ h6:hover .anchor-link {
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;I mentioned earlier that our market is competitive and in competitive market demand for good or service and supply will determine the price. This price is the equilibrium&amp;nbsp;price.&lt;/p&gt;
-&lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;Equilibrium price&lt;/strong&gt; is the price for which quantity demanded and quantity supplied are&amp;nbsp;equal.&lt;/p&gt;
+&lt;p&gt;I mentioned earlier that our market is competitive and in competitive market demand for good or service and supply will determine the price. This price is the equilibrium price.&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;Equilibrium price&lt;/strong&gt; is the price for which quantity demanded and quantity supplied are equal.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;In our market settings, equilibrium occurs when the price has adjusted until the quantity supplied is equal to quantity demanded. When this equality is violated market experiences disequilibrium. When a market is experiencing a disequilibrium, there will be either a shortage or a&amp;nbsp;surplus.&lt;/p&gt;
-&lt;blockquote&gt;&lt;p&gt;When the price is above the equilibrium price, this produce &lt;strong&gt;surplus&lt;/strong&gt;, which encourages sellers to lower their prices to eliminate the&amp;nbsp;surplus.&lt;/p&gt;
-&lt;p&gt;At any price below the equilibrium price, the &lt;strong&gt;shortage&lt;/strong&gt; will exist, which leads to the price of the good&amp;nbsp;increasing.&lt;/p&gt;
+&lt;p&gt;In our market settings, equilibrium occurs when the price has adjusted until the quantity supplied is equal to quantity demanded. When this equality is violated market experiences disequilibrium. When a market is experiencing a disequilibrium, there will be either a shortage or a surplus.&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;When the price is above the equilibrium price, this produce &lt;strong&gt;surplus&lt;/strong&gt;, which encourages sellers to lower their prices to eliminate the surplus.&lt;/p&gt;
+&lt;p&gt;At any price below the equilibrium price, the &lt;strong&gt;shortage&lt;/strong&gt; will exist, which leads to the price of the good increasing.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;/div&gt;
@@ -1208,7 +1208,7 @@ h6:hover .anchor-link {
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;At that moment we defined all the necessary terms and notions in our simple economy to continue our analysis and modeling. Now, it&amp;#8217;s time to ask ourselves. Can we model mathematically this economy and see the dynamics of the buyers and sellers? Yes, we can do and we can go farther and make a simple Python script to make simulations in this&amp;nbsp;economy.&lt;/p&gt;
+&lt;p&gt;At that moment we defined all the necessary terms and notions in our simple economy to continue our analysis and modeling. Now, it's time to ask ourselves. Can we model mathematically this economy and see the dynamics of the buyers and sellers? Yes, we can do and we can go farther and make a simple Python script to make simulations in this economy.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1216,14 +1216,16 @@ h6:hover .anchor-link {
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Let&amp;#8217;s start our modeling part with defining functions for demand and supply. Logically, demand and supply are generated from some very complicated function and its real anatomy is unknown, but as we are in &lt;em&gt;simple&lt;/em&gt; economy we can assume that they are linear functions of&amp;nbsp;price:&lt;/p&gt;
+&lt;p&gt;Let's start our modeling part with defining functions for demand and supply. Logically, demand and supply are generated from some very complicated function and its real anatomy is unknown, but as we are in &lt;em&gt;simple&lt;/em&gt; economy we can assume that they are linear functions of price:&lt;/p&gt;
 &lt;p&gt;A Liner demand curve:
 \begin{align*} Q =
-a - b\cdot p&amp;nbsp;\end{align*}&lt;/p&gt;
+a - b\cdot p
+\end{align*}&lt;/p&gt;
 &lt;p&gt;A linear supply curve:
 \begin{align*} Q =
-c + d\cdot p&amp;nbsp;\end{align*}&lt;/p&gt;
-&lt;p&gt;Here, $p$ is the price paid by the consumer and $Q$ is the quantity. $a$, $b$, $c$, and $d$ are demand and supply&amp;nbsp;parameters.&lt;/p&gt;
+c + d\cdot p
+\end{align*}&lt;/p&gt;
+&lt;p&gt;Here, $p$ is the price paid by the consumer and $Q$ is the quantity. $a$, $b$, $c$, and $d$ are demand and supply parameters.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1231,20 +1233,20 @@ c + d\cdot p&amp;nbsp;\end{align*}&lt;/p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Let first solve this mathematically. We have the equation for quantity and the parameters $a$ and $b$ are predetermined, or we can choose their value. We know that in equilibrium, quantity demanded and quantity supplied are equal. So, by equating our equations and doing some simple algebra we&amp;#8217;ll get equilibrium price. Let denote this price by&amp;nbsp;$P^{*}$&lt;/p&gt;
+&lt;p&gt;Let first solve this mathematically. We have the equation for quantity and the parameters $a$ and $b$ are predetermined, or we can choose their value. We know that in equilibrium, quantity demanded and quantity supplied are equal. So, by equating our equations and doing some simple algebra we'll get equilibrium price. Let denote this price by $P^{*}$&lt;/p&gt;
 \begin{align*}
 a - b\cdot p = c + d\cdot p \Rightarrow
-&amp;#92;
-&amp;#92; \Rightarrow d\cdot p + b\cdot p = a - c
-&amp;#92;
-&amp;#92; \Rightarrow P^{*} =
+\\
+\\ \Rightarrow d\cdot p + b\cdot p = a - c
+\\
+\\ \Rightarrow P^{*} =
 \frac{a - c}{d + b}
-\end{align*}&lt;p&gt;By having $P^{*}$ we have equilibrium price. Now, let me introduce some new notions, which are very natural in this market economy, such as, consumer surplus, producer surplus, and social&amp;nbsp;surplus.&lt;/p&gt;
-&lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;Consumer surplus&lt;/strong&gt; is the gap between the price that consumers are willing to pay and equilibrium&amp;nbsp;price.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Producer surplus&lt;/strong&gt; is the gap between the price for which producers are willing to sell a product and market equilibrium&amp;nbsp;price.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Social surplus&lt;/strong&gt; is the sum of consumer and producer&amp;nbsp;surplus.&lt;/p&gt;
+\end{align*}&lt;p&gt;By having $P^{*}$ we have equilibrium price. Now, let me introduce some new notions, which are very natural in this market economy, such as, consumer surplus, producer surplus, and social surplus.&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&lt;strong&gt;Consumer surplus&lt;/strong&gt; is the gap between the price that consumers are willing to pay and equilibrium price.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Producer surplus&lt;/strong&gt; is the gap between the price for which producers are willing to sell a product and market equilibrium price.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Social surplus&lt;/strong&gt; is the sum of consumer and producer surplus.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;To calculate these values, first, we need to calculate inverse demand and supply function. Inverse demand function considers price as a function of quantity. We have quantity as a function of a price, hence we need to find its&amp;nbsp;inverse&lt;/p&gt;
+&lt;p&gt;To calculate these values, first, we need to calculate inverse demand and supply function. Inverse demand function considers price as a function of quantity. We have quantity as a function of a price, hence we need to find its inverse&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1252,18 +1254,18 @@ a - b\cdot p = c + d\cdot p \Rightarrow
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;We have a linear demand curve, given&amp;nbsp;by&lt;/p&gt;
+&lt;p&gt;We have a linear demand curve, given by&lt;/p&gt;
 \begin{align*} Q =
 a - b\cdot p
-\end{align*}&lt;p&gt;Let change the notation a little bit and denote demand function in the following&amp;nbsp;way:&lt;/p&gt;
+\end{align*}&lt;p&gt;Let change the notation a little bit and denote demand function in the following way:&lt;/p&gt;
 \begin{align*} Q(p) =
 a - b\cdot p
-\end{align*}&lt;p&gt;To find the inverse of this function we have to solve the above function for $p$. Doing simple algebra,&amp;nbsp;yields&lt;/p&gt;
+\end{align*}&lt;p&gt;To find the inverse of this function we have to solve the above function for $p$. Doing simple algebra, yields&lt;/p&gt;
 \begin{align*} p = \frac{a - Q}{b}
-\end{align*}&lt;p&gt;and this is the same to&amp;nbsp;write&lt;/p&gt;
+\end{align*}&lt;p&gt;and this is the same to write&lt;/p&gt;
 \begin{align*} p(Q) = 
 \frac{a - Q}{b}
-\end{align*}&lt;p&gt;Doing the same for supply, we easily find inverse supply function, given&amp;nbsp;by&lt;/p&gt;
+\end{align*}&lt;p&gt;Doing the same for supply, we easily find inverse supply function, given by&lt;/p&gt;
 \begin{align*}p(Q) = 
 \frac{Q - c}{d}
 \end{align*}
@@ -1273,7 +1275,7 @@ a - b\cdot p
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Consumer surplus is the area under inverse demand function and producer surplus is the area above inverse supply function. This may not be clear but after plotting demand and supply curves it will be understandable, what is consumer and producer surplus and how to calculate them. For general sense, we need integrals of inverse demand and supply functions to calculate surplus. See the &lt;a href="https://en.wikipedia.org/wiki/Economic_surplus#Calculation"&gt;link&lt;/a&gt; for more&amp;nbsp;information.&lt;/p&gt;
+&lt;p&gt;Consumer surplus is the area under inverse demand function and producer surplus is the area above inverse supply function. This may not be clear but after plotting demand and supply curves it will be understandable, what is consumer and producer surplus and how to calculate them. For general sense, we need integrals of inverse demand and supply functions to calculate surplus. See the &lt;a href="https://en.wikipedia.org/wiki/Economic_surplus#Calculation"&gt;link&lt;/a&gt; for more information.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1288,7 +1290,7 @@ a - b\cdot p
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;As we have all the necessary information and equations, we can start to code these equations in Python. I&amp;#8217;m going to write a simple Python class, which will calculate equilibrium price and quantity, consumer and producer&amp;nbsp;surplus.&lt;/p&gt;
+&lt;p&gt;As we have all the necessary information and equations, we can start to code these equations in Python. I'm going to write a simple Python class, which will calculate equilibrium price and quantity, consumer and producer surplus.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1360,7 +1362,7 @@ a - b\cdot p
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Let, test our model with some base line&amp;nbsp;parameters.&lt;/p&gt;
+&lt;p&gt;Let, test our model with some base line parameters.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1452,7 +1454,7 @@ Producer Surplus = 42.25
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Let plot inverse demand and inverse supply curves and shade consumer and producer surplus&amp;nbsp;area.&lt;/p&gt;
+&lt;p&gt;Let plot inverse demand and inverse supply curves and shade consumer and producer surplus area.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1540,7 +1542,7 @@ Producer Surplus = 42.25
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;In the above graph, we see the equilibrium point. We can ask the following question. What will happen to the equilibrium price and quantity if demand or supply curve shits? Let make a table and summarize the changes in equilibrium due to changes in supply and demand&amp;nbsp;curve.&lt;/p&gt;
+&lt;p&gt;In the above graph, we see the equilibrium point. We can ask the following question. What will happen to the equilibrium price and quantity if demand or supply curve shits? Let make a table and summarize the changes in equilibrium due to changes in supply and demand curve.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;&lt;tr&gt;
 &lt;th&gt;Change&lt;/th&gt;
@@ -1571,22 +1573,22 @@ Producer Surplus = 42.25
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Demand increases, Supply increases&lt;/td&gt;
-&lt;td&gt;$P$ $\Updownarrow$, $&amp;#92;(indeterminate)$&lt;/td&gt;
+&lt;td&gt;$P$ $\Updownarrow$, $\\(indeterminate)$&lt;/td&gt;
 &lt;td&gt;$Q$ $\Uparrow$&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Demand increases, Supply decreases&lt;/td&gt;
 &lt;td&gt;$P$ $\Uparrow$&lt;/td&gt;
-&lt;td&gt;$Q$ $\Updownarrow$, $&amp;#92;(indeterminate)$&lt;/td&gt;
+&lt;td&gt;$Q$ $\Updownarrow$, $\\(indeterminate)$&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Demand decreases, Supply increases&lt;/td&gt;
 &lt;td&gt;$P$ $\Downarrow$&lt;/td&gt;
-&lt;td&gt;$Q$ $\Updownarrow$, $&amp;#92;(indeterminate)$&lt;/td&gt;
+&lt;td&gt;$Q$ $\Updownarrow$, $\\(indeterminate)$&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Demand decreases, Supply decreases&lt;/td&gt;
-&lt;td&gt;$P$ $\Updownarrow$, $&amp;#92;(indeterminate)$&lt;/td&gt;
+&lt;td&gt;$P$ $\Updownarrow$, $\\(indeterminate)$&lt;/td&gt;
 &lt;td&gt;$Q$ $\Downarrow$&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
@@ -1598,7 +1600,7 @@ Producer Surplus = 42.25
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;From the above table, we see that in some cases due to the simultaneous changes in supply and demand we cannot determine equilibrium price or quantity movement. That&amp;#8217;s the case when other factors are in consideration, but these factors are out of the scope for this&amp;nbsp;blog.&lt;/p&gt;
+&lt;p&gt;From the above table, we see that in some cases due to the simultaneous changes in supply and demand we cannot determine equilibrium price or quantity movement. That's the case when other factors are in consideration, but these factors are out of the scope for this blog.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1606,7 +1608,7 @@ Producer Surplus = 42.25
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;To sum up, we saw how to model simple one good competitive market both mathematically and programmatically. This simple economy model is a building block of more complex models. I do hope you gained some understanding of building economic models. If you feel ambitious you can introduce government tax in this model and calculate supply with and without tax as well as a deadweight loss by imposing government tax and see graphically how the tax affects the supply&amp;nbsp;curve.&lt;/p&gt;
+&lt;p&gt;To sum up, we saw how to model simple one good competitive market both mathematically and programmatically. This simple economy model is a building block of more complex models. I do hope you gained some understanding of building economic models. If you feel ambitious you can introduce government tax in this model and calculate supply with and without tax as well as a deadweight loss by imposing government tax and see graphically how the tax affects the supply curve.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1615,7 +1617,7 @@ Producer Surplus = 42.25
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="References"&gt;References&lt;a class="anchor-link" href="#References"&gt;&amp;#182;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href="https://www.khanacademy.org/economics-finance-domain/microeconomics"&gt;Khan&amp;nbsp;Academy&lt;/a&gt;&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://www.khanacademy.org/economics-finance-domain/microeconomics"&gt;Khan Academy&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;a href="https://lectures.quantecon.org/py/"&gt;Quantecon&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
