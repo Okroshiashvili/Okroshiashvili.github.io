@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Nodar Okroshiashvili" />
 
-        <meta name="description" content="Written with StackEdit. Churn Rate Modeling¶ import pandas as pd df = pd.read_excel(&#39;nodo.xlsx&#39;) from sklearn import preprocessing This is my new definition of data science import numpy as np import matplotlib.pyplot as plt x = np.linspace(0, 2*np.pi) plt.plot(x, np.sin(x)) def …
+        <meta name="description" content="Written with StackEdit. Churn Rate Modeling¶ import pandas as pd df = pd.read_excel(&#39;nodo.xlsx&#39;) from sklearn import preprocessing This is my new definition of data science import numpy as np import matplotlib.pyplot as plt x = np.linspace(0, 2*np.pi) plt.plot(x, np.sin(x)) [&lt;matplotlib …
 " />
         <meta name="twitter:creator" content="@N_Okroshiashvil">
         <meta property="og:type" content="article" />
@@ -16,12 +16,12 @@
 
 <meta property="og:title" content="Test post "/>
 <meta property="og:url" content="https://dsfabric.org/test-post" />
-<meta property="og:description" content="Written with StackEdit. Churn Rate Modeling¶ import pandas as pd df = pd.read_excel(&#39;nodo.xlsx&#39;) from sklearn import preprocessing This is my new definition of data science import numpy as np import matplotlib.pyplot as plt x = np.linspace(0, 2*np.pi) plt.plot(x, np.sin(x)) def …" />
+<meta property="og:description" content="Written with StackEdit. Churn Rate Modeling¶ import pandas as pd df = pd.read_excel(&#39;nodo.xlsx&#39;) from sklearn import preprocessing This is my new definition of data science import numpy as np import matplotlib.pyplot as plt x = np.linspace(0, 2*np.pi) plt.plot(x, np.sin(x)) [&lt;matplotlib …" />
 <meta property="og:site_name" content="Data Science Fabric" />
 <meta property="og:article:author" content="Nodar Okroshiashvili" />
 <meta property="og:article:published_time" content="2018-08-29T02:14:00+04:00" />
 <meta name="twitter:title" content="Test post ">
-<meta name="twitter:description" content="Written with StackEdit. Churn Rate Modeling¶ import pandas as pd df = pd.read_excel(&#39;nodo.xlsx&#39;) from sklearn import preprocessing This is my new definition of data science import numpy as np import matplotlib.pyplot as plt x = np.linspace(0, 2*np.pi) plt.plot(x, np.sin(x)) def …">
+<meta name="twitter:description" content="Written with StackEdit. Churn Rate Modeling¶ import pandas as pd df = pd.read_excel(&#39;nodo.xlsx&#39;) from sklearn import preprocessing This is my new definition of data science import numpy as np import matplotlib.pyplot as plt x = np.linspace(0, 2*np.pi) plt.plot(x, np.sin(x)) [&lt;matplotlib …">
 
         <title>Test post  · Data Science Fabric
 </title>
@@ -115,14 +115,31 @@
 </blockquote>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
 
-<span class="k">def</span> <span class="nf">sqaure</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+
+<div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="p">[</span><span class="o">&lt;</span><span class="n">matplotlib</span><span class="p">.</span><span class="n">lines</span><span class="p">.</span><span class="n">Line2D</span> <span class="k">at</span> <span class="mi">0</span><span class="n">x7f032d0992e8</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+
+
+<p><img alt="picture" src="content/article/images/blog_post_figure2_1.png">\</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sqaure</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
 
-<span class="n">square</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">sqaure</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="mi">25</span>
+</pre></div>
+
+
+<p>pweave -f markdown blog_post.pmd</p>
 
 
                 <p id="post-share-links">
