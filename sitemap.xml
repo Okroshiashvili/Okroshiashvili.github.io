@@ -5,35 +5,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://dsfabric.org/</loc>
-<lastmod>2019-10-01T14:09:19-00:00</lastmod>
+<lastmod>2019-10-31T12:17:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://dsfabric.org/archives.html</loc>
-<lastmod>2019-10-01T14:09:19-00:00</lastmod>
+<lastmod>2019-10-31T12:17:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://dsfabric.org/tags.html</loc>
-<lastmod>2019-10-01T14:09:19-00:00</lastmod>
+<lastmod>2019-10-31T12:17:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://dsfabric.org/categories.html</loc>
-<lastmod>2019-10-01T14:09:19-00:00</lastmod>
+<lastmod>2019-10-31T12:17:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://dsfabric.org/search.html</loc>
-<lastmod>2019-10-01T14:09:19-00:00</lastmod>
+<lastmod>2019-10-31T12:17:47-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -102,14 +102,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://dsfabric.org/second-test-post</loc>
-<lastmod>2018-08-30T02:14:00+04:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://dsfabric.org/test-post</loc>
+<loc>https://dsfabric.org/test-post-ii</loc>
 <lastmod>2018-08-29T02:14:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
