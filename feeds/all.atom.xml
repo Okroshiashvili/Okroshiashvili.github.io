@@ -406,6 +406,7 @@ case for other functions. We are restricted to choose &lt;span class="math"&gt;\
 &lt;p&gt;Now, let do Taylor approximation for &lt;span class="math"&gt;\(sin(x)\)&lt;/span&gt; at &lt;span class="math"&gt;\(x = a\)&lt;/span&gt;&lt;/p&gt;
 &lt;div class="math"&gt;$$
 \mathbb F(x) =
+sin(x)
 $$&lt;/div&gt;
 &lt;div class="math"&gt;$$
 sin(x) \approx
