@@ -216,7 +216,7 @@ $$&lt;/div&gt;
 P_{n}(x) + R_{n}(x)
 $$&lt;/div&gt;
 &lt;p&gt;You may wonder why you need Taylor expansion, but it's very important concept in mathematics 
-and one of &lt;a href="https://en.wikipedia.org/wiki/Mathematical_beauty"&gt;mathematical beauty&lt;/a&gt;,&lt;br&gt;
+and one of &lt;a href="https://en.wikipedia.org/wiki/Mathematical_beauty"&gt;mathematical beauty&lt;/a&gt;,
 &lt;a href="https://en.wikipedia.org/wiki/Euler%27s_identity"&gt;&lt;strong&gt;Euler's Identity&lt;/strong&gt;&lt;/a&gt; is derived from Taylor 
 series expansion of &lt;span class="math"&gt;\(cos(x)\)&lt;/span&gt;, &lt;span class="math"&gt;\(sin(x)\)&lt;/span&gt;, and &lt;span class="math"&gt;\(e(x)\)&lt;/span&gt;. The derivation of Euler's Identity deserves separate post, 
 but if you want to see the derivation, you can take a look at &lt;a href="https://www.khanacademy.org/math/ap-calculus-bc/bc-series-new/bc-10-14/v/euler-s-formula-and-euler-s-identity"&gt;Khan Academy&lt;/a&gt;. 
