@@ -799,48 +799,42 @@ $$</div>
 One is <em>scalar multiplication</em> (multiplying a matrix by a single number), and second is <em>matrix multiplication</em> 
 (multiplying a matrix by another matrix).</p>
 <p>If we have some scalar or number <span class="math">\(\gamma\)</span> and matrix <span class="math">\(A\)</span>, scalar multiplication is:</p>
-<p>$$
+<div class="math">$$
 \gamma A =
 \gamma
-</p>
-<div class="math">\begin{bmatrix}
+\begin{bmatrix}
 a_{11} &amp;  \cdots &amp; a_{1m} \\
 \vdots &amp; \vdots  &amp; \vdots \\
 a_{n1} &amp;  \cdots &amp; a_{nm} \\
-\end{bmatrix}</div>
-<p> =</p>
-<div class="math">\begin{bmatrix}
+\end{bmatrix} = 
+\begin{bmatrix}
 \gamma a_{11} &amp; \cdots &amp; \gamma a_{1m} \\
 \vdots &amp; \vdots &amp; \vdots \\
 \gamma a_{n1} &amp; \cdots &amp; \gamma a_{nm} \\
-\end{bmatrix}</div>
-<p>
-$$</p>
+\end{bmatrix}
+$$</div>
 <p>To multiply two matrices, we take <strong>inner product of <span class="math">\(i\)</span>-th row of the matrix <span class="math">\(A\)</span> and <span class="math">\(j\)</span>-th columns of matrix <span class="math">\(B\)</span></strong>. 
 If we have two matrices <span class="math">\(A\)</span> is <span class="math">\(n \times k\)</span> and <span class="math">\(B\)</span> is <span class="math">\(j \times m\)</span>, then to multiply <span class="math">\(A\)</span> and <span class="math">\(B\)</span>, we require <span class="math">\(k=j\)</span>, and 
 resulting matrix <span class="math">\(AB\)</span> is <span class="math">\(n \times m\)</span>.</p>
-<p>$$
+<div class="math">$$
 A \cdot B =
-</p>
-<div class="math">\begin{bmatrix}
+\begin{bmatrix}
 a_{11} &amp; \cdots &amp; a_{1k} \\
 \vdots &amp; \vdots &amp; \vdots \\
 a_{n1} &amp; \cdots &amp; a_{nk} \\
-\end{bmatrix}</div>
-<p><em _times="\times" j m>{n\times k}
+\end{bmatrix}_{n\times k}
 \cdot
-<div class="math">\begin{bmatrix}
+\begin{bmatrix}
 b_{11} &amp; \cdots &amp; b_{1m} \\
 \vdots &amp; \vdots &amp; \vdots \\
 b_{j1} &amp; \cdots &amp; b_{jm} \\
-\end{bmatrix}</div></em> =</p>
-<div class="math">\begin{bmatrix}
+\end{bmatrix}_{j \times m} = 
+\begin{bmatrix}
 (a_{11} \times b_{11} &amp; +~\cdots~+ &amp; a_{1k} \times b_{j1}),~\cdots~,(a_{11} \times b_{1m} &amp; +~\cdots~+ &amp; a_{1k} \times b_{jm}) \\
 \vdots &amp; \vdots &amp; \vdots \\
 (a_{n1} \times b_{11} &amp; +~\cdots~+ &amp; a_{nk} \times b_{j1}),~\cdots~,(a_{n1} \times b_{1m} &amp; +~\cdots~+ &amp; a_{nk} \times b_{jm})\\
-\end{bmatrix}</div>
-<p>_{n \times m}
-$$</p>
+\end{bmatrix}_{n \times m}
+$$</div>
 <p>If you did not catch the idea of matrix multiplication don't worry. In numerical representation section I will provide 
 simpler example and some extra source to take a look.</p>
 <blockquote>

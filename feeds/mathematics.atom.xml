@@ -10066,48 +10066,42 @@ $$&lt;/div&gt;
 One is &lt;em&gt;scalar multiplication&lt;/em&gt; (multiplying a matrix by a single number), and second is &lt;em&gt;matrix multiplication&lt;/em&gt; 
 (multiplying a matrix by another matrix).&lt;/p&gt;
 &lt;p&gt;If we have some scalar or number &lt;span class="math"&gt;\(\gamma\)&lt;/span&gt; and matrix &lt;span class="math"&gt;\(A\)&lt;/span&gt;, scalar multiplication is:&lt;/p&gt;
-&lt;p&gt;$$
+&lt;div class="math"&gt;$$
 \gamma A =
 \gamma
-&lt;/p&gt;
-&lt;div class="math"&gt;\begin{bmatrix}
+\begin{bmatrix}
 a_{11} &amp;amp;  \cdots &amp;amp; a_{1m} \\
 \vdots &amp;amp; \vdots  &amp;amp; \vdots \\
 a_{n1} &amp;amp;  \cdots &amp;amp; a_{nm} \\
-\end{bmatrix}&lt;/div&gt;
-&lt;p&gt; =&lt;/p&gt;
-&lt;div class="math"&gt;\begin{bmatrix}
+\end{bmatrix} = 
+\begin{bmatrix}
 \gamma a_{11} &amp;amp; \cdots &amp;amp; \gamma a_{1m} \\
 \vdots &amp;amp; \vdots &amp;amp; \vdots \\
 \gamma a_{n1} &amp;amp; \cdots &amp;amp; \gamma a_{nm} \\
-\end{bmatrix}&lt;/div&gt;
-&lt;p&gt;
-$$&lt;/p&gt;
+\end{bmatrix}
+$$&lt;/div&gt;
 &lt;p&gt;To multiply two matrices, we take &lt;strong&gt;inner product of &lt;span class="math"&gt;\(i\)&lt;/span&gt;-th row of the matrix &lt;span class="math"&gt;\(A\)&lt;/span&gt; and &lt;span class="math"&gt;\(j\)&lt;/span&gt;-th columns of matrix &lt;span class="math"&gt;\(B\)&lt;/span&gt;&lt;/strong&gt;. 
 If we have two matrices &lt;span class="math"&gt;\(A\)&lt;/span&gt; is &lt;span class="math"&gt;\(n \times k\)&lt;/span&gt; and &lt;span class="math"&gt;\(B\)&lt;/span&gt; is &lt;span class="math"&gt;\(j \times m\)&lt;/span&gt;, then to multiply &lt;span class="math"&gt;\(A\)&lt;/span&gt; and &lt;span class="math"&gt;\(B\)&lt;/span&gt;, we require &lt;span class="math"&gt;\(k=j\)&lt;/span&gt;, and 
 resulting matrix &lt;span class="math"&gt;\(AB\)&lt;/span&gt; is &lt;span class="math"&gt;\(n \times m\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;$$
+&lt;div class="math"&gt;$$
 A \cdot B =
-&lt;/p&gt;
-&lt;div class="math"&gt;\begin{bmatrix}
+\begin{bmatrix}
 a_{11} &amp;amp; \cdots &amp;amp; a_{1k} \\
 \vdots &amp;amp; \vdots &amp;amp; \vdots \\
 a_{n1} &amp;amp; \cdots &amp;amp; a_{nk} \\
-\end{bmatrix}&lt;/div&gt;
-&lt;p&gt;&lt;em _times="\times" j m&gt;{n\times k}
+\end{bmatrix}_{n\times k}
 \cdot
-&lt;div class="math"&gt;\begin{bmatrix}
+\begin{bmatrix}
 b_{11} &amp;amp; \cdots &amp;amp; b_{1m} \\
 \vdots &amp;amp; \vdots &amp;amp; \vdots \\
 b_{j1} &amp;amp; \cdots &amp;amp; b_{jm} \\
-\end{bmatrix}&lt;/div&gt;&lt;/em&gt; =&lt;/p&gt;
-&lt;div class="math"&gt;\begin{bmatrix}
+\end{bmatrix}_{j \times m} = 
+\begin{bmatrix}
 (a_{11} \times b_{11} &amp;amp; +~\cdots~+ &amp;amp; a_{1k} \times b_{j1}),~\cdots~,(a_{11} \times b_{1m} &amp;amp; +~\cdots~+ &amp;amp; a_{1k} \times b_{jm}) \\
 \vdots &amp;amp; \vdots &amp;amp; \vdots \\
 (a_{n1} \times b_{11} &amp;amp; +~\cdots~+ &amp;amp; a_{nk} \times b_{j1}),~\cdots~,(a_{n1} \times b_{1m} &amp;amp; +~\cdots~+ &amp;amp; a_{nk} \times b_{jm})\\
-\end{bmatrix}&lt;/div&gt;
-&lt;p&gt;_{n \times m}
-$$&lt;/p&gt;
+\end{bmatrix}_{n \times m}
+$$&lt;/div&gt;
 &lt;p&gt;If you did not catch the idea of matrix multiplication don't worry. In numerical representation section I will provide 
 simpler example and some extra source to take a look.&lt;/p&gt;
 &lt;blockquote&gt;
