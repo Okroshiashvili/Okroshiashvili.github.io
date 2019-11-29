@@ -12748,11 +12748,13 @@ A * I =
 }
 &lt;/script&gt;
 </content><category term="Mathematics"></category><category term="Linear Algebra"></category><category term="Python"></category><category term="Numpy"></category><category term="Scipy"></category><category term="Mathematics"></category></entry><entry><title>Introduction to Linear Algebra with Python</title><link href="https://dsfabric.org/introduction-to-linear-algebra-with-python" rel="alternate"></link><published>2019-03-01T12:14:00+04:00</published><updated>2019-03-01T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-01:/introduction-to-linear-algebra-with-python</id><summary type="html">&lt;p&gt;This is introduction into the Linear Algebra Series&lt;/p&gt;</summary><content type="html">&lt;p&gt;These are the series of linear algebra mainly based on &lt;em&gt;Numpy&lt;/em&gt; and &lt;em&gt;Scipy&lt;/em&gt;. 
-The series will follow the sequence:
-1. &lt;strong&gt;Introduction&lt;/strong&gt;
-2. Basics of linear algebra
-3. Intermediate linear algebra: Part I and Part II
-4. Advances in linear algebra: Part I and Part II&lt;/p&gt;
+The series will follow the sequence:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Basics of linear algebra&lt;/li&gt;
+&lt;li&gt;Intermediate linear algebra: Part I and Part II&lt;/li&gt;
+&lt;li&gt;Advances in linear algebra: Part I and Part II&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;In these series I will attempt to demystify linear algebra concepts to beginners 
 and combine it with Python for practical use.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Linear algebra is one of the building block of data science among others. Its importance is huge, 
