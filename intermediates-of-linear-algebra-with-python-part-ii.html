@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Nodar Okroshiashvili" />
 
-        <meta name="description" content="This is a intermediate part of Linear Algebra with Python
+        <meta name="description" content="This is an intermediate part of Linear Algebra with Python
 " />
         <meta name="twitter:creator" content="@N_Okroshiashvil">
         <meta property="og:type" content="article" />
@@ -16,12 +16,12 @@
 
 <meta property="og:title" content="Intermediates of Linear Algebra with Python - Part II "/>
 <meta property="og:url" content="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-ii" />
-<meta property="og:description" content="This is a intermediate part of Linear Algebra with Python" />
+<meta property="og:description" content="This is an intermediate part of Linear Algebra with Python" />
 <meta property="og:site_name" content="Data Science Fabric" />
 <meta property="og:article:author" content="Nodar Okroshiashvili" />
 <meta property="og:article:published_time" content="2019-03-03T12:14:00+04:00" />
 <meta name="twitter:title" content="Intermediates of Linear Algebra with Python - Part II ">
-<meta name="twitter:description" content="This is a intermediate part of Linear Algebra with Python">
+<meta name="twitter:description" content="This is an intermediate part of Linear Algebra with Python">
 
         <title>Intermediates of Linear Algebra with Python - Part II  · Data Science Fabric
 </title>
@@ -100,1134 +100,13 @@
 <div class="row-fluid">
         <div class="span8 offset2 article-content">
             
-            <style type="text/css">/*!
-*
-* IPython notebook
-*
-*/
-/* CSS font colors for translated ANSI escape sequences */
-/* The color values are a mix of
-   http://www.xcolors.net/dl/baskerville-ivorylight and
-   http://www.xcolors.net/dl/euphrasia */
-.ansi-black-fg {
-  color: #3E424D;
-}
-.ansi-black-bg {
-  background-color: #3E424D;
-}
-.ansi-black-intense-fg {
-  color: #282C36;
-}
-.ansi-black-intense-bg {
-  background-color: #282C36;
-}
-.ansi-red-fg {
-  color: #E75C58;
-}
-.ansi-red-bg {
-  background-color: #E75C58;
-}
-.ansi-red-intense-fg {
-  color: #B22B31;
-}
-.ansi-red-intense-bg {
-  background-color: #B22B31;
-}
-.ansi-green-fg {
-  color: #00A250;
-}
-.ansi-green-bg {
-  background-color: #00A250;
-}
-.ansi-green-intense-fg {
-  color: #007427;
-}
-.ansi-green-intense-bg {
-  background-color: #007427;
-}
-.ansi-yellow-fg {
-  color: #DDB62B;
-}
-.ansi-yellow-bg {
-  background-color: #DDB62B;
-}
-.ansi-yellow-intense-fg {
-  color: #B27D12;
-}
-.ansi-yellow-intense-bg {
-  background-color: #B27D12;
-}
-.ansi-blue-fg {
-  color: #208FFB;
-}
-.ansi-blue-bg {
-  background-color: #208FFB;
-}
-.ansi-blue-intense-fg {
-  color: #0065CA;
-}
-.ansi-blue-intense-bg {
-  background-color: #0065CA;
-}
-.ansi-magenta-fg {
-  color: #D160C4;
-}
-.ansi-magenta-bg {
-  background-color: #D160C4;
-}
-.ansi-magenta-intense-fg {
-  color: #A03196;
-}
-.ansi-magenta-intense-bg {
-  background-color: #A03196;
-}
-.ansi-cyan-fg {
-  color: #60C6C8;
-}
-.ansi-cyan-bg {
-  background-color: #60C6C8;
-}
-.ansi-cyan-intense-fg {
-  color: #258F8F;
-}
-.ansi-cyan-intense-bg {
-  background-color: #258F8F;
-}
-.ansi-white-fg {
-  color: #C5C1B4;
-}
-.ansi-white-bg {
-  background-color: #C5C1B4;
-}
-.ansi-white-intense-fg {
-  color: #A1A6B2;
-}
-.ansi-white-intense-bg {
-  background-color: #A1A6B2;
-}
-.ansi-default-inverse-fg {
-  color: #FFFFFF;
-}
-.ansi-default-inverse-bg {
-  background-color: #000000;
-}
-.ansi-bold {
-  font-weight: bold;
-}
-.ansi-underline {
-  text-decoration: underline;
-}
-/* The following styles are deprecated an will be removed in a future version */
-.ansibold {
-  font-weight: bold;
-}
-.ansi-inverse {
-  outline: 0.5px dotted;
-}
-/* use dark versions for foreground, to improve visibility */
-.ansiblack {
-  color: black;
-}
-.ansired {
-  color: darkred;
-}
-.ansigreen {
-  color: darkgreen;
-}
-.ansiyellow {
-  color: #c4a000;
-}
-.ansiblue {
-  color: darkblue;
-}
-.ansipurple {
-  color: darkviolet;
-}
-.ansicyan {
-  color: steelblue;
-}
-.ansigray {
-  color: gray;
-}
-/* and light for background, for the same reason */
-.ansibgblack {
-  background-color: black;
-}
-.ansibgred {
-  background-color: red;
-}
-.ansibggreen {
-  background-color: green;
-}
-.ansibgyellow {
-  background-color: yellow;
-}
-.ansibgblue {
-  background-color: blue;
-}
-.ansibgpurple {
-  background-color: magenta;
-}
-.ansibgcyan {
-  background-color: cyan;
-}
-.ansibggray {
-  background-color: gray;
-}
-div.cell {
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: vertical;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: vertical;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  border-radius: 2px;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent;
-  width: 100%;
-  padding: 5px;
-  /* This acts as a spacer between cells, that is outside the border */
-  margin: 0px;
-  outline: none;
-  position: relative;
-  overflow: visible;
-}
-div.cell:before {
-  position: absolute;
-  display: block;
-  top: -1px;
-  left: -1px;
-  width: 5px;
-  height: calc(100% +  2px);
-  content: '';
-  background: transparent;
-}
-div.cell.jupyter-soft-selected {
-  border-left-color: #E3F2FD;
-  border-left-width: 1px;
-  padding-left: 5px;
-  border-right-color: #E3F2FD;
-  border-right-width: 1px;
-  background: #E3F2FD;
-}
-@media print {
-  div.cell.jupyter-soft-selected {
-    border-color: transparent;
-  }
-}
-div.cell.selected,
-div.cell.selected.jupyter-soft-selected {
-  border-color: #ababab;
-}
-div.cell.selected:before,
-div.cell.selected.jupyter-soft-selected:before {
-  position: absolute;
-  display: block;
-  top: -1px;
-  left: -1px;
-  width: 5px;
-  height: calc(100% +  2px);
-  content: '';
-  background: #42A5F5;
-}
-@media print {
-  div.cell.selected,
-  div.cell.selected.jupyter-soft-selected {
-    border-color: transparent;
-  }
-}
-.edit_mode div.cell.selected {
-  border-color: #66BB6A;
-}
-.edit_mode div.cell.selected:before {
-  position: absolute;
-  display: block;
-  top: -1px;
-  left: -1px;
-  width: 5px;
-  height: calc(100% +  2px);
-  content: '';
-  background: #66BB6A;
-}
-@media print {
-  .edit_mode div.cell.selected {
-    border-color: transparent;
-  }
-}
-.prompt {
-  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
-  min-width: 14ex;
-  /* This padding is tuned to match the padding on the CodeMirror editor. */
-  padding: 0.4em;
-  margin: 0px;
-  font-family: monospace;
-  text-align: right;
-  /* This has to match that of the the CodeMirror class line-height below */
-  line-height: 1.21429em;
-  /* Don't highlight prompt number selection */
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  /* Use default cursor */
-  cursor: default;
-}
-@media (max-width: 540px) {
-  .prompt {
-    text-align: left;
-  }
-}
-div.inner_cell {
-  min-width: 0;
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: vertical;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: vertical;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  /* Old browsers */
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  box-flex: 1;
-  /* Modern browsers */
-  flex: 1;
-}
-/* input_area and input_prompt must match in top border and margin for alignment */
-div.input_area {
-  border: 1px solid #cfcfcf;
-  border-radius: 2px;
-  background: #f7f7f7;
-  line-height: 1.21429em;
-}
-/* This is needed so that empty prompt areas can collapse to zero height when there
-   is no content in the output_subarea and the prompt. The main purpose of this is
-   to make sure that empty JavaScript output_subareas have no height. */
-div.prompt:empty {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-div.unrecognized_cell {
-  padding: 5px 5px 5px 0px;
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: horizontal;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: horizontal;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-}
-div.unrecognized_cell .inner_cell {
-  border-radius: 2px;
-  padding: 5px;
-  font-weight: bold;
-  color: red;
-  border: 1px solid #cfcfcf;
-  background: #eaeaea;
-}
-div.unrecognized_cell .inner_cell a {
-  color: inherit;
-  text-decoration: none;
-}
-div.unrecognized_cell .inner_cell a:hover {
-  color: inherit;
-  text-decoration: none;
-}
-@media (max-width: 540px) {
-  div.unrecognized_cell > div.prompt {
-    display: none;
-  }
-}
-div.code_cell {
-  /* avoid page breaking on code cells when printing */
-}
-@media print {
-  div.code_cell {
-    page-break-inside: avoid;
-  }
-}
-/* any special styling for code cells that are currently running goes here */
-div.input {
-  page-break-inside: avoid;
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: horizontal;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: horizontal;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-}
-@media (max-width: 540px) {
-  div.input {
-    /* Old browsers */
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-box-align: stretch;
-    display: -moz-box;
-    -moz-box-orient: vertical;
-    -moz-box-align: stretch;
-    display: box;
-    box-orient: vertical;
-    box-align: stretch;
-    /* Modern browsers */
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-  }
-}
-/* input_area and input_prompt must match in top border and margin for alignment */
-div.input_prompt {
-  color: #303F9F;
-  border-top: 1px solid transparent;
-}
-div.input_area > div.highlight {
-  margin: 0.4em;
-  border: none;
-  padding: 0px;
-  background-color: transparent;
-}
-div.input_area > div.highlight > pre {
-  margin: 0px;
-  border: none;
-  padding: 0px;
-  background-color: transparent;
-}
-/* The following gets added to the <head> if it is detected that the user has a
- * monospace font with inconsistent normal/bold/italic height.  See
- * notebookmain.js.  Such fonts will have keywords vertically offset with
- * respect to the rest of the text.  The user should select a better font.
- * See: https://github.com/ipython/ipython/issues/1503
- *
- * .CodeMirror span {
- *      vertical-align: bottom;
- * }
- */
-.CodeMirror {
-  line-height: 1.21429em;
-  /* Changed from 1em to our global default */
-  font-size: 14px;
-  height: auto;
-  /* Changed to auto to autogrow */
-  background: none;
-  /* Changed from white to allow our bg to show through */
-}
-.CodeMirror-scroll {
-  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
-  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
-  overflow-y: hidden;
-  overflow-x: auto;
-}
-.CodeMirror-lines {
-  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
-  /* we have set a different line-height and want this to scale with that. */
-  /* Note that this should set vertical padding only, since CodeMirror assumes
-       that horizontal padding will be set on CodeMirror pre */
-  padding: 0.4em 0;
-}
-.CodeMirror-linenumber {
-  padding: 0 8px 0 4px;
-}
-.CodeMirror-gutters {
-  border-bottom-left-radius: 2px;
-  border-top-left-radius: 2px;
-}
-.CodeMirror pre {
-  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
-    use .CodeMirror-lines for vertical */
-  padding: 0 0.4em;
-  border: 0;
-  border-radius: 0;
-}
-.CodeMirror-cursor {
-  border-left: 1.4px solid black;
-}
-@media screen and (min-width: 2138px) and (max-width: 4319px) {
-  .CodeMirror-cursor {
-    border-left: 2px solid black;
-  }
-}
-@media screen and (min-width: 4320px) {
-  .CodeMirror-cursor {
-    border-left: 4px solid black;
-  }
-}
-/*
-
-Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
-Adapted from GitHub theme
-
-*/
-.highlight-base {
-  color: #000;
-}
-.highlight-variable {
-  color: #000;
-}
-.highlight-variable-2 {
-  color: #1a1a1a;
-}
-.highlight-variable-3 {
-  color: #333333;
-}
-.highlight-string {
-  color: #BA2121;
-}
-.highlight-comment {
-  color: #408080;
-  font-style: italic;
-}
-.highlight-number {
-  color: #080;
-}
-.highlight-atom {
-  color: #88F;
-}
-.highlight-keyword {
-  color: #008000;
-  font-weight: bold;
-}
-.highlight-builtin {
-  color: #008000;
-}
-.highlight-error {
-  color: #f00;
-}
-.highlight-operator {
-  color: #AA22FF;
-  font-weight: bold;
-}
-.highlight-meta {
-  color: #AA22FF;
-}
-/* previously not defined, copying from default codemirror */
-.highlight-def {
-  color: #00f;
-}
-.highlight-string-2 {
-  color: #f50;
-}
-.highlight-qualifier {
-  color: #555;
-}
-.highlight-bracket {
-  color: #997;
-}
-.highlight-tag {
-  color: #170;
-}
-.highlight-attribute {
-  color: #00c;
-}
-.highlight-header {
-  color: blue;
-}
-.highlight-quote {
-  color: #090;
-}
-.highlight-link {
-  color: #00c;
-}
-/* apply the same style to codemirror */
-.cm-s-ipython span.cm-keyword {
-  color: #008000;
-  font-weight: bold;
-}
-.cm-s-ipython span.cm-atom {
-  color: #88F;
-}
-.cm-s-ipython span.cm-number {
-  color: #080;
-}
-.cm-s-ipython span.cm-def {
-  color: #00f;
-}
-.cm-s-ipython span.cm-variable {
-  color: #000;
-}
-.cm-s-ipython span.cm-operator {
-  color: #AA22FF;
-  font-weight: bold;
-}
-.cm-s-ipython span.cm-variable-2 {
-  color: #1a1a1a;
-}
-.cm-s-ipython span.cm-variable-3 {
-  color: #333333;
-}
-.cm-s-ipython span.cm-comment {
-  color: #408080;
-  font-style: italic;
-}
-.cm-s-ipython span.cm-string {
-  color: #BA2121;
-}
-.cm-s-ipython span.cm-string-2 {
-  color: #f50;
-}
-.cm-s-ipython span.cm-meta {
-  color: #AA22FF;
-}
-.cm-s-ipython span.cm-qualifier {
-  color: #555;
-}
-.cm-s-ipython span.cm-builtin {
-  color: #008000;
-}
-.cm-s-ipython span.cm-bracket {
-  color: #997;
-}
-.cm-s-ipython span.cm-tag {
-  color: #170;
-}
-.cm-s-ipython span.cm-attribute {
-  color: #00c;
-}
-.cm-s-ipython span.cm-header {
-  color: blue;
-}
-.cm-s-ipython span.cm-quote {
-  color: #090;
-}
-.cm-s-ipython span.cm-link {
-  color: #00c;
-}
-.cm-s-ipython span.cm-error {
-  color: #f00;
-}
-.cm-s-ipython span.cm-tab {
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
-  background-position: right;
-  background-repeat: no-repeat;
-}
-div.output_wrapper {
-  /* this position must be relative to enable descendents to be absolute within it */
-  position: relative;
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: vertical;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: vertical;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  z-index: 1;
-}
-/* class for the output area when it should be height-limited */
-div.output_scroll {
-  /* ideally, this would be max-height, but FF barfs all over that */
-  height: 24em;
-  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
-  width: 100%;
-  overflow: auto;
-  border-radius: 2px;
-  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
-  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
-  display: block;
-}
-/* output div while it is collapsed */
-div.output_collapsed {
-  margin: 0px;
-  padding: 0px;
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: vertical;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: vertical;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-div.out_prompt_overlay {
-  height: 100%;
-  padding: 0px 0.4em;
-  position: absolute;
-  border-radius: 2px;
-}
-div.out_prompt_overlay:hover {
-  /* use inner shadow to get border that is computed the same on WebKit/FF */
-  -webkit-box-shadow: inset 0 0 1px #000;
-  box-shadow: inset 0 0 1px #000;
-  background: rgba(240, 240, 240, 0.5);
-}
-div.output_prompt {
-  color: #D84315;
-}
-/* This class is the outer container of all output sections. */
-div.output_area {
-  padding: 0px;
-  page-break-inside: avoid;
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: horizontal;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: horizontal;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-}
-div.output_area .MathJax_Display {
-  text-align: left !important;
-}
-div.output_area 
-div.output_area 
-div.output_area img,
-div.output_area svg {
-  max-width: 100%;
-  height: auto;
-}
-div.output_area img.unconfined,
-div.output_area svg.unconfined {
-  max-width: none;
-}
-div.output_area .mglyph > img {
-  max-width: none;
-}
-/* This is needed to protect the pre formating from global settings such
-   as that of bootstrap */
-.output {
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: vertical;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: vertical;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-@media (max-width: 540px) {
-  div.output_area {
-    /* Old browsers */
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-box-align: stretch;
-    display: -moz-box;
-    -moz-box-orient: vertical;
-    -moz-box-align: stretch;
-    display: box;
-    box-orient: vertical;
-    box-align: stretch;
-    /* Modern browsers */
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-  }
-}
-div.output_area pre {
-  margin: 0;
-  padding: 1px 0 1px 0;
-  border: 0;
-  vertical-align: baseline;
-  color: black;
-  background-color: transparent;
-  border-radius: 0;
-}
-/* This class is for the output subarea inside the output_area and after
-   the prompt div. */
-div.output_subarea {
-  overflow-x: auto;
-  padding: 0.4em;
-  /* Old browsers */
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  box-flex: 1;
-  /* Modern browsers */
-  flex: 1;
-  max-width: calc(100% - 14ex);
-}
-div.output_scroll div.output_subarea {
-  overflow-x: visible;
-}
-/* The rest of the output_* classes are for special styling of the different
-   output types */
-/* all text output has this class: */
-div.output_text {
-  text-align: left;
-  color: #000;
-  /* This has to match that of the the CodeMirror class line-height below */
-  line-height: 1.21429em;
-}
-/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
-div.output_stderr {
-  background: #fdd;
-  /* very light red background for stderr */
-}
-div.output_latex {
-  text-align: left;
-}
-/* Empty output_javascript divs should have no height */
-div.output_javascript:empty {
-  padding: 0;
-}
-.js-error {
-  color: darkred;
-}
-/* raw_input styles */
-div.raw_input_container {
-  line-height: 1.21429em;
-  padding-top: 5px;
-}
-pre.raw_input_prompt {
-  /* nothing needed here. */
-}
-input.raw_input {
-  font-family: monospace;
-  font-size: inherit;
-  color: inherit;
-  width: auto;
-  /* make sure input baseline aligns with prompt */
-  vertical-align: baseline;
-  /* padding + margin = 0.5em between prompt and cursor */
-  padding: 0em 0.25em;
-  margin: 0em 0.25em;
-}
-input.raw_input:focus {
-  box-shadow: none;
-}
-p.p-space {
-  margin-bottom: 10px;
-}
-div.output_unrecognized {
-  padding: 5px;
-  font-weight: bold;
-  color: red;
-}
-div.output_unrecognized a {
-  color: inherit;
-  text-decoration: none;
-}
-div.output_unrecognized a:hover {
-  color: inherit;
-  text-decoration: none;
-}
-.rendered_html {
-  color: #000;
-  /* any extras will just be numbers: */
-}
-
-
-
-.rendered_html :link {
-  text-decoration: underline;
-}
-.rendered_html :visited {
-  text-decoration: underline;
-}
-
-
-
-
-
-
-.rendered_html h1:first-child {
-  margin-top: 0.538em;
-}
-.rendered_html h2:first-child {
-  margin-top: 0.636em;
-}
-.rendered_html h3:first-child {
-  margin-top: 0.777em;
-}
-.rendered_html h4:first-child {
-  margin-top: 1em;
-}
-.rendered_html h5:first-child {
-  margin-top: 1em;
-}
-.rendered_html h6:first-child {
-  margin-top: 1em;
-}
-.rendered_html ul:not(.list-inline),
-.rendered_html ol:not(.list-inline) {
-  padding-left: 2em;
-}
-
-
-
-
-
-
-
-
-.rendered_html * + ul {
-  margin-top: 1em;
-}
-.rendered_html * + ol {
-  margin-top: 1em;
-}
-
-
-
-
-
-.rendered_html pre,
-
-
-
-
-.rendered_html tr,
-.rendered_html th,
-
-
-.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
-}
-.rendered_html * + table {
-  margin-top: 1em;
-}
-
-.rendered_html * + p {
-  margin-top: 1em;
-}
-
-.rendered_html * + img {
-  margin-top: 1em;
-}
-.rendered_html img,
-
-.rendered_html img.unconfined,
-
-
-.rendered_html * + .alert {
-  margin-top: 1em;
-}
-[dir="rtl"] 
-div.text_cell {
-  /* Old browsers */
-  display: -webkit-box;
-  -webkit-box-orient: horizontal;
-  -webkit-box-align: stretch;
-  display: -moz-box;
-  -moz-box-orient: horizontal;
-  -moz-box-align: stretch;
-  display: box;
-  box-orient: horizontal;
-  box-align: stretch;
-  /* Modern browsers */
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-}
-@media (max-width: 540px) {
-  div.text_cell > div.prompt {
-    display: none;
-  }
-}
-div.text_cell_render {
-  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
-  outline: none;
-  resize: none;
-  width: inherit;
-  border-style: none;
-  padding: 0.5em 0.5em 0.5em 0.4em;
-  color: #000;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-}
-a.anchor-link:link {
-  text-decoration: none;
-  padding: 0px 20px;
-  visibility: hidden;
-}
-h1:hover .anchor-link,
-h2:hover .anchor-link,
-h3:hover .anchor-link,
-h4:hover .anchor-link,
-h5:hover .anchor-link,
-h6:hover .anchor-link {
-  visibility: visible;
-}
-.text_cell.rendered .input_area {
-  display: none;
-}
-.text_cell.rendered 
-.text_cell.rendered .rendered_html tr,
-.text_cell.rendered .rendered_html th,
-.text_cell.rendered 
-.text_cell.unrendered .text_cell_render {
-  display: none;
-}
-.text_cell .dropzone .input_area {
-  border: 2px dashed #bababa;
-  margin: -1px;
-}
-.cm-header-1,
-.cm-header-2,
-.cm-header-3,
-.cm-header-4,
-.cm-header-5,
-.cm-header-6 {
-  font-weight: bold;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-.cm-header-1 {
-  font-size: 185.7%;
-}
-.cm-header-2 {
-  font-size: 157.1%;
-}
-.cm-header-3 {
-  font-size: 128.6%;
-}
-.cm-header-4 {
-  font-size: 110%;
-}
-.cm-header-5 {
-  font-size: 100%;
-  font-style: italic;
-}
-.cm-header-6 {
-  font-size: 100%;
-  font-style: italic;
-}
-</style>
-<style type="text/css">.highlight .hll { background-color: #ffffcc }
-.highlight  { background: #f8f8f8; }
-.highlight .c { color: #408080; font-style: italic } /* Comment */
-.highlight .err { border: 1px solid #FF0000 } /* Error */
-.highlight .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight .o { color: #666666 } /* Operator */
-.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
-.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
-.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
-.highlight .gd { color: #A00000 } /* Generic.Deleted */
-.highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #FF0000 } /* Generic.Error */
-.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight .gi { color: #00A000 } /* Generic.Inserted */
-.highlight .go { color: #888888 } /* Generic.Output */
-.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.highlight .gs { font-weight: bold } /* Generic.Strong */
-.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight .gt { color: #0044DD } /* Generic.Traceback */
-.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.highlight .kp { color: #008000 } /* Keyword.Pseudo */
-.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.highlight .kt { color: #B00040 } /* Keyword.Type */
-.highlight .m { color: #666666 } /* Literal.Number */
-.highlight .s { color: #BA2121 } /* Literal.String */
-.highlight .na { color: #7D9029 } /* Name.Attribute */
-.highlight .nb { color: #008000 } /* Name.Builtin */
-.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight .no { color: #880000 } /* Name.Constant */
-.highlight .nd { color: #AA22FF } /* Name.Decorator */
-.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight .nf { color: #0000FF } /* Name.Function */
-.highlight .nl { color: #A0A000 } /* Name.Label */
-.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.highlight .nv { color: #19177C } /* Name.Variable */
-.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight .mb { color: #666666 } /* Literal.Number.Bin */
-.highlight .mf { color: #666666 } /* Literal.Number.Float */
-.highlight .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
-.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
-.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.highlight .sx { color: #008000 } /* Literal.String.Other */
-.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
-.highlight .ss { color: #19177C } /* Literal.String.Symbol */
-.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
-.highlight .vc { color: #19177C } /* Name.Variable.Class */
-.highlight .vg { color: #19177C } /* Name.Variable.Global */
-.highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This is the second part of third post in blog series about linear algebra.</p>
+            <p>This is the second part of third post in blog series about linear algebra.</p>
 <ol>
 <li>Introduction</li>
 <li>Basics of linear algebra</li>
 <li><strong>Intermediate linear algebra</strong>: Part I and <strong>Part II</strong></li>
 <li>Advances in linear algebra</li>
 </ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <p>This is the continuation of the part one and in this post I will introduce you the following topics:</p>
 <ul>
 <li><a href="#Matrix">Matrix</a><ul>
@@ -1250,112 +129,123 @@ h6:hover .anchor-link {
 </li>
 <li><a href="#Conclusion">Conclusion</a></li>
 </ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Matrix">Matrix<a class="anchor-link" href="#Matrix">&#182;</a></h2><p><a id="Matrix"></a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Types-of-Matrices">Types of Matrices<a class="anchor-link" href="#Types-of-Matrices">&#182;</a></h3><p><a id="Types_of_Matrices"></a></p>
+<h2 id="matrix">Matrix<a class="headerlink" href="#matrix" title="Permanent link">&para;</a></h2>
+<p><a id="Matrix"></a></p>
+<h3 id="types-of-matrices">Types of Matrices<a class="headerlink" href="#types-of-matrices" title="Permanent link">&para;</a></h3>
+<p><a id="Types_of_Matrices"></a></p>
 <hr>
-<p>During years of linear algebra evolution, there appeared different types of matrices. Some of them were fundamentals, some of them appeared lately. In this part, I will introduce some basic types of matrices and give you reference to find some other useful ones. Previously, I talked about the identity matrix, which operates as number 1 in matrix multiplication and is denoted by capital letter $I$.</p>
-<p>A <strong>square</strong> matrix is a matrix with the same number of rows and columns.</p>
-\begin{align*}A =
+<p>During years of linear algebra evolution, there appeared different types of matrices. Some of them were fundamentals, 
+some of them appeared lately. In this part, I will introduce some basic types of matrices and give you reference to find 
+some other useful ones. Previously, I talked about the identity matrix, which operates as number 1 in matrix multiplication 
+and is denoted by capital letter <span class="math">\(I\)</span>.</p>
+<p>A <strong>square</strong> matrix is a matrix with the same number of rows and columns. </p>
+<div class="math">$$
+A =
 \begin{bmatrix}
     a_{11} &amp; a_{12} &amp; a_{13} \\
     a_{21} &amp; a_{22} &amp; a_{23} \\
     a_{31} &amp; a_{32} &amp; a_{33}
 \end{bmatrix}
-\end{align*}<p>A <strong>diagonal</strong> matrix is a matrix in which the entries on principal diagonal are non-zero and all the others are zeros.</p>
-\begin{align*}A =
+$$</div>
+<p>A <strong>diagonal</strong> matrix is a matrix in which the entries on principal diagonal are non-zero and all the others are zeros.</p>
+<div class="math">$$
+A =
 \begin{bmatrix}
     1 &amp; 0 &amp; 0 \\
     0 &amp; 2 &amp; 0 \\
     0 &amp; 0 &amp; 3
 \end{bmatrix}
-\end{align*}<p>Scalar multiple of the identity matrix is called <strong>scalar</strong> matrix that is also diagonal. This means on the main diagonal all elements are equal.</p>
-\begin{align*}A =
+$$</div>
+<p>Scalar multiple of the identity matrix is called <strong>scalar</strong> matrix that is also diagonal. This means on the main diagonal all elements are equal.</p>
+<div class="math">$$
+A =
 \begin{bmatrix}
     2 &amp; 0 &amp; 0 \\
     0 &amp; 2 &amp; 0 \\
     0 &amp; 0 &amp; 2
 \end{bmatrix}
-\end{align*}<p>A square matrix is called <strong>triangular</strong> matrix if all of its elements above the main diagonal are zero (<strong>lower triangular matrix</strong>) or all of its elements below the main diagonal are zero (<strong>upper triangular matrix</strong>).</p>
-\begin{align*}A =
+$$</div>
+<p>A square matrix is called <strong>triangular</strong> matrix if all of its elements above the main diagonal are zero 
+(<strong>lower triangular matrix</strong>) or all of its elements below the main diagonal are zero (<strong>upper triangular matrix</strong>).</p>
+<div class="math">$$
+A =
 \begin{bmatrix}
     1 &amp; 0 &amp; 0 \\
     4 &amp; 5 &amp; 0 \\
     7 &amp; 8 &amp; 9
 \end{bmatrix}
-\\
+\quad
 A =
 \begin{bmatrix}
     1 &amp; 2 &amp; 3 \\
     0 &amp; 5 &amp; 6 \\
     0 &amp; 0 &amp; 9
 \end{bmatrix}
-\end{align*}<p>These matrices are lower and upper triangular matrices, respectively.</p>
+$$</div>
+<p>These matrices are lower and upper triangular matrices, respectively.</p>
 <p>A <strong>null</strong> or <strong>zero</strong> matrix is a matrix with all elements equal to zero.</p>
-\begin{align*}A =
+<div class="math">$$
+A =
 \begin{bmatrix}
     0 &amp; 0 &amp; 0 \\
     0 &amp; 0 &amp; 0 \\
     0 &amp; 0 &amp; 0
 \end{bmatrix}
-\end{align*}<p>A matrix of <strong>ones</strong> is where all elements equal to 1.</p>
-\begin{align*}A =
+$$</div>
+<p>A matrix of <strong>ones</strong> is where all elements equal to 1.</p>
+<div class="math">$$
+A =
 \begin{bmatrix}
     1 &amp; 1 &amp; 1 \\
     1 &amp; 1 &amp; 1 \\
     1 &amp; 1 &amp; 1
 \end{bmatrix}
-\end{align*}<p><strong>Symmetric</strong> matrix is a square matrix that is equal to its own transpose or $A = A^T$. For example,</p>
-\begin{align*}A =
+$$</div>
+<p><strong>Symmetric</strong> matrix is a square matrix that is equal to its own transpose or <span class="math">\(A = A^T\)</span>. For example,</p>
+<div class="math">$$
+A =
 \begin{bmatrix}
     1 &amp; 2 &amp; 3 \\
     2 &amp; 4 &amp; 5 \\
     3 &amp; 5 &amp; 6
 \end{bmatrix}
-\end{align*}<p>is a symmetric matrix. Furthermore, matrix elements are symmetric with respect to main diagonal or are equal.</p>
-<p>A <strong>skew-symmetric</strong> matrix is a square matrix whose transpose equals its negative or $A^T = -A$. For example,</p>
-\begin{align*}A =
+$$</div>
+<p>is a symmetric matrix. Furthermore, matrix elements are symmetric with respect to main diagonal or are equal.</p>
+<p>A <strong>skew-symmetric</strong> matrix is a square matrix whose transpose equals its negative or <span class="math">\(A^T = -A\)</span>. For example,</p>
+<div class="math">$$
+A =
 \begin{bmatrix}
     0 &amp; 3 &amp; 4 \\
     -3 &amp; 0 &amp; 7 \\
     -4 &amp; -7 &amp; 0
 \end{bmatrix}
-\
+\quad
 A^T =
 \begin{bmatrix}
     0 &amp; -3 &amp; -4 \\
     3 &amp; 0 &amp; -7 \\
     4 &amp; 7 &amp; 0
 \end{bmatrix}
-\
+\quad
 -A =
 \begin{bmatrix}
     0 &amp; -3 &amp; -4 \\
     3 &amp; 0 &amp; -7 \\
     4 &amp; 7 &amp; 0
 \end{bmatrix}
-\end{align*}<p><strong>Involutory</strong> matrix is a square matrix that is equal to its own inverse. More precisely, it is the matrix whose square is the identity matrix.</p>
-\begin{align*}A =
+$$</div>
+<p><strong>Involutory</strong> matrix is a square matrix that is equal to its own inverse. More precisely, it is the matrix whose square is the identity matrix.</p>
+<div class="math">$$
+A =
 \begin{bmatrix}
     -5 &amp; -8 &amp; 0 \\
     3 &amp; 5 &amp; 0 \\
     1 &amp; 2 &amp; -1
 \end{bmatrix}
-\end{align*}<p>then</p>
-\begin{align*}A^2 =
+$$</div>
+<p>then </p>
+<div class="math">$$
+A^2 =
 \begin{bmatrix}
     -5 &amp; -8 &amp; 0 \\
     3 &amp; 5 &amp; 0 \\
@@ -1375,8 +265,10 @@ A^T =
 \end{bmatrix}
 \ =
 I
-\end{align*}<p>A square matrix is called <strong>idempotent</strong> matrix, if multiplied by itself yields itself. Equivalently, $A \cdot A = A$</p>
-\begin{align*}A =
+$$</div>
+<p>A square matrix is called <strong>idempotent</strong> matrix, if multiplied by itself yields itself. Equivalently, <span class="math">\(A \cdot A = A\)</span></p>
+<div class="math">$$
+A =
 \begin{bmatrix}
     2 &amp; -2 &amp; -4 \\
     -1 &amp; 3 &amp; 4 \\
@@ -1394,14 +286,22 @@ I
     -1 &amp; 3 &amp; 4 \\
     1 &amp; -2 &amp; -3
 \end{bmatrix}
-\end{align*}<p>A <strong>nildepotent</strong> matirix is such that $A^k = 0$  for some positive integer $k$. This means for some positive $k$, multipling matrix $A$ by $k$ times gives zero matrix. For matrix $A$ and for $k=2$ we have:</p>
-\begin{align*}A =
+$$</div>
+<p>A <strong>nildepotent</strong> matirix is such that <span class="math">\(A^k = 0\)</span>  for some positive integer <span class="math">\(k\)</span>. This means, for some positive <span class="math">\(k\)</span>, 
+multipling matrix <span class="math">\(A\)</span> by <span class="math">\(k\)</span> times gives zero matrix. For matrix <span class="math">\(A\)</span> and for <span class="math">\(k=2\)</span> we have:</p>
+<div class="math">$$
+A =
 \begin{bmatrix}
     5 &amp; -3 &amp; 2 \\
     15 &amp; -9 &amp; 6 \\
     10 &amp; -6 &amp; 4
 \end{bmatrix}
-\end{align*}\begin{align*}A^2 =
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
+A^2 =
 \begin{bmatrix}
     5 &amp; -3 &amp; 2 \\
     15 &amp; -9 &amp; 6 \\
@@ -1419,23 +319,22 @@ I
     0 &amp; 0 &amp; 0 \\
     0 &amp; 0 &amp; 0
 \end{bmatrix}
-\end{align*}<hr>
-<p>So, as I said there are much much more matrices, but I restricted here due to limited space. If you think you need more, definitely check this <a href="https://en.wikipedia.org/wiki/List_of_matrices">wikipedia page</a>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Trace-of-a-Matrix">Trace of a Matrix<a class="anchor-link" href="#Trace-of-a-Matrix">&#182;</a></h3><p><a id="Trace_of_a_Matrix"></a></p>
+$$</div>
 <hr>
-<p>The trace of $n\times n$ square matrix $A$ is the sum of all elements on the main diagonal. It is defined only for square matrices and the formula is:</p>
-\begin{align*}
+<p>So, as I said there are much much more matrices, but I restricted here due to limited space. If you think you need more, 
+definitely check this <a href="https://en.wikipedia.org/wiki/List_of_matrices">wikipedia page</a>.</p>
+<h3 id="trace-of-a-matrix">Trace of a Matrix<a class="headerlink" href="#trace-of-a-matrix" title="Permanent link">&para;</a></h3>
+<p><a id="Trace_of_a_Matrix"></a></p>
+<hr>
+<p>The trace of <span class="math">\(n\times n\)</span> square matrix <span class="math">\(A\)</span> is the sum of all elements on the main diagonal. 
+It is defined only for square matrices and the formula is:</p>
+<div class="math">$$
 tr(A)=\sum_{i=1}^{n}a_{ii} = a_{11} + a_{22} + \cdots + a_{nn}
-\end{align*}<p>Where $a_{ii}$ denotes the entry on $i$-th row and $j$-th column of matrix A.</p>
-<p>For example, Let $A$ be a matrix,</p>
-\begin{align*}A =
+$$</div>
+<p>Where <span class="math">\(a_{ii}\)</span> denotes the entry on <span class="math">\(i\)</span>-th row and <span class="math">\(j\)</span>-th column of matrix A.</p>
+<p>For example, Let <span class="math">\(A\)</span> be a matrix,</p>
+<div class="math">$$
+A =
 \begin{bmatrix}
     a_{11} &amp; a_{12} &amp; a_{13} \\
     a_{21} &amp; a_{22} &amp; a_{23} \\
@@ -1447,47 +346,56 @@ tr(A)=\sum_{i=1}^{n}a_{ii} = a_{11} + a_{22} + \cdots + a_{nn}
     4 &amp; 5 &amp; 6 \\
     7 &amp; 8 &amp; 9
 \end{bmatrix}
-\end{align*}<p>Then trace is:</p>
-\begin{align*}
+$$</div>
+<p>Then the trace is:</p>
+<div class="math">$$
 tr(A)=\sum_{i=1}^{3}a_{ii} = a_{11} + a_{22} + a_{33} = 1 + 5 + 9 = 15
-\end{align*}
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Determinant-of-a-Matrix">Determinant of a Matrix<a class="anchor-link" href="#Determinant-of-a-Matrix">&#182;</a></h3><p><a id="Determinant_of_a_Matrix"></a></p>
+$$</div>
+<h3 id="determinant-of-a-matrix">Determinant of a Matrix<a class="headerlink" href="#determinant-of-a-matrix" title="Permanent link">&para;</a></h3>
+<p><a id="Determinant_of_a_Matrix"></a></p>
 <hr>
-<p>There is not plain English definition of determinant but I'll try to explain it by examples to catch the main idea behind of that special number. However, we can consider determinant as a function which as an input accepts $n \times n$ matrix and output real or a complex number, that is called determinant of input matrix and is denoted by $det(A)$ or $|A|$.</p>
-<p>For any $2 \times 2$ square matrix $A$ determinant is calculated by:</p>
-\begin{align*}A =
+<p>There is not plain English definition of determinant but I'll try to explain it by examples to catch the main idea behind 
+of that special number. However, we can consider determinant as a function which as an input accepts <span class="math">\(n \times n\)</span> matrix 
+and output real or a complex number, that is called determinant of input matrix and is denoted by <span class="math">\(det(A)\)</span> or <span class="math">\(|A|\)</span>.</p>
+<p>For any <span class="math">\(2 \times 2\)</span> square matrix <span class="math">\(A\)</span> determinant is calculated by:</p>
+<div class="math">$$
+A =
 \begin{bmatrix}
     a &amp; b \\
     c &amp; d \\
 \end{bmatrix}
-\end{align*}\begin{align*}
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
 det(A) = ad - bc
-\end{align*}<p>It seems easy to calculate the determinant of any $2 \times 2$ matrix right? Now think about how to calculate determinant for higher dimensional matrices...did you find a way? If no let me explain it step by step. If we have, say $3 \times 3$ matrix $A$ and want to calculate determinant we need some other notions such as <strong>minors</strong> and <strong>cofactors</strong> of that matrix.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Minor-of-a-Matrix">Minor of a Matrix<a class="anchor-link" href="#Minor-of-a-Matrix">&#182;</a></h3><p><a id="Minor_of_a_Matrix"></a></p>
+$$</div>
+<p>It seems easy to calculate the determinant of any <span class="math">\(2 \times 2\)</span> matrix right? Now think about how to calculate determinant 
+for higher dimensional matrices...did you find a way? If no, let me explain it step by step. 
+If we have, say <span class="math">\(3 \times 3\)</span> matrix <span class="math">\(A\)</span> and want to calculate determinant we need some other notions such as <strong>minors</strong> 
+and <strong>co-factors</strong> of that matrix.</p>
+<h3 id="minor-of-a-matrix">Minor of a Matrix<a class="headerlink" href="#minor-of-a-matrix" title="Permanent link">&para;</a></h3>
+<p><a id="Minor_of_a_Matrix"></a></p>
 <hr>
-<p>A minor of matrix $A$ is the determinant of some smaller square matrix. Precisely, the minor $M_{i,j}$ is the <strong>determinant</strong> of matrix $A$ with row $i$ and column $j$ omitted. Minor of matrix $A$ is denoted by $M_{ij}$, where $i$ and $j$ denotes element of $i$-th row and $j$-th column.
-Let have general matrix $A$:</p>
-\begin{align*}A =
+<p>A minor of matrix <span class="math">\(A\)</span> is the determinant of some smaller square matrix. Precisely, the minor <span class="math">\(M_{i,j}\)</span> is the <strong>determinant</strong> of 
+matrix <span class="math">\(A\)</span> with row <span class="math">\(i\)</span> and column <span class="math">\(j\)</span> omitted. Minor of matrix <span class="math">\(A\)</span> is denoted by <span class="math">\(M_{ij}\)</span>, where <span class="math">\(i\)</span> and <span class="math">\(j\)</span> denotes element 
+of <span class="math">\(i\)</span>-th row and <span class="math">\(j\)</span>-th column. Let have general matrix <span class="math">\(A\)</span>:</p>
+<div class="math">$$
+A =
 \begin{bmatrix}
     a_{11} &amp; a_{12} &amp; a_{13} \\
     a_{21} &amp; a_{22} &amp; a_{23} \\
     a_{31} &amp; a_{32} &amp; a_{33}
 \end{bmatrix}
-\end{align*}<p>We can take rows or columns to find all minors. It's up to you which one you take, rows or columns. Let take the columns. We take the first element of our matrix $a_{11}$ and delete row and column along it. As the first element is $a_{11}$, we have to delete first row and first column. After that, we take the second element of the first column which is $a_{21}$ and do same or delete second row and first column. After that, we take the third element of the first column $a_{31}$ and delete third row and first column. We have to do these for three columns. After all of that, we have:</p>
-\begin{align*}M_{11} =
+$$</div>
+<p>We can take rows or columns to find all minors. It's up to you which one you take, rows or columns. Let take the columns. 
+We take the first element of our matrix <span class="math">\(a_{11}\)</span> and delete row and column along it. As the first element is <span class="math">\(a_{11}\)</span>, 
+we have to delete first row and first column. After that, we take the second element of the first column which is <span class="math">\(a_{21}\)</span> 
+and do same or delete second row and first column. After that, we take the third element of the first column <span class="math">\(a_{31}\)</span> and 
+delete third row and first column. We have to do these for three columns. After all of that, we have:</p>
+<div class="math">$$
+M_{11} =
 \begin{bmatrix}
     \square &amp; \square &amp; \square \\
     \square &amp; a_{22} &amp; a_{23} \\
@@ -1500,7 +408,12 @@ Let have general matrix $A$:</p>
 \end{bmatrix}
 \ =
 a_{22}a_{33} - a_{23}a_{32}
-\end{align*}\begin{align*}M_{21} =
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
+M_{21} =
 \begin{bmatrix}
     \square &amp; a_{12} &amp; a_{13} \\
     \square &amp; \square &amp; \square \\
@@ -1513,7 +426,12 @@ a_{22}a_{33} - a_{23}a_{32}
 \end{bmatrix}
 \ =
 a_{12}a_{33} - a_{13}a_{32}
-\end{align*}\begin{align*}M_{31} =
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
+M_{31} =
 \begin{bmatrix}
     \square &amp; a_{12} &amp; a_{13} \\
     \square &amp; a_{22} &amp; a_{23} \\
@@ -1526,7 +444,12 @@ a_{12}a_{33} - a_{13}a_{32}
 \end{bmatrix}
 \ =
 a_{12}a_{23} - a_{13}a_{22}
-\end{align*}\begin{align*}M_{12} =
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
+M_{12} =
 \begin{bmatrix}
     \square &amp; \square &amp; \square \\
     a_{21} &amp; \square &amp; a_{23} \\
@@ -1539,7 +462,12 @@ a_{12}a_{23} - a_{13}a_{22}
 \end{bmatrix}
 \ =
 a_{21}a_{33} - a_{23}a_{31}
-\end{align*}\begin{align*}M_{22} =
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
+M_{22} =
 \begin{bmatrix}
     a_{11} &amp; \square &amp; a_{13} \\
     \square &amp; \square &amp; \square \\
@@ -1552,7 +480,12 @@ a_{21}a_{33} - a_{23}a_{31}
 \end{bmatrix}
 \ =
 a_{11}a_{33} - a_{13}a_{31}
-\end{align*}\begin{align*}M_{32} =
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
+M_{32} =
 \begin{bmatrix}
     a_{11} &amp; \square &amp; a_{13} \\
     a_{21} &amp; \square &amp; a_{23} \\
@@ -1565,7 +498,12 @@ a_{11}a_{33} - a_{13}a_{31}
 \end{bmatrix}
 \ =
 a_{11}a_{13} - a_{13}a_{21}
-\end{align*}\begin{align*}M_{13} =
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
+M_{13} =
 \begin{bmatrix}
     \square &amp; \square &amp; \square \\
     a_{21} &amp; a_{22} &amp; \square \\
@@ -1578,7 +516,12 @@ a_{11}a_{13} - a_{13}a_{21}
 \end{bmatrix}
 \ =
 a_{21}a_{32} - a_{22}a_{31}
-\end{align*}\begin{align*}M_{23} =
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
+M_{23} =
 \begin{bmatrix}
     a_{11} &amp; a_{12} &amp; \square \\
     \square &amp; \square &amp; \square \\
@@ -1591,7 +534,12 @@ a_{21}a_{32} - a_{22}a_{31}
 \end{bmatrix}
 \ =
 a_{11}a_{32} - a_{12}a_{31}
-\end{align*}\begin{align*}M_{33} =
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
+M_{33} =
 \begin{bmatrix}
     a_{11} &amp; a_{12} &amp; \square \\
     a_{21} &amp; a_{22} &amp; \square \\
@@ -1604,114 +552,153 @@ a_{11}a_{32} - a_{12}a_{31}
 \end{bmatrix}
 \ =
 a_{11}a_{22} - a_{12}a_{21}
-\end{align*}<p>These nine scalars are minors of matrix $A$. Once again, minor is not smaller matrix, it is <strong>determinant</strong> of a smaller matrix.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Cofactor-of-a-Matrix">Cofactor of a Matrix<a class="anchor-link" href="#Cofactor-of-a-Matrix">&#182;</a></h3><p><a id="Cofactor_of_a_Matrix"></a></p>
+$$</div>
+<p>These nine scalars are minors of matrix <span class="math">\(A\)</span>. Once again, minor is not smaller matrix, it is <strong>determinant</strong> of a smaller matrix.</p>
+<h3 id="cofactor-of-a-matrix">Cofactor of a Matrix<a class="headerlink" href="#cofactor-of-a-matrix" title="Permanent link">&para;</a></h3>
+<p><a id="Cofactor_of_a_Matrix"></a></p>
 <hr>
-<p>We left one more step to compute determinant of $3 \times 3$ matrix $A$. This step is cofactor of matrix $A$. The cofactor of matrix $A$ is the minor, multiplied by $(-1)^{i+j}$ and is denoted by $C_{ij}$</p>
-\begin{align*}C_{ij} =
+<p>We left one more step to compute determinant of <span class="math">\(3 \times 3\)</span> matrix <span class="math">\(A\)</span>. This step is cofactor of matrix <span class="math">\(A\)</span>. The cofactor of matrix <span class="math">\(A\)</span> is the minor, multiplied by <span class="math">\((-1)^{i+j}\)</span> and is denoted by <span class="math">\(C_{ij}\)</span></p>
+<div class="math">$$
+C_{ij} =
 (-1)^{i+j} \cdot M_{ij}
-\end{align*}<p>where $i$ is the number of row and $j$ is the number of column of matrix $A$.</p>
-<p>In the above case our cofactors are:</p>
-\begin{align*}C_{11} =
+$$</div>
+<p>where <span class="math">\(i\)</span> is the number of row and <span class="math">\(j\)</span> is the number of column of matrix <span class="math">\(A\)</span>.</p>
+<p>In the above case our co-factors are:</p>
+<div class="math">$$
+C_{11} =
 (-1)^{1+1} \cdot M_{11}
-\end{align*}\begin{align*}C_{21} =
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
+C_{21} =
 (-1)^{2+1} \cdot M_{21}
-\end{align*}\begin{align*}C_{31} =
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
+C_{31} =
 (-1)^{3+1} \cdot M_{31}
-\end{align*}\begin{align*}C_{12} =
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
+C_{12} =
 (-1)^{1+2} \cdot M_{12}
-\end{align*}\begin{align*}C_{22} =
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
+C_{22} =
 (-1)^{2+2} \cdot M_{22}
-\end{align*}\begin{align*}C_{32} =
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
+C_{32} =
 (-1)^{3+2} \cdot M_{32}
-\end{align*}\begin{align*}C_{13} =
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
+C_{13} =
 (-1)^{1+3} \cdot M_{13}
-\end{align*}\begin{align*}C_{23} =
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
+C_{23} =
 (-1)^{2+3} \cdot M_{23}
-\end{align*}\begin{align*}C_{33} =
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
+C_{33} =
 (-1)^{3+3} \cdot M_{33}
-\end{align*}<p>So, the sum of $i$ and $j$ in the power of $(-1)$ switch the sign of every minor.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Determinant-of-a-Matrix---continuation">Determinant of a Matrix - continuation<a class="anchor-link" href="#Determinant-of-a-Matrix---continuation">&#182;</a></h3><p><a id="Determinant_of_a_Matrix_continuation"></a></p>
+$$</div>
+<p>So, the sum of <span class="math">\(i\)</span> and <span class="math">\(j\)</span> in the power of <span class="math">\((-1)\)</span> switch the sign of every minor.</p>
+<h3 id="determinant-of-a-matrix-continuation">Determinant of a Matrix - continuation<a class="headerlink" href="#determinant-of-a-matrix-continuation" title="Permanent link">&para;</a></h3>
+<p><a id="Determinant_of_a_Matrix_continuation"></a></p>
 <hr>
-<p>We are ready to compute the determinant of our $3 \times 3$ matrix $A$. We need to expand this matrix along one of the row or one of the column to compute the determinant. It's up to you which one you take, row or column. Let take the first column. Now, what does expansion means? We have to fix either $i$ if we choose a row, or $j$ if we choose column. At first glance it seems confusing but an example will make sense. This expansion is called <strong>Laplace Expansion</strong> and is used to compute the determinant of any $n \times n$ matrix.</p>
-\begin{align*}
+<p>We are ready to compute the determinant of our <span class="math">\(3 \times 3\)</span> matrix <span class="math">\(A\)</span>. We need to expand this matrix along one of 
+the row or one of the column to compute the determinant. It's up to you which one you take, row or column. Let take the 
+first column. Now, what does expansion means? We have to fix either <span class="math">\(i\)</span> if we choose a row, or <span class="math">\(j\)</span> if we choose column. 
+At first glance it seems confusing but an example will make sense. This expansion is called <strong>Laplace Expansion</strong> and is 
+used to compute the determinant of any <span class="math">\(n \times n\)</span> matrix.</p>
+<div class="math">$$
 det(A) = \sum_{j\prime=1}^{n}a_{ij\prime}C_{ij\prime}
 \ =
 \sum_{i\prime=1}^{n}a_{i\prime j}C_{i\prime j}
-\end{align*}<p>where $i\prime$ means we fixed index $i$ or row and we change only column index. In case of $j\prime$ we fixed index $j$ or columns and change the only row. So, when $i$ is fixed it is called row expansion and when $j$ is fixed it's called column expansion. $C_{ij}$ is our cofactor.</p>
-<p>To continue the above example, let expand our initial matrix $A$ by the first column, meaning I fix $j$ to be 1 and only change row index $i$ from 1 to 3. In this particular case above formula is:</p>
-\begin{align*}
+$$</div>
+<p>where <span class="math">\(i\prime\)</span> means we fixed index <span class="math">\(i\)</span> or row and we change only column index. In case of <span class="math">\(j\prime\)</span> we fixed index <span class="math">\(j\)</span> or 
+columns and change the only row. So, when <span class="math">\(i\)</span> is fixed it is called row expansion and when <span class="math">\(j\)</span> is fixed it's called column 
+expansion. <span class="math">\(C_{ij}\)</span> is our co-factor.</p>
+<p>To continue the above example, let expand our initial matrix <span class="math">\(A\)</span> by the first column, meaning I fix <span class="math">\(j\)</span> to be 1 and only 
+change row index <span class="math">\(i\)</span> from 1 to 3. In this particular case above formula is:</p>
+<div class="math">$$
 det(A) = \sum_{j\prime=1}^{3}a_{ij\prime}C_{ij\prime}
 \ =
 a_{11}C_{11} + a_{21}C_{21} + a_{31}C_{31}
-\end{align*}<p>Instead, if I choose first row, I have to fix row index $i$ and change column index $j$ from 1 to 3 and determinant formula is:</p>
-\begin{align*}
+$$</div>
+<p>Instead, if I choose first row, I have to fix row index <span class="math">\(i\)</span> and change column index <span class="math">\(j\)</span> from 1 to 3 and determinant formula is:</p>
+<div class="math">$$
 det(A) = \sum_{i\prime=1}^{3}a_{i\prime j}C_{i\prime j}
 \ =
 a_{11}C_{11} + a_{12}C_{12} + a_{13}C_{13}
-\end{align*}<p>Below, you will see numerical example.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Matrix-Division">Matrix Division<a class="anchor-link" href="#Matrix-Division">&#182;</a></h3><p><a id="Matrix_Division"></a></p>
+$$</div>
+<p>Below, you will see numerical example.</p>
+<h3 id="matrix-division">Matrix Division<a class="headerlink" href="#matrix-division" title="Permanent link">&para;</a></h3>
+<p><a id="Matrix_Division"></a></p>
 <hr>
-<p>We can't actually divide matrix by a matrix; but when we want to divide matrices, we can take advantage of the fact that division by a given number is the same as multiplication by the reciprocal of that number.</p>
-<p>For matrix division, we use a related idea; we multiply matrix by the <em>inverse</em> of a matrix. If we have two matrices $A$ and $B$, we can do:</p>
-\begin{align*}
+<p>We can't actually divide matrix by a matrix; but when we want to divide matrices, we can take advantage of the fact 
+that division by a given number is the same as multiplication by the reciprocal of that number.</p>
+<p>For matrix division, we use a related idea; we multiply matrix by the <em>inverse</em> of a matrix. If we have two matrices <span class="math">\(A\)</span> and <span class="math">\(B\)</span>, we can do:</p>
+<div class="math">$$
 A \div B = A \cdot B^{-1}
-\end{align*}<p>Here, $B^{-1}$ is the inverse of matrix $B$. As taking inverse of a matrix requires computaions and is not easy, let explain it below and then return here.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Inverse-of-a-Matrix">Inverse of a Matrix<a class="anchor-link" href="#Inverse-of-a-Matrix">&#182;</a></h3><p><a id="Inverse_of_a_Matrix"></a></p>
+$$</div>
+<p>Here, <span class="math">\(B^{-1}\)</span> is the inverse of matrix <span class="math">\(B\)</span>. As taking inverse of a matrix requires computations and is not easy, let explain it below and then return here.</p>
+<h3 id="inverse-of-a-matrix">Inverse of a Matrix<a class="headerlink" href="#inverse-of-a-matrix" title="Permanent link">&para;</a></h3>
+<p><a id="Inverse_of_a_Matrix"></a></p>
 <hr>
 <p>The matrix is said to be invertible if:</p>
-\begin{align*}
+<div class="math">$$
 A \cdot A^{-1} = I
-\end{align*}<p>where $I$ is the identity matrix and $A^{-1}$ is the inverse of $A$. Generally, matrix inverse is only defined for square matrices, but there still exist ways to take the inverse of non-square matrices but this is out of the scope of this blog series and I will not consider.</p>
-<p>For $2 \times 2$ matrix $A$</p>
-\begin{align*}A =
+$$</div>
+<p>where <span class="math">\(I\)</span> is the identity matrix and <span class="math">\(A^{-1}\)</span> is the inverse of <span class="math">\(A\)</span>. Generally, matrix inverse is only defined for 
+square matrices, but there still exist ways to take the inverse of non-square matrices but this is out of the scope 
+of this blog series and I will not consider.</p>
+<p>For <span class="math">\(2 \times 2\)</span> matrix <span class="math">\(A\)</span></p>
+<div class="math">$$
+A =
 \begin{bmatrix}
     a &amp; b \\
     c &amp; d \\
 \end{bmatrix}
-\end{align*}<p>Inverse of $A$ is:</p>
-\begin{align*}A^{-1} =
+$$</div>
+<p>Inverse of <span class="math">\(A\)</span> is:</p>
+<div class="math">$$
+A^{-1} =
 \frac{1}{ad-bc}
 \begin{bmatrix}
     d &amp; -b \\
     -c &amp; a \\
 \end{bmatrix}
-\end{align*}<p>What happened there?</p>
-<ul>
-<li>I swapped the positions of a and d</li>
-<li>I changed the signs of b and c</li>
-<li>I multiplied the resulting matrix by 1 over the <strong>determinant</strong> of the matrix $A$</li>
-</ul>
+$$</div>
+<p>What happened there?
+- I swapped the positions of a and d
+- I changed the signs of b and c
+- I multiplied the resulting matrix by 1 over the <strong>determinant</strong> of the matrix <span class="math">\(A\)</span></p>
 <p>For example,</p>
-\begin{align*}A =
+<div class="math">$$
+A =
 \begin{bmatrix}
     6 &amp; 2 \\
     1 &amp; 2 \\
@@ -1728,8 +715,11 @@ A^{-1} =
     0.2 &amp; -0.2 \\
     -0.1 &amp; 0.6 \\
 \end{bmatrix}
-\end{align*}<p>to check if this is really the inverse of $A$, multiply $A$ by its inverse in order to get an identity matrix.</p>
-<p>Now let take the inverse of $3 \times 3$ matrix. This process is long and involves taking minors, cofactors and determinant. After that, above-mentioned operations should be understandable. It has to be mentioned that there are several ways to take matrix inverse but as I started here explaining minors, cofactors and determinant I use this technique to find inverse.</p>
+$$</div>
+<p>to check if this is really the inverse of <span class="math">\(A\)</span>, multiply <span class="math">\(A\)</span> by its inverse in order to get an identity matrix.</p>
+<p>Now let take the inverse of <span class="math">\(3 \times 3\)</span> matrix. This process is long and involves taking minors, co-factors and determinant. 
+After that, above-mentioned operations should be understandable. It has to be mentioned that there are several ways to take 
+matrix inverse but as I started here explaining minors, co-factors and determinant I use this technique to find inverse.</p>
 <p>We can calculate the inverse by:</p>
 <ul>
 <li>step 1: <strong>Calculate the matrix of minors</strong></li>
@@ -1738,66 +728,120 @@ A^{-1} =
 <li>step 4: <strong>Multiply transpose of cofactor by 1/determinant</strong></li>
 </ul>
 <p>Let have matrix:</p>
-\begin{align*}A =
+<div class="math">$$
+A =
 \begin{bmatrix}
     4 &amp; 2 &amp; 2 \\
     6 &amp; 2 &amp; 4 \\
     2 &amp; 2 &amp; 8
 \end{bmatrix}
-\end{align*}<p>Step 1: <strong>Calculate the matrix of minors</strong></p>
-\begin{align*}M_{11} =
+$$</div>
+<p>Step 1: <strong>Calculate the matrix of minors</strong></p>
+<div class="math">$$
+M_{11} =
 \begin{bmatrix}\color{blue}4 &amp; \color{lightgray}2 &amp; \color{lightgray}2\\\color{lightgray}6 &amp; \color{red}2 &amp; \color{red}4\\\color{lightgray}2 &amp; \color{red}2 &amp; \color{red}8\end{bmatrix}\;\;\;\;(2\times8) - (4\times2) = 8\;\;\;\;\begin{bmatrix}8 &amp; \color{lightgray}? &amp; \color{lightgray}?\\\color{lightgray}? &amp; \color{lightgray}? &amp; \color{lightgray}?\\\color{lightgray}? &amp; \color{lightgray}? &amp; \color{lightgray}?
 \end{bmatrix}
-\end{align*}\begin{align*}M_{12} =
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
+M_{12} =
 \begin{bmatrix}\color{lightgray}4 &amp; \color{blue}2 &amp; \color{lightgray}2\\\color{red}6 &amp; \color{lightgray}2 &amp; \color{red}4\\\color{red}2 &amp; \color{lightgray}2 &amp; \color{red}8\end{bmatrix}\;\;\;\;(6\times8) - (4\times2) = 40\;\;\;\;\begin{bmatrix}8 &amp; 40 &amp; \color{lightgray}?\\\color{lightgray}? &amp; \color{lightgray}? &amp; \color{lightgray}?\\\color{lightgray}? &amp; \color{lightgray}? &amp; \color{lightgray}?\end{bmatrix}
-\end{align*}\begin{align*}M_{13} =
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
+M_{13} =
 \begin{bmatrix}\color{lightgray}4 &amp; \color{lightgray}2 &amp; \color{blue}2\\\color{red}6 &amp; \color{red}2 &amp; \color{lightgray}4\\\color{red}2 &amp; \color{red}2 &amp; \color{lightgray}8\end{bmatrix}\;\;\;\;(6\times2) - (2\times2) = 8\;\;\;\;\begin{bmatrix}8 &amp; 40 &amp; 8\\\color{lightgray}? &amp; \color{lightgray}? &amp; \color{lightgray}?\\\color{lightgray}? &amp; \color{lightgray}? &amp; \color{lightgray}?\end{bmatrix}
-\end{align*}\begin{align*}M_{21} =
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
+M_{21} =
 \begin{bmatrix}\color{lightgray}4 &amp; \color{red}2 &amp; \color{red}2\\\color{blue}6 &amp; \color{lightgray}2 &amp; \color{lightgray}4\\\color{lightgray}2 &amp; \color{red}2 &amp; \color{red}8\end{bmatrix}\;\;\;\;(2\times8) - (2\times2) = 12\;\;\;\;\begin{bmatrix}8 &amp; 40 &amp; 8\\12 &amp; \color{lightgray}? &amp; \color{lightgray}?\\\color{lightgray}? &amp; \color{lightgray}? &amp; \color{lightgray}?\end{bmatrix}
-\end{align*}\begin{align*}M_{22} =
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
+M_{22} =
 \begin{bmatrix}\color{red}4 &amp; \color{lightgray}2 &amp; \color{red}2\\\color{lightgray}6 &amp; \color{blue}2 &amp; \color{lightgray}4\\\color{red}2 &amp; \color{lightgray}2 &amp; \color{red}8\end{bmatrix}\;\;\;\;(4\times8) - (2\times2) = 28\;\;\;\;\begin{bmatrix}8 &amp; 40 &amp; 8\\12 &amp; 28 &amp; \color{lightgray}?\\\color{lightgray}? &amp; \color{lightgray}? &amp; \color{lightgray}?\end{bmatrix}
-\end{align*}\begin{align*}M_{23} =
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
+M_{23} =
 \begin{bmatrix}\color{red}4 &amp; \color{red}2 &amp; \color{lightgray}2\\\color{lightgray}6 &amp; \color{lightgray}2 &amp; \color{blue}4\\\color{red}2 &amp; \color{red}2 &amp; \color{lightgray}8\end{bmatrix}\;\;\;\;(4\times2) - (2\times2) = 4\;\;\;\;\begin{bmatrix}8 &amp; 40 &amp; 8\\12 &amp; 28 &amp; 4\\\color{lightgray}? &amp; \color{lightgray}? &amp; \color{lightgray}?\end{bmatrix}
-\end{align*}\begin{align*}M_{31} =
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
+M_{31} =
 \begin{bmatrix}\color{lightgray}4 &amp; \color{red}2 &amp; \color{red}2\\\color{lightgray}6 &amp; \color{red}2 &amp; \color{red}4\\\color{blue}2 &amp; \color{lightgray}2 &amp; \color{lightgray}8\end{bmatrix}\;\;\;\;(2\times4) - (2\times2) = 4\;\;\;\;\begin{bmatrix}8 &amp; 40 &amp; 8\\12 &amp; 28 &amp; 4\\4 &amp; \color{lightgray}? &amp; \color{lightgray}?\end{bmatrix}
-\end{align*}\begin{align*}M_{32} =
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
+M_{32} =
 \begin{bmatrix}\color{red}4 &amp; \color{lightgray}2 &amp; \color{red}2\\\color{red}6 &amp; \color{lightgray}2 &amp; \color{red}4\\\color{lightgray}2 &amp; \color{blue}2 &amp; \color{lightgray}8\end{bmatrix}\;\;\;\;(4\times4) - (2\times6) = 4\;\;\;\;\begin{bmatrix}8 &amp; 40 &amp; 8\\12 &amp; 28 &amp; 4\\4 &amp; 4 &amp; \color{lightgray}?\end{bmatrix}
-\end{align*}\begin{align*}M_{33} =
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
+M_{33} =
 \begin{bmatrix}\color{red}4 &amp; \color{red}2 &amp; \color{lightgray}2\\\color{red}6 &amp; \color{red}2 &amp; \color{lightgray}4\\\color{lightgray}2 &amp; \color{lightgray}2 &amp; \color{blue}8\end{bmatrix}\;\;\;\;(4\times2) - (2\times6) = -4\;\;\;\;\begin{bmatrix}8 &amp; 40 &amp; 8\\12 &amp; 28 &amp; 4\\4 &amp; 4 &amp; -4\end{bmatrix}
-\end{align*}<p>Our matrix of minors is:</p>
-\begin{align*}M =
+$$</div>
+<p>Our matrix of minors is:</p>
+<div class="math">$$
+M =
 \begin{bmatrix}
     8 &amp; 40 &amp; 8 \\
     12 &amp; 28 &amp; 4 \\
     4 &amp; 4 &amp; -4
 \end{bmatrix}
-\end{align*}<p>Note that I used rows to find minors, in contrast to columns in the previous example.</p>
+$$</div>
+<p>Note that I used rows to find minors, in contrast to columns in the previous example.</p>
 <p>Step 2: <strong>Turn the matrix of minors into the matrix of cofactors</strong></p>
-<p>To turn minors matrix into cofactor matrix, we just need to change the sign of elements in minors matrix according to the rule proposed above section.</p>
+<p>To turn minors matrix into cofactor matrix, we just need to change the sign of elements in minors matrix according to 
+the rule proposed above section.</p>
 <p>Cofactor matrix is:</p>
-\begin{align*}C =
+<div class="math">$$
+C =
 \begin{bmatrix}
     8 &amp; -40 &amp; 8 \\
     -12 &amp; 28 &amp; -4 \\
     4 &amp; -4 &amp; -4
 \end{bmatrix}
-\end{align*}<p>Step 3: <strong>Transpose the matrix of cofactors</strong></p>
+$$</div>
+<p>Step 3: <strong>Transpose the matrix of cofactors</strong></p>
 <p>We need to take the transpose of the cofactor matrix. In other words, swap their positions over the main diagonal (the main diagonal stays the same).</p>
-\begin{align*}C^{T}=
+<div class="math">$$
+C^{T}=
 \begin{bmatrix}8 &amp; \color{green}-\color{green}1\color{green}2 &amp; \color{orange}4\\\color{green}-\color{green}4\color{green}0 &amp; 28 &amp; \color{purple}-\color{purple}4\\\color{orange}8 &amp; \color{purple}-\color{purple}4 &amp; -4\end{bmatrix}
-\end{align*}<p>This matrix is called <strong>Adjugate</strong> or <strong>Adjoint</strong>, which is simple the transpose of the cofactor matrix.</p>
-<p>Step 4: <strong>Multiply transpose of cofactor by 1/determinant</strong></p>
-<p>As we did all the necessary operations to have determinant let compute it firstly and then multiply the adjoint matrix by 1/determinant.</p>
+$$</div>
+<p>This matrix is called <strong>Adjugate</strong> or <strong>Adjoint</strong>, which is simple the transpose of the cofactor matrix.</p>
+<p>Step 4: <strong>Multiply transpose of cofactor by <span class="math">\(\frac{1}{determinant}\)</span></strong></p>
+<p>As we did all the necessary operations to have determinant, let compute it firstly and then multiply the adjoint matrix by <span class="math">\(\frac{1}{determinant}\)</span>.</p>
 <p>Using formula:</p>
-\begin{align*}
+<div class="math">$$
 det(A) = \sum_{i\prime=1}^{3}a_{i\prime j}C_{i\prime j}
 \ =
 a_{11}C_{11} + a_{12}C_{12} + a_{13}C_{13}
-\end{align*}<p>We have:</p>
-\begin{align*}
+$$</div>
+<p>We have:</p>
+<div class="math">$$
 det(A) = (4 \times 8) + (2 \times (-40)) + (2 \times 8) = -32
-\end{align*}<p>Now the inverse is:</p>
-\begin{align*}A^{-1} =
+$$</div>
+<p>Now the inverse is:</p>
+<div class="math">$$
+A^{-1} =
 \frac{1}{-32}
 \cdot
 \begin{bmatrix}
@@ -1811,41 +855,53 @@ det(A) = (4 \times 8) + (2 \times (-40)) + (2 \times 8) = -32
     1.25 &amp; 0.875 &amp; 0.125 \\
     -0.25 &amp; 0.125 &amp; 0.125
 \end{bmatrix}
-\end{align*}<p>Let's verify that the original matrix multiplied by the inverse results in an identity matrix:</p>
-\begin{align*}A \cdot A^{-1} =
+$$</div>
+<p>Let's verify that the original matrix multiplied by the inverse results in an identity matrix:</p>
+<div class="math">$$
+A \cdot A^{-1} =
 \begin{bmatrix}4 &amp; 2 &amp; 2\\6 &amp; 2 &amp; 4\\2 &amp; 2 &amp; 8\end{bmatrix} \cdot \begin{bmatrix}-0.25 &amp; 0.375 &amp; -0.125\\1.25 &amp; -0.875 &amp; 0.125\\-0.25 &amp; 0.125 &amp; 0.125\end{bmatrix}
-\end{align*}\begin{align*} =
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
+=
 \begin{bmatrix}(4\times-0.25)+(2\times1.25)+(2\times-0.25) &amp; (4\times0.375)+(2\times-0.875)+(2\times0.125) &amp; (4 \times-0.125)+(2 \times-0.125)+(2 \times0.125)\\
 (6 \times-0.25)+(2\times1.25)+(4\times-0.25) &amp; (6\times0.375)+(2 \times-0.875)+(4\times0.125) &amp; (6 \times-0.125)+(2 \times-0.125)+(4 \times0.125)\\
 (2\times-0.25)+(2\times1.25)+(8\times-0.25) &amp; (2 \times0.375)+(2 \times-0.875)+(8 \times0.125) &amp; (2 \times-0.125)+(2 \times-0.125)+(8 \times0.125)\end{bmatrix}
-\end{align*}\begin{align*} =
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
+=
 \begin{bmatrix}1 &amp; 0 &amp; 0\\0 &amp; 1 &amp; 0\\0 &amp; 0 &amp; 1\end{bmatrix} = I
-\end{align*}<p>Do you see how challenging can be finding the inverse of $4 \times 4$ matrix? That's why we use calculators or computer program to compute it.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Matrix-Division---continuation">Matrix Division - continuation<a class="anchor-link" href="#Matrix-Division---continuation">&#182;</a></h3><p><a id="Matrix_Division_continuation"></a></p>
+$$</div>
+<p>Do you see how challenging can be finding the inverse of <span class="math">\(4 \times 4\)</span> matrix? That's why we use calculators or computer program to compute it.</p>
+<h3 id="matrix-division-continuation">Matrix Division - continuation<a class="headerlink" href="#matrix-division-continuation" title="Permanent link">&para;</a></h3>
+<p><a id="Matrix_Division_continuation"></a></p>
 <hr>
 <p>As we already know how to compute the inverse of a matrix, the division is easy now. If we have two matrices:</p>
-\begin{align*}A =
+<div class="math">$$
+A =
 \begin{bmatrix}
     1 &amp; 2 &amp; 3 \\
     4 &amp; 5 &amp; 6 \\
     7 &amp; 8 &amp; 9
 \end{bmatrix}
-\end{align*}<p>and</p>
-\begin{align*}B =
+$$</div>
+<p>and </p>
+<div class="math">$$
+B =
 \begin{bmatrix}
     4 &amp; 2 &amp; 2 \\
     6 &amp; 2 &amp; 4 \\
     2 &amp; 2 &amp; 8
 \end{bmatrix}
-\end{align*}<p>then $A$ devided by $B$ is</p>
-\begin{align*}A \cdot B^{-1}
+$$</div>
+<p>then <span class="math">\(A\)</span> divided by <span class="math">\(B\)</span> is</p>
+<div class="math">$$
+A \cdot B^{-1}
 \ =
 \begin{bmatrix}
     1 &amp; 2 &amp; 3 \\
@@ -1866,23 +922,20 @@ det(A) = (4 \times 8) + (2 \times (-40)) + (2 \times 8) = -32
 \end{bmatrix}
 \ \equiv
 A \div B
-\end{align*}
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Solving-System-of-Equations-with-Matrices">Solving System of Equations with Matrices<a class="anchor-link" href="#Solving-System-of-Equations-with-Matrices">&#182;</a></h3><p><a id="Solving_System_of_Equations_with_Matrices"></a></p>
+$$</div>
+<h3 id="solving-system-of-equations-with-matrices">Solving System of Equations with Matrices<a class="headerlink" href="#solving-system-of-equations-with-matrices" title="Permanent link">&para;</a></h3>
+<p><a id="Solving_System_of_Equations_with_Matrices"></a></p>
 <hr>
-<p>In the previous blog, I talked about the system of linear equations and we solved this system graphically and algebraically. One of the great things about matrices, is that they can help us solve systems of equations. For example, consider the following system of equations:</p>
-\begin{align*}
+<p>In the previous blog, I talked about the system of linear equations and we solved this system graphically and algebraically. 
+One of the great things about matrices, is that they can help us solve systems of equations. For example, consider the following system of equations:</p>
+<div class="math">$$
 \begin{cases}
 2x + 4y = 18 \\
 6x + 2y = 34
 \end{cases}
-\end{align*}<p>We can write this in matrix form, like this:</p>
-\begin{align*}
+$$</div>
+<p>We can write this in matrix form, like this:</p>
+<div class="math">$$
 \begin{bmatrix}
     2 &amp; 4 \\
     6 &amp; 2
@@ -1897,33 +950,43 @@ A \div B
     18 \\
     34
 \end{bmatrix}
-\end{align*}<p>If we calculate the dot product between the matrix and vector on the left side, we can see clearly that this represents the original equations.</p>
+$$</div>
+<p>If we calculate the dot product between the matrix and vector on the left side, we can see clearly that this represents the original equations.</p>
 <p>Now let rename our matrices:</p>
-\begin{align*}A =
+<div class="math">$$
+A =
 \begin{bmatrix}
     2 &amp; 4 \\
     6 &amp; 2
 \end{bmatrix}
-\;\;\;\;
+\quad
 X =
 \begin{bmatrix}
     x \\
     y
 \end{bmatrix}
-\;\;\;\;
+\quad
 B = 
 \begin{bmatrix}
     18 \\
     34
 \end{bmatrix}
-\end{align*}<p>This can be represented as $AX = B$ and we know that to find $X$ we have to solve this: $B \div A$. Since we cannot divide matrices in this way, we have to use the previous technique. Find the inverse of $A$ and multiply by $B$.</p>
-<p>The inverse of $A$:</p>
-\begin{align*}A^{-1} =
+$$</div>
+<p>This can be represented as <span class="math">\(AX = B\)</span> and we know that to find <span class="math">\(X\)</span> we have to solve this: <span class="math">\(B \div A\)</span>. Since we cannot 
+divide matrices in this way, we have to use the previous technique. Find the inverse of <span class="math">\(A\)</span> and multiply by <span class="math">\(B\)</span>.</p>
+<p>The inverse of <span class="math">\(A\)</span>:</p>
+<div class="math">$$
+A^{-1} =
 \begin{bmatrix}
     -0.1 &amp; 0.2 \\
     0.3 &amp; -0.1
 \end{bmatrix}
-\end{align*}\begin{align*}X =
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
+X =
 \begin{bmatrix}
     -0.1 &amp; 0.2 \\
     0.3 &amp; -0.1
@@ -1938,92 +1001,115 @@ B =
     5 \\
     2
 \end{bmatrix}
-\end{align*}<p>Now, instead of $x$ and $y$ in the original equation put $5$ and $2$ and this will make equality true.</p>
-\begin{align*}10 + 8 = 18\end{align*}\begin{align*}30 + 4 = 34\end{align*}
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Elementary-Row-Operations">Elementary Row Operations<a class="anchor-link" href="#Elementary-Row-Operations">&#182;</a></h3><p><a id="Elementary_Row_Operations"></a></p>
+$$</div>
+<p>Now, instead of <span class="math">\(x\)</span> and <span class="math">\(y\)</span> in the original equation put <span class="math">\(5\)</span> and <span class="math">\(2\)</span> and this will make equality true.</p>
+<div class="math">$$
+10 + 8 = 18
+$$</div>
+<div class="math">$$
+30 + 4 = 34
+$$</div>
+<h3 id="elementary-row-operations">Elementary Row Operations<a class="headerlink" href="#elementary-row-operations" title="Permanent link">&para;</a></h3>
+<p><a id="Elementary_Row_Operations"></a></p>
 <hr>
-<p>Elementary row operations (ERO) play an important role in many matrix algebra applications, such as finding the inverse of a matrix and solving simultaneous linear equations. These topics are covered in advance part of the series. An ERO transforms a given matrix $A$ into a new matrix $A^{'}$ via one of the following operations:</p>
+<p>Elementary row operations (ERO) play an important role in many matrix algebra applications, 
+such as finding the inverse of a matrix and solving simultaneous linear equations. 
+These topics are covered in advance part of the series. An ERO transforms a given matrix <span class="math">\(A\)</span> into a 
+new matrix <span class="math">\(A^{'}\)</span> via one of the following operations:</p>
 <ol>
 <li>Interchange two rows (or columns)</li>
 <li>Multiply each element in a row (or column) by a non-zero number</li>
 <li>Multiply a row (or column) by a non-zero number and add the result to another row (or column)</li>
 </ol>
-<p>To catch the idea behind this operations let do the example. We have a matrix $A$ such that</p>
-\begin{align*}A =
+<p>To catch the idea behind this operations let do the example. We have a matrix <span class="math">\(A\)</span> such that</p>
+<div class="math">$$
+A =
 \begin{bmatrix}
     1 &amp; 2 &amp; 3 &amp; 4 \\
     1 &amp; 3 &amp; 5 &amp; 6 \\
     0 &amp; 1 &amp; 2 &amp; 3
 \end{bmatrix}
-\end{align*}<p>Type 1 ERO that interchange rows 1 and 3 of $A$ would yield</p>
-\begin{align*}A^{'} =
+$$</div>
+<p>Type 1 ERO that interchange rows 1 and 3 of <span class="math">\(A\)</span> would yield</p>
+<div class="math">$$
+A^{'} =
 \begin{bmatrix}
     0 &amp; 1 &amp; 2 &amp; 3 \\
     1 &amp; 3 &amp; 5 &amp; 6 \\
     1 &amp; 2 &amp; 3 &amp; 4
 \end{bmatrix}
-\end{align*}<p>Type 2 ERO that multiplies row 2 of $A$ by 3 would yield</p>
-\begin{align*}A^{'} =
+$$</div>
+<p>Type 2 ERO that multiplies row 2 of <span class="math">\(A\)</span> by 3 would yield</p>
+<div class="math">$$
+A^{'} =
 \begin{bmatrix}
     1 &amp; 2 &amp; 3 &amp; 4 \\
     3 &amp; 9 &amp; 15 &amp; 18 \\
     0 &amp; 1 &amp; 2 &amp; 3
 \end{bmatrix}
-\end{align*}<p>Type 3 ERO that multiplies row 2 of $A$ by 4 and replace row 3 of $A$ by $4 \times (\text{row 2 of A}) + \text{row 3 of A}$ would yiled row 3 of $A^{'}$ to be $ 4 \times [1 \ 3 \ 5 \ 6] + [0 \ 1 \ 2 \ 3] = [4 \ 13 \ 22 \ 27]$ and</p>
-\begin{align*}A^{'} =
+$$</div>
+<p>Type 3 ERO that multiplies row 2 of <span class="math">\(A\)</span> by 4 and replace row 3 of <span class="math">\(A\)</span> by <span class="math">\(4 \times (\text{row 2 of A}) + \text{row 3 of A}\)</span> 
+would yield row 3 of <span class="math">\(A^{'}\)</span> to be <span class="math">\(4 \times [1 \ 3 \ 5 \ 6] + [0 \ 1 \ 2 \ 3] = [4 \ 13 \ 22 \ 27]\)</span> and</p>
+<div class="math">$$
+A^{'} =
 \begin{bmatrix}
     1 &amp; 2 &amp; 3 &amp; 4 \\
     1 &amp; 3 &amp; 5 &amp; 6 \\
     4 &amp; 13 &amp; 22 &amp; 27
 \end{bmatrix}
-\end{align*}<p>Except this, to perform an elementary row operation on the matrix $A$, first we can perform the operation on the corresponding <strong>identity matrix</strong> to obtain an elementary matrix, then multiply $A$ on the left by this elementary matrix. More precisely this means that we take one ERO, whichever we want and perform this operation on corresponding identity matrix of $A$. If $A$ has $m \times n$ dimension we have identity matrix $I_{m \times n}$. After that, we multiply $A$ by this identity matrix. If we denote the elementary matrix by $E$ then, we multiply $A$ by $E$ in the following way:</p>
-\begin{equation}E_{1} \cdot A \end{equation}<p>where $E_{1}$ is ERO one performed on identity matrix.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Rank-of-a-Matrix">Rank of a Matrix<a class="anchor-link" href="#Rank-of-a-Matrix">&#182;</a></h3><p><a id="Rank_of_a_Matrix"></a></p>
+$$</div>
+<p>Except this, to perform an elementary row operation on the matrix <span class="math">\(A\)</span>, first we can perform the operation on the 
+corresponding <strong>identity matrix</strong> to obtain an elementary matrix, then multiply <span class="math">\(A\)</span> on the left by this elementary matrix. 
+More precisely this means that we take one ERO, whichever we want and perform this operation on corresponding identity 
+matrix of <span class="math">\(A\)</span>. If <span class="math">\(A\)</span> has <span class="math">\(m \times n\)</span> dimension we have identity matrix <span class="math">\(I_{m \times n}\)</span>. After that, we multiply <span class="math">\(A\)</span> 
+by this identity matrix. If we denote the elementary matrix by <span class="math">\(E\)</span> then, we multiply <span class="math">\(A\)</span> by <span class="math">\(E\)</span> in the following way:</p>
+<div class="math">$$
+E_{1} \cdot A
+$$</div>
+<p>where <span class="math">\(E_{1}\)</span> is ERO one performed on identity matrix.</p>
+<h3 id="rank-of-a-matrix">Rank of a Matrix<a class="headerlink" href="#rank-of-a-matrix" title="Permanent link">&para;</a></h3>
+<p><a id="Rank_of_a_Matrix"></a></p>
 <hr>
-<p>The maximum number of linearly independent rows in a matrix $A$ is called the <strong>row rank</strong> of $A$ and the maximum number of linearly independent columns in $A$ is called the <strong>column rank</strong> of $A$. If $A$ is $n \times m$ matrix, that is if matrix $A$ has $m$ rows and $n$ columns then the following inequality holds:</p>
-$$
+<p>The maximum number of linearly independent rows in a matrix <span class="math">\(A\)</span> is called the <strong>row rank</strong> of <span class="math">\(A\)</span> and the maximum 
+number of linearly independent columns in <span class="math">\(A\)</span> is called the <strong>column rank</strong> of <span class="math">\(A\)</span>. If <span class="math">\(A\)</span> is <span class="math">\(n \times m\)</span> matrix, 
+that is if matrix <span class="math">\(A\)</span> has <span class="math">\(m\)</span> rows and <span class="math">\(n\)</span> columns then the following inequality holds:</p>
+<div class="math">$$
 \text{row rank of} \ A \leq m \\
 \text{column rank of} \ A \leq n
-$$<p>Furthermore, for any matrix $A$</p>
-$$
+$$</div>
+<p>Furthermore, for any matrix <span class="math">\(A\)</span></p>
+<div class="math">$$
 \text{row rank of} \ A = \text{column rank of} \ A
-$$<p>From the above inequality it follows that</p>
-$$
+$$</div>
+<p>From the above inequality it follows that</p>
+<div class="math">$$
 Rank(A) \leq min(m, n)
-$$<p>This means that if a matrix has, for example, 3 rows and 5 columns, its rank cannot be more than 3. The rank of a matrix would be zero if and only if the matrix had no elements. If a matrix had even one element, its minimum rank would be one. When all of the vectors in a matrix are linearly independent, the matrix is said to be <strong>full rank</strong>.</p>
-<p>To calculate the rank of a matrix, we have to compute the determinant. It turns out that the rank of a matrix $A$, denoted by $Rank(A)$ is the size of the largest non-zero $m \times m$ submatrix with non-zero determinant. To simplify further, if the determinant of $4 \times 4$ matrix $A$ is zero and any $3 \times3$ submatrix of original matrix $A$ has non-zero determinant then the rank of the original matrix $A$ is $3$. So we can say that rank shows the <a href="https://en.wikipedia.org/wiki/Degenerate_bilinear_form">"nondegenerateness"</a> of the matrix $A$.</p>
+$$</div>
+<p>This means that if a matrix has, for example, 3 rows and 5 columns, its rank cannot be more than 3. 
+The rank of a matrix would be zero if and only if the matrix had no elements. If a matrix had even one element, 
+its minimum rank would be one. When all of the vectors in a matrix are linearly independent, the matrix is said to be <strong>full rank</strong>.</p>
+<p>To calculate the rank of a matrix, we have to compute the determinant. It turns out that the rank of a matrix <span class="math">\(A\)</span>, 
+denoted by <span class="math">\(Rank(A)\)</span> is the size of the largest non-zero <span class="math">\(m \times m\)</span> sub-matrix with non-zero determinant. 
+To simplify further, if the determinant of <span class="math">\(4 \times 4\)</span> matrix <span class="math">\(A\)</span> is zero and any <span class="math">\(3 \times3\)</span> sub-matrix of original 
+matrix <span class="math">\(A\)</span> has non-zero determinant then the rank of the original matrix <span class="math">\(A\)</span> is <span class="math">\(3\)</span>. 
+So we can say that rank shows the <a href="https://en.wikipedia.org/wiki/Degenerate_bilinear_form">"non-degenerateness"</a> of the matrix <span class="math">\(A\)</span>.</p>
 <p>Actually, there is no only one way to compute the rank. I provided one more way in the advanced tutorial.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Power-of-a-Matrix">Power of a Matrix<a class="anchor-link" href="#Power-of-a-Matrix">&#182;</a></h3><p><a id="Power_of_a_Matrix"></a></p>
+<h3 id="power-of-a-matrix">Power of a Matrix<a class="headerlink" href="#power-of-a-matrix" title="Permanent link">&para;</a></h3>
+<p><a id="Power_of_a_Matrix"></a></p>
 <hr>
-<p>We can rise a square matrix $A$ in any nonnegative power just like any number. This is defined as the product of $A$ by itself $n$ times. If matrix $A$ has inverse, then $A^{-n} = (A^{-1})^{n}$ or take inverse of $A$ and multiply by itself $n$ times.</p>
+<p>We can rise a square matrix <span class="math">\(A\)</span> in any nonnegative power just like any number. This is defined as the product of 
+<span class="math">\(A\)</span> by itself <span class="math">\(n\)</span> times. If matrix <span class="math">\(A\)</span> has inverse, then <span class="math">\(A^{-n} = (A^{-1})^{n}\)</span> or take inverse of <span class="math">\(A\)</span> and multiply by itself <span class="math">\(n\)</span> times.</p>
 <p>For example, if</p>
-\begin{align*}A =
+<div class="math">$$
+A =
 \begin{bmatrix}
     1 &amp; 2 \\
     3 &amp; 4
 \end{bmatrix}
-\end{align*}<p>then</p>
-\begin{align*}A^{2} = 
+$$</div>
+<p>then</p>
+<div class="math">$$
+A^{2} = 
 A A
 \ =
 \begin{bmatrix}
@@ -2040,14 +1126,9 @@ A A
     7 &amp; 10 \\
     15 &amp; 22
 \end{bmatrix}
-\end{align*}
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Norm-of-a-Matrix">Norm of a Matrix<a class="anchor-link" href="#Norm-of-a-Matrix">&#182;</a></h3><p><a id="Norm_of_a_Matrix"></a></p>
+$$</div>
+<h3 id="norm-of-a-matrix">Norm of a Matrix<a class="headerlink" href="#norm-of-a-matrix" title="Permanent link">&para;</a></h3>
+<p><a id="Norm_of_a_Matrix"></a></p>
 <hr>
 <p>In the previous post I talked about vector norms but did not mentioned matrix norm. There are three types of matrix norms:</p>
 <ul>
@@ -2056,93 +1137,95 @@ A A
 <li>Schatten norms</li>
 </ul>
 <p>Here, I will introduce only the first two types of matrix norm and depict one example of each to give the general idea of matrix norms.</p>
-<p>Induced norms usually are denoted by: $$\|A\|_p$$</p>
-<p>In the special cases of $p = 1, 2, \infty$, the induced matrix norms can be computed by:</p>
-\begin{align*}
+<p>Induced norms usually are denoted by:</p>
+<div class="math">$$\|A\|_{p}$$</div>
+<p>In the special cases of <span class="math">\(p = 1, 2, \infty\)</span>, the induced matrix norms can be computed by:</p>
+<div class="math">$$
 \|A\|_1 = max_{1\leq j \leq m} \sum_{i = 1}^{m}|a_{ij}|
-\end{align*}<p>Which is the maximum absolute column sum of the matrix $A$</p>
-\begin{align*}
+$$</div>
+<p>Which is the maximum absolute column sum of the matrix <span class="math">\(A\)</span></p>
+<div class="math">$$
 \|A\|_2 = \|A\|_F = \sigma_{max}(A)
-\end{align*}<p>Where $\|A\|_F$ is Frobenius Norm, which will be discussed below and $\sigma_{max}(A)$ is the spectral norm. The later will be discussed in the next post.</p>
-\begin{align*}
+$$</div>
+<p>Where <span class="math">\(\|A\|_F\)</span> is Frobenius Norm, which will be discussed below and <span class="math">\(\sigma_{max}(A)\)</span> is the spectral norm. The later will be discussed in the next post.</p>
+<div class="math">$$
 \|A\|_{\infty} = max_{1\leq i \leq m} \sum_{j = 1}^{n}|a_{ij}|
-\end{align*}<p>which is the maximum absolute row sum of the matrix $A$.</p>
+$$</div>
+<p>which is the maximum absolute row sum of the matrix <span class="math">\(A\)</span>.</p>
 <p>To clarify this farther, let consider the following example:</p>
-\begin{align*}A =
+<div class="math">$$
+A =
 \begin{bmatrix}
     1 &amp; 2 &amp; 3 \\
     4 &amp; 5 &amp; 6 \\
     7 &amp; 8 &amp; 9
 \end{bmatrix}
-\end{align*}\begin{align*}
+$$</div>
+<div class="math">$$
 \|A\|_1 = max(|1| + |4| + |7|; |2| + |5| + |8|; |3| + |6| + |9|) = max(12; 15; 18) = 18
-\end{align*}\begin{align*}
+$$</div>
+<div class="math">$$
+\quad
+$$</div>
+<div class="math">$$
 \|A\|_{\infty} = max(|1| + |2| + |3|; |4| + |5| + |6|; |7| + |8| + |9|) = max(6; 15; 24) = 24
-\end{align*}<p>Imagine, we have a vector whose elements are matrices instead of scalars. Then norm defined here is entrywise matrix norm.
+$$</div>
+<p>Imagine, we have a vector whose elements are matrices instead of scalars. Then norm defined here is entrywise matrix norm.
 The general formula for entrywise matrix norm is:</p>
-\begin{align*}
+<div class="math">$$
 \|A\|_{p,q} = \left(\sum_{j=1}^{n}\left(\sum_{i=1}^{m}|a_{ij}^{p}\right)^\frac{q}{p}\right)^\frac{1}{q}
-\end{align*}<p>where $p,q \geq 1$</p>
-<p>When $p=q=2$ we have Frobenius Norm or Frobenius Inner Product:</p>
-\begin{align*}
+$$</div>
+<p>where <span class="math">\(p,q \geq 1\)</span></p>
+<p>When <span class="math">\(p=q=2\)</span> we have Frobenius Norm or Frobenius Inner Product:</p>
+<div class="math">$$
 \|A\|_{F} = \sqrt{\sum_{i=1}^m \sum_{j=1}^{n}|a_{ij}|^2}
-\end{align*}<p>and when $p=q=\infty$, we have Max Norm:</p>
-\begin{align*}
+$$</div>
+<p>and when <span class="math">\(p=q=\infty\)</span>, we have Max Norm:</p>
+<div class="math">$$
 \|A\|_{max} = max_{ij}|a_{ij}|
-\end{align*}<p>If we have matrix $A$ such that:</p>
-\begin{align*}A = 
+$$</div>
+<p>If we have matrix <span class="math">\(A\)</span> such that:</p>
+<div class="math">$$
+A = 
 \begin{bmatrix}
     1 &amp; 2 &amp; 3 \\
     4 &amp; 5 &amp; 6 \\
     7 &amp; 8 &amp; 9
 \end{bmatrix}
-\end{align*}<p>Then Frobenius Norm is:</p>
-\begin{align*}
+$$</div>
+<p>Then Frobenius Norm is:</p>
+<div class="math">$$
 \|A\|_{F} = \sqrt{(|1|^2 + |2|^2 + |3|^2 + |4|^2 + |5|^2 + |6|^2 + |7|^2 + |8|^2 + |9|^2)} = \sqrt{1 + 4 + 9 + 16 + 25 + 36 + 49 + 64 + 81} = \sqrt{285} \approx 16.89
-\end{align*}<p>For two matrices $A$ and $B$ we have Frobenius Inner Product:</p>
-\begin{align*}
+$$</div>
+<p>For two matrices <span class="math">\(A\)</span> and <span class="math">\(B\)</span> we have Frobenius Inner Product:</p>
+<div class="math">$$
 \langle A,B \rangle_{F} = \sum_{i,j}\overline{A_{i,j}}B_{i,j} = tr \left(\overline{A^T}B \right)
-\end{align*}<p>Where overline denotes the complex conjugate of a matrix.</p>
+$$</div>
+<p>Where overline denotes the complex conjugate of a matrix.</p>
 <p>If</p>
-\begin{align*}A =
+<div class="math">$$
+A =
 \begin{bmatrix}
     2 &amp; 0 \\
     1 &amp; 1 \\
 \end{bmatrix}
-\end{align*}<p>And</p>
-\begin{align*}B =
+$$</div>
+<p>And</p>
+<div class="math">$$
+B =
 \begin{bmatrix}
     8 &amp; -3 \\
     4 &amp; 1 \\
 \end{bmatrix}
-\end{align*}<p>Then</p>
-\begin{align*}
+$$</div>
+<p>Then</p>
+<div class="math">$$
 \langle A,B \rangle_{F} = 2 \cdot 8 + 0 \cdot (-3) + 1 \cdot 4 + 1 \cdot 1 = 21
-\end{align*}
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Numerical-Representation">Numerical Representation<a class="anchor-link" href="#Numerical-Representation">&#182;</a></h3><p><a id="Numerical_Representation_Matrix"></a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Types-of-Matrices">Types of Matrices<a class="anchor-link" href="#Types-of-Matrices">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+$$</div>
+<h3 id="numerical-representation">Numerical Representation<a class="headerlink" href="#numerical-representation" title="Permanent link">&para;</a></h3>
+<p><a id="Numerical_Representation_Matrix"></a></p>
+<h4 id="types-of-matrices_1">Types of Matrices<a class="headerlink" href="#types-of-matrices_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
 <span class="c1"># Diagonal Matrix</span>
@@ -2203,70 +1286,41 @@ The general formula for entrywise matrix norm is:</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">identity</span><span class="p">)</span>
 </pre></div>
 
-    </div>
-</div>
-</div>
 
-<div class="output_wrapper">
-<div class="output">
+<div class="highlight"><pre><span></span><span class="n">Diagonal</span> <span class="n">Matrix</span>
+<span class="p">[[</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">0</span> <span class="mi">2</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">3</span><span class="p">]]</span>
+
+<span class="k">Lower</span> <span class="n">Triangular</span> <span class="n">Matrix</span>
+<span class="p">[[</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">4</span> <span class="mi">5</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span><span class="p">]]</span>
+
+<span class="k">Upper</span> <span class="n">Triangular</span> <span class="n">Matrix</span>
+<span class="p">[[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">0</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">9</span><span class="p">]]</span>
+
+<span class="n">Matrix</span> <span class="k">of</span> <span class="n">Zeros</span>
+<span class="p">[[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]]</span>
+
+<span class="n">Matrix</span> <span class="k">of</span> <span class="n">Ones</span>
+<span class="p">[[</span><span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span><span class="p">]]</span>
+
+<span class="k">Identity</span> <span class="n">Matrix</span>
+<span class="p">[[</span><span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span><span class="p">]]</span>
+</pre></div>
 
 
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Diagonal Matrix
-[[1 0 0]
- [0 2 0]
- [0 0 3]]
-
-Lower Triangular Matrix
-[[1 0 0]
- [4 5 0]
- [7 8 9]]
-
-Upper Triangular Matrix
-[[1 2 3]
- [0 5 6]
- [0 0 9]]
-
-Matrix of Zeros
-[[0 0 0]
- [0 0 0]
- [0 0 0]]
-
-Matrix of Ones
-[[1 1 1]
- [1 1 1]
- [1 1 1]]
-
-Identity Matrix
-[[1 0 0]
- [0 1 0]
- [0 0 1]]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Trace-of-a-Matrix">Trace of a Matrix<a class="anchor-link" href="#Trace-of-a-Matrix">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<h4 id="trace-of-a-matrix_1">Trace of a Matrix<a class="headerlink" href="#trace-of-a-matrix_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
@@ -2278,42 +1332,13 @@ Identity Matrix
 <span class="nb">print</span><span class="p">(</span><span class="n">trace</span><span class="p">)</span>
 </pre></div>
 
-    </div>
-</div>
-</div>
 
-<div class="output_wrapper">
-<div class="output">
+<div class="highlight"><pre><span></span><span class="err">15</span>
+</pre></div>
 
 
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>15
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Determinant-of-a-Matrix">Determinant of a Matrix<a class="anchor-link" href="#Determinant-of-a-Matrix">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<h4 id="determinant-of-a-matrix_1">Determinant of a Matrix<a class="headerlink" href="#determinant-of-a-matrix_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
              <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
@@ -2324,42 +1349,13 @@ Identity Matrix
 <span class="nb">print</span><span class="p">(</span><span class="n">determinant</span><span class="p">)</span>
 </pre></div>
 
-    </div>
-</div>
-</div>
 
-<div class="output_wrapper">
-<div class="output">
+<div class="highlight"><pre><span></span><span class="err">-32.000000000000014</span>
+</pre></div>
 
 
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>-32.000000000000014
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Inverse-of-a-Matrix">Inverse of a Matrix<a class="anchor-link" href="#Inverse-of-a-Matrix">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<h4 id="inverse-of-a-matrix_1">Inverse of a Matrix<a class="headerlink" href="#inverse-of-a-matrix_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
              <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
@@ -2371,44 +1367,15 @@ Identity Matrix
 <span class="nb">print</span><span class="p">(</span><span class="n">inverse</span><span class="p">)</span>
 </pre></div>
 
-    </div>
-</div>
-</div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
+<div class="highlight"><pre><span></span><span class="k">[[-0.25   0.375 -0.125]</span>
+ <span class="k">[ 1.25  -0.875  0.125]</span>
+ <span class="k">[-0.25   0.125  0.125]]</span>
+</pre></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[[-0.25   0.375 -0.125]
- [ 1.25  -0.875  0.125]
- [-0.25   0.125  0.125]]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Matrix-Division">Matrix Division<a class="anchor-link" href="#Matrix-Division">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<h4 id="matrix-division_1">Matrix Division<a class="headerlink" href="#matrix-division_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
@@ -2429,44 +1396,15 @@ Identity Matrix
 <span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 </pre></div>
 
-    </div>
-</div>
-</div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
+<div class="highlight"><pre><span></span><span class="k">[[ 1.5   -1.     0.5  ]</span>
+ <span class="k">[ 3.75  -2.125  0.875]</span>
+ <span class="k">[ 6.    -3.25   1.25 ]]</span>
+</pre></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[[ 1.5   -1.     0.5  ]
- [ 3.75  -2.125  0.875]
- [ 6.    -3.25   1.25 ]]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Solving-System-of-Equations-with-Matrices">Solving System of Equations with Matrices<a class="anchor-link" href="#Solving-System-of-Equations-with-Matrices">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<h4 id="solving-system-of-equations-with-matrices_1">Solving System of Equations with Matrices<a class="headerlink" href="#solving-system-of-equations-with-matrices_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
               <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
@@ -2485,48 +1423,19 @@ Identity Matrix
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;X =&#39;</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 
-    </div>
-</div>
-</div>
 
-<div class="output_wrapper">
-<div class="output">
+<div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">inverse</span> <span class="k">of</span> <span class="n">A</span> <span class="k">is</span>
+<span class="p">[[</span><span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">1</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">2</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mi">0</span><span class="p">.</span><span class="mi">3</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">1</span><span class="p">]]</span>
 
-
-<div class="output_area">
-
-    <div class="prompt"></div>
+<span class="n">X</span> <span class="o">=</span>
+<span class="p">[[</span><span class="mi">5</span><span class="p">.]</span>
+ <span class="p">[</span><span class="mi">2</span><span class="p">.]]</span>
+</pre></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>The inverse of A is
-[[-0.1  0.2]
- [ 0.3 -0.1]]
-
-X =
-[[5.]
- [2.]]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Rank-of-a-Matrix">Rank of a Matrix<a class="anchor-link" href="#Rank-of-a-Matrix">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<h4 id="rank-of-a-matrix_1">Rank of a Matrix<a class="headerlink" href="#rank-of-a-matrix_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
@@ -2549,44 +1458,15 @@ X =
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Rank(B) = &#39;</span><span class="p">,</span> <span class="n">rank_B</span><span class="p">)</span>
 </pre></div>
 
-    </div>
-</div>
-</div>
 
-<div class="output_wrapper">
-<div class="output">
+<div class="highlight"><pre><span></span><span class="n">Rank</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">=</span>  <span class="mi">2</span>
 
-
-<div class="output_area">
-
-    <div class="prompt"></div>
+<span class="n">Rank</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="o">=</span>  <span class="mi">3</span>
+</pre></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Rank(A) =  2
-
-Rank(B) =  3
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Power-of-a-Matrix">Power of a Matrix<a class="anchor-link" href="#Power-of-a-Matrix">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<h4 id="power-of-a-matrix_1">Power of a Matrix<a class="headerlink" href="#power-of-a-matrix_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
@@ -2598,43 +1478,14 @@ Rank(B) =  3
 <span class="nb">print</span><span class="p">(</span><span class="n">A_square</span><span class="p">)</span>
 </pre></div>
 
-    </div>
-</div>
-</div>
 
-<div class="output_wrapper">
-<div class="output">
+<div class="highlight"><pre><span></span><span class="k">[[ 7 10]</span>
+ <span class="k">[15 22]]</span>
+</pre></div>
 
 
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[[ 7 10]
- [15 22]]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Norm-of-a-Matrix">Norm of a Matrix<a class="anchor-link" href="#Norm-of-a-Matrix">&#182;</a></h4>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<h4 id="norm-of-a-matrix_1">Norm of a Matrix<a class="headerlink" href="#norm-of-a-matrix_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]])</span>
 
@@ -2661,97 +1512,94 @@ Rank(B) =  3
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Frobenius Inner Product is:&#39;</span><span class="p">,</span> <span class="n">frobenius_inner_product</span><span class="p">)</span>
 </pre></div>
 
-    </div>
-</div>
-</div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
+<div class="highlight"><pre><span></span><span class="err">Frobenius Norm is: 16.881943016134134</span>
+<span class="err">Column Max Norm is: 18.0</span>
+<span class="err">Row Max Norm is: 24.0</span>
+<span class="err">Frobenius Inner Product is: 21</span>
+</pre></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Frobenius Norm is: 16.881943016134134
-Column Max Norm is: 18.0
-Row Max Norm is: 24.0
-Frobenius Inner Product is: 21
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h2><p><a id="Conclusion"></a></p>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p><a id="Conclusion"></a></p>
 <hr>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>To sum up both part of intermediate linear algebra, we've reviewed a lot of materials. Some of them seemed easy, while some of them at the first glance seemed complex, but I do hope a little more practice and reading this tutorial 2 times will help you to master all of these intuitions further.</p>
-<p>For any questions, suggestions, corrections and/or short speeches comment below.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="References">References<a class="anchor-link" href="#References">&#182;</a></h3><h4 id="Matrix">Matrix<a class="anchor-link" href="#Matrix">&#182;</a></h4><ul>
-<li><p><a href="http://math.mit.edu/~gs/linearalgebra/">Introduction To Linear Algebra</a></p>
+<p>To sum up both part of intermediate linear algebra, we've reviewed a lot of materials. Some of them seemed easy, while some of them at the first glance seemed complex, but I do hope a little more practice and reading this tutorial 2 times will help you to master all of these intuitions further. </p>
+<p>For any questions, suggestions, corrections and/or short speeches comment below. </p>
+<h3 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h3>
+<h4 id="matrix_1">Matrix<a class="headerlink" href="#matrix_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><a href="http://math.mit.edu/~gs/linearalgebra/">Introduction To Linear Algebra</a></p>
 </li>
-<li><p><a href="https://en.wikipedia.org/wiki/List_of_linear_algebra_topics">Linear Algebra Topics</a></p>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/List_of_linear_algebra_topics">Linear Algebra Topics</a></p>
 </li>
-<li><p><a href="https://www.khanacademy.org/math/linear-algebra">Khan Academy - Linear Algebra</a></p>
+<li>
+<p><a href="https://www.khanacademy.org/math/linear-algebra">Khan Academy - Linear Algebra</a></p>
 </li>
 </ul>
-
-</div>
-</div>
-</div>
- 
-
-
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
         "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
         "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: 'center'," +
-        "    displayIndent: '0em'," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
         "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
         "    tex2jax: { " +
-        "        inlineMath: [ ['$','$'] ], " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
         "        displayMath: [ ['$$','$$'] ]," +
         "        processEscapes: true," +
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
-        " linebreaks: { automatic: true, width: '95% container' }, " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-        "    } " +
-        "}); ";
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 </script>
-
 
 
                 <p id="post-share-links">
