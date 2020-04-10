@@ -5,35 +5,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://dsfabric.org/</loc>
-<lastmod>2020-03-27T12:16:49-00:00</lastmod>
+<lastmod>2020-04-10T20:47:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://dsfabric.org/archives.html</loc>
-<lastmod>2020-03-27T12:16:49-00:00</lastmod>
+<lastmod>2020-04-10T20:47:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://dsfabric.org/tags.html</loc>
-<lastmod>2020-03-27T12:16:49-00:00</lastmod>
+<lastmod>2020-04-10T20:47:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://dsfabric.org/categories.html</loc>
-<lastmod>2020-03-27T12:16:49-00:00</lastmod>
+<lastmod>2020-04-10T20:47:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://dsfabric.org/search.html</loc>
-<lastmod>2020-03-27T12:16:49-00:00</lastmod>
+<lastmod>2020-04-10T20:47:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -53,15 +53,15 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://dsfabric.org/simple-interactive-data-visualization-with-plotly-express</loc>
-<lastmod>2020-03-26T20:53:00+04:00</lastmod>
+<loc>https://dsfabric.org/lost-in-pandas-1</loc>
+<lastmod>2019-04-10T19:14:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/python-test</loc>
-<lastmod>2019-03-08T12:14:00+04:00</lastmod>
+<loc>https://dsfabric.org/simple-interactive-data-visualization-with-plotly-express</loc>
+<lastmod>2020-03-26T20:53:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -104,20 +104,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://dsfabric.org/introduction-to-linear-algebra-with-python</loc>
 <lastmod>2019-03-01T12:14:00+04:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://dsfabric.org/test-post-ii</loc>
-<lastmod>2018-08-29T02:14:00+04:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://dsfabric.org/stackedit</loc>
-<lastmod>1997-08-29T02:14:00+05:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
