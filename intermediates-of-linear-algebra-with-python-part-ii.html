@@ -108,25 +108,30 @@
 </ol>
 <p>This is the continuation of the part one and in this post I will introduce you the following topics:</p>
 <ul>
-<li><a href="#Matrix">Matrix</a><ul>
-<li><a href="#Types_of_Matrices">Types of Matrices</a></li>
-<li><a href="#Trace_of_a_Matrix">Trace of a Matrix</a></li>
-<li><a href="#Determinant_of_a_Matrix">Determinant of a Matrix</a></li>
-<li><a href="#Minor_of_a_Matrix">Minor of a Matrix</a></li>
-<li><a href="#Cofactor_of_a_Matrix">Cofactor of a Matrix</a></li>
-<li><a href="#Determinant_of_a_Matrix_continuation">Determinant of a Matrix - continuation</a></li>
-<li><a href="#Matrix_Division">Matrix Division</a></li>
-<li><a href="#Inverse_of_a_Matrix">Inverse of a Matrix</a></li>
-<li><a href="#Matrix_Division_continuation">Matrix Division - continuation</a></li>
-<li><a href="#Solving_System_of_Equations_with_Matrices">Solving Systems of Equations with Matrices</a></li>
-<li><a href="#Elementary_Row_Operations">Elemenraty Row Operations</a></li>
-<li><a href="#Rank_of_a_Matrix">Rank of a Matrix</a></li>
-<li><a href="#Power_of_a_Matrix">Power of a Matrix</a></li>
-<li><a href="#Norm_of_a_Matrix">Norm of a Matrix</a></li>
-<li><a href="#Numerical_Representation_Matrix">Numerical Representation</a></li>
+<li><a href="#quad">\quad</a><ul>
+<li><a href="#matrix-division---continuation">Matrix Division - continuation</a></li>
+<li><a href="#solving-system-of-equations-with-matrices">Solving System of Equations with Matrices</a></li>
+<li><a href="#elementary-row-operations">Elementary Row Operations</a></li>
+<li><a href="#rank-of-a-matrix">Rank of a Matrix</a></li>
+<li><a href="#power-of-a-matrix">Power of a Matrix</a></li>
+<li><a href="#norm-of-a-matrix">Norm of a Matrix</a></li>
+<li><a href="#numerical-representation">Numerical Representation</a></li>
+<li><a href="#types-of-matrices-1">Types of Matrices</a></li>
+<li><a href="#trace-of-a-matrix-1">Trace of a Matrix</a></li>
+<li><a href="#determinant-of-a-matrix-1">Determinant of a Matrix</a></li>
+<li><a href="#inverse-of-a-matrix-1">Inverse of a Matrix</a></li>
+<li><a href="#matrix-division-1">Matrix Division</a></li>
+<li><a href="#solving-system-of-equations-with-matrices-1">Solving System of Equations with Matrices</a></li>
+<li><a href="#rank-of-a-matrix-1">Rank of a Matrix</a></li>
+<li><a href="#power-of-a-matrix-1">Power of a Matrix</a></li>
+<li><a href="#norm-of-a-matrix-1">Norm of a Matrix</a></li>
 </ul>
 </li>
-<li><a href="#Conclusion">Conclusion</a></li>
+<li><a href="#conclusion">Conclusion</a><ul>
+<li><a href="#references">References</a></li>
+<li><a href="#matrix-1">Matrix</a></li>
+</ul>
+</li>
 </ul>
 <h2 id="matrix">Matrix<a class="headerlink" href="#matrix" title="Permanent link">&para;</a></h2>
 <p><a id="Matrix"></a></p>
@@ -805,17 +810,19 @@ A^{-1} =
 \end{bmatrix}
 $$</div>
 <p>Let's verify that the original matrix multiplied by the inverse results in an identity matrix:</p>
-<div class="math">$$
+<p>$$
 A \cdot A^{-1} =
-\begin{bmatrix}4 &amp; 2 &amp; 2\\6 &amp; 2 &amp; 4\\2 &amp; 2 &amp; 8\end{bmatrix} \cdot \begin{bmatrix}-0.25 &amp; 0.375 &amp; -0.125\\1.25 &amp; -0.875 &amp; 0.125\\-0.25 &amp; 0.125 &amp; 0.125\end{bmatrix}
-$$</div>
-<h1 id="_1">$$<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+</p>
+<div class="math">\begin{bmatrix}4 &amp; 2 &amp; 2\\6 &amp; 2 &amp; 4\\2 &amp; 2 &amp; 8\end{bmatrix}</div>
+<p> \cdot </p>
+<div class="math">\begin{bmatrix}-0.25 &amp; 0.375 &amp; -0.125\\1.25 &amp; -0.875 &amp; 0.125\\-0.25 &amp; 0.125 &amp; 0.125\end{bmatrix}</div>
+<h1 id="quad">\quad<a class="headerlink" href="#quad" title="Permanent link">&para;</a></h1>
 <div class="math">\begin{bmatrix}(4\times-0.25)+(2\times1.25)+(2\times-0.25) &amp; (4\times0.375)+(2\times-0.875)+(2\times0.125) &amp; (4 \times-0.125)+(2 \times-0.125)+(2 \times0.125)\\
 (6 \times-0.25)+(2\times1.25)+(4\times-0.25) &amp; (6\times0.375)+(2 \times-0.875)+(4\times0.125) &amp; (6 \times-0.125)+(2 \times-0.125)+(4 \times0.125)\\
 (2\times-0.25)+(2\times1.25)+(8\times-0.25) &amp; (2 \times0.375)+(2 \times-0.875)+(8 \times0.125) &amp; (2 \times-0.125)+(2 \times-0.125)+(8 \times0.125)\end{bmatrix}</div>
-<p>
-$$</p>
-<h1 id="_2">$$<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<p>\quad</p>
+<p>=
+</p>
 <div class="math">\begin{bmatrix}1 &amp; 0 &amp; 0\\0 &amp; 1 &amp; 0\\0 &amp; 0 &amp; 1\end{bmatrix}</div>
 <p> = I
 $$</p>

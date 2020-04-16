@@ -3487,25 +3487,30 @@ of &lt;span class="math"&gt;\(A\)&lt;/span&gt; and spectral radius for our matri
 &lt;/ol&gt;
 &lt;p&gt;This is the continuation of the part one and in this post I will introduce you the following topics:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="#Matrix"&gt;Matrix&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#Types_of_Matrices"&gt;Types of Matrices&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Trace_of_a_Matrix"&gt;Trace of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Determinant_of_a_Matrix"&gt;Determinant of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Minor_of_a_Matrix"&gt;Minor of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Cofactor_of_a_Matrix"&gt;Cofactor of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Determinant_of_a_Matrix_continuation"&gt;Determinant of a Matrix - continuation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Matrix_Division"&gt;Matrix Division&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Inverse_of_a_Matrix"&gt;Inverse of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Matrix_Division_continuation"&gt;Matrix Division - continuation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Solving_System_of_Equations_with_Matrices"&gt;Solving Systems of Equations with Matrices&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Elementary_Row_Operations"&gt;Elemenraty Row Operations&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Rank_of_a_Matrix"&gt;Rank of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Power_of_a_Matrix"&gt;Power of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Norm_of_a_Matrix"&gt;Norm of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Numerical_Representation_Matrix"&gt;Numerical Representation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#quad"&gt;\quad&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#matrix-division---continuation"&gt;Matrix Division - continuation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#solving-system-of-equations-with-matrices"&gt;Solving System of Equations with Matrices&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#elementary-row-operations"&gt;Elementary Row Operations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#rank-of-a-matrix"&gt;Rank of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#power-of-a-matrix"&gt;Power of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#norm-of-a-matrix"&gt;Norm of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#numerical-representation"&gt;Numerical Representation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#types-of-matrices-1"&gt;Types of Matrices&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#trace-of-a-matrix-1"&gt;Trace of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#determinant-of-a-matrix-1"&gt;Determinant of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#inverse-of-a-matrix-1"&gt;Inverse of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#matrix-division-1"&gt;Matrix Division&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#solving-system-of-equations-with-matrices-1"&gt;Solving System of Equations with Matrices&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#rank-of-a-matrix-1"&gt;Rank of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#power-of-a-matrix-1"&gt;Power of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#norm-of-a-matrix-1"&gt;Norm of a Matrix&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="#Conclusion"&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#conclusion"&gt;Conclusion&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#references"&gt;References&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#matrix-1"&gt;Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="matrix"&gt;Matrix&lt;a class="headerlink" href="#matrix" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;a id="Matrix"&gt;&lt;/a&gt;&lt;/p&gt;
@@ -4184,17 +4189,19 @@ A^{-1} =
 \end{bmatrix}
 $$&lt;/div&gt;
 &lt;p&gt;Let's verify that the original matrix multiplied by the inverse results in an identity matrix:&lt;/p&gt;
-&lt;div class="math"&gt;$$
+&lt;p&gt;$$
 A \cdot A^{-1} =
-\begin{bmatrix}4 &amp;amp; 2 &amp;amp; 2\\6 &amp;amp; 2 &amp;amp; 4\\2 &amp;amp; 2 &amp;amp; 8\end{bmatrix} \cdot \begin{bmatrix}-0.25 &amp;amp; 0.375 &amp;amp; -0.125\\1.25 &amp;amp; -0.875 &amp;amp; 0.125\\-0.25 &amp;amp; 0.125 &amp;amp; 0.125\end{bmatrix}
-$$&lt;/div&gt;
-&lt;h1 id="_1"&gt;$$&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;/p&gt;
+&lt;div class="math"&gt;\begin{bmatrix}4 &amp;amp; 2 &amp;amp; 2\\6 &amp;amp; 2 &amp;amp; 4\\2 &amp;amp; 2 &amp;amp; 8\end{bmatrix}&lt;/div&gt;
+&lt;p&gt; \cdot &lt;/p&gt;
+&lt;div class="math"&gt;\begin{bmatrix}-0.25 &amp;amp; 0.375 &amp;amp; -0.125\\1.25 &amp;amp; -0.875 &amp;amp; 0.125\\-0.25 &amp;amp; 0.125 &amp;amp; 0.125\end{bmatrix}&lt;/div&gt;
+&lt;h1 id="quad"&gt;\quad&lt;a class="headerlink" href="#quad" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
 &lt;div class="math"&gt;\begin{bmatrix}(4\times-0.25)+(2\times1.25)+(2\times-0.25) &amp;amp; (4\times0.375)+(2\times-0.875)+(2\times0.125) &amp;amp; (4 \times-0.125)+(2 \times-0.125)+(2 \times0.125)\\
 (6 \times-0.25)+(2\times1.25)+(4\times-0.25) &amp;amp; (6\times0.375)+(2 \times-0.875)+(4\times0.125) &amp;amp; (6 \times-0.125)+(2 \times-0.125)+(4 \times0.125)\\
 (2\times-0.25)+(2\times1.25)+(8\times-0.25) &amp;amp; (2 \times0.375)+(2 \times-0.875)+(8 \times0.125) &amp;amp; (2 \times-0.125)+(2 \times-0.125)+(8 \times0.125)\end{bmatrix}&lt;/div&gt;
-&lt;p&gt;
-$$&lt;/p&gt;
-&lt;h1 id="_2"&gt;$$&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;\quad&lt;/p&gt;
+&lt;p&gt;=
+&lt;/p&gt;
 &lt;div class="math"&gt;\begin{bmatrix}1 &amp;amp; 0 &amp;amp; 0\\0 &amp;amp; 1 &amp;amp; 0\\0 &amp;amp; 0 &amp;amp; 1\end{bmatrix}&lt;/div&gt;
 &lt;p&gt; = I
 $$&lt;/p&gt;
