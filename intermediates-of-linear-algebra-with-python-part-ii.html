@@ -108,7 +108,8 @@
 </ol>
 <p>This is the continuation of the part one and in this post I will introduce you the following topics:</p>
 <ul>
-<li><a href="#quad">\quad</a><ul>
+<li><a href="#beginbmatrix4--2--26--2--42--2--8endbmatrix-cdot-beginbmatrix-025--0375---0125125---0875--0125-025--0125--0125endbmatrix"><div class="math">\begin{bmatrix}4 &amp; 2 &amp; 2\\6 &amp; 2 &amp; 4\\2 &amp; 2 &amp; 8\end{bmatrix}</div> \cdot <div class="math">\begin{bmatrix}-0.25 &amp; 0.375 &amp; -0.125\\1.25 &amp; -0.875 &amp; 0.125\\-0.25 &amp; 0.125 &amp; 0.125\end{bmatrix}</div></a></li>
+<li><a href="#2times-0252times1258times-025--2-times03752-times-08758-times0125--2-times-01252-times-01258-times0125endbmatrix">(2\times-0.25)+(2\times1.25)+(8\times-0.25) &amp; (2 \times0.375)+(2 \times-0.875)+(8 \times0.125) &amp; (2 \times-0.125)+(2 \times-0.125)+(8 \times0.125)\end{bmatrix}</a><ul>
 <li><a href="#matrix-division---continuation">Matrix Division - continuation</a></li>
 <li><a href="#solving-system-of-equations-with-matrices">Solving System of Equations with Matrices</a></li>
 <li><a href="#elementary-row-operations">Elementary Row Operations</a></li>
@@ -810,22 +811,16 @@ A^{-1} =
 \end{bmatrix}
 $$</div>
 <p>Let's verify that the original matrix multiplied by the inverse results in an identity matrix:</p>
-<p>$$
+<div class="math">$$
 A \cdot A^{-1} =
-</p>
-<div class="math">\begin{bmatrix}4 &amp; 2 &amp; 2\\6 &amp; 2 &amp; 4\\2 &amp; 2 &amp; 8\end{bmatrix}</div>
-<p> \cdot </p>
-<div class="math">\begin{bmatrix}-0.25 &amp; 0.375 &amp; -0.125\\1.25 &amp; -0.875 &amp; 0.125\\-0.25 &amp; 0.125 &amp; 0.125\end{bmatrix}</div>
-<h1 id="quad">\quad<a class="headerlink" href="#quad" title="Permanent link">&para;</a></h1>
-<div class="math">\begin{bmatrix}(4\times-0.25)+(2\times1.25)+(2\times-0.25) &amp; (4\times0.375)+(2\times-0.875)+(2\times0.125) &amp; (4 \times-0.125)+(2 \times-0.125)+(2 \times0.125)\\
+\begin{bmatrix}4 &amp; 2 &amp; 2\\6 &amp; 2 &amp; 4\\2 &amp; 2 &amp; 8\end{bmatrix} \cdot \begin{bmatrix}-0.25 &amp; 0.375 &amp; -0.125\\1.25 &amp; -0.875 &amp; 0.125\\-0.25 &amp; 0.125 &amp; 0.125\end{bmatrix}
+=
+\begin{bmatrix}(4\times-0.25)+(2\times1.25)+(2\times-0.25) &amp; (4\times0.375)+(2\times-0.875)+(2\times0.125) &amp; (4 \times-0.125)+(2 \times-0.125)+(2 \times0.125)\\
 (6 \times-0.25)+(2\times1.25)+(4\times-0.25) &amp; (6\times0.375)+(2 \times-0.875)+(4\times0.125) &amp; (6 \times-0.125)+(2 \times-0.125)+(4 \times0.125)\\
-(2\times-0.25)+(2\times1.25)+(8\times-0.25) &amp; (2 \times0.375)+(2 \times-0.875)+(8 \times0.125) &amp; (2 \times-0.125)+(2 \times-0.125)+(8 \times0.125)\end{bmatrix}</div>
-<p>\quad</p>
-<p>=
-</p>
-<div class="math">\begin{bmatrix}1 &amp; 0 &amp; 0\\0 &amp; 1 &amp; 0\\0 &amp; 0 &amp; 1\end{bmatrix}</div>
-<p> = I
-$$</p>
+(2\times-0.25)+(2\times1.25)+(8\times-0.25) &amp; (2 \times0.375)+(2 \times-0.875)+(8 \times0.125) &amp; (2 \times-0.125)+(2 \times-0.125)+(8 \times0.125)\end{bmatrix}
+=
+\begin{bmatrix}1 &amp; 0 &amp; 0\\0 &amp; 1 &amp; 0\\0 &amp; 0 &amp; 1\end{bmatrix} = I
+$$</div>
 <p>Do you see how challenging can be finding the inverse of <span class="math">\(4 \times 4\)</span> matrix? That's why we use calculators or computer program to compute it.</p>
 <h3 id="matrix-division-continuation">Matrix Division - continuation<a class="headerlink" href="#matrix-division-continuation" title="Permanent link">&para;</a></h3>
 <p><a id="Matrix_Division_continuation"></a></p>

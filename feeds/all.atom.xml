@@ -3487,7 +3487,8 @@ of &lt;span class="math"&gt;\(A\)&lt;/span&gt; and spectral radius for our matri
 &lt;/ol&gt;
 &lt;p&gt;This is the continuation of the part one and in this post I will introduce you the following topics:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="#quad"&gt;\quad&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#beginbmatrix4--2--26--2--42--2--8endbmatrix-cdot-beginbmatrix-025--0375---0125125---0875--0125-025--0125--0125endbmatrix"&gt;&lt;div class="math"&gt;\begin{bmatrix}4 &amp;amp; 2 &amp;amp; 2\\6 &amp;amp; 2 &amp;amp; 4\\2 &amp;amp; 2 &amp;amp; 8\end{bmatrix}&lt;/div&gt; \cdot &lt;div class="math"&gt;\begin{bmatrix}-0.25 &amp;amp; 0.375 &amp;amp; -0.125\\1.25 &amp;amp; -0.875 &amp;amp; 0.125\\-0.25 &amp;amp; 0.125 &amp;amp; 0.125\end{bmatrix}&lt;/div&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#2times-0252times1258times-025--2-times03752-times-08758-times0125--2-times-01252-times-01258-times0125endbmatrix"&gt;(2\times-0.25)+(2\times1.25)+(8\times-0.25) &amp;amp; (2 \times0.375)+(2 \times-0.875)+(8 \times0.125) &amp;amp; (2 \times-0.125)+(2 \times-0.125)+(8 \times0.125)\end{bmatrix}&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#matrix-division---continuation"&gt;Matrix Division - continuation&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#solving-system-of-equations-with-matrices"&gt;Solving System of Equations with Matrices&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#elementary-row-operations"&gt;Elementary Row Operations&lt;/a&gt;&lt;/li&gt;
@@ -4189,22 +4190,16 @@ A^{-1} =
 \end{bmatrix}
 $$&lt;/div&gt;
 &lt;p&gt;Let's verify that the original matrix multiplied by the inverse results in an identity matrix:&lt;/p&gt;
-&lt;p&gt;$$
+&lt;div class="math"&gt;$$
 A \cdot A^{-1} =
-&lt;/p&gt;
-&lt;div class="math"&gt;\begin{bmatrix}4 &amp;amp; 2 &amp;amp; 2\\6 &amp;amp; 2 &amp;amp; 4\\2 &amp;amp; 2 &amp;amp; 8\end{bmatrix}&lt;/div&gt;
-&lt;p&gt; \cdot &lt;/p&gt;
-&lt;div class="math"&gt;\begin{bmatrix}-0.25 &amp;amp; 0.375 &amp;amp; -0.125\\1.25 &amp;amp; -0.875 &amp;amp; 0.125\\-0.25 &amp;amp; 0.125 &amp;amp; 0.125\end{bmatrix}&lt;/div&gt;
-&lt;h1 id="quad"&gt;\quad&lt;a class="headerlink" href="#quad" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
-&lt;div class="math"&gt;\begin{bmatrix}(4\times-0.25)+(2\times1.25)+(2\times-0.25) &amp;amp; (4\times0.375)+(2\times-0.875)+(2\times0.125) &amp;amp; (4 \times-0.125)+(2 \times-0.125)+(2 \times0.125)\\
+\begin{bmatrix}4 &amp;amp; 2 &amp;amp; 2\\6 &amp;amp; 2 &amp;amp; 4\\2 &amp;amp; 2 &amp;amp; 8\end{bmatrix} \cdot \begin{bmatrix}-0.25 &amp;amp; 0.375 &amp;amp; -0.125\\1.25 &amp;amp; -0.875 &amp;amp; 0.125\\-0.25 &amp;amp; 0.125 &amp;amp; 0.125\end{bmatrix}
+=
+\begin{bmatrix}(4\times-0.25)+(2\times1.25)+(2\times-0.25) &amp;amp; (4\times0.375)+(2\times-0.875)+(2\times0.125) &amp;amp; (4 \times-0.125)+(2 \times-0.125)+(2 \times0.125)\\
 (6 \times-0.25)+(2\times1.25)+(4\times-0.25) &amp;amp; (6\times0.375)+(2 \times-0.875)+(4\times0.125) &amp;amp; (6 \times-0.125)+(2 \times-0.125)+(4 \times0.125)\\
-(2\times-0.25)+(2\times1.25)+(8\times-0.25) &amp;amp; (2 \times0.375)+(2 \times-0.875)+(8 \times0.125) &amp;amp; (2 \times-0.125)+(2 \times-0.125)+(8 \times0.125)\end{bmatrix}&lt;/div&gt;
-&lt;p&gt;\quad&lt;/p&gt;
-&lt;p&gt;=
-&lt;/p&gt;
-&lt;div class="math"&gt;\begin{bmatrix}1 &amp;amp; 0 &amp;amp; 0\\0 &amp;amp; 1 &amp;amp; 0\\0 &amp;amp; 0 &amp;amp; 1\end{bmatrix}&lt;/div&gt;
-&lt;p&gt; = I
-$$&lt;/p&gt;
+(2\times-0.25)+(2\times1.25)+(8\times-0.25) &amp;amp; (2 \times0.375)+(2 \times-0.875)+(8 \times0.125) &amp;amp; (2 \times-0.125)+(2 \times-0.125)+(8 \times0.125)\end{bmatrix}
+=
+\begin{bmatrix}1 &amp;amp; 0 &amp;amp; 0\\0 &amp;amp; 1 &amp;amp; 0\\0 &amp;amp; 0 &amp;amp; 1\end{bmatrix} = I
+$$&lt;/div&gt;
 &lt;p&gt;Do you see how challenging can be finding the inverse of &lt;span class="math"&gt;\(4 \times 4\)&lt;/span&gt; matrix? That's why we use calculators or computer program to compute it.&lt;/p&gt;
 &lt;h3 id="matrix-division-continuation"&gt;Matrix Division - continuation&lt;a class="headerlink" href="#matrix-division-continuation" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;a id="Matrix_Division_continuation"&gt;&lt;/a&gt;&lt;/p&gt;
