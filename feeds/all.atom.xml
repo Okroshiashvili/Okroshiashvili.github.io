@@ -3478,7 +3478,7 @@ of &lt;span class="math"&gt;\(A\)&lt;/span&gt; and spectral radius for our matri
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Mathematics"></category><category term="Advance Linear Algebra"></category><category term="Mathematics"></category></entry><entry><title>Intermediates of Linear Algebra with Python - Part II</title><link href="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-ii" rel="alternate"></link><published>2019-03-03T12:14:00+04:00</published><updated>2019-03-03T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-03:/intermediates-of-linear-algebra-with-python-part-ii</id><summary type="html">&lt;p&gt;This is an intermediate part of Linear Algebra with Python&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the second part of third post in blog series about linear algebra.&lt;/p&gt;
+&lt;/script&gt;</content><category term="Mathematics"></category><category term="Advance Linear Algebra"></category><category term="Mathematics"></category></entry><entry><title>Intermediates of Linear Algebra with Python - Part II</title><link href="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-ii" rel="alternate"></link><published>2019-03-03T12:14:00+04:00</published><updated>2019-03-03T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-03:/intermediates-of-linear-algebra-with-python-part-ii</id><summary type="html">&lt;p&gt;This is the first part of intermediate Linear Algebra with Python&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the second part of third post in blog series about linear algebra.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Introduction&lt;/li&gt;
 &lt;li&gt;Basics of linear algebra&lt;/li&gt;
@@ -3487,31 +3487,25 @@ of &lt;span class="math"&gt;\(A\)&lt;/span&gt; and spectral radius for our matri
 &lt;/ol&gt;
 &lt;p&gt;This is the continuation of the part one and in this post I will introduce you the following topics:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="#math-xmlns%22httpwwww3org1998mathmathml%22semanticsmrowmrowannotation-encoding%22applicationx-tex%22annotationsemanticsmath"&gt;$$&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#math-xmlns%22httpwwww3org1998mathmathml%22semanticsmrowmrowannotation-encoding%22applicationx-tex%22annotationsemanticsmath-1"&gt;$$&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#matrix-division---continuation"&gt;Matrix Division - continuation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#solving-system-of-equations-with-matrices"&gt;Solving System of Equations with Matrices&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#elementary-row-operations"&gt;Elementary Row Operations&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#rank-of-a-matrix"&gt;Rank of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#power-of-a-matrix"&gt;Power of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#norm-of-a-matrix"&gt;Norm of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#numerical-representation"&gt;Numerical Representation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#types-of-matrices-1"&gt;Types of Matrices&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#trace-of-a-matrix-1"&gt;Trace of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#determinant-of-a-matrix-1"&gt;Determinant of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#inverse-of-a-matrix-1"&gt;Inverse of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#matrix-division-1"&gt;Matrix Division&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#solving-system-of-equations-with-matrices-1"&gt;Solving System of Equations with Matrices&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#rank-of-a-matrix-1"&gt;Rank of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#power-of-a-matrix-1"&gt;Power of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#norm-of-a-matrix-1"&gt;Norm of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Matrix"&gt;Matrix&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#Types_of_Matrices"&gt;Types of Matrices&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Trace_of_a_Matrix"&gt;Trace of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Determinant_of_a_Matrix"&gt;Determinant of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Minor_of_a_Matrix"&gt;Minor of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Cofactor_of_a_Matrix"&gt;Cofactor of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Determinant_of_a_Matrix_continuation"&gt;Determinant of a Matrix - continuation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Matrix_Division"&gt;Matrix Division&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Inverse_of_a_Matrix"&gt;Inverse of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Inverse_of_a_Matrix_continuation"&gt;Matrix Division - continuation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Solving_System_of_Equations_with_Matrices"&gt;Solving Systems of Equations with Matrices&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Elementary_Row_Operations"&gt;Elemenraty Row Operations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Rank_of_a_Matrix"&gt;Rank of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Power_of_a_Matrix"&gt;Power of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Norm_of_a_Matrix"&gt;Norm of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Numerical_Representation_Matrix"&gt;Numerical Representation&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="#conclusion"&gt;Conclusion&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#references"&gt;References&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#matrix-1"&gt;Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;a href="#Conclusion"&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="matrix"&gt;Matrix&lt;a class="headerlink" href="#matrix" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;a id="Matrix"&gt;&lt;/a&gt;&lt;/p&gt;
@@ -3750,9 +3744,6 @@ A =
 \end{bmatrix}
 $$&lt;/div&gt;
 &lt;div class="math"&gt;$$
-\quad
-$$&lt;/div&gt;
-&lt;div class="math"&gt;$$
 det(A) = ad - bc
 $$&lt;/div&gt;
 &lt;p&gt;It seems easy to calculate the determinant of any &lt;span class="math"&gt;\(2 \times 2\)&lt;/span&gt; matrix right? Now think about how to calculate determinant 
@@ -3953,56 +3944,32 @@ C_{11} =
 (-1)^{1+1} \cdot M_{11}
 $$&lt;/div&gt;
 &lt;div class="math"&gt;$$
-\quad
-$$&lt;/div&gt;
-&lt;div class="math"&gt;$$
 C_{21} =
 (-1)^{2+1} \cdot M_{21}
-$$&lt;/div&gt;
-&lt;div class="math"&gt;$$
-\quad
 $$&lt;/div&gt;
 &lt;div class="math"&gt;$$
 C_{31} =
 (-1)^{3+1} \cdot M_{31}
 $$&lt;/div&gt;
 &lt;div class="math"&gt;$$
-\quad
-$$&lt;/div&gt;
-&lt;div class="math"&gt;$$
 C_{12} =
 (-1)^{1+2} \cdot M_{12}
-$$&lt;/div&gt;
-&lt;div class="math"&gt;$$
-\quad
 $$&lt;/div&gt;
 &lt;div class="math"&gt;$$
 C_{22} =
 (-1)^{2+2} \cdot M_{22}
 $$&lt;/div&gt;
 &lt;div class="math"&gt;$$
-\quad
-$$&lt;/div&gt;
-&lt;div class="math"&gt;$$
 C_{32} =
 (-1)^{3+2} \cdot M_{32}
-$$&lt;/div&gt;
-&lt;div class="math"&gt;$$
-\quad
 $$&lt;/div&gt;
 &lt;div class="math"&gt;$$
 C_{13} =
 (-1)^{1+3} \cdot M_{13}
 $$&lt;/div&gt;
 &lt;div class="math"&gt;$$
-\quad
-$$&lt;/div&gt;
-&lt;div class="math"&gt;$$
 C_{23} =
 (-1)^{2+3} \cdot M_{23}
-$$&lt;/div&gt;
-&lt;div class="math"&gt;$$
-\quad
 $$&lt;/div&gt;
 &lt;div class="math"&gt;$$
 C_{33} =
@@ -4127,56 +4094,32 @@ M_{11} =
 \end{bmatrix}
 $$&lt;/div&gt;
 &lt;div class="math"&gt;$$
-\quad
-$$&lt;/div&gt;
-&lt;div class="math"&gt;$$
 M_{12} =
 \begin{bmatrix}\color{lightgray}4 &amp;amp; \color{blue}2 &amp;amp; \color{lightgray}2\\\color{red}6 &amp;amp; \color{lightgray}2 &amp;amp; \color{red}4\\\color{red}2 &amp;amp; \color{lightgray}2 &amp;amp; \color{red}8\end{bmatrix}\;\;\;\;(6\times8) - (4\times2) = 40\;\;\;\;\begin{bmatrix}8 &amp;amp; 40 &amp;amp; \color{lightgray}?\\\color{lightgray}? &amp;amp; \color{lightgray}? &amp;amp; \color{lightgray}?\\\color{lightgray}? &amp;amp; \color{lightgray}? &amp;amp; \color{lightgray}?\end{bmatrix}
-$$&lt;/div&gt;
-&lt;div class="math"&gt;$$
-\quad
 $$&lt;/div&gt;
 &lt;div class="math"&gt;$$
 M_{13} =
 \begin{bmatrix}\color{lightgray}4 &amp;amp; \color{lightgray}2 &amp;amp; \color{blue}2\\\color{red}6 &amp;amp; \color{red}2 &amp;amp; \color{lightgray}4\\\color{red}2 &amp;amp; \color{red}2 &amp;amp; \color{lightgray}8\end{bmatrix}\;\;\;\;(6\times2) - (2\times2) = 8\;\;\;\;\begin{bmatrix}8 &amp;amp; 40 &amp;amp; 8\\\color{lightgray}? &amp;amp; \color{lightgray}? &amp;amp; \color{lightgray}?\\\color{lightgray}? &amp;amp; \color{lightgray}? &amp;amp; \color{lightgray}?\end{bmatrix}
 $$&lt;/div&gt;
 &lt;div class="math"&gt;$$
-\quad
-$$&lt;/div&gt;
-&lt;div class="math"&gt;$$
 M_{21} =
 \begin{bmatrix}\color{lightgray}4 &amp;amp; \color{red}2 &amp;amp; \color{red}2\\\color{blue}6 &amp;amp; \color{lightgray}2 &amp;amp; \color{lightgray}4\\\color{lightgray}2 &amp;amp; \color{red}2 &amp;amp; \color{red}8\end{bmatrix}\;\;\;\;(2\times8) - (2\times2) = 12\;\;\;\;\begin{bmatrix}8 &amp;amp; 40 &amp;amp; 8\\12 &amp;amp; \color{lightgray}? &amp;amp; \color{lightgray}?\\\color{lightgray}? &amp;amp; \color{lightgray}? &amp;amp; \color{lightgray}?\end{bmatrix}
-$$&lt;/div&gt;
-&lt;div class="math"&gt;$$
-\quad
 $$&lt;/div&gt;
 &lt;div class="math"&gt;$$
 M_{22} =
 \begin{bmatrix}\color{red}4 &amp;amp; \color{lightgray}2 &amp;amp; \color{red}2\\\color{lightgray}6 &amp;amp; \color{blue}2 &amp;amp; \color{lightgray}4\\\color{red}2 &amp;amp; \color{lightgray}2 &amp;amp; \color{red}8\end{bmatrix}\;\;\;\;(4\times8) - (2\times2) = 28\;\;\;\;\begin{bmatrix}8 &amp;amp; 40 &amp;amp; 8\\12 &amp;amp; 28 &amp;amp; \color{lightgray}?\\\color{lightgray}? &amp;amp; \color{lightgray}? &amp;amp; \color{lightgray}?\end{bmatrix}
 $$&lt;/div&gt;
 &lt;div class="math"&gt;$$
-\quad
-$$&lt;/div&gt;
-&lt;div class="math"&gt;$$
 M_{23} =
 \begin{bmatrix}\color{red}4 &amp;amp; \color{red}2 &amp;amp; \color{lightgray}2\\\color{lightgray}6 &amp;amp; \color{lightgray}2 &amp;amp; \color{blue}4\\\color{red}2 &amp;amp; \color{red}2 &amp;amp; \color{lightgray}8\end{bmatrix}\;\;\;\;(4\times2) - (2\times2) = 4\;\;\;\;\begin{bmatrix}8 &amp;amp; 40 &amp;amp; 8\\12 &amp;amp; 28 &amp;amp; 4\\\color{lightgray}? &amp;amp; \color{lightgray}? &amp;amp; \color{lightgray}?\end{bmatrix}
-$$&lt;/div&gt;
-&lt;div class="math"&gt;$$
-\quad
 $$&lt;/div&gt;
 &lt;div class="math"&gt;$$
 M_{31} =
 \begin{bmatrix}\color{lightgray}4 &amp;amp; \color{red}2 &amp;amp; \color{red}2\\\color{lightgray}6 &amp;amp; \color{red}2 &amp;amp; \color{red}4\\\color{blue}2 &amp;amp; \color{lightgray}2 &amp;amp; \color{lightgray}8\end{bmatrix}\;\;\;\;(2\times4) - (2\times2) = 4\;\;\;\;\begin{bmatrix}8 &amp;amp; 40 &amp;amp; 8\\12 &amp;amp; 28 &amp;amp; 4\\4 &amp;amp; \color{lightgray}? &amp;amp; \color{lightgray}?\end{bmatrix}
 $$&lt;/div&gt;
 &lt;div class="math"&gt;$$
-\quad
-$$&lt;/div&gt;
-&lt;div class="math"&gt;$$
 M_{32} =
 \begin{bmatrix}\color{red}4 &amp;amp; \color{lightgray}2 &amp;amp; \color{red}2\\\color{red}6 &amp;amp; \color{lightgray}2 &amp;amp; \color{red}4\\\color{lightgray}2 &amp;amp; \color{blue}2 &amp;amp; \color{lightgray}8\end{bmatrix}\;\;\;\;(4\times4) - (2\times6) = 4\;\;\;\;\begin{bmatrix}8 &amp;amp; 40 &amp;amp; 8\\12 &amp;amp; 28 &amp;amp; 4\\4 &amp;amp; 4 &amp;amp; \color{lightgray}?\end{bmatrix}
-$$&lt;/div&gt;
-&lt;div class="math"&gt;$$
-\quad
 $$&lt;/div&gt;
 &lt;div class="math"&gt;$$
 M_{33} =
@@ -4245,22 +4188,16 @@ $$&lt;/div&gt;
 A \cdot A^{-1} =
 \begin{bmatrix}4 &amp;amp; 2 &amp;amp; 2\\6 &amp;amp; 2 &amp;amp; 4\\2 &amp;amp; 2 &amp;amp; 8\end{bmatrix} \cdot \begin{bmatrix}-0.25 &amp;amp; 0.375 &amp;amp; -0.125\\1.25 &amp;amp; -0.875 &amp;amp; 0.125\\-0.25 &amp;amp; 0.125 &amp;amp; 0.125\end{bmatrix}
 $$&lt;/div&gt;
-&lt;div class="math"&gt;$$
-\quad
-$$&lt;/div&gt;
-&lt;div class="math"&gt;$$
-=
-\begin{bmatrix}(4\times-0.25)+(2\times1.25)+(2\times-0.25) &amp;amp; (4\times0.375)+(2\times-0.875)+(2\times0.125) &amp;amp; (4 \times-0.125)+(2 \times-0.125)+(2 \times0.125)\\
+&lt;h1 id="_1"&gt;$$&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;div class="math"&gt;\begin{bmatrix}(4\times-0.25)+(2\times1.25)+(2\times-0.25) &amp;amp; (4\times0.375)+(2\times-0.875)+(2\times0.125) &amp;amp; (4 \times-0.125)+(2 \times-0.125)+(2 \times0.125)\\
 (6 \times-0.25)+(2\times1.25)+(4\times-0.25) &amp;amp; (6\times0.375)+(2 \times-0.875)+(4\times0.125) &amp;amp; (6 \times-0.125)+(2 \times-0.125)+(4 \times0.125)\\
-(2\times-0.25)+(2\times1.25)+(8\times-0.25) &amp;amp; (2 \times0.375)+(2 \times-0.875)+(8 \times0.125) &amp;amp; (2 \times-0.125)+(2 \times-0.125)+(8 \times0.125)\end{bmatrix}
-$$&lt;/div&gt;
-&lt;div class="math"&gt;$$
-\quad
-$$&lt;/div&gt;
-&lt;div class="math"&gt;$$
-=
-\begin{bmatrix}1 &amp;amp; 0 &amp;amp; 0\\0 &amp;amp; 1 &amp;amp; 0\\0 &amp;amp; 0 &amp;amp; 1\end{bmatrix} = I
-$$&lt;/div&gt;
+(2\times-0.25)+(2\times1.25)+(8\times-0.25) &amp;amp; (2 \times0.375)+(2 \times-0.875)+(8 \times0.125) &amp;amp; (2 \times-0.125)+(2 \times-0.125)+(8 \times0.125)\end{bmatrix}&lt;/div&gt;
+&lt;p&gt;
+$$&lt;/p&gt;
+&lt;h1 id="_2"&gt;$$&lt;a class="headerlink" href="#_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
+&lt;div class="math"&gt;\begin{bmatrix}1 &amp;amp; 0 &amp;amp; 0\\0 &amp;amp; 1 &amp;amp; 0\\0 &amp;amp; 0 &amp;amp; 1\end{bmatrix}&lt;/div&gt;
+&lt;p&gt; = I
+$$&lt;/p&gt;
 &lt;p&gt;Do you see how challenging can be finding the inverse of &lt;span class="math"&gt;\(4 \times 4\)&lt;/span&gt; matrix? That's why we use calculators or computer program to compute it.&lt;/p&gt;
 &lt;h3 id="matrix-division-continuation"&gt;Matrix Division - continuation&lt;a class="headerlink" href="#matrix-division-continuation" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;a id="Matrix_Division_continuation"&gt;&lt;/a&gt;&lt;/p&gt;
@@ -4367,9 +4304,6 @@ A^{-1} =
 \end{bmatrix}
 $$&lt;/div&gt;
 &lt;div class="math"&gt;$$
-\quad
-$$&lt;/div&gt;
-&lt;div class="math"&gt;$$
 X =
 \begin{bmatrix}
     -0.1 &amp;amp; 0.2 \\
@@ -4433,7 +4367,7 @@ A^{'} =
 \end{bmatrix}
 $$&lt;/div&gt;
 &lt;p&gt;Type 3 ERO that multiplies row 2 of &lt;span class="math"&gt;\(A\)&lt;/span&gt; by 4 and replace row 3 of &lt;span class="math"&gt;\(A\)&lt;/span&gt; by &lt;span class="math"&gt;\(4 \times (\text{row 2 of A}) + \text{row 3 of A}\)&lt;/span&gt; 
-would yield row 3 of &lt;span class="math"&gt;\(A^{'}\)&lt;/span&gt; to be &lt;span class="math"&gt;\(4 \times [1 \ 3 \ 5 \ 6] + [0 \ 1 \ 2 \ 3] = [4 \ 13 \ 22 \ 27]\)&lt;/span&gt; and&lt;/p&gt;
+would yield row 3 of &lt;span class="math"&gt;\(A^{'}\)&lt;/span&gt; to be &lt;span class="math"&gt;\( 4 \times [1 \ 3 \ 5 \ 6] + [0 \ 1 \ 2 \ 3] = [4 \ 13 \ 22 \ 27]\)&lt;/span&gt; and&lt;/p&gt;
 &lt;div class="math"&gt;$$
 A^{'} =
 \begin{bmatrix}
@@ -4448,7 +4382,7 @@ More precisely this means that we take one ERO, whichever we want and perform th
 matrix of &lt;span class="math"&gt;\(A\)&lt;/span&gt;. If &lt;span class="math"&gt;\(A\)&lt;/span&gt; has &lt;span class="math"&gt;\(m \times n\)&lt;/span&gt; dimension we have identity matrix &lt;span class="math"&gt;\(I_{m \times n}\)&lt;/span&gt;. After that, we multiply &lt;span class="math"&gt;\(A\)&lt;/span&gt; 
 by this identity matrix. If we denote the elementary matrix by &lt;span class="math"&gt;\(E\)&lt;/span&gt; then, we multiply &lt;span class="math"&gt;\(A\)&lt;/span&gt; by &lt;span class="math"&gt;\(E\)&lt;/span&gt; in the following way:&lt;/p&gt;
 &lt;div class="math"&gt;$$
-E_{1} \cdot A
+\begin{equation}E_{1} \cdot A \end{equation}
 $$&lt;/div&gt;
 &lt;p&gt;where &lt;span class="math"&gt;\(E_{1}\)&lt;/span&gt; is ERO one performed on identity matrix.&lt;/p&gt;
 &lt;h3 id="rank-of-a-matrix"&gt;Rank of a Matrix&lt;a class="headerlink" href="#rank-of-a-matrix" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
@@ -4521,8 +4455,8 @@ $$&lt;/div&gt;
 &lt;li&gt;Schatten norms&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Here, I will introduce only the first two types of matrix norm and depict one example of each to give the general idea of matrix norms.&lt;/p&gt;
-&lt;p&gt;Induced norms usually are denoted by:&lt;/p&gt;
-&lt;div class="math"&gt;$$\|A\|_{p}$$&lt;/div&gt;
+&lt;p&gt;Induced norms usually are denoted by: &lt;/p&gt;
+&lt;div class="math"&gt;$$\|A\|_p$$&lt;/div&gt;
 &lt;p&gt;In the special cases of &lt;span class="math"&gt;\(p = 1, 2, \infty\)&lt;/span&gt;, the induced matrix norms can be computed by:&lt;/p&gt;
 &lt;div class="math"&gt;$$
 \|A\|_1 = max_{1\leq j \leq m} \sum_{i = 1}^{m}|a_{ij}|
@@ -4983,7 +4917,7 @@ $$&lt;/div&gt;
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Mathematics"></category><category term="Intermediate Linear Algebra"></category><category term="Mathematics"></category></entry><entry><title>Intermediates of Linear Algebra with Python - Part I</title><link href="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-i" rel="alternate"></link><published>2019-03-02T15:14:00+04:00</published><updated>2019-03-02T15:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-02:/intermediates-of-linear-algebra-with-python-part-i</id><summary type="html">&lt;p&gt;This is an intermediate part of Linear Algebra with Python&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the first part of the third post in blog series about linear algebra.&lt;/p&gt;
+&lt;/script&gt;</content><category term="Mathematics"></category><category term="Intermediate Linear Algebra"></category><category term="Mathematics"></category></entry><entry><title>Intermediates of Linear Algebra with Python - Part I</title><link href="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-i" rel="alternate"></link><published>2019-03-02T15:14:00+04:00</published><updated>2019-03-02T15:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-02:/intermediates-of-linear-algebra-with-python-part-i</id><summary type="html">&lt;p&gt;This is the first part of intermediate Linear Algebra with Python&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the first part of the third post in blog series about linear algebra.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Introduction&lt;/li&gt;
 &lt;li&gt;Basics of linear algebra&lt;/li&gt;

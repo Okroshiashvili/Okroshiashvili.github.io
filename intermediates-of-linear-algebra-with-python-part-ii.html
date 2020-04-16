@@ -12,22 +12,22 @@
 
         <meta name="author" content="Nodar Okroshiashvili" />
 
-        <meta name="description" content="This is an intermediate part of Linear Algebra with Python
+        <meta name="description" content="This is the first part of intermediate Linear Algebra with Python
 " />
         <meta name="twitter:creator" content="@N_Okroshiashvil">
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="Intermediate Linear Algebra, Mathematics, Mathematics, intermediate linear algebra with python, matrices and matrix operations in python, matrix norms in python, python, numpy, scipy, sympy, linear algebra for machine learning, linear algebra, machine learning" />
+<meta name="keywords" content="Intermediate Linear Algebra, Mathematics, Mathematics, intermediate linear algebra with python, matrices and matrix operations in python, matrix norms in python, python, numpy, scipy, sympy, linear algebra for machine learning, linear algebra, machine" />
 
 <meta property="og:title" content="Intermediates of Linear Algebra with Python - Part II "/>
 <meta property="og:url" content="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-ii" />
-<meta property="og:description" content="This is an intermediate part of Linear Algebra with Python" />
+<meta property="og:description" content="This is the first part of intermediate Linear Algebra with Python" />
 <meta property="og:site_name" content="Data Science Fabric" />
 <meta property="og:article:author" content="Nodar Okroshiashvili" />
 <meta property="og:article:published_time" content="2019-03-03T12:14:00+04:00" />
 <meta name="twitter:title" content="Intermediates of Linear Algebra with Python - Part II ">
-<meta name="twitter:description" content="This is an intermediate part of Linear Algebra with Python">
+<meta name="twitter:description" content="This is the first part of intermediate Linear Algebra with Python">
 
         <title>Intermediates of Linear Algebra with Python - Part II  · Data Science Fabric
 </title>
@@ -108,31 +108,25 @@
 </ol>
 <p>This is the continuation of the part one and in this post I will introduce you the following topics:</p>
 <ul>
-<li><a href="#math-xmlns%22httpwwww3org1998mathmathml%22semanticsmrowmrowannotation-encoding%22applicationx-tex%22annotationsemanticsmath">$$</a></li>
-<li><a href="#math-xmlns%22httpwwww3org1998mathmathml%22semanticsmrowmrowannotation-encoding%22applicationx-tex%22annotationsemanticsmath-1">$$</a><ul>
-<li><a href="#matrix-division---continuation">Matrix Division - continuation</a></li>
-<li><a href="#solving-system-of-equations-with-matrices">Solving System of Equations with Matrices</a></li>
-<li><a href="#elementary-row-operations">Elementary Row Operations</a></li>
-<li><a href="#rank-of-a-matrix">Rank of a Matrix</a></li>
-<li><a href="#power-of-a-matrix">Power of a Matrix</a></li>
-<li><a href="#norm-of-a-matrix">Norm of a Matrix</a></li>
-<li><a href="#numerical-representation">Numerical Representation</a></li>
-<li><a href="#types-of-matrices-1">Types of Matrices</a></li>
-<li><a href="#trace-of-a-matrix-1">Trace of a Matrix</a></li>
-<li><a href="#determinant-of-a-matrix-1">Determinant of a Matrix</a></li>
-<li><a href="#inverse-of-a-matrix-1">Inverse of a Matrix</a></li>
-<li><a href="#matrix-division-1">Matrix Division</a></li>
-<li><a href="#solving-system-of-equations-with-matrices-1">Solving System of Equations with Matrices</a></li>
-<li><a href="#rank-of-a-matrix-1">Rank of a Matrix</a></li>
-<li><a href="#power-of-a-matrix-1">Power of a Matrix</a></li>
-<li><a href="#norm-of-a-matrix-1">Norm of a Matrix</a></li>
+<li><a href="#Matrix">Matrix</a><ul>
+<li><a href="#Types_of_Matrices">Types of Matrices</a></li>
+<li><a href="#Trace_of_a_Matrix">Trace of a Matrix</a></li>
+<li><a href="#Determinant_of_a_Matrix">Determinant of a Matrix</a></li>
+<li><a href="#Minor_of_a_Matrix">Minor of a Matrix</a></li>
+<li><a href="#Cofactor_of_a_Matrix">Cofactor of a Matrix</a></li>
+<li><a href="#Determinant_of_a_Matrix_continuation">Determinant of a Matrix - continuation</a></li>
+<li><a href="#Matrix_Division">Matrix Division</a></li>
+<li><a href="#Inverse_of_a_Matrix">Inverse of a Matrix</a></li>
+<li><a href="#Inverse_of_a_Matrix_continuation">Matrix Division - continuation</a></li>
+<li><a href="#Solving_System_of_Equations_with_Matrices">Solving Systems of Equations with Matrices</a></li>
+<li><a href="#Elementary_Row_Operations">Elemenraty Row Operations</a></li>
+<li><a href="#Rank_of_a_Matrix">Rank of a Matrix</a></li>
+<li><a href="#Power_of_a_Matrix">Power of a Matrix</a></li>
+<li><a href="#Norm_of_a_Matrix">Norm of a Matrix</a></li>
+<li><a href="#Numerical_Representation_Matrix">Numerical Representation</a></li>
 </ul>
 </li>
-<li><a href="#conclusion">Conclusion</a><ul>
-<li><a href="#references">References</a></li>
-<li><a href="#matrix-1">Matrix</a></li>
-</ul>
-</li>
+<li><a href="#Conclusion">Conclusion</a></li>
 </ul>
 <h2 id="matrix">Matrix<a class="headerlink" href="#matrix" title="Permanent link">&para;</a></h2>
 <p><a id="Matrix"></a></p>
@@ -371,9 +365,6 @@ A =
 \end{bmatrix}
 $$</div>
 <div class="math">$$
-\quad
-$$</div>
-<div class="math">$$
 det(A) = ad - bc
 $$</div>
 <p>It seems easy to calculate the determinant of any <span class="math">\(2 \times 2\)</span> matrix right? Now think about how to calculate determinant 
@@ -574,56 +565,32 @@ C_{11} =
 (-1)^{1+1} \cdot M_{11}
 $$</div>
 <div class="math">$$
-\quad
-$$</div>
-<div class="math">$$
 C_{21} =
 (-1)^{2+1} \cdot M_{21}
-$$</div>
-<div class="math">$$
-\quad
 $$</div>
 <div class="math">$$
 C_{31} =
 (-1)^{3+1} \cdot M_{31}
 $$</div>
 <div class="math">$$
-\quad
-$$</div>
-<div class="math">$$
 C_{12} =
 (-1)^{1+2} \cdot M_{12}
-$$</div>
-<div class="math">$$
-\quad
 $$</div>
 <div class="math">$$
 C_{22} =
 (-1)^{2+2} \cdot M_{22}
 $$</div>
 <div class="math">$$
-\quad
-$$</div>
-<div class="math">$$
 C_{32} =
 (-1)^{3+2} \cdot M_{32}
-$$</div>
-<div class="math">$$
-\quad
 $$</div>
 <div class="math">$$
 C_{13} =
 (-1)^{1+3} \cdot M_{13}
 $$</div>
 <div class="math">$$
-\quad
-$$</div>
-<div class="math">$$
 C_{23} =
 (-1)^{2+3} \cdot M_{23}
-$$</div>
-<div class="math">$$
-\quad
 $$</div>
 <div class="math">$$
 C_{33} =
@@ -748,56 +715,32 @@ M_{11} =
 \end{bmatrix}
 $$</div>
 <div class="math">$$
-\quad
-$$</div>
-<div class="math">$$
 M_{12} =
 \begin{bmatrix}\color{lightgray}4 &amp; \color{blue}2 &amp; \color{lightgray}2\\\color{red}6 &amp; \color{lightgray}2 &amp; \color{red}4\\\color{red}2 &amp; \color{lightgray}2 &amp; \color{red}8\end{bmatrix}\;\;\;\;(6\times8) - (4\times2) = 40\;\;\;\;\begin{bmatrix}8 &amp; 40 &amp; \color{lightgray}?\\\color{lightgray}? &amp; \color{lightgray}? &amp; \color{lightgray}?\\\color{lightgray}? &amp; \color{lightgray}? &amp; \color{lightgray}?\end{bmatrix}
-$$</div>
-<div class="math">$$
-\quad
 $$</div>
 <div class="math">$$
 M_{13} =
 \begin{bmatrix}\color{lightgray}4 &amp; \color{lightgray}2 &amp; \color{blue}2\\\color{red}6 &amp; \color{red}2 &amp; \color{lightgray}4\\\color{red}2 &amp; \color{red}2 &amp; \color{lightgray}8\end{bmatrix}\;\;\;\;(6\times2) - (2\times2) = 8\;\;\;\;\begin{bmatrix}8 &amp; 40 &amp; 8\\\color{lightgray}? &amp; \color{lightgray}? &amp; \color{lightgray}?\\\color{lightgray}? &amp; \color{lightgray}? &amp; \color{lightgray}?\end{bmatrix}
 $$</div>
 <div class="math">$$
-\quad
-$$</div>
-<div class="math">$$
 M_{21} =
 \begin{bmatrix}\color{lightgray}4 &amp; \color{red}2 &amp; \color{red}2\\\color{blue}6 &amp; \color{lightgray}2 &amp; \color{lightgray}4\\\color{lightgray}2 &amp; \color{red}2 &amp; \color{red}8\end{bmatrix}\;\;\;\;(2\times8) - (2\times2) = 12\;\;\;\;\begin{bmatrix}8 &amp; 40 &amp; 8\\12 &amp; \color{lightgray}? &amp; \color{lightgray}?\\\color{lightgray}? &amp; \color{lightgray}? &amp; \color{lightgray}?\end{bmatrix}
-$$</div>
-<div class="math">$$
-\quad
 $$</div>
 <div class="math">$$
 M_{22} =
 \begin{bmatrix}\color{red}4 &amp; \color{lightgray}2 &amp; \color{red}2\\\color{lightgray}6 &amp; \color{blue}2 &amp; \color{lightgray}4\\\color{red}2 &amp; \color{lightgray}2 &amp; \color{red}8\end{bmatrix}\;\;\;\;(4\times8) - (2\times2) = 28\;\;\;\;\begin{bmatrix}8 &amp; 40 &amp; 8\\12 &amp; 28 &amp; \color{lightgray}?\\\color{lightgray}? &amp; \color{lightgray}? &amp; \color{lightgray}?\end{bmatrix}
 $$</div>
 <div class="math">$$
-\quad
-$$</div>
-<div class="math">$$
 M_{23} =
 \begin{bmatrix}\color{red}4 &amp; \color{red}2 &amp; \color{lightgray}2\\\color{lightgray}6 &amp; \color{lightgray}2 &amp; \color{blue}4\\\color{red}2 &amp; \color{red}2 &amp; \color{lightgray}8\end{bmatrix}\;\;\;\;(4\times2) - (2\times2) = 4\;\;\;\;\begin{bmatrix}8 &amp; 40 &amp; 8\\12 &amp; 28 &amp; 4\\\color{lightgray}? &amp; \color{lightgray}? &amp; \color{lightgray}?\end{bmatrix}
-$$</div>
-<div class="math">$$
-\quad
 $$</div>
 <div class="math">$$
 M_{31} =
 \begin{bmatrix}\color{lightgray}4 &amp; \color{red}2 &amp; \color{red}2\\\color{lightgray}6 &amp; \color{red}2 &amp; \color{red}4\\\color{blue}2 &amp; \color{lightgray}2 &amp; \color{lightgray}8\end{bmatrix}\;\;\;\;(2\times4) - (2\times2) = 4\;\;\;\;\begin{bmatrix}8 &amp; 40 &amp; 8\\12 &amp; 28 &amp; 4\\4 &amp; \color{lightgray}? &amp; \color{lightgray}?\end{bmatrix}
 $$</div>
 <div class="math">$$
-\quad
-$$</div>
-<div class="math">$$
 M_{32} =
 \begin{bmatrix}\color{red}4 &amp; \color{lightgray}2 &amp; \color{red}2\\\color{red}6 &amp; \color{lightgray}2 &amp; \color{red}4\\\color{lightgray}2 &amp; \color{blue}2 &amp; \color{lightgray}8\end{bmatrix}\;\;\;\;(4\times4) - (2\times6) = 4\;\;\;\;\begin{bmatrix}8 &amp; 40 &amp; 8\\12 &amp; 28 &amp; 4\\4 &amp; 4 &amp; \color{lightgray}?\end{bmatrix}
-$$</div>
-<div class="math">$$
-\quad
 $$</div>
 <div class="math">$$
 M_{33} =
@@ -866,22 +809,16 @@ $$</div>
 A \cdot A^{-1} =
 \begin{bmatrix}4 &amp; 2 &amp; 2\\6 &amp; 2 &amp; 4\\2 &amp; 2 &amp; 8\end{bmatrix} \cdot \begin{bmatrix}-0.25 &amp; 0.375 &amp; -0.125\\1.25 &amp; -0.875 &amp; 0.125\\-0.25 &amp; 0.125 &amp; 0.125\end{bmatrix}
 $$</div>
-<div class="math">$$
-\quad
-$$</div>
-<div class="math">$$
-=
-\begin{bmatrix}(4\times-0.25)+(2\times1.25)+(2\times-0.25) &amp; (4\times0.375)+(2\times-0.875)+(2\times0.125) &amp; (4 \times-0.125)+(2 \times-0.125)+(2 \times0.125)\\
+<h1 id="_1">$$<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<div class="math">\begin{bmatrix}(4\times-0.25)+(2\times1.25)+(2\times-0.25) &amp; (4\times0.375)+(2\times-0.875)+(2\times0.125) &amp; (4 \times-0.125)+(2 \times-0.125)+(2 \times0.125)\\
 (6 \times-0.25)+(2\times1.25)+(4\times-0.25) &amp; (6\times0.375)+(2 \times-0.875)+(4\times0.125) &amp; (6 \times-0.125)+(2 \times-0.125)+(4 \times0.125)\\
-(2\times-0.25)+(2\times1.25)+(8\times-0.25) &amp; (2 \times0.375)+(2 \times-0.875)+(8 \times0.125) &amp; (2 \times-0.125)+(2 \times-0.125)+(8 \times0.125)\end{bmatrix}
-$$</div>
-<div class="math">$$
-\quad
-$$</div>
-<div class="math">$$
-=
-\begin{bmatrix}1 &amp; 0 &amp; 0\\0 &amp; 1 &amp; 0\\0 &amp; 0 &amp; 1\end{bmatrix} = I
-$$</div>
+(2\times-0.25)+(2\times1.25)+(8\times-0.25) &amp; (2 \times0.375)+(2 \times-0.875)+(8 \times0.125) &amp; (2 \times-0.125)+(2 \times-0.125)+(8 \times0.125)\end{bmatrix}</div>
+<p>
+$$</p>
+<h1 id="_2">$$<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<div class="math">\begin{bmatrix}1 &amp; 0 &amp; 0\\0 &amp; 1 &amp; 0\\0 &amp; 0 &amp; 1\end{bmatrix}</div>
+<p> = I
+$$</p>
 <p>Do you see how challenging can be finding the inverse of <span class="math">\(4 \times 4\)</span> matrix? That's why we use calculators or computer program to compute it.</p>
 <h3 id="matrix-division-continuation">Matrix Division - continuation<a class="headerlink" href="#matrix-division-continuation" title="Permanent link">&para;</a></h3>
 <p><a id="Matrix_Division_continuation"></a></p>
@@ -988,9 +925,6 @@ A^{-1} =
 \end{bmatrix}
 $$</div>
 <div class="math">$$
-\quad
-$$</div>
-<div class="math">$$
 X =
 \begin{bmatrix}
     -0.1 &amp; 0.2 \\
@@ -1054,7 +988,7 @@ A^{'} =
 \end{bmatrix}
 $$</div>
 <p>Type 3 ERO that multiplies row 2 of <span class="math">\(A\)</span> by 4 and replace row 3 of <span class="math">\(A\)</span> by <span class="math">\(4 \times (\text{row 2 of A}) + \text{row 3 of A}\)</span> 
-would yield row 3 of <span class="math">\(A^{'}\)</span> to be <span class="math">\(4 \times [1 \ 3 \ 5 \ 6] + [0 \ 1 \ 2 \ 3] = [4 \ 13 \ 22 \ 27]\)</span> and</p>
+would yield row 3 of <span class="math">\(A^{'}\)</span> to be <span class="math">\( 4 \times [1 \ 3 \ 5 \ 6] + [0 \ 1 \ 2 \ 3] = [4 \ 13 \ 22 \ 27]\)</span> and</p>
 <div class="math">$$
 A^{'} =
 \begin{bmatrix}
@@ -1069,7 +1003,7 @@ More precisely this means that we take one ERO, whichever we want and perform th
 matrix of <span class="math">\(A\)</span>. If <span class="math">\(A\)</span> has <span class="math">\(m \times n\)</span> dimension we have identity matrix <span class="math">\(I_{m \times n}\)</span>. After that, we multiply <span class="math">\(A\)</span> 
 by this identity matrix. If we denote the elementary matrix by <span class="math">\(E\)</span> then, we multiply <span class="math">\(A\)</span> by <span class="math">\(E\)</span> in the following way:</p>
 <div class="math">$$
-E_{1} \cdot A
+\begin{equation}E_{1} \cdot A \end{equation}
 $$</div>
 <p>where <span class="math">\(E_{1}\)</span> is ERO one performed on identity matrix.</p>
 <h3 id="rank-of-a-matrix">Rank of a Matrix<a class="headerlink" href="#rank-of-a-matrix" title="Permanent link">&para;</a></h3>
@@ -1142,8 +1076,8 @@ $$</div>
 <li>Schatten norms</li>
 </ul>
 <p>Here, I will introduce only the first two types of matrix norm and depict one example of each to give the general idea of matrix norms.</p>
-<p>Induced norms usually are denoted by:</p>
-<div class="math">$$\|A\|_{p}$$</div>
+<p>Induced norms usually are denoted by: </p>
+<div class="math">$$\|A\|_p$$</div>
 <p>In the special cases of <span class="math">\(p = 1, 2, \infty\)</span>, the induced matrix norms can be computed by:</p>
 <div class="math">$$
 \|A\|_1 = max_{1\leq j \leq m} \sum_{i = 1}^{m}|a_{ij}|
