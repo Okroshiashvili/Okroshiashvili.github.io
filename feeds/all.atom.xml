@@ -4,7 +4,7 @@ I could not imagine data scientist or data analyst who had not heard about Panda
 We all use it. Every day, every week. It does not matter how many times. It's a great tool. 
 I use it all the time when I want to do data analysis, either it is simple calculations or complex data transformations, and it surprises me. 
 Pandas is so simple in its form. However, imagine, how much you can do with some simple method chaining.&lt;/p&gt;
-&lt;p&gt;Saying all of these, this blog aims to share my experience and amaizment with Pandas. 
+&lt;p&gt;Saying all of these, this blog aims to share my experience and amazment with Pandas. 
 This series is not meant for beginner users and will not be short in length. These series will be based on my experience and 
 I will try to give a detailed explanation for every step from problem definition to solving it. That's enough for now. Let get down to business.&lt;/p&gt;
 &lt;h3 id="problem-statement"&gt;Problem Statement&lt;a class="headerlink" href="#problem-statement" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
@@ -385,7 +385,7 @@ the desired result for this case and then I came up to the following:&lt;/p&gt;
 
 &lt;p&gt;Applied this function to the second DataFrame flattened it, and combining first and second DataFrames will give the final result.&lt;/p&gt;
 &lt;p&gt;To sum up, that was only a tiny part of this data pre-processing process. 
-However, it was a great journey and lots to learn. What do you think? Did you find a more elegant solution? Please share it in the comments.&lt;/p&gt;</content><category term="Data Science"></category><category term="pandas"></category><category term="python"></category><category term="data analysis"></category><category term="pandas tips and tricks"></category><category term="Data Science"></category></entry><entry><title>Modeling single good market in Python</title><link href="https://dsfabric.org/modeling-single-good-market-in-python" rel="alternate"></link><published>2019-06-16T12:01:00+04:00</published><updated>2019-06-16T12:01:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-06-16:/modeling-single-good-market-in-python</id><summary type="html">&lt;p&gt;Single good market economy with Python&lt;/p&gt;</summary><content type="html">&lt;p&gt;In this blog, I want to review simple one good market economy, where supply and demand
+However, it was a great journey and lots to learn. What do you think? Did you find a more elegant solution? Please share it in the comments.&lt;/p&gt;</content><category term="Data Science"></category><category term="Pandas"></category><category term="Analytics"></category><category term="Data Science"></category></entry><entry><title>Modeling single good market in Python</title><link href="https://dsfabric.org/modeling-single-good-market-in-python" rel="alternate"></link><published>2019-06-16T12:01:00+04:00</published><updated>2019-06-16T12:01:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-06-16:/modeling-single-good-market-in-python</id><summary type="html">&lt;p&gt;Modeling single good market economy with Python&lt;/p&gt;</summary><content type="html">&lt;p&gt;In this blog, I want to review simple one good market economy, where supply and demand
 are linear functions of price and agents of this economy are price takers. Those agents are
 divided into two categories: buyers and sellers. The price of a product is determined by the
 interaction of demand and supply or in other words buyers and sellers. Here, the buyer is
@@ -749,7 +749,7 @@ as well as a deadweight loss by imposing government tax and see graphically how 
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Economics"></category><category term="economics"></category><category term="single good market"></category><category term="supply"></category><category term="demand"></category><category term="consumer surplus"></category><category term="producer surplus"></category><category term="python"></category><category term="Economics"></category></entry><entry><title>Taylor Series Expansion with Python</title><link href="https://dsfabric.org/taylor-series-expansion-with-python" rel="alternate"></link><published>2019-05-09T14:14:00+04:00</published><updated>2019-05-09T14:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-05-09:/taylor-series-expansion-with-python</id><summary type="html">&lt;p&gt;Taylor and Maclaurin Series Expansion for functions with Python&lt;/p&gt;</summary><content type="html">&lt;p&gt;In this blog, I want to review famous Taylor Series Expansion and its special case 
+&lt;/script&gt;</content><category term="Economics"></category><category term="Economics"></category><category term="Python"></category><category term="Economics"></category></entry><entry><title>Taylor Series Expansion with Python</title><link href="https://dsfabric.org/taylor-series-expansion-with-python" rel="alternate"></link><published>2019-05-09T14:14:00+04:00</published><updated>2019-05-09T14:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-05-09:/taylor-series-expansion-with-python</id><summary type="html">&lt;p&gt;Taylor and Maclaurin Series Expansion for functions with Python&lt;/p&gt;</summary><content type="html">&lt;p&gt;In this blog, I want to review famous Taylor Series Expansion and its special case 
 Maclaurin Series Expansion. According to &lt;a href="https://en.wikipedia.org/wiki/Taylor_series"&gt;wikipedia&lt;/a&gt;, 
 the aim of Taylor Series Expansion (TSE) is to represent a function as an infinite sum of terms that 
 are derived from the values of that function's derivatives, which in turn are evaluated at some 
@@ -1046,7 +1046,7 @@ Moreover, some training algorithms for neural networks, such as &lt;strong&gt;St
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Mathematics"></category><category term="Taylor Series Expansion"></category><category term="Maclaurin Series Expansion"></category><category term="Python"></category><category term="Numpy"></category><category term="Scipy"></category><category term="Sympy"></category><category term="Mathematics"></category></entry><entry><title>Simple Interactive Data Visualization with Plotly Express</title><link href="https://dsfabric.org/simple-interactive-data-visualization-with-plotly-express" rel="alternate"></link><published>2019-03-22T12:14:00+04:00</published><updated>2020-03-26T20:53:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-22:/simple-interactive-data-visualization-with-plotly-express</id><summary type="html">&lt;p&gt;Interactive, yet simple data visualization with plotly express&lt;/p&gt;</summary><content type="html">&lt;p&gt;I fairly believe that, if someone is good at data visualization he/she at least has heard about Hans Rosling. 
+&lt;/script&gt;</content><category term="Mathematics"></category><category term="Taylor Series Expansion"></category><category term="Mathematics"></category></entry><entry><title>Simple Interactive Data Visualization with Plotly Express</title><link href="https://dsfabric.org/simple-interactive-data-visualization-with-plotly-express" rel="alternate"></link><published>2019-03-22T12:14:00+04:00</published><updated>2020-03-26T20:53:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-22:/simple-interactive-data-visualization-with-plotly-express</id><summary type="html">&lt;p&gt;Interactive data visualization with plotly express&lt;/p&gt;</summary><content type="html">&lt;p&gt;I fairly believe that, if someone is good at data visualization he/she at least has heard about Hans Rosling. 
 One of the most influential data storyteller, and honestly because of the &lt;a href="https://www.ted.com/talks/hans_rosling_shows_the_best_stats_you_ve_ever_seen"&gt;talk&lt;/a&gt; he gave at TED, 
 it influenced me too much that I decided to learn data visualization. Since then, I had some progress as well some stagnation but the most noteworthy thing here is that 
 I got my hands dirty with great data visualization tools such as &lt;a href="https://matplotlib.org/"&gt;matplotlib&lt;/a&gt;, &lt;a href="https://seaborn.pydata.org/"&gt;seaborn&lt;/a&gt;, &lt;a href="https://bokeh.pydata.org/en/latest/"&gt;bokeh&lt;/a&gt;, &lt;a href="https://altair-viz.github.io/"&gt;altair&lt;/a&gt;, and &lt;a href="https://plot.ly/python/"&gt;plotly&lt;/a&gt;. &lt;/p&gt;
@@ -1193,7 +1193,7 @@ express and dig deeper, however, it won't be a bad idea to check more, about plo
 &lt;li&gt;&lt;a href="https://medium.com/@plotlygraphs/introducing-plotly-express-808df010143d"&gt;Medium Blog&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://plotly.github.io/plotly_express/plotly_express/"&gt;Plotly Express&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://plotly.github.io/plotly_express/"&gt;Example Gallery&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="Data Science"></category><category term="plotly"></category><category term="plotly express"></category><category term="python"></category><category term="data visualization"></category><category term="Data Science"></category></entry><entry><title>Advances of Linear Algebra with Python - Part II</title><link href="https://dsfabric.org/advances-of-linear-algebra-with-python-part-ii" rel="alternate"></link><published>2019-03-05T12:14:00+04:00</published><updated>2019-03-05T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-05:/advances-of-linear-algebra-with-python-part-ii</id><summary type="html">&lt;p&gt;This is a advance part of Linear Algebra with Python&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the fourth and last post in blog series about linear algebra.&lt;/p&gt;
+&lt;/ul&gt;</content><category term="Data Science"></category><category term="Plotly"></category><category term="Data Visualization"></category><category term="Data Science"></category></entry><entry><title>Advances of Linear Algebra with Python - Part II</title><link href="https://dsfabric.org/advances-of-linear-algebra-with-python-part-ii" rel="alternate"></link><published>2019-03-05T12:14:00+04:00</published><updated>2019-03-05T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-05:/advances-of-linear-algebra-with-python-part-ii</id><summary type="html">&lt;p&gt;This is the second part of advance linear algebra with Python&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the fourth and last post in blog series about linear algebra.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Introduction&lt;/li&gt;
 &lt;li&gt;Basics of linear algebra&lt;/li&gt;
@@ -1202,16 +1202,25 @@ express and dig deeper, however, it won't be a bad idea to check more, about plo
 &lt;/ol&gt;
 &lt;p&gt;This is the continuation of the part one and in this post I will introduce you the following topics:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="#Matrix_Decompositions"&gt;Matrix Decompositions&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#Cholesky_Decomposition"&gt;Cholesky Decomposition&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#QR_Decomposition"&gt;QR Decomposition&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Eigendecomposition"&gt;Eigendecomposition&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Singular_Value_Decomposition"&gt;Singular Value Decomposition&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Inverse_of_a_Square_Full_Rank_Matrix"&gt;Inverse of a Square Full Rank Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Numerical_Representation_Decompositions"&gt;Numerical Representation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#matrix-decompositions"&gt;Matrix Decompositions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#cholesky-decomposition"&gt;Cholesky Decomposition&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#qr-decomposition"&gt;QR Decomposition&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#eigendecomposition"&gt;Eigendecomposition&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#singular-value-decomposition"&gt;Singular Value Decomposition&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#inverse-of-a-square-full-rank-matrix"&gt;Inverse of a Square Full Rank Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#numerical-representation"&gt;Numerical Representation&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#cholesky-decomposition-1"&gt;Cholesky Decomposition&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#qr-decomposition-1"&gt;QR Decomposition&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#eigendecomposition-1"&gt;Eigendecomposition&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#singular-value-decomposition-1"&gt;Singular Value Decomposition&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#inverse-of-a-square-full-rank-matrix-1"&gt;Inverse of a Square Full Rank Matrix&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="#Conclusion"&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#conclusion"&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#references"&gt;References&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#matrix-decomposition"&gt;Matrix Decomposition&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="matrix-decompositions"&gt;Matrix Decompositions&lt;a class="headerlink" href="#matrix-decompositions" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;a id="Matrix_Decompositions"&gt;&lt;/a&gt;&lt;/p&gt;
@@ -1924,7 +1933,7 @@ be continuous. Meaning, that you have to practice more and more.&lt;/p&gt;
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Mathematics"></category><category term="Linear Algebra"></category><category term="Python"></category><category term="Numpy"></category><category term="Scipy"></category><category term="Mathematics"></category></entry><entry><title>Advances of Linear Algebra with Python - Part I</title><link href="https://dsfabric.org/advances-of-linear-algebra-with-python-part-i" rel="alternate"></link><published>2019-03-04T12:14:00+04:00</published><updated>2019-03-04T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-04:/advances-of-linear-algebra-with-python-part-i</id><summary type="html">&lt;p&gt;This is a advance part of Linear Algebra with Python&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the first part of the fourth and last post in blog series about linear algebra. &lt;/p&gt;
+&lt;/script&gt;</content><category term="Mathematics"></category><category term="Advance Linear Algebra"></category><category term="Mathematics"></category></entry><entry><title>Advances of Linear Algebra with Python - Part I</title><link href="https://dsfabric.org/advances-of-linear-algebra-with-python-part-i" rel="alternate"></link><published>2019-03-04T12:14:00+04:00</published><updated>2019-03-04T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-04:/advances-of-linear-algebra-with-python-part-i</id><summary type="html">&lt;p&gt;This is the first part of advance linear algebra with Python&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the first part of the fourth and last post in blog series about linear algebra. &lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Introduction&lt;/li&gt;
 &lt;li&gt;Basics of linear algebra&lt;/li&gt;
@@ -1933,23 +1942,35 @@ be continuous. Meaning, that you have to practice more and more.&lt;/p&gt;
 &lt;/ol&gt;
 &lt;p&gt;In this post I will introduce you to the advances of linear algebra, which in turn includes the following:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="#Vector"&gt;Vector&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#Basis_Vectors"&gt;Basis Vectors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#vector"&gt;Vector&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#basis-vectors"&gt;Basis Vectors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#matrix"&gt;Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#gaussian-elimination-of-a-matrix"&gt;Gaussian Elimination of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#gauss-jordan-elimination-of-a-matrix"&gt;Gauss-Jordan Elimination of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#the-inverse-of-a-matrix-using-gauss-jordan-elimination"&gt;The Inverse of a Matrix Using Gauss-Jordan Elimination&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#image-of-a-matrix"&gt;Image of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#kernel-of-a-matrix"&gt;Kernel of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#rank-of-a-matrix"&gt;Rank of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#find-the-basis-of-a-matrix"&gt;Find the Basis of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#transformations"&gt;Transformations&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#linear-transformation"&gt;Linear Transformation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#transformations-of-magnitude-and-amplitude"&gt;Transformations of Magnitude and Amplitude&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#affine-transformation"&gt;Affine Transformation&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="#Matrix"&gt;Matrix&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#Gaussian_Elimination_of_a_Matrix"&gt;Gaussian Elimination of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Gauss_Jordan_Elimination_of_a_Matrix"&gt;Gauss-Jordan Elimination of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#The_Inverse_of_a_Matrix_Using_Gauss_Jordan_Elimination"&gt;The Inverse of a Matrix Using Gauss-Jordan Elimination&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Image_of_a_Matrix"&gt;Image of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Kernel_of_a_Matrix"&gt;Kernel of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Rank_of_a_Matrix"&gt;Rank of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Find_the_Basis_of_a_Matrix"&gt;Find the Basis of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Transformations"&gt;Transformations&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Eigenvalues"&gt;Eigenvalues&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Eigenvectors"&gt;Eigenvectors&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Spectrum_and_Spectral_Radius"&gt;Spectrum and Spectral Radius&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Numerical_Representation_Matrix"&gt;Numerical Representation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#eigenvalues"&gt;Eigenvalues&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#eigenvectors"&gt;Eigenvectors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#spectrum-and-spectral-radius"&gt;Spectrum and Spectral Radius&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#numerical-representation"&gt;Numerical Representation&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#kernel-or-null-space-of-a-matrix"&gt;Kernel or Null Space of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#linear-transformations"&gt;Linear Transformations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#eigenvalues-and-eigenvectors"&gt;Eigenvalues and Eigenvectors&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#conclusion-for-part-i"&gt;Conclusion for part I&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#references"&gt;References&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#vector-1"&gt;Vector&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#matrix-1"&gt;Matrix&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -3457,7 +3478,7 @@ of &lt;span class="math"&gt;\(A\)&lt;/span&gt; and spectral radius for our matri
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Mathematics"></category><category term="Linear Algebra"></category><category term="Python"></category><category term="Numpy"></category><category term="Scipy"></category><category term="Mathematics"></category></entry><entry><title>Intermediates of Linear Algebra with Python - Part II</title><link href="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-ii" rel="alternate"></link><published>2019-03-03T12:14:00+04:00</published><updated>2019-03-03T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-03:/intermediates-of-linear-algebra-with-python-part-ii</id><summary type="html">&lt;p&gt;This is an intermediate part of Linear Algebra with Python&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the second part of third post in blog series about linear algebra.&lt;/p&gt;
+&lt;/script&gt;</content><category term="Mathematics"></category><category term="Advance Linear Algebra"></category><category term="Mathematics"></category></entry><entry><title>Intermediates of Linear Algebra with Python - Part II</title><link href="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-ii" rel="alternate"></link><published>2019-03-03T12:14:00+04:00</published><updated>2019-03-03T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-03:/intermediates-of-linear-algebra-with-python-part-ii</id><summary type="html">&lt;p&gt;This is an intermediate part of Linear Algebra with Python&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the second part of third post in blog series about linear algebra.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Introduction&lt;/li&gt;
 &lt;li&gt;Basics of linear algebra&lt;/li&gt;
@@ -3466,25 +3487,31 @@ of &lt;span class="math"&gt;\(A\)&lt;/span&gt; and spectral radius for our matri
 &lt;/ol&gt;
 &lt;p&gt;This is the continuation of the part one and in this post I will introduce you the following topics:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="#Matrix"&gt;Matrix&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#Types_of_Matrices"&gt;Types of Matrices&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Trace_of_a_Matrix"&gt;Trace of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Determinant_of_a_Matrix"&gt;Determinant of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Minor_of_a_Matrix"&gt;Minor of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Cofactor_of_a_Matrix"&gt;Cofactor of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Determinant_of_a_Matrix_continuation"&gt;Determinant of a Matrix - continuation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Matrix_Division"&gt;Matrix Division&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Inverse_of_a_Matrix"&gt;Inverse of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Inverse_of_a_Matrix_continuation"&gt;Matrix Division - continuation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Solving_System_of_Equations_with_Matrices"&gt;Solving Systems of Equations with Matrices&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Elementary_Row_Operations"&gt;Elemenraty Row Operations&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Rank_of_a_Matrix"&gt;Rank of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Power_of_a_Matrix"&gt;Power of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Norm_of_a_Matrix"&gt;Norm of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Numerical_Representation_Matrix"&gt;Numerical Representation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#math-xmlns%22httpwwww3org1998mathmathml%22semanticsmrowmrowannotation-encoding%22applicationx-tex%22annotationsemanticsmath"&gt;$$&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#math-xmlns%22httpwwww3org1998mathmathml%22semanticsmrowmrowannotation-encoding%22applicationx-tex%22annotationsemanticsmath-1"&gt;$$&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#matrix-division---continuation"&gt;Matrix Division - continuation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#solving-system-of-equations-with-matrices"&gt;Solving System of Equations with Matrices&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#elementary-row-operations"&gt;Elementary Row Operations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#rank-of-a-matrix"&gt;Rank of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#power-of-a-matrix"&gt;Power of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#norm-of-a-matrix"&gt;Norm of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#numerical-representation"&gt;Numerical Representation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#types-of-matrices-1"&gt;Types of Matrices&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#trace-of-a-matrix-1"&gt;Trace of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#determinant-of-a-matrix-1"&gt;Determinant of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#inverse-of-a-matrix-1"&gt;Inverse of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#matrix-division-1"&gt;Matrix Division&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#solving-system-of-equations-with-matrices-1"&gt;Solving System of Equations with Matrices&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#rank-of-a-matrix-1"&gt;Rank of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#power-of-a-matrix-1"&gt;Power of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#norm-of-a-matrix-1"&gt;Norm of a Matrix&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="#Conclusion"&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#conclusion"&gt;Conclusion&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#references"&gt;References&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#matrix-1"&gt;Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="matrix"&gt;Matrix&lt;a class="headerlink" href="#matrix" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;a id="Matrix"&gt;&lt;/a&gt;&lt;/p&gt;
@@ -4956,7 +4983,7 @@ $$&lt;/div&gt;
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Mathematics"></category><category term="Linear Algebra"></category><category term="Python"></category><category term="Numpy"></category><category term="Scipy"></category><category term="Mathematics"></category></entry><entry><title>Intermediates of Linear Algebra with Python - Part I</title><link href="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-i" rel="alternate"></link><published>2019-03-02T15:14:00+04:00</published><updated>2019-03-02T15:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-02:/intermediates-of-linear-algebra-with-python-part-i</id><summary type="html">&lt;p&gt;This is an intermediate part of Linear Algebra with Python&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the first part of the third post in blog series about linear algebra.&lt;/p&gt;
+&lt;/script&gt;</content><category term="Mathematics"></category><category term="Intermediate Linear Algebra"></category><category term="Mathematics"></category></entry><entry><title>Intermediates of Linear Algebra with Python - Part I</title><link href="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-i" rel="alternate"></link><published>2019-03-02T15:14:00+04:00</published><updated>2019-03-02T15:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-02:/intermediates-of-linear-algebra-with-python-part-i</id><summary type="html">&lt;p&gt;This is an intermediate part of Linear Algebra with Python&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the first part of the third post in blog series about linear algebra.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Introduction&lt;/li&gt;
 &lt;li&gt;Basics of linear algebra&lt;/li&gt;
@@ -4965,11 +4992,18 @@ $$&lt;/div&gt;
 &lt;/ol&gt;
 &lt;p&gt;In this post I will introduce you to the intermediates of linear algebra, which in turn includes the following:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="#Vector"&gt;Vector&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#Cross_Product"&gt;Cross Product&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Span"&gt;Span&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Linear_Independence_and_Dependence"&gt;Linear Independence and Dependence&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Numerical_Representation"&gt;Numerical Representation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#vector"&gt;Vector&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#cross-product"&gt;Cross Product&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#span"&gt;Span&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#linear-independence-and-dependence"&gt;Linear Independence and Dependence&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#numerical-representation"&gt;Numerical Representation&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#cross-product-1"&gt;Cross Product&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#linear-independence-and-dependence-1"&gt;Linear Independence and Dependence&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#conclusion-for-part-i"&gt;Conclusion for part I&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#references"&gt;References&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#vector-1"&gt;Vector&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -5419,7 +5453,7 @@ I split those materials into two parts, mainly because to improve readability an
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Mathematics"></category><category term="Linear Algebra"></category><category term="Python"></category><category term="Numpy"></category><category term="Scipy"></category><category term="Mathematics"></category></entry><entry><title>Basics of Linear Algebra with Python</title><link href="https://dsfabric.org/basics-of-linear-algebra-with-python" rel="alternate"></link><published>2019-03-02T13:14:00+04:00</published><updated>2019-03-02T13:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-02:/basics-of-linear-algebra-with-python</id><summary type="html">&lt;p&gt;This is a basics of Linear Algebra with Python&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the second post in blog series about linear algebra. &lt;/p&gt;
+&lt;/script&gt;</content><category term="Mathematics"></category><category term="Intermediate Linear Algebra"></category><category term="Mathematics"></category></entry><entry><title>Basics of Linear Algebra with Python</title><link href="https://dsfabric.org/basics-of-linear-algebra-with-python" rel="alternate"></link><published>2019-03-02T13:14:00+04:00</published><updated>2019-03-02T13:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-02:/basics-of-linear-algebra-with-python</id><summary type="html">&lt;p&gt;This is a basics of Linear Algebra with Python&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the second post in blog series about linear algebra. &lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Introduction&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Basics of linear algebra&lt;/strong&gt;&lt;/li&gt;
@@ -5428,30 +5462,46 @@ I split those materials into two parts, mainly because to improve readability an
 &lt;/ol&gt;
 &lt;p&gt;In this post I will introduce you to the basics of linear algebra, which in turn includes the following:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="#One_Variable_Equation"&gt;One Variable Equation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Two_Variable_Equation"&gt;Two Variable Equation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#The_Systems_Of_Equations"&gt;The Systems of Equations&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Vector"&gt;Vector&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#Vectors_And_Vector_Notation"&gt;Vectors and Vector Notation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Dimensions_Of_Vector"&gt;Dimensions of Vector&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Operations_On_Vectors"&gt;Operations on Vectors&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Vector_Length"&gt;Vector Length&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Unit_Vector"&gt;Unit Vector&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Scalar_Product_Of_Two_Vectors"&gt;Scalar Product of Two Vectors&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Numerical_Representation"&gt;Numerical Representation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#one-variable-equation"&gt;One Variable Equation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#two-variable-equation"&gt;Two Variable Equation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#the-systems-of-equations"&gt;The Systems of Equations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#vectors"&gt;Vectors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#vectors-and-vector-notation"&gt;Vectors and Vector Notation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#dimensions-of-vector"&gt;Dimensions of Vector&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#operations-on-vectors"&gt;Operations on Vectors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#vector-length"&gt;Vector Length&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#unit-vector"&gt;Unit Vector&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#scalar-product-of-two-vectors"&gt;Scalar Product of Two Vectors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#numerical-representation"&gt;Numerical Representation&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#vector-addition"&gt;Vector Addition&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#scalar-multiplication"&gt;Scalar Multiplication&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#vector-length-1"&gt;Vector Length&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#unit-vector-1"&gt;Unit Vector&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#scalar-product"&gt;Scalar Product&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="#Matrix"&gt;Matrix&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="#Matrices_And_Matrix_Notation"&gt;Matrices and Matrix Notation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Dimension_Of_Matrix"&gt;Dimension of Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Matrix_Operations"&gt;Matrix Operations&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Matrix_Transpose"&gt;Matrix Transpose&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Identity_Matrix"&gt;Identity Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Numerical_Representation_Matrix"&gt;Numerical Representation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#matrix"&gt;Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#matrices-and-matrix-notation"&gt;Matrices and Matrix Notation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#dimension-of-matrices"&gt;Dimension of Matrices&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#matrix-operations"&gt;Matrix Operations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#matrix-transpose"&gt;Matrix Transpose&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#identity-matrix"&gt;Identity Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#numerical-representation-1"&gt;Numerical Representation&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#dimension-of-a-matrix"&gt;Dimension of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#matrix-addition-and-subtraction"&gt;Matrix Addition and Subtraction&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#nergative-matrix"&gt;Nergative Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#matrix---scalar-multiplication"&gt;Matrix - Scalar Multiplication&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#matrix---matrix-multiplication"&gt;Matrix - Matrix Multiplication&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#matrix-transpose-1"&gt;Matrix Transpose&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#matrix---identity-matrix-multiplication"&gt;Matrix - Identity Matrix Multiplication&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="#Conclusion"&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#References"&gt;References&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#conclusion"&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#references"&gt;References&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#vector"&gt;Vector&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#matrix-1"&gt;Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="one-variable-equation"&gt;One Variable Equation&lt;a class="headerlink" href="#one-variable-equation" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;a id="One_Variable_Equation"&gt;&lt;/a&gt;&lt;/p&gt;
@@ -6561,7 +6611,7 @@ to confuse the reader and give freedom to look for some other materials.&lt;/p&g
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Mathematics"></category><category term="Linear Algebra"></category><category term="Python"></category><category term="Numpy"></category><category term="Scipy"></category><category term="Mathematics"></category></entry><entry><title>Introduction to Linear Algebra with Python</title><link href="https://dsfabric.org/introduction-to-linear-algebra-with-python" rel="alternate"></link><published>2019-03-01T12:14:00+04:00</published><updated>2019-03-01T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-01:/introduction-to-linear-algebra-with-python</id><summary type="html">&lt;p&gt;This is introduction into the Linear Algebra Series&lt;/p&gt;</summary><content type="html">&lt;p&gt;These are the series of linear algebra mainly based on &lt;em&gt;Numpy&lt;/em&gt; and &lt;em&gt;Scipy&lt;/em&gt;. 
+&lt;/script&gt;</content><category term="Mathematics"></category><category term="Linear Algebra Basics"></category><category term="Mathematics"></category></entry><entry><title>Introduction to Linear Algebra with Python</title><link href="https://dsfabric.org/introduction-to-linear-algebra-with-python" rel="alternate"></link><published>2019-03-01T12:14:00+04:00</published><updated>2019-03-01T12:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-01:/introduction-to-linear-algebra-with-python</id><summary type="html">&lt;p&gt;This is introduction into the Linear Algebra Series&lt;/p&gt;</summary><content type="html">&lt;p&gt;These are the series of linear algebra mainly based on &lt;em&gt;Numpy&lt;/em&gt; and &lt;em&gt;Scipy&lt;/em&gt;. 
 The series will follow the sequence:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/li&gt;
@@ -6708,4 +6758,4 @@ The main idea of this series is to feel comfortable in the field and to give you
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Mathematics"></category><category term="Linear Algebra"></category><category term="Python"></category><category term="Numpy"></category><category term="Scipy"></category><category term="Mathematics"></category></entry></feed>
+&lt;/script&gt;</content><category term="Mathematics"></category><category term="Linear Algebra"></category><category term="Mathematics"></category></entry></feed>
