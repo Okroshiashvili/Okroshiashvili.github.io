@@ -2828,23 +2828,33 @@ of &lt;span class="math"&gt;\(A\)&lt;/span&gt; and spectral radius for our matri
 &lt;/ol&gt;
 &lt;p&gt;This is the continuation of the part one and in this post I will introduce you the following topics:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="#Matrix"&gt;Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Types-of-Matrices"&gt;Types of Matrices&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Trace-of-a-Matrix"&gt;Trace of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Determinant-of-a-Matrix"&gt;Determinant of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Minor-of-a-Matrix"&gt;Minor of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Cofactor-of-a-Matrix"&gt;Cofactor of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Determinant-of-a-Matrix-continuation"&gt;Determinant of a Matrix - continuation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Matrix-Division"&gt;Matrix Division&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Inverse-of-a-Matrix"&gt;Inverse of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Matrix-Division-continuation"&gt;Matrix Division - continuation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Solving-System-of-Equations-with-Matrices"&gt;Solving Systems of Equations with Matrices&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Elementary-Row-Operations"&gt;Elemenraty Row Operations&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Rank-of-a-Matrix"&gt;Rank of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Power-of-a-Matrix"&gt;Power of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Norm-of-a-Matrix"&gt;Norm of a Matrix&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Numerical-Representation-Matrix"&gt;Numerical Representation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#Conclusion"&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#matrix"&gt;Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#types-of-matrices"&gt;Types of Matrices&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#trace-of-a-matrix"&gt;Trace of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#determinant-of-a-matrix"&gt;Determinant of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#minor-of-a-matrix"&gt;Minor of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#cofactor-of-a-matrix"&gt;Cofactor of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#determinant-of-a-matrix-continuation"&gt;Determinant of a Matrix continuation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#matrix-division"&gt;Matrix Division&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#inverse-of-a-matrix"&gt;Inverse of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#matrix-division-continuation"&gt;Matrix Division continuation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#solving-system-of-equations-with-matrices"&gt;Solving System of Equations with Matrices&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#elementary-row-operations"&gt;Elementary Row Operations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#rank-of-a-matrix"&gt;Rank of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#power-of-a-matrix"&gt;Power of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#norm-of-a-matrix"&gt;Norm of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#numerical-representation"&gt;Numerical Representation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#types-of-matrices-1"&gt;Types of Matrices&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#trace-of-a-matrix-1"&gt;Trace of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#determinant-of-a-matrix-1"&gt;Determinant of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#inverse-of-a-matrix-1"&gt;Inverse of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#matrix-division-1"&gt;Matrix Division&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#solving-system-of-equations-with-matrices-1"&gt;Solving System of Equations with Matrices&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#rank-of-a-matrix-1"&gt;Rank of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#power-of-a-matrix-1"&gt;Power of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#norm-of-a-matrix-1"&gt;Norm of a Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#conclusion"&gt;Conclusion&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#references"&gt;References&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="matrix"&gt;Matrix&lt;a class="headerlink" href="#matrix" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id="types-of-matrices"&gt;Types of Matrices&lt;a class="headerlink" href="#types-of-matrices" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
@@ -3304,7 +3314,7 @@ C_{33} =
 (-1)^{3+3} \cdot M_{33}
 $$&lt;/div&gt;
 &lt;p&gt;So, the sum of &lt;span class="math"&gt;\(i\)&lt;/span&gt; and &lt;span class="math"&gt;\(j\)&lt;/span&gt; in the power of &lt;span class="math"&gt;\((-1)\)&lt;/span&gt; switch the sign of every minor.&lt;/p&gt;
-&lt;h3 id="determinant-of-a-matrix-continuation"&gt;Determinant of a Matrix - continuation&lt;a class="headerlink" href="#determinant-of-a-matrix-continuation" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="determinant-of-a-matrix-continuation"&gt;Determinant of a Matrix continuation&lt;a class="headerlink" href="#determinant-of-a-matrix-continuation" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;We are ready to compute the determinant of our &lt;span class="math"&gt;\(3 \times 3\)&lt;/span&gt; matrix &lt;span class="math"&gt;\(A\)&lt;/span&gt;. We need to expand this matrix along one of 
 the row or one of the column to compute the determinant. It's up to you which one you take, row or column. Let take the 
 first column. Now, what does expansion means? We have to fix either &lt;span class="math"&gt;\(i\)&lt;/span&gt; if we choose a row, or &lt;span class="math"&gt;\(j\)&lt;/span&gt; if we choose column. 
@@ -3508,14 +3518,11 @@ $$&lt;/div&gt;
 &lt;p&gt;Let's verify that the original matrix multiplied by the inverse results in an identity matrix:&lt;/p&gt;
 &lt;div class="math"&gt;$$
 A \cdot A^{-1} =
-\begin{bmatrix}4 &amp;amp; 2 &amp;amp; 2\\6 &amp;amp; 2 &amp;amp; 4\\2 &amp;amp; 2 &amp;amp; 8\end{bmatrix} \cdot \begin{bmatrix}-0.25 &amp;amp; 0.375 &amp;amp; -0.125\\1.25 &amp;amp; -0.875 &amp;amp; 0.125\\-0.25 &amp;amp; 0.125 &amp;amp; 0.125\end{bmatrix}
+\begin{bmatrix}4 &amp;amp; 2 &amp;amp; 2\\6 &amp;amp; 2 &amp;amp; 4\\2 &amp;amp; 2 &amp;amp; 8\end{bmatrix} \cdot \begin{bmatrix}-0.25 &amp;amp; 0.375 &amp;amp; -0.125\\1.25 &amp;amp; -0.875 &amp;amp; 0.125\\-0.25 &amp;amp; 0.125 &amp;amp; 0.125\end{bmatrix} =
+\begin{bmatrix}1 &amp;amp; 0 &amp;amp; 0\\0 &amp;amp; 1 &amp;amp; 0\\0 &amp;amp; 0 &amp;amp; 1\end{bmatrix} = I
 $$&lt;/div&gt;
-&lt;h1 id="_1"&gt;$$&lt;a class="headerlink" href="#_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h1&gt;
-&lt;div class="math"&gt;\begin{bmatrix}1 &amp;amp; 0 &amp;amp; 0\\0 &amp;amp; 1 &amp;amp; 0\\0 &amp;amp; 0 &amp;amp; 1\end{bmatrix}&lt;/div&gt;
-&lt;p&gt; = I
-$$&lt;/p&gt;
 &lt;p&gt;Do you see how challenging can be finding the inverse of &lt;span class="math"&gt;\(4 \times 4\)&lt;/span&gt; matrix? That's why we use calculators or computer program to compute it.&lt;/p&gt;
-&lt;h3 id="matrix-division-continuation"&gt;Matrix Division - continuation&lt;a class="headerlink" href="#matrix-division-continuation" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="matrix-division-continuation"&gt;Matrix Division continuation&lt;a class="headerlink" href="#matrix-division-continuation" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;As we already know how to compute the inverse of a matrix, the division is easy now. If we have two matrices:&lt;/p&gt;
 &lt;div class="math"&gt;$$
 A =
@@ -4209,7 +4216,7 @@ $$&lt;/div&gt;
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="Mathematics"></category><category term="Intermediate Linear Algebra"></category><category term="Mathematics"></category></entry><entry><title>Intermediate Linear Algebra with Python - Part I</title><link href="https://dsfabric.org/intermediate-linear-algebra-with-python-part-i" rel="alternate"></link><published>2019-03-02T15:14:00+04:00</published><updated>2019-03-02T15:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-02:/intermediate-linear-algebra-with-python-part-i</id><summary type="html">&lt;p&gt;This is the first part of intermediate Linear Algebra with Python&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the first part of the third post in blog series about linear algebra.&lt;/p&gt;
+&lt;/script&gt;</content><category term="Mathematics"></category><category term="Linear Algebra"></category><category term="Intermediate Topics"></category><category term="Mathematics"></category></entry><entry><title>Intermediate Linear Algebra with Python - Part I</title><link href="https://dsfabric.org/intermediate-linear-algebra-with-python-part-i" rel="alternate"></link><published>2019-03-02T15:14:00+04:00</published><updated>2019-03-02T15:14:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-02:/intermediate-linear-algebra-with-python-part-i</id><summary type="html">&lt;p&gt;This is the first part of intermediate Linear Algebra with Python&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the first part of the third post in blog series about linear algebra.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Introduction&lt;/li&gt;
 &lt;li&gt;Basics of linear algebra&lt;/li&gt;
