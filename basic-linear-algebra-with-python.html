@@ -118,39 +118,30 @@
 <li><a href="#vector-length">Vector Length</a></li>
 <li><a href="#unit-vector">Unit Vector</a></li>
 <li><a href="#scalar-product-of-two-vectors">Scalar Product of Two Vectors</a></li>
-<li><a href="#numerical-representation">Numerical Representation</a><ul>
+<li><a href="#numerical-representation">Numerical Representation</a></li>
 <li><a href="#vector-addition">Vector Addition</a></li>
 <li><a href="#scalar-multiplication">Scalar Multiplication</a></li>
 <li><a href="#vector-length-1">Vector Length</a></li>
 <li><a href="#unit-vector-1">Unit Vector</a></li>
 <li><a href="#scalar-product">Scalar Product</a></li>
-</ul>
-</li>
 <li><a href="#matrix">Matrix</a></li>
 <li><a href="#matrices-and-matrix-notation">Matrices and Matrix Notation</a></li>
 <li><a href="#dimension-of-matrices">Dimension of Matrices</a></li>
 <li><a href="#matrix-operations">Matrix Operations</a></li>
 <li><a href="#matrix-transpose">Matrix Transpose</a></li>
 <li><a href="#identity-matrix">Identity Matrix</a></li>
-<li><a href="#numerical-representation-1">Numerical Representation</a><ul>
+<li><a href="#numerical-representation-1">Numerical Representation</a></li>
 <li><a href="#dimension-of-a-matrix">Dimension of a Matrix</a></li>
 <li><a href="#matrix-addition-and-subtraction">Matrix Addition and Subtraction</a></li>
-<li><a href="#nergative-matrix">Nergative Matrix</a></li>
+<li><a href="#negative-matrix">Negative Matrix</a></li>
 <li><a href="#matrix---scalar-multiplication">Matrix - Scalar Multiplication</a></li>
 <li><a href="#matrix---matrix-multiplication">Matrix - Matrix Multiplication</a></li>
-<li><a href="#matrix-transpose-1">Matrix Transpose</a></li>
-<li><a href="#matrix---identity-matrix-multiplication">Matrix - Identity Matrix Multiplication</a></li>
-</ul>
-</li>
+<li><a href="#transpose">Transpose</a></li>
+<li><a href="#identity-matrix-multiplication">Identity Matrix Multiplication</a></li>
 <li><a href="#conclusion">Conclusion</a></li>
-<li><a href="#references">References</a><ul>
-<li><a href="#vector">Vector</a></li>
-<li><a href="#matrix-1">Matrix</a></li>
-</ul>
-</li>
+<li><a href="#references">References</a></li>
 </ul>
 <h2 id="one-variable-equation">One Variable Equation<a class="headerlink" href="#one-variable-equation" title="Permanent link">&para;</a></h2>
-<p><a id="One_Variable_Equation"></a></p>
 <p>Generally, equations state that two things are equal. They contain one or more variables and solving them means to find the value of those variable to make equality true. This value is known as a solution. </p>
 <p>Consider the following equation:</p>
 <div class="math">$$
@@ -167,7 +158,6 @@ $$</div>
 
 
 <h2 id="two-variable-equation">Two Variable Equation<a class="headerlink" href="#two-variable-equation" title="Permanent link">&para;</a></h2>
-<p><a id="Two_Variable_Equation"></a></p>
 <p>Equations with two variables are known as linear equations.</p>
 <p>Consider the following equation:</p>
 <div class="math">$$
@@ -275,7 +265,6 @@ $$</div>
 <p>So what does that actually mean? Well, if we start from any point on the blue line and move one unit to the right 
 (along with the <span class="math">\(X\)</span> axis), we'll need to move 1 unit up (along with the <span class="math">\(Y\)</span> axis) to get back to the blue line.</p>
 <h2 id="the-systems-of-equations">The Systems of Equations<a class="headerlink" href="#the-systems-of-equations" title="Permanent link">&para;</a></h2>
-<p><a id="The_Systems_Of_Equations"></a></p>
 <p>To have the system of equations means that we have two or more linear equations together and we have to solve 
 them simultaneously to make the equality true. There are three possible solutions of the linear system. 
 One solution, No solution or system is inconsistent and infinitely many solutions. Generally, 
@@ -395,10 +384,7 @@ In this case, the second equation is scaled by 2 version of the first equation.<
 
 <p><img alt="picture" src="https://dsfabric.org/images/Linear_Algebra_Basics_figure7_1.png"></p>
 <h2 id="vectors">Vectors<a class="headerlink" href="#vectors" title="Permanent link">&para;</a></h2>
-<p><a id="Vector"></a></p>
 <h3 id="vectors-and-vector-notation">Vectors and Vector Notation<a class="headerlink" href="#vectors-and-vector-notation" title="Permanent link">&para;</a></h3>
-<p><a id="Vectors_And_Vector_Notation"></a></p>
-<hr>
 <p>In plain English, the vector is a directed arrow. Mathematically, the vector is an object that has magnitude and direction. 
 Magnitude is the length of the vector and direction is from its tail to its end. In other words, imagine vector as the line 
 which connects two points in the Cartesian Coordinate System. A vector of length <span class="math">\(n\)</span> is a sequence or array of <span class="math">\(n\)</span> numbers, 
@@ -441,8 +427,6 @@ $$</div>
 
 <p><img alt="picture" src="https://dsfabric.org/images/Linear_Algebra_Basics_figure8_1.png"></p>
 <h3 id="dimensions-of-vector">Dimensions of Vector<a class="headerlink" href="#dimensions-of-vector" title="Permanent link">&para;</a></h3>
-<p><a id="Dimensions_Of_Vector"></a></p>
-<hr>
 <p>The dimension of vector is the number of elements in it. For example, the above vector is row vector with 
 dimension <span class="math">\(1\times n\)</span>, but if we take it as a column vector its dimension will be <span class="math">\(n\times 1\)</span>.</p>
 <div class="math">$$
@@ -459,8 +443,6 @@ x_n
 \end{bmatrix}_{n\times1}
 $$</div>
 <h3 id="operations-on-vectors">Operations on Vectors<a class="headerlink" href="#operations-on-vectors" title="Permanent link">&para;</a></h3>
-<p><a id="Operations_On_Vectors"></a></p>
-<hr>
 <p>The most common operations on vectors are vector addition/subtraction and scalar multiplication.</p>
 <p>If we have two vectors, <span class="math">\(\vec{X}\)</span> and <span class="math">\(\vec{Y}\)</span>, we can add them up in the following way:</p>
 <div class="math">$$
@@ -527,8 +509,6 @@ $$</div>
 \end{bmatrix}
 $$</div>
 <h3 id="vector-length">Vector Length<a class="headerlink" href="#vector-length" title="Permanent link">&para;</a></h3>
-<p><a id="Vector_Length"></a></p>
-<hr>
 <p>The vector length or magnitude is calculated by the following formula:</p>
 <div class="math">$$
 \|\vec{X}\| = \sqrt{x_1^2 + x_2^2 + x_3^2 + ... + x_n^2} = \sqrt{\sum_{i=1}^n x_i^2}
@@ -552,8 +532,6 @@ $$</div>
 \|\vec{X}\| = \sqrt{1^2 + 2^2 + 3^2} = \sqrt{14}
 $$</div>
 <h3 id="unit-vector">Unit Vector<a class="headerlink" href="#unit-vector" title="Permanent link">&para;</a></h3>
-<p><a id="Unit_Vector"></a></p>
-<hr>
 <p>What if the length of a vector equal to 1? This kind of vector is known as unit vector and it plays a very important 
 role in different calculations and formulae. We'll see it in later posts, but here unit vector is defined as </p>
 <div class="math">$$
@@ -569,8 +547,6 @@ So, we can construct unit vector <span class="math">\(\hat{X}\)</span> in the fo
 [0.26726124; \ 0.53452248; \ 0.80178373]
 $$</div>
 <h3 id="scalar-product-of-two-vectors">Scalar Product of Two Vectors<a class="headerlink" href="#scalar-product-of-two-vectors" title="Permanent link">&para;</a></h3>
-<p><a id="Scalar_Product_Of_Two_Vectors"></a></p>
-<hr>
 <p>Multiplication of two vectors is known as dot product, scalar product, or inner product and is defined by: </p>
 <div class="math">$$
 \langle\, \vec{X},\vec{Y}\rangle~=~\vec{X}\cdot\vec{Y}~=~x_1\times y_1 + x_2\times y_2 + ... + x_n\times y_n~=~\sum_{i=1}^n x_i\cdot y_i
@@ -581,8 +557,7 @@ $$</div>
 \vec{X}\cdot\vec{Y}~=~\|\vec{X}\|\cdot\|\vec{Y}\|\cdot\cos{\theta}
 $$</div>
 <p>where <span class="math">\(\cos{\theta}\)</span> is an angle between the vectors <span class="math">\(\vec{X}\)</span> and <span class="math">\(\vec{Y}\)</span>.</p>
-<h3 id="numerical-representation">Numerical Representation<a class="headerlink" href="#numerical-representation" title="Permanent link">&para;</a></h3>
-<p><a id="Numerical_Representation"></a></p>
+<h2 id="numerical-representation">Numerical Representation<a class="headerlink" href="#numerical-representation" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># It&#39;s more convenient to represent the vector as a Numpy ndarray, rather than Python tuple.</span>
@@ -600,7 +575,7 @@ $$</div>
 </pre></div>
 
 
-<h4 id="vector-addition">Vector Addition<a class="headerlink" href="#vector-addition" title="Permanent link">&para;</a></h4>
+<h3 id="vector-addition">Vector Addition<a class="headerlink" href="#vector-addition" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="n">Y</span><span class="p">)</span>
 </pre></div>
 
@@ -629,7 +604,7 @@ $$</div>
 
 <p><img alt="picture" src="https://dsfabric.org/images/Linear_Algebra_Basics_figure11_1.png"></p>
 <p>Red is vector <span class="math">\(\vec{V}\)</span>, blue is <span class="math">\(\vec{W}\)</span> and green is the sum of these two vectors</p>
-<h4 id="scalar-multiplication">Scalar Multiplication<a class="headerlink" href="#scalar-multiplication" title="Permanent link">&para;</a></h4>
+<h3 id="scalar-multiplication">Scalar Multiplication<a class="headerlink" href="#scalar-multiplication" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
@@ -642,7 +617,7 @@ $$</div>
 </pre></div>
 
 
-<h4 id="vector-length_1">Vector Length<a class="headerlink" href="#vector-length_1" title="Permanent link">&para;</a></h4>
+<h3 id="vector-length_1">Vector Length<a class="headerlink" href="#vector-length_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
@@ -663,7 +638,7 @@ $$</div>
 </pre></div>
 
 
-<h4 id="unit-vector_1">Unit Vector<a class="headerlink" href="#unit-vector_1" title="Permanent link">&para;</a></h4>
+<h3 id="unit-vector_1">Unit Vector<a class="headerlink" href="#unit-vector_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
@@ -688,7 +663,7 @@ $$</div>
 </pre></div>
 
 
-<h4 id="scalar-product">Scalar Product<a class="headerlink" href="#scalar-product" title="Permanent link">&para;</a></h4>
+<h3 id="scalar-product">Scalar Product<a class="headerlink" href="#scalar-product" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># It&#39;s more convenient to represent the vector as a Numpy ndarray, rather than Python tuple.</span>
@@ -724,10 +699,7 @@ $$</div>
 
 
 <h2 id="matrix">Matrix<a class="headerlink" href="#matrix" title="Permanent link">&para;</a></h2>
-<p><a id="Matrix"></a></p>
 <h3 id="matrices-and-matrix-notation">Matrices and Matrix Notation<a class="headerlink" href="#matrices-and-matrix-notation" title="Permanent link">&para;</a></h3>
-<p><a id="Matrices_And_Matrix_Notation"></a></p>
-<hr>
 <p>Matrix is a rectangular array of numbers and/or expressions that are arranged into rows and columns. 
 These rows and columns can be considered as row and column vectors. So, the matrix is the rectangular array 
 which contains either row or column vectors. Generally, capital letters are used to denote matrix and lower 
@@ -743,8 +715,6 @@ $$</div>
 <p>Here, matrix <span class="math">\(A\)</span> has four elements, denoted by lower letter <span class="math">\(a\)</span>, where subscripts denote row and column number. 
 For example, <span class="math">\(a_{2,1}\)</span> denotes element at the cross of the second row and first column.</p>
 <h3 id="dimension-of-matrices">Dimension of Matrices<a class="headerlink" href="#dimension-of-matrices" title="Permanent link">&para;</a></h3>
-<p><a id="Dimension_Of_Matrix"></a></p>
-<hr>
 <p>If a matrix <span class="math">\(A\)</span> has <span class="math">\(n\)</span> rows and <span class="math">\(m\)</span> columns, we call <span class="math">\(A\)</span> an <span class="math">\(n\times m\)</span> matrix and it is read as <strong>"n by m matrix"</strong>. 
 A typical <span class="math">\(n\times m\)</span> matrix <span class="math">\(A\)</span> can be written as:</p>
 <div class="math">$$
@@ -768,9 +738,7 @@ A =
 \end{bmatrix}_{n \times m}
 $$</div>
 <h3 id="matrix-operations">Matrix Operations<a class="headerlink" href="#matrix-operations" title="Permanent link">&para;</a></h3>
-<p><a id="Matrix_Operations"></a></p>
-<hr>
-<p>We add two matrices elementwise. To exist this addition we require that the dimensions of the two matrices coincide. 
+<p>We add two matrices element-wise. To exist this addition we require that the dimensions of the two matrices coincide. 
 If we have two matrices, <span class="math">\(A\)</span> and <span class="math">\(B\)</span>, addition is defined by:</p>
 <div class="math">$$
 A + B =
@@ -791,7 +759,7 @@ a_{n1} + b_{n1} &amp;  \cdots &amp; a_{nm} + b_{nm} \\
 \end{bmatrix}
 $$</div>
 <p>Matrix subtraction is defined in the same fashion as the addition.</p>
-<p>The nagative of a matrix, is just a matrix with the sign of each element reversed:</p>
+<p>The negative of a matrix, is just a matrix with the sign of each element reversed:</p>
 <div class="math">$$
 A =
 \begin{bmatrix}
@@ -856,8 +824,6 @@ simpler example and some extra source to take a look.</p>
 <p><strong>Note</strong> that, in matrix multiplication, <span class="math">\(A \cdot B\)</span> is <strong>not</strong> same as <span class="math">\(B \cdot A\)</span>.</p>
 </blockquote>
 <h3 id="matrix-transpose">Matrix Transpose<a class="headerlink" href="#matrix-transpose" title="Permanent link">&para;</a></h3>
-<p><a id="Matrix_Transpose"></a></p>
-<hr>
 <p>In the above example, we saw that the matrix is the collection of vectors. We also know that vectors can be horizontal 
 as well as vertical, or row and column vectors. Now, what if we change in any matrix row vectors into column vectors? 
 This operation is known as transposition. The idea of this operation is to change matrix rows into matrix columns or vice versa, 
@@ -882,8 +848,6 @@ a_{1m} &amp; a_{2m} &amp; \cdots &amp; a_{nm}
 \end{bmatrix}_{m \times n}
 $$</div>
 <h3 id="identity-matrix">Identity Matrix<a class="headerlink" href="#identity-matrix" title="Permanent link">&para;</a></h3>
-<p><a id="Identity_Matrix"></a></p>
-<hr>
 <p>There are several different types of matrices. In this post, we will introduce only <strong>identity matix</strong>. 
 Future post will introduce other types of matrices. An identity matrix (usually indicated by a capital <span class="math">\(I\)</span>) 
 is the equivalent in matrix terms of the number 1. It always has the same number of rows as columns, 
@@ -898,9 +862,8 @@ I =
 \end{bmatrix}_{3 \times 3}
 $$</div>
 <p>Multiplying any matrix by an identity matrix is the same as multiplying a number by 1; the result is the same as the original value:</p>
-<h3 id="numerical-representation_1">Numerical Representation<a class="headerlink" href="#numerical-representation_1" title="Permanent link">&para;</a></h3>
-<p><a id="Numerical_Representation_Matrix"></a></p>
-<h4 id="dimension-of-a-matrix">Dimension of a Matrix<a class="headerlink" href="#dimension-of-a-matrix" title="Permanent link">&para;</a></h4>
+<h2 id="numerical-representation_1">Numerical Representation<a class="headerlink" href="#numerical-representation_1" title="Permanent link">&para;</a></h2>
+<h3 id="dimension-of-a-matrix">Dimension of a Matrix<a class="headerlink" href="#dimension-of-a-matrix" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># 3x3 matrix in Numpy</span>
@@ -923,7 +886,7 @@ $$</div>
 </pre></div>
 
 
-<h4 id="matrix-addition-and-subtraction">Matrix Addition and Subtraction<a class="headerlink" href="#matrix-addition-and-subtraction" title="Permanent link">&para;</a></h4>
+<h3 id="matrix-addition-and-subtraction">Matrix Addition and Subtraction<a class="headerlink" href="#matrix-addition-and-subtraction" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">]])</span>
@@ -964,7 +927,7 @@ $$</div>
 </pre></div>
 
 
-<h4 id="nergative-matrix">Nergative Matrix<a class="headerlink" href="#nergative-matrix" title="Permanent link">&para;</a></h4>
+<h3 id="negative-matrix">Negative Matrix<a class="headerlink" href="#negative-matrix" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">]])</span>
@@ -985,7 +948,7 @@ $$</div>
 </pre></div>
 
 
-<h4 id="matrix-scalar-multiplication">Matrix - Scalar Multiplication<a class="headerlink" href="#matrix-scalar-multiplication" title="Permanent link">&para;</a></h4>
+<h3 id="matrix-scalar-multiplication">Matrix - Scalar Multiplication<a class="headerlink" href="#matrix-scalar-multiplication" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]])</span>
@@ -1076,7 +1039,7 @@ $$</div>
 $$</div>
 <hr>
 <p>If this is not enough to catch the idea, take a look this <a href="https://www.mathsisfun.com/algebra/matrix-multiplying.html">explanation</a></p>
-<h4 id="matrix-matrix-multiplication">Matrix - Matrix Multiplication<a class="headerlink" href="#matrix-matrix-multiplication" title="Permanent link">&para;</a></h4>
+<h3 id="matrix-matrix-multiplication">Matrix - Matrix Multiplication<a class="headerlink" href="#matrix-matrix-multiplication" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><span class="c1"># In Numpy matrix multiplication can be done with no effort</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1105,7 +1068,7 @@ $$</div>
 </pre></div>
 
 
-<h4 id="matrix-transpose_1">Matrix Transpose<a class="headerlink" href="#matrix-transpose_1" title="Permanent link">&para;</a></h4>
+<h3 id="transpose">Transpose<a class="headerlink" href="#transpose" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]])</span>
@@ -1130,7 +1093,7 @@ $$</div>
 </pre></div>
 
 
-<h4 id="matrix-identity-matrix-multiplication">Matrix - Identity Matrix Multiplication<a class="headerlink" href="#matrix-identity-matrix-multiplication" title="Permanent link">&para;</a></h4>
+<h3 id="identity-matrix-multiplication">Identity Matrix Multiplication<a class="headerlink" href="#identity-matrix-multiplication" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><span class="c1"># We have two ways to define identity matrix in Numpy.</span>
 <span class="c1"># First is to define by hand, like above examples, and second is to use Numpy&#39;s buildin function</span>
 
@@ -1180,22 +1143,14 @@ $$</div>
 
 
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
-<p><a id="Conclusion"></a></p>
 <p>In this post, I tried to cover the basics of linear algebra. I depicted some theory with examples solved by 
 hand as well as with Numpy. I do hope, this blog will help you to grab the necessary knowledge in linear algebra 
 basics and further gives you the direction where to dig deeper. I did not provide here further resources due to not 
 to confuse the reader and give freedom to look for some other materials.</p>
 <p>If some part of the blog is someway unclear to you, please comment below.</p>
-<h3 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h3>
-<p><a id="References"></a></p>
-<h4 id="vector">Vector<a class="headerlink" href="#vector" title="Permanent link">&para;</a></h4>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics)">Vector</a></li>
-</ul>
-<h4 id="matrix_1">Matrix<a class="headerlink" href="#matrix_1" title="Permanent link">&para;</a></h4>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)">Matrix</a></li>
-</ul>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<p><a href="https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics)">Vector</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)">Matrix</a></p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",

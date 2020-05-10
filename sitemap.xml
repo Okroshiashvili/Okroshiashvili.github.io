@@ -5,35 +5,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://dsfabric.org/</loc>
-<lastmod>2020-05-10T22:15:51-00:00</lastmod>
+<lastmod>2020-05-10T23:18:48-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://dsfabric.org/archives.html</loc>
-<lastmod>2020-05-10T22:15:51-00:00</lastmod>
+<lastmod>2020-05-10T23:18:48-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://dsfabric.org/tags.html</loc>
-<lastmod>2020-05-10T22:15:51-00:00</lastmod>
+<lastmod>2020-05-10T23:18:48-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://dsfabric.org/categories.html</loc>
-<lastmod>2020-05-10T22:15:51-00:00</lastmod>
+<lastmod>2020-05-10T23:18:48-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://dsfabric.org/search.html</loc>
-<lastmod>2020-05-10T22:15:51-00:00</lastmod>
+<lastmod>2020-05-10T23:18:48-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -83,6 +83,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://dsfabric.org/advance-linear-algebra-with-python-part-i</loc>
 <lastmod>2019-03-04T12:14:00+04:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-ii</loc>
+<lastmod>2019-03-03T12:14:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>

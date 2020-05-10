@@ -112,11 +112,9 @@
 <li><a href="#cross-product">Cross Product</a></li>
 <li><a href="#span">Span</a></li>
 <li><a href="#linear-independence-and-dependence">Linear Independence and Dependence</a></li>
-<li><a href="#numerical-representation">Numerical Representation</a><ul>
+<li><a href="#numerical-representation">Numerical Representation</a></li>
 <li><a href="#cross-product-1">Cross Product</a></li>
 <li><a href="#linear-independence-and-dependence-1">Linear Independence and Dependence</a></li>
-</ul>
-</li>
 <li><a href="#conclusion-for-part-i">Conclusion for part I</a></li>
 <li><a href="#references">References</a></li>
 </ul>
@@ -354,8 +352,8 @@ c_{1} ([1, 2]) + c_{2} ([2, 4]) = [0, 0]
 $$</div>
 <p>There is a nontrivial linear combination with <span class="math">\(c_{1} = 2\)</span> and <span class="math">\(c_{2} = 1\)</span> that yields <span class="math">\(0\)</span>. This implies <span class="math">\(A\)</span> is the linearly 
 dependent set of vectors. It's easy in this case to spot linear dependence by first glance, as the second vector is 2 times the first vector, which indicates linear dependence.</p>
-<h3 id="numerical-representation">Numerical Representation<a class="headerlink" href="#numerical-representation" title="Permanent link">&para;</a></h3>
-<h4 id="cross-product_1">Cross Product<a class="headerlink" href="#cross-product_1" title="Permanent link">&para;</a></h4>
+<h2 id="numerical-representation">Numerical Representation<a class="headerlink" href="#numerical-representation" title="Permanent link">&para;</a></h2>
+<h3 id="cross-product_1">Cross Product<a class="headerlink" href="#cross-product_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
@@ -450,7 +448,7 @@ dependent set of vectors. It's easy in this case to spot linear dependence by fi
 
 
 <p><img alt="picture" src="https://dsfabric.org/images/Linear_Algebra_Intermediate_Part_I_figure2_1.png"></p>
-<h4 id="linear-independence-and-dependence_1">Linear Independence and Dependence<a class="headerlink" href="#linear-independence-and-dependence_1" title="Permanent link">&para;</a></h4>
+<h3 id="linear-independence-and-dependence_1">Linear Independence and Dependence<a class="headerlink" href="#linear-independence-and-dependence_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><span class="c1"># Numpy has not a straightforward rule to find linearly independent vectors in some set, so we can use another Python module Sympy</span>
 <span class="c1"># Here, I&#39;ll show you how to find linearly independent vectors using Sympy and other implementations are up to you</span>
 
@@ -483,11 +481,11 @@ dependent set of vectors. It's easy in this case to spot linear dependence by fi
 
 
 <p>This says that vectors at index 0, 1, and 3 are linearly independent, while vector at index 2 is linearly dependent.</p>
-<h3 id="conclusion-for-part-i">Conclusion for part I<a class="headerlink" href="#conclusion-for-part-i" title="Permanent link">&para;</a></h3>
+<h2 id="conclusion-for-part-i">Conclusion for part I<a class="headerlink" href="#conclusion-for-part-i" title="Permanent link">&para;</a></h2>
 <p>Here, I only covered half of the materials that I initially had intended to cover. 
 I split those materials into two parts, mainly because to improve readability and maintain consistency.</p>
 <p>In the second part I review matrices and operations on matrices.</p>
-<h3 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h3>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <p><a href="http://linear.axler.net/">Linear Algebra Done Right</a></p>
 <p><a href="https://en.wikipedia.org/wiki/List_of_linear_algebra_topics">Linear Algebra Topics</a></p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
@@ -644,7 +642,7 @@ I split those materials into two parts, mainly because to improve readability an
             <nav>
             <ul class="articles-timeline">
                 <li class="previous-article">« <a href="https://dsfabric.org/basic-linear-algebra-with-python" title="Previous: Basic Linear Algebra with Python">Basic Linear Algebra with Python</a></li>
-                <li class="next-article"><a href="https://dsfabric.org/advance-linear-algebra-with-python-part-i" title="Next: Advance Linear Algebra with Python - Part I">Advance Linear Algebra with Python - Part I</a> »</li>
+                <li class="next-article"><a href="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-ii" title="Next: Intermediates of Linear Algebra with Python - Part II">Intermediates of Linear Algebra with Python - Part II</a> »</li>
             </ul>
             </nav>
             </aside>

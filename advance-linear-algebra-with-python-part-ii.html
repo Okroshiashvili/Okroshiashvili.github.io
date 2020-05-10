@@ -114,29 +114,21 @@
 <li><a href="#eigendecomposition">Eigendecomposition</a></li>
 <li><a href="#singular-value-decomposition">Singular Value Decomposition</a></li>
 <li><a href="#inverse-of-a-square-full-rank-matrix">Inverse of a Square Full Rank Matrix</a></li>
-<li><a href="#numerical-representation">Numerical Representation</a><ul>
+<li><a href="#numerical-representation">Numerical Representation</a></li>
 <li><a href="#cholesky-decomposition-1">Cholesky Decomposition</a></li>
 <li><a href="#qr-decomposition-1">QR Decomposition</a></li>
 <li><a href="#eigendecomposition-1">Eigendecomposition</a></li>
 <li><a href="#singular-value-decomposition-1">Singular Value Decomposition</a></li>
 <li><a href="#inverse-of-a-square-full-rank-matrix-1">Inverse of a Square Full Rank Matrix</a></li>
-</ul>
-</li>
 <li><a href="#conclusion">Conclusion</a></li>
-<li><a href="#references">References</a><ul>
-<li><a href="#matrix-decomposition">Matrix Decomposition</a></li>
-</ul>
-</li>
+<li><a href="#references">References</a></li>
 </ul>
 <h2 id="matrix-decompositions">Matrix Decompositions<a class="headerlink" href="#matrix-decompositions" title="Permanent link">&para;</a></h2>
-<p><a id="Matrix_Decompositions"></a></p>
 <p>In linear algebra, matrix decomposition or matrix factorization is a factorization of a matrix into a product of matrices. 
 Factorizing a matrix means that we want to find a product of matrices that is equal to the initial matrix. 
 These techniques have a wide variety of uses and consequently, there exist several types of decompositions. 
 Below, I will consider some of them, mostly applicable to machine learning or deep learning.</p>
 <h3 id="cholesky-decomposition">Cholesky Decomposition<a class="headerlink" href="#cholesky-decomposition" title="Permanent link">&para;</a></h3>
-<p><a id="Cholesky_Decomposition"></a></p>
-<hr>
 <p>The Cholesky Decomposition is the factorization of a given <strong>symmetric</strong> square matrix <span class="math">\(A\)</span> into the product of a 
 lower triangular matrix, denoted by <span class="math">\(L\)</span> and its transpose <span class="math">\(L^{T}\)</span>. This decomposition is named after French artillery 
 officer <a href="https://en.wikipedia.org/wiki/Andr%C3%A9-Louis_Cholesky">Andre-Louis Cholesky</a>. The formula is:</p>
@@ -242,8 +234,6 @@ L^{T} =
 $$</div>
 <p>Multiplication of this matrices is up to you.</p>
 <h3 id="qr-decomposition">QR Decomposition<a class="headerlink" href="#qr-decomposition" title="Permanent link">&para;</a></h3>
-<p><a id="QR_Decomposition"></a></p>
-<hr>
 <p>QR decomposition is another type of matrix factorization, where a given <span class="math">\(m \times n\)</span> matrix <span class="math">\(A\)</span> is decomposed into 
 two matrices, <span class="math">\(Q\)</span> which is orthogonal matrix, which in turn means that <span class="math">\(QQ^{T} = Q^{T}Q = I\)</span> and the inverse of <span class="math">\(Q\)</span> 
 equal to its transpose, <span class="math">\(Q^{T} = Q^{-1}\)</span>, and <span class="math">\(R\)</span> which is upper triangular matrix. Hence, the formula is given by</p>
@@ -256,8 +246,6 @@ second is <a href="https://en.wikipedia.org/wiki/Householder_transformation">Hou
 and third is <a href="https://en.wikipedia.org/wiki/Givens_rotation">Givens Rotation</a>. These methods are out of the scope of this blog 
 post series and hence I'm going to explain all of them in separate blog posts. Consequently, there is no calculation besides python code in numerical representation section.</p>
 <h3 id="eigendecomposition">Eigendecomposition<a class="headerlink" href="#eigendecomposition" title="Permanent link">&para;</a></h3>
-<p><a id="Eigendecomposition"></a></p>
-<hr>
 <p>Here is the question. What's the usage of eigenvalues and eigenvectors? Besides other usages, they help us to perform 
 matrix decomposition and this decomposition is called eigendecomposition or spectral decomposition. In the case of the 
 eigendecomposition, we decompose the initial matrix into the product of its eigenvectors and eigenvalues by the following formula:</p>
@@ -352,8 +340,6 @@ $$</div>
 <p>To verify all of this calculation see Python code below.</p>
 <p><strong>Eigendecomposition cannot be used for non-square matrices. Below, we will see the Singular Value Decomposition (SVD) which is another way of decomposing matrices. The advantage of the SVD is that you can use it also with non-square matrices.</strong></p>
 <h3 id="singular-value-decomposition">Singular Value Decomposition<a class="headerlink" href="#singular-value-decomposition" title="Permanent link">&para;</a></h3>
-<p><a id="Singular_Value_Decomposition"></a></p>
-<hr>
 <p>Singular Value Decomposition (SVD) is another way of matrix factorization. It is the generalization of the eigendecomposition. 
 In this context, generalization means that eigendecomposition is applicable only for square <span class="math">\(n \times n\)</span> matrices, 
 while Singular Value Decomposition (SVD) is applicable for any <span class="math">\(m \times n\)</span> matrices.</p>
@@ -488,8 +474,6 @@ A = U \ D \ V^{T} =
 ^{T} = A
 $$</div>
 <h3 id="inverse-of-a-square-full-rank-matrix">Inverse of a Square Full Rank Matrix<a class="headerlink" href="#inverse-of-a-square-full-rank-matrix" title="Permanent link">&para;</a></h3>
-<p><a id="Inverse_of_a_Square_Full_Rank_Matrix"></a></p>
-<hr>
 <p>Here, I want to present one more way to find the inverse of a matrix and show you one more usage of eigendecomposition. 
 Let's get started. If a matrix <span class="math">\(A\)</span> can be eigendecomposed and it has no any eigenvalue equal to zero, 
 then this matrix has the inverse and this inverse is given by:</p>
@@ -541,9 +525,8 @@ A^{-1} = Q \Lambda^{-1} Q^{-1} =
 0.8 &amp; -0.2
 \end{bmatrix}
 $$</div>
-<h3 id="numerical-representation">Numerical Representation<a class="headerlink" href="#numerical-representation" title="Permanent link">&para;</a></h3>
-<p><a id="Numerical_Representation_Decompositions"></a></p>
-<h4 id="cholesky-decomposition_1">Cholesky Decomposition<a class="headerlink" href="#cholesky-decomposition_1" title="Permanent link">&para;</a></h4>
+<h2 id="numerical-representation">Numerical Representation<a class="headerlink" href="#numerical-representation" title="Permanent link">&para;</a></h2>
+<h3 id="cholesky-decomposition_1">Cholesky Decomposition<a class="headerlink" href="#cholesky-decomposition_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
@@ -570,7 +553,7 @@ $$</div>
 </pre></div>
 
 
-<h4 id="qr-decomposition_1">QR Decomposition<a class="headerlink" href="#qr-decomposition_1" title="Permanent link">&para;</a></h4>
+<h3 id="qr-decomposition_1">QR Decomposition<a class="headerlink" href="#qr-decomposition_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
@@ -609,7 +592,7 @@ $$</div>
 </pre></div>
 
 
-<h4 id="eigendecomposition_1">Eigendecomposition<a class="headerlink" href="#eigendecomposition_1" title="Permanent link">&para;</a></h4>
+<h3 id="eigendecomposition_1">Eigendecomposition<a class="headerlink" href="#eigendecomposition_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
@@ -680,7 +663,7 @@ $$</div>
 </pre></div>
 
 
-<h4 id="singular-value-decomposition_1">Singular Value Decomposition<a class="headerlink" href="#singular-value-decomposition_1" title="Permanent link">&para;</a></h4>
+<h3 id="singular-value-decomposition_1">Singular Value Decomposition<a class="headerlink" href="#singular-value-decomposition_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">suppress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Suppress scientific notation</span>
@@ -719,7 +702,7 @@ $$</div>
 </pre></div>
 
 
-<h4 id="inverse-of-a-square-full-rank-matrix_1">Inverse of a Square Full Rank Matrix<a class="headerlink" href="#inverse-of-a-square-full-rank-matrix_1" title="Permanent link">&para;</a></h4>
+<h3 id="inverse-of-a-square-full-rank-matrix_1">Inverse of a Square Full Rank Matrix<a class="headerlink" href="#inverse-of-a-square-full-rank-matrix_1" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
@@ -755,8 +738,6 @@ $$</div>
 
 
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
-<p><a id="Conclusion"></a></p>
-<hr>
 <p>In conclusion, my aim was to make linear algebra tutorials which are in absence, while learning machine learning or deep learning. 
 Particularly, existing materials either are pure mathematics books which cover lots of unnecessary(actually they are necessary) 
 things or machine learning books which assume that you already have some linear algebra knowledge. The series starts 
@@ -764,20 +745,10 @@ from very basic and at the end explains some advanced topics. I can say that I t
 and only explained the most relevant linear algebra topics for machine learning and deep learning.</p>
 <p>Based on my experience, these tutorials are not enough to master the concepts and all intuitions but the journey should 
 be continuous. Meaning, that you have to practice more and more.</p>
-<h3 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h3>
-<p><a id="References"></a></p>
-<h4 id="matrix-decomposition">Matrix Decomposition<a class="headerlink" href="#matrix-decomposition" title="Permanent link">&para;</a></h4>
-<ul>
-<li>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <p><a href="https://rosettacode.org/wiki/Cholesky_decomposition">Cholesky Decomposition</a></p>
-</li>
-<li>
 <p><a href="https://en.wikipedia.org/wiki/Matrix_decomposition">Matrix Decomposition</a></p>
-</li>
-<li>
 <p><a href="http://math.mit.edu/~gs/linearalgebra/">Introduction To Linear Algebra</a></p>
-</li>
-</ul>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",

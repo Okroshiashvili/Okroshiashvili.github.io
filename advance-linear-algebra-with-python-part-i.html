@@ -127,24 +127,15 @@
 <li><a href="#eigenvalues">Eigenvalues</a></li>
 <li><a href="#eigenvectors">Eigenvectors</a></li>
 <li><a href="#spectrum-and-spectral-radius">Spectrum and Spectral Radius</a></li>
-<li><a href="#numerical-representation">Numerical Representation</a><ul>
+<li><a href="#numerical-representation">Numerical Representation</a></li>
 <li><a href="#kernel-or-null-space-of-a-matrix">Kernel or Null Space of a Matrix</a></li>
 <li><a href="#linear-transformations">Linear Transformations</a></li>
 <li><a href="#eigenvalues-and-eigenvectors">Eigenvalues and Eigenvectors</a></li>
-</ul>
-</li>
 <li><a href="#conclusion-for-part-i">Conclusion for part I</a></li>
-<li><a href="#references">References</a><ul>
-<li><a href="#vector-1">Vector</a></li>
-<li><a href="#matrix-1">Matrix</a></li>
-</ul>
-</li>
+<li><a href="#references">References</a></li>
 </ul>
 <h2 id="vector">Vector<a class="headerlink" href="#vector" title="Permanent link">&para;</a></h2>
-<p><a id="Vector"></a></p>
 <h3 id="basis-vectors">Basis Vectors<a class="headerlink" href="#basis-vectors" title="Permanent link">&para;</a></h3>
-<p><a id="Basis_Vectors"></a></p>
-<hr>
 <p>In the <a href="https://dsfabric.org/articles/mathematics/basics-of-linear-algebra.html">basics</a>, we saw what is a unit vector. 
 To refresh, the unit vector is the vector with length 1 and the formula is</p>
 <div class="math">$$
@@ -236,10 +227,7 @@ forms and you'll understand it. However, it's not enough only to know how to row
 It's necessary to know which basis you want. Either column space or row space basis or the basis for nullspace. 
 These notions are explained below and after that, we can find the basis for each of them.</p>
 <h2 id="matrix">Matrix<a class="headerlink" href="#matrix" title="Permanent link">&para;</a></h2>
-<p><a id="Matrix"></a></p>
 <h3 id="gaussian-elimination-of-a-matrix">Gaussian Elimination of a Matrix<a class="headerlink" href="#gaussian-elimination-of-a-matrix" title="Permanent link">&para;</a></h3>
-<p><a id="Gaussian_Elimination_of_a_Matrix"></a></p>
-<hr>
 <p>In linear algebra, Gaussian Elimination is the method to solve the system of linear equations. 
 This method is the sequence of operations performed on the coefficient matrix of the system. 
 Except for solving the linear systems, the method can be used to find the rank of a matrix, the determinant as well 
@@ -421,8 +409,6 @@ $$</div>
 The matrix obtained in step 5 above is in Row-Echelon form as it satisfied above-mentioned conditions.</p>
 <p><strong>Note that, starting with a particular matrix, a different sequence of ERO's can lead to different row echelon form</strong></p>
 <h3 id="gauss-jordan-elimination-of-a-matrix">Gauss-Jordan Elimination of a Matrix<a class="headerlink" href="#gauss-jordan-elimination-of-a-matrix" title="Permanent link">&para;</a></h3>
-<p><a id="Gauss_Jordan_Elimination_of_a_Matrix"></a></p>
-<hr>
 <p>Gaussian elimination performs row operations to produce zeros below the main diagonal of the coefficient matrix to 
 reduce it to row echelon form. Once it's done we perform back substitution to find the solution. However, we can 
 continue performing ERO's to reduce coefficient matrix farther, to produce <strong>Reduced Row Echelon Form</strong> (rref). 
@@ -513,8 +499,6 @@ $$</div>
 <p>and this is the same as the solution of the Gauss elimination. The matrix in step 8 is the 
 Reduced Row Echelon Form of our initial coefficient matrix <span class="math">\(A\)</span>.</p>
 <h3 id="the-inverse-of-a-matrix-using-gauss-jordan-elimination">The Inverse of a Matrix Using Gauss-Jordan Elimination<a class="headerlink" href="#the-inverse-of-a-matrix-using-gauss-jordan-elimination" title="Permanent link">&para;</a></h3>
-<p><a id="The_Inverse_of_a_Matrix_Using_Gauss_Jordan_Elimination"></a></p>
-<hr>
 <p>Suppose, we have given the matrix and want to find its inverse but do not want to use the technique mentioned 
 in the intermediate post. We can use Gauss-Jordan elimination with little modification to find the inverse of a matrix. 
 To be consistent, I use the above coefficient matrix but not the right-hand side of the system. So, our matrix is</p>
@@ -627,8 +611,6 @@ A^{-1} =
 \end{bmatrix}
 $$</div>
 <h3 id="image-of-a-matrix">Image of a Matrix<a class="headerlink" href="#image-of-a-matrix" title="Permanent link">&para;</a></h3>
-<p><a id="Image_of_a_Matrix"></a></p>
-<hr>
 <p>Let <span class="math">\(A\)</span> be <span class="math">\(m\times n\)</span> matrix. Space spanned by its column vectors are called range, image, or column space of a matrix <span class="math">\(A\)</span>. 
 The row space is defined similarly. I only consider column space as all the logic is the same for row space.</p>
 <p>The precise definition is the following:</p>
@@ -681,8 +663,6 @@ c_{2}\\
 $$</div>
 <p>The set of all such vectors is the column space of <span class="math">\(A\)</span>.</p>
 <h3 id="kernel-of-a-matrix">Kernel of a Matrix<a class="headerlink" href="#kernel-of-a-matrix" title="Permanent link">&para;</a></h3>
-<p><a id="Kernel_of_a_Matrix"></a></p>
-<hr>
 <p>In linear algebra, the kernel or a.k.a null space is the solution of the following homogeneous system:</p>
 <div class="math">$$A\cdot X = 0$$</div>
 <p>where <span class="math">\(A\)</span> is a <span class="math">\(m\times n\)</span> matrix and <span class="math">\(X\)</span> is a <span class="math">\(m\times 1\)</span> vector and is denoted by <span class="math">\(Ker(A)\)</span>.</p>
@@ -793,8 +773,6 @@ $$</div>
 <p>Where, <span class="math">\(x_{3}\)</span> and <span class="math">\(x_{4}\)</span> are free variables and can be any number in <span class="math">\(R\)</span></p>
 <p>Note, that both original matrix <span class="math">\(A\)</span> and its row-echelon for has the same kernel. This means that row reduction preserves the kernel or null space.</p>
 <h3 id="rank-of-a-matrix">Rank of a Matrix<a class="headerlink" href="#rank-of-a-matrix" title="Permanent link">&para;</a></h3>
-<p><a id="Rank_of_a_Matrix"></a></p>
-<hr>
 <p>In the intermediate tutorial, you saw how to calculate the determinant of a matrix and also saw that any non zero determinant 
 of sub-matrix of the original matrix shows its non-degenerateness. In other words, nonzero determinant gives us information 
 about the rank of the matrix. Also, I said that there was not only one way to find the rank of a matrix. 
@@ -845,8 +823,6 @@ A =
 $$</div>
 <p>From the last matrix we see that the nonzero determinant only exists in <span class="math">\(2\times2\)</span> sub-matrices, hence rank of the matrix <span class="math">\(A\)</span> is 2.</p>
 <h3 id="find-the-basis-of-a-matrix">Find the Basis of a Matrix<a class="headerlink" href="#find-the-basis-of-a-matrix" title="Permanent link">&para;</a></h3>
-<p><a id="Find_the_Basis_of_a_Matrix"></a></p>
-<hr>
 <p>Now we are able to find the basis for column space and row space as well as the basis for the kernel. 
 The columns of a matrix <span class="math">\(A\)</span> span the column space but they may not form a basis if the column vectors are linearly dependent. 
 If this is the case, only some subset of these vectors forms the basis. To find the basis for column space we reduce matrix <span class="math">\(A\)</span> to reduced row-echelon form.</p>
@@ -953,8 +929,6 @@ $$</div>
 $$</div>
 <p>The resulted vector is one set of the basis for kernel space. The values for <span class="math">\(x_{3}\)</span> and <span class="math">\(x_{4}\)</span> are up to you as they are free variables.</p>
 <h3 id="transformations">Transformations<a class="headerlink" href="#transformations" title="Permanent link">&para;</a></h3>
-<p><a id="Transformations"></a></p>
-<hr>
 <p>Matrices and vectors are used together to manipulate spatial dimensions. This has a lot of applications, 
 including the mathematical generation of 3D computer graphics, geometric modeling, and the training and optimization of 
 machine learning algorithms. Here, I present some types of transformation. However, the list will not be exhaustive. 
@@ -1131,8 +1105,6 @@ T(\vec{v}) = A\vec{v} + \vec{b} =
 $$</div>
 <p>This kind of transformation is actually the basic block of linear regression, which is a core foundation for machine learning. However, these concepts are out of the scope of this tutorial. Python code is below for this transformation.</p>
 <h3 id="eigenvalues">Eigenvalues<a class="headerlink" href="#eigenvalues" title="Permanent link">&para;</a></h3>
-<p><a id="Eigenvalues"></a></p>
-<hr>
 <p>Let consider matrix <span class="math">\(A\)</span></p>
 <div class="math">$$
 A =
@@ -1251,8 +1223,6 @@ already known for us from above example.</p>
 </ul>
 <p>From first feature we have that the matrix is invertible if and only if all its eigenvalues are nonzero.</p>
 <h3 id="eigenvectors">Eigenvectors<a class="headerlink" href="#eigenvectors" title="Permanent link">&para;</a></h3>
-<p><a id="Eigenvectors"></a></p>
-<hr>
 <p>It's time to calculate eigenvectors, but let firstly define what is eigenvector and how it relates to the eigenvalue.</p>
 <blockquote>
 <p>Any nonzero vector <span class="math">\(v\)</span> which satisfies characteristic equation is said to be an eigenvector of <span class="math">\(A\)</span> corresponding to <span class="math">\(\lambda\)</span></p>
@@ -1327,8 +1297,6 @@ v_{\lambda = 1} =
 $$</div>
 <p>Finding eigenvectors for <span class="math">\(\lambda = 2\)</span> and <span class="math">\(\lambda = 11\)</span> is up to you.</p>
 <h3 id="spectrum-and-spectral-radius">Spectrum and Spectral Radius<a class="headerlink" href="#spectrum-and-spectral-radius" title="Permanent link">&para;</a></h3>
-<p><a id="Spectrum_and_Spectral_Radius"></a></p>
-<hr>
 <p>The <strong>Spectral Radius</strong> of a square matrix <span class="math">\(A\)</span> is the largest absolute values of its eigenvalues and is denoted by <span class="math">\(\rho(A)\)</span>. More formally,</p>
 <blockquote>
 <p>Spectral radius of a <span class="math">\(n \times n\)</span> matrix <span class="math">\(A\)</span> is:</p>
@@ -1360,9 +1328,8 @@ $$</div>
 <p>is called the <strong>Spectrum</strong></p>
 <p>From above example we had three eigenvalues, <span class="math">\(\lambda = 2\)</span>, <span class="math">\(\lambda = 1\)</span> and <span class="math">\(\lambda = 11\)</span> which are spectrum 
 of <span class="math">\(A\)</span> and spectral radius for our matrix <span class="math">\(A\)</span> is <span class="math">\(\lambda = 11\)</span></p>
-<h3 id="numerical-representation">Numerical Representation<a class="headerlink" href="#numerical-representation" title="Permanent link">&para;</a></h3>
-<p><a id="Numerical_Representation_Matrix"></a></p>
-<h4 id="kernel-or-null-space-of-a-matrix">Kernel or Null Space of a Matrix<a class="headerlink" href="#kernel-or-null-space-of-a-matrix" title="Permanent link">&para;</a></h4>
+<h2 id="numerical-representation">Numerical Representation<a class="headerlink" href="#numerical-representation" title="Permanent link">&para;</a></h2>
+<h3 id="kernel-or-null-space-of-a-matrix">Kernel or Null Space of a Matrix<a class="headerlink" href="#kernel-or-null-space-of-a-matrix" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="kn">import</span> <span class="n">null_space</span>
 
@@ -1417,7 +1384,7 @@ of <span class="math">\(A\)</span> and spectral radius for our matrix <span clas
 </pre></div>
 
 
-<h4 id="linear-transformations">Linear Transformations<a class="headerlink" href="#linear-transformations" title="Permanent link">&para;</a></h4>
+<h3 id="linear-transformations">Linear Transformations<a class="headerlink" href="#linear-transformations" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
@@ -1540,7 +1507,7 @@ of <span class="math">\(A\)</span> and spectral radius for our matrix <span clas
 
 
 <p><img alt="picture" src="https://dsfabric.org/images/Linear_Algebra_Advance_Part_I_figure5_1.png"></p>
-<h4 id="eigenvalues-and-eigenvectors">Eigenvalues and Eigenvectors<a class="headerlink" href="#eigenvalues-and-eigenvectors" title="Permanent link">&para;</a></h4>
+<h3 id="eigenvalues-and-eigenvectors">Eigenvalues and Eigenvectors<a class="headerlink" href="#eigenvalues-and-eigenvectors" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
@@ -1571,18 +1538,12 @@ of <span class="math">\(A\)</span> and spectral radius for our matrix <span clas
 </pre></div>
 
 
-<h3 id="conclusion-for-part-i">Conclusion for part I<a class="headerlink" href="#conclusion-for-part-i" title="Permanent link">&para;</a></h3>
+<h2 id="conclusion-for-part-i">Conclusion for part I<a class="headerlink" href="#conclusion-for-part-i" title="Permanent link">&para;</a></h2>
 <p>In conclusion, part one is relatively heavy but as it contains lots of calculations. That's why we use computers to solve this kind of problems. Despite Numpy's build in functions there is big avenue to write algorithm to compute eigenvalues for instance. That would be very helpful for practicing linear algebra and python simultaneously.</p>
 <p>The second part is devoted solely for matrix decompositions.</p>
-<h3 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h3>
-<h4 id="vector_1">Vector<a class="headerlink" href="#vector_1" title="Permanent link">&para;</a></h4>
-<ul>
-<li><a href="http://linear.axler.net/">Linear Algebra Done Right</a></li>
-</ul>
-<h4 id="matrix_1">Matrix<a class="headerlink" href="#matrix_1" title="Permanent link">&para;</a></h4>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/List_of_linear_algebra_topics">Linear Algebra Topics</a></li>
-</ul>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<p><a href="http://linear.axler.net/">Linear Algebra Done Right</a></p>
+<p><a href="https://en.wikipedia.org/wiki/List_of_linear_algebra_topics">Linear Algebra Topics</a></p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -1736,7 +1697,7 @@ of <span class="math">\(A\)</span> and spectral radius for our matrix <span clas
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://dsfabric.org/intermediate-linear-algebra-with-python-part-i" title="Previous: Intermediate Linear Algebra with Python - Part I">Intermediate Linear Algebra with Python - Part I</a></li>
+                <li class="previous-article">« <a href="https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-ii" title="Previous: Intermediates of Linear Algebra with Python - Part II">Intermediates of Linear Algebra with Python - Part II</a></li>
                 <li class="next-article"><a href="https://dsfabric.org/advance-linear-algebra-with-python-part-ii" title="Next: Advance Linear Algebra with Python - Part II">Advance Linear Algebra with Python - Part II</a> »</li>
             </ul>
             </nav>
