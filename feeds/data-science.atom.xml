@@ -385,7 +385,7 @@ the desired result for this case and then I came up to the following:&lt;/p&gt;
 
 &lt;p&gt;Applied this function to the second DataFrame flattened it, and combining first and second DataFrames will give the final result.&lt;/p&gt;
 &lt;p&gt;To sum up, that was only a tiny part of this data pre-processing process. 
-However, it was a great journey and lots to learn. What do you think? Did you find a more elegant solution? Please share it in the comments.&lt;/p&gt;</content><category term="Data Science"></category><category term="Pandas"></category><category term="Analytics"></category><category term="Data Science"></category></entry><entry><title>Simple Interactive Data Visualization with Plotly Express</title><link href="https://dsfabric.org/simple-interactive-data-visualization-with-plotly-express" rel="alternate"></link><published>2019-03-22T12:14:00+04:00</published><updated>2020-03-26T20:53:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-22:/simple-interactive-data-visualization-with-plotly-express</id><summary type="html">&lt;p&gt;Interactive data visualization with plotly express&lt;/p&gt;</summary><content type="html">&lt;p&gt;I fairly believe that, if someone is good at data visualization he/she at least has heard about Hans Rosling. 
+However, it was a great journey and lots to learn. What do you think? Did you find a more elegant solution? Please share it in the comments.&lt;/p&gt;</content><category term="Data Science"></category><category term="Pandas"></category><category term="Data Analysis"></category><category term="Data Science"></category></entry><entry><title>Simple Interactive Data Visualization with Plotly Express</title><link href="https://dsfabric.org/simple-interactive-data-visualization-with-plotly-express" rel="alternate"></link><published>2019-03-22T12:14:00+04:00</published><updated>2020-03-26T20:53:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2019-03-22:/simple-interactive-data-visualization-with-plotly-express</id><summary type="html">&lt;p&gt;Interactive data visualization with plotly express&lt;/p&gt;</summary><content type="html">&lt;p&gt;I fairly believe that, if someone is good at data visualization he/she at least has heard about Hans Rosling. 
 One of the most influential data storyteller, and honestly because of the &lt;a href="https://www.ted.com/talks/hans_rosling_shows_the_best_stats_you_ve_ever_seen"&gt;talk&lt;/a&gt; he gave at TED, 
 it influenced me too much that I decided to learn data visualization. Since then, I had some progress as well some stagnation but the most noteworthy thing here is that 
 I got my hands dirty with great data visualization tools such as &lt;a href="https://matplotlib.org/"&gt;matplotlib&lt;/a&gt;, &lt;a href="https://seaborn.pydata.org/"&gt;seaborn&lt;/a&gt;, &lt;a href="https://bokeh.pydata.org/en/latest/"&gt;bokeh&lt;/a&gt;, &lt;a href="https://altair-viz.github.io/"&gt;altair&lt;/a&gt;, and &lt;a href="https://plot.ly/python/"&gt;plotly&lt;/a&gt;. &lt;/p&gt;
@@ -451,7 +451,7 @@ However, now  it's part of &lt;code&gt;Plotly&lt;/code&gt; and can be imported b
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;iframe src='../../images/first_plot.html', width=900, height=700&gt;&lt;/iframe&gt;
+&lt;iframe src="../../images/first_plot.html", width="100%", height="600px"&gt;&lt;/iframe&gt;
 
 &lt;p&gt;Pelican produces static html files. So, plotly interactive charts do not show up. 
 Firstly, I converted plotly chart into standalone html file and then added by using IFrame tag. 
@@ -462,7 +462,7 @@ That's why it is here.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;iframe src='../../images/second_plot.html', width=900, height=700&gt;&lt;/iframe&gt;
+&lt;iframe src='../../images/second_plot.html', width="100%", height="600px"&gt;&lt;/iframe&gt;
 
 &lt;p&gt;And, what if we want to adjust each point size as it to be the country population size? That's should not be a problem.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;px&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;scatter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;gapminder2007&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;gdpPercap&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;lifeExp&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;color&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;continent&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
@@ -471,7 +471,7 @@ That's why it is here.&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;iframe src='../../images/third_plot.html', width=900, height=700&gt;&lt;/iframe&gt;
+&lt;iframe src='../../images/third_plot.html', width="100%", height="600px"&gt;&lt;/iframe&gt;
 
 &lt;p&gt;If we hover-over the mouse to each data point the point description will appear. 
 It shows continent name, x and y coordinates, and population size. 
@@ -482,7 +482,7 @@ As we already know each point is a country but it's not properly shown in the de
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;iframe src='../../images/fourth_plot.html', width=900, height=700&gt;&lt;/iframe&gt;
+&lt;iframe src='../../images/fourth_plot.html', width="100%", height="600px"&gt;&lt;/iframe&gt;
 
 &lt;p&gt;I wrote initial command and at each step added two extra arguments. That's the advantage of Plotly Express.&lt;/p&gt;
 &lt;p&gt;Now, what if want to see how this chart evolves over time. Simply, we need to see what happened before 2007 and make it more interactive.&lt;/p&gt;
@@ -494,7 +494,7 @@ As we already know each point is a country but it's not properly shown in the de
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;iframe src='../../images/fifth_plot.html', width=900, height=700&gt;&lt;/iframe&gt;
+&lt;iframe src='../../images/fifth_plot.html', width="100%", height="600px"&gt;&lt;/iframe&gt;
 
 &lt;p&gt;That's not all. Let plot same data on a map.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;px&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;choropleth&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;gapminder&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;locations&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;iso_alpha&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;color&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;lifeExp&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
@@ -504,7 +504,7 @@ As we already know each point is a country but it's not properly shown in the de
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;iframe src='../../images/sixth_plot.html', width=900, height=700&gt;&lt;/iframe&gt;
+&lt;iframe src='../../images/sixth_plot.html', width="100%", height="600px"&gt;&lt;/iframe&gt;
 
 &lt;p&gt;That was good, but wait. What if you don't like jupyter?, &lt;a href="https://docs.google.com/presentation/d/1n2RlMdmv1p25Xy5thJUhkKGvjtV-dkAIsUXP-AL4ffI/edit#slide=id.g362da58057_0_1"&gt;trust me there are such guys&lt;/a&gt;  &lt;/p&gt;
 &lt;p&gt;That's not a problem. Combine Plotly-Express with Plotly and plot offline to make standalone html file.&lt;/p&gt;

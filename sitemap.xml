@@ -5,35 +5,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://dsfabric.org/</loc>
-<lastmod>2020-05-09T22:46:59-00:00</lastmod>
+<lastmod>2020-05-10T21:51:35-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://dsfabric.org/archives.html</loc>
-<lastmod>2020-05-09T22:46:59-00:00</lastmod>
+<lastmod>2020-05-10T21:51:35-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://dsfabric.org/tags.html</loc>
-<lastmod>2020-05-09T22:46:59-00:00</lastmod>
+<lastmod>2020-05-10T21:51:35-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://dsfabric.org/categories.html</loc>
-<lastmod>2020-05-09T22:46:59-00:00</lastmod>
+<lastmod>2020-05-10T21:51:35-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://dsfabric.org/search.html</loc>
-<lastmod>2020-05-09T22:46:59-00:00</lastmod>
+<lastmod>2020-05-10T21:51:35-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -74,35 +74,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://dsfabric.org/advances-of-linear-algebra-with-python-part-ii</loc>
+<loc>https://dsfabric.org/advance-linear-algebra-with-python-part-ii</loc>
 <lastmod>2019-03-05T12:14:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/advances-of-linear-algebra-with-python-part-i</loc>
+<loc>https://dsfabric.org/advance-linear-algebra-with-python-part-i</loc>
 <lastmod>2019-03-04T12:14:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-ii</loc>
-<lastmod>2019-03-03T12:14:00+04:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://dsfabric.org/intermediates-of-linear-algebra-with-python-part-i</loc>
+<loc>https://dsfabric.org/intermediate-linear-algebra-with-python-part-i</loc>
 <lastmod>2019-03-02T15:14:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://dsfabric.org/basics-of-linear-algebra-with-python</loc>
+<loc>https://dsfabric.org/basic-linear-algebra-with-python</loc>
 <lastmod>2019-03-02T13:14:00+04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
