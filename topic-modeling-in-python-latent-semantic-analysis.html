@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://dsfabric.org/theme/css/elegant.prod.9e9d5ce754.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://dsfabric.org/theme/css/custom.css" media="screen">
+
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
+        <meta name="author" content="Nodar Okroshiashvili" />
+
+        <meta name="description" content="Topic modeling with NLTK and Gensim
+" />
+        <meta name="twitter:creator" content="@N_Okroshiashvil">
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="Topic Modeling, NLP, LSA, Natural Language Processing, Natural Language Processing, topic modeling, nlp, natural language modeling, python, latent semantic analysis, probabilistic latent semantic analysis, topic modeling in nltk, topic modeling in gensim" />
+
+<meta property="og:title" content="Topic Modeling in Python: Latent Semantic Analysis "/>
+<meta property="og:url" content="https://dsfabric.org/topic-modeling-in-python-latent-semantic-analysis" />
+<meta property="og:description" content="Topic modeling with NLTK and Gensim" />
+<meta property="og:site_name" content="Data Science Fabric" />
+<meta property="og:article:author" content="Nodar Okroshiashvili" />
+<meta property="og:article:published_time" content="2020-06-22T03:44:00+04:00" />
+<meta name="twitter:title" content="Topic Modeling in Python: Latent Semantic Analysis ">
+<meta name="twitter:description" content="Topic modeling with NLTK and Gensim">
+
+        <title>Topic Modeling in Python: Latent Semantic Analysis  · Data Science Fabric
+</title>
+        <link rel="shortcut icon" href="https://dsfabric.org/theme/images/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="https://dsfabric.org/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" href="https://dsfabric.org/theme/images/apple-touch-icon.png"  type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="https://dsfabric.org/theme/images/apple-touch-icon-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="https://dsfabric.org/theme/images/apple-touch-icon-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="https://dsfabric.org/theme/images/apple-touch-icon-76x76.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="https://dsfabric.org/theme/images/apple-touch-icon-114x114.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="https://dsfabric.org/theme/images/apple-touch-icon-120x120.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="https://dsfabric.org/theme/images/apple-touch-icon-144x144.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://dsfabric.org/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://dsfabric.org/theme/images/apple-touch-icon-180x180.png" type="image/png" />
+        <link href="https://dsfabric.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Data Science Fabric - Full Atom Feed" />
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-136307659-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://dsfabric.org/"><span class=site-name>Data Science Fabric</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://dsfabric.org
+                                    >Home</a>
+                                </li>
+                                <li ><a href="https://dsfabric.org/categories">Categories</a></li>
+                                <li ><a href="https://dsfabric.org/tags">Tags</a></li>
+                                <li ><a href="https://dsfabric.org/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://dsfabric.org/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+        <h1>
+            <a href="https://dsfabric.org/topic-modeling-in-python-latent-semantic-analysis">
+                Topic Modeling in Python: Latent Semantic Analysis
+            </a>
+        </h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+            
+            <p>Recently, I've started digging deeper into Natural Language Processing. During week or so, I took several 
+MOOCs and read blogs. I tried some coding and now with this blog, I want to share my experience. With this blog series, 
+I want to review <a href="https://en.wikipedia.org/wiki/Topic_model">Topic Modeling</a>. Particularly, <a href="https://en.wikipedia.org/wiki/Latent_semantic_analysis">Latent Semantic Analysis</a>, 
+<a href="https://en.wikipedia.org/wiki/Non-negative_matrix_factorization">Non-Negative Matrix Factorization</a>, and 
+<a href="https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation">Latent Dirichlet Allocation</a>. 
+For the sake of brevity, these series will include three successive parts, reviewing each technique in each part.</p>
+<p>This is the first part of this series, and here I want to discuss Latent Semantic Analysis, a.k.a LSA. 
+I implement it using NLTK and Gensim. 
+Before going into details of this algorithm, let say what topic modeling is and why we should care.</p>
+<p>Every day, a massive amount of data is collected. Most of this data is a text, such as an email, blog post, books, 
+articles. These all are unstructured data, and unstructured data means that there is no means by which the computer 
+understands the semantic meaning of the words in the text. As the volume of the data increases, it's become difficult to 
+search in these documents for a piece of particular information. Moreover, as time passes, humans are getting lazy 
+to read and review tons of articles, books, and blogs to find the desired information. Here comes the topic modeling.</p>
+<blockquote>
+<p>Topic Modeling is an unsupervised machine learning technique that provides a simple way to analyze a large amount of 
+unstructured data and extract cluster of words that frequently occur together, or are connected to 
+each other in some statistically meaningful way (<a href="https://en.wikipedia.org/wiki/Distributional_semantics">Distributional Hypothesis</a>). 
+Topic modeling strives to find hidden semantic structures in the text.</p>
+</blockquote>
+<p>That's sort of "official" definition. <em>In my words</em>, topic modeling is a dimensionality reduction technique, where we express each 
+document in terms of topics, that in turn, are in the lower dimension. That means that we have thousands of thousand documents, 
+and we express them by using hundreds of words. Does it make sense? Imagine we perform PCA (Principal Component Analysis) 
+for the text data. Here, the document is an independent text consisting of several sentences such as an email, a review, a tweet, and so on. 
+The collection of documents is a corpus. Topic modeling is to find latent factors that exist in our text. 
+To make it even concise, by doing topic modeling, we try to answer the following question: <strong>What is this document about?</strong> 
+For example, we have millions of reviews of one particular hotel. Only two or three sentences telling about the topics of these 
+reviews is much preferable than reading all the reviews. That's it!</p>
+<p>Here comes "why we should care?" question. In natural language processing and general in information retrieval, 
+topic modeling plays an essential role due to the reason mentioned above. Additionally, recent advancements in 
+machine learning and increasing demand for analytical solutions give rise of the usage of topic modeling for 
+dimensionality reduction in documents, recommendation systems, clustering documents, classification of documents, and many more.</p>
+<p>Now, it's time for <strong>Latent Semantic Analysis</strong>. It is one of the foundational algorithms in topic modeling. 
+It assumes that each document in our corpus consists of a mixture of topics, and each topic contains a collection of words. 
+Based on this assumption, Latent Semantic Analysis takes <strong>Document-Word Matrix</strong> and employees <a href="https://dsfabric.org/advance-linear-algebra-with-python-part-ii">Singular Value Decomposion</a> 
+to decompose it into the product of two matrices. The first is <strong>Document-Topic</strong> matrix, and the second is <strong>Topic-Word</strong> matrix. 
+The computers cannot understand the text, and it's even unimaginable for them how to decompose a text into a product of 
+two matrices that intuitively has numbers. That's why we build Document-Word matrix, and then computer finds Document-Topic 
+and Topic-Word matrices for us.</p>
+<p>Let review each matrix in a detailed manner. First of all, we need to build a Document-Word matrix. To do so, we build vocabulary from our corpus. 
+This vocabulary is a collection of all unique words coming from our corpus. If we have one document corpus and our document is 
+"I like that movie" then our vocabulary will be <code>{"I", "like", "that", "movie"}</code>. After we have the vocabulary, we apply 
+<a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html">CountVectorizer</a> or 
+<a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfTransformer.html#sklearn.feature_extraction.text.TfidfTransformer">TF-IDF Vectorizer</a> 
+to our corpus in order to have a Document-Word matrix. CountVectorizer captures how often a particular word occurs in a document, 
+and TF-IDF captures how often a word occurs in a document as well as in the entire corpus.</p>
+<p>For example, if we have two document corpus:</p>
+<div class="highlight"><pre><span></span><span class="err">corpus = [</span>
+<span class="err">    &quot;This is the first document.&quot;, </span>
+<span class="err">    &quot;This document is the second document.&quot;</span>
+<span class="err">]</span>
+</pre></div>
+
+
+<p>Then, based on this corpus, our vocabulary will be:</p>
+<div class="highlight"><pre><span></span><span class="err">vocab = {</span>
+<span class="err">    &quot;document&quot;, &quot;first&quot;, &quot;is&quot;, </span>
+<span class="err">    &quot;second&quot;, &quot;the&quot;, &quot;this&quot;</span>
+<span class="err">}</span>
+</pre></div>
+
+
+<p>Applying CountVecorizer to our corpus, will give the following <strong>Document-Word</strong> matrix:</p>
+<div class="math">$$
+Document-Word =
+\begin{bmatrix}
+    1 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 \\
+    2 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1
+\end{bmatrix}
+$$</div>
+<p>Columns of this matrix represent words in our vocabulary, and rows represent our documents. Every individual element in 
+this matrix indicates how often a specific word occurs within a particular document. For instance, the first row of 
+this matrix shows how often each vocabulary word occurs in the first document. Hence, <span class="math">\(D_{ij}\)</span> element of 
+Document-Word matrix will give the frequency of occurrence for word <span class="math">\(j\)</span> in a document <span class="math">\(i\)</span>.</p>
+<p>Having a Document-Word matrix, LSA tries to build <a href="http://theory.stanford.edu/~tim/s15/l/l9.pdf">low-rank approximation</a> of that matrix. 
+This will be achieved by using Singular Value Decomposition. Here, rank refers to the number of topics. For more about matrix decompositions, 
+<a href="https://dsfabric.org/advance-linear-algebra-with-python-part-ii">read here</a>.</p>
+<p>Decomposition process of Document-Word matrix follows the following formula: </p>
+<div class="math">$$
+DW_{n \times k} = DT_{n \times t} \cdot TW_{t \times k}
+$$</div>
+<p>Where <span class="math">\(n\)</span> is the number of documents, <span class="math">\(k\)</span> is the number of words in the vocabulary, and <span class="math">\(t\)</span> is the number of topics. 
+<span class="math">\(t\)</span> is the hyperparameter, and we have to set it manually beforehand. Consequently, the number of topics is far fewer 
+than the number of documents. That's why we can consider topic modeling as a dimensionality reduction.</p>
+<p>Before diving into practical implementation, let review the other two matrices on the right-hand side of our main equation. 
+The first is <span class="math">\(DT\)</span>, Document-Topic matrix. It contains topics for every document. The second, <span class="math">\(TW\)</span>, is the Topic-Word matrix. 
+This matrix contains words for each topic. Seems clumsy? Let us consider an example, and things will become much succinct. </p>
+<p>For a large corpus, we will have a large vocabulary and, consequently, a large <span class="math">\(DW\)</span> matrix. For example, </p>
+<div class="math">$$
+DW =
+\begin{bmatrix}
+    D_{11} &amp; D_{12} &amp; \cdots &amp; D_{1k} \\
+    D_{21} &amp; D_{22} &amp; \cdots &amp; D_{2k} \\
+    \vdots &amp; \vdots &amp; \boldsymbol{D_{ij}} &amp; \vdots \\
+    D_{n1} &amp; D_{n2} &amp; \cdots &amp; D_{nk}
+\end{bmatrix}
+$$</div>
+<div class="math">$$
+DT =
+\begin{bmatrix}
+    U_{11} &amp; U_{12} &amp; \cdots &amp; U_{1t} \\
+    \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\
+    \boldsymbol{U_{i1}} &amp; \boldsymbol{U_{i2}} &amp; \boldsymbol{\cdots} &amp; \boldsymbol{U_{it}} \\
+    \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\
+    U_{n1} &amp; U_{n2} &amp; \cdots &amp; U_{nt}
+\end{bmatrix}
+\quad
+TW =
+\begin{bmatrix}
+    M_{11} &amp; M_{21} &amp; \cdots &amp; \boldsymbol{M_{j1}} &amp; \cdots &amp; M_{t1} \\
+    M_{12} &amp; M_{22} &amp; \cdots &amp; \boldsymbol{M_{j2}} &amp; \cdots &amp; M_{t2} \\
+    \cdots &amp; \cdots &amp; \cdots &amp; \boldsymbol{\cdots} &amp; \cdots &amp; \cdots \\
+    M_{1t} &amp; M_{2t} &amp; \cdots &amp; \boldsymbol{M_{jt}} &amp; \cdots &amp; M_{tk}
+\end{bmatrix}
+$$</div>
+<p>The columns of the <span class="math">\(DT\)</span> matrix represents topics and rows are documents. One row of this matrix <span class="math">\(<div class="math">\begin{bmatrix} U_{i1} &amp; U_{i2} &amp; \cdots &amp; U_{it} \end{bmatrix}</div>\)</span><br>
+gives us the value for all of the topics associated with a particular document. 
+The rows of the <span class="math">\(TW\)</span> matrix are topics, and columns are words. One column of this matrix <span class="math">\(<div class="math">\begin{bmatrix}{M_{j1}} \\ M_{j2} \\ \vdots \\ M_{jt}\end{bmatrix}</div>\)</span> 
+gives us a value for all of the words associated with each of these topics. So, when we multiply these row and column vector, 
+we will get back our original word <span class="math">\(D_{ij}\)</span> from the <span class="math">\(DW\)</span> matrix.</p>
+<h2 id="practical-implementation">Practical Implementation<a class="headerlink" href="#practical-implementation" title="Permanent link">&para;</a></h2>
+<p>For the applied part, I use <a href="https://github.com/mhjabreel/CharCnn_Keras/tree/master/data/ag_news_csv">AG's News Topic Classification Dataset</a>. 
+The dataset contains 4 classes or 4 topics, such as <strong>World</strong>, <strong>Sports</strong>, <strong>Business</strong>, and <strong>Sci/Tech</strong>. I'd prefer this dataset due to its simplicity.</p>
+<p>Let set all the necessary imports</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">nltk</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+<span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="kn">import</span> <span class="n">WordNetLemmatizer</span>
+
+<span class="kn">from</span> <span class="nn">gensim.corpora</span> <span class="kn">import</span> <span class="n">Dictionary</span>
+<span class="kn">from</span> <span class="nn">gensim.models</span> <span class="kn">import</span> <span class="n">LsiModel</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="c1"># # If you already have NLTK and WordNetLemmatizer DON&#39;T run this line</span>
+
+<span class="c1"># nltk.download(&#39;wordnet&#39;)</span>
+</pre></div>
+
+
+<p>To download data, you can visit the link above and then load it by using.</p>
+<div class="highlight"><pre><span></span><span class="n">ag_news</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/train.csv&#39;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Label&#39;</span><span class="p">,</span> <span class="s1">&#39;Title&#39;</span><span class="p">,</span> <span class="s1">&#39;Text&#39;</span><span class="p">])</span>
+
+<span class="n">ag_news</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>   <span class="n">Label</span>                                              <span class="n">Title</span>  <span class="err">\</span>
+<span class="mi">0</span>      <span class="mi">3</span>  <span class="n">Wall</span> <span class="n">St</span><span class="p">.</span> <span class="n">Bears</span> <span class="n">Claw</span> <span class="n">Back</span> <span class="k">Into</span> <span class="n">the</span> <span class="n">Black</span> <span class="p">(</span><span class="n">Reuters</span><span class="p">)</span>
+<span class="mi">1</span>      <span class="mi">3</span>  <span class="n">Carlyle</span> <span class="n">Looks</span> <span class="n">Toward</span> <span class="n">Commercial</span> <span class="n">Aerospace</span> <span class="p">(</span><span class="n">Reu</span><span class="p">...</span>
+<span class="mi">2</span>      <span class="mi">3</span>    <span class="n">Oil</span> <span class="k">and</span> <span class="n">Economy</span> <span class="n">Cloud</span> <span class="n">Stocks</span><span class="s1">&#39; Outlook (Reuters)</span>
+<span class="s1">3      3  Iraq Halts Oil Exports from Main Southern Pipe...</span>
+<span class="s1">4      3  Oil prices soar to all-time record, posing new...</span>
+
+<span class="s1">                                                Text</span>
+<span class="s1">0  Reuters - Short-sellers, Wall Street&#39;</span><span class="n">s</span> <span class="n">dwindli</span><span class="p">...</span>
+<span class="mi">1</span>  <span class="n">Reuters</span> <span class="o">-</span> <span class="n">Private</span> <span class="n">investment</span> <span class="n">firm</span> <span class="n">Carlyle</span> <span class="n">Grou</span><span class="p">...</span>
+<span class="mi">2</span>  <span class="n">Reuters</span> <span class="o">-</span> <span class="n">Soaring</span> <span class="n">crude</span> <span class="n">prices</span> <span class="n">plus</span> <span class="n">worries</span><span class="err">\</span><span class="n">ab</span><span class="p">...</span>
+<span class="mi">3</span>  <span class="n">Reuters</span> <span class="o">-</span> <span class="n">Authorities</span> <span class="n">have</span> <span class="n">halted</span> <span class="n">oil</span> <span class="n">export</span><span class="err">\</span><span class="n">f</span><span class="p">...</span>
+<span class="mi">4</span>  <span class="n">AFP</span> <span class="o">-</span> <span class="n">Tearaway</span> <span class="n">world</span> <span class="n">oil</span> <span class="n">prices</span><span class="p">,</span> <span class="n">toppling</span> <span class="n">reco</span><span class="p">...</span>
+</pre></div>
+
+
+<p>The dataset has a separate training and testing parts. I only use <code>train.csv</code> for the expositional purposes and my machine's limited capability.</p>
+<p>In the dataset we have 3 columns and 120K training points.</p>
+<div class="highlight"><pre><span></span><span class="n">ag_news</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="err">(120000, 3)</span>
+</pre></div>
+
+
+<p>Now, let create a document list or document matrix. The first element in this list is the first document, the second element is the second document, 
+and so on. While doing so, I will also do some pre-processing, such as removing stop words and lemmatize sentences.</p>
+<div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="n">ag_news</span><span class="p">[</span><span class="s1">&#39;Text&#39;</span><span class="p">]</span>
+
+<span class="n">text</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="err">0    Reuters - Short-sellers, Wall Street&#39;s dwindli...</span>
+<span class="err">1    Reuters - Private investment firm Carlyle Grou...</span>
+<span class="err">2    Reuters - Soaring crude prices plus worries\ab...</span>
+<span class="err">3    Reuters - Authorities have halted oil export\f...</span>
+<span class="err">4    AFP - Tearaway world oil prices, toppling reco...</span>
+<span class="c">Name: Text, dtype: object</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">documents_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
+    <span class="n">sentence</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="n">new_sentence</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\d&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">sentence</span><span class="p">)</span>
+
+    <span class="n">documents_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">documents_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="err">Reuters - Short-sellers, Wall Street&#39;s dwindling\band of ultra-cynics,</span>
+<span class="err">are seeing green again.</span>
+</pre></div>
+
+
+<p>We need to remove stopwords and lemmatize each sentence</p>
+<div class="highlight"><pre><span></span><span class="c1"># Standard stop words in NLTK</span>
+<span class="n">stop_words</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">))</span>
+
+<span class="c1"># Add some extra characters and words as stop words</span>
+<span class="n">stop_words</span><span class="o">.</span><span class="n">update</span><span class="p">([</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;&quot;&#39;</span><span class="p">,</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="s1">&#39;!&#39;</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="s1">&#39;(&#39;</span><span class="p">,</span> <span class="s1">&#39;)&#39;</span><span class="p">,</span> <span class="s1">&#39;[&#39;</span><span class="p">,</span> <span class="s1">&#39;]&#39;</span><span class="p">,</span> <span class="s1">&#39;{&#39;</span><span class="p">,</span> <span class="s1">&#39;}&#39;</span><span class="p">,</span> <span class="s1">&#39;#&#39;</span><span class="p">,</span> <span class="s1">&#39;...&#39;</span><span class="p">,</span> 
+                   <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="s2">&quot;&#39;s&quot;</span><span class="p">,</span> <span class="s1">&#39;also&#39;</span><span class="p">,</span> <span class="s1">&#39;&amp;&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;–&#39;</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="s1">&#39;known&#39;</span><span class="p">,</span> <span class="s1">&#39;mi&#39;</span><span class="p">,</span> <span class="s1">&#39;km&#39;</span><span class="p">,</span> <span class="s1">&#39;$&#39;</span><span class="p">])</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="c1"># Here is pre-processed documents</span>
+<span class="n">processed_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Lemmatizer</span>
+<span class="n">lemmatizer</span> <span class="o">=</span> <span class="n">WordNetLemmatizer</span><span class="p">()</span>
+
+
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">documents_list</span><span class="p">:</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+
+    <span class="n">stopped_tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">token</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">tokens</span> <span class="k">if</span> <span class="n">token</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">]</span>
+
+    <span class="n">lemmatized_tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">lemmatizer</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="s2">&quot;n&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">stopped_tokens</span><span class="p">]</span>
+
+    <span class="n">processed_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lemmatized_tokens</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">processed_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="err">[&#39;reuters&#39;, &#39;short-sellers&#39;, &#39;wall&#39;, &#39;street&#39;, &#39;dwindling\\band&#39;,</span>
+<span class="err">&#39;ultra-cynics&#39;, &#39;seeing&#39;, &#39;green&#39;]</span>
+</pre></div>
+
+
+<p>In the loop above, we iterate over documents list, each element is one document, then remove stop words for each sentence and then apply lemmatization. 
+After that, I append <code>processed_list</code> with pre-processed results, which again is the documents list.</p>
+<p>As we already pre-processed our data, consequently we have data ready to build vocabulary. 
+Vocabulary is a dictionary containing all unique words from <code>processed_list</code> with 
+appropriate index. After doing this, we have to build <strong>Bag-of-Words</strong> in order to build 
+<strong>Document-Word</strong> matrix.</p>
+<div class="highlight"><pre><span></span><span class="n">word_dictionary</span> <span class="o">=</span> <span class="n">Dictionary</span><span class="p">(</span><span class="n">processed_list</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">word_dictionary</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="err">Dictionary(85175 unique tokens: [&#39;dwindling\\band&#39;, &#39;green&#39;,</span>
+<span class="err">&#39;reuters&#39;, &#39;seeing&#39;, &#39;short-sellers&#39;]...)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">document_word_matrix</span> <span class="o">=</span> <span class="p">[</span><span class="n">word_dictionary</span><span class="o">.</span><span class="n">doc2bow</span><span class="p">(</span><span class="n">document</span><span class="p">)</span> <span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">processed_list</span><span class="p">]</span>
+</pre></div>
+
+
+<p>The function <code>doc2bow()</code> simply counts the number of occurrences of each distinct word, converts the word to its integer word id 
+and returns the result as a sparse vector.</p>
+<p>The structure of <code>document_word_matrix</code> is a list of lists, where the first list corresponds to a list of documents, 
+the inner list is a list of words in each document.</p>
+<p>Create the model. I predefine the number of topics. We already know the number of topics. However, this can be considered as hyper-parameter, requiring fine-tuning.</p>
+<div class="highlight"><pre><span></span><span class="n">NUM_TOPICS</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="n">lsi_model</span> <span class="o">=</span> <span class="n">LsiModel</span><span class="p">(</span><span class="n">corpus</span><span class="o">=</span><span class="n">document_word_matrix</span><span class="p">,</span> <span class="n">num_topics</span><span class="o">=</span><span class="n">NUM_TOPICS</span><span class="p">,</span> <span class="n">id2word</span><span class="o">=</span><span class="n">word_dictionary</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Let check the topics.</p>
+<div class="highlight"><pre><span></span><span class="n">lsi_topics</span> <span class="o">=</span> <span class="n">lsi_model</span><span class="o">.</span><span class="n">show_topics</span><span class="p">(</span><span class="n">num_topics</span><span class="o">=</span><span class="n">NUM_TOPICS</span><span class="p">,</span> <span class="n">formatted</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">pprint</span><span class="p">(</span><span class="n">lsi_topics</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="err">[(0,</span>
+<span class="err">  [(&quot;&#39;&#39;&quot;, 0.5525950728710217),</span>
+<span class="err">   (&#39;gt&#39;, 0.5017034951239502),</span>
+<span class="err">   (&#39;lt&#39;, 0.5012421420448145),</span>
+<span class="err">   (&#39;http&#39;, 0.13235789377032975),</span>
+<span class="err">   (&#39;reuters&#39;, 0.12738544638608676),</span>
+<span class="err">   (&#39;href=&#39;, 0.1165203671943378),</span>
+<span class="err">   (&#39;/a&#39;, 0.11609987400732807),</span>
+<span class="err">   (&#39;new&#39;, 0.10805850440429328),</span>
+<span class="err">   (&#39;said&#39;, 0.10550031843615736),</span>
+<span class="err">   (&#39;//www.investor.reuters.com/fullquote.aspx&#39;,</span>
+<span class="err">0.09462537588321375)]),</span>
+<span class="err"> (1,</span>
+<span class="err">  [(&#39;39&#39;, 0.7641971094809981),</span>
+<span class="err">   (&#39;said&#39;, 0.22375199975904078),</span>
+<span class="err">   (&#39;new&#39;, 0.17201656666498566),</span>
+<span class="err">   (&#39;quot&#39;, 0.1440324334139677),</span>
+<span class="err">   (&quot;&#39;&#39;&quot;, -0.12974757461304182),</span>
+<span class="err">   (&#39;lt&#39;, -0.1258484664379667),</span>
+<span class="err">   (&#39;gt&#39;, -0.12559624751229786),</span>
+<span class="err">   (&#39;year&#39;, 0.102034017714784),</span>
+<span class="err">   (&#39;company&#39;, 0.0967020195333899),</span>
+<span class="err">   (&#39;u&#39;, 0.08643385295026677)]),</span>
+<span class="err"> (2,</span>
+<span class="err">  [(&#39;39&#39;, -0.5823634301756129),</span>
+<span class="err">   (&#39;said&#39;, 0.37304053806244963),</span>
+<span class="err">   (&#39;new&#39;, 0.31226846946427567),</span>
+<span class="err">   (&#39;reuters&#39;, 0.28020531171237956),</span>
+<span class="err">   (&#39;york&#39;, 0.15097794586351654),</span>
+<span class="err">   (&#39;u.s.&#39;, 0.12230606105242761),</span>
+<span class="err">   (&quot;&#39;&#39;&quot;, -0.12071594616719289),</span>
+<span class="err">   (&#39;gt&#39;, -0.11465765558602346),</span>
+<span class="err">   (&#39;lt&#39;, -0.11451351758143592),</span>
+<span class="err">   (&#39;ap&#39;, 0.10568473511696055)]),</span>
+<span class="err"> (3,</span>
+<span class="err">  [(&#39;new&#39;, 0.6280420959343559),</span>
+<span class="err">   (&#39;said&#39;, -0.46484918292452715),</span>
+<span class="err">   (&#39;quot&#39;, -0.3648027843052166),</span>
+<span class="err">   (&#39;york&#39;, 0.2937236162058658),</span>
+<span class="err">   (&quot;&#39;&#39;&quot;, -0.09895153658039355),</span>
+<span class="err">   (&#39;price&#39;, 0.09543427194214693),</span>
+<span class="err">   (&#39;39&#39;, 0.087455449368572),</span>
+<span class="err">   (&#39;oil&#39;, 0.08682102624838821),</span>
+<span class="err">   (&#39;official&#39;, -0.08501911286445321),</span>
+<span class="err">   (&#39;stock&#39;, 0.07554676848568334)])]</span>
+</pre></div>
+
+
+<p><code>.show_topics()</code> method shows the most contributing words (both positively and negatively) for each of the first <em>n</em> the number of topics. 
+Observing the output, we see that the model did not return well-defined topics. There are some junk words. This is due to the pre-processing and 
+indicates the need for some extra pre-processing steps. As you already know the workflow, doing proper pre-processing is up to you.</p>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>To conclude, LSA is much like principal component analysis for the unstructured data and is based on matrix decomposion technique. For creating 
+<strong>Document-Word Matrix</strong> I used simple CountVectorizer. You can try <strong>TF-IDF</strong> and see the result. This is the first part of this series. In the 
+following blogs, I will review <strong>Latent Dirichlet Allocation</strong> and <strong>Non-Negative Matrix Factorization</strong> and will show thier practical implementation.</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Topic_model">Topic_Model</a></p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Document-term_matrix">Document_Term_Matrix</a></p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Latent_semantic_analysis">Latent_Semantic_Analysis</a></p>
+</li>
+</ul>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+
+
+             
+
+
+<div class="applause_button">
+    <applause-button url=https://dsfabric.org/topic-modeling-in-python-latent-semantic-analysis> </applause-button>
+</div>
+
+ 
+                <p id="post-share-links">
+    Like this post? Share on:
+      <a href="https://twitter.com/intent/tweet?text=Topic%20Modeling%20in%20Python%3A%20Latent%20Semantic%20Analysis&url=https%3A//dsfabric.org/topic-modeling-in-python-latent-semantic-analysis&via=N_Okroshiashvil&hashtags=topic-modeling,nlp,lsa,natural-language-processing" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//dsfabric.org/topic-modeling-in-python-latent-semantic-analysis" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=Topic%20Modeling%20in%20Python%3A%20Latent%20Semantic%20Analysis&amp;body=https%3A//dsfabric.org/topic-modeling-in-python-latent-semantic-analysis" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+
+            
+            
+
+
+
+
+
+
+
+<section>
+    <h6 style="display:none;">Comments</h6>
+    <p id="comment-message">So what do you think? Did I miss something? Is any part unclear? Leave your comments below. </p>
+
+    <div class="accordion" id="accordion2">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle disqus-comment-count comment-count collapsed"
+                   data-toggle="collapse"
+                   data-parent="#accordion2"
+                   data-disqus-identifier="https://dsfabric.org/topic-modeling-in-python-latent-semantic-analysis"
+                   href="https://dsfabric.org/topic-modeling-in-python-latent-semantic-analysis#comment_thread"
+                   id="comment-accordion-toggle">
+                    Comments
+                </a>
+            </div>
+            <div id="comment_thread" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <div class="comments">
+                        <div id="disqus_thread"></div>
+                        <script>
+    var disqus_shortname = 'dsfabric';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+
+    var disqus_identifier = 'https://dsfabric.org/topic-modeling-in-python-latent-semantic-analysis';
+    var disqus_url = 'https://dsfabric.org/topic-modeling-in-python-latent-semantic-analysis';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <hr/>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="https://dsfabric.org/integer-sequences-in-python" title="Previous: Integer Sequences in Python">Integer Sequences in Python</a></li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section id="article-sidebar" class="span2">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2020-06-22T03:44:00+04:00">ორშ 22 ივნისი 2020</time>
+            <h4>Category</h4>
+            <a class="category-link" href="https://dsfabric.org/categories#natural-language-processing-ref">Natural Language Processing</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://dsfabric.org/tags#lsa-ref">LSA
+                    <span class="superscript">1</span>
+</a></li>
+                <li><a href="https://dsfabric.org/tags#nlp-ref">NLP
+                    <span class="superscript">1</span>
+</a></li>
+                <li><a href="https://dsfabric.org/tags#topic-modeling-ref">Topic Modeling
+                    <span class="superscript">1</span>
+</a></li>
+                <li><a href="https://dsfabric.org/tags#natural-language-processing-ref">Natural Language Processing
+</a></li>
+            </ul>
+<h4>Stay in Touch</h4>
+<div id="sidebar-social-link">
+    <a href="https://www.linkedin.com/in/nodar-okroshiashvili/" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" role="img" viewBox="0 0 512 512" fill="#fff"><rect width="512" height="512" rx="15%" fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+    </a>
+    <a href="https://github.com/Okroshiashvili" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+    </a>
+    <a href="https://twitter.com/N_Okroshiashvil" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+    </a>
+</div>
+            
+
+
+
+
+
+            
+
+
+
+
+
+        </section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+    <div>
+        Content licensed under <a rel="license nofollow noopener noreferrer"
+    href="http://creativecommons.org/licenses/by/4.0/" target="_blank">
+    Creative Commons Attribution 4.0 International License</a>.
+    </div>
+
+    <div>
+        <span class="site-name">Data Science Fabric</span> - Torture the data, and it will confess to anything. Ronald Coase
+    </div>
+
+
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow noopener noreferrer">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow noopener noreferrer">Elegant</a>
+    </div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="https://dsfabric.org/theme/js/elegant.prod.9e9d5ce754.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    <script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+
+    </body>
+    <!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>

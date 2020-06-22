@@ -5,36 +5,43 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://dsfabric.org/</loc>
-<lastmod>2020-05-11T00:07:46-00:00</lastmod>
+<lastmod>2020-06-22T22:14:22-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://dsfabric.org/archives.html</loc>
-<lastmod>2020-05-11T00:07:46-00:00</lastmod>
+<lastmod>2020-06-22T22:14:22-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://dsfabric.org/tags.html</loc>
-<lastmod>2020-05-11T00:07:46-00:00</lastmod>
+<lastmod>2020-06-22T22:14:22-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://dsfabric.org/categories.html</loc>
-<lastmod>2020-05-11T00:07:46-00:00</lastmod>
+<lastmod>2020-06-22T22:14:22-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://dsfabric.org/search.html</loc>
-<lastmod>2020-05-11T00:07:46-00:00</lastmod>
+<lastmod>2020-06-22T22:14:22-00:00</lastmod>
 <changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://dsfabric.org/topic-modeling-in-python-latent-semantic-analysis</loc>
+<lastmod>2020-06-22T03:44:00+04:00</lastmod>
+<changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 

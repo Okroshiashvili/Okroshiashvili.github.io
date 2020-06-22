@@ -1,5 +1,418 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Data Science Fabric</title><link href="https://dsfabric.org/" rel="alternate"></link><link href="https://dsfabric.org/feeds/all.atom.xml" rel="self"></link><id>https://dsfabric.org/</id><updated>2020-04-25T03:44:00+04:00</updated><subtitle>Torture the data, and it will confess to anything. Ronald Coase</subtitle><entry><title>Integer Sequences in Python</title><link href="https://dsfabric.org/integer-sequences-in-python" rel="alternate"></link><published>2020-04-25T03:44:00+04:00</published><updated>2020-04-25T03:44:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2020-04-25:/integer-sequences-in-python</id><summary type="html">&lt;p&gt;Generate and plot integer sequences in python&lt;/p&gt;</summary><content type="html">&lt;p&gt;In this article, I want to review some integer sequences from &lt;a href="https://en.wikipedia.org/wiki/Number_theory"&gt;number theory&lt;/a&gt;. 
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Data Science Fabric</title><link href="https://dsfabric.org/" rel="alternate"></link><link href="https://dsfabric.org/feeds/all.atom.xml" rel="self"></link><id>https://dsfabric.org/</id><updated>2020-06-22T03:44:00+04:00</updated><subtitle>Torture the data, and it will confess to anything. Ronald Coase</subtitle><entry><title>Topic Modeling in Python: Latent Semantic Analysis</title><link href="https://dsfabric.org/topic-modeling-in-python-latent-semantic-analysis" rel="alternate"></link><published>2020-06-22T03:44:00+04:00</published><updated>2020-06-22T03:44:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2020-06-22:/topic-modeling-in-python-latent-semantic-analysis</id><summary type="html">&lt;p&gt;Topic modeling with NLTK and Gensim&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently, I've started digging deeper into Natural Language Processing. During week or so, I took several 
+MOOCs and read blogs. I tried some coding and now with this blog, I want to share my experience. With this blog series, 
+I want to review &lt;a href="https://en.wikipedia.org/wiki/Topic_model"&gt;Topic Modeling&lt;/a&gt;. Particularly, &lt;a href="https://en.wikipedia.org/wiki/Latent_semantic_analysis"&gt;Latent Semantic Analysis&lt;/a&gt;, 
+&lt;a href="https://en.wikipedia.org/wiki/Non-negative_matrix_factorization"&gt;Non-Negative Matrix Factorization&lt;/a&gt;, and 
+&lt;a href="https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation"&gt;Latent Dirichlet Allocation&lt;/a&gt;. 
+For the sake of brevity, these series will include three successive parts, reviewing each technique in each part.&lt;/p&gt;
+&lt;p&gt;This is the first part of this series, and here I want to discuss Latent Semantic Analysis, a.k.a LSA. 
+I implement it using NLTK and Gensim. 
+Before going into details of this algorithm, let say what topic modeling is and why we should care.&lt;/p&gt;
+&lt;p&gt;Every day, a massive amount of data is collected. Most of this data is a text, such as an email, blog post, books, 
+articles. These all are unstructured data, and unstructured data means that there is no means by which the computer 
+understands the semantic meaning of the words in the text. As the volume of the data increases, it's become difficult to 
+search in these documents for a piece of particular information. Moreover, as time passes, humans are getting lazy 
+to read and review tons of articles, books, and blogs to find the desired information. Here comes the topic modeling.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Topic Modeling is an unsupervised machine learning technique that provides a simple way to analyze a large amount of 
+unstructured data and extract cluster of words that frequently occur together, or are connected to 
+each other in some statistically meaningful way (&lt;a href="https://en.wikipedia.org/wiki/Distributional_semantics"&gt;Distributional Hypothesis&lt;/a&gt;). 
+Topic modeling strives to find hidden semantic structures in the text.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;That's sort of "official" definition. &lt;em&gt;In my words&lt;/em&gt;, topic modeling is a dimensionality reduction technique, where we express each 
+document in terms of topics, that in turn, are in the lower dimension. That means that we have thousands of thousand documents, 
+and we express them by using hundreds of words. Does it make sense? Imagine we perform PCA (Principal Component Analysis) 
+for the text data. Here, the document is an independent text consisting of several sentences such as an email, a review, a tweet, and so on. 
+The collection of documents is a corpus. Topic modeling is to find latent factors that exist in our text. 
+To make it even concise, by doing topic modeling, we try to answer the following question: &lt;strong&gt;What is this document about?&lt;/strong&gt; 
+For example, we have millions of reviews of one particular hotel. Only two or three sentences telling about the topics of these 
+reviews is much preferable than reading all the reviews. That's it!&lt;/p&gt;
+&lt;p&gt;Here comes "why we should care?" question. In natural language processing and general in information retrieval, 
+topic modeling plays an essential role due to the reason mentioned above. Additionally, recent advancements in 
+machine learning and increasing demand for analytical solutions give rise of the usage of topic modeling for 
+dimensionality reduction in documents, recommendation systems, clustering documents, classification of documents, and many more.&lt;/p&gt;
+&lt;p&gt;Now, it's time for &lt;strong&gt;Latent Semantic Analysis&lt;/strong&gt;. It is one of the foundational algorithms in topic modeling. 
+It assumes that each document in our corpus consists of a mixture of topics, and each topic contains a collection of words. 
+Based on this assumption, Latent Semantic Analysis takes &lt;strong&gt;Document-Word Matrix&lt;/strong&gt; and employees &lt;a href="https://dsfabric.org/advance-linear-algebra-with-python-part-ii"&gt;Singular Value Decomposion&lt;/a&gt; 
+to decompose it into the product of two matrices. The first is &lt;strong&gt;Document-Topic&lt;/strong&gt; matrix, and the second is &lt;strong&gt;Topic-Word&lt;/strong&gt; matrix. 
+The computers cannot understand the text, and it's even unimaginable for them how to decompose a text into a product of 
+two matrices that intuitively has numbers. That's why we build Document-Word matrix, and then computer finds Document-Topic 
+and Topic-Word matrices for us.&lt;/p&gt;
+&lt;p&gt;Let review each matrix in a detailed manner. First of all, we need to build a Document-Word matrix. To do so, we build vocabulary from our corpus. 
+This vocabulary is a collection of all unique words coming from our corpus. If we have one document corpus and our document is 
+"I like that movie" then our vocabulary will be &lt;code&gt;{"I", "like", "that", "movie"}&lt;/code&gt;. After we have the vocabulary, we apply 
+&lt;a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html"&gt;CountVectorizer&lt;/a&gt; or 
+&lt;a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfTransformer.html#sklearn.feature_extraction.text.TfidfTransformer"&gt;TF-IDF Vectorizer&lt;/a&gt; 
+to our corpus in order to have a Document-Word matrix. CountVectorizer captures how often a particular word occurs in a document, 
+and TF-IDF captures how often a word occurs in a document as well as in the entire corpus.&lt;/p&gt;
+&lt;p&gt;For example, if we have two document corpus:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;corpus = [&lt;/span&gt;
+&lt;span class="err"&gt;    &amp;quot;This is the first document.&amp;quot;, &lt;/span&gt;
+&lt;span class="err"&gt;    &amp;quot;This document is the second document.&amp;quot;&lt;/span&gt;
+&lt;span class="err"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then, based on this corpus, our vocabulary will be:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;vocab = {&lt;/span&gt;
+&lt;span class="err"&gt;    &amp;quot;document&amp;quot;, &amp;quot;first&amp;quot;, &amp;quot;is&amp;quot;, &lt;/span&gt;
+&lt;span class="err"&gt;    &amp;quot;second&amp;quot;, &amp;quot;the&amp;quot;, &amp;quot;this&amp;quot;&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Applying CountVecorizer to our corpus, will give the following &lt;strong&gt;Document-Word&lt;/strong&gt; matrix:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+Document-Word =
+\begin{bmatrix}
+    1 &amp;amp; 1 &amp;amp; 1 &amp;amp; 0 &amp;amp; 1 &amp;amp; 1 \\
+    2 &amp;amp; 0 &amp;amp; 1 &amp;amp; 1 &amp;amp; 1 &amp;amp; 1
+\end{bmatrix}
+$$&lt;/div&gt;
+&lt;p&gt;Columns of this matrix represent words in our vocabulary, and rows represent our documents. Every individual element in 
+this matrix indicates how often a specific word occurs within a particular document. For instance, the first row of 
+this matrix shows how often each vocabulary word occurs in the first document. Hence, &lt;span class="math"&gt;\(D_{ij}\)&lt;/span&gt; element of 
+Document-Word matrix will give the frequency of occurrence for word &lt;span class="math"&gt;\(j\)&lt;/span&gt; in a document &lt;span class="math"&gt;\(i\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Having a Document-Word matrix, LSA tries to build &lt;a href="http://theory.stanford.edu/~tim/s15/l/l9.pdf"&gt;low-rank approximation&lt;/a&gt; of that matrix. 
+This will be achieved by using Singular Value Decomposition. Here, rank refers to the number of topics. For more about matrix decompositions, 
+&lt;a href="https://dsfabric.org/advance-linear-algebra-with-python-part-ii"&gt;read here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Decomposition process of Document-Word matrix follows the following formula: &lt;/p&gt;
+&lt;div class="math"&gt;$$
+DW_{n \times k} = DT_{n \times t} \cdot TW_{t \times k}
+$$&lt;/div&gt;
+&lt;p&gt;Where &lt;span class="math"&gt;\(n\)&lt;/span&gt; is the number of documents, &lt;span class="math"&gt;\(k\)&lt;/span&gt; is the number of words in the vocabulary, and &lt;span class="math"&gt;\(t\)&lt;/span&gt; is the number of topics. 
+&lt;span class="math"&gt;\(t\)&lt;/span&gt; is the hyperparameter, and we have to set it manually beforehand. Consequently, the number of topics is far fewer 
+than the number of documents. That's why we can consider topic modeling as a dimensionality reduction.&lt;/p&gt;
+&lt;p&gt;Before diving into practical implementation, let review the other two matrices on the right-hand side of our main equation. 
+The first is &lt;span class="math"&gt;\(DT\)&lt;/span&gt;, Document-Topic matrix. It contains topics for every document. The second, &lt;span class="math"&gt;\(TW\)&lt;/span&gt;, is the Topic-Word matrix. 
+This matrix contains words for each topic. Seems clumsy? Let us consider an example, and things will become much succinct. &lt;/p&gt;
+&lt;p&gt;For a large corpus, we will have a large vocabulary and, consequently, a large &lt;span class="math"&gt;\(DW\)&lt;/span&gt; matrix. For example, &lt;/p&gt;
+&lt;div class="math"&gt;$$
+DW =
+\begin{bmatrix}
+    D_{11} &amp;amp; D_{12} &amp;amp; \cdots &amp;amp; D_{1k} \\
+    D_{21} &amp;amp; D_{22} &amp;amp; \cdots &amp;amp; D_{2k} \\
+    \vdots &amp;amp; \vdots &amp;amp; \boldsymbol{D_{ij}} &amp;amp; \vdots \\
+    D_{n1} &amp;amp; D_{n2} &amp;amp; \cdots &amp;amp; D_{nk}
+\end{bmatrix}
+$$&lt;/div&gt;
+&lt;div class="math"&gt;$$
+DT =
+\begin{bmatrix}
+    U_{11} &amp;amp; U_{12} &amp;amp; \cdots &amp;amp; U_{1t} \\
+    \vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \vdots \\
+    \boldsymbol{U_{i1}} &amp;amp; \boldsymbol{U_{i2}} &amp;amp; \boldsymbol{\cdots} &amp;amp; \boldsymbol{U_{it}} \\
+    \vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \vdots \\
+    U_{n1} &amp;amp; U_{n2} &amp;amp; \cdots &amp;amp; U_{nt}
+\end{bmatrix}
+\quad
+TW =
+\begin{bmatrix}
+    M_{11} &amp;amp; M_{21} &amp;amp; \cdots &amp;amp; \boldsymbol{M_{j1}} &amp;amp; \cdots &amp;amp; M_{t1} \\
+    M_{12} &amp;amp; M_{22} &amp;amp; \cdots &amp;amp; \boldsymbol{M_{j2}} &amp;amp; \cdots &amp;amp; M_{t2} \\
+    \cdots &amp;amp; \cdots &amp;amp; \cdots &amp;amp; \boldsymbol{\cdots} &amp;amp; \cdots &amp;amp; \cdots \\
+    M_{1t} &amp;amp; M_{2t} &amp;amp; \cdots &amp;amp; \boldsymbol{M_{jt}} &amp;amp; \cdots &amp;amp; M_{tk}
+\end{bmatrix}
+$$&lt;/div&gt;
+&lt;p&gt;The columns of the &lt;span class="math"&gt;\(DT\)&lt;/span&gt; matrix represents topics and rows are documents. One row of this matrix &lt;span class="math"&gt;\(&lt;div class="math"&gt;\begin{bmatrix} U_{i1} &amp;amp; U_{i2} &amp;amp; \cdots &amp;amp; U_{it} \end{bmatrix}&lt;/div&gt;\)&lt;/span&gt;&lt;br&gt;
+gives us the value for all of the topics associated with a particular document. 
+The rows of the &lt;span class="math"&gt;\(TW\)&lt;/span&gt; matrix are topics, and columns are words. One column of this matrix &lt;span class="math"&gt;\(&lt;div class="math"&gt;\begin{bmatrix}{M_{j1}} \\ M_{j2} \\ \vdots \\ M_{jt}\end{bmatrix}&lt;/div&gt;\)&lt;/span&gt; 
+gives us a value for all of the words associated with each of these topics. So, when we multiply these row and column vector, 
+we will get back our original word &lt;span class="math"&gt;\(D_{ij}\)&lt;/span&gt; from the &lt;span class="math"&gt;\(DW\)&lt;/span&gt; matrix.&lt;/p&gt;
+&lt;h2 id="practical-implementation"&gt;Practical Implementation&lt;a class="headerlink" href="#practical-implementation" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;For the applied part, I use &lt;a href="https://github.com/mhjabreel/CharCnn_Keras/tree/master/data/ag_news_csv"&gt;AG's News Topic Classification Dataset&lt;/a&gt;. 
+The dataset contains 4 classes or 4 topics, such as &lt;strong&gt;World&lt;/strong&gt;, &lt;strong&gt;Sports&lt;/strong&gt;, &lt;strong&gt;Business&lt;/strong&gt;, and &lt;strong&gt;Sci/Tech&lt;/strong&gt;. I'd prefer this dataset due to its simplicity.&lt;/p&gt;
+&lt;p&gt;Let set all the necessary imports&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;re&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pprint&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;pprint&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;nltk&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.tokenize&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;word_tokenize&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;stopwords&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.stem&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;WordNetLemmatizer&lt;/span&gt;
+
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;gensim.corpora&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Dictionary&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;gensim.models&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;LsiModel&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# # If you already have NLTK and WordNetLemmatizer DON&amp;#39;T run this line&lt;/span&gt;
+
+&lt;span class="c1"&gt;# nltk.download(&amp;#39;wordnet&amp;#39;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To download data, you can visit the link above and then load it by using.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ag_news&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read_csv&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;data/train.csv&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;names&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Label&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Title&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Text&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+
+&lt;span class="n"&gt;ag_news&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   &lt;span class="n"&gt;Label&lt;/span&gt;                                              &lt;span class="n"&gt;Title&lt;/span&gt;  &lt;span class="err"&gt;\&lt;/span&gt;
+&lt;span class="mi"&gt;0&lt;/span&gt;      &lt;span class="mi"&gt;3&lt;/span&gt;  &lt;span class="n"&gt;Wall&lt;/span&gt; &lt;span class="n"&gt;St&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Bears&lt;/span&gt; &lt;span class="n"&gt;Claw&lt;/span&gt; &lt;span class="n"&gt;Back&lt;/span&gt; &lt;span class="k"&gt;Into&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;Black&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Reuters&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="mi"&gt;1&lt;/span&gt;      &lt;span class="mi"&gt;3&lt;/span&gt;  &lt;span class="n"&gt;Carlyle&lt;/span&gt; &lt;span class="n"&gt;Looks&lt;/span&gt; &lt;span class="n"&gt;Toward&lt;/span&gt; &lt;span class="n"&gt;Commercial&lt;/span&gt; &lt;span class="n"&gt;Aerospace&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Reu&lt;/span&gt;&lt;span class="p"&gt;...&lt;/span&gt;
+&lt;span class="mi"&gt;2&lt;/span&gt;      &lt;span class="mi"&gt;3&lt;/span&gt;    &lt;span class="n"&gt;Oil&lt;/span&gt; &lt;span class="k"&gt;and&lt;/span&gt; &lt;span class="n"&gt;Economy&lt;/span&gt; &lt;span class="n"&gt;Cloud&lt;/span&gt; &lt;span class="n"&gt;Stocks&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39; Outlook (Reuters)&lt;/span&gt;
+&lt;span class="s1"&gt;3      3  Iraq Halts Oil Exports from Main Southern Pipe...&lt;/span&gt;
+&lt;span class="s1"&gt;4      3  Oil prices soar to all-time record, posing new...&lt;/span&gt;
+
+&lt;span class="s1"&gt;                                                Text&lt;/span&gt;
+&lt;span class="s1"&gt;0  Reuters - Short-sellers, Wall Street&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="n"&gt;dwindli&lt;/span&gt;&lt;span class="p"&gt;...&lt;/span&gt;
+&lt;span class="mi"&gt;1&lt;/span&gt;  &lt;span class="n"&gt;Reuters&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;Private&lt;/span&gt; &lt;span class="n"&gt;investment&lt;/span&gt; &lt;span class="n"&gt;firm&lt;/span&gt; &lt;span class="n"&gt;Carlyle&lt;/span&gt; &lt;span class="n"&gt;Grou&lt;/span&gt;&lt;span class="p"&gt;...&lt;/span&gt;
+&lt;span class="mi"&gt;2&lt;/span&gt;  &lt;span class="n"&gt;Reuters&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;Soaring&lt;/span&gt; &lt;span class="n"&gt;crude&lt;/span&gt; &lt;span class="n"&gt;prices&lt;/span&gt; &lt;span class="n"&gt;plus&lt;/span&gt; &lt;span class="n"&gt;worries&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="n"&gt;ab&lt;/span&gt;&lt;span class="p"&gt;...&lt;/span&gt;
+&lt;span class="mi"&gt;3&lt;/span&gt;  &lt;span class="n"&gt;Reuters&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;Authorities&lt;/span&gt; &lt;span class="n"&gt;have&lt;/span&gt; &lt;span class="n"&gt;halted&lt;/span&gt; &lt;span class="n"&gt;oil&lt;/span&gt; &lt;span class="n"&gt;export&lt;/span&gt;&lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;...&lt;/span&gt;
+&lt;span class="mi"&gt;4&lt;/span&gt;  &lt;span class="n"&gt;AFP&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;Tearaway&lt;/span&gt; &lt;span class="n"&gt;world&lt;/span&gt; &lt;span class="n"&gt;oil&lt;/span&gt; &lt;span class="n"&gt;prices&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;toppling&lt;/span&gt; &lt;span class="n"&gt;reco&lt;/span&gt;&lt;span class="p"&gt;...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The dataset has a separate training and testing parts. I only use &lt;code&gt;train.csv&lt;/code&gt; for the expositional purposes and my machine's limited capability.&lt;/p&gt;
+&lt;p&gt;In the dataset we have 3 columns and 120K training points.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ag_news&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;(120000, 3)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now, let create a document list or document matrix. The first element in this list is the first document, the second element is the second document, 
+and so on. While doing so, I will also do some pre-processing, such as removing stop words and lemmatize sentences.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ag_news&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Text&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;head&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;0    Reuters - Short-sellers, Wall Street&amp;#39;s dwindli...&lt;/span&gt;
+&lt;span class="err"&gt;1    Reuters - Private investment firm Carlyle Grou...&lt;/span&gt;
+&lt;span class="err"&gt;2    Reuters - Soaring crude prices plus worries\ab...&lt;/span&gt;
+&lt;span class="err"&gt;3    Reuters - Authorities have halted oil export\f...&lt;/span&gt;
+&lt;span class="err"&gt;4    AFP - Tearaway world oil prices, toppling reco...&lt;/span&gt;
+&lt;span class="c"&gt;Name: Text, dtype: object&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;documents_list&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;sentence&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;new_sentence&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sub&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;r&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;\d&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sentence&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="n"&gt;documents_list&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sentence&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;documents_list&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;Reuters - Short-sellers, Wall Street&amp;#39;s dwindling\band of ultra-cynics,&lt;/span&gt;
+&lt;span class="err"&gt;are seeing green again.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;We need to remove stopwords and lemmatize each sentence&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Standard stop words in NLTK&lt;/span&gt;
+&lt;span class="n"&gt;stop_words&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;stopwords&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;words&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;english&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Add some extra characters and words as stop words&lt;/span&gt;
+&lt;span class="n"&gt;stop_words&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;update&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;,&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;quot;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;#39;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;?&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;!&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;:&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;(&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;[&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;]&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;{&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;}&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;#&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;...&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
+                   &lt;span class="s1"&gt;&amp;#39;--&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&amp;#39;s&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;also&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;amp;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;-&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;–&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;=&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;known&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;mi&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;km&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;$&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Here is pre-processed documents&lt;/span&gt;
+&lt;span class="n"&gt;processed_list&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Lemmatizer&lt;/span&gt;
+&lt;span class="n"&gt;lemmatizer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;WordNetLemmatizer&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;doc&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;documents_list&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;tokens&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;word_tokenize&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;doc&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+
+    &lt;span class="n"&gt;stopped_tokens&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;token&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;token&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;tokens&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;token&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;stop_words&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+    &lt;span class="n"&gt;lemmatized_tokens&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;lemmatizer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lemmatize&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;pos&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;n&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;stopped_tokens&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+    &lt;span class="n"&gt;processed_list&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lemmatized_tokens&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;processed_list&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;[&amp;#39;reuters&amp;#39;, &amp;#39;short-sellers&amp;#39;, &amp;#39;wall&amp;#39;, &amp;#39;street&amp;#39;, &amp;#39;dwindling\\band&amp;#39;,&lt;/span&gt;
+&lt;span class="err"&gt;&amp;#39;ultra-cynics&amp;#39;, &amp;#39;seeing&amp;#39;, &amp;#39;green&amp;#39;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;In the loop above, we iterate over documents list, each element is one document, then remove stop words for each sentence and then apply lemmatization. 
+After that, I append &lt;code&gt;processed_list&lt;/code&gt; with pre-processed results, which again is the documents list.&lt;/p&gt;
+&lt;p&gt;As we already pre-processed our data, consequently we have data ready to build vocabulary. 
+Vocabulary is a dictionary containing all unique words from &lt;code&gt;processed_list&lt;/code&gt; with 
+appropriate index. After doing this, we have to build &lt;strong&gt;Bag-of-Words&lt;/strong&gt; in order to build 
+&lt;strong&gt;Document-Word&lt;/strong&gt; matrix.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;word_dictionary&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Dictionary&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;processed_list&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;word_dictionary&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;Dictionary(85175 unique tokens: [&amp;#39;dwindling\\band&amp;#39;, &amp;#39;green&amp;#39;,&lt;/span&gt;
+&lt;span class="err"&gt;&amp;#39;reuters&amp;#39;, &amp;#39;seeing&amp;#39;, &amp;#39;short-sellers&amp;#39;]...)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;document_word_matrix&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;word_dictionary&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;doc2bow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;document&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;document&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;processed_list&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The function &lt;code&gt;doc2bow()&lt;/code&gt; simply counts the number of occurrences of each distinct word, converts the word to its integer word id 
+and returns the result as a sparse vector.&lt;/p&gt;
+&lt;p&gt;The structure of &lt;code&gt;document_word_matrix&lt;/code&gt; is a list of lists, where the first list corresponds to a list of documents, 
+the inner list is a list of words in each document.&lt;/p&gt;
+&lt;p&gt;Create the model. I predefine the number of topics. We already know the number of topics. However, this can be considered as hyper-parameter, requiring fine-tuning.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;NUM_TOPICS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;
+
+&lt;span class="n"&gt;lsi_model&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;LsiModel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;corpus&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;document_word_matrix&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;num_topics&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;NUM_TOPICS&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;id2word&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;word_dictionary&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Let check the topics.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;lsi_topics&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;lsi_model&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;show_topics&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;num_topics&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;NUM_TOPICS&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;formatted&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;pprint&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;lsi_topics&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;[(0,&lt;/span&gt;
+&lt;span class="err"&gt;  [(&amp;quot;&amp;#39;&amp;#39;&amp;quot;, 0.5525950728710217),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;gt&amp;#39;, 0.5017034951239502),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;lt&amp;#39;, 0.5012421420448145),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;http&amp;#39;, 0.13235789377032975),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;reuters&amp;#39;, 0.12738544638608676),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;href=&amp;#39;, 0.1165203671943378),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;/a&amp;#39;, 0.11609987400732807),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;new&amp;#39;, 0.10805850440429328),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;said&amp;#39;, 0.10550031843615736),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;//www.investor.reuters.com/fullquote.aspx&amp;#39;,&lt;/span&gt;
+&lt;span class="err"&gt;0.09462537588321375)]),&lt;/span&gt;
+&lt;span class="err"&gt; (1,&lt;/span&gt;
+&lt;span class="err"&gt;  [(&amp;#39;39&amp;#39;, 0.7641971094809981),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;said&amp;#39;, 0.22375199975904078),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;new&amp;#39;, 0.17201656666498566),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;quot&amp;#39;, 0.1440324334139677),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;quot;&amp;#39;&amp;#39;&amp;quot;, -0.12974757461304182),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;lt&amp;#39;, -0.1258484664379667),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;gt&amp;#39;, -0.12559624751229786),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;year&amp;#39;, 0.102034017714784),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;company&amp;#39;, 0.0967020195333899),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;u&amp;#39;, 0.08643385295026677)]),&lt;/span&gt;
+&lt;span class="err"&gt; (2,&lt;/span&gt;
+&lt;span class="err"&gt;  [(&amp;#39;39&amp;#39;, -0.5823634301756129),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;said&amp;#39;, 0.37304053806244963),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;new&amp;#39;, 0.31226846946427567),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;reuters&amp;#39;, 0.28020531171237956),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;york&amp;#39;, 0.15097794586351654),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;u.s.&amp;#39;, 0.12230606105242761),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;quot;&amp;#39;&amp;#39;&amp;quot;, -0.12071594616719289),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;gt&amp;#39;, -0.11465765558602346),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;lt&amp;#39;, -0.11451351758143592),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;ap&amp;#39;, 0.10568473511696055)]),&lt;/span&gt;
+&lt;span class="err"&gt; (3,&lt;/span&gt;
+&lt;span class="err"&gt;  [(&amp;#39;new&amp;#39;, 0.6280420959343559),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;said&amp;#39;, -0.46484918292452715),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;quot&amp;#39;, -0.3648027843052166),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;york&amp;#39;, 0.2937236162058658),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;quot;&amp;#39;&amp;#39;&amp;quot;, -0.09895153658039355),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;price&amp;#39;, 0.09543427194214693),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;39&amp;#39;, 0.087455449368572),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;oil&amp;#39;, 0.08682102624838821),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;official&amp;#39;, -0.08501911286445321),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;stock&amp;#39;, 0.07554676848568334)])]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;.show_topics()&lt;/code&gt; method shows the most contributing words (both positively and negatively) for each of the first &lt;em&gt;n&lt;/em&gt; the number of topics. 
+Observing the output, we see that the model did not return well-defined topics. There are some junk words. This is due to the pre-processing and 
+indicates the need for some extra pre-processing steps. As you already know the workflow, doing proper pre-processing is up to you.&lt;/p&gt;
+&lt;h2 id="conclusion"&gt;Conclusion&lt;a class="headerlink" href="#conclusion" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To conclude, LSA is much like principal component analysis for the unstructured data and is based on matrix decomposion technique. For creating 
+&lt;strong&gt;Document-Word Matrix&lt;/strong&gt; I used simple CountVectorizer. You can try &lt;strong&gt;TF-IDF&lt;/strong&gt; and see the result. This is the first part of this series. In the 
+following blogs, I will review &lt;strong&gt;Latent Dirichlet Allocation&lt;/strong&gt; and &lt;strong&gt;Non-Negative Matrix Factorization&lt;/strong&gt; and will show thier practical implementation.&lt;/p&gt;
+&lt;h2 id="references"&gt;References&lt;a class="headerlink" href="#references" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Topic_model"&gt;Topic_Model&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Document-term_matrix"&gt;Document_Term_Matrix&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Latent_semantic_analysis"&gt;Latent_Semantic_Analysis&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Natural Language Processing"></category><category term="Topic Modeling"></category><category term="NLP"></category><category term="LSA"></category><category term="Natural Language Processing"></category></entry><entry><title>Integer Sequences in Python</title><link href="https://dsfabric.org/integer-sequences-in-python" rel="alternate"></link><published>2020-04-25T03:44:00+04:00</published><updated>2020-04-25T03:44:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2020-04-25:/integer-sequences-in-python</id><summary type="html">&lt;p&gt;Generate and plot integer sequences in python&lt;/p&gt;</summary><content type="html">&lt;p&gt;In this article, I want to review some integer sequences from &lt;a href="https://en.wikipedia.org/wiki/Number_theory"&gt;number theory&lt;/a&gt;. 
 Particularly, I will review their mathematical formulation, then will write Python functions for them and later on generate 
 sequences to visualize them.&lt;/p&gt;
 &lt;p&gt;In short, &lt;strong&gt;integer sequence&lt;/strong&gt; is an ordered list of integers. Generally, in mathematics, the sequence is a collection of objects, 
