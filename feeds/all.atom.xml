@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Data Science Fabric</title><link href="https://dsfabric.org/" rel="alternate"></link><link href="https://dsfabric.org/feeds/all.atom.xml" rel="self"></link><id>https://dsfabric.org/</id><updated>2020-06-22T03:44:00+04:00</updated><subtitle>Torture the data, and it will confess to anything. Ronald Coase</subtitle><entry><title>Topic Modeling in Python: Latent Semantic Analysis</title><link href="https://dsfabric.org/topic-modeling-in-python-latent-semantic-analysis" rel="alternate"></link><published>2020-06-22T03:44:00+04:00</published><updated>2020-06-22T03:44:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2020-06-22:/topic-modeling-in-python-latent-semantic-analysis</id><summary type="html">&lt;p&gt;Topic modeling with NLTK and Gensim&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently, I've started digging deeper into Natural Language Processing. During week or so, I took several 
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Data Science Fabric</title><link href="https://dsfabric.org/" rel="alternate"></link><link href="https://dsfabric.org/feeds/all.atom.xml" rel="self"></link><id>https://dsfabric.org/</id><updated>2020-06-28T10:53:00+04:00</updated><subtitle>Torture the data, and it will confess to anything. Ronald Coase</subtitle><entry><title>Topic Modeling in Python: Latent Semantic Analysis</title><link href="https://dsfabric.org/topic-modeling-in-python-latent-semantic-analysis" rel="alternate"></link><published>2020-06-22T03:44:00+04:00</published><updated>2020-06-28T10:53:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2020-06-22:/topic-modeling-in-python-latent-semantic-analysis</id><summary type="html">&lt;p&gt;Topic modeling with Sklearn, NLTK, and Gensim&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently, I've started digging deeper into Natural Language Processing. During week or so, I took several 
 MOOCs and read blogs. I tried some coding and now with this blog, I want to share my experience. With this blog series, 
 I want to review &lt;a href="https://en.wikipedia.org/wiki/Topic_model"&gt;Topic Modeling&lt;/a&gt;. Particularly, &lt;a href="https://en.wikipedia.org/wiki/Latent_semantic_analysis"&gt;Latent Semantic Analysis&lt;/a&gt;, 
 &lt;a href="https://en.wikipedia.org/wiki/Non-negative_matrix_factorization"&gt;Non-Negative Matrix Factorization&lt;/a&gt;, and 
 &lt;a href="https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation"&gt;Latent Dirichlet Allocation&lt;/a&gt;. 
 For the sake of brevity, these series will include three successive parts, reviewing each technique in each part.&lt;/p&gt;
 &lt;p&gt;This is the first part of this series, and here I want to discuss Latent Semantic Analysis, a.k.a LSA. 
-I implement it using NLTK and Gensim. 
+I implement it using Sklearn, NLTK, and Gensim. 
 Before going into details of this algorithm, let say what topic modeling is and why we should care.&lt;/p&gt;
 &lt;p&gt;Every day, a massive amount of data is collected. Most of this data is a text, such as an email, blog post, books, 
 articles. These all are unstructured data, and unstructured data means that there is no means by which the computer 
@@ -126,20 +126,22 @@ The dataset contains 4 classes or 4 topics, such as &lt;strong&gt;World&lt;/stro
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;re&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pprint&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;pprint&lt;/span&gt;
 
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;nltk&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.tokenize&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;word_tokenize&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;stopwords&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.stem&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;WordNetLemmatizer&lt;/span&gt;
-
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;gensim.corpora&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Dictionary&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;gensim.models&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;LsiModel&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.corpus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;stopwords&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.stem&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;WordNetLemmatizer&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;nltk.tokenize&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;word_tokenize&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;scipy&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;linalg&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;decomposition&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.datasets&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;fetch_20newsgroups&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sklearn.feature_extraction.text&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;CountVectorizer&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# # If you already have NLTK and WordNetLemmatizer DON&amp;#39;T run this line&lt;/span&gt;
-
-&lt;span class="c1"&gt;# nltk.download(&amp;#39;wordnet&amp;#39;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# nltk.download(&amp;#39;wordnet&amp;#39;)  # Run only once!&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -285,56 +287,236 @@ the inner list is a list of words in each document.&lt;/p&gt;
 
 
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;[(0,&lt;/span&gt;
-&lt;span class="err"&gt;  [(&amp;quot;&amp;#39;&amp;#39;&amp;quot;, 0.5525950728710217),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;gt&amp;#39;, 0.5017034951239502),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;lt&amp;#39;, 0.5012421420448145),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;http&amp;#39;, 0.13235789377032975),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;reuters&amp;#39;, 0.12738544638608676),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;href=&amp;#39;, 0.1165203671943378),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;/a&amp;#39;, 0.11609987400732807),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;new&amp;#39;, 0.10805850440429328),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;said&amp;#39;, 0.10550031843615736),&lt;/span&gt;
+&lt;span class="err"&gt;  [(&amp;quot;&amp;#39;&amp;#39;&amp;quot;, 0.5525962226618513),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;gt&amp;#39;, 0.5017031009037042),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;lt&amp;#39;, 0.5012420304300391),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;http&amp;#39;, 0.13235634462799653),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;reuters&amp;#39;, 0.12738884666499628),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;href=&amp;#39;, 0.11651870131706114),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;/a&amp;#39;, 0.1160981942267705),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;new&amp;#39;, 0.10806400267987118),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;said&amp;#39;, 0.10549939529328223),&lt;/span&gt;
 &lt;span class="err"&gt;   (&amp;#39;//www.investor.reuters.com/fullquote.aspx&amp;#39;,&lt;/span&gt;
-&lt;span class="err"&gt;0.09462537588321375)]),&lt;/span&gt;
+&lt;span class="err"&gt;0.09462507762247087)]),&lt;/span&gt;
 &lt;span class="err"&gt; (1,&lt;/span&gt;
-&lt;span class="err"&gt;  [(&amp;#39;39&amp;#39;, 0.7641971094809981),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;said&amp;#39;, 0.22375199975904078),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;new&amp;#39;, 0.17201656666498566),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;quot&amp;#39;, 0.1440324334139677),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;quot;&amp;#39;&amp;#39;&amp;quot;, -0.12974757461304182),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;lt&amp;#39;, -0.1258484664379667),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;gt&amp;#39;, -0.12559624751229786),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;year&amp;#39;, 0.102034017714784),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;company&amp;#39;, 0.0967020195333899),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;u&amp;#39;, 0.08643385295026677)]),&lt;/span&gt;
+&lt;span class="err"&gt;  [(&amp;#39;39&amp;#39;, 0.764206945943224),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;said&amp;#39;, 0.22375243025512392),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;new&amp;#39;, 0.171995655882699),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;quot&amp;#39;, 0.14403798044536875),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;quot;&amp;#39;&amp;#39;&amp;quot;, -0.12975103574221364),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;lt&amp;#39;, -0.12584874509054236),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;gt&amp;#39;, -0.12559591157679006),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;year&amp;#39;, 0.10205456650317864),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;company&amp;#39;, 0.0967312705999435),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;u&amp;#39;, 0.08642264068206248)]),&lt;/span&gt;
 &lt;span class="err"&gt; (2,&lt;/span&gt;
-&lt;span class="err"&gt;  [(&amp;#39;39&amp;#39;, -0.5823634301756129),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;said&amp;#39;, 0.37304053806244963),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;new&amp;#39;, 0.31226846946427567),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;reuters&amp;#39;, 0.28020531171237956),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;york&amp;#39;, 0.15097794586351654),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;u.s.&amp;#39;, 0.12230606105242761),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;quot;&amp;#39;&amp;#39;&amp;quot;, -0.12071594616719289),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;gt&amp;#39;, -0.11465765558602346),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;lt&amp;#39;, -0.11451351758143592),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;ap&amp;#39;, 0.10568473511696055)]),&lt;/span&gt;
+&lt;span class="err"&gt;  [(&amp;#39;39&amp;#39;, -0.582336868887638),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;said&amp;#39;, 0.3730515282814641),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;new&amp;#39;, 0.3123439002995489),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;reuters&amp;#39;, 0.2802704621161875),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;york&amp;#39;, 0.1510133875425381),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;u.s.&amp;#39;, 0.12230364570272785),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;quot;&amp;#39;&amp;#39;&amp;quot;, -0.12076119649379513),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;gt&amp;#39;, -0.11464364569423975),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;lt&amp;#39;, -0.11449654030672701),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;ap&amp;#39;, 0.1056866037685956)]),&lt;/span&gt;
 &lt;span class="err"&gt; (3,&lt;/span&gt;
-&lt;span class="err"&gt;  [(&amp;#39;new&amp;#39;, 0.6280420959343559),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;said&amp;#39;, -0.46484918292452715),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;quot&amp;#39;, -0.3648027843052166),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;york&amp;#39;, 0.2937236162058658),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;quot;&amp;#39;&amp;#39;&amp;quot;, -0.09895153658039355),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;price&amp;#39;, 0.09543427194214693),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;39&amp;#39;, 0.087455449368572),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;oil&amp;#39;, 0.08682102624838821),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;official&amp;#39;, -0.08501911286445321),&lt;/span&gt;
-&lt;span class="err"&gt;   (&amp;#39;stock&amp;#39;, 0.07554676848568334)])]&lt;/span&gt;
+&lt;span class="err"&gt;  [(&amp;#39;new&amp;#39;, 0.6278034258309728),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;said&amp;#39;, -0.4648741830748478),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;quot&amp;#39;, -0.3649085096777877),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;york&amp;#39;, 0.293734557131022),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;quot;&amp;#39;&amp;#39;&amp;quot;, -0.09906711403700916),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;price&amp;#39;, 0.09568331634942481),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;39&amp;#39;, 0.08755246507212097),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;oil&amp;#39;, 0.08653530201307595),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;official&amp;#39;, -0.08581956382894348),&lt;/span&gt;
+&lt;span class="err"&gt;   (&amp;#39;stock&amp;#39;, 0.07549900454554219)])]&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;&lt;code&gt;.show_topics()&lt;/code&gt; method shows the most contributing words (both positively and negatively) for each of the first &lt;em&gt;n&lt;/em&gt; the number of topics. 
 Observing the output, we see that the model did not return well-defined topics. There are some junk words. This is due to the pre-processing and 
 indicates the need for some extra pre-processing steps. As you already know the workflow, doing proper pre-processing is up to you.&lt;/p&gt;
+&lt;h2 id="topic-modeling-with-sklean"&gt;Topic Modeling with Sklean&lt;a class="headerlink" href="#topic-modeling-with-sklean" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To do topic modeling in sklearn, I use built in dataset, &lt;a href="http://qwone.com/~jason/20Newsgroups/"&gt;The 20 Newsgroups data set&lt;/a&gt;. 
+Newsgroups are discussion groups on Usenet, which was popular in the 80s and 90s. This dataset includes 18,000 newsgroups posts with 20 topics. 
+For the sake of brevity, we can pick only 4 topics. With sklearn, we can directly apply the theory, I draw in the above section and 
+see how the SVD is applied to the Word-Document-Matrix. For the same reason as above, I will use only training set.&lt;/p&gt;
+&lt;p&gt;To fetch the data we have to call &lt;code&gt;.fetch_20newsgroups()&lt;/code&gt; method from the &lt;em&gt;datasets&lt;/em&gt; class.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# These are our topics&lt;/span&gt;
+&lt;span class="n"&gt;categories&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;alt.atheism&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;talk.religion.misc&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;comp.graphics&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;sci.space&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Remove header, footer, and quotes metadata&lt;/span&gt;
+&lt;span class="n"&gt;remove&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;headers&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;footers&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;quotes&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Our training set&lt;/span&gt;
+&lt;span class="n"&gt;newsgroups_train&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;fetch_20newsgroups&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data_home&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/home/okroshiashvili/Desktop/Blog Posts&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;subset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;train&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;remove&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;remove&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;Downloading 20news dataset. This may take a few minutes.&lt;/span&gt;
+&lt;span class="err"&gt;Downloading dataset from&lt;/span&gt;
+&lt;span class="c"&gt;https://ndownloader.figshare.com/files/5975967 (14 MB)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Let print 2 documents from our dataset.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;newsgroups_train&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[:&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]))&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;#&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;##################################################&lt;/span&gt;
+&lt;span class="n"&gt;Hi&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+
+&lt;span class="n"&gt;I&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ve noticed that if you only save a model (with all your mapping&lt;/span&gt;
+&lt;span class="s1"&gt;planes&lt;/span&gt;
+&lt;span class="s1"&gt;positioned carefully) to a .3DS file that when you reload it after&lt;/span&gt;
+&lt;span class="s1"&gt;restarting&lt;/span&gt;
+&lt;span class="s1"&gt;3DS, they are given a default position and orientation.  But if you&lt;/span&gt;
+&lt;span class="s1"&gt;save&lt;/span&gt;
+&lt;span class="s1"&gt;to a .PRJ file their positions/orientation are preserved.  Does anyone&lt;/span&gt;
+&lt;span class="s1"&gt;know why this information is not stored in the .3DS file?  Nothing is&lt;/span&gt;
+&lt;span class="s1"&gt;explicitly said in the manual about saving texture rules in the .PRJ&lt;/span&gt;
+&lt;span class="s1"&gt;file.&lt;/span&gt;
+&lt;span class="s1"&gt;I&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt; &lt;span class="k"&gt;like&lt;/span&gt; &lt;span class="k"&gt;to&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="n"&gt;able&lt;/span&gt; &lt;span class="k"&gt;to&lt;/span&gt; &lt;span class="k"&gt;read&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;texture&lt;/span&gt; &lt;span class="k"&gt;rule&lt;/span&gt; &lt;span class="n"&gt;information&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;does&lt;/span&gt; &lt;span class="n"&gt;anyone&lt;/span&gt;
+&lt;span class="n"&gt;have&lt;/span&gt;
+&lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;format&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PRJ&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt;
+
+&lt;span class="k"&gt;Is&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CEL&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt; &lt;span class="n"&gt;format&lt;/span&gt; &lt;span class="n"&gt;available&lt;/span&gt; &lt;span class="k"&gt;from&lt;/span&gt; &lt;span class="n"&gt;somewhere&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt;
+
+&lt;span class="n"&gt;Rych&lt;/span&gt;
+
+&lt;span class="o"&gt;##################################################&lt;/span&gt;
+&lt;span class="n"&gt;Hi&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+
+&lt;span class="n"&gt;I&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ve noticed that if you only save a model (with all your mapping&lt;/span&gt;
+&lt;span class="s1"&gt;planes&lt;/span&gt;
+&lt;span class="s1"&gt;positioned carefully) to a .3DS file that when you reload it after&lt;/span&gt;
+&lt;span class="s1"&gt;restarting&lt;/span&gt;
+&lt;span class="s1"&gt;3DS, they are given a default position and orientation.  But if you&lt;/span&gt;
+&lt;span class="s1"&gt;save&lt;/span&gt;
+&lt;span class="s1"&gt;to a .PRJ file their positions/orientation are preserved.  Does anyone&lt;/span&gt;
+&lt;span class="s1"&gt;know why this information is not stored in the .3DS file?  Nothing is&lt;/span&gt;
+&lt;span class="s1"&gt;explicitly said in the manual about saving texture rules in the .PRJ&lt;/span&gt;
+&lt;span class="s1"&gt;file.&lt;/span&gt;
+&lt;span class="s1"&gt;I&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt; &lt;span class="k"&gt;like&lt;/span&gt; &lt;span class="k"&gt;to&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="n"&gt;able&lt;/span&gt; &lt;span class="k"&gt;to&lt;/span&gt; &lt;span class="k"&gt;read&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;texture&lt;/span&gt; &lt;span class="k"&gt;rule&lt;/span&gt; &lt;span class="n"&gt;information&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;does&lt;/span&gt; &lt;span class="n"&gt;anyone&lt;/span&gt;
+&lt;span class="n"&gt;have&lt;/span&gt;
+&lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;format&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PRJ&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt;
+
+&lt;span class="k"&gt;Is&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CEL&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt; &lt;span class="n"&gt;format&lt;/span&gt; &lt;span class="n"&gt;available&lt;/span&gt; &lt;span class="k"&gt;from&lt;/span&gt; &lt;span class="n"&gt;somewhere&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt;
+
+&lt;span class="n"&gt;Rych&lt;/span&gt;
+
+
+&lt;span class="n"&gt;Seems&lt;/span&gt; &lt;span class="k"&gt;to&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;barring&lt;/span&gt; &lt;span class="n"&gt;evidence&lt;/span&gt; &lt;span class="k"&gt;to&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;contrary&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;that&lt;/span&gt; &lt;span class="n"&gt;Koresh&lt;/span&gt; &lt;span class="n"&gt;was&lt;/span&gt; &lt;span class="n"&gt;simply&lt;/span&gt;
+&lt;span class="n"&gt;another&lt;/span&gt; &lt;span class="n"&gt;deranged&lt;/span&gt; &lt;span class="n"&gt;fanatic&lt;/span&gt; &lt;span class="n"&gt;who&lt;/span&gt; &lt;span class="n"&gt;thought&lt;/span&gt; &lt;span class="n"&gt;it&lt;/span&gt; &lt;span class="n"&gt;neccessary&lt;/span&gt; &lt;span class="k"&gt;to&lt;/span&gt; &lt;span class="n"&gt;take&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;whole&lt;/span&gt;
+&lt;span class="n"&gt;bunch&lt;/span&gt; &lt;span class="k"&gt;of&lt;/span&gt;
+&lt;span class="n"&gt;folks&lt;/span&gt; &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;him&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;children&lt;/span&gt; &lt;span class="k"&gt;and&lt;/span&gt; &lt;span class="k"&gt;all&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;to&lt;/span&gt; &lt;span class="n"&gt;satisfy&lt;/span&gt; &lt;span class="n"&gt;his&lt;/span&gt; &lt;span class="n"&gt;delusional&lt;/span&gt; &lt;span class="n"&gt;mania&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Jim&lt;/span&gt;
+&lt;span class="n"&gt;Jones&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;circa&lt;/span&gt; &lt;span class="mi"&gt;1993&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+
+
+&lt;span class="n"&gt;Nope&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;fruitcakes&lt;/span&gt; &lt;span class="k"&gt;like&lt;/span&gt; &lt;span class="n"&gt;Koresh&lt;/span&gt; &lt;span class="n"&gt;have&lt;/span&gt; &lt;span class="n"&gt;been&lt;/span&gt; &lt;span class="n"&gt;demonstrating&lt;/span&gt; &lt;span class="n"&gt;such&lt;/span&gt; &lt;span class="n"&gt;evil&lt;/span&gt;
+&lt;span class="n"&gt;corruption&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;centuries&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+
+&lt;span class="o"&gt;##################################################&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;As we have dataset ready, it' time to call CountVecorizer and build vocabulary and Document-Word-Matrix.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Define CountVectorizer&lt;/span&gt;
+&lt;span class="n"&gt;vectorizer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;CountVectorizer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;stop_words&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;english&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Apply it to the dataset&lt;/span&gt;
+&lt;span class="n"&gt;vectors&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;vectorizer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit_transform&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;newsgroups_train&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;todense&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Print the result&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;vectors&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;[[0 0 0 ... 0 0 0]&lt;/span&gt;
+ &lt;span class="k"&gt;[0 0 0 ... 0 0 0]&lt;/span&gt;
+ &lt;span class="k"&gt;[0 0 0 ... 0 0 0]&lt;/span&gt;
+ &lt;span class="na"&gt;...&lt;/span&gt;
+ &lt;span class="k"&gt;[0 0 0 ... 0 0 0]&lt;/span&gt;
+ &lt;span class="k"&gt;[0 0 0 ... 0 0 0]&lt;/span&gt;
+ &lt;span class="k"&gt;[0 0 0 ... 0 0 0]]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This is the our Document-Word-Matirx. Now let see the vocabulary.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;vocab&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;vectorizer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_feature_names&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+
+&lt;span class="n"&gt;pprint&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;vocab&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;5000&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;5020&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;array([&amp;#39;brow&amp;#39;, &amp;#39;brown&amp;#39;, &amp;#39;browning&amp;#39;, &amp;#39;browns&amp;#39;, &amp;#39;browse&amp;#39;, &amp;#39;browsing&amp;#39;,&lt;/span&gt;
+&lt;span class="err"&gt;       &amp;#39;bruce&amp;#39;, &amp;#39;bruces&amp;#39;, &amp;#39;bruise&amp;#39;, &amp;#39;bruised&amp;#39;, &amp;#39;bruises&amp;#39;, &amp;#39;brunner&amp;#39;,&lt;/span&gt;
+&lt;span class="err"&gt;       &amp;#39;brush&amp;#39;, &amp;#39;brushmapping&amp;#39;, &amp;#39;brushmaps&amp;#39;, &amp;#39;brussel&amp;#39;, &amp;#39;brutal&amp;#39;,&lt;/span&gt;
+&lt;span class="err"&gt;       &amp;#39;brutally&amp;#39;, &amp;#39;brute&amp;#39;, &amp;#39;bryan&amp;#39;], dtype=&amp;#39;&amp;lt;U80&amp;#39;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;We are all set and ready to apply Singular Value Decomposion to our Document-Word-Matrix.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;U&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Vh&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;linalg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;svd&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;vectors&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;full_matrices&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This produces matrices with the following shapes&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Shape of U&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;U&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Shape of s&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Shape of Vh&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Vh&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;Shape of U (2034, 2034)&lt;/span&gt;
+&lt;span class="err"&gt;Shape of s (2034,)&lt;/span&gt;
+&lt;span class="err"&gt;Shape of Vh (2034, 26576)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To see the topics we need one small function. The input for this function will be &lt;span class="math"&gt;\(Vh\)&lt;/span&gt; matrix and will print the topics. 
+We also have to indicate top words for each topic, in order not to print long sentences and less important words. Let set it as 10.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;num_top_words&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;show_topics&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;top_words&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;vocab&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argsort&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)[:&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;num_top_words&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
+    &lt;span class="n"&gt;topic_words&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;top_words&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39; &amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;topic_words&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;show_topics&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Vh&lt;/span&gt;&lt;span class="p"&gt;[:&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;])))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ditto&lt;/span&gt; &lt;span class="n"&gt;critus&lt;/span&gt; &lt;span class="n"&gt;propagandist&lt;/span&gt; &lt;span class="n"&gt;surname&lt;/span&gt; &lt;span class="n"&gt;galacticentric&lt;/span&gt; &lt;span class="n"&gt;kindergarten&lt;/span&gt; &lt;span class="n"&gt;surreal&lt;/span&gt; &lt;span class="n"&gt;imaginative&lt;/span&gt; &lt;span class="n"&gt;salvadorans&lt;/span&gt; &lt;span class="n"&gt;ahhh&lt;/span&gt;
+
+&lt;span class="n"&gt;jpeg&lt;/span&gt; &lt;span class="n"&gt;gif&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt; &lt;span class="n"&gt;color&lt;/span&gt; &lt;span class="n"&gt;quality&lt;/span&gt; &lt;span class="n"&gt;image&lt;/span&gt; &lt;span class="n"&gt;jfif&lt;/span&gt; &lt;span class="n"&gt;format&lt;/span&gt; &lt;span class="nb"&gt;bit&lt;/span&gt; &lt;span class="k"&gt;version&lt;/span&gt;
+
+&lt;span class="n"&gt;graphics&lt;/span&gt; &lt;span class="n"&gt;edu&lt;/span&gt; &lt;span class="n"&gt;pub&lt;/span&gt; &lt;span class="n"&gt;mail&lt;/span&gt; &lt;span class="mi"&gt;128&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt; &lt;span class="n"&gt;ray&lt;/span&gt; &lt;span class="n"&gt;ftp&lt;/span&gt; &lt;span class="n"&gt;send&lt;/span&gt; &lt;span class="n"&gt;image&lt;/span&gt;
+
+&lt;span class="n"&gt;jesus&lt;/span&gt; &lt;span class="n"&gt;god&lt;/span&gt; &lt;span class="n"&gt;matthew&lt;/span&gt; &lt;span class="n"&gt;people&lt;/span&gt; &lt;span class="n"&gt;atheists&lt;/span&gt; &lt;span class="n"&gt;atheism&lt;/span&gt; &lt;span class="n"&gt;does&lt;/span&gt; &lt;span class="n"&gt;graphics&lt;/span&gt; &lt;span class="n"&gt;religious&lt;/span&gt; &lt;span class="n"&gt;said&lt;/span&gt;
+
+&lt;span class="n"&gt;image&lt;/span&gt; &lt;span class="k"&gt;data&lt;/span&gt; &lt;span class="n"&gt;processing&lt;/span&gt; &lt;span class="n"&gt;analysis&lt;/span&gt; &lt;span class="n"&gt;software&lt;/span&gt; &lt;span class="n"&gt;available&lt;/span&gt; &lt;span class="n"&gt;tools&lt;/span&gt; &lt;span class="n"&gt;display&lt;/span&gt; &lt;span class="n"&gt;tool&lt;/span&gt; &lt;span class="k"&gt;user&lt;/span&gt;
+
+&lt;span class="n"&gt;god&lt;/span&gt; &lt;span class="n"&gt;atheists&lt;/span&gt; &lt;span class="n"&gt;atheism&lt;/span&gt; &lt;span class="n"&gt;religious&lt;/span&gt; &lt;span class="n"&gt;believe&lt;/span&gt; &lt;span class="n"&gt;religion&lt;/span&gt; &lt;span class="n"&gt;argument&lt;/span&gt; &lt;span class="k"&gt;true&lt;/span&gt; &lt;span class="n"&gt;atheist&lt;/span&gt; &lt;span class="n"&gt;example&lt;/span&gt;
+
+&lt;span class="k"&gt;space&lt;/span&gt; &lt;span class="n"&gt;nasa&lt;/span&gt; &lt;span class="n"&gt;lunar&lt;/span&gt; &lt;span class="n"&gt;mars&lt;/span&gt; &lt;span class="n"&gt;probe&lt;/span&gt; &lt;span class="n"&gt;moon&lt;/span&gt; &lt;span class="n"&gt;missions&lt;/span&gt; &lt;span class="n"&gt;probes&lt;/span&gt; &lt;span class="n"&gt;surface&lt;/span&gt; &lt;span class="n"&gt;earth&lt;/span&gt;
+
+&lt;span class="n"&gt;image&lt;/span&gt; &lt;span class="n"&gt;probe&lt;/span&gt; &lt;span class="n"&gt;surface&lt;/span&gt; &lt;span class="n"&gt;lunar&lt;/span&gt; &lt;span class="n"&gt;mars&lt;/span&gt; &lt;span class="n"&gt;probes&lt;/span&gt; &lt;span class="n"&gt;moon&lt;/span&gt; &lt;span class="n"&gt;orbit&lt;/span&gt; &lt;span class="n"&gt;mariner&lt;/span&gt; &lt;span class="n"&gt;mission&lt;/span&gt;
+
+&lt;span class="n"&gt;argument&lt;/span&gt; &lt;span class="n"&gt;fallacy&lt;/span&gt; &lt;span class="n"&gt;conclusion&lt;/span&gt; &lt;span class="n"&gt;example&lt;/span&gt; &lt;span class="k"&gt;true&lt;/span&gt; &lt;span class="n"&gt;ad&lt;/span&gt; &lt;span class="n"&gt;argumentum&lt;/span&gt; &lt;span class="n"&gt;premises&lt;/span&gt; &lt;span class="k"&gt;false&lt;/span&gt; &lt;span class="k"&gt;valid&lt;/span&gt;
+
+&lt;span class="k"&gt;space&lt;/span&gt; &lt;span class="n"&gt;larson&lt;/span&gt; &lt;span class="n"&gt;image&lt;/span&gt; &lt;span class="n"&gt;theory&lt;/span&gt; &lt;span class="n"&gt;universe&lt;/span&gt; &lt;span class="n"&gt;physical&lt;/span&gt; &lt;span class="n"&gt;nasa&lt;/span&gt; &lt;span class="n"&gt;material&lt;/span&gt; &lt;span class="n"&gt;star&lt;/span&gt; &lt;span class="n"&gt;unified&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h2 id="conclusion"&gt;Conclusion&lt;a class="headerlink" href="#conclusion" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;To conclude, LSA is much like principal component analysis for the unstructured data and is based on matrix decomposion technique. For creating 
 &lt;strong&gt;Document-Word Matrix&lt;/strong&gt; I used simple CountVectorizer. You can try &lt;strong&gt;TF-IDF&lt;/strong&gt; and see the result. This is the first part of this series. In the 
@@ -349,6 +531,9 @@ following blogs, I will review &lt;strong&gt;Latent Dirichlet Allocation&lt;/str
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Latent_semantic_analysis"&gt;Latent_Semantic_Analysis&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://www.fast.ai/2019/07/08/fastai-nlp/"&gt;A Code-First Introduction to Natural Language Processing&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {

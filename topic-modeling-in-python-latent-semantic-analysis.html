@@ -12,7 +12,7 @@
 
         <meta name="author" content="Nodar Okroshiashvili" />
 
-        <meta name="description" content="Topic modeling with NLTK and Gensim
+        <meta name="description" content="Topic modeling with Sklearn, NLTK, and Gensim
 " />
         <meta name="twitter:creator" content="@N_Okroshiashvil">
         <meta property="og:type" content="article" />
@@ -22,12 +22,13 @@
 
 <meta property="og:title" content="Topic Modeling in Python: Latent Semantic Analysis "/>
 <meta property="og:url" content="https://dsfabric.org/topic-modeling-in-python-latent-semantic-analysis" />
-<meta property="og:description" content="Topic modeling with NLTK and Gensim" />
+<meta property="og:description" content="Topic modeling with Sklearn, NLTK, and Gensim" />
 <meta property="og:site_name" content="Data Science Fabric" />
 <meta property="og:article:author" content="Nodar Okroshiashvili" />
 <meta property="og:article:published_time" content="2020-06-22T03:44:00+04:00" />
+<meta property="og:article:modified_time" content="2020-06-28T10:53:00+04:00" />
 <meta name="twitter:title" content="Topic Modeling in Python: Latent Semantic Analysis ">
-<meta name="twitter:description" content="Topic modeling with NLTK and Gensim">
+<meta name="twitter:description" content="Topic modeling with Sklearn, NLTK, and Gensim">
 
         <title>Topic Modeling in Python: Latent Semantic Analysis  · Data Science Fabric
 </title>
@@ -106,7 +107,7 @@ I want to review <a href="https://en.wikipedia.org/wiki/Topic_model">Topic Model
 <a href="https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation">Latent Dirichlet Allocation</a>. 
 For the sake of brevity, these series will include three successive parts, reviewing each technique in each part.</p>
 <p>This is the first part of this series, and here I want to discuss Latent Semantic Analysis, a.k.a LSA. 
-I implement it using NLTK and Gensim. 
+I implement it using Sklearn, NLTK, and Gensim. 
 Before going into details of this algorithm, let say what topic modeling is and why we should care.</p>
 <p>Every day, a massive amount of data is collected. Most of this data is a text, such as an email, blog post, books, 
 articles. These all are unstructured data, and unstructured data means that there is no means by which the computer 
@@ -226,20 +227,22 @@ The dataset contains 4 classes or 4 topics, such as <strong>World</strong>, <str
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">nltk</span>
-<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
-<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
-<span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="kn">import</span> <span class="n">WordNetLemmatizer</span>
-
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">gensim.corpora</span> <span class="kn">import</span> <span class="n">Dictionary</span>
 <span class="kn">from</span> <span class="nn">gensim.models</span> <span class="kn">import</span> <span class="n">LsiModel</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+<span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="kn">import</span> <span class="n">WordNetLemmatizer</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">linalg</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">decomposition</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">fetch_20newsgroups</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span>
 </pre></div>
 
 
-<div class="highlight"><pre><span></span><span class="c1"># # If you already have NLTK and WordNetLemmatizer DON&#39;T run this line</span>
-
-<span class="c1"># nltk.download(&#39;wordnet&#39;)</span>
+<div class="highlight"><pre><span></span><span class="c1"># nltk.download(&#39;wordnet&#39;)  # Run only once!</span>
 </pre></div>
 
 
@@ -385,56 +388,236 @@ the inner list is a list of words in each document.</p>
 
 
 <div class="highlight"><pre><span></span><span class="err">[(0,</span>
-<span class="err">  [(&quot;&#39;&#39;&quot;, 0.5525950728710217),</span>
-<span class="err">   (&#39;gt&#39;, 0.5017034951239502),</span>
-<span class="err">   (&#39;lt&#39;, 0.5012421420448145),</span>
-<span class="err">   (&#39;http&#39;, 0.13235789377032975),</span>
-<span class="err">   (&#39;reuters&#39;, 0.12738544638608676),</span>
-<span class="err">   (&#39;href=&#39;, 0.1165203671943378),</span>
-<span class="err">   (&#39;/a&#39;, 0.11609987400732807),</span>
-<span class="err">   (&#39;new&#39;, 0.10805850440429328),</span>
-<span class="err">   (&#39;said&#39;, 0.10550031843615736),</span>
+<span class="err">  [(&quot;&#39;&#39;&quot;, 0.5525962226618513),</span>
+<span class="err">   (&#39;gt&#39;, 0.5017031009037042),</span>
+<span class="err">   (&#39;lt&#39;, 0.5012420304300391),</span>
+<span class="err">   (&#39;http&#39;, 0.13235634462799653),</span>
+<span class="err">   (&#39;reuters&#39;, 0.12738884666499628),</span>
+<span class="err">   (&#39;href=&#39;, 0.11651870131706114),</span>
+<span class="err">   (&#39;/a&#39;, 0.1160981942267705),</span>
+<span class="err">   (&#39;new&#39;, 0.10806400267987118),</span>
+<span class="err">   (&#39;said&#39;, 0.10549939529328223),</span>
 <span class="err">   (&#39;//www.investor.reuters.com/fullquote.aspx&#39;,</span>
-<span class="err">0.09462537588321375)]),</span>
+<span class="err">0.09462507762247087)]),</span>
 <span class="err"> (1,</span>
-<span class="err">  [(&#39;39&#39;, 0.7641971094809981),</span>
-<span class="err">   (&#39;said&#39;, 0.22375199975904078),</span>
-<span class="err">   (&#39;new&#39;, 0.17201656666498566),</span>
-<span class="err">   (&#39;quot&#39;, 0.1440324334139677),</span>
-<span class="err">   (&quot;&#39;&#39;&quot;, -0.12974757461304182),</span>
-<span class="err">   (&#39;lt&#39;, -0.1258484664379667),</span>
-<span class="err">   (&#39;gt&#39;, -0.12559624751229786),</span>
-<span class="err">   (&#39;year&#39;, 0.102034017714784),</span>
-<span class="err">   (&#39;company&#39;, 0.0967020195333899),</span>
-<span class="err">   (&#39;u&#39;, 0.08643385295026677)]),</span>
+<span class="err">  [(&#39;39&#39;, 0.764206945943224),</span>
+<span class="err">   (&#39;said&#39;, 0.22375243025512392),</span>
+<span class="err">   (&#39;new&#39;, 0.171995655882699),</span>
+<span class="err">   (&#39;quot&#39;, 0.14403798044536875),</span>
+<span class="err">   (&quot;&#39;&#39;&quot;, -0.12975103574221364),</span>
+<span class="err">   (&#39;lt&#39;, -0.12584874509054236),</span>
+<span class="err">   (&#39;gt&#39;, -0.12559591157679006),</span>
+<span class="err">   (&#39;year&#39;, 0.10205456650317864),</span>
+<span class="err">   (&#39;company&#39;, 0.0967312705999435),</span>
+<span class="err">   (&#39;u&#39;, 0.08642264068206248)]),</span>
 <span class="err"> (2,</span>
-<span class="err">  [(&#39;39&#39;, -0.5823634301756129),</span>
-<span class="err">   (&#39;said&#39;, 0.37304053806244963),</span>
-<span class="err">   (&#39;new&#39;, 0.31226846946427567),</span>
-<span class="err">   (&#39;reuters&#39;, 0.28020531171237956),</span>
-<span class="err">   (&#39;york&#39;, 0.15097794586351654),</span>
-<span class="err">   (&#39;u.s.&#39;, 0.12230606105242761),</span>
-<span class="err">   (&quot;&#39;&#39;&quot;, -0.12071594616719289),</span>
-<span class="err">   (&#39;gt&#39;, -0.11465765558602346),</span>
-<span class="err">   (&#39;lt&#39;, -0.11451351758143592),</span>
-<span class="err">   (&#39;ap&#39;, 0.10568473511696055)]),</span>
+<span class="err">  [(&#39;39&#39;, -0.582336868887638),</span>
+<span class="err">   (&#39;said&#39;, 0.3730515282814641),</span>
+<span class="err">   (&#39;new&#39;, 0.3123439002995489),</span>
+<span class="err">   (&#39;reuters&#39;, 0.2802704621161875),</span>
+<span class="err">   (&#39;york&#39;, 0.1510133875425381),</span>
+<span class="err">   (&#39;u.s.&#39;, 0.12230364570272785),</span>
+<span class="err">   (&quot;&#39;&#39;&quot;, -0.12076119649379513),</span>
+<span class="err">   (&#39;gt&#39;, -0.11464364569423975),</span>
+<span class="err">   (&#39;lt&#39;, -0.11449654030672701),</span>
+<span class="err">   (&#39;ap&#39;, 0.1056866037685956)]),</span>
 <span class="err"> (3,</span>
-<span class="err">  [(&#39;new&#39;, 0.6280420959343559),</span>
-<span class="err">   (&#39;said&#39;, -0.46484918292452715),</span>
-<span class="err">   (&#39;quot&#39;, -0.3648027843052166),</span>
-<span class="err">   (&#39;york&#39;, 0.2937236162058658),</span>
-<span class="err">   (&quot;&#39;&#39;&quot;, -0.09895153658039355),</span>
-<span class="err">   (&#39;price&#39;, 0.09543427194214693),</span>
-<span class="err">   (&#39;39&#39;, 0.087455449368572),</span>
-<span class="err">   (&#39;oil&#39;, 0.08682102624838821),</span>
-<span class="err">   (&#39;official&#39;, -0.08501911286445321),</span>
-<span class="err">   (&#39;stock&#39;, 0.07554676848568334)])]</span>
+<span class="err">  [(&#39;new&#39;, 0.6278034258309728),</span>
+<span class="err">   (&#39;said&#39;, -0.4648741830748478),</span>
+<span class="err">   (&#39;quot&#39;, -0.3649085096777877),</span>
+<span class="err">   (&#39;york&#39;, 0.293734557131022),</span>
+<span class="err">   (&quot;&#39;&#39;&quot;, -0.09906711403700916),</span>
+<span class="err">   (&#39;price&#39;, 0.09568331634942481),</span>
+<span class="err">   (&#39;39&#39;, 0.08755246507212097),</span>
+<span class="err">   (&#39;oil&#39;, 0.08653530201307595),</span>
+<span class="err">   (&#39;official&#39;, -0.08581956382894348),</span>
+<span class="err">   (&#39;stock&#39;, 0.07549900454554219)])]</span>
 </pre></div>
 
 
 <p><code>.show_topics()</code> method shows the most contributing words (both positively and negatively) for each of the first <em>n</em> the number of topics. 
 Observing the output, we see that the model did not return well-defined topics. There are some junk words. This is due to the pre-processing and 
 indicates the need for some extra pre-processing steps. As you already know the workflow, doing proper pre-processing is up to you.</p>
+<h2 id="topic-modeling-with-sklean">Topic Modeling with Sklean<a class="headerlink" href="#topic-modeling-with-sklean" title="Permanent link">&para;</a></h2>
+<p>To do topic modeling in sklearn, I use built in dataset, <a href="http://qwone.com/~jason/20Newsgroups/">The 20 Newsgroups data set</a>. 
+Newsgroups are discussion groups on Usenet, which was popular in the 80s and 90s. This dataset includes 18,000 newsgroups posts with 20 topics. 
+For the sake of brevity, we can pick only 4 topics. With sklearn, we can directly apply the theory, I draw in the above section and 
+see how the SVD is applied to the Word-Document-Matrix. For the same reason as above, I will use only training set.</p>
+<p>To fetch the data we have to call <code>.fetch_20newsgroups()</code> method from the <em>datasets</em> class.</p>
+<div class="highlight"><pre><span></span><span class="c1"># These are our topics</span>
+<span class="n">categories</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alt.atheism&#39;</span><span class="p">,</span> <span class="s1">&#39;talk.religion.misc&#39;</span><span class="p">,</span> <span class="s1">&#39;comp.graphics&#39;</span><span class="p">,</span> <span class="s1">&#39;sci.space&#39;</span><span class="p">]</span>
+
+<span class="c1"># Remove header, footer, and quotes metadata</span>
+<span class="n">remove</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;headers&#39;</span><span class="p">,</span> <span class="s1">&#39;footers&#39;</span><span class="p">,</span> <span class="s1">&#39;quotes&#39;</span><span class="p">)</span>
+
+<span class="c1"># Our training set</span>
+<span class="n">newsgroups_train</span> <span class="o">=</span> <span class="n">fetch_20newsgroups</span><span class="p">(</span><span class="n">data_home</span><span class="o">=</span><span class="s2">&quot;/home/okroshiashvili/Desktop/Blog Posts&quot;</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">,</span> <span class="n">categories</span><span class="o">=</span><span class="n">categories</span><span class="p">,</span> <span class="n">remove</span><span class="o">=</span><span class="n">remove</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="err">Downloading 20news dataset. This may take a few minutes.</span>
+<span class="err">Downloading dataset from</span>
+<span class="c">https://ndownloader.figshare.com/files/5975967 (14 MB)</span>
+</pre></div>
+
+
+<p>Let print 2 documents from our dataset.</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">newsgroups_train</span><span class="o">.</span><span class="n">data</span><span class="p">[:</span><span class="n">i</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;#&quot;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="o">##################################################</span>
+<span class="n">Hi</span><span class="p">,</span>
+
+<span class="n">I</span><span class="s1">&#39;ve noticed that if you only save a model (with all your mapping</span>
+<span class="s1">planes</span>
+<span class="s1">positioned carefully) to a .3DS file that when you reload it after</span>
+<span class="s1">restarting</span>
+<span class="s1">3DS, they are given a default position and orientation.  But if you</span>
+<span class="s1">save</span>
+<span class="s1">to a .PRJ file their positions/orientation are preserved.  Does anyone</span>
+<span class="s1">know why this information is not stored in the .3DS file?  Nothing is</span>
+<span class="s1">explicitly said in the manual about saving texture rules in the .PRJ</span>
+<span class="s1">file.</span>
+<span class="s1">I&#39;</span><span class="n">d</span> <span class="k">like</span> <span class="k">to</span> <span class="n">be</span> <span class="n">able</span> <span class="k">to</span> <span class="k">read</span> <span class="n">the</span> <span class="n">texture</span> <span class="k">rule</span> <span class="n">information</span><span class="p">,</span> <span class="n">does</span> <span class="n">anyone</span>
+<span class="n">have</span>
+<span class="n">the</span> <span class="n">format</span> <span class="k">for</span> <span class="n">the</span> <span class="p">.</span><span class="n">PRJ</span> <span class="n">file</span><span class="o">?</span>
+
+<span class="k">Is</span> <span class="n">the</span> <span class="p">.</span><span class="n">CEL</span> <span class="n">file</span> <span class="n">format</span> <span class="n">available</span> <span class="k">from</span> <span class="n">somewhere</span><span class="o">?</span>
+
+<span class="n">Rych</span>
+
+<span class="o">##################################################</span>
+<span class="n">Hi</span><span class="p">,</span>
+
+<span class="n">I</span><span class="s1">&#39;ve noticed that if you only save a model (with all your mapping</span>
+<span class="s1">planes</span>
+<span class="s1">positioned carefully) to a .3DS file that when you reload it after</span>
+<span class="s1">restarting</span>
+<span class="s1">3DS, they are given a default position and orientation.  But if you</span>
+<span class="s1">save</span>
+<span class="s1">to a .PRJ file their positions/orientation are preserved.  Does anyone</span>
+<span class="s1">know why this information is not stored in the .3DS file?  Nothing is</span>
+<span class="s1">explicitly said in the manual about saving texture rules in the .PRJ</span>
+<span class="s1">file.</span>
+<span class="s1">I&#39;</span><span class="n">d</span> <span class="k">like</span> <span class="k">to</span> <span class="n">be</span> <span class="n">able</span> <span class="k">to</span> <span class="k">read</span> <span class="n">the</span> <span class="n">texture</span> <span class="k">rule</span> <span class="n">information</span><span class="p">,</span> <span class="n">does</span> <span class="n">anyone</span>
+<span class="n">have</span>
+<span class="n">the</span> <span class="n">format</span> <span class="k">for</span> <span class="n">the</span> <span class="p">.</span><span class="n">PRJ</span> <span class="n">file</span><span class="o">?</span>
+
+<span class="k">Is</span> <span class="n">the</span> <span class="p">.</span><span class="n">CEL</span> <span class="n">file</span> <span class="n">format</span> <span class="n">available</span> <span class="k">from</span> <span class="n">somewhere</span><span class="o">?</span>
+
+<span class="n">Rych</span>
+
+
+<span class="n">Seems</span> <span class="k">to</span> <span class="n">be</span><span class="p">,</span> <span class="n">barring</span> <span class="n">evidence</span> <span class="k">to</span> <span class="n">the</span> <span class="n">contrary</span><span class="p">,</span> <span class="n">that</span> <span class="n">Koresh</span> <span class="n">was</span> <span class="n">simply</span>
+<span class="n">another</span> <span class="n">deranged</span> <span class="n">fanatic</span> <span class="n">who</span> <span class="n">thought</span> <span class="n">it</span> <span class="n">neccessary</span> <span class="k">to</span> <span class="n">take</span> <span class="n">a</span> <span class="n">whole</span>
+<span class="n">bunch</span> <span class="k">of</span>
+<span class="n">folks</span> <span class="k">with</span> <span class="n">him</span><span class="p">,</span> <span class="n">children</span> <span class="k">and</span> <span class="k">all</span><span class="p">,</span> <span class="k">to</span> <span class="n">satisfy</span> <span class="n">his</span> <span class="n">delusional</span> <span class="n">mania</span><span class="p">.</span> <span class="n">Jim</span>
+<span class="n">Jones</span><span class="p">,</span> <span class="n">circa</span> <span class="mi">1993</span><span class="p">.</span>
+
+
+<span class="n">Nope</span> <span class="o">-</span> <span class="n">fruitcakes</span> <span class="k">like</span> <span class="n">Koresh</span> <span class="n">have</span> <span class="n">been</span> <span class="n">demonstrating</span> <span class="n">such</span> <span class="n">evil</span>
+<span class="n">corruption</span>
+<span class="k">for</span> <span class="n">centuries</span><span class="p">.</span>
+
+<span class="o">##################################################</span>
+</pre></div>
+
+
+<p>As we have dataset ready, it' time to call CountVecorizer and build vocabulary and Document-Word-Matrix.</p>
+<div class="highlight"><pre><span></span><span class="c1"># Define CountVectorizer</span>
+<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">)</span>
+
+<span class="c1"># Apply it to the dataset</span>
+<span class="n">vectors</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">newsgroups_train</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
+
+<span class="c1"># Print the result</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vectors</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="k">[[0 0 0 ... 0 0 0]</span>
+ <span class="k">[0 0 0 ... 0 0 0]</span>
+ <span class="k">[0 0 0 ... 0 0 0]</span>
+ <span class="na">...</span>
+ <span class="k">[0 0 0 ... 0 0 0]</span>
+ <span class="k">[0 0 0 ... 0 0 0]</span>
+ <span class="k">[0 0 0 ... 0 0 0]]</span>
+</pre></div>
+
+
+<p>This is the our Document-Word-Matirx. Now let see the vocabulary.</p>
+<div class="highlight"><pre><span></span><span class="n">vocab</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">())</span>
+
+<span class="n">pprint</span><span class="p">(</span><span class="n">vocab</span><span class="p">[</span><span class="mi">5000</span><span class="p">:</span><span class="mi">5020</span><span class="p">])</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="err">array([&#39;brow&#39;, &#39;brown&#39;, &#39;browning&#39;, &#39;browns&#39;, &#39;browse&#39;, &#39;browsing&#39;,</span>
+<span class="err">       &#39;bruce&#39;, &#39;bruces&#39;, &#39;bruise&#39;, &#39;bruised&#39;, &#39;bruises&#39;, &#39;brunner&#39;,</span>
+<span class="err">       &#39;brush&#39;, &#39;brushmapping&#39;, &#39;brushmaps&#39;, &#39;brussel&#39;, &#39;brutal&#39;,</span>
+<span class="err">       &#39;brutally&#39;, &#39;brute&#39;, &#39;bryan&#39;], dtype=&#39;&lt;U80&#39;)</span>
+</pre></div>
+
+
+<p>We are all set and ready to apply Singular Value Decomposion to our Document-Word-Matrix.</p>
+<div class="highlight"><pre><span></span><span class="n">U</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">Vh</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">vectors</span><span class="p">,</span> <span class="n">full_matrices</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+
+<p>This produces matrices with the following shapes</p>
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Shape of U&#39;</span><span class="p">,</span> <span class="n">U</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Shape of s&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Shape of Vh&#39;</span><span class="p">,</span> <span class="n">Vh</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="err">Shape of U (2034, 2034)</span>
+<span class="err">Shape of s (2034,)</span>
+<span class="err">Shape of Vh (2034, 26576)</span>
+</pre></div>
+
+
+<p>To see the topics we need one small function. The input for this function will be <span class="math">\(Vh\)</span> matrix and will print the topics. 
+We also have to indicate top words for each topic, in order not to print long sentences and less important words. Let set it as 10.</p>
+<div class="highlight"><pre><span></span><span class="n">num_top_words</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">def</span> <span class="nf">show_topics</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="n">top_words</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="p">[</span><span class="n">vocab</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">t</span><span class="p">)[:</span><span class="o">-</span><span class="n">num_top_words</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+    <span class="n">topic_words</span> <span class="o">=</span> <span class="p">([</span><span class="n">top_words</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">a</span><span class="p">])</span>
+    <span class="k">return</span> <span class="p">[</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">topic_words</span><span class="p">]</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">show_topics</span><span class="p">(</span><span class="n">Vh</span><span class="p">[:</span><span class="mi">10</span><span class="p">])))</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">ditto</span> <span class="n">critus</span> <span class="n">propagandist</span> <span class="n">surname</span> <span class="n">galacticentric</span> <span class="n">kindergarten</span> <span class="n">surreal</span> <span class="n">imaginative</span> <span class="n">salvadorans</span> <span class="n">ahhh</span>
+
+<span class="n">jpeg</span> <span class="n">gif</span> <span class="n">file</span> <span class="n">color</span> <span class="n">quality</span> <span class="n">image</span> <span class="n">jfif</span> <span class="n">format</span> <span class="nb">bit</span> <span class="k">version</span>
+
+<span class="n">graphics</span> <span class="n">edu</span> <span class="n">pub</span> <span class="n">mail</span> <span class="mi">128</span> <span class="mi">3</span><span class="n">d</span> <span class="n">ray</span> <span class="n">ftp</span> <span class="n">send</span> <span class="n">image</span>
+
+<span class="n">jesus</span> <span class="n">god</span> <span class="n">matthew</span> <span class="n">people</span> <span class="n">atheists</span> <span class="n">atheism</span> <span class="n">does</span> <span class="n">graphics</span> <span class="n">religious</span> <span class="n">said</span>
+
+<span class="n">image</span> <span class="k">data</span> <span class="n">processing</span> <span class="n">analysis</span> <span class="n">software</span> <span class="n">available</span> <span class="n">tools</span> <span class="n">display</span> <span class="n">tool</span> <span class="k">user</span>
+
+<span class="n">god</span> <span class="n">atheists</span> <span class="n">atheism</span> <span class="n">religious</span> <span class="n">believe</span> <span class="n">religion</span> <span class="n">argument</span> <span class="k">true</span> <span class="n">atheist</span> <span class="n">example</span>
+
+<span class="k">space</span> <span class="n">nasa</span> <span class="n">lunar</span> <span class="n">mars</span> <span class="n">probe</span> <span class="n">moon</span> <span class="n">missions</span> <span class="n">probes</span> <span class="n">surface</span> <span class="n">earth</span>
+
+<span class="n">image</span> <span class="n">probe</span> <span class="n">surface</span> <span class="n">lunar</span> <span class="n">mars</span> <span class="n">probes</span> <span class="n">moon</span> <span class="n">orbit</span> <span class="n">mariner</span> <span class="n">mission</span>
+
+<span class="n">argument</span> <span class="n">fallacy</span> <span class="n">conclusion</span> <span class="n">example</span> <span class="k">true</span> <span class="n">ad</span> <span class="n">argumentum</span> <span class="n">premises</span> <span class="k">false</span> <span class="k">valid</span>
+
+<span class="k">space</span> <span class="n">larson</span> <span class="n">image</span> <span class="n">theory</span> <span class="n">universe</span> <span class="n">physical</span> <span class="n">nasa</span> <span class="n">material</span> <span class="n">star</span> <span class="n">unified</span>
+</pre></div>
+
+
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
 <p>To conclude, LSA is much like principal component analysis for the unstructured data and is based on matrix decomposion technique. For creating 
 <strong>Document-Word Matrix</strong> I used simple CountVectorizer. You can try <strong>TF-IDF</strong> and see the result. This is the first part of this series. In the 
@@ -449,6 +632,9 @@ following blogs, I will review <strong>Latent Dirichlet Allocation</strong> and 
 </li>
 <li>
 <p><a href="https://en.wikipedia.org/wiki/Latent_semantic_analysis">Latent_Semantic_Analysis</a></p>
+</li>
+<li>
+<p><a href="https://www.fast.ai/2019/07/08/fastai-nlp/">A Code-First Introduction to Natural Language Processing</a></p>
 </li>
 </ul>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
@@ -602,6 +788,9 @@ following blogs, I will review <strong>Latent Dirichlet Allocation</strong> and 
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
             <time itemprop="dateCreated" datetime="2020-06-22T03:44:00+04:00">ორშ 22 ივნისი 2020</time>
+<h4>Last Updated</h4>
+<time datetime="2020-06-28T10:53:00+04:00">ივნ 28, 2020</time>
+
             <h4>Category</h4>
             <a class="category-link" href="https://dsfabric.org/categories#natural-language-processing-ref">Natural Language Processing</a>
             <h4>Tags</h4>
