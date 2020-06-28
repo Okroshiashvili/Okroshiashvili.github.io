@@ -438,7 +438,7 @@ the inner list is a list of words in each document.</p>
 <p><code>.show_topics()</code> method shows the most contributing words (both positively and negatively) for each of the first <em>n</em> the number of topics. 
 Observing the output, we see that the model did not return well-defined topics. There are some junk words. This is due to the pre-processing and 
 indicates the need for some extra pre-processing steps. As you already know the workflow, doing proper pre-processing is up to you.</p>
-<h2 id="topic-modeling-with-sklean">Topic Modeling with Sklean<a class="headerlink" href="#topic-modeling-with-sklean" title="Permanent link">&para;</a></h2>
+<h2 id="topic-modeling-with-sklearn">Topic Modeling with Sklearn<a class="headerlink" href="#topic-modeling-with-sklearn" title="Permanent link">&para;</a></h2>
 <p>To do topic modeling in sklearn, I use built in dataset, <a href="http://qwone.com/~jason/20Newsgroups/">The 20 Newsgroups data set</a>. 
 Newsgroups are discussion groups on Usenet, which was popular in the 80s and 90s. This dataset includes 18,000 newsgroups posts with 20 topics. 
 For the sake of brevity, we can pick only 4 topics. With sklearn, we can directly apply the theory, I draw in the above section and 
@@ -451,7 +451,7 @@ see how the SVD is applied to the Word-Document-Matrix. For the same reason as a
 <span class="n">remove</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;headers&#39;</span><span class="p">,</span> <span class="s1">&#39;footers&#39;</span><span class="p">,</span> <span class="s1">&#39;quotes&#39;</span><span class="p">)</span>
 
 <span class="c1"># Our training set</span>
-<span class="n">newsgroups_train</span> <span class="o">=</span> <span class="n">fetch_20newsgroups</span><span class="p">(</span><span class="n">data_home</span><span class="o">=</span><span class="s2">&quot;/home/okroshiashvili/Desktop/Blog Posts&quot;</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">,</span> <span class="n">categories</span><span class="o">=</span><span class="n">categories</span><span class="p">,</span> <span class="n">remove</span><span class="o">=</span><span class="n">remove</span><span class="p">)</span>
+<span class="n">newsgroups_train</span> <span class="o">=</span> <span class="n">fetch_20newsgroups</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">,</span> <span class="n">categories</span><span class="o">=</span><span class="n">categories</span><span class="p">,</span> <span class="n">remove</span><span class="o">=</span><span class="n">remove</span><span class="p">)</span>
 </pre></div>
 
 
@@ -527,15 +527,15 @@ see how the SVD is applied to the Word-Document-Matrix. For the same reason as a
 </pre></div>
 
 
-<p>As we have dataset ready, it' time to call CountVecorizer and build vocabulary and Document-Word-Matrix.</p>
+<p>As we have dataset ready, it' time to call CountVectorizer and build vocabulary and Document-Word-Matrix.</p>
 <div class="highlight"><pre><span></span><span class="c1"># Define CountVectorizer</span>
 <span class="n">vectorizer</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">)</span>
 
 <span class="c1"># Apply it to the dataset</span>
-<span class="n">vectors</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">newsgroups_train</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
+<span class="n">document_word_matrix</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">newsgroups_train</span><span class="o">.</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
 
 <span class="c1"># Print the result</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">vectors</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">document_word_matrix</span><span class="p">)</span>
 </pre></div>
 
 
@@ -549,7 +549,7 @@ see how the SVD is applied to the Word-Document-Matrix. For the same reason as a
 </pre></div>
 
 
-<p>This is the our Document-Word-Matirx. Now let see the vocabulary.</p>
+<p>This is the our Document-Word-Matrix. Now let see the vocabulary.</p>
 <div class="highlight"><pre><span></span><span class="n">vocab</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">())</span>
 
 <span class="n">pprint</span><span class="p">(</span><span class="n">vocab</span><span class="p">[</span><span class="mi">5000</span><span class="p">:</span><span class="mi">5020</span><span class="p">])</span>
@@ -563,12 +563,13 @@ see how the SVD is applied to the Word-Document-Matrix. For the same reason as a
 </pre></div>
 
 
-<p>We are all set and ready to apply Singular Value Decomposion to our Document-Word-Matrix.</p>
-<div class="highlight"><pre><span></span><span class="n">U</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">Vh</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">vectors</span><span class="p">,</span> <span class="n">full_matrices</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<p>We are all set and ready to apply Singular Value Decomposition to our Document-Word-Matrix.</p>
+<div class="highlight"><pre><span></span><span class="n">U</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">Vh</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">document_word_matrix</span><span class="p">,</span> <span class="n">full_matrices</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 
 
-<p>This produces matrices with the following shapes</p>
+<p>The <span class="math">\(U\)</span> is our <strong>Document-Topic</strong> matrix, <span class="math">\(s\)</span> is a diagonal matrix and contains singular values indicating the importance of each topic. 
+<span class="math">\(Vh\)</span> is <strong>Topic-Word</strong> matrix. The shapes of this matrices are the following: </p>
 <div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Shape of U&#39;</span><span class="p">,</span> <span class="n">U</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Shape of s&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Shape of Vh&#39;</span><span class="p">,</span> <span class="n">Vh</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
