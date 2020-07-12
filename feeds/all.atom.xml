@@ -1,5 +1,337 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Data Science Fabric</title><link href="https://dsfabric.org/" rel="alternate"></link><link href="https://dsfabric.org/feeds/all.atom.xml" rel="self"></link><id>https://dsfabric.org/</id><updated>2020-06-28T10:53:00+04:00</updated><subtitle>Torture the data, and it will confess to anything. Ronald Coase</subtitle><entry><title>Topic Modeling in Python: Latent Semantic Analysis</title><link href="https://dsfabric.org/topic-modeling-in-python-latent-semantic-analysis" rel="alternate"></link><published>2020-06-22T03:44:00+04:00</published><updated>2020-06-28T10:53:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2020-06-22:/topic-modeling-in-python-latent-semantic-analysis</id><summary type="html">&lt;p&gt;Topic modeling with Sklearn, NLTK, and Gensim&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently, I've started digging deeper into Natural Language Processing. During week or so, I took several 
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Data Science Fabric</title><link href="https://dsfabric.org/" rel="alternate"></link><link href="https://dsfabric.org/feeds/all.atom.xml" rel="self"></link><id>https://dsfabric.org/</id><updated>2020-07-12T20:30:00+04:00</updated><subtitle>Torture the data, and it will confess to anything. Ronald Coase</subtitle><entry><title>Basics of Information Theory with Python</title><link href="https://dsfabric.org/basics-of-information-theory-with-python" rel="alternate"></link><published>2020-07-12T20:30:00+04:00</published><updated>2020-07-12T20:30:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2020-07-12:/basics-of-information-theory-with-python</id><summary type="html">&lt;p&gt;Elements of Information Theory Distilled with Python&lt;/p&gt;</summary><content type="html">&lt;h2 id="introduction"&gt;Introduction&lt;a class="headerlink" href="#introduction" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Information flows around us. It's everywhere. No matter what we have, either it will be some well-known play or painting or 
+just a bunch of numbers or video streams. For computers, all of them are represented by only two digits 0 and 1, and they carry some information. 
+"&lt;strong&gt;Information theory&lt;/strong&gt; studies the transmission, processing, extraction, and utilization of information."&lt;a href="https://en.wikipedia.org/wiki/Information_theory"&gt;wikipedia&lt;/a&gt; 
+In simple words, with information theory, given different kinds of signals, we try to measure how much information is presented in each of those signals. 
+The theory itself originates from the original work of &lt;a href="https://en.wikipedia.org/wiki/Claude_Shannon"&gt;Claude Shannon&lt;/a&gt; named &lt;a href="https://en.wikipedia.org/wiki/A_Mathematical_Theory_of_Communication"&gt;&lt;em&gt;A Mathematical Theory of Communication&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It will be helpful to see how machine learning and information theory are related. According to "Dive Into Deep Learning" hence d2l considers this relationship to be &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Machine learning aims to extract interesting signals from data and make critical predictions. 
+On the other hand, information theory studies encoding, decoding, transmitting, and manipulating information. 
+As a result, information theory provides a fundamental language for discussing the information processing in machine learned systems.&lt;a href="https://d2l.ai/chapter_appendix-mathematics-for-deep-learning/information-theory.html"&gt;source&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Information theory is tightly connected to mathematics and statistics. We will see later on how, but before that, 
+it's worth to say where is used the concepts of information theory in statistics and mathematics. 
+We all know or have heard about &lt;em&gt;random variables&lt;/em&gt; that are drawn from some probability distribution. 
+From linear algebra, we also know how to measure the distance between two points, or between two planes. 
+But, how can we measure the distance between two probability distribution? In other words, how similar or dissimilar are these two probability distribution? 
+Information theory gives us the ability to answer this question and quantify the similarity measure between two distributions. Before we continue, 
+let me outline the measurement unit of information theory. Shannon introduced the &lt;strong&gt;bit&lt;/strong&gt; as the unit of information. 
+The series of 0 and 1 encode any data. Accordingly, the sequence of binary digits of length &lt;span class="math"&gt;\(n\)&lt;/span&gt; contains &lt;em&gt;&lt;span class="math"&gt;\(n\)&lt;/span&gt; bits&lt;/em&gt; of information. 
+That has been said, we can review concepts of information theory.&lt;/p&gt;
+&lt;p&gt;There are a few main concepts in information theory, and I will go through each of them in a detailed manner. First in line is: &lt;/p&gt;
+&lt;h2 id="self-information"&gt;Self-Information&lt;a class="headerlink" href="#self-information" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To understand this concept well, I will review two examples—one from statistics and probability and the second from the information theory. 
+Let start with statistics and probability. Imagine we conduct an experiment giving several outcomes with a different probability. For example, 
+rolling the fair dice with uniform probability &lt;span class="math"&gt;\(\frac{1}{6}\)&lt;/span&gt; of returning numbers from 1 to 6. Now, consider three outcomes, defined as &lt;span class="math"&gt;\(A=\{outcome \leq 6\}\)&lt;/span&gt; 
+&lt;span class="math"&gt;\(B=\{outcome is odd\}\)&lt;/span&gt;, and &lt;span class="math"&gt;\(C=\{outcome=1\}\)&lt;/span&gt; over probability space &lt;span class="math"&gt;\(\Omega\)&lt;/span&gt;, which in turn contains all the outcomes. &lt;strong&gt;Self-information&lt;/strong&gt;, 
+sometimes stated as &lt;strong&gt;information content&lt;/strong&gt; or &lt;strong&gt;surprisal&lt;/strong&gt; indicates how much unlikely the event &lt;span class="math"&gt;\(A\)&lt;/span&gt;, or &lt;span class="math"&gt;\(B\)&lt;/span&gt;, or &lt;span class="math"&gt;\(C\)&lt;/span&gt; is, how much surprised we are 
+by observing either event. Here is the question: How can we convert probability &lt;span class="math"&gt;\(p\)&lt;/span&gt; of an event into a number of bits? Claude Shannon gave us the formula for that:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+I(X) = - \log_2(p)
+$$&lt;/div&gt;
+&lt;p&gt;For our three events, &lt;span class="math"&gt;\(A\)&lt;/span&gt;, &lt;span class="math"&gt;\(B\)&lt;/span&gt;, and &lt;span class="math"&gt;\(C\)&lt;/span&gt; the self-information or surprisal is the following:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+I(A) = - \log_2(1) = 0
+\\
+I(B) = - \log_2(\frac{3}{6}) = 1
+\\
+I(C) = - \log_2(\frac{1}{6}) = 2.58
+$$&lt;/div&gt;
+&lt;p&gt;From an information theory perspective, if we have a series of binary digits of the length &lt;span class="math"&gt;\(n\)&lt;/span&gt;, then the probability of getting 0 or 1 is &lt;span class="math"&gt;\(\frac{1}{2^{n}}\)&lt;/span&gt;. 
+According to Shannon, self-information is the bits of information we receive from observing the event &lt;span class="math"&gt;\(X\)&lt;/span&gt;. Let &lt;span class="math"&gt;\(X\)&lt;/span&gt; be the following code: &lt;code&gt;0101&lt;/code&gt;, 
+then its information content is &lt;strong&gt;4 bits&lt;/strong&gt; according to our formula:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+I(X) = I(0101) = - \log_2(\frac{1}{2^{4}}) = 4
+$$&lt;/div&gt;
+&lt;p&gt;With Python it will be&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;self_information&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;self_information&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;4.0&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The main takeaway here is that if a particular event has 100% probability, its self-information is &lt;span class="math"&gt;\(-\log_2(1) = 0\)&lt;/span&gt;, meaning that it does not carry any information, 
+and we have no surprise at all. Whereas, if the probability would be close to zero, or we can effectively say it's zero, 
+then self-information is &lt;span class="math"&gt;\(-\log_2(0) = \infty\)&lt;/span&gt;. This implies that the rare events have high surprisal or high information content.&lt;/p&gt;
+&lt;p&gt;We see that information content only measures the information of a single event. To generalize this notion for any discrete and/or continues event, 
+we will get the idea of &lt;strong&gt;Entropy&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id="entropy"&gt;Entropy&lt;a class="headerlink" href="#entropy" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;If we have any random variable &lt;span class="math"&gt;\(X\)&lt;/span&gt;, whether it will be a discrete or continuous and &lt;span class="math"&gt;\(X\)&lt;/span&gt; follows a probability distribution &lt;span class="math"&gt;\(P\)&lt;/span&gt; 
+with &lt;code&gt;p.d.f&lt;/code&gt; if it's continuous or &lt;code&gt;p.m.f&lt;/code&gt; if it's discrete. Can we calculate the average value of &lt;span class="math"&gt;\(X\)&lt;/span&gt;? Yes, we can. 
+From statistics, the formula of the average or a.k.a expectation is&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\mathbb E(X) = \sum_{i=1}^{k} x_{i} \cdot p_{i}
+$$&lt;/div&gt;
+&lt;p&gt;Where &lt;span class="math"&gt;\(x_{i}\)&lt;/span&gt; is one particular event with its probability &lt;span class="math"&gt;\(p_{i}\)&lt;/span&gt;. The same is in information theory. The &lt;strong&gt;Entropy&lt;/strong&gt; of a random variable 
+&lt;span class="math"&gt;\(X\)&lt;/span&gt; is the expectation of its self-information, given by:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+H(X) = - \sum_{i} p_{i} \log_{2} p_{i}
+$$&lt;/div&gt;
+&lt;p&gt;In Python it looks the following&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# np.nansum return the sum of NaNs. Treats them as zeros.&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;entropy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;out&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nansum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;out&lt;/span&gt;
+
+
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;entropy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mf"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.3&lt;/span&gt;&lt;span class="p"&gt;])))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;1.6854752972273346&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Here, we only consider one random variable, &lt;span class="math"&gt;\(X\)&lt;/span&gt;, and its expected surprisal. What if we have two random variables &lt;span class="math"&gt;\(X\)&lt;/span&gt; and &lt;span class="math"&gt;\(Y\)&lt;/span&gt;? How can we 
+measure their joint information content? In other words, we are interested what information is included in &lt;span class="math"&gt;\(X\)&lt;/span&gt; and &lt;span class="math"&gt;\(Y\)&lt;/span&gt; compared to each separately. 
+Here comes the &lt;strong&gt;Joint Entropy&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="joint-entropy"&gt;Joint Entropy&lt;a class="headerlink" href="#joint-entropy" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To review this concept let me introduce two random variables &lt;span class="math"&gt;\(X\)&lt;/span&gt; and &lt;span class="math"&gt;\(Y\)&lt;/span&gt; and they follow the probability distribution denoted by 
+&lt;span class="math"&gt;\(p_{X}(x)\)&lt;/span&gt; and &lt;span class="math"&gt;\(p_Y(y)\)&lt;/span&gt;, respectively. &lt;span class="math"&gt;\((X, Y)\)&lt;/span&gt; has joint probability &lt;span class="math"&gt;\(p_{X, Y}(x, y)\)&lt;/span&gt;. The &lt;strong&gt;Joint Entropy&lt;/strong&gt; hence is defined as: &lt;/p&gt;
+&lt;div class="math"&gt;$$
+H(X, Y) = - \sum_{x} \sum_{y} p_{X, Y}(x, y) \log_{2} p_{X, Y}(x, y)
+$$&lt;/div&gt;
+&lt;p&gt;Here are two important facts. If &lt;span class="math"&gt;\(X = Y\)&lt;/span&gt; this implies that &lt;span class="math"&gt;\(H(X,Y) = H(X) = H(Y)\)&lt;/span&gt; and if &lt;span class="math"&gt;\(X\)&lt;/span&gt; and &lt;span class="math"&gt;\(Y\)&lt;/span&gt; are independent, then &lt;span class="math"&gt;\(H(X, Y) = H(X) + H(Y)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;joint_entropy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p_xy&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;out&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nansum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p_xy&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p_xy&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;out&lt;/span&gt;
+
+
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;joint_entropy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="mf"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.8&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mf"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.02&lt;/span&gt;&lt;span class="p"&gt;]])))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;2.0558948969327187&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;As we see, joint entropy indicates the amount of information in the pair of two random variables. What if we are interested 
+to know how much information is contained, say in &lt;span class="math"&gt;\(Y\)&lt;/span&gt; but not in &lt;span class="math"&gt;\(X\)&lt;/span&gt;?&lt;/p&gt;
+&lt;h2 id="conditional-entropy"&gt;Conditional Entropy&lt;a class="headerlink" href="#conditional-entropy" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;The &lt;strong&gt;conditional entropy&lt;/strong&gt; is used to measure the relationship between variables. The following formula gives this measurement:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+H(Y \mid X) = - \sum_{x} \sum_{y} p(x, y) \log_{2} p(y \mid x)
+$$&lt;/div&gt;
+&lt;p&gt;Let investigate how conditional entropy is related to entropy and joint entropy. Using the above formula, we can conclude that:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+H(Y \mid X) = H(X, Y) - H(X)
+$$&lt;/div&gt;
+&lt;p&gt;meaning that the information contained in &lt;span class="math"&gt;\(Y\)&lt;/span&gt; given &lt;span class="math"&gt;\(X\)&lt;/span&gt; equals information jointly contained in &lt;span class="math"&gt;\(X\)&lt;/span&gt; and &lt;span class="math"&gt;\(Y\)&lt;/span&gt; minus the amount of information 
+only contained in &lt;span class="math"&gt;\(X\)&lt;/span&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;conditional_entropy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p_xy&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p_x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;p_y_given_x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;p_xy&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;p_x&lt;/span&gt;
+    &lt;span class="n"&gt;out&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nansum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p_xy&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p_y_given_x&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;out&lt;/span&gt;
+
+
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;conditional_entropy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="mf"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mf"&gt;0.2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.3&lt;/span&gt;&lt;span class="p"&gt;]]),&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mf"&gt;0.2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.8&lt;/span&gt;&lt;span class="p"&gt;])))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;0.863547202339972&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Knowing conditional entropy means knowing the amount of information contained in &lt;span class="math"&gt;\(Y\)&lt;/span&gt; but not in &lt;span class="math"&gt;\(X\)&lt;/span&gt;. Now let see how much information is 
+shared between &lt;span class="math"&gt;\(X\)&lt;/span&gt; and &lt;span class="math"&gt;\(Y\)&lt;/span&gt;.&lt;/p&gt;
+&lt;h2 id="mutual-information"&gt;Mutual Information&lt;a class="headerlink" href="#mutual-information" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To find the &lt;strong&gt;mutual information&lt;/strong&gt; between two random variables &lt;span class="math"&gt;\(X\)&lt;/span&gt; and &lt;span class="math"&gt;\(Y\)&lt;/span&gt;, let start the process by finding all the information in both 
+&lt;span class="math"&gt;\(X\)&lt;/span&gt; and &lt;span class="math"&gt;\(Y\)&lt;/span&gt; together and then subtract the part which is not shared. The information both in &lt;span class="math"&gt;\(X\)&lt;/span&gt; and &lt;span class="math"&gt;\(Y\)&lt;/span&gt; is 
+&lt;span class="math"&gt;\(H(X, Y)\)&lt;/span&gt;. Subtracting two conditional entropies gives:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+I(X, Y) = H(X, Y) - H(Y \mid X) − H(X \mid Y)
+$$&lt;/div&gt;
+&lt;p&gt;This means that we have to subtract the information only contained in &lt;span class="math"&gt;\(X\)&lt;/span&gt; and &lt;span class="math"&gt;\(Y\)&lt;/span&gt; to all the information at hand. 
+This relationship is perfectly described by this picture from the &lt;a href="https://d2l.ai/_images/mutual_information.svg"&gt;d2l&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="picture" src="https://dsfabric.org/images/mutual_information.png"&gt;&lt;/p&gt;
+&lt;p&gt;The concept of mutual information likewise correlation coefficient, allow us to measure the linear relationship between two random variables as well as 
+the amount of maximum information shared between them.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;mutual_information&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p_xy&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p_x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p_y&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;p_xy&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p_x&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;p_y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;out&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nansum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p_xy&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;out&lt;/span&gt;
+
+
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mutual_information&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="mf"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mf"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.3&lt;/span&gt;&lt;span class="p"&gt;]]),&lt;/span&gt;
+                        &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mf"&gt;0.2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.8&lt;/span&gt;&lt;span class="p"&gt;]),&lt;/span&gt;
+                        &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="mf"&gt;0.75&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.25&lt;/span&gt;&lt;span class="p"&gt;]])))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;0.7194602975157967&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;As in the case of the correlation coefficient, mutual information has some notable properties:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mutual information is symmetric&lt;/li&gt;
+&lt;li&gt;Mutual information is non-negative&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(I(X, Y) = 0\)&lt;/span&gt; iff &lt;span class="math"&gt;\(X\)&lt;/span&gt; and &lt;span class="math"&gt;\(Y\)&lt;/span&gt; are independent&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We can interpret the mutual information &lt;span class="math"&gt;\(I(X, Y)\)&lt;/span&gt; as the average amount of surprisal by seeing two outcomes happening together 
+compared to what we would expect if they were independent.&lt;/p&gt;
+&lt;h2 id="kullbackleibler-divergence-relative-entropy"&gt;Kullback–Leibler Divergence - Relative Entropy&lt;a class="headerlink" href="#kullbackleibler-divergence-relative-entropy" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I asked the question about measuring the distance between two probability distributions. The time has come to answer this question precisely.
+If we have random variable &lt;span class="math"&gt;\(X\)&lt;/span&gt; which follows probability distributin &lt;span class="math"&gt;\(P\)&lt;/span&gt; and has &lt;code&gt;p.d.f&lt;/code&gt; or &lt;code&gt;p.m.f&lt;/code&gt; &lt;span class="math"&gt;\(p(x)\)&lt;/span&gt;. Imagine we estimated 
+&lt;span class="math"&gt;\(P\)&lt;/span&gt; with other probability distribution &lt;span class="math"&gt;\(Q\)&lt;/span&gt;, which in turn has &lt;code&gt;p.d.f&lt;/code&gt; or &lt;code&gt;p.m.f&lt;/code&gt; &lt;span class="math"&gt;\(q(x)\)&lt;/span&gt;. The distance between thse two probability 
+distribution is measured by &lt;strong&gt;Kullback–Leibler (KL) Divergence&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+D_{\mathrm{KL}}(P\|Q) = E_{x \sim P} \left[ \log \frac{p(x)}{q(x)} \right]
+$$&lt;/div&gt;
+&lt;p&gt;The lower value of the &lt;span class="math"&gt;\(KL\)&lt;/span&gt; divergence, the closer our estimate is to the actual distribution.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The KL divergence is non-symmetric or equivalently, &lt;span class="math"&gt;\(D_{\mathrm{KL}}(P\|Q) \neq D_{\mathrm{KL}}(Q\|P), \text{ if } P \neq Q\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;The KL divergence is non-negative or equivalently, &lt;span class="math"&gt;\(D_{\mathrm{KL}}(P\|Q) \geq 0\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;kl_divergence&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;q&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+     &lt;span class="n"&gt;kl&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;q&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+     &lt;span class="n"&gt;out&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nansum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="n"&gt;q&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;abs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;out&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;normal&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;q&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;normal&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;kl_divergence&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;q&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="mf"&gt;80.59673051535388&lt;/span&gt;
+&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;okroshiashvili&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;miniconda3&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;envs&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nb"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;pweave&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="ne"&gt;RuntimeWarning&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;invalid&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="n"&gt;encountered&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;log2&lt;/span&gt;
+  &lt;span class="c1"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
+&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;okroshiashvili&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;miniconda3&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;envs&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;blog&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nb"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;pweave&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="ne"&gt;RuntimeWarning&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;invalid&lt;/span&gt; &lt;span class="n"&gt;value&lt;/span&gt; &lt;span class="n"&gt;encountered&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;log2&lt;/span&gt;
+  &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;re&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="cross-entropy"&gt;Cross Entropy&lt;a class="headerlink" href="#cross-entropy" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;To understand &lt;strong&gt;Cross-Entropy&lt;/strong&gt;, let me use the example from the KL divergence part. Now, imagine we perform classification tasks, where 
+&lt;span class="math"&gt;\(y\)&lt;/span&gt; is the true label, and &lt;span class="math"&gt;\(\hat{y}\)&lt;/span&gt; is estimated label by our model. &lt;strong&gt;Cross-Entropy&lt;/strong&gt; denoted by &lt;span class="math"&gt;\(\mathrm{CE}(y, \hat{y})\)&lt;/span&gt; is used as a 
+objective function in many classification tasks in deep learning. The formula is the following:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\mathrm{CE} (P, Q) = H(P) + D_{\mathrm{KL}}(P\|Q)
+$$&lt;/div&gt;
+&lt;p&gt;The two terms on the right-hand side are self-information and KL divergence. &lt;span class="math"&gt;\(P\)&lt;/span&gt; is the distribution of the true labels, 
+and &lt;span class="math"&gt;\(Q\)&lt;/span&gt; is the distribution of the estimated labels. As we are only interested in knowing how far we are from the actual label and &lt;span class="math"&gt;\(H(P)\)&lt;/span&gt; is also given, 
+the above formula is reduced to minimize only the second term (KL divergence) at the right-hand side. Hence, we have&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\mathrm{CE}(\mathbf{y}, \hat{\mathbf{y}}) = - \sum_{i=1}^n \sum_{j=1}^k y_{ij} \log_{2}{p_{\theta} (y_{ij}  \mid  \mathbf{x}_i)}
+$$&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;cross_entropy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y_hat&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;ce&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y_hat&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;y_hat&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;ce&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+
+&lt;span class="n"&gt;labels&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="n"&gt;preds&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([[&lt;/span&gt;&lt;span class="mf"&gt;0.3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mf"&gt;0.2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;]])&lt;/span&gt;
+
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cross_entropy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;preds&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;labels&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;0.9485599924429406&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2 id="conclusion"&gt;Conclusion&lt;a class="headerlink" href="#conclusion" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;By reviewing these concepts from the information theory, we have some rough sense of how it's related to the statistics and mathematics and 
+is used in machine learning and deep learning. There is much more to discover, and that's up to you how far you want to go. 
+Moreover, even interesting is how information theory is related to the coding theory, in gambling and musical composition.&lt;/p&gt;
+&lt;h2 id="references"&gt;References&lt;a class="headerlink" href="#references" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://d2l.ai/index.html"&gt;Dive Into Deep Learning&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://github.com/MaxinAI/school-of-ai/blob/master/lecture_6_statistics.ipynb"&gt;MaxinAI - School of AI&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Information_theory"&gt;Information theory&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="General"></category><category term="Information Theory"></category><category term="Information Gain"></category><category term="Python"></category><category term="Numpy"></category><category term="General"></category></entry><entry><title>Topic Modeling in Python: Latent Semantic Analysis</title><link href="https://dsfabric.org/topic-modeling-in-python-latent-semantic-analysis" rel="alternate"></link><published>2020-06-22T03:44:00+04:00</published><updated>2020-06-28T10:53:00+04:00</updated><author><name>Nodar Okroshiashvili</name></author><id>tag:dsfabric.org,2020-06-22:/topic-modeling-in-python-latent-semantic-analysis</id><summary type="html">&lt;p&gt;Topic modeling with Sklearn, NLTK, and Gensim&lt;/p&gt;</summary><content type="html">&lt;p&gt;Recently, I've started digging deeper into Natural Language Processing. During week or so, I took several 
 MOOCs and read blogs. I tried some coding and now with this blog, I want to share my experience. With this blog series, 
 I want to review &lt;a href="https://en.wikipedia.org/wiki/Topic_model"&gt;Topic Modeling&lt;/a&gt;. Particularly, &lt;a href="https://en.wikipedia.org/wiki/Latent_semantic_analysis"&gt;Latent Semantic Analysis&lt;/a&gt;, 
 &lt;a href="https://en.wikipedia.org/wiki/Non-negative_matrix_factorization"&gt;Non-Negative Matrix Factorization&lt;/a&gt;, and 

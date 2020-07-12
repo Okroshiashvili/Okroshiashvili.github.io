@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://dsfabric.org/theme/css/elegant.prod.9e9d5ce754.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://dsfabric.org/theme/css/custom.css" media="screen">
+
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
+        <meta name="author" content="Nodar Okroshiashvili" />
+
+        <meta name="description" content="Elements of Information Theory Distilled with Python
+" />
+        <meta name="twitter:creator" content="@N_Okroshiashvil">
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="Information Theory, Information Gain, Python, Numpy, General, General, information theory in python, entropy, self information, joint entropy in python, conditional entropy in python" />
+
+<meta property="og:title" content="Basics of Information Theory with Python "/>
+<meta property="og:url" content="https://dsfabric.org/basics-of-information-theory-with-python" />
+<meta property="og:description" content="Elements of Information Theory Distilled with Python" />
+<meta property="og:site_name" content="Data Science Fabric" />
+<meta property="og:article:author" content="Nodar Okroshiashvili" />
+<meta property="og:article:published_time" content="2020-07-12T20:30:00+04:00" />
+<meta name="twitter:title" content="Basics of Information Theory with Python ">
+<meta name="twitter:description" content="Elements of Information Theory Distilled with Python">
+
+        <title>Basics of Information Theory with Python  · Data Science Fabric
+</title>
+        <link rel="shortcut icon" href="https://dsfabric.org/theme/images/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="https://dsfabric.org/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" href="https://dsfabric.org/theme/images/apple-touch-icon.png"  type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="https://dsfabric.org/theme/images/apple-touch-icon-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="https://dsfabric.org/theme/images/apple-touch-icon-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="https://dsfabric.org/theme/images/apple-touch-icon-76x76.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="https://dsfabric.org/theme/images/apple-touch-icon-114x114.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="https://dsfabric.org/theme/images/apple-touch-icon-120x120.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="https://dsfabric.org/theme/images/apple-touch-icon-144x144.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://dsfabric.org/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://dsfabric.org/theme/images/apple-touch-icon-180x180.png" type="image/png" />
+        <link href="https://dsfabric.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Data Science Fabric - Full Atom Feed" />
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-136307659-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://dsfabric.org/"><span class=site-name>Data Science Fabric</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://dsfabric.org
+                                    >Home</a>
+                                </li>
+                                <li ><a href="https://dsfabric.org/categories">Categories</a></li>
+                                <li ><a href="https://dsfabric.org/tags">Tags</a></li>
+                                <li ><a href="https://dsfabric.org/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://dsfabric.org/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+        <h1>
+            <a href="https://dsfabric.org/basics-of-information-theory-with-python">
+                Basics of Information Theory with Python
+            </a>
+        </h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+            
+            <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>Information flows around us. It's everywhere. No matter what we have, either it will be some well-known play or painting or 
+just a bunch of numbers or video streams. For computers, all of them are represented by only two digits 0 and 1, and they carry some information. 
+"<strong>Information theory</strong> studies the transmission, processing, extraction, and utilization of information."<a href="https://en.wikipedia.org/wiki/Information_theory">wikipedia</a> 
+In simple words, with information theory, given different kinds of signals, we try to measure how much information is presented in each of those signals. 
+The theory itself originates from the original work of <a href="https://en.wikipedia.org/wiki/Claude_Shannon">Claude Shannon</a> named <a href="https://en.wikipedia.org/wiki/A_Mathematical_Theory_of_Communication"><em>A Mathematical Theory of Communication</em></a></p>
+<p>It will be helpful to see how machine learning and information theory are related. According to "Dive Into Deep Learning" hence d2l considers this relationship to be </p>
+<blockquote>
+<p>Machine learning aims to extract interesting signals from data and make critical predictions. 
+On the other hand, information theory studies encoding, decoding, transmitting, and manipulating information. 
+As a result, information theory provides a fundamental language for discussing the information processing in machine learned systems.<a href="https://d2l.ai/chapter_appendix-mathematics-for-deep-learning/information-theory.html">source</a></p>
+</blockquote>
+<p>Information theory is tightly connected to mathematics and statistics. We will see later on how, but before that, 
+it's worth to say where is used the concepts of information theory in statistics and mathematics. 
+We all know or have heard about <em>random variables</em> that are drawn from some probability distribution. 
+From linear algebra, we also know how to measure the distance between two points, or between two planes. 
+But, how can we measure the distance between two probability distribution? In other words, how similar or dissimilar are these two probability distribution? 
+Information theory gives us the ability to answer this question and quantify the similarity measure between two distributions. Before we continue, 
+let me outline the measurement unit of information theory. Shannon introduced the <strong>bit</strong> as the unit of information. 
+The series of 0 and 1 encode any data. Accordingly, the sequence of binary digits of length <span class="math">\(n\)</span> contains <em><span class="math">\(n\)</span> bits</em> of information. 
+That has been said, we can review concepts of information theory.</p>
+<p>There are a few main concepts in information theory, and I will go through each of them in a detailed manner. First in line is: </p>
+<h2 id="self-information">Self-Information<a class="headerlink" href="#self-information" title="Permanent link">&para;</a></h2>
+<p>To understand this concept well, I will review two examples—one from statistics and probability and the second from the information theory. 
+Let start with statistics and probability. Imagine we conduct an experiment giving several outcomes with a different probability. For example, 
+rolling the fair dice with uniform probability <span class="math">\(\frac{1}{6}\)</span> of returning numbers from 1 to 6. Now, consider three outcomes, defined as <span class="math">\(A=\{outcome \leq 6\}\)</span> 
+<span class="math">\(B=\{outcome is odd\}\)</span>, and <span class="math">\(C=\{outcome=1\}\)</span> over probability space <span class="math">\(\Omega\)</span>, which in turn contains all the outcomes. <strong>Self-information</strong>, 
+sometimes stated as <strong>information content</strong> or <strong>surprisal</strong> indicates how much unlikely the event <span class="math">\(A\)</span>, or <span class="math">\(B\)</span>, or <span class="math">\(C\)</span> is, how much surprised we are 
+by observing either event. Here is the question: How can we convert probability <span class="math">\(p\)</span> of an event into a number of bits? Claude Shannon gave us the formula for that:</p>
+<div class="math">$$
+I(X) = - \log_2(p)
+$$</div>
+<p>For our three events, <span class="math">\(A\)</span>, <span class="math">\(B\)</span>, and <span class="math">\(C\)</span> the self-information or surprisal is the following:</p>
+<div class="math">$$
+I(A) = - \log_2(1) = 0
+\\
+I(B) = - \log_2(\frac{3}{6}) = 1
+\\
+I(C) = - \log_2(\frac{1}{6}) = 2.58
+$$</div>
+<p>From an information theory perspective, if we have a series of binary digits of the length <span class="math">\(n\)</span>, then the probability of getting 0 or 1 is <span class="math">\(\frac{1}{2^{n}}\)</span>. 
+According to Shannon, self-information is the bits of information we receive from observing the event <span class="math">\(X\)</span>. Let <span class="math">\(X\)</span> be the following code: <code>0101</code>, 
+then its information content is <strong>4 bits</strong> according to our formula:</p>
+<div class="math">$$
+I(X) = I(0101) = - \log_2(\frac{1}{2^{4}}) = 4
+$$</div>
+<p>With Python it will be</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+<span class="k">def</span> <span class="nf">self_information</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+
+    <span class="k">return</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">self_information</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span><span class="o">**</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="err">4.0</span>
+</pre></div>
+
+
+<p>The main takeaway here is that if a particular event has 100% probability, its self-information is <span class="math">\(-\log_2(1) = 0\)</span>, meaning that it does not carry any information, 
+and we have no surprise at all. Whereas, if the probability would be close to zero, or we can effectively say it's zero, 
+then self-information is <span class="math">\(-\log_2(0) = \infty\)</span>. This implies that the rare events have high surprisal or high information content.</p>
+<p>We see that information content only measures the information of a single event. To generalize this notion for any discrete and/or continues event, 
+we will get the idea of <strong>Entropy</strong>.</p>
+<h2 id="entropy">Entropy<a class="headerlink" href="#entropy" title="Permanent link">&para;</a></h2>
+<p>If we have any random variable <span class="math">\(X\)</span>, whether it will be a discrete or continuous and <span class="math">\(X\)</span> follows a probability distribution <span class="math">\(P\)</span> 
+with <code>p.d.f</code> if it's continuous or <code>p.m.f</code> if it's discrete. Can we calculate the average value of <span class="math">\(X\)</span>? Yes, we can. 
+From statistics, the formula of the average or a.k.a expectation is</p>
+<div class="math">$$
+\mathbb E(X) = \sum_{i=1}^{k} x_{i} \cdot p_{i}
+$$</div>
+<p>Where <span class="math">\(x_{i}\)</span> is one particular event with its probability <span class="math">\(p_{i}\)</span>. The same is in information theory. The <strong>Entropy</strong> of a random variable 
+<span class="math">\(X\)</span> is the expectation of its self-information, given by:</p>
+<div class="math">$$
+H(X) = - \sum_{i} p_{i} \log_{2} p_{i}
+$$</div>
+<p>In Python it looks the following</p>
+<div class="highlight"><pre><span></span><span class="c1"># np.nansum return the sum of NaNs. Treats them as zeros.</span>
+
+<span class="k">def</span> <span class="nf">entropy</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nansum</span><span class="p">(</span><span class="o">-</span><span class="n">p</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">out</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">entropy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">])))</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="err">1.6854752972273346</span>
+</pre></div>
+
+
+<p>Here, we only consider one random variable, <span class="math">\(X\)</span>, and its expected surprisal. What if we have two random variables <span class="math">\(X\)</span> and <span class="math">\(Y\)</span>? How can we 
+measure their joint information content? In other words, we are interested what information is included in <span class="math">\(X\)</span> and <span class="math">\(Y\)</span> compared to each separately. 
+Here comes the <strong>Joint Entropy</strong></p>
+<h2 id="joint-entropy">Joint Entropy<a class="headerlink" href="#joint-entropy" title="Permanent link">&para;</a></h2>
+<p>To review this concept let me introduce two random variables <span class="math">\(X\)</span> and <span class="math">\(Y\)</span> and they follow the probability distribution denoted by 
+<span class="math">\(p_{X}(x)\)</span> and <span class="math">\(p_Y(y)\)</span>, respectively. <span class="math">\((X, Y)\)</span> has joint probability <span class="math">\(p_{X, Y}(x, y)\)</span>. The <strong>Joint Entropy</strong> hence is defined as: </p>
+<div class="math">$$
+H(X, Y) = - \sum_{x} \sum_{y} p_{X, Y}(x, y) \log_{2} p_{X, Y}(x, y)
+$$</div>
+<p>Here are two important facts. If <span class="math">\(X = Y\)</span> this implies that <span class="math">\(H(X,Y) = H(X) = H(Y)\)</span> and if <span class="math">\(X\)</span> and <span class="math">\(Y\)</span> are independent, then <span class="math">\(H(X, Y) = H(X) + H(Y)\)</span>.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">joint_entropy</span><span class="p">(</span><span class="n">p_xy</span><span class="p">):</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nansum</span><span class="p">(</span><span class="o">-</span><span class="n">p_xy</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">p_xy</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">out</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">joint_entropy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">]])))</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="err">2.0558948969327187</span>
+</pre></div>
+
+
+<p>As we see, joint entropy indicates the amount of information in the pair of two random variables. What if we are interested 
+to know how much information is contained, say in <span class="math">\(Y\)</span> but not in <span class="math">\(X\)</span>?</p>
+<h2 id="conditional-entropy">Conditional Entropy<a class="headerlink" href="#conditional-entropy" title="Permanent link">&para;</a></h2>
+<p>The <strong>conditional entropy</strong> is used to measure the relationship between variables. The following formula gives this measurement:</p>
+<div class="math">$$
+H(Y \mid X) = - \sum_{x} \sum_{y} p(x, y) \log_{2} p(y \mid x)
+$$</div>
+<p>Let investigate how conditional entropy is related to entropy and joint entropy. Using the above formula, we can conclude that:</p>
+<div class="math">$$
+H(Y \mid X) = H(X, Y) - H(X)
+$$</div>
+<p>meaning that the information contained in <span class="math">\(Y\)</span> given <span class="math">\(X\)</span> equals information jointly contained in <span class="math">\(X\)</span> and <span class="math">\(Y\)</span> minus the amount of information 
+only contained in <span class="math">\(X\)</span>.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">conditional_entropy</span><span class="p">(</span><span class="n">p_xy</span><span class="p">,</span> <span class="n">p_x</span><span class="p">):</span>
+    <span class="n">p_y_given_x</span> <span class="o">=</span> <span class="n">p_xy</span> <span class="o">/</span> <span class="n">p_x</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nansum</span><span class="p">(</span><span class="o">-</span><span class="n">p_xy</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">p_y_given_x</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">out</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">conditional_entropy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]]),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">])))</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="err">0.863547202339972</span>
+</pre></div>
+
+
+<p>Knowing conditional entropy means knowing the amount of information contained in <span class="math">\(Y\)</span> but not in <span class="math">\(X\)</span>. Now let see how much information is 
+shared between <span class="math">\(X\)</span> and <span class="math">\(Y\)</span>.</p>
+<h2 id="mutual-information">Mutual Information<a class="headerlink" href="#mutual-information" title="Permanent link">&para;</a></h2>
+<p>To find the <strong>mutual information</strong> between two random variables <span class="math">\(X\)</span> and <span class="math">\(Y\)</span>, let start the process by finding all the information in both 
+<span class="math">\(X\)</span> and <span class="math">\(Y\)</span> together and then subtract the part which is not shared. The information both in <span class="math">\(X\)</span> and <span class="math">\(Y\)</span> is 
+<span class="math">\(H(X, Y)\)</span>. Subtracting two conditional entropies gives:</p>
+<div class="math">$$
+I(X, Y) = H(X, Y) - H(Y \mid X) − H(X \mid Y)
+$$</div>
+<p>This means that we have to subtract the information only contained in <span class="math">\(X\)</span> and <span class="math">\(Y\)</span> to all the information at hand. 
+This relationship is perfectly described by this picture from the <a href="https://d2l.ai/_images/mutual_information.svg">d2l</a>.</p>
+<p><img alt="picture" src="https://dsfabric.org/images/mutual_information.png"></p>
+<p>The concept of mutual information likewise correlation coefficient, allow us to measure the linear relationship between two random variables as well as 
+the amount of maximum information shared between them.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mutual_information</span><span class="p">(</span><span class="n">p_xy</span><span class="p">,</span> <span class="n">p_x</span><span class="p">,</span> <span class="n">p_y</span><span class="p">):</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">p_xy</span> <span class="o">/</span> <span class="p">(</span><span class="n">p_x</span> <span class="o">*</span> <span class="n">p_y</span><span class="p">)</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nansum</span><span class="p">(</span><span class="n">p_xy</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">out</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">mutual_information</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]]),</span>
+                        <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">]),</span>
+                        <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">]])))</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="err">0.7194602975157967</span>
+</pre></div>
+
+
+<p>As in the case of the correlation coefficient, mutual information has some notable properties:</p>
+<ul>
+<li>Mutual information is symmetric</li>
+<li>Mutual information is non-negative</li>
+<li><span class="math">\(I(X, Y) = 0\)</span> iff <span class="math">\(X\)</span> and <span class="math">\(Y\)</span> are independent</li>
+</ul>
+<p>We can interpret the mutual information <span class="math">\(I(X, Y)\)</span> as the average amount of surprisal by seeing two outcomes happening together 
+compared to what we would expect if they were independent.</p>
+<h2 id="kullbackleibler-divergence-relative-entropy">Kullback–Leibler Divergence - Relative Entropy<a class="headerlink" href="#kullbackleibler-divergence-relative-entropy" title="Permanent link">&para;</a></h2>
+<p>I asked the question about measuring the distance between two probability distributions. The time has come to answer this question precisely.
+If we have random variable <span class="math">\(X\)</span> which follows probability distributin <span class="math">\(P\)</span> and has <code>p.d.f</code> or <code>p.m.f</code> <span class="math">\(p(x)\)</span>. Imagine we estimated 
+<span class="math">\(P\)</span> with other probability distribution <span class="math">\(Q\)</span>, which in turn has <code>p.d.f</code> or <code>p.m.f</code> <span class="math">\(q(x)\)</span>. The distance between thse two probability 
+distribution is measured by <strong>Kullback–Leibler (KL) Divergence</strong>:</p>
+<div class="math">$$
+D_{\mathrm{KL}}(P\|Q) = E_{x \sim P} \left[ \log \frac{p(x)}{q(x)} \right]
+$$</div>
+<p>The lower value of the <span class="math">\(KL\)</span> divergence, the closer our estimate is to the actual distribution.</p>
+<ul>
+<li>The KL divergence is non-symmetric or equivalently, <span class="math">\(D_{\mathrm{KL}}(P\|Q) \neq D_{\mathrm{KL}}(Q\|P), \text{ if } P \neq Q\)</span></li>
+<li>The KL divergence is non-negative or equivalently, <span class="math">\(D_{\mathrm{KL}}(P\|Q) \geq 0\)</span></li>
+</ul>
+<div class="highlight"><pre><span></span> <span class="k">def</span> <span class="nf">kl_divergence</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">):</span>
+     <span class="n">kl</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">p</span> <span class="o">/</span> <span class="n">q</span><span class="p">)</span>
+     <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nansum</span><span class="p">(</span><span class="n">p</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">p</span> <span class="o">/</span> <span class="n">q</span><span class="p">))</span>
+
+     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">kl_divergence</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">))</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="mf">80.59673051535388</span>
+<span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">okroshiashvili</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">blog</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">pweave</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span>
+<span class="ne">RuntimeWarning</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">value</span> <span class="n">encountered</span> <span class="ow">in</span> <span class="n">log2</span>
+  <span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">okroshiashvili</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">blog</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">pweave</span><span class="p">:</span><span class="mi">3</span><span class="p">:</span>
+<span class="ne">RuntimeWarning</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">value</span> <span class="n">encountered</span> <span class="ow">in</span> <span class="n">log2</span>
+  <span class="kn">import</span> <span class="nn">re</span>
+</pre></div>
+
+
+<h2 id="cross-entropy">Cross Entropy<a class="headerlink" href="#cross-entropy" title="Permanent link">&para;</a></h2>
+<p>To understand <strong>Cross-Entropy</strong>, let me use the example from the KL divergence part. Now, imagine we perform classification tasks, where 
+<span class="math">\(y\)</span> is the true label, and <span class="math">\(\hat{y}\)</span> is estimated label by our model. <strong>Cross-Entropy</strong> denoted by <span class="math">\(\mathrm{CE}(y, \hat{y})\)</span> is used as a 
+objective function in many classification tasks in deep learning. The formula is the following:</p>
+<div class="math">$$
+\mathrm{CE} (P, Q) = H(P) + D_{\mathrm{KL}}(P\|Q)
+$$</div>
+<p>The two terms on the right-hand side are self-information and KL divergence. <span class="math">\(P\)</span> is the distribution of the true labels, 
+and <span class="math">\(Q\)</span> is the distribution of the estimated labels. As we are only interested in knowing how far we are from the actual label and <span class="math">\(H(P)\)</span> is also given, 
+the above formula is reduced to minimize only the second term (KL divergence) at the right-hand side. Hence, we have</p>
+<div class="math">$$
+\mathrm{CE}(\mathbf{y}, \hat{\mathbf{y}}) = - \sum_{i=1}^n \sum_{j=1}^k y_{ij} \log_{2}{p_{\theta} (y_{ij}  \mid  \mathbf{x}_i)}
+$$</div>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cross_entropy</span><span class="p">(</span><span class="n">y_hat</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">ce</span> <span class="o">=</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">y_hat</span><span class="p">[</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_hat</span><span class="p">)),</span> <span class="n">y</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">ce</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+
+<span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">preds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">cross_entropy</span><span class="p">(</span><span class="n">preds</span><span class="p">,</span> <span class="n">labels</span><span class="p">))</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="err">0.9485599924429406</span>
+</pre></div>
+
+
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>By reviewing these concepts from the information theory, we have some rough sense of how it's related to the statistics and mathematics and 
+is used in machine learning and deep learning. There is much more to discover, and that's up to you how far you want to go. 
+Moreover, even interesting is how information theory is related to the coding theory, in gambling and musical composition.</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><a href="https://d2l.ai/index.html">Dive Into Deep Learning</a></p>
+</li>
+<li>
+<p><a href="https://github.com/MaxinAI/school-of-ai/blob/master/lecture_6_statistics.ipynb">MaxinAI - School of AI</a></p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Information_theory">Information theory</a></p>
+</li>
+</ul>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+
+
+             
+
+
+<div class="applause_button">
+    <applause-button url=https://dsfabric.org/basics-of-information-theory-with-python> </applause-button>
+</div>
+
+ 
+                <p id="post-share-links">
+    Like this post? Share on:
+      <a href="https://twitter.com/intent/tweet?text=Basics%20of%20Information%20Theory%20with%20Python&url=https%3A//dsfabric.org/basics-of-information-theory-with-python&via=N_Okroshiashvil&hashtags=information-theory,information-gain,python,numpy,general" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//dsfabric.org/basics-of-information-theory-with-python" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=Basics%20of%20Information%20Theory%20with%20Python&amp;body=https%3A//dsfabric.org/basics-of-information-theory-with-python" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+
+            
+            
+
+
+
+
+
+
+
+<section>
+    <h6 style="display:none;">Comments</h6>
+    <p id="comment-message">So what do you think? Did I miss something? Is any part unclear? Leave your comments below. </p>
+
+    <div class="accordion" id="accordion2">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle disqus-comment-count comment-count collapsed"
+                   data-toggle="collapse"
+                   data-parent="#accordion2"
+                   data-disqus-identifier="https://dsfabric.org/basics-of-information-theory-with-python"
+                   href="https://dsfabric.org/basics-of-information-theory-with-python#comment_thread"
+                   id="comment-accordion-toggle">
+                    Comments
+                </a>
+            </div>
+            <div id="comment_thread" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <div class="comments">
+                        <div id="disqus_thread"></div>
+                        <script>
+    var disqus_shortname = 'dsfabric';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+
+    var disqus_identifier = 'https://dsfabric.org/basics-of-information-theory-with-python';
+    var disqus_url = 'https://dsfabric.org/basics-of-information-theory-with-python';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <hr/>
+<section>
+    <h2>Keep Reading</h2>
+<ul class="related-posts-list">
+<li><a href="https://dsfabric.org/modeling-single-good-market-in-python" title="Modeling single good market in Python">Modeling single good market in Python</a></li>
+<li><a href="https://dsfabric.org/integer-sequences-in-python" title="Integer Sequences in Python">Integer Sequences in Python</a></li>
+</ul>
+<hr />
+</section>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="https://dsfabric.org/topic-modeling-in-python-latent-semantic-analysis" title="Previous: Topic Modeling in Python: Latent Semantic Analysis">Topic Modeling in Python: Latent Semantic Analysis</a></li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section id="article-sidebar" class="span2">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2020-07-12T20:30:00+04:00">კვი 12 ივლისი 2020</time>
+            <h4>Category</h4>
+            <a class="category-link" href="https://dsfabric.org/categories#general-ref">General</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://dsfabric.org/tags#information-gain-ref">Information Gain
+                    <span class="superscript">1</span>
+</a></li>
+                <li><a href="https://dsfabric.org/tags#information-theory-ref">Information Theory
+                    <span class="superscript">1</span>
+</a></li>
+                <li><a href="https://dsfabric.org/tags#numpy-ref">Numpy
+                    <span class="superscript">1</span>
+</a></li>
+                <li><a href="https://dsfabric.org/tags#python-ref">Python
+                    <span class="superscript">3</span>
+</a></li>
+                <li><a href="https://dsfabric.org/tags#general-ref">General
+</a></li>
+            </ul>
+<h4>Stay in Touch</h4>
+<div id="sidebar-social-link">
+    <a href="https://www.linkedin.com/in/nodar-okroshiashvili/" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="LinkedIn" role="img" viewBox="0 0 512 512" fill="#fff"><rect width="512" height="512" rx="15%" fill="#0077b5"/><circle cx="142" cy="138" r="37"/><path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+    </a>
+    <a href="https://github.com/Okroshiashvili" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+    </a>
+    <a href="https://twitter.com/N_Okroshiashvil" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Twitter" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1da1f3"/><path fill="#fff" d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+    </a>
+</div>
+            
+
+
+
+
+
+            
+
+
+
+
+
+        </section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+    <div>
+        Content licensed under <a rel="license nofollow noopener noreferrer"
+    href="http://creativecommons.org/licenses/by/4.0/" target="_blank">
+    Creative Commons Attribution 4.0 International License</a>.
+    </div>
+
+    <div>
+        <span class="site-name">Data Science Fabric</span> - Torture the data, and it will confess to anything. Ronald Coase
+    </div>
+
+
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow noopener noreferrer">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow noopener noreferrer">Elegant</a>
+    </div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="https://dsfabric.org/theme/js/elegant.prod.9e9d5ce754.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    <script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+
+    </body>
+    <!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>
